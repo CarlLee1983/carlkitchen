@@ -15,4 +15,4 @@ Parent: [MVP 實作規格](../../recipe-mvp/issues/09-mvp-implementation-spec.md
 - [ ] 草稿在開發模式顯示、在正式建置的頁面與清單中不存在
 - [ ] Playwright 已就位，一個冒煙測試：首頁列出固定資料菜譜並能點進其菜譜頁
 - [ ] PR 工作流程依序執行格式檢查、`astro check`、建置、單元測試、Playwright、`wrangler deploy --dry-run`（門檻第 1、7 項）
-- [ ] AGENTS.md 寫入代理權限規則（只推送工作分支、開 PR，不推主分支、不合入），並指向 `recipe-writing` skill；README 寫入安裝、開發、建置、測試指令
+- [ ] AGENTS.md 寫入代理權限規則（草稿留在本地，送審時才推送工作分支並開 PR；不推主分支、不合入），並指向 `recipe-writing` skill；README 寫入安裝、開發、建置、測試指令

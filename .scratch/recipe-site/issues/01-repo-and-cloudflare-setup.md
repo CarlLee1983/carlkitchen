@@ -1,4 +1,4 @@
-# 01 — 站主帳號設定：私有儲存庫、分支保護與 Cloudflare
+# 01 — 站主帳號設定：儲存庫、分支保護與 Cloudflare
 
 Parent: [MVP 實作規格](../../recipe-mvp/issues/09-mvp-implementation-spec.md)
 
@@ -8,8 +8,8 @@ Parent: [MVP 實作規格](../../recipe-mvp/issues/09-mvp-implementation-spec.md
 
 **Status:** ready-for-human
 
-- [ ] 建立私有 GitHub 儲存庫 `carlkitchen`，本地主分支推送上去
-- [ ] 主分支開啟分支保護：必經 PR、禁止強制推送與刪除；只有站主有寫入權
+- [x] 建立 GitHub 儲存庫 `CarlLee1983/carlkitchen`（公開；私有儲存庫在站主帳號下無法使用分支保護），推送 `main` 與 `prototype/06-homepage-direction`
+- [x] 主分支開啟分支保護（含管理員）：必經 PR、不要求核准數、禁止強制推送與刪除；只有站主有寫入權
 - [ ] 02 的 CI 在 PR 上跑過一次後，把它的檢查設為必要檢查；之後每張票新增的檢查同樣加入
-- [ ] Cloudflare 上 `gravito.dev` 可為 Worker 綁定自訂網域 `carlkitchen.gravito.dev`
-- [ ] 建立僅限部署本站的 Cloudflare API token，與帳號 ID 一起存成儲存庫 secrets；token 不出現在任何檔案或對話中
+- [x] Cloudflare 上 `gravito.dev` 為 Active，`carlkitchen` 尚無 DNS 記錄，可由部署時建立自訂網域 `carlkitchen.gravito.dev`
+- [x] 以 `cf` CLI 建立使用者 API token `carlkitchen-deploy`：帳號層級 Workers Scripts Write、Account Settings Read；`gravito.dev` 區域 Workers Routes Write、Zone Read。值直接寫入 secret `CLOUDFLARE_API_TOKEN`，帳號 ID 存為 `CLOUDFLARE_ACCOUNT_ID`；token 未出現在檔案或對話中。權限是否足夠由 10 的第一次實際部署驗證

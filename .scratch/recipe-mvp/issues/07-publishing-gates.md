@@ -13,8 +13,9 @@ CarlStack 的 Astro Content Collections、Pagefind、GitHub Actions 與 Cloudfla
 
 ### 儲存庫與合入權限
 
-- CarlKitchen 是私有 GitHub 儲存庫。公開菜譜與內部來源紀錄放在同一個儲存庫，來源紀錄置於 Astro 內容載入範圍與 `public/` 之外，同一個 PR 即可檢查兩者的對應。這是對「個人專案使用公開儲存庫」慣例的刻意例外，實作時須在 README 與 AGENTS.md 註明原因。
-- 主分支開啟分支保護：變更必須經由 PR、所有必要檢查通過才能合入，禁止強制推送與刪除。只有站主有寫入權限，因此只有站主能完成合入；合入動作即是[本地 AI 製作流程](03-local-ai-review-workflow.md)所定的發布核准。
+- CarlKitchen 是公開 GitHub 儲存庫（`CarlLee1983/carlkitchen`）。原定私有，但站主帳號的私有儲存庫無法使用分支保護，站主改為公開；來源網址可以公開，因此菜譜與內部來源紀錄仍放在同一個儲存庫，來源紀錄置於 Astro 內容載入範圍與 `public/` 之外，同一個 PR 即可檢查兩者的對應。網站頁面照樣不顯示來源。
+- 草稿只留在本地工作分支；準備好送審時才推送並開 PR，接受送審中的內容在合入前已可在 GitHub 上看到。
+- 主分支開啟分支保護（含管理員）：變更必須經由 PR、所有必要檢查通過才能合入，禁止強制推送與刪除；不要求核准數，因為站主無法核准自己的 PR。只有站主有寫入權限，因此只有站主能完成合入；合入動作即是[本地 AI 製作流程](03-local-ai-review-workflow.md)所定的發布核准。
 - AGENTS.md 規定代理只能推送工作分支並開 PR，不得推送主分支或合入 PR（含 `gh pr merge`）。
 
 ### 部署
