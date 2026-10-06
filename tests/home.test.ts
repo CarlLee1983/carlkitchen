@@ -3,6 +3,7 @@ import { describe, it } from "node:test";
 import {
   applyHomeState,
   categoryFilterValue,
+  containsAllTerms,
   formatDateLabel,
   matchesCategory,
   normalizeQuery,
@@ -95,5 +96,26 @@ describe("recipeIdFromUrl", () => {
     assert.equal(recipeIdFromUrl("/recipes/tomato-egg"), "tomato-egg");
     assert.equal(recipeIdFromUrl("/meal/"), null);
     assert.equal(recipeIdFromUrl("/"), null);
+  });
+});
+
+describe("containsAllTerms", () => {
+  const content = "蛋花湯​. 水滾後淋入蛋液​，輕推成蛋花。 Tomato 番茄";
+
+  it("每個字詞都在內容中才符合（忽略零寬空白與大小寫）", () => {
+    assert.equal(containsAllTerms(content, "蛋花"), true);
+    assert.equal(containsAllTerms(content, "tomato 番茄"), true);
+    assert.equal(containsAllTerms(content, "蛋花 番茄"), true);
+  });
+
+  it("多字中文查詢不退回部分匹配", () => {
+    assert.equal(containsAllTerms(content, "不存在的詞"), false);
+    assert.equal(containsAllTerms(content, "配一桌四菜一湯"), false);
+    assert.equal(containsAllTerms(content, "蛋花 不存在"), false);
+  });
+
+  it("沒有字詞（空白或標點）時符合", () => {
+    assert.equal(containsAllTerms(content, "  "), true);
+    assert.equal(containsAllTerms(content, "，"), true);
   });
 });

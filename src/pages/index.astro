@@ -38,9 +38,12 @@ const FILTERS = [
           autocomplete="off"
         />
         <!-- 全頁唯一會朗讀的區域；清單區只放一般文字，避免筆數被讀兩次。 -->
-        <p id="search-status" class="search-status" role="status">
-          共 {recipes.length} 道
-        </p>
+        <p
+          id="search-status"
+          class="search-status"
+          role="status"
+          set:text={`共 ${recipes.length} 道`}
+        />
       </form>
       <a class="meal-link" href="/meal/">配一桌四菜一湯</a>
     </div>

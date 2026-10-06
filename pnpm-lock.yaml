@@ -141,8 +141,8 @@ importers:
         specifier: 4.147.0
         version: 4.147.0(@types/node@22.20.5)
       yaml:
-        specifier: 2.9.1
-        version: 2.9.1
+        specifier: 2.8.3
+        version: 2.8.3
 
 packages:
 

@@ -67,3 +67,20 @@ export function formatDateLabel(date: Date): string {
 export function recipeIdFromUrl(url: string): string | null {
   return url.match(/^\/recipes\/([^/]+)\/?$/)?.[1] ?? null;
 }
+
+const segmenter = new Intl.Segmenter("zh-Hant", { granularity: "word" });
+
+const normalizeContent = (text: string) =>
+  text.replaceAll("​", "").toLowerCase();
+
+/**
+ * 查詢切成字詞後，每個字詞都要出現在內容中才算符合。
+ * Pagefind 對多字中文查詢在全部字詞都找不到時會退回部分匹配，等於自動放寬條件；
+ * 這裡在它的結果上再做一次全字詞過濾（內容含 Pagefind 插入的零寬空白，先去掉）。
+ */
+export function containsAllTerms(content: string, q: string): boolean {
+  const haystack = normalizeContent(content);
+  return [...segmenter.segment(normalizeContent(q))]
+    .filter((part) => part.isWordLike)
+    .every((part) => haystack.includes(part.segment));
+}

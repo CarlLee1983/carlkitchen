@@ -21,8 +21,16 @@ const hero = (page: Page) =>
 const status = (page: Page) => page.getByRole("status");
 const emptyMessage = (page: Page) => page.getByText("找不到符合");
 
+/**
+ * 輸入字詞並等到結果真的套用才返回：狀態列在清單更新後才寫入「「字詞」符合 N 道」
+ * （無字詞時「共 N 道」），所以等它出現就不會在舊狀態上誤過。
+ */
 async function search(page: Page, q: string) {
   await box(page).fill(q);
+  const term = q.trim();
+  await expect(status(page), `等待搜尋「${term}」套用`).toContainText(
+    term ? `「${term}」符合` : "共",
+  );
 }
 
 /** 目前可見的菜名，依畫面順序。 */
@@ -126,17 +134,45 @@ test("只出現在步驟、用量單位、替代文字或小提醒的詞查不�
   await page.goto("/");
   for (const term of EXCLUSIVE_TERMS) {
     await search(page, term);
-    await expect(emptyMessage(page), `搜尋「${term}」`).toBeVisible();
+    await expect(emptyMessage(page), `搜尋「${term}」`).toContainText(term);
+    await expect(status(page)).toContainText("符合 0 道");
     await expect(rows(page)).toHaveCount(0);
   }
 });
 
 test("首頁等非菜譜頁的文字不進索引", async ({ page }) => {
   await page.goto("/");
-  // 用拉丁字詞：Pagefind 對多字中文查詢會退而求其次匹配部分字詞，單用中文難以斷言「查不到」。
-  for (const term of ["CarlKitchen"]) {
+  // 首頁才有的字（配菜入口）：Pagefind 會因為「配」等單字命中菜譜而退回部分匹配，
+  // 前端的全字詞過濾要把它擋成零筆。
+  for (const term of ["配一桌四菜一湯", "CarlKitchen"]) {
     await search(page, term);
-    await expect(emptyMessage(page), `搜尋「${term}」`).toBeVisible();
+    await expect(emptyMessage(page), `搜尋「${term}」`).toContainText(term);
+    await expect(rows(page)).toHaveCount(0);
+  }
+});
+
+test("多字中文查詢要每個字詞都命中，不退回部分匹配", async ({ page }) => {
+  await page.goto("/");
+  // 「的」只在某道菜的摘要出現，其餘字詞都不存在；
+  // 「快手」是蛋花湯的標籤，不應帶出其他菜譜。
+  await search(page, "不存在的詞");
+  await expect(rows(page)).toHaveCount(0);
+  await expect(emptyMessage(page)).toContainText("不存在的詞");
+
+  for (const recipe of recipes) {
+    for (const tag of recipe.tags) {
+      await search(page, tag);
+      const expected = recipes.filter((other) =>
+        [
+          other.title,
+          other.summary,
+          ...other.ingredientNames,
+          ...other.aliases,
+          ...other.tags,
+        ].some((text) => text.includes(tag)),
+      );
+      await expect(rows(page), `搜尋「${tag}」`).toHaveCount(expected.length);
+    }
   }
 });
 
@@ -144,7 +180,7 @@ test("草稿不出現在搜尋結果", async ({ page }) => {
   await page.goto("/");
   for (const draft of drafts) {
     await search(page, draft.title);
-    await expect(emptyMessage(page)).toBeVisible();
+    await expect(emptyMessage(page)).toContainText(draft.title);
     await expect(rows(page)).toHaveCount(0);
     await expect(page.getByRole("link", { name: draft.title })).toHaveCount(0);
   }
@@ -228,14 +264,16 @@ test("上一頁依網址還原搜尋字詞", async ({ page }) => {
 test("符合筆數寫在搜尋框下方的提示，全頁只有一個朗讀區", async ({ page }) => {
   await page.goto("/");
   await expect(status(page)).toHaveCount(1);
-  await expect(status(page)).toContainText(String(recipes.length));
 
-  await search(page, recipes[0]!.title);
+  await expect(status(page)).toHaveText(`共 ${recipes.length} 道`);
+
+  const title = recipes[0]!.title;
+  await search(page, title);
   await expect(rows(page)).toHaveCount(1);
-  await expect(status(page)).toContainText("1");
+  await expect(status(page)).toHaveText(`「${title}」符合 1 道`);
 
   await search(page, "zzzz");
-  await expect(status(page)).toContainText("0");
+  await expect(status(page)).toHaveText("「zzzz」符合 0 道");
   await expect(status(page)).toHaveCount(1);
 });
 
@@ -247,7 +285,6 @@ test("零筆時顯示訊息與清除條件按鈕，不自動放寬；清除後�
   await page.getByRole("button", { name: "湯", exact: true }).click();
   // 這道菜不是湯：只有分類擋住它。不放寬代表仍然零筆。
   await search(page, recipe.title);
-  await expect(emptyMessage(page)).toBeVisible();
   await expect(emptyMessage(page)).toContainText(recipe.title);
   await expect(rows(page)).toHaveCount(0);
 
@@ -320,12 +357,15 @@ test("寬螢幕搜尋時成品大圖仍在", async ({ page }) => {
   await expect(hero(page)).toBeVisible();
 });
 
-test("清除條件按鈕與搜尋框觸控目標至少 44×44，鍵盤焦點可見", async ({
+test("搜尋框與清除條件按鈕觸控目標至少 44×44，鍵盤焦點可見", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 800 });
   await page.goto("/");
   await search(page, "zzzz");
+  const searchBox = await box(page).boundingBox();
+  expect(searchBox!.width).toBeGreaterThanOrEqual(44);
+  expect(searchBox!.height).toBeGreaterThanOrEqual(44);
   const clear = page.getByRole("button", { name: "清除條件" });
   await expect(clear).toBeVisible();
   const size = await clear.boundingBox();
@@ -336,4 +376,26 @@ test("清除條件按鈕與搜尋框觸控目標至少 44×44，鍵盤焦點可�
     (el) => getComputedStyle(el).outlineStyle,
   );
   expect(outline).not.toBe("none");
+});
+
+test("輸入法組字中不觸發搜尋，組字完成才套用", async ({ page }) => {
+  await page.goto("/");
+  const cdp = await page.context().newCDPSession(page);
+  await box(page).focus();
+  const title = recipes[0]!.title;
+
+  await cdp.send("Input.imeSetComposition", {
+    text: title,
+    selectionStart: title.length,
+    selectionEnd: title.length,
+  });
+  // 防抖時間之外多等一會兒，證明沒有搜尋被觸發
+  await page.waitForTimeout(800);
+  await expect(page).not.toHaveURL(/q=/);
+  await expect(status(page)).toHaveText(`共 ${recipes.length} 道`);
+  await expect(rows(page)).toHaveCount(recipes.length);
+
+  await cdp.send("Input.insertText", { text: title });
+  await expect(status(page)).toContainText(`「${title}」符合`);
+  await expect(page).toHaveURL(/q=/);
 });

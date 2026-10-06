@@ -1,5 +1,6 @@
 import {
   applyHomeState,
+  containsAllTerms,
   formatDateLabel,
   matchesCategory,
   normalizeQuery,
@@ -11,10 +12,10 @@ import {
 /** 建置後由 `pagefind --site dist` 產生；開發模式沒有這份索引。 */
 const PAGEFIND_URL = "/pagefind/pagefind.js";
 /** 輸入停頓多久才送出搜尋（毫秒）。 */
-const DEBOUNCE_MS = 150;
+const DEBOUNCE_MS = 280;
 
 interface PagefindResult {
-  data(): Promise<{ url: string }>;
+  data(): Promise<{ url: string; content: string }>;
 }
 interface PagefindResponse {
   results: PagefindResult[];
@@ -82,7 +83,16 @@ export function initHome() {
     const pages = await Promise.all(
       response.results.map((result) => result.data()),
     );
-    return pages.flatMap((page) => recipeIdFromUrl(page.url) ?? []);
+    // Pagefind 對多字中文查詢在全部字詞都找不到時會退回部分匹配（等於自動放寬），
+    // 所以再以全字詞過濾；排序沿用 Pagefind 的相關度。
+    return pages
+      .filter((page) => containsAllTerms(page.content, state.q))
+      .flatMap((page) => recipeIdFromUrl(page.url) ?? []);
+  }
+
+  /** 文字沒變就不重寫，避免朗讀區無謂重播，也不動伺服器預先輸出的內容。 */
+  function setText(element: Element | null, text: string) {
+    if (element && element.textContent !== text) element.textContent = text;
   }
 
   // 較新的 render 開始後，舊的非同步結果作廢，避免慢的回應蓋掉新的狀態。
@@ -109,7 +119,9 @@ export function initHome() {
       } catch (error) {
         console.error("載入搜尋索引失敗", error);
         if (mine === latest && status) {
-          status.textContent = "搜尋暫時無法使用，請重新整理頁面再試。";
+          status.textContent = import.meta.env.DEV
+            ? "開發模式沒有搜尋索引，請用 pnpm build && pnpm preview"
+            : "搜尋暫時無法使用，請重新整理頁面再試。";
         }
         return;
       }
@@ -126,9 +138,12 @@ export function initHome() {
     // 重排：顯示的列依結果順序在前，其餘維持原本（菜名）順序。
     rowList?.append(...visible, ...rows.filter((row) => !shown.has(row)));
 
-    if (status) {
-      status.textContent = `${state.q ? "符合" : "共"} ${visible.length} 道`;
-    }
+    setText(
+      status,
+      state.q
+        ? `「${state.q}」符合 ${visible.length} 道`
+        : `共 ${visible.length} 道`,
+    );
     if (empty) {
       empty.hidden = visible.length > 0 || rows.length === 0;
       if (emptyMessage) {
@@ -160,9 +175,17 @@ export function initHome() {
       .then((pagefind) => pagefind.init())
       .catch(() => {});
   });
-  input?.addEventListener("input", () => {
-    setState({ ...currentState(), q: normalizeQuery(input.value) }, true);
+  const applyInput = () =>
+    setState(
+      { ...currentState(), q: normalizeQuery(input?.value ?? "") },
+      true,
+    );
+  // 注音等輸入法組字中的暫存文字不是讀者要搜的字詞；組字結束（compositionend）才更新。
+  input?.addEventListener("input", (event) => {
+    if ((event as InputEvent).isComposing) return;
+    applyInput();
   });
+  input?.addEventListener("compositionend", applyInput);
 
   // Enter 不送出表單（會重新載入、丟掉分類），改為立刻套用目前字詞。
   form?.addEventListener("submit", (event) => {

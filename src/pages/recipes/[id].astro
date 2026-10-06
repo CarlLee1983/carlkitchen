@@ -31,7 +31,7 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
   <!--
     Pagefind 索引範圍：整個站只要有 data-pagefind-body，沒有標記的頁面（首頁、關於頁等）就不進索引。
     這裡只標記可搜尋的欄位：菜名（加權）、摘要、材料名稱、受控標籤與別名；
-    步驟、用量、備註、小提醒不標記，圖片替代文字由 Illustration 的 data-pagefind-ignore="all" 排除。
+    步驟、小提醒不標記；材料行內的用量與備註要明確 ignore（Pagefind 會把行內相鄰文字一起收進去）；圖片替代文字由 Illustration 的 data-pagefind-ignore="all" 排除。
     分類以篩選屬性提供，值與首頁網址的 category 參數相同。
   -->
   <article
@@ -85,9 +85,13 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
                   <li>
                     <span>
                       <span data-pagefind-body>{ingredient.name}</span>{" "}
-                      {formatAmount(ingredient.amount)}
+                      <span data-pagefind-ignore>
+                        {formatAmount(ingredient.amount)}
+                      </span>
                     </span>
-                    {ingredient.note && <small>（{ingredient.note}）</small>}
+                    {ingredient.note && (
+                      <small data-pagefind-ignore>（{ingredient.note}）</small>
+                    )}
                     {ingredient.image && (
                       <Illustration
                         class="ingredient-thumb"

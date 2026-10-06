@@ -1,5 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
+import { z } from "astro/zod";
 import { parse } from "yaml";
+import { createRecipeSchema } from "../src/content/recipe-schema";
 
 const ROOT = "tests/fixtures/recipes";
 
@@ -17,24 +19,9 @@ export interface FixtureRecipe {
   unsearchableTexts: string[];
 }
 
-interface RawRecipe {
-  title: string;
-  summary: string;
-  category: FixtureRecipe["category"];
-  draft: boolean;
-  tip?: string;
-  tags?: string[];
-  aliases?: string[];
-  hero?: { alt: string };
-  ingredientsPhoto?: { alt: string };
-  ingredients: {
-    name: string;
-    amount?: { unit: string };
-    note?: string;
-    image?: { alt: string };
-  }[];
-  steps: { text: string; image?: { alt: string } }[];
-}
+// 以專案的 schema 驗證並解析固定菜譜；圖片欄位在這裡只是路徑字串。
+const recipeSchema = createRecipeSchema(z.string());
+type RawRecipe = z.infer<typeof recipeSchema>;
 
 function toFixture(id: string, raw: RawRecipe): FixtureRecipe {
   return {
@@ -64,9 +51,9 @@ function loadFixtures(): { recipe: FixtureRecipe; draft: boolean }[] {
   return readdirSync(ROOT, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => {
-      const raw = parse(
-        readFileSync(`${ROOT}/${entry.name}/recipe.yaml`, "utf8"),
-      ) as RawRecipe;
+      const raw = recipeSchema.parse(
+        parse(readFileSync(`${ROOT}/${entry.name}/recipe.yaml`, "utf8")),
+      );
       return { recipe: toFixture(entry.name, raw), draft: raw.draft };
     });
 }

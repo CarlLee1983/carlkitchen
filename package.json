@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build --force && pagefind --site dist",
+    "build": "astro build --force && node scripts/build-search-index.mjs",
     "preview": "astro preview",
     "check": "pnpm format:check && astro check && pnpm build",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
@@ -31,6 +31,6 @@
     "prettier-plugin-astro": "0.14.1",
     "typescript": "6.0.3",
     "wrangler": "4.147.0",
-    "yaml": "2.9.1"
+    "yaml": "2.8.3"
   }
 }
