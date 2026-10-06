@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 interface Props {
   title: string;
 }
@@ -13,7 +15,13 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header><a href="/">CarlKitchen</a></header>
+    <header class="site-header">
+      <nav aria-label="主選單">
+        <a class="brand" href="/">CarlKitchen</a>
+        <a href="/">菜譜</a>
+        <a href="/meal/">四菜一湯</a>
+      </nav>
+    </header>
     <main>
       <slot />
     </main>

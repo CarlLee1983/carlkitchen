@@ -1,10 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import Base from "../../layouts/Base.astro";
-import {
-  DEFAULT_INGREDIENT_GROUP,
-  UNSPECIFIED_AMOUNT_LABEL,
-} from "../../content/recipe-schema";
+import Illustration from "../../components/Illustration.astro";
+import { formatAmount, groupIngredients } from "../../utils/ingredients";
 import { getVisibleRecipes } from "../../utils/recipes";
 import type { Recipe } from "../../utils/recipes";
 
@@ -20,78 +17,252 @@ interface Props {
   recipe: Recipe;
 }
 const { data } = Astro.props.recipe;
+const groups = groupIngredients(data.ingredients);
 
-// 材料依 group 分組，保留首次出現的順序；沒有分組的歸在「材料」。
-const groups = new Map<string, typeof data.ingredients>();
-for (const ingredient of data.ingredients) {
-  const name = ingredient.group ?? DEFAULT_INGREDIENT_GROUP;
-  groups.set(name, [...(groups.get(name) ?? []), ingredient]);
-}
+// sizes 對應下方 CSS：寬螢幕主欄上限 44rem，手機單欄約等於視窗寬。
+const MAIN_SIZES = "(min-width: 64rem) 44rem, 100vw";
+const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
 ---
 
 <Base title={`${data.title}｜CarlKitchen`}>
-  <article>
-    <h1>{data.title}{data.draft && <span>（草稿）</span>}</h1>
-    <p>{data.summary}</p>
-    <p>{data.servings} 人份・{data.category}</p>
-    <p>依公開資料由 AI 整理、站主審閱，未經試做</p>
+  <article class="recipe">
+    <header class="recipe-head">
+      <h1>{data.title}{data.draft && <span>（草稿）</span>}</h1>
+      <p class="summary">{data.summary}</p>
+      <p class="recipe-meta">
+        <span>{data.servings} 人份</span>
+        {data.timeMinutes && <span>{data.timeMinutes} 分鐘</span>}
+        <span>{data.category}</span>
+      </p>
+    </header>
 
-    {data.hero && <Image src={data.hero.src} alt={data.hero.alt} />}
-
-    <h2>材料</h2>
     {
-      data.ingredientsPhoto && (
-        <Image
-          src={data.ingredientsPhoto.src}
-          alt={data.ingredientsPhoto.alt}
+      data.hero && (
+        <Illustration
+          class="hero"
+          image={data.hero}
+          sizes="(min-width: 64rem) 66rem, 100vw"
         />
       )
     }
-    {
-      [...groups].map(([group, ingredients]) => (
-        <section>
-          <h3>{group}</h3>
-          <ul>
-            {ingredients.map((ingredient) => (
+
+    <div class="recipe-body">
+      <aside class="ingredients" aria-labelledby="ingredients-title">
+        <h2 id="ingredients-title">材料</h2>
+        {
+          data.ingredientsPhoto && (
+            <Illustration image={data.ingredientsPhoto} sizes={SIDE_SIZES} />
+          )
+        }
+        {
+          groups.map((group) => (
+            <section>
+              <h3>{group.label}</h3>
+              <ul>
+                {group.items.map((ingredient) => (
+                  <li>
+                    <span>
+                      {ingredient.name} {formatAmount(ingredient.amount)}
+                    </span>
+                    {ingredient.note && <small>（{ingredient.note}）</small>}
+                    {ingredient.image && (
+                      <Illustration
+                        class="ingredient-thumb"
+                        image={ingredient.image}
+                        sizes="6rem"
+                      />
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+      </aside>
+
+      <div class="method">
+        <h2>做法</h2>
+        <ol class="steps">
+          {
+            data.steps.map((step) => (
               <li>
-                {ingredient.name}{" "}
-                {ingredient.amount
-                  ? `${ingredient.amount.value} ${ingredient.amount.unit}`
-                  : UNSPECIFIED_AMOUNT_LABEL}
-                {ingredient.note && `（${ingredient.note}）`}
-                {ingredient.image && (
-                  <Image
-                    src={ingredient.image.src}
-                    alt={ingredient.image.alt}
-                    width={48}
-                  />
+                <p>{step.text}</p>
+                {step.image && (
+                  <Illustration image={step.image} sizes={MAIN_SIZES} />
                 )}
               </li>
-            ))}
-          </ul>
-        </section>
-      ))
-    }
+            ))
+          }
+        </ol>
+        {
+          data.tip && (
+            <section class="tip">
+              <h2>小提醒</h2>
+              <p>{data.tip}</p>
+            </section>
+          )
+        }
+      </div>
+    </div>
 
-    <h2>做法</h2>
-    <ol>
-      {
-        data.steps.map((step) => (
-          <li>
-            <p>{step.text}</p>
-            {step.image && <Image src={step.image.src} alt={step.image.alt} />}
-          </li>
-        ))
-      }
-    </ol>
-
-    {
-      data.tip && (
-        <>
-          <h2>小提醒</h2>
-          <p>{data.tip}</p>
-        </>
-      )
-    }
+    <footer class="disclaimer">依公開資料由 AI 整理、站主審閱，未經試做</footer>
   </article>
 </Base>
+
+<style is:global>
+  .recipe-head {
+    max-width: 40rem;
+    margin-bottom: 2.5rem;
+  }
+  .recipe-head h1 {
+    margin: 0 0 1rem;
+    font-size: 2.25rem;
+  }
+  .recipe-head .summary {
+    margin: 0 0 1rem;
+  }
+  .recipe-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    margin: 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .recipe .hero {
+    max-width: 44rem;
+    margin-bottom: 3rem;
+  }
+
+  .recipe-body {
+    display: grid;
+    gap: 3rem;
+  }
+  .ingredients h2,
+  .method h2 {
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 1.25rem;
+  }
+  .ingredients h3 {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1rem;
+  }
+  .ingredients ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .ingredients li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .ingredients li small {
+    color: var(--ink-soft);
+  }
+  .ingredients .ingredient-thumb {
+    width: 6rem;
+    margin-top: 0.4rem;
+  }
+  .ingredients > figure {
+    margin-bottom: 1rem;
+  }
+
+  .steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+  .steps > li {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    counter-increment: step;
+  }
+  .steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--ink-soft);
+  }
+  .steps > li p {
+    margin: 0 0 0.75rem;
+  }
+  .tip {
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+  .tip h2 {
+    border-bottom: 0;
+  }
+
+  .disclaimer {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  /* 寬螢幕：材料在左欄、捲動做法時保持可見；手機維持單欄 */
+  @media (min-width: 64rem) {
+    .recipe-body {
+      grid-template-columns: 20rem minmax(0, 44rem);
+      gap: 4rem;
+      align-items: start;
+    }
+    .ingredients {
+      position: sticky;
+      top: 1.5rem;
+      max-height: calc(100vh - 3rem);
+      overflow-y: auto;
+    }
+  }
+  @media (max-width: 63.999rem) {
+    .ingredients {
+      position: static;
+    }
+  }
+
+  /* 列印：只留成品圖、材料與做法 */
+  @media print {
+    body {
+      background: #fff;
+      font-size: 11pt;
+    }
+    .site-header,
+    .disclaimer,
+    .ingredients figure:not(.ingredient-thumb),
+    .ingredients .ingredient-thumb {
+      display: none;
+    }
+    main {
+      padding: 0;
+    }
+    .recipe .hero {
+      max-width: 14rem;
+      margin-bottom: 1rem;
+    }
+    .recipe-body {
+      grid-template-columns: 12rem 1fr;
+      gap: 1.5rem;
+    }
+    .ingredients {
+      position: static;
+      max-height: none;
+      overflow: visible;
+    }
+    .steps > li {
+      break-inside: avoid;
+    }
+    .steps figure {
+      max-width: 12rem;
+    }
+  }
+</style>

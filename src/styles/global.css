@@ -1,0 +1,93 @@
+/* 全站設計語彙：米白底、炭灰字、細線、明體標題配黑體內文、大量留白。 */
+:root {
+  --paper: #f7f6f3;
+  --ink: #33322f;
+  --ink-soft: #6b6862;
+  --line: #d9d6cf;
+  --font-serif:
+    "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
+  --font-sans:
+    "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --page-width: 72rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  flex-wrap: wrap;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.site-header a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.site-header .brand {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+main {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* 插畫自帶紙底，直接排版，不做去背或混色。 */
+figure.illustration {
+  margin: 0;
+}
+
+figure.illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figure.illustration figcaption {
+  margin-top: 0.4rem;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
