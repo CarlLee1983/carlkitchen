@@ -1,0 +1,25 @@
+title: 蒜香青菜
+summary: 大火快炒青菜，加入蒜末提香，保持翠綠與脆度。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+timeMinutes: 8
+ingredients:
+  - { name: 青菜, amount: { value: 300, unit: g } }
+  - { name: 大蒜, amount: { value: 3, unit: 瓣 } }
+  - { name: 食用油, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 鹽, group: 調味 }
+steps:
+  - text: 青菜洗淨切段，大蒜切末。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上切段的青菜與一小堆蒜末
+  - text: 熱鍋下油，爆香蒜末，放入青菜大火快炒到葉子變軟，加鹽拌勻就起鍋。
+hero:
+  src: ./hero.webp
+  alt: 白瓷盤中盛著炒好的青菜，旁邊放著一雙筷子
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一把青菜、三瓣大蒜，以及小碟裝的油和鹽

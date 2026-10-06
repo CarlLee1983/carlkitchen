@@ -6,14 +6,22 @@ interface Props {
   image: { src: ImageMetadata; alt: string };
   /** 圖在各寬度下實際佔的版面寬度，瀏覽器據此從 srcset 選圖。 */
   sizes: string;
+  /** 要產生的寬度；縮圖只需要小尺寸時指定，避免瀏覽器下載整張大圖。 */
+  widths?: number[];
   class?: string;
   /** 首屏圖設 true：取消延遲載入並提高載入優先序；每頁最多一張。 */
   priority?: boolean;
 }
-const { image, sizes, class: className, priority } = Astro.props;
+const { image, sizes, widths, class: className, priority } = Astro.props;
 ---
 
 <figure class:list={["illustration", className]}>
-  <Image src={image.src} alt={image.alt} sizes={sizes} priority={priority} />
+  <Image
+    src={image.src}
+    alt={image.alt}
+    sizes={sizes}
+    widths={widths}
+    priority={priority}
+  />
   <figcaption>AI 繪製插畫</figcaption>
 </figure>
