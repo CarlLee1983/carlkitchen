@@ -15,7 +15,7 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 套件管理用 pnpm。
 
 - `pnpm dev` — 開發伺服器（顯示草稿）
-- `pnpm build` / `pnpm preview` — 正式建置（排除草稿）與預覽
+- `pnpm build` / `pnpm preview` — 正式建置（排除草稿，建置後以 Pagefind 建立搜尋索引）與預覽
 - `pnpm check` — 格式檢查、`astro check`、建置
 - `pnpm test` — 單元測試
 - `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）

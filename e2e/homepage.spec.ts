@@ -9,7 +9,8 @@ const list = (page: Page) => page.getByRole("region", { name: "菜譜清單" });
 const rows = (page: Page) => list(page).getByRole("listitem");
 const hero = (page: Page) =>
   page.getByRole("region", { name: "隨機推薦菜譜" }).getByRole("link");
-const count = (page: Page) => list(page).getByRole("status");
+// 全頁只有一個會朗讀的 status（搜尋框下方的筆數提示），避免重複朗讀。
+const count = (page: Page) => page.getByRole("status");
 
 test("第一屏有日期、標題、搜尋框與配菜入口", async ({ page }) => {
   await page.goto("/");
@@ -23,15 +24,6 @@ test("第一屏有日期、標題、搜尋框與配菜入口", async ({ page }) 
   await expect(
     page.getByRole("link", { name: "配一桌四菜一湯" }),
   ).toHaveAttribute("href", "/meal/");
-});
-
-test("搜尋框此時只是外觀：輸入不篩選清單", async ({ page }) => {
-  await page.goto("/");
-  const box = page.getByRole("searchbox");
-  await box.fill("湯");
-  await box.press("Enter");
-  await expect(page).toHaveURL(/\/$/);
-  await expect(rows(page)).toHaveCount(recipes.length);
 });
 
 test("清單依菜名排序，每列有縮圖、菜名、摘要與分類標籤，草稿不出現", async ({

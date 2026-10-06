@@ -2,10 +2,13 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   applyHomeState,
+  categoryFilterValue,
   formatDateLabel,
   matchesCategory,
+  normalizeQuery,
   parseCategoryParam,
   parseHomeState,
+  recipeIdFromUrl,
 } from "../src/utils/home.ts";
 
 describe("parseCategoryParam", () => {
@@ -69,5 +72,28 @@ describe("formatDateLabel", () => {
   it("格式為「M 月 D 日　週X」", () => {
     assert.equal(formatDateLabel(new Date(2026, 9, 6)), "10 月 6 日　週二");
     assert.equal(formatDateLabel(new Date(2026, 0, 4)), "1 月 4 日　週日");
+  });
+});
+
+describe("categoryFilterValue", () => {
+  it("菜譜分類對應網址與 Pagefind 篩選值", () => {
+    assert.equal(categoryFilterValue("湯"), "soup");
+    assert.equal(categoryFilterValue("非湯料理"), "non-soup");
+  });
+});
+
+describe("normalizeQuery", () => {
+  it("去掉前後空白，只有空白視為沒有字詞", () => {
+    assert.equal(normalizeQuery("  番茄 "), "番茄");
+    assert.equal(normalizeQuery("   "), "");
+  });
+});
+
+describe("recipeIdFromUrl", () => {
+  it("從 Pagefind 結果網址取出菜譜識別值，其他網址回傳 null", () => {
+    assert.equal(recipeIdFromUrl("/recipes/tomato-egg/"), "tomato-egg");
+    assert.equal(recipeIdFromUrl("/recipes/tomato-egg"), "tomato-egg");
+    assert.equal(recipeIdFromUrl("/meal/"), null);
+    assert.equal(recipeIdFromUrl("/"), null);
   });
 });

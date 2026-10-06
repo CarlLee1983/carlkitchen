@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import Illustration from "../../components/Illustration.astro";
 import { formatAmount, groupIngredients } from "../../utils/ingredients";
+import { categoryFilterValue } from "../../utils/home";
 import { getVisibleRecipes } from "../../utils/recipes";
 import type { Recipe } from "../../utils/recipes";
 
@@ -18,6 +19,8 @@ interface Props {
 }
 const { data } = Astro.props.recipe;
 const groups = groupIngredients(data.ingredients);
+// 讀者看不到、但要能搜到的詞：受控標籤與別名。
+const searchTerms = [...data.tags, ...data.aliases];
 
 // sizes 對應下方 CSS：寬螢幕主欄與成品圖上限 44rem，手機單欄約等於視窗寬。
 const MAIN_SIZES = "(min-width: 64rem) 44rem, 100vw";
@@ -25,10 +28,28 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
 ---
 
 <Base title={`${data.title}｜CarlKitchen`}>
-  <article class="recipe">
+  <!--
+    Pagefind 索引範圍：整個站只要有 data-pagefind-body，沒有標記的頁面（首頁、關於頁等）就不進索引。
+    這裡只標記可搜尋的欄位：菜名（加權）、摘要、材料名稱、受控標籤與別名；
+    步驟、用量、備註、小提醒不標記，圖片替代文字由 Illustration 的 data-pagefind-ignore="all" 排除。
+    分類以篩選屬性提供，值與首頁網址的 category 參數相同。
+  -->
+  <article
+    class="recipe"
+    data-pagefind-filter={`category:${categoryFilterValue(data.category)}`}
+  >
     <header class="recipe-head">
-      <h1>{data.title}{data.draft && <span>（草稿）</span>}</h1>
-      <p class="summary">{data.summary}</p>
+      <h1 data-pagefind-body data-pagefind-weight="10">
+        {data.title}{data.draft && <span>（草稿）</span>}
+      </h1>
+      <p class="summary" data-pagefind-body>{data.summary}</p>
+      {
+        searchTerms.length > 0 && (
+          <p hidden data-pagefind-body>
+            {searchTerms.join(" ")}
+          </p>
+        )
+      }
       <p class="recipe-meta">
         <span>{data.servings} 人份</span>
         {data.timeMinutes && <span>{data.timeMinutes} 分鐘</span>}
@@ -63,7 +84,8 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
                 {group.items.map((ingredient) => (
                   <li>
                     <span>
-                      {ingredient.name} {formatAmount(ingredient.amount)}
+                      <span data-pagefind-body>{ingredient.name}</span>{" "}
+                      {formatAmount(ingredient.amount)}
                     </span>
                     {ingredient.note && <small>（{ingredient.note}）</small>}
                     {ingredient.image && (

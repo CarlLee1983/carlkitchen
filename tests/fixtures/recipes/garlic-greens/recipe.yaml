@@ -5,6 +5,8 @@ category: 非湯料理
 draft: false
 mealCandidate: true
 vegetable: true
+tags: [素食]
+aliases: [炒青菜]
 timeMinutes: 8
 ingredients:
   - { name: 青菜, amount: { value: 300, unit: g } }
