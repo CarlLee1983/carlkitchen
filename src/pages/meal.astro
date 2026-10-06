@@ -1,0 +1,170 @@
+---
+import { getImage } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import { candidatesFromRecipes } from "../meal-planner/index.ts";
+import { getVisibleRecipes, recipeHref } from "../utils/recipes";
+import type { MealData } from "../scripts/meal";
+
+const recipes = await getVisibleRecipes();
+// 候選池由引擎的轉換函式決定；頁面只多帶顯示用的菜名、連結與縮圖給前端腳本。
+const candidates = candidatesFromRecipes(recipes);
+const display: MealData["recipes"] = {};
+for (const { id } of candidates) {
+  const recipe = recipes.find((item) => item.id === id)!;
+  const hero = recipe.data.hero;
+  const thumb = hero
+    ? await getImage({ src: hero.src, width: 240, format: "webp" })
+    : undefined;
+  display[id] = {
+    title: recipe.data.title,
+    href: recipeHref(recipe),
+    thumb: thumb && {
+      src: thumb.src,
+      width: Number(thumb.attributes.width),
+      height: Number(thumb.attributes.height),
+      alt: hero!.alt,
+    },
+  };
+}
+const data: MealData = { candidates, recipes: display };
+// 內嵌在 JSON script 中，避免標題含 `<` 時提早結束標籤。
+const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
+---
+
+<Base title="配一桌菜｜CarlKitchen">
+  <h1>配一桌菜</h1>
+  <p class="meal-intro">
+    從配菜候選中抽出一桌四菜一湯或五菜一湯。鎖定喜歡的菜，其餘可重新抽選或單道替換。
+  </p>
+
+  <div class="meal-tools">
+    <div class="meal-modes" role="group" aria-label="菜數">
+      <button type="button" data-mode="4" aria-pressed="true">四菜一湯</button>
+      <button type="button" data-mode="5" aria-pressed="false">五菜一湯</button>
+    </div>
+    <button type="button" class="meal-reroll" data-reroll>重新抽選</button>
+  </div>
+
+  <!-- 全頁唯一會朗讀的區域；其餘訊息只放一般文字，避免重複朗讀。 -->
+  <p class="meal-status" role="status" data-status></p>
+
+  <p class="meal-empty" data-empty>尚未抽選。按「重新抽選」得到一桌菜。</p>
+  <ol class="meal-plan" aria-label="本桌菜色" data-plan></ol>
+  <noscript><p>配菜功能需要啟用 JavaScript。</p></noscript>
+
+  <script type="application/json" id="meal-data" set:html={dataJson} />
+</Base>
+
+<script>
+  import { initMeal } from "../scripts/meal";
+
+  initMeal();
+</script>
+
+<style is:global>
+  .meal-intro {
+    margin: 0 0 2rem;
+    color: var(--ink-soft);
+  }
+  .meal-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+  }
+  .meal-modes {
+    display: flex;
+    gap: 1rem;
+  }
+  .meal-modes button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 0.25rem;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: var(--ink-soft);
+    font: inherit;
+    cursor: pointer;
+  }
+  .meal-modes button[aria-pressed="true"] {
+    border-bottom-color: var(--ink);
+    color: var(--ink);
+  }
+  .meal-reroll,
+  .meal-item button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 1.25rem;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  .meal-item button[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .meal-status {
+    margin: 0.5rem 0 1.5rem;
+    min-height: 1.8em;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .meal-empty {
+    padding: 2rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .meal-empty[hidden] {
+    display: none;
+  }
+  .meal-plan {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .meal-item {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: start;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .meal-item .thumb {
+    grid-column: 1;
+    grid-row: 1 / 4;
+  }
+  .meal-item .meal-slot,
+  .meal-item h2,
+  .meal-item .meal-actions {
+    grid-column: 2;
+  }
+  .meal-slot {
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+  .meal-item h2 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  .meal-item h2 a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .meal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  @media (min-width: 40rem) {
+    .meal-item {
+      grid-template-columns: 120px minmax(0, 1fr);
+      column-gap: 1.75rem;
+    }
+  }
+</style>

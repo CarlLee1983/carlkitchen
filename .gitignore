@@ -4,6 +4,7 @@ graft/
 # 建置與工具產物
 node_modules/
 dist/
+dist-meal/
 .astro/
 test-results/
 playwright-report/
