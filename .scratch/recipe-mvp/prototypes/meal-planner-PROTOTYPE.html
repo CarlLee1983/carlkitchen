@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>配菜規則操作原型</title>
+    <style>
+      :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f7f5f0; color: #292820; }
+      body { max-width: 950px; margin: 0 auto; padding: 24px 18px 64px; }
+      h1 { font-size: 1.8rem; margin-bottom: 8px; }
+      h2 { font-size: 1.1rem; margin-top: 0; }
+      p { line-height: 1.55; }
+      .note { color: #625e50; }
+      .box { background: #fff; border: 1px solid #ddd8ca; border-radius: 12px; padding: 18px; margin-top: 16px; }
+      .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+      button { border: 1px solid #9c987f; background: #fff; color: inherit; border-radius: 8px; padding: 8px 11px; cursor: pointer; font: inherit; }
+      button:hover:not(:disabled) { background: #eee9dc; }
+      button:disabled { opacity: .45; cursor: not-allowed; }
+      button.selected { background: #365e4d; border-color: #365e4d; color: #fff; }
+      .meal { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 10px; margin-top: 14px; }
+      .card { border: 1px solid #ddd8ca; border-radius: 9px; padding: 12px; background: #fbfaf6; }
+      .card strong { display: block; margin: 3px 0; }
+      .tag { display: inline-block; font-size: .75rem; color: #365e4d; margin-right: 6px; }
+      .card .row { margin-top: 10px; }
+      .state { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+      .state div { background: #f6f4ec; padding: 10px; border-radius: 7px; }
+      .message { background: #e9efe8; border-left: 4px solid #365e4d; padding: 10px 12px; margin-top: 12px; }
+      .steps { display: grid; gap: 8px; margin-top: 12px; }
+      .steps button { text-align: left; }
+      small { color: #625e50; }
+    </style>
+  </head>
+  <body>
+    <h1>配菜規則操作原型</h1>
+    <p>這是可丟棄的邏輯示意，用來檢查「四菜一湯／五菜一湯」在鎖定、單道替換、重抽及候選不足時是否符合預期。示例菜名不是正式菜譜；畫面不是網站設計稿。</p>
+    <p class="note">試按下方情境，也可以自由操作。規則：菜不重複；至少一份以蔬菜為主角的菜，與另一份蛋白質菜；湯固定一份。魚、肉、蛋、豆都可算蛋白質。這份原型會在同一分頁重整後保留狀態。</p>
+
+    <section class="box" aria-labelledby="state-title">
+      <h2 id="state-title">目前狀態</h2>
+      <div id="state" class="state"></div>
+      <div id="message" class="message" role="status"></div>
+      <div id="meal" class="meal"></div>
+    </section>
+
+    <section class="box" aria-labelledby="action-title">
+      <h2 id="action-title">自由操作</h2>
+      <div class="row" id="mode-actions"></div>
+      <p class="note">候選池情境會清空目前套餐，方便檢查邊界。</p>
+      <div class="row" id="pool-actions"></div>
+      <div class="row" style="margin-top: 12px">
+        <button id="reroll">重新抽選未鎖定菜色</button>
+        <button id="reload">重整頁面，檢查本分頁保留</button>
+      </div>
+    </section>
+
+    <section class="box" aria-labelledby="guide-title">
+      <h2 id="guide-title">引導情境</h2>
+      <div id="scenario-tabs" class="row"></div>
+      <p id="scenario-description"></p>
+      <div id="scenario-steps" class="steps"></div>
+    </section>
+
+    <script>
+      const catalog = [
+        { id: "cabbage", name: "蒜炒高麗菜", kind: "dish", roles: ["veg"] },
+        { id: "spinach", name: "燙菠菜", kind: "dish", roles: ["veg"] },
+        { id: "mushroom", name: "香菇炒青菜", kind: "dish", roles: ["veg"] },
+        { id: "cauliflower", name: "蒜香花椰菜", kind: "dish", roles: ["veg"] },
+        { id: "tomato-egg", name: "番茄炒蛋", kind: "dish", roles: ["veg", "protein"] },
+        { id: "tofu", name: "香煎豆腐", kind: "dish", roles: ["protein"] },
+        { id: "fish", name: "清蒸魚", kind: "dish", roles: ["protein"] },
+        { id: "chicken", name: "香煎雞腿", kind: "dish", roles: ["protein"] },
+        { id: "beef", name: "青椒牛肉", kind: "dish", roles: ["protein"] },
+        { id: "shrimp", name: "蒜香蝦", kind: "dish", roles: ["protein"] },
+        { id: "pasta", name: "番茄肉醬義大利麵", kind: "dish", roles: ["protein"] },
+        { id: "eggplant", name: "醬燒茄子", kind: "dish", roles: ["veg"] },
+        { id: "radish-soup", name: "蘿蔔湯", kind: "soup", roles: [] },
+        { id: "egg-soup", name: "紫菜蛋花湯", kind: "soup", roles: [] },
+        { id: "corn-soup", name: "玉米濃湯", kind: "soup", roles: [] },
+        { id: "unmarked-pasta", name: "奶油義大利麵（未標記）", kind: "dish", roles: ["protein"] }
+      ];
+      const byId = Object.fromEntries(catalog.map((item) => [item.id, item]));
+      const pools = {
+        normal: {
+          label: "正常：12 菜＋3 湯",
+          dishes: catalog.filter((item) => item.kind === "dish" && item.id !== "unmarked-pasta").map((item) => item.id),
+          soups: catalog.filter((item) => item.kind === "soup").map((item) => item.id)
+        },
+        tight: {
+          label: "緊縮：剛好 4 菜＋1 湯",
+          dishes: ["cabbage", "tomato-egg", "tofu", "pasta"],
+          soups: ["radish-soup"]
+        },
+        shortage: {
+          label: "不足：3 菜＋0 湯",
+          dishes: ["cabbage", "tomato-egg", "tofu"],
+          soups: []
+        }
+      };
+
+      // Pure planner logic. The UI below only dispatches actions and renders state.
+      const planner = (() => {
+        const initial = () => ({
+          mode: 4, pool: "normal", dishes: [], soup: null, seed: 23,
+          message: "尚未抽選。請按「重新抽選」或啟動引導情境。"
+        });
+        const nextSeed = (seed) => (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+        const fail = (state, message) => ({ ...state, message });
+        const combinations = (items, count, offset = 0, chosen = [], output = []) => {
+          if (chosen.length === count) { output.push([...chosen]); return output; }
+          for (let i = offset; i <= items.length - (count - chosen.length); i++) {
+            chosen.push(items[i]);
+            combinations(items, count, i + 1, chosen, output);
+            chosen.pop();
+          }
+          return output;
+        };
+        const balanced = (ids) => ids.some((a) =>
+          byId[a].roles.includes("veg") &&
+          ids.some((b) => b !== a && byId[b].roles.includes("protein"))
+        );
+        const chooseMeal = (state, mode) => {
+          const pool = pools[state.pool];
+          const locked = state.dishes.filter((item) => item.locked).map((item) => item.id);
+          if (locked.length > mode) return fail(state, "鎖定菜色多於新模式的菜位；先解除至少一項鎖定。");
+          const fixedSoup = state.soup && state.soup.locked ? state.soup.id : null;
+          const soups = fixedSoup ? [fixedSoup] : pool.soups;
+          const choices = combinations(pool.dishes, mode)
+            .filter((ids) => locked.every((id) => ids.includes(id)) && balanced(ids))
+            .flatMap((ids) => soups.map((soup) => ({ ids, soup })));
+          if (!choices.length) return fail(state, "候選池不足，或鎖定菜色無法組成一份蔬菜菜加另一份蛋白質菜；目前套餐保留不變。");
+          const currentUnlocked = state.dishes.filter((item) => !item.locked).map((item) => item.id);
+          const overlap = (choice) =>
+            choice.ids.filter((id) => currentUnlocked.includes(id)).length +
+            (state.soup && !state.soup.locked && state.soup.id === choice.soup ? 1 : 0);
+          const bestScore = Math.min(...choices.map(overlap));
+          const best = choices.filter((choice) => overlap(choice) === bestScore);
+          const seed = nextSeed(state.seed);
+          const choice = best[seed % best.length];
+          const remaining = choice.ids.filter((id) => !locked.includes(id));
+          const dishes = [
+            ...state.dishes.filter((item) => item.locked).map((item) => ({ ...item })),
+            ...remaining.map((id) => ({ id, locked: false }))
+          ];
+          const soup = { id: choice.soup, locked: Boolean(fixedSoup) };
+          const unchanged = mode === state.mode &&
+            dishes.map((item) => item.id).sort().join() === state.dishes.map((item) => item.id).sort().join() &&
+            soup.id === (state.soup && state.soup.id);
+          return {
+            ...state, mode, dishes, soup, seed,
+            message: unchanged ? "可用候選無法換出新組合；保留原套餐。" : "已抽選；鎖定菜色保留，未鎖定菜色盡量換新。"
+          };
+        };
+        const replace = (state, target) => {
+          const pool = pools[state.pool];
+          const isSoup = target === "soup";
+          const old = isSoup ? state.soup : state.dishes[target];
+          if (!old) return fail(state, "請先抽選套餐。");
+          if (old.locked) return fail(state, "此菜色已鎖定；先解鎖才能替換。");
+          const used = new Set(state.dishes.map((item) => item.id));
+          if (state.soup) used.add(state.soup.id);
+          const available = (isSoup ? pool.soups : pool.dishes)
+            .filter((id) => !used.has(id))
+            .filter((id) => isSoup || balanced(state.dishes.map((item, index) => index === target ? id : item.id)));
+          if (!available.length) return fail(state, "沒有不重複且符合平衡規則的替換菜色；原菜保留。");
+          const seed = nextSeed(state.seed);
+          const id = available[seed % available.length];
+          if (isSoup) return { ...state, soup: { id, locked: false }, seed, message: "只替換了湯，其他菜色保持原樣。" };
+          return {
+            ...state, dishes: state.dishes.map((item, index) => index === target ? { id, locked: false } : item),
+            seed, message: "只替換了一道菜，其他菜色保持原樣。"
+          };
+        };
+        const reduce = (state, action) => {
+          if (action.type === "pool") return {
+            ...initial(), pool: action.pool, seed: state.seed,
+            message: "已切換候選池並清空套餐；請重新抽選。"
+          };
+          if (action.type === "mode") return chooseMeal(state, action.mode);
+          if (action.type === "reroll") return chooseMeal(state, state.mode);
+          if (action.type === "replace") return replace(state, action.target);
+          if (action.type === "toggle") {
+            if (action.target === "soup") {
+              if (!state.soup) return fail(state, "請先抽選套餐。");
+              return { ...state, soup: { ...state.soup, locked: !state.soup.locked }, message: state.soup.locked ? "湯已解鎖。" : "湯已鎖定。" };
+            }
+            if (!state.dishes[action.target]) return fail(state, "請先抽選套餐。");
+            return {
+              ...state,
+              dishes: state.dishes.map((item, index) => index === action.target ? { ...item, locked: !item.locked } : item),
+              message: state.dishes[action.target].locked ? "菜色已解鎖。" : "菜色已鎖定。"
+            };
+          }
+          return state;
+        };
+        return { initial, reduce, balanced };
+      })();
+
+      const scenarios = [
+        {
+          title: "一般操作", pool: "normal", mode: 4,
+          description: "先抽選，再鎖住一道菜、替換另一道，看看整組重抽與切換五菜時是否保留鎖定項。",
+          steps: [
+            ["抽選四菜一湯", { type: "reroll" }],
+            ["鎖定第一道菜", { type: "toggle", target: 0 }],
+            ["替換第二道菜", { type: "replace", target: 1 }],
+            ["重新抽選未鎖定菜色", { type: "reroll" }],
+            ["切換五菜一湯", { type: "mode", mode: 5 }]
+          ]
+        },
+        {
+          title: "替換無解", pool: "tight", mode: 4,
+          description: "候選池剛好夠四菜一湯。沒有未使用的菜色，單道替換應保留原菜並說明原因。",
+          steps: [
+            ["抽選四菜一湯", { type: "reroll" }],
+            ["試著替換第一道菜", { type: "replace", target: 0 }],
+            ["試著切到五菜一湯", { type: "mode", mode: 5 }]
+          ]
+        },
+        {
+          title: "鎖定衝突", pool: "normal", mode: 5,
+          description: "五道菜全鎖住後切回四菜，應提示先解除鎖定；解鎖一項後再試。",
+          steps: [
+            ["抽選五菜一湯", { type: "reroll" }],
+            ["鎖定第一道菜", { type: "toggle", target: 0 }],
+            ["鎖定第二道菜", { type: "toggle", target: 1 }],
+            ["鎖定第三道菜", { type: "toggle", target: 2 }],
+            ["鎖定第四道菜", { type: "toggle", target: 3 }],
+            ["鎖定第五道菜", { type: "toggle", target: 4 }],
+            ["試著切回四菜一湯", { type: "mode", mode: 4 }],
+            ["解除第五道菜鎖定", { type: "toggle", target: 4 }],
+            ["切回四菜一湯", { type: "mode", mode: 4 }]
+          ]
+        },
+        {
+          title: "候選不足", pool: "shortage", mode: 4,
+          description: "只有三道菜且沒有湯。抽選應失敗，不產生重複或不完整套餐。",
+          steps: [["嘗試抽選四菜一湯", { type: "reroll" }]]
+        }
+      ];
+
+      const storageKey = "carlkitchen-meal-planner-prototype";
+      const loadState = () => {
+        try {
+          const saved = JSON.parse(sessionStorage.getItem(storageKey));
+          if (!saved || !pools[saved.pool] || ![4, 5].includes(saved.mode)) return planner.initial();
+          if (!Array.isArray(saved.dishes) || saved.dishes.some((item) => !pools[saved.pool].dishes.includes(item.id))) return planner.initial();
+          if (saved.soup && !pools[saved.pool].soups.includes(saved.soup.id)) return planner.initial();
+          return saved;
+        } catch { return planner.initial(); }
+      };
+      let state = loadState();
+      let scenarioIndex = 0;
+      let stepIndex = 0;
+      const save = () => { try { sessionStorage.setItem(storageKey, JSON.stringify(state)); } catch {} };
+      const dispatch = (action) => { state = planner.reduce(state, action); save(); render(); };
+      const button = (label, action, selected = false) => {
+        const element = document.createElement("button");
+        element.textContent = label;
+        if (selected) element.className = "selected";
+        element.addEventListener("click", () => dispatch(action));
+        return element;
+      };
+      const render = () => {
+        const pool = pools[state.pool];
+        const locked = state.dishes.filter((item) => item.locked).length + (state.soup && state.soup.locked ? 1 : 0);
+        const balanced = state.dishes.length === state.mode && planner.balanced(state.dishes.map((item) => item.id));
+        document.getElementById("state").innerHTML =
+          "<div><strong>套餐</strong><br>" + state.mode + " 菜一湯</div>" +
+          "<div><strong>候選池</strong><br>" + pool.dishes.length + " 菜＋" + pool.soups.length + " 湯</div>" +
+          "<div><strong>已鎖定</strong><br>" + locked + " 道</div>" +
+          "<div><strong>平衡條件</strong><br>" + (balanced ? "已滿足" : "尚未組成合格套餐") + "</div>";
+        document.getElementById("message").textContent = state.message;
+        const meal = document.getElementById("meal");
+        meal.replaceChildren();
+        const items = [...state.dishes.map((item, index) => ({ ...item, target: index, label: "菜 " + (index + 1) }))];
+        if (state.soup) items.push({ ...state.soup, target: "soup", label: "湯" });
+        if (!items.length) {
+          const empty = document.createElement("p");
+          empty.textContent = "目前沒有套餐。";
+          meal.append(empty);
+        }
+        for (const item of items) {
+          const card = document.createElement("div");
+          card.className = "card";
+          const role = byId[item.id].roles.map((value) => value === "veg" ? "蔬菜" : "蛋白質").join("／");
+          const label = document.createElement("small");
+          label.textContent = item.label + (item.locked ? " · 已鎖定" : "");
+          const name = document.createElement("strong");
+          name.textContent = byId[item.id].name;
+          const tags = document.createElement("span");
+          tags.className = "tag";
+          tags.textContent = role || "湯";
+          const actions = document.createElement("div");
+          actions.className = "row";
+          actions.append(
+            button(item.locked ? "解鎖" : "鎖定", { type: "toggle", target: item.target }),
+            button("單道替換", { type: "replace", target: item.target })
+          );
+          card.append(label, name, tags, actions);
+          meal.append(card);
+        }
+        const modes = document.getElementById("mode-actions");
+        modes.replaceChildren(
+          button("四菜一湯", { type: "mode", mode: 4 }, state.mode === 4),
+          button("五菜一湯", { type: "mode", mode: 5 }, state.mode === 5)
+        );
+        const poolActions = document.getElementById("pool-actions");
+        poolActions.replaceChildren(...Object.entries(pools).map(([key, value]) =>
+          button(value.label, { type: "pool", pool: key }, state.pool === key)
+        ));
+      };
+      const renderScenario = () => {
+        const tabs = document.getElementById("scenario-tabs");
+        tabs.replaceChildren(...scenarios.map((scenario, index) => {
+          const tab = document.createElement("button");
+          tab.textContent = scenario.title;
+          if (index === scenarioIndex) tab.className = "selected";
+          tab.addEventListener("click", () => {
+            scenarioIndex = index;
+            stepIndex = 0;
+            state = { ...planner.initial(), pool: scenario.pool, mode: scenario.mode, message: "情境已重設；從第一步開始。" };
+            save();
+            render();
+            renderScenario();
+          });
+          return tab;
+        }));
+        const scenario = scenarios[scenarioIndex];
+        document.getElementById("scenario-description").textContent = scenario.description;
+        const steps = document.getElementById("scenario-steps");
+        steps.replaceChildren(...scenario.steps.map(([label, action], index) => {
+          const step = document.createElement("button");
+          step.textContent = (index + 1) + ". " + label;
+          step.disabled = index !== stepIndex;
+          step.addEventListener("click", () => {
+            dispatch(action);
+            stepIndex++;
+            renderScenario();
+          });
+          return step;
+        }));
+      };
+      document.getElementById("reroll").addEventListener("click", () => dispatch({ type: "reroll" }));
+      document.getElementById("reload").addEventListener("click", () => location.reload());
+      render();
+      renderScenario();
+    </script>
+  </body>
+</html>
