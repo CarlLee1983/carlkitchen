@@ -25,7 +25,9 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 
 ## 寫作與內容
 
-撰寫菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。schema 規則見 `src/content/recipe-schema.ts`：已發布菜譜須有成品圖、材料合照與至少一張步驟圖，每張圖都要有替代文字；圖檔為 WebP、1536×1024、不超過 300 KB。
+撰寫菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。schema 規則見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
+
+圖片規格慣例：WebP、1536×1024、不超過 300 KB。schema 不檢查這些，由後續的內容檢查（票 08／門檻第 4 項）強制。
 
 ## 程式與測試
 

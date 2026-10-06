@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import Base from "../../layouts/Base.astro";
+import {
+  DEFAULT_INGREDIENT_GROUP,
+  UNSPECIFIED_AMOUNT_LABEL,
+} from "../../content/recipe-schema";
 import { getVisibleRecipes } from "../../utils/recipes";
 import type { Recipe } from "../../utils/recipes";
 
@@ -20,7 +24,7 @@ const { data } = Astro.props.recipe;
 // 材料依 group 分組，保留首次出現的順序；沒有分組的歸在「材料」。
 const groups = new Map<string, typeof data.ingredients>();
 for (const ingredient of data.ingredients) {
-  const name = ingredient.group ?? "材料";
+  const name = ingredient.group ?? DEFAULT_INGREDIENT_GROUP;
   groups.set(name, [...(groups.get(name) ?? []), ingredient]);
 }
 ---
@@ -32,12 +36,15 @@ for (const ingredient of data.ingredients) {
     <p>{data.servings} 人份・{data.category}</p>
     <p>依公開資料由 AI 整理、站主審閱，未經試做</p>
 
-    {data.heroImage && <Image src={data.heroImage} alt={data.heroAlt ?? ""} />}
+    {data.hero && <Image src={data.hero.src} alt={data.hero.alt} />}
 
     <h2>材料</h2>
     {
-      data.ingredientsImage && (
-        <Image src={data.ingredientsImage} alt={data.ingredientsAlt ?? ""} />
+      data.ingredientsPhoto && (
+        <Image
+          src={data.ingredientsPhoto.src}
+          alt={data.ingredientsPhoto.alt}
+        />
       )
     }
     {
@@ -50,8 +57,15 @@ for (const ingredient of data.ingredients) {
                 {ingredient.name}{" "}
                 {ingredient.amount
                   ? `${ingredient.amount.value} ${ingredient.amount.unit}`
-                  : "適量"}
+                  : UNSPECIFIED_AMOUNT_LABEL}
                 {ingredient.note && `（${ingredient.note}）`}
+                {ingredient.image && (
+                  <Image
+                    src={ingredient.image.src}
+                    alt={ingredient.image.alt}
+                    width={48}
+                  />
+                )}
               </li>
             ))}
           </ul>
@@ -65,7 +79,7 @@ for (const ingredient of data.ingredients) {
         data.steps.map((step) => (
           <li>
             <p>{step.text}</p>
-            {step.image && <Image src={step.image} alt={step.imageAlt ?? ""} />}
+            {step.image && <Image src={step.image.src} alt={step.image.alt} />}
           </li>
         ))
       }

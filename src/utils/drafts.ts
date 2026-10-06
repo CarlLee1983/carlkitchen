@@ -7,5 +7,5 @@ export function filterDrafts<T extends WithDraft>(
   entries: T[],
   includeDrafts: boolean,
 ): T[] {
-  return includeDrafts ? entries : entries.filter((entry) => !entry.data.draft);
+  return entries.filter((entry) => includeDrafts || !entry.data.draft);
 }

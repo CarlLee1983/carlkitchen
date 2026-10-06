@@ -19,15 +19,15 @@ const publishedRecipe = () => ({
   steps: [
     {
       text: "番茄去蒂切成小塊。",
-      image: "step-1.webp",
-      imageAlt: "切好的番茄塊",
+      image: { src: "step-1.webp", alt: "切好的番茄塊" },
     },
     { text: "雞蛋打散。" },
   ],
-  heroImage: "hero.webp",
-  heroAlt: "白瓷盤中盛著番茄炒蛋",
-  ingredientsImage: "ingredients.webp",
-  ingredientsAlt: "兩顆番茄與三顆雞蛋",
+  hero: { src: "hero.webp", alt: "白瓷盤中盛著番茄炒蛋" },
+  ingredientsPhoto: {
+    src: "ingredients.webp",
+    alt: "兩顆番茄與三顆雞蛋",
+  },
 });
 
 const draftRecipe = () => ({
@@ -102,10 +102,10 @@ describe("recipe schema", () => {
   });
 
   it("已發布菜譜缺成品圖、材料合照或步驟圖失敗", () => {
-    const { heroImage: _h, ...noHero } = publishedRecipe();
-    failsAt(noHero, "heroImage");
-    const { ingredientsImage: _i, ...noIngredients } = publishedRecipe();
-    failsAt(noIngredients, "ingredientsImage");
+    const { hero: _h, ...noHero } = publishedRecipe();
+    failsAt(noHero, "hero");
+    const { ingredientsPhoto: _i, ...noPhoto } = publishedRecipe();
+    failsAt(noPhoto, "ingredientsPhoto");
     const noStepImage = {
       ...publishedRecipe(),
       steps: [{ text: "番茄去蒂切成小塊。" }],
@@ -117,17 +117,31 @@ describe("recipe schema", () => {
     assert.equal(schema.safeParse(draftRecipe()).success, true);
   });
 
-  it("有圖片就必須有替代文字", () => {
-    const { heroAlt: _a, ...noHeroAlt } = publishedRecipe();
-    failsAt(noHeroAlt, "heroAlt");
-    const { ingredientsAlt: _b, ...noIngredientsAlt } = publishedRecipe();
-    failsAt(noIngredientsAlt, "ingredientsAlt");
-    const noStepAlt = {
+  it("圖片物件沒有替代文字失敗（草稿也一樣）", () => {
+    failsAt({ ...publishedRecipe(), hero: { src: "hero.webp" } }, "hero.alt");
+    failsAt(
+      { ...publishedRecipe(), ingredientsPhoto: { src: "a.webp", alt: " " } },
+      "ingredientsPhoto.alt",
+    );
+    failsAt(
+      {
+        ...publishedRecipe(),
+        steps: [{ text: "切。", image: { src: "s.webp" } }],
+      },
+      "steps.0.image.alt",
+    );
+    failsAt({ ...draftRecipe(), hero: { src: "hero.webp" } }, "hero.alt");
+  });
+
+  it("材料可有自己的圖片，同樣必須有替代文字", () => {
+    const withImage = (image: unknown) => ({
       ...publishedRecipe(),
-      steps: [{ text: "切番茄。", image: "step-1.webp" }],
-    };
-    failsAt(noStepAlt, "steps.0.imageAlt");
-    // 草稿一旦放了圖片也要有替代文字
-    failsAt({ ...draftRecipe(), heroImage: "hero.webp" }, "heroAlt");
+      ingredients: [{ name: "番茄", amount: { value: 2, unit: "顆" }, image }],
+    });
+    assert.equal(
+      schema.safeParse(withImage({ src: "t.webp", alt: "紅色番茄" })).success,
+      true,
+    );
+    failsAt(withImage({ src: "t.webp" }), "ingredients.0.image.alt");
   });
 });

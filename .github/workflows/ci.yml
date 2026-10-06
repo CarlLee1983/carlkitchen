@@ -40,5 +40,7 @@ jobs:
       - name: Run browser tests
         run: pnpm test:e2e
 
+      # 只驗證設定：此時 dist 是 e2e 步驟用固定菜譜建出來的，
+      # 部署工作流程必須另以正式內容重新建置。
       - name: Validate Cloudflare deployment
         run: pnpm exec wrangler deploy --dry-run
