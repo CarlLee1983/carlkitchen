@@ -1,5 +1,5 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import { mealCandidates } from "./meal-fixtures";
+import { expectServedPool, mealCandidates } from "./meal-fixtures";
 import { MEAL_STORAGE_KEY } from "../src/utils/meal-session";
 
 // 這支規格跑在 meal 專案：以 tests/fixtures/meal-recipes 建置，
@@ -12,6 +12,8 @@ const dishTitles = dishes.map((item) => item.title);
 
 const items = (page: Page) =>
   page.getByRole("list", { name: "本桌菜色" }).getByRole("listitem");
+const itemOf = (page: Page, title: string) =>
+  items(page).filter({ has: page.getByRole("link", { name: title }) });
 const status = (page: Page) => page.getByRole("status");
 const reroll = (page: Page) => page.getByRole("button", { name: "重新抽選" });
 const modeButton = (page: Page, label: "四菜一湯" | "五菜一湯") =>
@@ -28,7 +30,13 @@ const titlesOnTable = async (page: Page) =>
     text.trim(),
   );
 
-test.beforeAll(() => {
+test.beforeAll(async ({ playwright }, testInfo) => {
+  const request = await playwright.request.newContext({
+    baseURL: testInfo.project.use.baseURL,
+  });
+  await expectServedPool(request, pool);
+  await request.dispose();
+
   // 測試資料的前提：換掉任何一道都無從補位，才能構成原型的「替換無解」。
   expect(dishes).toHaveLength(5);
   expect(soups).toHaveLength(1);
@@ -139,6 +147,8 @@ test.describe("鎖定衝突", () => {
     for (const title of dishTitles) {
       await lockOf(page, title).click();
       await expect(lockOf(page, title)).toHaveAttribute("aria-pressed", "true");
+      // 鎖定不只靠顏色：菜位標籤有可見文字。
+      await expect(itemOf(page, title).getByText("已鎖定")).toBeVisible();
     }
     const before = await titlesOnTable(page);
 
@@ -176,9 +186,14 @@ test.describe("同分頁重整", () => {
     await page.goto("/meal/");
     await modeButton(page, "五菜一湯").click();
     await lockOf(page, vegetableDish.title).click();
+    await lockOf(page, soups[0]!.title).click();
     const before = await titlesOnTable(page);
 
     await page.reload();
+    await expect(lockOf(page, soups[0]!.title)).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
     expect(await titlesOnTable(page)).toEqual(before);
     await expect(modeButton(page, "五菜一湯")).toHaveAttribute(
       "aria-pressed",
@@ -215,6 +230,7 @@ test.describe("失效套餐", () => {
 
     await page.reload();
     await expect(items(page)).toHaveCount(0);
+    await expect(status(page)).toContainText("已失效");
     await expect(status(page)).toContainText("請重新抽選");
     expect(
       await page.evaluate(
@@ -227,6 +243,18 @@ test.describe("失效套餐", () => {
     await reroll(page).click();
     await expect(items(page)).toHaveCount(5);
   });
+});
+
+test("保存的內容損毀時同樣清除並提示重抽", async ({ page }) => {
+  await page.goto("/meal/");
+  await page.evaluate(
+    (key) => sessionStorage.setItem(key, "{壞掉"),
+    MEAL_STORAGE_KEY,
+  );
+  await page.reload();
+  await expect(items(page)).toHaveCount(0);
+  await expect(status(page)).toContainText("已失效");
+  await expect(status(page)).toContainText("請重新抽選");
 });
 
 test.describe("無障礙", () => {
@@ -255,5 +283,24 @@ test.describe("無障礙", () => {
       "aria-pressed",
       "true",
     );
+  });
+
+  test("替換後焦點仍在同一位置的替換按鈕", async ({ page }) => {
+    await page.goto("/meal/");
+    await reroll(page).click();
+    const before = await titlesOnTable(page);
+    const swapped = before.find(
+      (title) => dishTitles.includes(title) && title !== vegetableDish.title,
+    )!;
+    const index = before.indexOf(swapped);
+
+    await replaceOf(page, swapped).click();
+    await expect(status(page)).toContainText("只替換了一道菜");
+    expect((await titlesOnTable(page))[index]).not.toBe(swapped);
+    await expect(
+      items(page)
+        .nth(index)
+        .getByRole("button", { name: /^替換 / }),
+    ).toBeFocused();
   });
 });

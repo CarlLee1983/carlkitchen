@@ -1,5 +1,5 @@
 ---
-import { getImage } from "astro:assets";
+import Illustration from "../components/Illustration.astro";
 import Base from "../layouts/Base.astro";
 import { candidatesFromRecipes } from "../meal-planner/index.ts";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
@@ -11,21 +11,12 @@ const candidates = candidatesFromRecipes(recipes);
 const display: MealData["recipes"] = {};
 for (const { id } of candidates) {
   const recipe = recipes.find((item) => item.id === id)!;
-  const hero = recipe.data.hero;
-  const thumb = hero
-    ? await getImage({ src: hero.src, width: 240, format: "webp" })
-    : undefined;
-  display[id] = {
-    title: recipe.data.title,
-    href: recipeHref(recipe),
-    thumb: thumb && {
-      src: thumb.src,
-      width: Number(thumb.attributes.width),
-      height: Number(thumb.attributes.height),
-      alt: hero!.alt,
-    },
-  };
+  display[id] = { title: recipe.data.title, href: recipeHref(recipe) };
 }
+const thumbRecipes = candidates.flatMap(({ id }) => {
+  const recipe = recipes.find((item) => item.id === id)!;
+  return recipe.data.hero ? [{ id, hero: recipe.data.hero }] : [];
+});
 const data: MealData = { candidates, recipes: display };
 // 內嵌在 JSON script 中，避免標題含 `<` 時提早結束標籤。
 const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
@@ -52,6 +43,18 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
   <ol class="meal-plan" aria-label="本桌菜色" data-plan></ol>
   <noscript><p>配菜功能需要啟用 JavaScript。</p></noscript>
 
+  {
+    thumbRecipes.map(({ id, hero }) => (
+      <template data-thumb={id}>
+        <Illustration
+          class="thumb"
+          image={hero}
+          sizes="(min-width: 40rem) 120px, 72px"
+          widths={[144, 240, 360]}
+        />
+      </template>
+    ))
+  }
   <script type="application/json" id="meal-data" set:html={dataJson} />
 </Base>
 

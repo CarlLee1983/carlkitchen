@@ -14,17 +14,10 @@ import {
 /** 建置時輸出給前端的資料：引擎的候選池，加上顯示用的菜名、連結與縮圖。 */
 export interface MealData {
   candidates: Candidate[];
-  recipes: Record<
-    string,
-    {
-      title: string;
-      href: string;
-      thumb?: { src: string; width: number; height: number; alt: string };
-    }
-  >;
+  recipes: Record<string, { title: string; href: string }>;
 }
 
-const STALE_MESSAGE = "已保存的套餐含已不在候選池的菜譜，已清除；請重新抽選。";
+const STALE_MESSAGE = "已保存的套餐已失效，已清除；請重新抽選。";
 
 function randomSeed(): number {
   return crypto.getRandomValues(new Uint32Array(1))[0]!;
@@ -82,6 +75,12 @@ export function initMeal() {
   const { candidates, recipes } = JSON.parse(
     dataElement.textContent,
   ) as MealData;
+  // 縮圖標記只有一份來源：建置時由 Illustration 渲染在 template 裡，這裡只複製。
+  const thumbs = new Map(
+    [
+      ...document.querySelectorAll<HTMLTemplateElement>("template[data-thumb]"),
+    ].map((template) => [template.dataset.thumb, template]),
+  );
   const kinds = new Map(candidates.map((item) => [item.id, item]));
 
   let plan: Plan = createPlan(randomSeed());
@@ -125,17 +124,8 @@ export function initMeal() {
   ) {
     const info = recipes[id]!;
     const item = el("li", undefined, "meal-item");
-    if (info.thumb) {
-      const figure = el("figure", undefined, "illustration thumb");
-      const img = el("img");
-      img.src = info.thumb.src;
-      img.width = info.thumb.width;
-      img.height = info.thumb.height;
-      img.alt = info.thumb.alt;
-      img.loading = "lazy";
-      figure.append(img, el("figcaption", "AI 繪製插畫"));
-      item.append(figure);
-    }
+    const thumb = thumbs.get(id)?.content.firstElementChild?.cloneNode(true);
+    if (thumb) item.append(thumb);
     const heading = el("h2");
     const link = el("a", info.title);
     link.href = info.href;
@@ -147,11 +137,29 @@ export function initMeal() {
     actions.append(lock, actionButton("替換", info.title, "replace", target));
 
     item.append(
-      el("span", `${slotLabel}・${tagsOf(id)}`, "meal-slot"),
+      el(
+        "span",
+        [slotLabel, locked && "已鎖定", tagsOf(id)].filter(Boolean).join("・"),
+        "meal-slot",
+      ),
       heading,
       actions,
     );
     return item;
+  }
+
+  /** 相同訊息連續出現時先清空、下一幀再寫入，讀屏軟體才會再朗讀一次。 */
+  let announceFrame = 0;
+  function announce(text: string) {
+    cancelAnimationFrame(announceFrame);
+    if (status!.textContent === text && text !== "") {
+      status!.textContent = "";
+      announceFrame = requestAnimationFrame(() => {
+        status!.textContent = text;
+      });
+    } else {
+      status!.textContent = text;
+    }
   }
 
   function render() {
@@ -177,8 +185,7 @@ export function initMeal() {
         String(button.dataset.mode === String(plan.mode)),
       );
     }
-    // 即使文字相同也重寫，連續兩次相同的失敗才會再次朗讀。
-    status!.textContent = message;
+    announce(message);
 
     if (focusKey) {
       planList!
