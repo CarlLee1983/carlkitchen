@@ -8,6 +8,8 @@ Parent: [MVP 實作規格](../../recipe-mvp/issues/09-mvp-implementation-spec.md
 
 **Status:** ready-for-agent
 
+頁面路徑為 `/meal/`（共用頁首已連到此處）。
+
 - [ ] 頁面只是配菜引擎的外殼，所有規則判斷由引擎回傳
 - [ ] 套餐、模式與鎖定保存在同一分頁的 session 儲存；重整還原，新分頁重新開始
 - [ ] 載入時保存的菜譜不在目前候選池中，就清除套餐並請讀者重抽

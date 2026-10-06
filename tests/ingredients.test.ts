@@ -1,10 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import {
-  formatAmount,
-  groupIngredients,
-  MAIN_GROUP_LABEL,
-} from "../src/utils/ingredients.ts";
+import { formatAmount, groupIngredients } from "../src/utils/ingredients.ts";
 
 describe("groupIngredients", () => {
   const ingredients = [
@@ -18,7 +14,7 @@ describe("groupIngredients", () => {
     const groups = groupIngredients(ingredients);
     assert.deepEqual(
       groups.map((group) => group.label),
-      [MAIN_GROUP_LABEL, "調味"],
+      ["主料", "調味"],
     );
     assert.deepEqual(
       groups[0]!.items.map((item) => item.name),
@@ -27,6 +23,22 @@ describe("groupIngredients", () => {
     assert.deepEqual(
       groups[1]!.items.map((item) => item.name),
       ["糖", "鹽"],
+    );
+  });
+
+  it("明寫「主料」與未分組的材料合成同一組", () => {
+    const groups = groupIngredients([
+      { name: "番茄" },
+      { name: "雞蛋", group: "主料" },
+      { name: "鹽", group: "調味" },
+    ]);
+    assert.deepEqual(
+      groups.map((group) => group.label),
+      ["主料", "調味"],
+    );
+    assert.deepEqual(
+      groups[0]!.items.map((item) => item.name),
+      ["番茄", "雞蛋"],
     );
   });
 

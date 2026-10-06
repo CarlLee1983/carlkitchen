@@ -16,3 +16,5 @@ Parent: [MVP 實作規格](../../recipe-mvp/issues/09-mvp-implementation-spec.md
 - [x] 列印樣式只保留材料、做法與成品圖，隱藏導覽與裝飾
 - [x] 圖片以 WebP 母檔（1536×1024）進入內容，頁面經 Astro 圖片元件輸出響應式尺寸
 - [x] Playwright：固定資料菜譜頁顯示上述各區塊；列印媒體下導覽隱藏
+
+列印保留小提醒、不印聲明，待站主確認。

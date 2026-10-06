@@ -4,9 +4,6 @@ import {
   UNSPECIFIED_AMOUNT_LABEL,
 } from "../content/recipe-schema.ts";
 
-/** 頁面上沒有指定分組的材料所屬組別的標題。 */
-export const MAIN_GROUP_LABEL = "主料";
-
 interface GroupableIngredient {
   group?: string | undefined;
 }
@@ -17,7 +14,7 @@ export interface IngredientGroup<T> {
 }
 
 /**
- * 材料分成「主料」與其他組（通常是「調味」）：保留各組內的原始順序，
+ * 材料分成預設的「主料」（未分組者歸入，也可明寫）與其他組（通常是「調味」）：保留各組內的原始順序，
  * 主料固定排最前，調味固定排最後，其餘依首次出現順序居中；空組不產生。
  * 回傳新結構，不改動輸入。
  */
@@ -34,7 +31,7 @@ export function groupIngredients<T extends GroupableIngredient>(
   return [...byName]
     .sort(([a], [b]) => rank(a) - rank(b))
     .map(([name, items]) => ({
-      label: name === DEFAULT_INGREDIENT_GROUP ? MAIN_GROUP_LABEL : name,
+      label: name,
       items,
     }));
 }

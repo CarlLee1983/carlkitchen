@@ -1,107 +1,169 @@
+import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 
 const url = "/recipes/tomato-egg/";
+
+// 數量由固定菜譜資料算出，不寫死；YAML 為單層縮排的固定格式，逐行計數即可。
+const yaml = readFileSync(
+  "tests/fixtures/recipes/tomato-egg/recipe.yaml",
+  "utf8",
+);
+const count = (pattern: RegExp) => (yaml.match(pattern) ?? []).length;
+const stepCount = count(/^ {2}- text:/gm);
+const stepImageCount = count(/^ {4}image:/gm);
+const hasHero = /^hero:/m.test(yaml);
+const hasIngredientsPhoto = /^ingredientsPhoto:/m.test(yaml);
+const imageCount =
+  stepImageCount + Number(hasHero) + Number(hasIngredientsPhoto);
 
 test("菜譜頁顯示基本資訊、成品圖、材料兩組與合照、編號做法與步驟圖", async ({
   page,
 }) => {
   await page.goto(url);
-  await expect(page.locator("header").getByText("CarlKitchen")).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "主選單" }).getByText("CarlKitchen"),
+  ).toBeVisible();
   await expect(
     page.getByRole("heading", { level: 1, name: "番茄炒蛋" }),
   ).toBeVisible();
   await expect(page.getByText("蛋先炒到半熟盛起")).toBeVisible();
-  const meta = page.locator(".recipe-meta");
-  await expect(meta).toContainText("2 人份");
-  await expect(meta).toContainText("15 分鐘");
-  await expect(meta).toContainText("非湯料理");
+  await expect(page.getByText("2 人份")).toBeVisible();
+  await expect(page.getByText("15 分鐘")).toBeVisible();
+  await expect(page.getByText("非湯料理", { exact: true })).toBeVisible();
 
-  await expect(page.locator("figure.hero img")).toBeVisible();
-  const ingredients = page.locator("aside.ingredients");
+  await expect(
+    page.getByRole("article").getByRole("figure").first().getByRole("img"),
+  ).toBeVisible();
+
+  const ingredients = page.getByRole("complementary", { name: "材料" });
   await expect(
     ingredients.getByRole("heading", { name: "主料" }),
   ).toBeVisible();
   await expect(
     ingredients.getByRole("heading", { name: "調味" }),
   ).toBeVisible();
-  await expect(ingredients.locator("figure img")).toBeVisible();
+  await expect(ingredients.getByRole("figure").getByRole("img")).toBeVisible();
   await expect(ingredients.getByText("鹽 適量")).toBeVisible();
 
-  await expect(page.locator("ol.steps > li")).toHaveCount(5);
-  await expect(page.locator("ol.steps figure img")).toHaveCount(4);
+  const method = page.getByRole("region", { name: "做法" });
+  await expect(method.getByRole("listitem")).toHaveCount(stepCount);
+  await expect(method.getByRole("figure")).toHaveCount(stepImageCount);
 });
 
 test("每張料理圖都有替代文字與「AI 繪製插畫」標示", async ({ page }) => {
   await page.goto(url);
-  const images = page.locator("article img");
-  const count = await images.count();
-  expect(count).toBe(6);
-  for (let i = 0; i < count; i++) {
+  const article = page.getByRole("article");
+  const images = article.getByRole("img");
+  await expect(images).toHaveCount(imageCount);
+  for (let i = 0; i < imageCount; i++) {
     await expect(images.nth(i)).toHaveAttribute("alt", /.+/);
   }
-  await expect(page.locator("article figure")).toHaveCount(count);
-  await expect(
-    page.locator("article figure figcaption", { hasText: "AI 繪製插畫" }),
-  ).toHaveCount(count);
+  const figures = article.getByRole("figure");
+  await expect(figures).toHaveCount(imageCount);
+  for (let i = 0; i < imageCount; i++) {
+    await expect(figures.nth(i)).toContainText("AI 繪製插畫");
+  }
 });
 
-test("圖片輸出響應式 WebP srcset", async ({ page }) => {
+test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版面一致", async ({
+  page,
+}) => {
   await page.goto(url);
-  const hero = page.locator("figure.hero img");
+  const hero = page.getByRole("article").getByRole("img").first();
   await expect(hero).toHaveAttribute("srcset", /\.webp.*\s\d+w/);
-  await expect(hero).toHaveAttribute("sizes", /.+/);
+  await expect(hero).toHaveAttribute("sizes", /44rem/);
+  await expect(hero).not.toHaveAttribute("loading", "lazy");
 });
 
 test("頁底有未試做聲明，且頁面沒有外部或來源連結", async ({ page }) => {
   await page.goto(url);
-  await expect(page.locator("footer.disclaimer")).toContainText(
+  await expect(page.getByRole("region", { name: "聲明" })).toContainText(
     "依公開資料由 AI 整理、站主審閱，未經試做",
   );
   const hrefs = await page
-    .locator("a")
+    .getByRole("link")
     .evaluateAll((links) => links.map((a) => a.getAttribute("href")));
-  for (const href of hrefs) expect(href).toMatch(/^\//);
+  for (const href of hrefs) expect(href).toMatch(/^\/(?!\/)/);
 });
 
-test("設計語彙：米白底、炭灰字、明體標題", async ({ page }) => {
+test("設計語彙：米白底、炭灰字、標題用明體、內文用黑體", async ({ page }) => {
   await page.goto(url);
   const body = await page.locator("body").evaluate((el) => {
     const style = getComputedStyle(el);
-    return { bg: style.backgroundColor, color: style.color };
+    return {
+      bg: style.backgroundColor,
+      color: style.color,
+      font: style.fontFamily,
+    };
   });
   expect(body.bg).toBe("rgb(247, 246, 243)");
   expect(body.color).not.toBe("rgb(0, 0, 0)");
-  const font = await page
-    .locator("h1")
+  expect(body.font).toContain("PingFang TC");
+  const headingFont = await page
+    .getByRole("heading", { level: 1 })
     .evaluate((el) => getComputedStyle(el).fontFamily);
-  expect(font).toMatch(/serif/i);
+  expect(headingFont).toContain("Songti TC");
+  expect(headingFont).not.toContain("PingFang TC");
 });
 
-test("寬螢幕材料欄為 sticky、手機為單欄", async ({ page }) => {
+test("寬螢幕捲動做法時材料欄仍在視窗內；手機為單欄", async ({ page }) => {
   await page.setViewportSize({ width: 1366, height: 900 });
   await page.goto(url);
-  const aside = page.locator("aside.ingredients");
-  await expect(aside).toHaveCSS("position", "sticky");
+  const aside = page.getByRole("complementary", { name: "材料" });
+  const steps = page.getByRole("region", { name: "做法" });
   const asideBox = await aside.boundingBox();
-  const stepsBox = await page.locator("ol.steps").boundingBox();
+  const stepsBox = await steps.boundingBox();
   expect(asideBox!.x + asideBox!.width).toBeLessThanOrEqual(stepsBox!.x + 1);
 
+  await page.getByRole("region", { name: "聲明" }).scrollIntoViewIfNeeded();
+  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+  await expect(aside).toBeInViewport();
+
   await page.setViewportSize({ width: 390, height: 800 });
-  await expect(aside).toHaveCSS("position", "static");
+  await page.evaluate(() => window.scrollTo(0, 0));
   const mAside = await aside.boundingBox();
-  const mSteps = await page.locator("ol.steps").boundingBox();
+  const mSteps = await steps.boundingBox();
   expect(mSteps!.y).toBeGreaterThan(mAside!.y);
   expect(Math.abs(mSteps!.x - mAside!.x)).toBeLessThan(2);
 });
 
-test("列印媒體：隱藏導覽與裝飾，保留材料、做法與成品圖", async ({ page }) => {
+test("頁首連結觸控目標至少 44×44", async ({ page }) => {
+  await page.goto(url);
+  const links = page
+    .getByRole("navigation", { name: "主選單" })
+    .getByRole("link");
+  const total = await links.count();
+  for (let i = 0; i < total; i++) {
+    const box = await links.nth(i).boundingBox();
+    expect(box!.width).toBeGreaterThanOrEqual(44);
+    expect(box!.height).toBeGreaterThanOrEqual(44);
+  }
+});
+
+test("列印媒體：隱藏導覽、聲明與步驟圖，保留材料、做法與成品圖，且一頁印完", async ({
+  page,
+}) => {
   await page.goto(url);
   await page.emulateMedia({ media: "print" });
-  await expect(page.locator(".site-header")).toBeHidden();
-  await expect(page.locator("footer.disclaimer")).toBeHidden();
-  await expect(page.locator("figure.hero img")).toBeVisible();
-  await expect(page.locator("aside.ingredients")).toBeVisible();
-  await expect(page.locator("ol.steps")).toBeVisible();
-  await expect(page.locator("figure.hero figcaption")).toBeVisible();
-  await expect(page.locator("aside.ingredients figure")).toBeHidden();
+  await expect(page.getByRole("navigation")).toBeHidden();
+  await expect(page.getByRole("region", { name: "聲明" })).toBeHidden();
+  const article = page.getByRole("article");
+  await expect(article.getByRole("figure").first()).toBeVisible();
+  await expect(article.getByRole("figure").first()).toContainText(
+    "AI 繪製插畫",
+  );
+  await expect(page.getByRole("complementary", { name: "材料" })).toBeVisible();
+  await expect(
+    page.getByRole("complementary", { name: "材料" }).getByRole("figure"),
+  ).toBeHidden();
+  const method = page.getByRole("region", { name: "做法" });
+  await expect(method).toBeVisible();
+  const stepFigures = method.getByRole("figure");
+  for (let i = 0; i < stepImageCount; i++) {
+    await expect(stepFigures.nth(i)).toBeHidden();
+  }
+
+  const pdf = await page.pdf({ format: "A4" });
+  const pages = pdf.toString("latin1").match(/\/Type\s*\/Page(?!s)/g) ?? [];
+  expect(pages.length).toBe(1);
 });

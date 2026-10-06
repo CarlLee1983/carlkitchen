@@ -57,6 +57,8 @@ a {
 .site-header a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
   min-height: 44px;
   text-decoration: none;
 }
@@ -90,4 +92,17 @@ figure.illustration figcaption {
   color: var(--ink-soft);
   font-size: 0.75rem;
   letter-spacing: 0.05em;
+}
+
+@media print {
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+  .site-header {
+    display: none;
+  }
+  main {
+    padding: 0;
+  }
 }

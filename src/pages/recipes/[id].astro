@@ -19,7 +19,7 @@ interface Props {
 const { data } = Astro.props.recipe;
 const groups = groupIngredients(data.ingredients);
 
-// sizes 對應下方 CSS：寬螢幕主欄上限 44rem，手機單欄約等於視窗寬。
+// sizes 對應下方 CSS：寬螢幕主欄與成品圖上限 44rem，手機單欄約等於視窗寬。
 const MAIN_SIZES = "(min-width: 64rem) 44rem, 100vw";
 const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
 ---
@@ -41,7 +41,8 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
         <Illustration
           class="hero"
           image={data.hero}
-          sizes="(min-width: 64rem) 66rem, 100vw"
+          sizes={MAIN_SIZES}
+          priority
         />
       )
     }
@@ -80,8 +81,8 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
         }
       </aside>
 
-      <div class="method">
-        <h2>做法</h2>
+      <section class="method" aria-labelledby="method-title">
+        <h2 id="method-title">做法</h2>
         <ol class="steps">
           {
             data.steps.map((step) => (
@@ -102,14 +103,16 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
             </section>
           )
         }
-      </div>
+      </section>
     </div>
 
-    <footer class="disclaimer">依公開資料由 AI 整理、站主審閱，未經試做</footer>
+    <section class="disclaimer" aria-label="聲明">
+      <p>依公開資料由 AI 整理、站主審閱，未經試做</p>
+    </section>
   </article>
 </Base>
 
-<style is:global>
+<style>
   .recipe-head {
     max-width: 40rem;
     margin-bottom: 2.5rem;
@@ -118,7 +121,7 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     margin: 0 0 1rem;
     font-size: 2.25rem;
   }
-  .recipe-head .summary {
+  .summary {
     margin: 0 0 1rem;
   }
   .recipe-meta {
@@ -131,7 +134,8 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     color: var(--ink-soft);
     font-size: 0.9rem;
   }
-  .recipe .hero {
+  /* 以下 :global 選取 Illustration 元件內部的 figure */
+  .recipe :global(.hero) {
     max-width: 44rem;
     margin-bottom: 3rem;
   }
@@ -163,11 +167,11 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
   .ingredients li small {
     color: var(--ink-soft);
   }
-  .ingredients .ingredient-thumb {
+  .ingredients :global(.ingredient-thumb) {
     width: 6rem;
     margin-top: 0.4rem;
   }
-  .ingredients > figure {
+  .ingredients > :global(figure) {
     margin-bottom: 1rem;
   }
 
@@ -209,8 +213,11 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     color: var(--ink-soft);
     font-size: 0.85rem;
   }
+  .disclaimer p {
+    margin: 0;
+  }
 
-  /* 寬螢幕：材料在左欄、捲動做法時保持可見；手機維持單欄 */
+  /* 寬螢幕：材料在左欄、捲動做法時保持可見（只 sticky，不設捲動區）；手機單欄 */
   @media (min-width: 64rem) {
     .recipe-body {
       grid-template-columns: 20rem minmax(0, 44rem);
@@ -220,32 +227,17 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     .ingredients {
       position: sticky;
       top: 1.5rem;
-      max-height: calc(100vh - 3rem);
-      overflow-y: auto;
-    }
-  }
-  @media (max-width: 63.999rem) {
-    .ingredients {
-      position: static;
     }
   }
 
-  /* 列印：只留成品圖、材料與做法 */
+  /* 列印：只留成品圖、材料與做法；步驟圖與材料合照不印，確保一張紙 */
   @media print {
-    body {
-      background: #fff;
-      font-size: 11pt;
-    }
-    .site-header,
     .disclaimer,
-    .ingredients figure:not(.ingredient-thumb),
-    .ingredients .ingredient-thumb {
+    .ingredients :global(figure),
+    .steps :global(figure) {
       display: none;
     }
-    main {
-      padding: 0;
-    }
-    .recipe .hero {
+    .recipe :global(.hero) {
       max-width: 14rem;
       margin-bottom: 1rem;
     }
@@ -253,16 +245,8 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
       grid-template-columns: 12rem 1fr;
       gap: 1.5rem;
     }
-    .ingredients {
-      position: static;
-      max-height: none;
-      overflow: visible;
-    }
     .steps > li {
       break-inside: avoid;
-    }
-    .steps figure {
-      max-width: 12rem;
     }
   }
 </style>
