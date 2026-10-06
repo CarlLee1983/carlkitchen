@@ -5,6 +5,7 @@ import {
   collectBuildFiles,
   listDirectories,
   listSourceIds,
+  listUnrecognizedSourceFiles,
   readImageInfo,
   readYaml,
 } from "./io.ts";
@@ -21,6 +22,9 @@ export interface ContentCheckOptions {
   /** 開啟候選池門檻檢查（部署前）。 */
   launch: boolean;
 }
+
+/** 菜譜識別值同時是資料夾名稱與網址 slug：小寫英數與連字號。 */
+const RECIPE_ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 const failure = (file: string, message: string): Issue => ({ file, message });
 
@@ -40,7 +44,17 @@ export async function runContentChecks(
   // 菜譜：schema、草稿判斷、圖片
   const recipes: { id: string; raw: unknown; data?: Recipe }[] = [];
   for (const id of recipeIds) {
-    const file = join(options.recipesDir, id, "recipe.yaml");
+    const dir = join(options.recipesDir, id);
+    const file = join(dir, "recipe.yaml");
+    if (!RECIPE_ID_PATTERN.test(id)) {
+      issues.push({
+        recipe: id,
+        file: dir,
+        message:
+          "菜譜資料夾名稱必須是小寫英數字以連字號分隔（例如 tomato-egg）。",
+      });
+    }
+    // 讀不到或解析失敗的菜譜仍計入識別值，避免它的來源紀錄被多報成孤兒。
     try {
       const raw = readYaml(file);
       if (raw === undefined) {
@@ -49,13 +63,26 @@ export async function runContentChecks(
           file,
           message: "資料夾內沒有 recipe.yaml。",
         });
+        recipes.push({ id, raw });
         continue;
       }
       const { data, issues: schemaIssues } = parseRecipe(id, raw);
-      issues.push(...schemaIssues);
+      // 驗證失敗就沒有可靠的圖片清單，提醒修正後才會檢查圖片。
+      issues.push(
+        ...schemaIssues.map((issue) =>
+          isDraft(raw)
+            ? issue
+            : { ...issue, message: `${issue.message}（修正後才會檢查圖片）` },
+        ),
+      );
       recipes.push({ id, raw, data });
     } catch (error) {
-      issues.push({ recipe: id, file, message: (error as Error).message });
+      issues.push({
+        recipe: id,
+        file,
+        message: `${(error as Error).message}（修正後才會檢查圖片）`,
+      });
+      recipes.push({ id, raw: undefined });
     }
   }
 
@@ -82,6 +109,14 @@ export async function runContentChecks(
     } catch (error) {
       issues.push(failure(file, (error as Error).message));
     }
+  }
+  for (const name of listUnrecognizedSourceFiles(options.sourcesDir)) {
+    issues.push(
+      failure(
+        join(options.sourcesDir, name),
+        "無法辨識的來源紀錄檔（只接受 <識別值>.yaml）。",
+      ),
+    );
   }
   issues.push(
     ...checkSourceCoverage({

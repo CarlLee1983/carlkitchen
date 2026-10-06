@@ -7,3 +7,4 @@ ingredients:
   - { name: 水, amount: { value: 500, unit: ml } }
 steps:
   - text: 燒水。
+hero: { src: ./missing.webp, alt: 草稿成品 }

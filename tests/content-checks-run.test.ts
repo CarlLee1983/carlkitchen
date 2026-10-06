@@ -1,6 +1,13 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  mkdirSync,
+  mkdtempSync,
+  rmSync,
+  writeFileSync,
+  readFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { after, describe, it } from "node:test";
@@ -50,6 +57,58 @@ describe("runContentChecks", () => {
       rmSync(join(s.root, dir), { recursive: true });
       mkdirSync(join(s.root, dir));
     }
+    assert.deepEqual(await runContentChecks(s.options), []);
+  });
+
+  it("YAML 無法解析的菜譜不會讓它的來源被多報成孤兒", async () => {
+    const s = scenario();
+    s.write(join(s.root, "recipes/alpha/recipe.yaml"), "title: [壞掉\n");
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.equal(issues[0]?.recipe, "alpha");
+  });
+
+  it("schema 失敗時註明圖片尚未檢查", async () => {
+    const s = scenario();
+    s.write(join(s.root, "recipes/alpha/recipe.yaml"), "title: x\n");
+    const issues = await runContentChecks(s.options);
+    assert.ok(issues.every((issue) => /圖片/.test(issue.message)));
+  });
+
+  it("菜譜資料夾名稱不是小寫 kebab-case", async () => {
+    const s = scenario();
+    cpSync(join(s.root, "recipes/alpha"), join(s.root, "recipes/Bad_Id"), {
+      recursive: true,
+    });
+    cpSync(
+      join(s.root, "sources/alpha.yaml"),
+      join(s.root, "sources/Bad_Id.yaml"),
+    );
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.equal(issues[0]?.recipe, "Bad_Id");
+    assert.match(issues[0]!.file!, /Bad_Id$/);
+  });
+
+  it("來源目錄中無法辨識的檔案", async () => {
+    const s = scenario();
+    s.write(join(s.root, "sources/notes.txt"), "x");
+    s.write(join(s.root, "sources/beta.yml"), "x");
+    s.write(join(s.root, "sources/.gitkeep"), "");
+    const issues = await runContentChecks(s.options);
+    assert.deepEqual(
+      issues.map((issue) => issue.file?.split("/").pop()).sort(),
+      ["beta.yml", "notes.txt"],
+    );
+  });
+
+  it("草稿的圖片不檢查（草稿引用不存在的圖也通過）", async () => {
+    const s = scenario();
+    const draft = readFileSync(
+      join(s.root, "recipes/beta-draft/recipe.yaml"),
+      "utf8",
+    );
+    assert.match(draft, /missing\.webp/);
     assert.deepEqual(await runContentChecks(s.options), []);
   });
 
