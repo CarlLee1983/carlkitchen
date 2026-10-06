@@ -36,7 +36,8 @@ CarlStack 的 Astro Content Collections、Pagefind、GitHub Actions 與 Cloudfla
 5. 搜尋：以 Playwright 對建置後的網站執行。斷言由真實內容產生，不寫死預期結果：每道菜的菜名、材料與別名都能以繁中查到該菜譜；菜／湯篩選正確；只出現在步驟、用量或替代文字中的詞查不到；草稿與來源不出現在結果中。
 6. 配菜：抽選演算法的單元測試，以及 Playwright 依[配菜規則原型](05-meal-planner-rules.md)的四個情境（替換無解、鎖定衝突、候選不足、同分頁重整）驗證。此項以測試專用的固定菜譜資料建置，不依賴正式候選池的數量。
 7. `wrangler deploy --dry-run`。
+8. 無障礙與版面：以 Playwright 對五個頁面執行 axe-core，並在 360、390、430、1366、1920 寬度檢查沒有水平捲動、觸控目標至少 44×44 px（標準見 [MVP 驗收票](08-mvp-acceptance.md)）。
 
-第 1–4 項對真實內容執行。單元測試沿用 CarlStack 的 Node 內建測試執行器，瀏覽器測試使用 Playwright。CarlStack 本身沒有第 2–6 項，這些是本站因 AI 製作內容而新增的機械檢查。
+第 1–4 項對真實內容執行。單元測試沿用 CarlStack 的 Node 內建測試執行器，瀏覽器測試使用 Playwright。CarlStack 本身沒有第 2–6 項與第 8 項，這些是本站因 AI 製作內容而新增的機械檢查。
 
 站主已逐項確認上述決定。
