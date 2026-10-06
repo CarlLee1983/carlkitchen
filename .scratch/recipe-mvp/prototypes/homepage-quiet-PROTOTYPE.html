@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarlKitchen 安靜首頁原型</title>
+  <!--
+    PROTOTYPE，用完即丟。
+    問題：F/G/H 被評為道具過多、配色字體不佳、擁擠、版型制式。站主選「安靜克制的日系」。
+    三個結構不同的版本，都不用裝飾道具，靠留白、細線與字級建立層次：
+      I 靜：左文右圖的定案骨架，重新處理留白與字體
+      J 目錄：搜尋框就是菜譜清單的篩選器，右側照片隨游標切換
+      K 格：細線分格的便當盒版面，搜尋、大圖、四菜一湯各占一格
+          I＋J：I 的第一屏，下方接 J 的即時篩選清單（站主偏好 I、J 後加入）
+    以 ?variant=I|J|IJ|K 切換。
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#F7F6F3; --paper:#FBFBFA; --ink:#2F3437; --mute:#787774; --faint:#A8A6A1; --line:#E4E2DC; --accent:#9F2F2D;
+      --serif:"Noto Serif TC","Songti TC",serif; --sans:"Noto Sans TC","PingFang TC",sans-serif;
+      --ease:cubic-bezier(.16,1,.3,1);
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; padding-bottom:84px; background:var(--bg); color:var(--ink); font-family:var(--sans); font-weight:400; line-height:1.7; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+    button,input { font:inherit; color:inherit; }
+    button { cursor:pointer; background:none; border:0; padding:0; }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; width:100%; height:100%; object-fit:cover; }
+    figure { margin:0; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline:1px solid var(--ink); outline-offset:4px; }
+    .prototype-note { padding:7px 16px; background:#2F3437; color:#F7F6F3; font-size:12px; text-align:center; letter-spacing:.04em; }
+    .variant { display:none; }
+    .variant.active { display:block; }
+
+    /* 共用：頁首、小字標籤、AI 標示 */
+    .site-head { max-width:1200px; margin:0 auto; padding:28px 32px; display:flex; align-items:baseline; justify-content:space-between; }
+    .brand { font-family:var(--serif); font-weight:500; font-size:17px; letter-spacing:.24em; }
+    .site-head nav { display:flex; gap:32px; font-size:13px; letter-spacing:.12em; color:var(--mute); }
+    .site-head nav a:hover { color:var(--ink); }
+    .label { font-size:12px; letter-spacing:.24em; color:var(--mute); }
+    .ai { font-size:11px; letter-spacing:.12em; color:var(--faint); white-space:nowrap; }
+    .cap { display:flex; align-items:baseline; gap:14px; padding-top:14px; }
+    .cap .name { font-family:var(--serif); font-size:19px; font-weight:400; letter-spacing:.06em; }
+    .cap .kind { font-size:12px; color:var(--mute); letter-spacing:.1em; }
+    .cap .ai { margin-left:auto; }
+    .photo { overflow:hidden; mix-blend-mode:multiply; }
+    .photo img { transition:transform 1.2s var(--ease); }
+    a:hover .photo img { transform:scale(1.025); }
+    .more { font-size:13px; letter-spacing:.1em; color:var(--mute); border-bottom:1px solid var(--line); padding-bottom:3px; transition:color .2s, border-color .2s; }
+    .more:hover { color:var(--ink); border-color:var(--ink); }
+    .line-search { display:flex; align-items:center; gap:16px; border-bottom:1px solid var(--ink); }
+    .line-search input { flex:1; min-width:0; border:0; outline:0; background:transparent; padding:14px 0; font-size:17px; font-weight:300; }
+    .line-search input::placeholder { color:var(--faint); }
+    .line-search button { font-size:13px; letter-spacing:.2em; padding:9px 18px; background:var(--ink); color:var(--bg); border-radius:4px; transition:background .2s; }
+    .line-search button:hover { background:#4a4f52; }
+    .line-search button:active { transform:scale(.98); }
+    .reveal { opacity:0; transform:translateY(12px); animation:rise .9s var(--ease) forwards; animation-delay:calc(var(--i,0) * 90ms); }
+    @keyframes rise { to { opacity:1; transform:none; } }
+    @media (prefers-reduced-motion:reduce) { .reveal { animation:none; opacity:1; transform:none; } .photo img { transition:none; } }
+
+    /* ───────── I 靜：左文右圖，大量留白 ───────── */
+    .i-wrap { max-width:1200px; margin:0 auto; padding:0 32px; }
+    .i-hero { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:96px; align-items:center; padding:56px 0 128px; }
+    .i-copy { padding-bottom:40px; }
+    .i-copy h1 { font-family:var(--serif); font-weight:300; font-size:clamp(34px,4vw,52px); line-height:1.45; letter-spacing:.06em; margin:22px 0 56px; }
+    .i-copy .line-search { max-width:420px; }
+    .i-alt { margin-top:30px; font-size:14px; color:var(--mute); }
+    .i-alt a { color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:2px; margin-left:6px; }
+    .i-alt a:hover { border-color:var(--ink); }
+    .i-hero .photo { aspect-ratio:3/2; }
+    .i-list-head { display:flex; justify-content:space-between; align-items:baseline; border-top:1px solid var(--line); padding-top:22px; margin-bottom:40px; }
+    .i-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:48px; padding-bottom:140px; }
+    .i-card .photo { aspect-ratio:4/3; }
+    .i-card p { margin:6px 0 0; font-size:14px; color:var(--mute); }
+    .i-all { display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); padding:32px; transition:border-color .2s; }
+    .i-all:hover { border-color:var(--ink); }
+    .i-all b { font-family:var(--serif); font-weight:400; font-size:22px; letter-spacing:.08em; }
+    .i-all span { font-size:14px; color:var(--mute); }
+
+    /* ───────── J 目錄：搜尋即清單，照片隨游標切換 ───────── */
+    .j-wrap { max-width:1200px; margin:0 auto; padding:56px 32px 140px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:96px; align-items:start; }
+    .j-search { border-bottom:1px solid var(--ink); display:flex; align-items:center; }
+    .j-search input { flex:1; min-width:0; border:0; outline:0; background:transparent; font-family:var(--serif); font-weight:300; font-size:clamp(26px,3vw,36px); letter-spacing:.06em; padding:10px 0 16px; }
+    .j-search input::placeholder { color:var(--faint); }
+    .j-search svg { width:22px; height:22px; flex:none; }
+    .j-bar { display:flex; align-items:center; gap:28px; margin:22px 0 28px; font-size:13px; letter-spacing:.12em; }
+    .j-bar button { color:var(--mute); padding-bottom:4px; border-bottom:1px solid transparent; }
+    .j-bar button[aria-pressed="true"] { color:var(--ink); border-color:var(--ink); }
+    .j-bar .count { margin-left:auto; color:var(--faint); }
+    .j-row { display:grid; grid-template-columns:44px minmax(0,1fr) auto; gap:0 16px; align-items:baseline; padding:26px 0; border-top:1px solid var(--line); }
+    .j-row:last-of-type { border-bottom:1px solid var(--line); }
+    .j-row .no { font-size:12px; color:var(--faint); letter-spacing:.1em; font-variant-numeric:tabular-nums; }
+    .j-row h3 { margin:0; font-family:var(--serif); font-weight:400; font-size:24px; letter-spacing:.06em; transition:transform .4s var(--ease); }
+    .j-row p { grid-column:2; margin:4px 0 0; font-size:14px; color:var(--mute); }
+    .j-row .kind { font-size:12px; color:var(--mute); letter-spacing:.1em; }
+    .j-row .thumb, .j-row .ai-m { display:none; }
+    .j-row:hover h3, .j-row:focus-visible h3, .j-row.on h3 { transform:translateX(6px); }
+    .j-row.on .no { color:var(--accent); }
+    .j-empty { padding:40px 0; border-top:1px solid var(--line); color:var(--mute); font-size:15px; }
+    .j-empty button { margin-left:10px; color:var(--ink); border-bottom:1px solid var(--ink); }
+    .j-planner { margin-top:64px; display:flex; justify-content:space-between; align-items:baseline; gap:20px; font-size:14px; color:var(--mute); }
+    .j-planner a { color:var(--ink); }
+    .j-aside { position:sticky; top:40px; }
+    .j-aside .photo { aspect-ratio:3/2; }
+    .j-aside img { transition:opacity .35s ease; }
+
+    /* ───────── K 格：細線分格的便當盒 ───────── */
+    .k-wrap { max-width:1200px; margin:0 auto; padding:24px 32px 120px; }
+    .k-grid { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
+    .k-cell { background:var(--bg); padding:44px; min-width:0; }
+    .k-search { grid-column:1 / 7; display:flex; flex-direction:column; justify-content:space-between; gap:48px; }
+    .k-search h1 { font-family:var(--serif); font-weight:300; font-size:clamp(30px,3.4vw,44px); line-height:1.5; letter-spacing:.08em; margin:16px 0 0; }
+    .k-hero { grid-column:7 / 13; grid-row:1 / 3; padding:0; display:flex; flex-direction:column; }
+    .k-hero .photo { flex:1; min-height:420px; }
+    .k-hero .cap { padding:18px 28px 20px; }
+    .k-set { grid-column:1 / 7; display:grid; grid-template-columns:minmax(0,1fr) 180px; gap:28px; align-items:center; }
+    .k-set h2 { font-family:var(--serif); font-weight:400; font-size:22px; letter-spacing:.1em; margin:10px 0 8px; }
+    .k-set p { margin:0 0 20px; font-size:14px; color:var(--mute); }
+    .k-set svg { width:100%; }
+    .k-card { grid-column:span 4; padding:28px; transition:background .3s; }
+    .k-card:hover { background:var(--paper); }
+    .k-card .photo { aspect-ratio:3/2; }
+    .k-card p { margin:4px 0 0; font-size:14px; color:var(--mute); }
+    .k-all { grid-column:span 4; display:flex; flex-direction:column; justify-content:space-between; }
+    .k-all ul { list-style:none; margin:18px 0 0; padding:0; }
+    .k-all li a { display:flex; justify-content:space-between; padding:13px 0; border-bottom:1px solid var(--line); font-size:15px; }
+    .k-all li a span { color:var(--faint); font-size:13px; }
+    .k-all li a:hover { color:var(--accent); }
+
+    /* ───────── I＋J 混搭 ───────── */
+    .i-hero .ij-hero .photo { aspect-ratio:3/2; }
+    .ij-live { margin:14px 0 0; min-height:20px; font-size:13px; letter-spacing:.08em; color:var(--mute); }
+    .ij-live a { border-bottom:1px solid var(--line); padding-bottom:2px; }
+    .ij-live a:empty { display:none; }
+    .ij-results { border-top:1px solid var(--line); padding:8px 0 140px; scroll-margin-top:24px; }
+    .ij .j-row { grid-template-columns:40px 120px minmax(0,1fr) auto; gap:0 28px; align-items:center; padding:22px 0; }
+    .ij .j-row .no { grid-row:1 / 3; }
+    .ij .j-row .thumb { display:block; grid-column:2; grid-row:1 / 3; width:120px; height:90px; }
+    .ij .j-row h3 { grid-column:3; align-self:end; }
+    .ij .j-row p { grid-column:3; align-self:start; margin:2px 0 0; }
+    .ij .j-row .kind { grid-column:4; grid-row:1 / 3; text-align:right; }
+    .ij .j-row .ai-m { display:block; }
+
+    /* 原型切換器：刻意與設計本身不同調 */
+    .prototype-switcher { position:fixed; z-index:20; left:50%; bottom:14px; transform:translateX(-50%); background:#111; color:#fff; display:flex; align-items:center; gap:8px; padding:6px; border-radius:99px; box-shadow:0 10px 30px #0004; white-space:nowrap; font-family:ui-sans-serif,system-ui,sans-serif; }
+    .prototype-switcher button { border-radius:99px; background:#ffffff26; color:#fff; min-height:36px; min-width:36px; }
+    .prototype-switcher strong { font-size:13px; font-weight:500; min-width:96px; text-align:center; }
+    .prototype-switcher .shuffle { font-size:12px; padding:0 12px; }
+    .demo-message { display:none; position:fixed; z-index:21; left:50%; bottom:72px; transform:translateX(-50%); max-width:90vw; background:#111; color:#fff; border-radius:8px; padding:10px 14px; font-size:13px; }
+
+    @media (max-width:860px) {
+      .site-head { padding:20px 16px; }
+      .site-head nav { gap:18px; }
+      .i-wrap { padding:0 16px; }
+      .i-hero { grid-template-columns:1fr; gap:40px; padding:36px 0 72px; }
+      .i-copy { padding-bottom:0; }
+      .i-copy h1 { margin:14px 0 32px; }
+      .i-list { grid-template-columns:1fr; gap:40px; padding-bottom:80px; }
+      .j-wrap { grid-template-columns:1fr; gap:0; padding:28px 16px 80px; }
+      .j-aside { display:none; }
+      .j-row { grid-template-columns:72px minmax(0,1fr); gap:0 16px; align-items:center; padding:18px 0; }
+      .j-row .no { display:none; }
+      .j-row .ai-m { display:inline; }
+      .j-row .thumb { display:block; grid-row:1 / 4; width:72px; height:72px; }
+      .j-row h3 { font-size:20px; }
+      .j-row .kind, .j-row p { grid-column:2; }
+      .j-row .kind { order:3; }
+      .j-planner { flex-direction:column; gap:6px; }
+      .ij .j-row { grid-template-columns:72px minmax(0,1fr); gap:0 16px; padding:18px 0; }
+      .ij .j-row .no { display:none; }
+      .ij .j-row .thumb { grid-column:1; grid-row:1 / 4; width:72px; height:72px; }
+      .ij .j-row h3, .ij .j-row p, .ij .j-row .kind { grid-column:2; grid-row:auto; text-align:left; }
+      .ij .j-row .ai-m { display:inline; }
+      .ij.searching .ij-hero { display:none; }
+      .ij-results { padding-bottom:80px; }
+      .k-wrap { padding:8px 16px 80px; }
+      .k-cell { grid-column:1 / -1 !important; grid-row:auto !important; padding:28px 20px; }
+      .k-hero { padding:0; }
+      .k-hero .photo { min-height:0; aspect-ratio:4/3; flex:none; }
+      .k-hero .cap { padding:14px 20px 18px; }
+      .k-set { grid-template-columns:1fr; }
+      .k-set svg { max-width:220px; }
+      .k-search { order:1; } .k-hero { order:2; } .k-card { order:3; } .k-set { order:4; } .k-all { order:5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="prototype-note">PROTOTYPE · 版型示意，照片／菜名／文案皆為示意內容；正式首頁只從已發布菜譜取資料</div>
+
+  <!-- I 靜 -->
+  <main class="variant i" data-variant="I">
+    <header class="site-head"><span class="brand">卡爾廚房</span><nav><a href="#" data-demo>菜譜</a><a href="#" data-demo>四菜一湯</a></nav></header>
+    <div class="i-wrap">
+      <section class="i-hero">
+        <div class="i-copy">
+          <span class="label reveal" data-today></span>
+          <h1 class="reveal" style="--i:1">今天，<br>煮點什麼。</h1>
+          <form class="line-search reveal" style="--i:2" data-demo-form role="search">
+            <input type="search" placeholder="菜名或食材" aria-label="搜尋菜譜"><button>搜尋</button>
+          </form>
+          <p class="i-alt reveal" style="--i:3">還沒想好？<a href="#" data-demo>配一桌四菜一湯 →</a></p>
+        </div>
+        <a class="reveal" style="--i:2" href="#" data-demo data-link data-slot="hero">
+          <figure><div class="photo"><img data-image alt=""></div>
+            <figcaption class="cap"><span class="name" data-title></span><span class="kind" data-kind></span><span class="ai">AI 繪製插畫</span></figcaption></figure>
+        </a>
+      </section>
+      <div class="i-list-head"><span class="label">其他菜譜</span><a class="more" href="#" data-demo>全部菜譜</a></div>
+      <section class="i-list">
+        <a class="i-card" href="#" data-demo data-link data-slot="card1"><div class="photo"><img data-image alt=""></div><div class="cap"><span class="name" data-title></span><span class="ai">AI 繪製插畫</span></div><p data-summary></p></a>
+        <a class="i-card" href="#" data-demo data-link data-slot="card2"><div class="photo"><img data-image alt=""></div><div class="cap"><span class="name" data-title></span><span class="ai">AI 繪製插畫</span></div><p data-summary></p></a>
+        <a class="i-all" href="#" data-demo><b>全部菜譜</b><span>依菜名排列，可用分類篩選 →</span></a>
+      </section>
+    </div>
+  </main>
+
+  <!-- J 目錄 -->
+  <main class="variant j" data-variant="J">
+    <header class="site-head"><span class="brand">卡爾廚房</span><nav><a href="#" data-demo>菜譜</a><a href="#" data-demo>四菜一湯</a></nav></header>
+    <div class="j-wrap">
+      <section>
+        <label class="label" for="j-q">搜尋菜譜</label>
+        <div class="j-search">
+          <input id="j-q" data-q type="search" placeholder="想煮什麼？" autocomplete="off">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2F3437" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21" stroke-linecap="square"/></svg>
+        </div>
+        <div class="j-bar" role="group" aria-label="分類">
+          <button aria-pressed="true" data-kind-filter="">全部</button>
+          <button aria-pressed="false" data-kind-filter="非湯料理">非湯料理</button>
+          <button aria-pressed="false" data-kind-filter="湯">湯</button>
+          <span class="count" data-count></span>
+        </div>
+        <div data-list></div>
+        <p class="j-planner"><span>不想一道一道挑？</span><a class="more" href="#" data-demo>配一桌四菜一湯 →</a></p>
+      </section>
+      <aside class="j-aside" data-slot="hero">
+        <figure><div class="photo"><img id="j-img" data-image alt=""></div>
+          <figcaption class="cap"><span class="name" id="j-name" data-title></span><span class="kind" id="j-kind" data-kind></span><span class="ai">AI 繪製插畫</span></figcaption></figure>
+      </aside>
+    </div>
+  </main>
+
+  <!-- I＋J 混搭：I 的第一屏，下方接 J 的即時篩選清單 -->
+  <main class="variant ij" data-variant="IJ">
+    <header class="site-head"><span class="brand">卡爾廚房</span><nav><a href="#ij-results">菜譜</a><a href="#" data-demo>四菜一湯</a></nav></header>
+    <div class="i-wrap">
+      <section class="i-hero">
+        <div class="i-copy">
+          <span class="label" data-today></span>
+          <h1>今天，<br>煮點什麼。</h1>
+          <form class="line-search" role="search" data-jump>
+            <input type="search" data-q placeholder="菜名或食材" aria-label="搜尋菜譜" autocomplete="off"><button>搜尋</button>
+          </form>
+          <p class="ij-live"><a href="#ij-results" data-live></a></p>
+          <p class="i-alt">還沒想好？<a href="#" data-demo>配一桌四菜一湯 →</a></p>
+        </div>
+        <a class="ij-hero" href="#" data-demo data-link data-slot="hero">
+          <figure><div class="photo"><img data-image alt=""></div>
+            <figcaption class="cap"><span class="name" data-title></span><span class="kind" data-kind></span><span class="ai">AI 繪製插畫</span></figcaption></figure>
+        </a>
+      </section>
+      <section class="ij-results" id="ij-results">
+        <div class="j-bar" role="group" aria-label="分類">
+          <span class="label" style="margin-right:12px">全部菜譜</span>
+          <button aria-pressed="true" data-kind-filter="">全部</button>
+          <button aria-pressed="false" data-kind-filter="非湯料理">非湯料理</button>
+          <button aria-pressed="false" data-kind-filter="湯">湯</button>
+          <span class="count" data-count></span>
+        </div>
+        <div data-list></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- K 格 -->
+  <main class="variant k" data-variant="K">
+    <header class="site-head"><span class="brand">卡爾廚房</span><nav><a href="#" data-demo>菜譜</a><a href="#" data-demo>四菜一湯</a></nav></header>
+    <div class="k-wrap">
+      <div class="k-grid">
+        <section class="k-cell k-search">
+          <div><span class="label" data-today></span><h1>家常菜，<br>照著做就好。</h1></div>
+          <form class="line-search" data-demo-form role="search"><input type="search" placeholder="菜名或食材" aria-label="搜尋菜譜"><button>搜尋</button></form>
+        </section>
+        <a class="k-cell k-hero" href="#" data-demo data-link data-slot="hero">
+          <div class="photo"><img data-image alt=""></div>
+          <div class="cap"><span class="name" data-title></span><span class="kind" data-kind></span><span class="ai">AI 繪製插畫</span></div>
+        </a>
+        <section class="k-cell k-set">
+          <div><span class="label">配菜</span><h2>四菜一湯</h2><p>從配菜候選挑出蛋白質菜、蔬菜菜，再配一道湯。</p><a class="more" href="#" data-demo>幫我配一桌 →</a></div>
+          <svg viewBox="0 0 180 120" fill="none" stroke="#2F3437" stroke-width="1" aria-hidden="true">
+            <rect x="4" y="4" width="172" height="112" rx="6" stroke="#A8A6A1"/>
+            <circle cx="40" cy="38" r="20"/><circle cx="90" cy="38" r="20"/><circle cx="140" cy="38" r="20"/>
+            <circle cx="62" cy="84" r="20"/><circle cx="118" cy="84" r="22" stroke="#9F2F2D"/><circle cx="118" cy="84" r="15" stroke="#9F2F2D"/>
+          </svg>
+        </section>
+        <a class="k-cell k-card" href="#" data-demo data-link data-slot="card1"><div class="photo"><img data-image alt=""></div><div class="cap"><span class="name" data-title></span><span class="ai">AI 繪製插畫</span></div><p data-summary></p></a>
+        <a class="k-cell k-card" href="#" data-demo data-link data-slot="card2"><div class="photo"><img data-image alt=""></div><div class="cap"><span class="name" data-title></span><span class="ai">AI 繪製插畫</span></div><p data-summary></p></a>
+        <section class="k-cell k-all">
+          <span class="label">全部菜譜</span>
+          <ul><li><a href="#" data-demo>全部 <span>3 道</span></a></li><li><a href="#" data-demo>非湯料理 <span>2 道</span></a></li><li><a href="#" data-demo>湯 <span>1 道</span></a></li></ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="demo-message" role="status"></div>
+  <div class="prototype-switcher" aria-label="原型切換">
+    <button id="prev" aria-label="上一個版本">←</button>
+    <strong id="variant-label"></strong>
+    <button id="next" aria-label="下一個版本">→</button>
+    <button id="shuffle" class="shuffle">換一組菜</button>
+  </div>
+
+  <script>
+    const recipes = [
+      { title:"番茄炒蛋", kind:"非湯料理", summary:"柔軟炒蛋和帶汁番茄，簡單上桌。", image:"homepage-assets/hand/tomato-egg.png", alt:"白瓷盤中盛著番茄炒蛋的手繪水彩插畫，旁邊放著一雙筷子" },
+      { title:"番茄肉醬義大利麵", kind:"非湯料理", summary:"熟悉的番茄肉醬，適合平日。", image:"homepage-assets/hand/pasta.png", alt:"白瓷盤中的番茄肉醬義大利麵手繪水彩插畫，旁邊放著叉子" },
+      { title:"香菇雞湯", kind:"湯", summary:"有菇香與雞肉的清爽熱湯。", image:"homepage-assets/hand/soup.png", alt:"白瓷碗中的香菇雞湯手繪水彩插畫，旁邊放著湯匙" }
+    ];
+    const variants=["I","J","IJ","K"], names={I:"I · 靜",J:"J · 目錄",IJ:"I＋J · 混搭",K:"K · 格"};
+    const params=new URLSearchParams(location.search);
+    let current=variants.includes(params.get("variant")) ? params.get("variant") : "I";
+
+    const now=new Date();
+    document.querySelectorAll("[data-today]").forEach(el=>el.textContent=`${now.getMonth()+1} 月 ${now.getDate()} 日　週${"日一二三四五六"[now.getDay()]}`);
+
+    // J 與 I＋J 共用：搜尋即篩選。無字詞時依菜名排序；有字詞時標題命中優先（對應 issue 04）
+    const jState={ q:"", kind:"" };
+    function previewJ(recipe) {
+      const img=document.getElementById("j-img");
+      document.querySelectorAll(".j .j-row").forEach(r=>r.classList.toggle("on",r.dataset.title===recipe.title));
+      if(img.getAttribute("src")===recipe.image) return;
+      img.style.opacity=0;
+      setTimeout(()=>{ img.src=recipe.image; img.alt=recipe.alt; document.getElementById("j-name").textContent=recipe.title; document.getElementById("j-kind").textContent=recipe.kind; img.style.opacity=1; },180);
+    }
+    function renderJ() {
+      const q=jState.q.trim();
+      const hits=recipes.filter(r=>(!jState.kind||r.kind===jState.kind) && (!q||r.title.includes(q)||r.summary.includes(q)))
+        .sort((a,b)=> q ? (b.title.includes(q)-a.title.includes(q)) || a.title.localeCompare(b.title,"zh-Hant") : a.title.localeCompare(b.title,"zh-Hant"));
+      document.querySelectorAll("[data-count]").forEach(el=>el.textContent=`${hits.length} 道`);
+      document.querySelectorAll("[data-live]").forEach(el=>el.textContent= q ? (hits.length ? `符合 ${hits.length} 道，往下看 ↓` : "沒有符合的菜譜 ↓") : "");
+      document.querySelector(".ij").classList.toggle("searching",!!q);
+      document.querySelectorAll("[data-list]").forEach(list=>{
+        list.innerHTML = hits.length
+          ? hits.map((r,i)=>`<a class="j-row" href="#" data-demo data-title="${r.title}"><span class="no">${String(i+1).padStart(2,"0")}</span><img class="thumb" src="${r.image}" alt=""><h3>${r.title}</h3><span class="kind">${r.kind}<span class="ai ai-m">　AI 繪製插畫</span></span><p>${r.summary}</p></a>`).join("")
+          : `<p class="j-empty">沒有符合「${q||jState.kind}」的菜譜。<button data-clear>清除條件</button></p>`;
+      });
+      document.querySelectorAll(".j .j-row").forEach(row=>{
+        const r=recipes.find(x=>x.title===row.dataset.title);
+        row.addEventListener("mouseenter",()=>previewJ(r)); row.addEventListener("focus",()=>previewJ(r));
+      });
+      document.querySelectorAll("[data-clear]").forEach(b=>b.addEventListener("click",()=>{ jState.q=""; jState.kind=""; document.querySelectorAll("[data-q]").forEach(i=>i.value=""); syncKindButtons(); renderJ(); }));
+      if(q && hits[0]) previewJ(hits[0]);
+    }
+    function syncKindButtons(){ document.querySelectorAll("[data-kind-filter]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.kindFilter===jState.kind))); }
+    document.querySelectorAll("[data-q]").forEach(input=>input.addEventListener("input",e=>{ jState.q=e.target.value; document.querySelectorAll("[data-q]").forEach(i=>{ if(i!==e.target) i.value=e.target.value; }); renderJ(); }));
+    document.querySelectorAll("[data-kind-filter]").forEach(b=>b.addEventListener("click",()=>{ jState.kind=b.dataset.kindFilter; syncKindButtons(); renderJ(); }));
+    document.querySelectorAll("[data-jump]").forEach(f=>f.addEventListener("submit",e=>{ e.preventDefault(); document.getElementById("ij-results").scrollIntoView({behavior:"smooth"}); }));
+
+    function show(key) {
+      current=key;
+      document.querySelectorAll(".variant").forEach(el=>{ el.classList.toggle("active",el.dataset.variant===key); el.hidden=el.dataset.variant!==key; });
+      document.getElementById("variant-label").textContent=names[key];
+      const url=new URL(location.href); url.searchParams.set("variant",key); history.replaceState(null,"",url);
+      window.scrollTo(0,0);
+    }
+    function cycle(step) { show(variants[(variants.indexOf(current)+step+variants.length)%variants.length]); }
+    let lastHero="";
+    function shuffle() {
+      const order=[...recipes];
+      for(let i=order.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [order[i],order[j]]=[order[j],order[i]]; }
+      if(order[0].title===lastHero) [order[0],order[1]]=[order[1],order[0]];
+      lastHero=order[0].title;
+      document.querySelectorAll("[data-slot]").forEach(slot=>{
+        const recipe=order[{hero:0,card1:1,card2:2}[slot.dataset.slot]];
+        slot.querySelectorAll("[data-image]").forEach(el=>{ el.src=recipe.image; el.alt=recipe.alt; });
+        slot.querySelectorAll("[data-title]").forEach(el=>el.textContent=recipe.title);
+        slot.querySelectorAll("[data-kind]").forEach(el=>el.textContent=recipe.kind);
+        slot.querySelectorAll("[data-summary]").forEach(el=>el.textContent=recipe.summary);
+        if(slot.matches("a[data-link]")) slot.setAttribute("aria-label",`查看${recipe.title}菜譜（原型示意）`);
+      });
+      document.querySelectorAll(".j .j-row").forEach(r=>r.classList.toggle("on",r.dataset.title===order[0].title));
+    }
+    let toastTimer;
+    function demo(event){ if(!event.target.closest("[data-demo],[data-demo-form]"))return; event.preventDefault(); const el=document.querySelector(".demo-message"); el.textContent="這是版型原型；連結尚未接上正式網站。"; el.style.display="block"; clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.style.display="none",2600); }
+    document.addEventListener("click",demo);
+    document.addEventListener("submit",demo);
+    document.getElementById("prev").addEventListener("click",()=>cycle(-1));
+    document.getElementById("next").addEventListener("click",()=>cycle(1));
+    document.getElementById("shuffle").addEventListener("click",shuffle);
+    document.addEventListener("keydown",event=>{ if(["INPUT","TEXTAREA"].includes(document.activeElement.tagName)||document.activeElement.isContentEditable)return; if(event.key==="ArrowLeft")cycle(-1); if(event.key==="ArrowRight")cycle(1); });
+    renderJ(); shuffle(); show(current);
+  </script>
+</body>
+</html>

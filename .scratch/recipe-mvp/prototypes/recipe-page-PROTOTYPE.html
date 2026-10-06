@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarlKitchen 菜譜內頁原型</title>
+  <!--
+    PROTOTYPE，用完即丟。
+    問題：成品用照片，材料合照與步驟圖改用插畫，是否適合？手繪與卡通哪一種和首頁 I／J 的安靜風格搭？
+    同一頁面、同一份內容，只切換插畫組：?variant=hand（手繪水彩）| toon（扁平卡通）。
+    菜譜內容是示意，未試做；插畫由本地 AI 製作。
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#F7F6F3; --paper:#FBFBFA; --ink:#2F3437; --mute:#787774; --faint:#A8A6A1; --line:#E4E2DC; --accent:#9F2F2D;
+      --serif:"Noto Serif TC","Songti TC",serif; --sans:"Noto Sans TC","PingFang TC",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; padding-bottom:84px; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.75; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; width:100%; height:100%; object-fit:cover; }
+    figure { margin:0; }
+    button { font:inherit; color:inherit; cursor:pointer; background:none; border:0; padding:0; }
+    a:focus-visible, button:focus-visible { outline:1px solid var(--ink); outline-offset:4px; }
+    .prototype-note { padding:7px 16px; background:#2F3437; color:#F7F6F3; font-size:12px; text-align:center; letter-spacing:.04em; }
+    .site-head { max-width:1200px; margin:0 auto; padding:28px 32px; display:flex; align-items:baseline; justify-content:space-between; }
+    .brand { font-family:var(--serif); font-weight:500; font-size:17px; letter-spacing:.24em; }
+    .site-head nav { display:flex; gap:32px; font-size:13px; letter-spacing:.12em; color:var(--mute); }
+    .label { font-size:12px; letter-spacing:.24em; color:var(--mute); }
+    .ai { font-size:11px; letter-spacing:.12em; color:var(--faint); white-space:nowrap; }
+    .wrap { max-width:1200px; margin:0 auto; padding:0 32px; }
+
+    .crumb { font-size:13px; color:var(--mute); letter-spacing:.08em; }
+    .crumb a { border-bottom:1px solid var(--line); }
+    .intro { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:80px; align-items:end; padding:40px 0 96px; }
+    .intro h1 { font-family:var(--serif); font-weight:300; font-size:clamp(40px,5vw,64px); letter-spacing:.08em; line-height:1.3; margin:20px 0 18px; }
+    .intro p { font-size:16px; color:#4a4f52; margin:0 0 36px; max-width:22em; }
+    .meta { display:grid; grid-template-columns:repeat(3,auto); justify-content:start; gap:0 40px; border-top:1px solid var(--line); padding-top:20px; }
+    .meta dt { font-size:12px; letter-spacing:.2em; color:var(--mute); }
+    .meta dd { margin:4px 0 0; font-family:var(--serif); font-size:20px; }
+    .tags { display:flex; gap:8px; margin-top:24px; }
+    .tags span { font-size:12px; letter-spacing:.08em; padding:3px 10px; border-radius:99px; }
+    .hero .photo { aspect-ratio:3/2; overflow:hidden; mix-blend-mode:multiply; }
+    .hero figcaption { display:flex; justify-content:flex-end; padding-top:10px; }
+
+    .body { display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:96px; border-top:1px solid var(--line); padding:56px 0 140px; align-items:start; }
+    .ingredients { position:sticky; top:32px; }
+    h2 { font-family:var(--serif); font-weight:400; font-size:24px; letter-spacing:.14em; margin:0 0 6px; }
+    .serves { font-size:13px; color:var(--mute); letter-spacing:.08em; }
+    .illo { background:var(--paper); border:1px solid var(--line); overflow:hidden; aspect-ratio:3/2; }
+    .illo img { object-fit:contain; transition:opacity .3s; }
+    .illo.missing { display:grid; place-items:center; color:var(--faint); font-size:13px; letter-spacing:.1em; }
+    .illo.missing img { display:none; }
+    .illo.missing::after { content:"插畫尚未產生"; }
+    .illo-cap { display:flex; justify-content:flex-end; padding-top:8px; }
+    .ingredients .illo { margin:24px 0 0; }
+    .ing-list { list-style:none; margin:28px 0 0; padding:0; }
+    .ing-list li { display:flex; align-items:baseline; gap:10px; padding:11px 0; border-bottom:1px solid var(--line); font-size:15px; }
+    .ing-list li i { flex:1; }
+    .ing-list li b { font-weight:400; font-variant-numeric:tabular-nums; }
+    .ing-list li small { display:block; font-size:12px; color:var(--mute); }
+    .ing-list .group { border-bottom:0; padding:22px 0 4px; font-size:12px; letter-spacing:.2em; color:var(--mute); }
+
+    .steps { list-style:none; margin:28px 0 0; padding:0; counter-reset:s; }
+    .step { counter-increment:s; display:grid; grid-template-columns:56px minmax(0,1fr); gap:0 8px; padding:0 0 56px; }
+    .step::before { content:counter(s,decimal-leading-zero); font-family:var(--serif); font-size:22px; color:var(--faint); line-height:1.4; }
+    .step p { margin:0 0 20px; font-size:17px; line-height:1.85; }
+    .step p em { font-style:normal; color:var(--accent); }
+    .step .illo { grid-column:2; }
+    .step .illo-cap { grid-column:2; }
+    .note { margin-top:8px; padding:20px 24px; background:var(--paper); border:1px solid var(--line); font-size:14px; color:#4a4f52; }
+
+    .prototype-switcher { position:fixed; z-index:20; left:50%; bottom:14px; transform:translateX(-50%); background:#111; color:#fff; display:flex; align-items:center; gap:8px; padding:6px; border-radius:99px; box-shadow:0 10px 30px #0004; white-space:nowrap; font-family:ui-sans-serif,system-ui,sans-serif; }
+    .prototype-switcher button { border-radius:99px; background:#ffffff26; color:#fff; min-height:36px; min-width:36px; }
+    .prototype-switcher strong { font-size:13px; font-weight:500; min-width:110px; text-align:center; }
+
+    @media (max-width:860px) {
+      .site-head { padding:20px 16px; }
+      .site-head nav { gap:18px; }
+      .wrap { padding:0 16px; }
+      .intro { grid-template-columns:1fr; gap:28px; padding:24px 0 56px; }
+      .intro p { margin-bottom:24px; }
+      .meta { gap:0 24px; }
+      .body { grid-template-columns:1fr; gap:56px; padding:40px 0 80px; }
+      .ingredients { position:static; }
+      .step { grid-template-columns:40px minmax(0,1fr); padding-bottom:44px; }
+      .step::before { font-size:18px; }
+      .step p { font-size:16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="prototype-note">PROTOTYPE · 菜譜內容為示意、未試做；所有插畫由 AI 製作</div>
+  <header class="site-head"><span class="brand">卡爾廚房</span><nav><a href="#">菜譜</a><a href="#">四菜一湯</a></nav></header>
+
+  <main class="wrap">
+    <div class="crumb"><a href="#">菜譜</a>　/　非湯料理</div>
+    <section class="intro">
+      <div>
+        <h1>番茄炒蛋</h1>
+        <p>蛋先炒到半熟盛起，再把番茄炒出汁，最後合在一起。蛋保持柔軟，番茄帶點湯汁，適合配飯。</p>
+        <dl class="meta">
+          <div><dt>份量</dt><dd>2 人份</dd></div>
+          <div><dt>時間</dt><dd>約 15 分鐘</dd></div>
+          <div><dt>分類</dt><dd>非湯料理</dd></div>
+        </dl>
+        <div class="tags"><span style="background:#FDEBEC;color:#9F2F2D">蛋白質菜</span><span style="background:#EDF3EC;color:#346538">蔬菜菜</span></div>
+      </div>
+      <figure class="hero">
+        <div class="photo"><img src="homepage-assets/hand/tomato-egg.png" alt="白瓷盤中盛著番茄炒蛋的手繪水彩插畫，旁邊放著一雙筷子"></div>
+        <figcaption><span class="ai">AI 繪製插畫</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="body">
+      <aside class="ingredients">
+        <h2>材料</h2>
+        <span class="serves">2 人份</span>
+        <figure>
+          <div class="illo" data-illo="ingredients"><img alt="材料插畫：兩顆番茄、三顆雞蛋、一支青蔥，以及小碟裝的糖、鹽、油和水"></div>
+          <figcaption class="illo-cap"><span class="ai">AI 繪製插畫</span></figcaption>
+        </figure>
+        <ul class="ing-list">
+          <li>番茄<i></i><b>2 顆（約 300 g）</b></li>
+          <li>雞蛋<i></i><b>3 顆</b></li>
+          <li><span>青蔥<small>蔥白、蔥綠分開</small></span><i></i><b>1 支</b></li>
+          <li class="group">調味</li>
+          <li>食用油<i></i><b>30 ml</b></li>
+          <li>糖<i></i><b>5 g</b></li>
+          <li>鹽<i></i><b>適量</b></li>
+          <li>水<i></i><b>50 ml</b></li>
+        </ul>
+      </aside>
+
+      <section>
+        <h2>做法</h2>
+        <ol class="steps">
+          <li class="step">
+            <p>番茄去蒂切成小塊；青蔥切段，<em>蔥白和蔥綠分開放</em>。</p>
+            <figure class="illo" data-illo="step-1"><img alt="砧板上切好的番茄塊，旁邊分成兩小堆的蔥白與蔥綠"></figure>
+            <figcaption class="illo-cap"><span class="ai">AI 繪製插畫</span></figcaption>
+          </li>
+          <li class="step">
+            <p>雞蛋打入碗中，加一小撮鹽打散。</p>
+          </li>
+          <li class="step">
+            <p>熱鍋後倒入食用油，油熱倒入蛋液。蛋液邊緣凝固後輕推，<em>約七分熟就盛起</em>，別炒老。</p>
+            <figure class="illo" data-illo="step-2"><img alt="炒鍋中剛下鍋、半凝固的蛋液與一把鍋鏟"></figure>
+            <figcaption class="illo-cap"><span class="ai">AI 繪製插畫</span></figcaption>
+          </li>
+          <li class="step">
+            <p>原鍋放入蔥白炒香，下番茄翻炒到軟化出汁，加糖、鹽和水煮一分鐘。</p>
+            <figure class="illo" data-illo="step-3"><img alt="炒鍋中正在軟化出汁的番茄塊與蔥白"></figure>
+            <figcaption class="illo-cap"><span class="ai">AI 繪製插畫</span></figcaption>
+          </li>
+          <li class="step">
+            <p>倒回炒蛋拌勻，讓蛋吸一點湯汁，撒上蔥綠就起鍋。</p>
+            <figure class="illo" data-illo="step-4"><img alt="炒蛋倒回鍋中與番茄拌勻，上面撒著蔥綠"></figure>
+            <figcaption class="illo-cap"><span class="ai">AI 繪製插畫</span></figcaption>
+          </li>
+        </ol>
+        <p class="note">番茄偏酸時可多加一點糖；想要湯汁多一些，水可加到 80 ml。</p>
+      </section>
+    </section>
+  </main>
+
+  <div class="prototype-switcher" aria-label="原型切換">
+    <button id="prev" aria-label="上一個版本">←</button>
+    <strong id="variant-label"></strong>
+    <button id="next" aria-label="下一個版本">→</button>
+  </div>
+
+  <script>
+    const variants=["hand","toon"], names={hand:"手繪水彩",toon:"扁平卡通"};
+    const params=new URLSearchParams(location.search);
+    let current=variants.includes(params.get("variant")) ? params.get("variant") : "hand";
+    function show(key) {
+      current=key;
+      document.querySelectorAll("[data-illo]").forEach(box=>{
+        const img=box.querySelector("img");
+        box.classList.remove("missing");
+        img.onerror=()=>box.classList.add("missing");
+        img.src=`recipe-page-assets/${key}/${box.dataset.illo}.png`;
+      });
+      document.getElementById("variant-label").textContent=names[key];
+      const url=new URL(location.href); url.searchParams.set("variant",key); history.replaceState(null,"",url);
+    }
+    function cycle(step) { show(variants[(variants.indexOf(current)+step+variants.length)%variants.length]); }
+    document.getElementById("prev").addEventListener("click",()=>cycle(-1));
+    document.getElementById("next").addEventListener("click",()=>cycle(1));
+    document.addEventListener("keydown",e=>{ if(e.key==="ArrowLeft")cycle(-1); if(e.key==="ArrowRight")cycle(1); });
+    show(current);
+  </script>
+</body>
+</html>
