@@ -1,7 +1,10 @@
 import { expect, test, type Page } from "@playwright/test";
 import {
   expectNoAxeViolations,
+  expectFocusRing,
   expectNoHorizontalScroll,
+  expectTouchTargets,
+  tabTo,
 } from "./a11y-helpers";
 import { publishedFixtureRecipes } from "./fixture-recipes";
 
@@ -32,7 +35,8 @@ test.describe("關於頁", () => {
       .getByRole("main")
       .getByRole("link")
       .evaluateAll((links) => links.map((a) => a.getAttribute("href")));
-    expect(hrefs.filter((href) => /^https?:/.test(href ?? ""))).toEqual([]);
+    // 白名單：只允許站內路徑（單一 `/` 開頭），擋下 `//`、`https:`、`mailto:` 等。
+    expect(hrefs.filter((href) => !/^\/(?!\/)/.test(href ?? ""))).toEqual([]);
   });
 
   test("可從頁首導覽進入", async ({ page }) => {
@@ -81,7 +85,9 @@ test.describe("axe（WCAG 2.2 AA）", () => {
 
   test("首頁切換到湯分類零違規", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("button", { name: "湯", exact: true }).click();
+    const soup = page.getByRole("button", { name: "湯", exact: true });
+    await soup.click();
+    await expect(soup).toHaveAttribute("aria-pressed", "true");
     await expectNoAxeViolations(page, "首頁湯分類");
   });
 });
@@ -99,28 +105,14 @@ test.describe("多寬度版面", () => {
 test.describe("鍵盤", () => {
   test("只用鍵盤即可搜尋並清除條件，焦點可見", async ({ page }) => {
     await page.goto("/");
-    // 從頁首往後 Tab 直到搜尋框取得焦點
-    for (let i = 0; i < 10; i++) {
-      if (await box(page).evaluate((el) => el === document.activeElement))
-        break;
-      await page.keyboard.press("Tab");
-    }
-    await expect(box(page)).toBeFocused();
-    expect(
-      await box(page).evaluate((el) => getComputedStyle(el).outlineStyle),
-    ).not.toBe("none");
+    await tabTo(page, box(page));
+    await expectFocusRing(box(page));
 
     await page.keyboard.type("zzzz");
     await expect(page.getByText("找不到符合")).toBeVisible();
     const clear = page.getByRole("button", { name: "清除條件" });
-    for (let i = 0; i < 10; i++) {
-      if (await clear.evaluate((el) => el === document.activeElement)) break;
-      await page.keyboard.press("Tab");
-    }
-    await expect(clear).toBeFocused();
-    expect(
-      await clear.evaluate((el) => getComputedStyle(el).outlineStyle),
-    ).not.toBe("none");
+    await tabTo(page, clear);
+    await expectFocusRing(clear);
     await page.keyboard.press("Enter");
     await expect(box(page)).toHaveValue("");
   });
@@ -128,31 +120,28 @@ test.describe("鍵盤", () => {
   test("只用鍵盤即可切換分類（Tab 抵達，空白鍵啟動）", async ({ page }) => {
     await page.goto("/");
     const soup = page.getByRole("button", { name: "湯", exact: true });
-    for (let i = 0; i < 20; i++) {
-      if (await soup.evaluate((el) => el === document.activeElement)) break;
-      await page.keyboard.press("Tab");
-    }
-    await expect(soup).toBeFocused();
+    await tabTo(page, soup);
     await page.keyboard.press("Space");
     await expect(soup).toHaveAttribute("aria-pressed", "true");
-    expect(
-      await soup.evaluate((el) => getComputedStyle(el).outlineStyle),
-    ).not.toBe("none");
+    await expectFocusRing(soup);
   });
 });
 
-// 觸控目標 44×44：分類切換、搜尋框、配菜按鈕已分別由 homepage.spec.ts
-// 「互動元件觸控目標至少 44×44」、search.spec.ts 與 meal.spec.ts「無障礙」涵蓋；
-// 頁首連結由 recipe-page.spec.ts 涵蓋，這裡只補關於頁新增的導覽連結。
-test("頁首導覽連結（含關於）觸控目標至少 44×44", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 800 });
+// 觸控目標 44×44：分類切換與首頁互動元件在 homepage.spec.ts、配菜按鈕在 meal.spec.ts，
+// 這裡量頁首導覽連結（含關於），在五個寬度各量一次。
+test("頁首導覽連結（含關於）在各寬度觸控目標至少 44×44", async ({ page }) => {
   await page.goto("/about/");
-  for (const link of await page
-    .getByRole("navigation", { name: "主選單" })
-    .getByRole("link")
-    .all()) {
-    const size = await link.boundingBox();
-    expect(size!.width).toBeGreaterThanOrEqual(44);
-    expect(size!.height).toBeGreaterThanOrEqual(44);
-  }
+  await expectTouchTargets(
+    page,
+    page.getByRole("navigation", { name: "主選單" }).getByRole("link"),
+  );
+});
+
+test.describe("配菜候選不足頁", () => {
+  test("按下抽選後的提示狀態 axe 零違規", async ({ page }) => {
+    await page.goto("/meal/");
+    await page.getByRole("button", { name: "重新抽選" }).click();
+    await expect(page.getByRole("status")).toContainText("候選池的非湯菜不足");
+    await expectNoAxeViolations(page, "配菜頁候選不足");
+  });
 });
