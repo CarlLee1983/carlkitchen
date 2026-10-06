@@ -97,10 +97,10 @@
         <div class="summary">
           <h2>一段話看懂</h2>
           <ul>
-            <li><strong>內容</strong>：一份菜譜就是一道菜，分「非湯料理」與「湯」；AI 重新表述公開資料、本地製圖，來源網址只留在內部紀錄。</li>
+            <li><strong>內容</strong>：一份菜譜就是一道菜，分「非湯料理」與「湯」；AI 重新表述公開資料、本地製圖，來源網址只留在內部紀錄、不上網站。</li>
             <li><strong>讀者能做的事</strong>：在首頁搜尋與瀏覽全部菜譜、閱讀並列印菜譜，以及抽一桌四菜一湯／五菜一湯。</li>
             <li><strong>視覺</strong>：安靜克制的日系版面；全站料理圖片統一為手繪水彩插畫，標示「AI 繪製插畫」。</li>
-            <li><strong>發布</strong>：私有儲存庫、只有站主能合入；合入主分支就自動部署到 <code>carlkitchen.gravito.dev</code>，八項自動檢查擋在合入與部署之前。</li>
+            <li><strong>發布</strong>：公開儲存庫加分支保護、只有站主能合入；合入主分支就自動部署到 <code>carlkitchen.gravito.dev</code>，八項自動檢查擋在合入與部署之前。</li>
           </ul>
         </div>
         <nav aria-label="本文段落">
@@ -149,7 +149,7 @@
               <li>至少一項材料：名稱＋用量（公制或顆、瓣），調味可寫「適量」</li>
               <li>至少一步依序排列的文字做法</li>
               <li>成品圖、材料合照、至少一張關鍵步驟圖，每張都有替代文字</li>
-              <li>至少一個核准來源網址，只存在內部紀錄，不輸出到網站</li>
+              <li>至少一個核准來源網址，記在儲存庫的內部紀錄，不輸出到網站</li>
             </ul>
           </div>
           <div class="card">
@@ -249,7 +249,7 @@
       <section id="gates" aria-labelledby="gates-title">
         <div class="prose">
           <h2 id="gates-title">發布門檻：誰能合入、什麼會擋下</h2>
-          <p>儲存庫是私有的（刻意例外於「個人專案公開」慣例），因為來源紀錄和菜譜放在一起。主分支有分支保護，只有站主有寫入權；代理只能推送工作分支與開 PR。沒有公開預覽網址，<code>workers.dev</code> 與預覽網址都關閉。</p>
+          <p>儲存庫是公開的 <code>CarlLee1983/carlkitchen</code>：原定私有，但私有儲存庫在站主帳號下無法使用分支保護，而來源網址可以公開。主分支有分支保護（含管理員），只有站主有寫入權；草稿留在本地，代理送審時才推送工作分支並開 PR。沒有公開預覽網址，<code>workers.dev</code> 與預覽網址都關閉。</p>
           <p>下列八項在每個 PR 執行、部署前再執行一次；任一失敗就擋下。</p>
         </div>
         <div class="table-wrap" role="region" aria-label="八項必要檢查表格，可水平捲動" tabindex="0">
@@ -302,9 +302,8 @@
           <h2 id="open-title">尚未完成與限制</h2>
           <ul>
             <li><strong>決策地圖仍開著</strong>：等首批內容做出來後，還要檢查是否有特殊料理、食安或圖片使用情境需要另開決策票（<a href="map.md">map.md</a>〈Not yet specified〉）。</li>
-            <li><strong>未提交</strong>：08 的結論、07 的第 8 項檢查、map 的更新與 <code>recipe-writing</code> skill 目前只在工作目錄，尚未 commit。01–06 與 07 的其餘內容已提交（<code>d29b233</code>、<code>8af8a32</code>）。</li>
-            <li><strong>尚未驗證的技術前提</strong>：Pagefind 在本站的繁中搜尋品質尚無實測，04 要求以正式索引驗收。</li>
-            <li><strong>都還只是規格</strong>：私有儲存庫、分支保護、Cloudflare 網域、AGENTS.md 與 README 的規則都要等實作時才建立。</li>
+                        <li><strong>尚未驗證的技術前提</strong>：Pagefind 在本站的繁中搜尋品質尚無實測，04 要求以正式索引驗收。</li>
+            <li><strong>實作進度</strong>：公開儲存庫與分支保護已建立（必要檢查待 CI 出現後加入）；Cloudflare 網域、AGENTS.md 與 README 的規則要等實作時建立。</li>
           </ul>
         </div>
       </section>
