@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { expectFocusRing, expectTouchTargets } from "./a11y-helpers";
 import { publishedFixtureRecipes } from "./fixture-recipes";
 
 const recipes = publishedFixtureRecipes();
@@ -225,19 +226,15 @@ test("寬螢幕第一屏左文右圖", async ({ page }) => {
   expect(heroBox!.x).toBeGreaterThan(search!.x + search!.width);
 });
 
-test("互動元件觸控目標至少 44×44", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 800 });
+test("互動元件在各寬度觸控目標至少 44×44", async ({ page }) => {
   await page.goto("/");
-  const targets = [
-    page.getByRole("searchbox"),
-    page.getByRole("link", { name: "配一桌四菜一湯" }),
-    ...(await page.getByRole("button").all()),
-  ];
-  for (const target of targets) {
-    const box = await target.boundingBox();
-    expect(box!.width).toBeGreaterThanOrEqual(44);
-    expect(box!.height).toBeGreaterThanOrEqual(44);
-  }
+  await expectTouchTargets(
+    page,
+    page
+      .getByRole("searchbox")
+      .or(page.getByRole("link", { name: "配一桌四菜一湯" }))
+      .or(page.getByRole("button")),
+  );
 });
 
 test("鍵盤 Tab 可走到清單第一列菜名，焦點外框可見", async ({ page }) => {
@@ -249,10 +246,7 @@ test("鍵盤 Tab 可走到清單第一列菜名，焦點外框可見", async ({ 
   }
   await expect(firstLink).toBeFocused();
   // 焦點外框畫在撐滿整列的 ::after 上
-  const outline = await firstLink.evaluate(
-    (el) => getComputedStyle(el, "::after").outlineStyle,
-  );
-  expect(outline).not.toBe("none");
+  await expectFocusRing(firstLink, "::after");
 });
 
 test("鍵盤可用 Enter 切換分類", async ({ page }) => {
@@ -261,8 +255,5 @@ test("鍵盤可用 Enter 切換分類", async ({ page }) => {
   await button.focus();
   await page.keyboard.press("Enter");
   await expect(rows(page)).toHaveCount(soups.length);
-  const outline = await button.evaluate(
-    (el) => getComputedStyle(el).outlineStyle,
-  );
-  expect(outline).not.toBe("none");
+  await expectFocusRing(button);
 });

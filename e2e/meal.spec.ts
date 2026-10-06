@@ -1,6 +1,15 @@
-import { expect, test, type Locator, type Page } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import { expectServedPool, mealCandidates } from "./meal-fixtures";
 import { MEAL_STORAGE_KEY } from "../src/utils/meal-session";
+import {
+  WIDTHS,
+  expectFocusRing,
+  expectNoAxeViolations,
+  expectNoHorizontalScroll,
+  expectNoOverflowNow,
+  expectTouchTargets,
+  tabTo,
+} from "./a11y-helpers";
 
 // 這支規格跑在 meal 專案：以 tests/fixtures/meal-recipes 建置，
 // 候選池剛好是 5 道非湯菜（一道蔬菜菜加四道蛋白質菜）與 1 道湯。
@@ -258,31 +267,29 @@ test("保存的內容損毀時同樣清除並提示重抽", async ({ page }) => 
 });
 
 test.describe("無障礙", () => {
-  test("鎖定與替換按鈕觸控目標至少 44×44", async ({ page }) => {
+  test("模式切換、重抽、鎖定與替換按鈕在各寬度觸控目標至少 44×44", async ({
+    page,
+  }) => {
     await page.goto("/meal/");
     await reroll(page).click();
-    const buttons: Locator = page.getByRole("button");
-    for (const button of await buttons.all()) {
-      const box = await button.boundingBox();
-      expect(box?.width).toBeGreaterThanOrEqual(44);
-      expect(box?.height).toBeGreaterThanOrEqual(44);
-    }
+    await expect(items(page)).toHaveCount(5);
+    await expectTouchTargets(page, page.getByRole("button"));
   });
 
-  test("鍵盤即可抽選與鎖定", async ({ page }) => {
+  test("只用鍵盤即可抽選與鎖定（Tab 抵達，空白鍵啟動）", async ({ page }) => {
     await page.goto("/meal/");
-    await reroll(page).focus();
+    await tabTo(page, reroll(page));
     await page.keyboard.press("Enter");
     await expect(items(page)).toHaveCount(5);
 
-    await lockOf(page, vegetableDish.title).focus();
-    await page.keyboard.press("Enter");
+    const lock = lockOf(page, vegetableDish.title);
+    await tabTo(page, lock);
+    await expectFocusRing(lock);
+    await page.keyboard.press("Space");
     // 重新繪製後焦點仍在同一顆按鈕上，可以連續操作。
-    await expect(lockOf(page, vegetableDish.title)).toBeFocused();
-    await expect(lockOf(page, vegetableDish.title)).toHaveAttribute(
-      "aria-pressed",
-      "true",
-    );
+    await expect(lock).toBeFocused();
+    await expect(lock).toHaveAttribute("aria-pressed", "true");
+    await expectFocusRing(lock);
   });
 
   test("替換後焦點仍在同一位置的替換按鈕", async ({ page }) => {
@@ -302,5 +309,50 @@ test.describe("無障礙", () => {
         .nth(index)
         .getByRole("button", { name: /^替換 / }),
     ).toBeFocused();
+  });
+
+  test("只用鍵盤即可替換，焦點可見", async ({ page }) => {
+    await page.goto("/meal/");
+    // 完全以 Tab 與 Enter 操作：先走到重新抽選
+    await tabTo(page, reroll(page));
+    await page.keyboard.press("Enter");
+    await expect(items(page)).toHaveCount(5);
+
+    const before = await titlesOnTable(page);
+    const swapped = before.find(
+      (title) => dishTitles.includes(title) && title !== vegetableDish.title,
+    )!;
+    const button = replaceOf(page, swapped);
+    await tabTo(page, button);
+    await expectFocusRing(button);
+    await page.keyboard.press("Enter");
+    await expect(status(page)).toContainText("只替換了一道菜");
+  });
+
+  test("配菜頁在各寬度沒有水平捲動，含已抽選狀態", async ({ page }) => {
+    await expectNoHorizontalScroll(page, "/meal/");
+    await reroll(page).click();
+    await expect(items(page)).toHaveCount(5);
+    for (const width of WIDTHS) {
+      await page.setViewportSize({ width, height: 900 });
+      await expectNoOverflowNow(page, `已抽選 ${width}px`);
+    }
+  });
+
+  test("axe 零違規：未抽選、已抽選（含鎖定）與五菜一湯", async ({ page }) => {
+    await page.goto("/meal/");
+    await expectNoAxeViolations(page, "配菜頁未抽選");
+    await reroll(page).click();
+    await expect(items(page)).toHaveCount(5);
+    await lockOf(page, vegetableDish.title).click();
+    await expectNoAxeViolations(page, "配菜頁已抽選");
+
+    await modeButton(page, "五菜一湯").click();
+    await expect(modeButton(page, "五菜一湯")).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    await expect(items(page)).toHaveCount(6);
+    await expectNoAxeViolations(page, "配菜頁五菜一湯");
   });
 });
