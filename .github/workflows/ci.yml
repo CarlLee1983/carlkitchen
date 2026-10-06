@@ -13,39 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0 (Node.js 24)
-        with:
-          version: 12.1.0
-          run_install: false
-
-      - name: Install Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
-        with:
-          node-version: 22.17.1
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Install Playwright Chromium
-        run: pnpm exec playwright install --with-deps chromium
-
-      - name: Check formatting, types, and production build
-        run: pnpm check
-
-      # 必須在 e2e 之前：e2e 會以固定菜譜覆寫 dist，這裡檢查的是 pnpm check 建出的真實內容。
-      # PR 不開 --launch 候選池門檻（部署工作才開）。
-      - name: Check content and build output
-        run: pnpm check:content
-
-      - name: Run unit tests
-        run: pnpm test
-
-      - name: Run browser tests
-        run: pnpm test:e2e
-
-      # 只驗證設定：此時 dist 是 e2e 步驟用固定菜譜建出來的，
-      # 部署工作流程必須另以正式內容重新建置。
-      - name: Validate Cloudflare deployment
-        run: pnpm exec wrangler deploy --dry-run
+      # 檢查步驟與部署工作流程共用，定義在 .github/actions/verify。
+      - name: Verify
+        uses: ./.github/actions/verify

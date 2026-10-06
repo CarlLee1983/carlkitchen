@@ -1,0 +1,42 @@
+name: Deploy
+
+# 推送主分支或手動觸發；沒有排程（首頁隨機大圖在瀏覽器端選取，不需定時重建）。
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# 同群組排隊，不取消進行中的部署，避免半途中斷。
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      # 與 CI 相同的必要檢查，任一失敗即停止、不部署。
+      - name: Verify
+        uses: ./.github/actions/verify
+
+      # 驗證步驟中的 e2e 已以固定菜譜覆寫 dist，必須以正式內容重建。
+      - name: Rebuild with production content
+        run: pnpm build
+
+      # 對正式建置輸出再檢查一次，並開啟候選池門檻（非湯料理 >= 12、湯 >= 3）。
+      # 未達標時以非零狀態結束並列出缺額，此步驟之後不會部署。
+      - name: Check content, build output and candidate pool
+        run: pnpm check:content --launch
+
+      # token 只經由環境變數傳遞；不開 debug、不 echo。
+      - name: Deploy to Cloudflare
+        run: pnpm exec wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

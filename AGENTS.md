@@ -25,6 +25,13 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 
 環境變數 `RECIPES_DIR` 選擇內容根目錄，預設 `content/recipes`；測試與 e2e 用 `tests/fixtures/recipes`。
 
+## 部署
+
+- `.github/workflows/ci.yml`（PR）與 `deploy.yml`（推送 `main`／手動，無排程，並行排隊不取消）共用 `.github/actions/verify`，改檢查步驟只改這一處。
+- 部署在共用檢查後以正式內容重建，再跑 `pnpm check:content --launch`（非湯料理 ≥ 12、湯 ≥ 3）才 `wrangler deploy`；不得為了讓部署通過而放寬門檻。
+- 回滾程序見 `README.md`「部署與回滾」；上線驗收檢核表見 `docs/acceptance.md`。
+- 不得執行真實部署或 `wrangler rollback`，也不得把 token 寫進檔案或日誌。
+
 ## 寫作與內容
 
 撰寫菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。schema 規則見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
