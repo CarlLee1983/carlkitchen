@@ -6,7 +6,7 @@ export const RECIPE_CATEGORIES = ["非湯料理", "湯"] as const;
 export const SEASONING_GROUP = "調味";
 
 /** 沒有分組的材料歸入的預設分組名稱。 */
-export const DEFAULT_INGREDIENT_GROUP = "材料";
+export const DEFAULT_INGREDIENT_GROUP = "主料";
 
 /** 沒有用量的材料在頁面上顯示的字樣。 */
 export const UNSPECIFIED_AMOUNT_LABEL = "適量";
