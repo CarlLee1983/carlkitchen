@@ -1,0 +1,27 @@
+// 內容與建置輸出檢查：node --experimental-strip-types scripts/check-content.ts [--launch] [--dist <目錄>]
+// 內容根目錄由 RECIPES_DIR 決定（同內容集合），來源紀錄目錄由 SOURCES_DIR 決定。
+import { parseArgs } from "node:util";
+import { formatIssue } from "../src/content-checks/issue.ts";
+import { runContentChecks } from "../src/content-checks/run.ts";
+
+const { values } = parseArgs({
+  options: {
+    launch: { type: "boolean", default: false },
+    dist: { type: "string", default: "dist" },
+  },
+});
+
+const issues = await runContentChecks({
+  recipesDir: process.env.RECIPES_DIR || "content/recipes",
+  sourcesDir: process.env.SOURCES_DIR || "content/sources",
+  distDir: values.dist,
+  launch: values.launch,
+});
+
+if (issues.length === 0) {
+  console.log(`內容檢查通過${values.launch ? "（含候選池門檻）" : ""}。`);
+} else {
+  console.error(`內容檢查失敗，共 ${issues.length} 項問題：`);
+  for (const issue of issues) console.error(`- ${formatIssue(issue)}`);
+  process.exit(1);
+}
