@@ -16,10 +16,14 @@ concurrency:
 
 jobs:
   deploy:
+    # 手動觸發可選任意分支，這裡限制只部署 main。
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
 
       # 與 CI 相同的必要檢查，任一失敗即停止、不部署。
       - name: Verify

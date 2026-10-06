@@ -37,7 +37,7 @@ content/recipes/tomato-egg/
 
 ## 部署與回滾
 
-推送 `main` 或手動觸發時，`.github/workflows/deploy.yml` 依序執行：與 CI 相同的必要檢查（共用 `.github/actions/verify`，PR 的 job 名稱仍是 `verify`）、以正式內容重新建置、`pnpm check:content --launch`（候選池門檻：非湯料理 ≥ 12、湯 ≥ 3），最後 `wrangler deploy`。任一步驟失敗就不部署；未達門檻時日誌會列出缺額，這不影響合入。沒有排程，並行部署排隊、不互相取消。網站只在 `carlkitchen.gravito.dev` 提供（`wrangler.jsonc` 已關閉 workers.dev 與預覽網址）。部署用的 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID` 存在儲存庫 secrets。
+推送 `main` 或手動觸發（手動觸發也只部署 `main`，選其他分支會跳過）時，`.github/workflows/deploy.yml` 依序執行：與 CI 相同的必要檢查（共用 `.github/actions/verify`，PR 的 job 名稱仍是 `verify`）、以正式內容重新建置、`pnpm check:content --launch`（候選池門檻：非湯料理 ≥ 12、湯 ≥ 3），最後 `wrangler deploy`。任一步驟失敗就不部署；未達門檻時日誌會列出缺額，這不影響合入。沒有排程，並行部署排隊、不互相取消。網站只在 `carlkitchen.gravito.dev` 提供（`wrangler.jsonc` 已關閉 workers.dev 與預覽網址）。部署用的 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID` 存在儲存庫 secrets。
 
 上線前依 [`docs/acceptance.md`](docs/acceptance.md) 的檢核表在上線 PR 逐項勾選。
 
@@ -48,7 +48,7 @@ content/recipes/tomato-egg/
 只有 CI 本身故障而無法部署時，才緊急退回上一版，之後必須修正主分支：
 
 ```sh
-export CLOUDFLARE_API_TOKEN=...   # 本機取得的 token，不要寫進檔案
+read -s CLOUDFLARE_API_TOKEN && export CLOUDFLARE_API_TOKEN   # 貼上 token，不回顯、不進 shell 歷史；也可改用 wrangler login
 export CLOUDFLARE_ACCOUNT_ID=...
 pnpm exec wrangler deployments list --name carlkitchen   # 查看部署與版本
 pnpm exec wrangler rollback --name carlkitchen -m "原因"  # 退回上一版；也可指定版本 ID

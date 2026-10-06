@@ -27,7 +27,7 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 
 ## 部署
 
-- `.github/workflows/ci.yml`（PR）與 `deploy.yml`（推送 `main`／手動，無排程，並行排隊不取消）共用 `.github/actions/verify`，改檢查步驟只改這一處。
+- `.github/workflows/ci.yml`（PR）與 `deploy.yml`（推送 `main`／手動，手動也只部署 `main`，無排程，並行排隊不取消）共用 `.github/actions/verify`，改檢查步驟只改這一處。
 - 部署在共用檢查後以正式內容重建，再跑 `pnpm check:content --launch`（非湯料理 ≥ 12、湯 ≥ 3）才 `wrangler deploy`；不得為了讓部署通過而放寬門檻。
 - 回滾程序見 `README.md`「部署與回滾」；上線驗收檢核表見 `docs/acceptance.md`。
 - 不得執行真實部署或 `wrangler rollback`，也不得把 token 寫進檔案或日誌。

@@ -5,7 +5,7 @@
 ## 自動檢查（PR 的 CI 必須全綠）
 
 - [ ] CI 的 `verify` 通過（格式、型別、建置、內容與輸出檢查、單元測試、Playwright、`wrangler deploy --dry-run`）
-- [ ] 本地對正式內容執行 `RECIPES_DIR=content/recipes pnpm check:content --launch` 通過（候選池非湯料理 ≥ 12、湯 ≥ 3）
+- [ ] 本地對正式內容執行 `pnpm build && pnpm check:content --launch` 通過（候選池非湯料理 ≥ 12、湯 ≥ 3）
 
 ## 頁面與內容
 
