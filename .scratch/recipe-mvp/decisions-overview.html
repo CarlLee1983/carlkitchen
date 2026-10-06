@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarlKitchen MVP 已定案決策</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&amp;family=Noto+Serif+TC:wght@600&amp;display=swap">
+  <style>
+    :root {
+      --bg: #f5f2eb; --surface: #fcfaf6; --ink: #302b26; --muted: #6b6259;
+      --accent: #9a5038; --line: #ded6cb; --soft: #eee6db; --code-bg: #eee9e1;
+      --gate: #f6e7dc;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.8 "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif; overflow-wrap: break-word; }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .page { width: min(100% - 32px, 1120px); margin: 0 auto; padding: 48px 0 96px; }
+    .prose { max-width: 72ch; }
+    .eyebrow { margin: 0 0 16px; color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .08em; }
+    h1, h2, h3 { font-family: "Noto Serif TC", Georgia, "Songti TC", "Noto Serif CJK TC", "PMingLiU", serif; font-weight: 600; line-height: 1.3; letter-spacing: -.02em; }
+    h1 { max-width: 22ch; margin: 0 0 24px; font-size: clamp(2.1rem, 5.5vw, 3.6rem); }
+    h2 { margin: 0 0 16px; font-size: clamp(1.45rem, 3vw, 1.9rem); }
+    h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    p { margin: 0 0 20px; }
+    ul { margin: 0 0 20px; padding-left: 1.2em; }
+    li { margin-bottom: 6px; }
+    .lead { font-size: 1.15rem; line-height: 1.7; }
+    .muted, small { color: var(--muted); }
+    .intro { padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+    .summary { max-width: 72ch; margin-top: 32px; padding: 24px; background: var(--soft); border-left: 3px solid var(--accent); }
+    .summary p:last-child, .summary ul:last-child { margin-bottom: 0; }
+    nav ul { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 24px 0 0; padding: 0; list-style: none; font-size: .9rem; }
+    section { padding-top: 56px; }
+    .src { font-size: .82rem; color: var(--muted); }
+    .src a { color: var(--muted); }
+
+    /* 端到端流程 */
+    .pipeline { list-style: none; margin: 32px 0 8px; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; counter-reset: p; }
+    .pipeline li { position: relative; margin: 0; padding: 18px 16px; background: var(--surface); border: 1px solid var(--line); counter-increment: p; font-size: .9rem; line-height: 1.6; }
+    .pipeline li::before { content: counter(p, decimal-leading-zero); display: block; color: var(--accent); font-size: .75rem; font-weight: 700; margin-bottom: 6px; }
+    .pipeline li:not(:last-child)::after { content: "→"; position: absolute; right: -11px; top: 18px; color: var(--accent); font-weight: 700; background: var(--bg); line-height: 1; }
+    .pipeline h3 { font-size: .98rem; }
+    .pipeline .who { display: inline-block; margin-top: 8px; font-size: .74rem; padding: 1px 8px; border-radius: 99px; background: var(--soft); color: var(--muted); }
+    .pipeline .who.owner { background: var(--gate); color: var(--accent); font-weight: 700; }
+    .pipeline .gate { background: var(--gate); border-color: #e3c6b3; }
+    .legend { font-size: .82rem; color: var(--muted); }
+
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+    .card { padding: 24px; background: var(--surface); border: 1px solid var(--line); min-width: 0; }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    .card ul { font-size: .95rem; }
+    .table-wrap { max-width: 100%; overflow-x: auto; margin: 24px 0; }
+    table { width: 100%; min-width: 620px; border-collapse: collapse; background: var(--surface); font-size: .9rem; line-height: 1.6; }
+    caption { padding: 0 0 12px; text-align: left; color: var(--muted); font-size: .85rem; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    thead th { background: var(--soft); font-weight: 700; }
+    tbody th { font-weight: 600; white-space: nowrap; }
+    td:last-child:not(:nth-child(2)) { white-space: nowrap; }
+    .pipeline code { font-size: .78em; word-break: break-all; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .88em; background: var(--code-bg); padding: 1px 5px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 20px; padding: 0; list-style: none; }
+    .tags li { margin: 0; font-size: .85rem; padding: 2px 12px; border: 1px solid var(--line); background: var(--surface); }
+    .note { max-width: 72ch; padding: 24px; background: var(--surface); border: 1px solid var(--line); }
+    .note p:last-child, .note ul:last-child { margin-bottom: 0; }
+    footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .85rem; }
+
+    @media (max-width: 900px) {
+      .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pipeline li:not(:last-child)::after { display: none; }
+    }
+    @media (max-width: 700px) {
+      body { font-size: 17px; }
+      .page { padding-top: 32px; }
+      section { padding-top: 40px; }
+      .pipeline, .cards { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; font-size: 11pt; line-height: 1.55; }
+      .page { width: 100%; padding: 0; }
+      nav { display: none; }
+      .pipeline { grid-template-columns: repeat(3, 1fr); }
+      .pipeline li, .card, .note, .summary { break-inside: avoid; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0; font-size: 9pt; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <header class="intro">
+        <p class="eyebrow">CARLKITCHEN · MVP 決策地圖 01–08</p>
+        <h1>菜譜網站 MVP 已定案的決策</h1>
+        <p class="lead prose">這是一個由 AI 在本地依核准來源製作內容、站主逐篇審閱後才發布的繁中家常菜譜網站。八張決策票都已解決；本頁把它們串成一條從來源到上線的流程，並逐項列出規則。</p>
+        <div class="summary">
+          <h2>一段話看懂</h2>
+          <ul>
+            <li><strong>內容</strong>：一份菜譜就是一道菜，分「非湯料理」與「湯」；AI 重新表述公開資料、本地製圖，來源網址只留在內部紀錄。</li>
+            <li><strong>讀者能做的事</strong>：在首頁搜尋與瀏覽全部菜譜、閱讀並列印菜譜，以及抽一桌四菜一湯／五菜一湯。</li>
+            <li><strong>視覺</strong>：安靜克制的日系版面；全站料理圖片統一為手繪水彩插畫，標示「AI 繪製插畫」。</li>
+            <li><strong>發布</strong>：私有儲存庫、只有站主能合入；合入主分支就自動部署到 <code>carlkitchen.gravito.dev</code>，八項自動檢查擋在合入與部署之前。</li>
+          </ul>
+        </div>
+        <nav aria-label="本文段落">
+          <ul>
+            <li><a href="#pipeline">從來源到上線</a></li>
+            <li><a href="#content">內容模型</a></li>
+            <li><a href="#writing">寫作規範</a></li>
+            <li><a href="#reader">讀者體驗</a></li>
+            <li><a href="#visual">視覺與圖片</a></li>
+            <li><a href="#gates">發布門檻</a></li>
+            <li><a href="#acceptance">上線驗收</a></li>
+            <li><a href="#later">留待後續</a></li>
+            <li><a href="#open">尚未完成</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="pipeline" aria-labelledby="pipeline-title">
+        <div class="prose">
+          <h2 id="pipeline-title">從來源到上線：一份菜譜走過的路</h2>
+          <p>每份菜譜都走同一條路。關鍵是第 04 步：<strong>站主合入主分支這個動作本身就是發布核准</strong>，系統裡沒有另一個「已核准」欄位可以代替它。</p>
+        </div>
+        <ol class="pipeline" aria-label="菜譜從來源到上線的六個步驟">
+          <li><h3>核准來源</h3>站主提供公開網址，或核准 AI 提出的候選網址。<br><span class="who owner">站主</span></li>
+          <li><h3>本地製作</h3>AI 依 <code>recipe-writing</code> skill 重述文字，並製作插畫與替代文字，不搬原文原圖。<br><span class="who">AI</span></li>
+          <li><h3>工作分支草稿</h3>草稿留在工作分支，只能本地預覽；代理只能推送分支、開 PR。<br><span class="who">AI</span></li>
+          <li class="gate"><h3>審閱並合入</h3>站主看本地預覽與差異；八項檢查全過才能合入。<br><span class="who owner">站主</span></li>
+          <li><h3>自動部署</h3>推送到主分支即部署；候選池未達 12＋3 時停止並列出缺額。<br><span class="who">CI</span></li>
+          <li><h3>正式站</h3><code>carlkitchen.gravito.dev</code>。出問題用 <code>git revert</code> 回滾。<br><span class="who">Cloudflare</span></li>
+        </ol>
+        <p class="legend">標「站主」的步驟只有站主能做。來源不足或圖文不符時停在 03，不會公開。</p>
+        <p class="src">依據：<a href="issues/03-local-ai-review-workflow.md">03 本地 AI 製作與審核</a>、<a href="issues/07-publishing-gates.md">07 發布門檻</a></p>
+      </section>
+
+      <section id="content" aria-labelledby="content-title">
+        <div class="prose">
+          <h2 id="content-title">內容模型：一份公開菜譜必須有什麼</h2>
+          <p>讀者是站主自己與一般家常料理讀者；料理不限中式，使用繁體中文、臺灣用語與公制單位。</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>必備欄位</h3>
+            <ul>
+              <li>標題、摘要、正整數份數</li>
+              <li>分類：非湯料理或湯，依上桌用途；火鍋、燉菜歸非湯料理</li>
+              <li>至少一項材料：名稱＋用量（公制或顆、瓣），調味可寫「適量」</li>
+              <li>至少一步依序排列的文字做法</li>
+              <li>成品圖、材料合照、至少一張關鍵步驟圖，每張都有替代文字</li>
+              <li>至少一個核准來源網址，只存在內部紀錄，不輸出到網站</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>配菜相關標記</h3>
+            <ul>
+              <li><strong>配菜候選</strong>：站主明確標記才算，預設否；未標記的菜譜照樣公開、可搜尋</li>
+              <li><strong>蔬菜菜</strong>：蔬菜是主角；當配料的蔬菜不算</li>
+              <li><strong>蛋白質菜</strong>：以魚、肉、蛋、豆腐或豆類為主</li>
+              <li>上線前候選池至少 12 道非湯料理＋3 道湯</li>
+              <li>內容不可描述為「已試做」</li>
+            </ul>
+          </div>
+        </div>
+        <p class="src">依據：<a href="issues/01-audience-and-launch-content.md">01 讀者與來源</a>、<a href="issues/02-recipe-content-contract.md">02 內容契約</a></p>
+      </section>
+
+      <section id="writing" aria-labelledby="writing-title">
+        <div class="prose">
+          <h2 id="writing-title">寫作規範：專案 skill <code>recipe-writing</code></h2>
+          <p>菜譜文字怎麼寫，已做成專案 skill，放在 <code>.claude/skills/recipe-writing/</code>。代理撰寫或修改菜譜文字時會自動載入，不必每次重新交代；同一套規範也讓每份菜譜讀起來像同一位作者寫的。</p>
+          <p>skill 只管<strong>文字怎麼寫</strong>：必備欄位仍以 02 內容契約為準，來源與審核仍以 03 製作流程為準，它直接連到這兩張票，不重抄一份。</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>五個步驟</h3>
+            <ul>
+              <li>確認來源：只讀核准網址，並記入內部來源紀錄；缺份量或關鍵步驟就停在草稿</li>
+              <li>抽出事實：材料、用量、火候、時間、熟度訊號；不自行補數字</li>
+              <li>重述並填寫欄位：用自己的句子寫，來源句子不帶進菜譜</li>
+              <li>提議標記：分類、配菜候選、蔬菜菜／蛋白質菜各附理由，由站主決定</li>
+              <li>逐項自查清單全部成立才送審</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>寫法重點</h3>
+            <ul>
+              <li>語氣平實友善、一句一件事；不寫試做經驗、保證或口味評價</li>
+              <li>標題只寫臺灣常用菜名；摘要一到兩句、約 50 字</li>
+              <li>公制用量，數字與單位空一格（<code>300 g</code>）；「適量」只給調味料</li>
+              <li>每步以動作開頭並寫出<strong>熟度訊號</strong>，如「蛋液邊緣凝固」</li>
+              <li>臺灣用語對照表（番茄、馬鈴薯、高麗菜、太白粉⋯）</li>
+            </ul>
+          </div>
+        </div>
+        <p class="src">依據：<a href="../../.claude/skills/recipe-writing/SKILL.md">recipe-writing/SKILL.md</a>、完整範例 <a href="../../.claude/skills/recipe-writing/example.md">example.md</a>（番茄炒蛋，示意、未試做）</p>
+      </section>
+
+      <section id="reader" aria-labelledby="reader-title">
+        <div class="prose">
+          <h2 id="reader-title">讀者體驗：五個頁面</h2>
+          <p>MVP 只有首頁、菜譜頁、四菜一湯／五菜一湯頁、關於頁與 404。沒有獨立搜尋頁，因為首頁本身就是搜尋加全部菜譜清單。</p>
+        </div>
+        <div class="table-wrap" role="region" aria-label="頁面與行為表格，可水平捲動" tabindex="0">
+          <table>
+            <caption>各頁的定案行為</caption>
+            <thead><tr><th scope="col">頁面</th><th scope="col">讀者看到與能做的事</th><th scope="col">依據</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">首頁</th><td>第一屏左側是標題、搜尋框與「配一桌四菜一湯」，右側是隨機一道菜的成品大圖；下方是全部菜譜清單（縮圖、菜名、摘要、分類），可切換「全部／非湯料理／湯」。在搜尋框輸入就即時篩選下方清單並顯示筆數；手機上搜尋時收起大圖。</td><td><a href="issues/06-homepage-direction.md">06</a></td></tr>
+              <tr><th scope="row">搜尋規則</th><td>只搜已發布菜譜的標題、摘要、材料名稱、受控標籤與別名；不搜用量與步驟。有字詞時依相關度、標題命中優先；沒字詞時依菜名排序。字詞與分類寫進網址（如 <code>/?q=番茄&amp;kind=湯</code>）。零筆時顯示訊息與清除條件，不自動放寬。</td><td><a href="issues/04-search-behavior.md">04</a></td></tr>
+              <tr><th scope="row">菜譜頁</th><td>閱讀與列印：材料、做法、成品圖與步驟插畫。頁底聲明「依公開資料由 AI 整理、站主審閱，未經試做」。</td><td><a href="issues/08-mvp-acceptance.md">08</a></td></tr>
+              <tr><th scope="row">四菜一湯／五菜一湯</th><td>從候選池抽 4 或 5 道互不重複的非湯菜加 1 道湯；至少一道蔬菜菜與<strong>另一道</strong>蛋白質菜。可鎖定、單道替換、重新抽選、切換四菜／五菜。無解時維持原套餐並說明原因；候選不足時不產生不完整套餐。套餐只保留在同一分頁，重整仍在。</td><td><a href="issues/05-meal-planner-rules.md">05</a></td></tr>
+              <tr><th scope="row">關於頁</th><td>說明內容來源、AI 製作與站主審閱流程；不列來源連結。</td><td><a href="issues/08-mvp-acceptance.md">08</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="visual" aria-labelledby="visual-title">
+        <div class="prose">
+          <h2 id="visual-title">視覺與圖片</h2>
+          <p>版面是安靜克制的日系：米白底 <code>#F7F6F3</code>、炭灰字、細線分隔、明體標題配黑體內文、大量留白，不用紙膠帶、暖簾、木牌等道具。這是站主依序否決制式版、日系手帳版後選定的方向。</p>
+          <p>全站料理圖片都用<strong>手繪水彩插畫</strong>，不用照片，涵蓋成品圖、材料合照與步驟圖；每張旁標示「AI 繪製插畫」。</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>畫風與構圖</h3>
+            <ul>
+              <li>細墨線＋淡水彩、紙張紋理、低彩度食材自然色、米白素底</li>
+              <li>一律 3:2 橫幅；成品約 45 度俯視、盛在素色陶瓷盤碗</li>
+              <li>材料合照正上方平鋪，品項與數量須和材料清單一致</li>
+              <li>步驟圖只畫該步完成時的關鍵狀態，器具前後一致</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>禁止與一致性</h3>
+            <ul>
+              <li>圖中不得有任何文字、數字、商標或浮水印；不畫人臉，食物不擬人</li>
+              <li>同一菜譜的圖要像同一組；不一致就整組重製</li>
+              <li>圖文不符時重製後才送審</li>
+              <li>提交 WebP、1536×1024、≤ 300 KB；PNG 原圖不進主分支</li>
+            </ul>
+          </div>
+        </div>
+        <p class="src">依據：<a href="issues/06-homepage-direction.md">06 首頁視覺方向與〈圖片風格規格〉</a>（含固定的生成提示詞）。原型與插畫範例保存在 <code>prototype/06-homepage-direction</code> 分支。</p>
+      </section>
+
+      <section id="gates" aria-labelledby="gates-title">
+        <div class="prose">
+          <h2 id="gates-title">發布門檻：誰能合入、什麼會擋下</h2>
+          <p>儲存庫是私有的（刻意例外於「個人專案公開」慣例），因為來源紀錄和菜譜放在一起。主分支有分支保護，只有站主有寫入權；代理只能推送工作分支與開 PR。沒有公開預覽網址，<code>workers.dev</code> 與預覽網址都關閉。</p>
+          <p>下列八項在每個 PR 執行、部署前再執行一次；任一失敗就擋下。</p>
+        </div>
+        <div class="table-wrap" role="region" aria-label="八項必要檢查表格，可水平捲動" tabindex="0">
+          <table>
+            <caption>必要檢查（第 2–6、8 項是 CarlStack 沒有、本站新增的）</caption>
+            <thead><tr><th scope="col">#</th><th scope="col">檢查</th><th scope="col">擋下什麼</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1</th><td>格式、型別、schema</td><td>缺必填欄位、分類或標記錯誤</td></tr>
+              <tr><th scope="row">2</th><td>來源紀錄</td><td>公開菜譜沒有來源，或有對不到菜譜的孤兒紀錄</td></tr>
+              <tr><th scope="row">3</th><td>建置輸出洩漏</td><td><code>dist</code> 出現草稿或內部來源網址</td></tr>
+              <tr><th scope="row">4</th><td>圖片</td><td>非 WebP、尺寸不對、超過 300 KB、缺替代文字或缺任一類必要圖片</td></tr>
+              <tr><th scope="row">5</th><td>搜尋（Playwright）</td><td>菜名、材料、別名查不到；篩選錯誤；步驟或用量裡的詞卻查得到；草稿出現</td></tr>
+              <tr><th scope="row">6</th><td>配菜（單元測試＋Playwright）</td><td>四個原型情境的行為不符：替換無解、鎖定衝突、候選不足、重整</td></tr>
+              <tr><th scope="row">7</th><td><code>wrangler deploy --dry-run</code></td><td>部署設定錯誤</td></tr>
+              <tr><th scope="row">8</th><td>無障礙與版面（Playwright＋axe-core）</td><td>五頁違反 WCAG 2.2 AA 的機械項目；任一寬度出現水平捲動；觸控目標小於 44 px</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="src">依據：<a href="issues/07-publishing-gates.md">07 發布門檻</a>、<a href="issues/08-mvp-acceptance.md">08 MVP 驗收</a>。第 1–4 項對真實內容執行；第 5 項的斷言由真實內容產生；第 6 項用測試專用的固定菜譜。</p>
+      </section>
+
+      <section id="acceptance" aria-labelledby="acceptance-title">
+        <div class="prose">
+          <h2 id="acceptance-title">上線驗收</h2>
+          <p>候選池第一次達到 12＋3 的那個 PR 就是上線 PR。站主在其中逐項勾選 <code>docs/acceptance.md</code> 檢核表後合入；未通過的項目修正後才上線。</p>
+          <ul>
+            <li>手機 360、390、430 與桌面 1366、1920 寬度都沒有水平捲動</li>
+            <li>搜尋、篩選、配菜的鎖定／替換／重抽都能只用鍵盤完成，焦點可見</li>
+            <li>Lighthouse 手機模式量首頁、一份菜譜頁與配菜頁：效能 ≥ 90、LCP &lt; 2.5 秒、首頁首次載入 &lt; 500 KB（手動量測，不列合入門檻，因為分數在 CI 上會浮動）</li>
+            <li>站主用自己的手機實際瀏覽一次</li>
+          </ul>
+        </div>
+        <p class="src">依據：<a href="issues/08-mvp-acceptance.md">08 MVP 驗收</a></p>
+      </section>
+
+      <section id="later" aria-labelledby="later-title">
+        <div class="prose">
+          <h2 id="later-title">明確留待後續版本</h2>
+          <p>下列功能刻意不在 MVP 內，日後要做須另開決策：</p>
+        </div>
+        <ul class="tags">
+          <li>讀者收藏</li><li>帳號</li><li>留言</li><li>份量換算</li><li>材料勾選</li><li>烹飪模式</li><li>「已試做」標記</li><li>英文版</li><li>RSS</li><li>PWA／離線</li><li>流量分析</li><li>材料篩選</li><li>分享配菜套餐連結</li>
+        </ul>
+        <p class="prose">另外，整體邊界不變：沒有後台、資料庫、登入，網站執行時不呼叫 AI。</p>
+        <p class="src">依據：<a href="issues/08-mvp-acceptance.md">08</a>、<a href="map.md">決策地圖</a></p>
+      </section>
+
+      <section id="open" aria-labelledby="open-title">
+        <div class="note">
+          <h2 id="open-title">尚未完成與限制</h2>
+          <ul>
+            <li><strong>決策地圖仍開著</strong>：等首批內容做出來後，還要檢查是否有特殊料理、食安或圖片使用情境需要另開決策票（<a href="map.md">map.md</a>〈Not yet specified〉）。</li>
+            <li><strong>未提交</strong>：08 的結論、07 的第 8 項檢查、map 的更新與 <code>recipe-writing</code> skill 目前只在工作目錄，尚未 commit。01–06 與 07 的其餘內容已提交（<code>d29b233</code>、<code>8af8a32</code>）。</li>
+            <li><strong>尚未驗證的技術前提</strong>：Pagefind 在本站的繁中搜尋品質尚無實測，04 要求以正式索引驗收。</li>
+            <li><strong>都還只是規格</strong>：私有儲存庫、分支保護、Cloudflare 網域、AGENTS.md 與 README 的規則都要等實作時才建立。</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="muted">整理自 <code>.scratch/recipe-mvp/map.md</code> 與 <code>issues/01–08</code>，2026-10-06。</footer>
+  </div>
+</body>
+</html>
