@@ -4,6 +4,7 @@ import {
   applyAction,
   candidatesFromRecipes,
   createPlan,
+  isPlanUsable,
   type Action,
   type Candidate,
   type Plan,
@@ -216,12 +217,12 @@ describe("初次抽選與重抽", () => {
     ];
     for (let seed = 0; seed < 50; seed++) {
       const before = drawn(seed, 4, pool);
-      const after = ok(applyAction(pool, before, reroll)).plan;
+      const after: Plan = ok(applyAction(pool, before, reroll)).plan;
       assertValid(pool, after);
       const reused = dishIds(after).filter((id) =>
         dishIds(before).includes(id),
       );
-      assert.ok(reused.length >= 3);
+      assert.equal(reused.length, 3);
     }
   });
 
@@ -243,18 +244,20 @@ describe("候選不足與無法平衡", () => {
     const plan = createPlan(5);
     const result = fail(applyAction(pool, plan, reroll));
     assert.deepEqual(result.plan, createPlan(5));
-    assert.match(result.reason, /候選/);
+    assert.match(result.reason, /非湯菜不足/);
   });
 
   it("沒有湯時回無解", () => {
     const pool = normalPool.filter((c) => !c.soup);
     const result = fail(applyAction(pool, createPlan(5), reroll));
-    assert.match(result.reason, /湯/);
+    assert.match(result.reason, /沒有湯/);
   });
 
   it("沒有蛋白質菜時無法平衡，回無解", () => {
     const pool = [veg("a"), veg("b"), veg("c"), veg("d"), veg("e"), soup("s")];
-    fail(applyAction(pool, createPlan(5), reroll));
+    const result = fail(applyAction(pool, createPlan(5), reroll));
+    assert.match(result.reason, /缺少蔬菜菜或另一道蛋白質菜/);
+    assert.doesNotMatch(result.reason, /鎖定/);
   });
 
   it("鎖定項使套餐無法平衡時回無解並保留原套餐", () => {
@@ -280,6 +283,7 @@ describe("候選不足與無法平衡", () => {
     };
     const result = fail(applyAction(pool, before, reroll));
     assert.deepEqual(result.plan, before);
+    assert.match(result.reason, /鎖定/);
   });
 
   it("套餐含不在候選池的菜色時回無解", () => {
@@ -600,5 +604,168 @@ describe("性質測試：200 個種子的動作序列", () => {
         if (plan.dishes.length > 0) assertValid(normalPool, plan);
       }
     }
+  });
+});
+
+describe("失效套餐（isPlanUsable）", () => {
+  const slot = (id: string, locked = false) => ({ id, locked });
+  const stale = (result: Result, original: Plan) => {
+    const failed = fail(result);
+    assert.match(failed.reason, /重新抽選/);
+    assert.deepEqual(failed.plan, original);
+  };
+
+  it("引擎產生的套餐與空套餐都可用", () => {
+    assert.equal(isPlanUsable(normalPool, createPlan(1)), true);
+    assert.equal(isPlanUsable(normalPool, drawn(2)), true);
+    assert.equal(isPlanUsable(normalPool, drawn(2, 5)), true);
+  });
+
+  it("鎖定的非湯菜放在湯位時不可用，重抽回無解", () => {
+    const pool = [veg("v1"), pro("p1"), plain("n1"), plain("n2"), soup("s")];
+    const plan: Plan = { mode: 4, dishes: [], soup: slot("n1", true), seed: 1 };
+    assert.equal(isPlanUsable(pool, plan), false);
+    stale(applyAction(pool, plan, reroll), plan);
+  });
+
+  it("湯放在菜位時不可用，重抽回無解", () => {
+    const pool = [
+      veg("v1"),
+      pro("p1"),
+      plain("n1"),
+      plain("n2"),
+      soup("s"),
+      soup("t"),
+    ];
+    const plan: Plan = {
+      mode: 4,
+      dishes: [slot("t", true)],
+      soup: null,
+      seed: 1,
+    };
+    assert.equal(isPlanUsable(pool, plan), false);
+    stale(applyAction(pool, plan, reroll), plan);
+  });
+
+  it("同一道菜重複出現時不可用，不能繞過平衡", () => {
+    const pool = [
+      both("x"),
+      plain("a"),
+      plain("b"),
+      plain("c"),
+      plain("d"),
+      soup("s"),
+      soup("t"),
+    ];
+    const plan: Plan = {
+      mode: 4,
+      dishes: [slot("x", true), slot("x", true), slot("a"), slot("b")],
+      soup: slot("s"),
+      seed: 1,
+    };
+    assert.equal(isPlanUsable(pool, plan), false);
+    stale(applyAction(pool, plan, reroll), plan);
+  });
+
+  it("菜數與模式不符時不可用，替換回無解", () => {
+    const pool = [veg("v1"), pro("p1"), plain("a"), plain("b"), soup("s")];
+    const plan: Plan = {
+      mode: 5,
+      dishes: [slot("v1"), slot("p1")],
+      soup: slot("s"),
+      seed: 1,
+    };
+    assert.equal(isPlanUsable(pool, plan), false);
+    stale(applyAction(pool, plan, { type: "replace", target: 0 }), plan);
+  });
+
+  it("只有湯、沒有菜的半成品套餐不可用", () => {
+    const plan: Plan = {
+      mode: 4,
+      dishes: [],
+      soup: slot("radish-soup"),
+      seed: 1,
+    };
+    assert.equal(isPlanUsable(normalPool, plan), false);
+  });
+
+  it("鎖定的湯已不在候選池時，重抽回無解", () => {
+    const plan: Plan = { ...drawn(1), soup: slot("gone", true) };
+    assert.equal(isPlanUsable(normalPool, plan), false);
+    stale(applyAction(normalPool, plan, reroll), plan);
+  });
+
+  it("含失效菜色時，替換湯也回無解", () => {
+    const base = drawn(1);
+    const plan: Plan = {
+      ...base,
+      dishes: [slot("gone"), ...base.dishes.slice(1)],
+    };
+    stale(
+      applyAction(normalPool, plan, { type: "replace", target: "soup" }),
+      plan,
+    );
+  });
+
+  it("重抽、換模式、替換、切換鎖定對失效套餐一致地回無解", () => {
+    const base = drawn(1);
+    const plan: Plan = {
+      ...base,
+      dishes: [slot("gone"), ...base.dishes.slice(1)],
+    };
+    const actions: Action[] = [
+      reroll,
+      { type: "mode", mode: 5 },
+      { type: "replace", target: 1 },
+      { type: "replace", target: "soup" },
+      { type: "toggle", target: 1 },
+      { type: "toggle", target: "soup" },
+    ];
+    for (const action of actions) {
+      stale(applyAction(normalPool, plan, action), plan);
+    }
+  });
+});
+
+describe("鎖定菜被擠出時的位置", () => {
+  it("五切四時第五位的鎖定菜改填最後一個空位", () => {
+    for (let seed = 0; seed < 30; seed++) {
+      const before = withLocks(drawn(seed, 5), [4, 1]);
+      const after = ok(
+        applyAction(normalPool, before, { type: "mode", mode: 4 }),
+      ).plan;
+      assert.deepEqual(after.dishes[3], before.dishes[4]);
+      assert.deepEqual(after.dishes[1], before.dishes[1]);
+    }
+  });
+});
+
+describe("成功路徑不與輸入共用參照", () => {
+  it("每個成功動作都回傳新的 dishes 陣列、slot 與 soup 物件", () => {
+    const before = withLocks(drawn(5), [0], true);
+    const actions: Action[] = [
+      reroll,
+      { type: "mode", mode: 5 },
+      { type: "replace", target: 1 },
+      { type: "replace", target: 2 },
+      { type: "toggle", target: 0 },
+      { type: "toggle", target: "soup" },
+    ];
+    for (const action of actions) {
+      const { plan } = ok(applyAction(normalPool, before, action));
+      assert.notEqual(plan.dishes, before.dishes);
+      plan.dishes.forEach((slot) => {
+        assert.ok(!before.dishes.includes(slot), "slot 不得共用");
+      });
+      assert.notEqual(plan.soup, before.soup);
+    }
+    const unlocked = withLocks(drawn(5), []);
+    const soupReplace = ok(
+      applyAction(normalPool, unlocked, { type: "replace", target: "soup" }),
+    ).plan;
+    assert.notEqual(soupReplace.dishes, unlocked.dishes);
+    soupReplace.dishes.forEach((slot) =>
+      assert.ok(!unlocked.dishes.includes(slot)),
+    );
   });
 });

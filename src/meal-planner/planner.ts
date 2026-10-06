@@ -1,5 +1,6 @@
 import { isBalanced } from "./balance.ts";
 import { createRng, type Rng } from "./random.ts";
+import { isPlanUsable } from "./usable.ts";
 import type { Action, Candidate, Plan, Result, Slot } from "./types.ts";
 
 const NEED_DRAW = "請先抽選套餐。";
@@ -19,6 +20,7 @@ export function applyAction(
   plan: Plan,
   action: Action,
 ): Result {
+  if (!isPlanUsable(pool, plan)) return refuse(plan, STALE);
   switch (action.type) {
     case "reroll":
       return draw(pool, plan, plan.mode);
@@ -45,30 +47,20 @@ function toggle(plan: Plan, target: number | "soup"): Result {
   const slot = slotAt(plan, target);
   if (!slot) return refuse(plan, NEED_DRAW);
   const flipped: Slot = { ...slot, locked: !slot.locked };
-  const next: Plan =
-    target === "soup"
-      ? { ...plan, soup: flipped }
-      : {
-          ...plan,
-          dishes: plan.dishes.map((item, i) => (i === target ? flipped : item)),
-        };
+  const dishes = plan.dishes.map((item, i) =>
+    i === target ? flipped : { ...item },
+  );
+  const next: Plan = {
+    ...plan,
+    dishes,
+    soup: target === "soup" ? flipped : plan.soup && { ...plan.soup },
+  };
   const label = target === "soup" ? "湯" : "菜色";
   return {
     ok: true,
     plan: next,
     message: flipped.locked ? `${label}已鎖定。` : `${label}已解鎖。`,
   };
-}
-
-/** 依識別值找出候選；任何一個不在池中就回 null。 */
-function resolve(
-  lookup: ReadonlyMap<string, Candidate>,
-  ids: readonly string[],
-): Candidate[] | null {
-  const found = ids.map((id) => lookup.get(id));
-  return found.every((item) => item !== undefined)
-    ? (found as Candidate[])
-    : null;
 }
 
 const STALE = "目前套餐含已不在候選池的菜色；請重新抽選。";
@@ -127,11 +119,17 @@ function pickDishes(
     return { dishes: rng.shuffle([...core, ...restFresh, ...restStale]) };
   }
   return {
-    failure: "鎖定的菜色無法與其他候選組成一道蔬菜菜加另一道蛋白質菜。",
+    failure:
+      locked.length > 0
+        ? "鎖定的菜色無法與其他候選組成一道蔬菜菜加另一道蛋白質菜。"
+        : "候選池缺少蔬菜菜或另一道蛋白質菜，無法組成均衡套餐。",
   };
 }
 
-/** 鎖定的菜留在原位置（超出新菜位數的才移位），其餘依序填入空位。 */
+/**
+ * 鎖定的菜留在原位置（刻意偏離原型，保持 replace／toggle 索引穩定）；
+ * 超出新菜位數而被擠出的鎖定菜從最後一個空位往前填，其餘依序填入剩下的空位。
+ */
 function arrange(
   mode: number,
   lockedSlots: readonly { index: number; slot: Slot }[],
@@ -143,10 +141,10 @@ function arrange(
     if (index < mode) slots[index] = { ...slot };
     else displaced.push({ ...slot });
   }
-  const queue = [
-    ...displaced,
-    ...fill.map((id): Slot => ({ id, locked: false })),
-  ];
+  for (const slot of displaced) {
+    slots[slots.lastIndexOf(null)] = slot;
+  }
+  const queue = fill.map((id): Slot => ({ id, locked: false }));
   return slots.map((slot) => slot ?? queue.shift()!);
 }
 
@@ -161,14 +159,8 @@ function draw(pool: readonly Candidate[], plan: Plan, mode: 4 | 5): Result {
       `鎖定的非湯菜多於 ${mode} 道；請先解鎖至少一道再切換。`,
     );
   }
-  const lockedDishes = resolve(
-    lookup,
-    lockedSlots.map(({ slot }) => slot.id),
-  );
+  const lockedDishes = lockedSlots.map(({ slot }) => lookup.get(slot.id)!);
   const lockedSoup = plan.soup?.locked ? plan.soup : null;
-  if (!lockedDishes || (lockedSoup && !lookup.has(lockedSoup.id))) {
-    return refuse(plan, STALE);
-  }
 
   const rng = createRng(plan.seed);
   rng.next(); // 動作一定推進種子，即使沒有任何位置需要抽
@@ -251,16 +243,17 @@ function replace(
     const id = rng.pick(available).id;
     return {
       ok: true,
-      plan: { ...plan, soup: { id, locked: false }, seed: rng.seed },
+      plan: {
+        ...plan,
+        dishes: plan.dishes.map((slot) => ({ ...slot })),
+        soup: { id, locked: false },
+        seed: rng.seed,
+      },
       message: "只替換了湯，其他菜色保持原樣。",
     };
   }
 
-  const current = resolve(
-    lookup,
-    plan.dishes.map((slot) => slot.id),
-  );
-  if (!current) return refuse(plan, STALE);
+  const current = plan.dishes.map((slot) => lookup.get(slot.id)!);
   const available = pool.filter(
     (item) =>
       !item.soup &&
@@ -278,6 +271,7 @@ function replace(
       dishes: plan.dishes.map((slot, i) =>
         i === target ? { id, locked: false } : { ...slot },
       ),
+      soup: plan.soup && { ...plan.soup },
       seed: rng.seed,
     },
     message: "只替換了一道菜，其他菜色保持原樣。",
