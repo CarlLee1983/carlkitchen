@@ -6,6 +6,7 @@ export interface FixtureRecipe {
   id: string;
   title: string;
   summary: string;
+  heroAlt: string;
   category: "非湯料理" | "湯";
 }
 
@@ -23,6 +24,8 @@ export function publishedFixtureRecipes(): FixtureRecipe[] {
         id: entry.name,
         title: scalar(yaml, "title")!,
         summary: scalar(yaml, "summary")!,
+        heroAlt:
+          yaml.match(/^hero:\n  src: .+\n  alt: (.+)$/m)?.[1]?.trim() ?? "",
         category: scalar(yaml, "category") as FixtureRecipe["category"],
         draft: scalar(yaml, "draft") === "true",
       };

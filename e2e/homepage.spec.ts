@@ -5,7 +5,7 @@ const recipes = publishedFixtureRecipes();
 const soups = recipes.filter((recipe) => recipe.category === "湯");
 const nonSoups = recipes.filter((recipe) => recipe.category === "非湯料理");
 
-const list = (page: Page) => page.getByRole("region", { name: "全部菜譜" });
+const list = (page: Page) => page.getByRole("region", { name: "菜譜清單" });
 const rows = (page: Page) => list(page).getByRole("listitem");
 const hero = (page: Page) =>
   page.getByRole("region", { name: "隨機推薦菜譜" }).getByRole("link");
@@ -104,7 +104,7 @@ test("無法辨識的分類參數視為全部", async ({ page }) => {
   );
 });
 
-test("成品大圖連到存在的已發布菜譜，且不同亂數會推薦不同菜譜", async ({
+test("成品大圖連到存在的已發布菜譜，顯示的圖與菜名屬於所連菜譜，且不同亂數會推薦不同菜譜", async ({
   page,
 }) => {
   const hrefs = new Set<string>();
@@ -114,13 +114,55 @@ test("成品大圖連到存在的已發布菜譜，且不同亂數會推薦不�
     }, value);
     await page.goto("/");
     await expect(hero(page)).toBeVisible();
-    await expect(hero(page).getByRole("img")).toHaveAttribute("alt", /.+/);
     await expect(hero(page)).toContainText("AI 繪製插畫");
-    hrefs.add((await hero(page).getAttribute("href"))!);
+    const href = (await hero(page).getAttribute("href"))!;
+    const target = recipes.find((recipe) => href === `/recipes/${recipe.id}/`);
+    expect(target).toBeDefined();
+    await expect(hero(page).getByRole("img")).toHaveAttribute(
+      "alt",
+      target!.heroAlt,
+    );
+    await expect(hero(page)).toContainText(target!.title);
+    hrefs.add(href);
   }
-  const valid = recipes.map((recipe) => `/recipes/${recipe.id}/`);
-  for (const href of hrefs) expect(valid).toContain(href);
   expect(hrefs.size).toBe(Math.min(2, recipes.length));
+});
+
+test("成品大圖與縮圖的載入設定：大圖優先載入，縮圖不下載超大尺寸", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const img = hero(page).getByRole("img");
+  await expect(img).toHaveAttribute("fetchpriority", "high");
+  await expect(img).not.toHaveAttribute("loading", "lazy");
+  const thumb = rows(page).first().getByRole("img");
+  const srcset = (await thumb.getAttribute("srcset"))!;
+  const widths = [...srcset.matchAll(/\s(\d+)w/g)].map((m) => Number(m[1]));
+  expect(Math.max(...widths)).toBeLessThanOrEqual(400);
+});
+
+test("關閉 JS 時只有一張大圖（第一道菜），不會下載全部", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  const imageRequests: string[] = [];
+  page.on("request", (request) => {
+    if (request.resourceType() === "image") imageRequests.push(request.url());
+  });
+  await page.goto("/");
+  await expect(hero(page)).toHaveCount(1);
+  await expect(hero(page)).toHaveAttribute(
+    "href",
+    `/recipes/${recipes[0]!.id}/`,
+  );
+  await expect(hero(page).getByRole("img")).toBeVisible();
+  await page.waitForLoadState("load");
+  // 大圖一張；清單縮圖每列一張（可能延遲載入）；不應出現每道菜各一張額外大圖
+  const heroSrc = await hero(page).getByRole("img").getAttribute("src");
+  expect(imageRequests.length).toBeLessThanOrEqual(recipes.length + 1);
+  expect(heroSrc).toBeTruthy();
+  await context.close();
 });
 
 test("點成品大圖進入該菜譜頁", async ({ page }) => {
@@ -134,6 +176,29 @@ test("點成品大圖進入該菜譜頁", async ({ page }) => {
   ).toBeVisible();
 });
 
+test("無法辨識的分類參數載入時從網址清掉", async ({ page }) => {
+  await page.goto("/?category=nonsense");
+  await expect(page).not.toHaveURL(/category=/);
+});
+
+test("上一頁會依網址還原分類（hash 導航後選分類再返回）", async ({ page }) => {
+  await page.goto("/");
+  await page
+    .getByRole("navigation", { name: "主選單" })
+    .getByRole("link", { name: "菜譜" })
+    .click();
+  await expect(page).toHaveURL(/\/#recipes$/);
+  await page.getByRole("button", { name: "湯", exact: true }).click();
+  await expect(rows(page)).toHaveCount(soups.length);
+  await page.goBack();
+  await expect(page).not.toHaveURL(/category=/);
+  await expect(rows(page)).toHaveCount(recipes.length);
+  await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+});
+
 test("導覽列「菜譜」連到首頁清單", async ({ page }) => {
   await page.goto("/recipes/tomato-egg/");
   await page
@@ -142,7 +207,7 @@ test("導覽列「菜譜」連到首頁清單", async ({ page }) => {
     .click();
   await expect(page).toHaveURL(/\/#.+$/);
   await expect(
-    list(page).getByRole("heading", { level: 2, name: "全部菜譜" }),
+    list(page).getByRole("heading", { level: 2, name: "菜譜清單" }),
   ).toBeInViewport();
 });
 
@@ -183,7 +248,22 @@ test("互動元件觸控目標至少 44×44", async ({ page }) => {
   }
 });
 
-test("鍵盤可聚焦分類按鈕並看到焦點外框", async ({ page }) => {
+test("鍵盤 Tab 可走到清單第一列菜名，焦點外框可見", async ({ page }) => {
+  await page.goto("/");
+  const firstLink = rows(page).first().getByRole("link");
+  for (let i = 0; i < 20; i++) {
+    if (await firstLink.evaluate((el) => el === document.activeElement)) break;
+    await page.keyboard.press("Tab");
+  }
+  await expect(firstLink).toBeFocused();
+  // 焦點外框畫在撐滿整列的 ::after 上
+  const outline = await firstLink.evaluate(
+    (el) => getComputedStyle(el, "::after").outlineStyle,
+  );
+  expect(outline).not.toBe("none");
+});
+
+test("鍵盤可用 Enter 切換分類", async ({ page }) => {
   await page.goto("/");
   const button = page.getByRole("button", { name: "湯", exact: true });
   await button.focus();

@@ -9,14 +9,29 @@ export function parseCategoryParam(value: string | null): CategoryFilter {
   return FILTERS.find((filter) => filter === value) ?? "all";
 }
 
-/** 回傳新的參數：選「全部」時移除 category，其他參數（如搜尋字詞 q）原樣保留。 */
-export function applyCategoryParam(
+/** 首頁的網址狀態：搜尋字詞 q（票 05 使用）與分類。 */
+export interface HomeState {
+  q: string;
+  category: CategoryFilter;
+}
+
+export function parseHomeState(params: URLSearchParams): HomeState {
+  return {
+    q: params.get("q") ?? "",
+    category: parseCategoryParam(params.get(CATEGORY_PARAM)),
+  };
+}
+
+/** 回傳新的參數：預設值（空 q、全部）不寫進網址，其他參數原樣保留。 */
+export function applyHomeState(
   params: URLSearchParams,
-  filter: CategoryFilter,
+  state: HomeState,
 ): URLSearchParams {
   const next = new URLSearchParams(params);
-  if (filter === "all") next.delete(CATEGORY_PARAM);
-  else next.set(CATEGORY_PARAM, filter);
+  if (state.q) next.set("q", state.q);
+  else next.delete("q");
+  if (state.category === "all") next.delete(CATEGORY_PARAM);
+  else next.set(CATEGORY_PARAM, state.category);
   return next;
 }
 
@@ -27,15 +42,6 @@ export function matchesCategory(
 ): boolean {
   if (filter === "all") return true;
   return (filter === "soup") === (recipeCategory === "湯");
-}
-
-/** 在 `length` 個候選中選一個索引；沒有候選回傳 -1。`random` 可注入以便測試。 */
-export function pickRandomIndex(
-  length: number,
-  random: () => number = Math.random,
-): number {
-  if (length <= 0) return -1;
-  return Math.min(length - 1, Math.floor(random() * length));
 }
 
 /** 例如「10 月 6 日　週二」，用讀者裝置的本地日期。 */

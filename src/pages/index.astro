@@ -7,6 +7,15 @@ const recipes = await getVisibleRecipes();
 // 草稿（開發模式才會出現）可能沒有成品圖，不參與大圖。
 const heroRecipes = recipes.filter((recipe) => recipe.data.hero);
 
+// 解析到大圖區就同步挑圖並插入（腳本緊接在 template 之後），首次繪製前版面已定、不會位移。
+// 每次開啟隨機；template 內容不會載入，只有選中的那張下載。內容是 JS，不能含 TS 語法。
+const HERO_PICK_SCRIPT = `(() => {
+  const section = document.currentScript?.parentElement;
+  const slots = section?.getElementsByTagName("template");
+  const pick = slots?.[Math.floor(Math.random() * slots.length)];
+  if (section && pick) section.append(pick.content.cloneNode(true));
+})();`;
+
 const FILTERS = [
   { value: "all", label: "全部" },
   { value: "non-soup", label: "非湯料理" },
@@ -38,20 +47,35 @@ const FILTERS = [
       heroRecipes.length > 0 && (
         <section class="hero-pick" aria-label="隨機推薦菜譜">
           {heroRecipes.map((recipe) => (
-            <a hidden data-hero-slot href={recipeHref(recipe)}>
-              <Illustration
-                image={recipe.data.hero!}
-                sizes="(min-width: 64rem) 36rem, 100vw"
-              />
-            </a>
+            <template data-hero-slot>
+              <a href={recipeHref(recipe)}>
+                <Illustration
+                  image={recipe.data.hero!}
+                  sizes="(min-width: 64rem) 36rem, 100vw"
+                  priority
+                />
+                <p class="hero-title">{recipe.data.title}</p>
+              </a>
+            </template>
           ))}
+          <noscript>
+            <a href={recipeHref(heroRecipes[0]!)}>
+              <Illustration
+                image={heroRecipes[0]!.data.hero!}
+                sizes="(min-width: 64rem) 36rem, 100vw"
+                priority
+              />
+              <p class="hero-title">{heroRecipes[0]!.data.title}</p>
+            </a>
+          </noscript>
+          <script is:inline set:html={HERO_PICK_SCRIPT} />
         </section>
       )
     }
   </div>
 
   <section id="recipes" class="recipe-list" aria-labelledby="recipes-title">
-    <h2 id="recipes-title">全部菜譜</h2>
+    <h2 id="recipes-title">菜譜清單</h2>
     {
       recipes.length === 0 ? (
         <p>目前還沒有菜譜。</p>
@@ -75,12 +99,18 @@ const FILTERS = [
           </div>
           <ul class="rows">
             {recipes.map((recipe) => (
-              <li class="row" data-category={recipe.data.category}>
+              <li
+                class="row"
+                data-recipe-row
+                data-recipe-id={recipe.id}
+                data-category={recipe.data.category}
+              >
                 {recipe.data.hero && (
                   <Illustration
                     class="thumb"
                     image={recipe.data.hero}
                     sizes="(min-width: 40rem) 120px, 72px"
+                    widths={[144, 240, 360]}
                   />
                 )}
                 <h3>
@@ -99,68 +129,9 @@ const FILTERS = [
 </Base>
 
 <script>
-  import {
-    CATEGORY_PARAM,
-    applyCategoryParam,
-    formatDateLabel,
-    matchesCategory,
-    parseCategoryParam,
-    pickRandomIndex,
-    type CategoryFilter,
-  } from "../utils/home";
+  import { initHome } from "../scripts/home";
 
-  const today = document.querySelector("[data-today]");
-  if (today) today.textContent = formatDateLabel(new Date());
-
-  // 每次開啟隨機顯示一張成品大圖；其餘維持隱藏（隱藏的延遲載入圖不會下載）。
-  const slots = [...document.querySelectorAll<HTMLElement>("[data-hero-slot]")];
-  const picked = slots[pickRandomIndex(slots.length)];
-  if (picked) picked.hidden = false;
-
-  // 此票搜尋框只是外觀，Enter 不送出表單（避免重新載入、丟掉分類參數）。
-  document
-    .querySelector("[data-search-form]")
-    ?.addEventListener("submit", (event) => event.preventDefault());
-
-  const buttons = [...document.querySelectorAll<HTMLElement>("[data-filter]")];
-  const rows = [...document.querySelectorAll<HTMLElement>(".row")];
-  const countEl = document.querySelector("[data-count]");
-
-  function render(filter: CategoryFilter) {
-    let visible = 0;
-    for (const row of rows) {
-      const show = matchesCategory(filter, row.dataset.category ?? "");
-      row.hidden = !show;
-      if (show) visible += 1;
-    }
-    for (const button of buttons) {
-      button.setAttribute(
-        "aria-pressed",
-        String(button.dataset.filter === filter),
-      );
-    }
-    if (countEl) countEl.textContent = String(visible);
-  }
-
-  function writeUrl(filter: CategoryFilter) {
-    const url = new URL(location.href);
-    url.search = applyCategoryParam(url.searchParams, filter).toString();
-    history.replaceState(null, "", url);
-  }
-
-  for (const button of buttons) {
-    button.addEventListener("click", () => {
-      const filter = parseCategoryParam(button.dataset.filter ?? null);
-      render(filter);
-      writeUrl(filter);
-    });
-  }
-
-  render(
-    parseCategoryParam(
-      new URLSearchParams(location.search).get(CATEGORY_PARAM),
-    ),
-  );
+  initHome();
 </script>
 
 <style>
@@ -216,8 +187,10 @@ const FILTERS = [
     display: block;
     text-decoration: none;
   }
-  .hero-pick a[hidden] {
-    display: none;
+  .hero-title {
+    margin: 0.25rem 0 0;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
   }
 
   .recipe-list {
