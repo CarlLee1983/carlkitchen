@@ -1,24 +1,350 @@
 ---
 import Base from "../layouts/Base.astro";
+import Illustration from "../components/Illustration.astro";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
 
 const recipes = await getVisibleRecipes();
+// 草稿（開發模式才會出現）可能沒有成品圖，不參與大圖。
+const heroRecipes = recipes.filter((recipe) => recipe.data.hero);
+
+const FILTERS = [
+  { value: "all", label: "全部" },
+  { value: "non-soup", label: "非湯料理" },
+  { value: "soup", label: "湯" },
+];
 ---
 
 <Base title="CarlKitchen">
-  <h1>CarlKitchen</h1>
-  {
-    recipes.length === 0 ? (
-      <p>目前還沒有菜譜。</p>
-    ) : (
-      <ul>
-        {recipes.map((recipe) => (
-          <li>
-            <a href={recipeHref(recipe)}>{recipe.data.title}</a>
-            {recipe.data.draft && <span>（草稿）</span>}
-          </li>
-        ))}
-      </ul>
-    )
-  }
+  <div class="intro">
+    <div class="intro-text">
+      <p class="today" data-today></p>
+      <h1>CarlKitchen</h1>
+      <!-- 搜尋框此票只是外觀；票 05 接上輸入事件，並寫入 #search-status 提示筆數。 -->
+      <form class="search" role="search" data-search-form>
+        <label for="search-input">搜尋菜譜</label>
+        <input
+          id="search-input"
+          type="search"
+          name="q"
+          placeholder="菜名、材料或標籤"
+          autocomplete="off"
+        />
+        <p id="search-status" class="search-status" aria-live="polite"></p>
+      </form>
+      <a class="meal-link" href="/meal/">配一桌四菜一湯</a>
+    </div>
+
+    {
+      heroRecipes.length > 0 && (
+        <section class="hero-pick" aria-label="隨機推薦菜譜">
+          {heroRecipes.map((recipe) => (
+            <a hidden data-hero-slot href={recipeHref(recipe)}>
+              <Illustration
+                image={recipe.data.hero!}
+                sizes="(min-width: 64rem) 36rem, 100vw"
+              />
+            </a>
+          ))}
+        </section>
+      )
+    }
+  </div>
+
+  <section id="recipes" class="recipe-list" aria-labelledby="recipes-title">
+    <h2 id="recipes-title">全部菜譜</h2>
+    {
+      recipes.length === 0 ? (
+        <p>目前還沒有菜譜。</p>
+      ) : (
+        <>
+          <div class="list-tools">
+            <div class="filters" role="group" aria-label="分類">
+              {FILTERS.map((filter) => (
+                <button
+                  type="button"
+                  data-filter={filter.value}
+                  aria-pressed={filter.value === "all" ? "true" : "false"}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+            <p class="count" role="status">
+              共 <span data-count>{recipes.length}</span> 道
+            </p>
+          </div>
+          <ul class="rows">
+            {recipes.map((recipe) => (
+              <li class="row" data-category={recipe.data.category}>
+                {recipe.data.hero && (
+                  <Illustration
+                    class="thumb"
+                    image={recipe.data.hero}
+                    sizes="(min-width: 40rem) 120px, 72px"
+                  />
+                )}
+                <h3>
+                  <a href={recipeHref(recipe)}>{recipe.data.title}</a>
+                  {recipe.data.draft && <span>（草稿）</span>}
+                </h3>
+                <p class="row-summary">{recipe.data.summary}</p>
+                <span class="kind">{recipe.data.category}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+  </section>
 </Base>
+
+<script>
+  import {
+    CATEGORY_PARAM,
+    applyCategoryParam,
+    formatDateLabel,
+    matchesCategory,
+    parseCategoryParam,
+    pickRandomIndex,
+    type CategoryFilter,
+  } from "../utils/home";
+
+  const today = document.querySelector("[data-today]");
+  if (today) today.textContent = formatDateLabel(new Date());
+
+  // 每次開啟隨機顯示一張成品大圖；其餘維持隱藏（隱藏的延遲載入圖不會下載）。
+  const slots = [...document.querySelectorAll<HTMLElement>("[data-hero-slot]")];
+  const picked = slots[pickRandomIndex(slots.length)];
+  if (picked) picked.hidden = false;
+
+  // 此票搜尋框只是外觀，Enter 不送出表單（避免重新載入、丟掉分類參數）。
+  document
+    .querySelector("[data-search-form]")
+    ?.addEventListener("submit", (event) => event.preventDefault());
+
+  const buttons = [...document.querySelectorAll<HTMLElement>("[data-filter]")];
+  const rows = [...document.querySelectorAll<HTMLElement>(".row")];
+  const countEl = document.querySelector("[data-count]");
+
+  function render(filter: CategoryFilter) {
+    let visible = 0;
+    for (const row of rows) {
+      const show = matchesCategory(filter, row.dataset.category ?? "");
+      row.hidden = !show;
+      if (show) visible += 1;
+    }
+    for (const button of buttons) {
+      button.setAttribute(
+        "aria-pressed",
+        String(button.dataset.filter === filter),
+      );
+    }
+    if (countEl) countEl.textContent = String(visible);
+  }
+
+  function writeUrl(filter: CategoryFilter) {
+    const url = new URL(location.href);
+    url.search = applyCategoryParam(url.searchParams, filter).toString();
+    history.replaceState(null, "", url);
+  }
+
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      const filter = parseCategoryParam(button.dataset.filter ?? null);
+      render(filter);
+      writeUrl(filter);
+    });
+  }
+
+  render(
+    parseCategoryParam(
+      new URLSearchParams(location.search).get(CATEGORY_PARAM),
+    ),
+  );
+</script>
+
+<style>
+  .intro {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .today {
+    margin: 0 0 0.5rem;
+    min-height: 1.8em;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+  .intro h1 {
+    margin: 0 0 2rem;
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+  }
+  .search label {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+  .search input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.5rem 0;
+    border: 0;
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+  }
+  .search-status {
+    margin: 0.5rem 0 0;
+    min-height: 1.8em;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+  .meal-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 1rem;
+    padding: 0 1.25rem;
+    border: 1px solid var(--ink);
+    text-decoration: none;
+  }
+  .hero-pick a {
+    display: block;
+    text-decoration: none;
+  }
+  .hero-pick a[hidden] {
+    display: none;
+  }
+
+  .recipe-list {
+    scroll-margin-top: 1rem;
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+  .recipe-list h2 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+  }
+  .list-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+  .filters button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 0.25rem;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: var(--ink-soft);
+    font: inherit;
+    cursor: pointer;
+  }
+  .filters button[aria-pressed="true"] {
+    border-bottom-color: var(--ink);
+    color: var(--ink);
+  }
+  .count {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: start;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .row[hidden] {
+    display: none;
+  }
+  .row :global(.thumb) {
+    grid-column: 1;
+    grid-row: 1 / 4;
+  }
+  .row h3,
+  .row .row-summary,
+  .row .kind {
+    grid-column: 2;
+  }
+  .row h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  /* 連結撐滿整列，整列可點，但可聚焦與朗讀的仍只有菜名 */
+  .row h3 a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: none;
+  }
+  .row h3 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  .row h3 a:focus-visible {
+    outline: none;
+  }
+  .row h3 a:focus-visible::after {
+    outline: 2px solid var(--ink);
+    outline-offset: -2px;
+  }
+  .row-summary {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .kind {
+    margin-top: 0.5rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  @media (min-width: 40rem) {
+    .row {
+      grid-template-columns: 120px minmax(0, 1fr) auto;
+      column-gap: 1.75rem;
+      align-items: center;
+    }
+    .row :global(.thumb) {
+      grid-row: 1 / 3;
+    }
+    .row .kind {
+      grid-column: 3;
+      grid-row: 1 / 3;
+      margin-top: 0;
+    }
+  }
+
+  /* 寬螢幕第一屏：左文右圖 */
+  @media (min-width: 64rem) {
+    .intro {
+      grid-template-columns: minmax(0, 1fr) 36rem;
+      gap: 4rem;
+      align-items: center;
+    }
+  }
+</style>

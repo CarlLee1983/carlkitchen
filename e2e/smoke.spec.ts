@@ -2,7 +2,9 @@ import { expect, test } from "@playwright/test";
 
 test("首頁列出固定資料菜譜、不列草稿，並能點進菜譜頁", async ({ page }) => {
   await page.goto("/");
-  const link = page.getByRole("link", { name: "番茄炒蛋" });
+  const link = page
+    .getByRole("region", { name: "全部菜譜" })
+    .getByRole("link", { name: "番茄炒蛋" });
   await expect(link).toBeVisible();
   await expect(page.getByText("草稿範例")).toHaveCount(0);
 
