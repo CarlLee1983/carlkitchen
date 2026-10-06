@@ -25,6 +25,7 @@ Status: open
 - [菜譜搜尋範圍與結果體驗](issues/04-search-behavior.md)：只索引公開菜譜的標題、摘要、材料、標籤與別名；菜／湯篩選、即時搜尋與可分享網址使用靜態 Pagefind。
 - [四菜一湯／五菜一湯的配菜規則](issues/05-meal-planner-rules.md)：候選菜不重複且由不同菜色滿足蔬菜與蛋白質最低要求；鎖定項保留，單道替換與模式切換無解時維持原套餐並提示。
 - [首頁視覺方向與素材邊界](issues/06-homepage-direction.md)：首頁採第一屏搜尋＋成品大圖、下接即時篩選菜譜清單；安靜克制的日系版面，全站料理圖片統一為手繪水彩插畫並標示「AI 繪製插畫」。
+- [靜態發布與品質驗收關卡](issues/07-publishing-gates.md)：私有儲存庫加分支保護，只有站主能合入；合入主分支即自動部署到 `carlkitchen.gravito.dev`，候選池未達標時停止部署；七項自動檢查阻擋合入與部署，以 `git revert` 回滾。
 
 ## Not yet specified
 
