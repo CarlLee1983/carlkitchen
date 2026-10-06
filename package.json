@@ -14,7 +14,8 @@
     "preview": "astro preview",
     "check": "pnpm format:check && astro check && pnpm build",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "test:e2e": "RECIPES_DIR=tests/fixtures/recipes pnpm build && playwright test",
+    "build:e2e-meal": "RECIPES_DIR=tests/fixtures/meal-recipes ASTRO_OUT_DIR=dist-meal astro build --force",
+    "test:e2e": "RECIPES_DIR=tests/fixtures/recipes pnpm build && pnpm build:e2e-meal && node scripts/run-e2e.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

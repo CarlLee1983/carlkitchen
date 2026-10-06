@@ -1,0 +1,22 @@
+title: 涼拌小黃瓜
+summary: 小黃瓜拍裂後拌醬汁，冰過更爽口。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: false
+vegetable: true
+protein: false
+ingredients:
+  - { name: 主料, amount: { value: 200, unit: g } }
+  - { name: 鹽, group: 調味 }
+steps:
+  - text: 備好材料，依序處理後烹煮至熟。
+    image:
+      src: ./step-1.webp
+      alt: 涼拌小黃瓜的備料步驟
+hero:
+  src: ./hero.webp
+  alt: 涼拌小黃瓜的成品
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 涼拌小黃瓜的材料合照
