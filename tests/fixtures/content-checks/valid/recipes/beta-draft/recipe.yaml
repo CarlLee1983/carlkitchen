@@ -1,0 +1,10 @@
+title: 草稿菜
+summary: 尚未發布。
+servings: 2
+category: 湯
+draft: true
+ingredients:
+  - { name: 水, amount: { value: 500, unit: ml } }
+steps:
+  - text: 燒水。
+hero: { src: ./missing.webp, alt: 草稿成品 }

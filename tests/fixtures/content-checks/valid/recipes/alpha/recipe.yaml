@@ -1,0 +1,12 @@
+title: 範例菜
+summary: 檢查指令用的固定菜譜。
+servings: 2
+category: 非湯料理
+draft: false
+ingredients:
+  - { name: 蛋, amount: { value: 2, unit: 顆 } }
+steps:
+  - text: 蛋打散後下鍋炒熟。
+    image: { src: ./step-1.webp, alt: 鍋中的炒蛋 }
+hero: { src: ./hero.webp, alt: 盤中的炒蛋 }
+ingredientsPhoto: { src: ./ingredients.webp, alt: 兩顆蛋 }

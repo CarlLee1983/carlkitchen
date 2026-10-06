@@ -1,0 +1,265 @@
+import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import {
+  cpSync,
+  mkdirSync,
+  mkdtempSync,
+  rmSync,
+  writeFileSync,
+  readFileSync,
+} from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { after, describe, it } from "node:test";
+import { fileURLToPath } from "node:url";
+import { runContentChecks } from "../src/content-checks/run.ts";
+
+const fixtures = fileURLToPath(
+  new URL("./fixtures/content-checks", import.meta.url),
+);
+const cli = fileURLToPath(
+  new URL("../scripts/check-content.ts", import.meta.url),
+);
+const workDirs: string[] = [];
+
+/** 把通過情境複製到暫存目錄，讓每個測試各自改壞一處。 */
+function scenario() {
+  const root = mkdtempSync(join(tmpdir(), "content-checks-"));
+  workDirs.push(root);
+  cpSync(join(fixtures, "valid"), root, { recursive: true });
+  return {
+    root,
+    options: {
+      recipesDir: join(root, "recipes"),
+      sourcesDir: join(root, "sources"),
+      distDir: join(root, "dist"),
+      launch: false,
+    },
+    write(path: string, content: string | Buffer) {
+      mkdirSync(join(path, ".."), { recursive: true });
+      writeFileSync(path, content);
+    },
+  };
+}
+
+after(() => {
+  for (const dir of workDirs) rmSync(dir, { recursive: true, force: true });
+});
+
+describe("runContentChecks", () => {
+  it("通過情境沒有問題", async () => {
+    assert.deepEqual(await runContentChecks(scenario().options), []);
+  });
+
+  it("空的菜譜與來源目錄也通過", async () => {
+    const s = scenario();
+    for (const dir of ["recipes", "sources", "dist"]) {
+      rmSync(join(s.root, dir), { recursive: true });
+      mkdirSync(join(s.root, dir));
+    }
+    assert.deepEqual(await runContentChecks(s.options), []);
+  });
+
+  it("YAML 無法解析的菜譜不會讓它的來源被多報成孤兒", async () => {
+    const s = scenario();
+    s.write(join(s.root, "recipes/alpha/recipe.yaml"), "title: [壞掉\n");
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.equal(issues[0]?.recipe, "alpha");
+  });
+
+  it("schema 失敗時註明圖片尚未檢查", async () => {
+    const s = scenario();
+    s.write(join(s.root, "recipes/alpha/recipe.yaml"), "title: x\n");
+    const issues = await runContentChecks(s.options);
+    assert.ok(issues.every((issue) => /圖片/.test(issue.message)));
+  });
+
+  it("菜譜資料夾名稱不是小寫 kebab-case", async () => {
+    const s = scenario();
+    cpSync(join(s.root, "recipes/alpha"), join(s.root, "recipes/Bad_Id"), {
+      recursive: true,
+    });
+    cpSync(
+      join(s.root, "sources/alpha.yaml"),
+      join(s.root, "sources/Bad_Id.yaml"),
+    );
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.equal(issues[0]?.recipe, "Bad_Id");
+    assert.match(issues[0]!.file!, /Bad_Id$/);
+  });
+
+  it("來源目錄中無法辨識的檔案", async () => {
+    const s = scenario();
+    s.write(join(s.root, "sources/notes.txt"), "x");
+    s.write(join(s.root, "sources/beta.yml"), "x");
+    s.write(join(s.root, "sources/.gitkeep"), "");
+    const issues = await runContentChecks(s.options);
+    assert.deepEqual(
+      issues.map((issue) => issue.file?.split("/").pop()).sort(),
+      ["beta.yml", "notes.txt"],
+    );
+  });
+
+  it("草稿的圖片不檢查（草稿引用不存在的圖也通過）", async () => {
+    const s = scenario();
+    const draft = readFileSync(
+      join(s.root, "recipes/beta-draft/recipe.yaml"),
+      "utf8",
+    );
+    assert.match(draft, /missing\.webp/);
+    assert.deepEqual(await runContentChecks(s.options), []);
+  });
+
+  it("公開菜譜缺來源紀錄", async () => {
+    const s = scenario();
+    rmSync(join(s.root, "sources/alpha.yaml"));
+    const issues = await runContentChecks(s.options);
+    assert.deepEqual(
+      issues.map((issue) => issue.recipe),
+      ["alpha"],
+    );
+  });
+
+  it("孤兒來源紀錄", async () => {
+    const s = scenario();
+    s.write(
+      join(s.root, "sources/ghost.yaml"),
+      "urls: [https://example.com/g]\n",
+    );
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.file!, /ghost\.yaml$/);
+  });
+
+  it("來源紀錄格式錯誤", async () => {
+    const s = scenario();
+    s.write(join(s.root, "sources/alpha.yaml"), "urls: []\n");
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.file!, /alpha\.yaml$/);
+  });
+
+  it("菜譜 schema 錯誤", async () => {
+    const s = scenario();
+    s.write(join(s.root, "recipes/alpha/recipe.yaml"), "title: x\n");
+    const issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some(
+        (issue) => issue.recipe === "alpha" && issue.field === "summary",
+      ),
+    );
+  });
+
+  it("圖片檔不存在", async () => {
+    const s = scenario();
+    rmSync(join(s.root, "recipes/alpha/hero.webp"));
+    const issues = await runContentChecks(s.options);
+    assert.deepEqual(
+      issues.map((issue) => [issue.recipe, issue.field]),
+      [["alpha", "hero"]],
+    );
+  });
+
+  it("圖片不是 WebP", async () => {
+    const s = scenario();
+    cpSync(
+      join(fixtures, "images/not-webp.png"),
+      join(s.root, "recipes/alpha/hero.webp"),
+    );
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.message, /WebP/);
+  });
+
+  it("圖片尺寸不對", async () => {
+    const s = scenario();
+    cpSync(
+      join(fixtures, "images/small.webp"),
+      join(s.root, "recipes/alpha/step-1.webp"),
+    );
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.equal(issues[0]?.field, "steps.0.image");
+  });
+
+  it("草稿識別值出現在建置輸出", async () => {
+    const s = scenario();
+    s.write(
+      join(s.root, "dist/recipes/beta-draft/index.html"),
+      "<h1>草稿菜</h1>",
+    );
+    const issues = await runContentChecks(s.options);
+    assert.ok(issues.every((issue) => issue.recipe === "beta-draft"));
+    assert.ok(issues.length >= 1);
+  });
+
+  it("來源網址出現在建置輸出，包含草稿菜譜的來源", async () => {
+    const s = scenario();
+    s.write(
+      join(s.root, "dist/recipes/alpha/index.html"),
+      '<a href="https://example.com/source/beta">來源</a>',
+    );
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.file!, /recipes\/alpha\/index\.html$/);
+  });
+
+  it("找不到建置輸出目錄", async () => {
+    const s = scenario();
+    rmSync(join(s.root, "dist"), { recursive: true });
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.file!, /dist$/);
+  });
+
+  it("找不到菜譜目錄", async () => {
+    const s = scenario();
+    rmSync(join(s.root, "recipes"), { recursive: true });
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.file!, /recipes$/);
+  });
+
+  it("門檻模式列出缺額，預設模式不檢查", async () => {
+    const s = scenario();
+    assert.deepEqual(await runContentChecks(s.options), []);
+    const issues = await runContentChecks({ ...s.options, launch: true });
+    assert.equal(issues.length, 2);
+  });
+});
+
+describe("check-content 指令", () => {
+  const run = (s: ReturnType<typeof scenario>, args: string[] = []) =>
+    spawnSync(
+      process.execPath,
+      ["--experimental-strip-types", cli, "--dist", s.options.distDir, ...args],
+      {
+        encoding: "utf8",
+        env: {
+          ...process.env,
+          RECIPES_DIR: s.options.recipesDir,
+          SOURCES_DIR: s.options.sourcesDir,
+        },
+      },
+    );
+
+  it("通過時結束碼 0", () => {
+    assert.equal(run(scenario()).status, 0);
+  });
+
+  it("失敗時結束碼非 0 並逐項列出問題", () => {
+    const s = scenario();
+    rmSync(join(s.root, "sources/alpha.yaml"));
+    const result = run(s);
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /alpha/);
+  });
+
+  it("--launch 開啟候選池門檻", () => {
+    const s = scenario();
+    assert.equal(run(s).status, 0);
+    assert.notEqual(run(s, ["--launch"]).status, 0);
+  });
+});

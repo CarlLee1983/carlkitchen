@@ -34,6 +34,11 @@ jobs:
       - name: Check formatting, types, and production build
         run: pnpm check
 
+      # 必須在 e2e 之前：e2e 會以固定菜譜覆寫 dist，這裡檢查的是 pnpm check 建出的真實內容。
+      # PR 不開 --launch 候選池門檻（部署工作才開）。
+      - name: Check content and build output
+        run: pnpm check:content
+
       - name: Run unit tests
         run: pnpm test
 
