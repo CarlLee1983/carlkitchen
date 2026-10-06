@@ -10,16 +10,17 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build --force",
+    "build": "astro build --force && node scripts/build-search-index.mjs",
     "preview": "astro preview",
     "check": "pnpm format:check && astro check && pnpm build",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "test:e2e": "RECIPES_DIR=tests/fixtures/recipes astro build --force && playwright test",
+    "test:e2e": "RECIPES_DIR=tests/fixtures/recipes pnpm build && playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "dependencies": {
     "astro": "7.2.9",
+    "pagefind": "1.5.2",
     "sharp": "0.35.2"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
     "typescript": "6.0.3",
-    "wrangler": "4.147.0"
+    "wrangler": "4.147.0",
+    "yaml": "2.8.3"
   }
 }

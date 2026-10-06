@@ -2,10 +2,14 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   applyHomeState,
+  categoryFilterValue,
+  containsAllTerms,
   formatDateLabel,
   matchesCategory,
+  normalizeQuery,
   parseCategoryParam,
   parseHomeState,
+  recipeIdFromUrl,
 } from "../src/utils/home.ts";
 
 describe("parseCategoryParam", () => {
@@ -69,5 +73,49 @@ describe("formatDateLabel", () => {
   it("格式為「M 月 D 日　週X」", () => {
     assert.equal(formatDateLabel(new Date(2026, 9, 6)), "10 月 6 日　週二");
     assert.equal(formatDateLabel(new Date(2026, 0, 4)), "1 月 4 日　週日");
+  });
+});
+
+describe("categoryFilterValue", () => {
+  it("菜譜分類對應網址與 Pagefind 篩選值", () => {
+    assert.equal(categoryFilterValue("湯"), "soup");
+    assert.equal(categoryFilterValue("非湯料理"), "non-soup");
+  });
+});
+
+describe("normalizeQuery", () => {
+  it("去掉前後空白，只有空白視為沒有字詞", () => {
+    assert.equal(normalizeQuery("  番茄 "), "番茄");
+    assert.equal(normalizeQuery("   "), "");
+  });
+});
+
+describe("recipeIdFromUrl", () => {
+  it("從 Pagefind 結果網址取出菜譜識別值，其他網址回傳 null", () => {
+    assert.equal(recipeIdFromUrl("/recipes/tomato-egg/"), "tomato-egg");
+    assert.equal(recipeIdFromUrl("/recipes/tomato-egg"), "tomato-egg");
+    assert.equal(recipeIdFromUrl("/meal/"), null);
+    assert.equal(recipeIdFromUrl("/"), null);
+  });
+});
+
+describe("containsAllTerms", () => {
+  const content = "蛋花湯​. 水滾後淋入蛋液​，輕推成蛋花。 Tomato 番茄";
+
+  it("每個字詞都在內容中才符合（忽略零寬空白與大小寫）", () => {
+    assert.equal(containsAllTerms(content, "蛋花"), true);
+    assert.equal(containsAllTerms(content, "tomato 番茄"), true);
+    assert.equal(containsAllTerms(content, "蛋花 番茄"), true);
+  });
+
+  it("多字中文查詢不退回部分匹配", () => {
+    assert.equal(containsAllTerms(content, "不存在的詞"), false);
+    assert.equal(containsAllTerms(content, "配一桌四菜一湯"), false);
+    assert.equal(containsAllTerms(content, "蛋花 不存在"), false);
+  });
+
+  it("沒有字詞（空白或標點）時符合", () => {
+    assert.equal(containsAllTerms(content, "  "), true);
+    assert.equal(containsAllTerms(content, "，"), true);
   });
 });

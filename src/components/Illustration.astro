@@ -15,7 +15,8 @@ interface Props {
 const { image, sizes, widths, class: className, priority } = Astro.props;
 ---
 
-<figure class:list={["illustration", className]}>
+<!-- data-pagefind-ignore="all"：替代文字與圖片網址不被 Pagefind 當成可搜尋的 metadata -->
+<figure class:list={["illustration", className]} data-pagefind-ignore="all">
   <Image
     src={image.src}
     alt={image.alt}

@@ -4,6 +4,8 @@ servings: 2
 category: 湯
 draft: false
 mealCandidate: true
+tags: [快手]
+aliases: [蛋花清湯]
 timeMinutes: 10
 ingredients:
   - { name: 雞蛋, amount: { value: 2, unit: 顆 } }

@@ -4,6 +4,8 @@ servings: 2
 category: 非湯料理
 draft: false
 mealCandidate: true
+tags: [家常菜]
+aliases: [蕃茄炒蛋]
 vegetable: true
 protein: true
 timeMinutes: 15
@@ -20,7 +22,7 @@ steps:
     image:
       src: ./step-1.webp
       alt: 砧板上切好的番茄塊，旁邊分成兩小堆的蔥白與蔥綠
-  - text: 雞蛋打入碗中，加一小撮鹽打散。
+  - text: 雞蛋打入碗中，加一小撮鹽打散，靜置片刻。
   - text: 熱鍋後倒入食用油，油熱倒入蛋液。蛋液邊緣凝固後輕推，約七分熟就盛起。
     image:
       src: ./step-3.webp

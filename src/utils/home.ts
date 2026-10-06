@@ -9,7 +9,10 @@ export function parseCategoryParam(value: string | null): CategoryFilter {
   return FILTERS.find((filter) => filter === value) ?? "all";
 }
 
-/** 首頁的網址狀態：搜尋字詞 q（票 05 使用）與分類。 */
+/** 搜尋字詞去掉前後空白；只有空白視為沒有字詞。 */
+export const normalizeQuery = (value: string): string => value.trim();
+
+/** 首頁的網址狀態：搜尋字詞 q 與分類。 */
 export interface HomeState {
   q: string;
   category: CategoryFilter;
@@ -17,7 +20,7 @@ export interface HomeState {
 
 export function parseHomeState(params: URLSearchParams): HomeState {
   return {
-    q: params.get("q") ?? "",
+    q: normalizeQuery(params.get("q") ?? ""),
     category: parseCategoryParam(params.get(CATEGORY_PARAM)),
   };
 }
@@ -44,8 +47,40 @@ export function matchesCategory(
   return (filter === "soup") === (recipeCategory === "湯");
 }
 
+/**
+ * 菜譜分類值（「非湯料理」或「湯」）對應的篩選值：同時是網址 `category` 參數值
+ * 與 Pagefind 篩選值（`data-pagefind-filter="category:…"`）。
+ */
+export function categoryFilterValue(
+  recipeCategory: string,
+): Exclude<CategoryFilter, "all"> {
+  return recipeCategory === "湯" ? "soup" : "non-soup";
+}
+
 /** 例如「10 月 6 日　週二」，用讀者裝置的本地日期。 */
 export function formatDateLabel(date: Date): string {
   const weekday = "日一二三四五六"[date.getDay()];
   return `${date.getMonth() + 1} 月 ${date.getDate()} 日　週${weekday}`;
+}
+
+/** 從 Pagefind 結果網址（`/recipes/<識別值>/`）取出菜譜識別值；不是菜譜頁回傳 null。 */
+export function recipeIdFromUrl(url: string): string | null {
+  return url.match(/^\/recipes\/([^/]+)\/?$/)?.[1] ?? null;
+}
+
+const segmenter = new Intl.Segmenter("zh-Hant", { granularity: "word" });
+
+const normalizeContent = (text: string) =>
+  text.replaceAll("​", "").toLowerCase();
+
+/**
+ * 查詢切成字詞後，每個字詞都要出現在內容中才算符合。
+ * Pagefind 對多字中文查詢在全部字詞都找不到時會退回部分匹配，等於自動放寬條件；
+ * 這裡在它的結果上再做一次全字詞過濾（內容含 Pagefind 插入的零寬空白，先去掉）。
+ */
+export function containsAllTerms(content: string, q: string): boolean {
+  const haystack = normalizeContent(content);
+  return [...segmenter.segment(normalizeContent(q))]
+    .filter((part) => part.isWordLike)
+    .every((part) => haystack.includes(part.segment));
 }
