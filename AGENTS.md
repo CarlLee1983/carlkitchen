@@ -1,21 +1,40 @@
-# Repository Guidelines
+# 專案守則
 
-## Project Structure & Module Organization
+CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網站。Astro 靜態輸出，部署在 Cloudflare Workers Static Assets（`carlkitchen.gravito.dev`）。
 
-There is no application source tree, test suite, or asset directory yet. The ignored `graft/` directory is a regenerable local code index (`graft build`), not project source. As the project takes shape, keep application code, tests, and static assets in clearly named directories; document the chosen layout in a `README.md`. Keep tests close to the behavior they verify, either beside source files or in a dedicated `tests/` directory.
+## 目錄結構
 
-## Build, Test, and Development Commands
+- `src/` — 網站程式：`content.config.ts`（內容集合）、`content/recipe-schema.ts`（菜譜 schema）、`pages/`、`layouts/`、`utils/`
+- `content/recipes/<菜譜識別值>/` — 正式菜譜：`recipe.yaml` 與同資料夾的 WebP 圖片（YAML 以相對路徑引用）。資料夾名稱即識別值與網址 `/recipes/<識別值>/`
+- `tests/` — 單元測試（Node 內建測試執行器）；`tests/fixtures/recipes/` 為測試用固定菜譜，含一份草稿
+- `e2e/` — Playwright 瀏覽器測試
+- `.scratch/` — 規格與票；`.claude/skills/recipe-writing/` — 菜譜寫作 skill
 
-No package manager, build system, or local run command is configured yet. Add the commands needed to install dependencies, run the application, check formatting, and run tests to the project manifest or a `Makefile`. Document each command in `README.md` before asking contributors to use it. Run the relevant checks locally before submitting a change.
+## 指令
 
-## Coding Style & Naming Conventions
+套件管理用 pnpm。
 
-Follow the conventions of the language and framework selected for the project. Once a formatter or linter is added, commit its configuration and use it consistently; avoid formatting unrelated files in a feature change. Use descriptive names for modules and tests, and keep naming consistent within each directory.
+- `pnpm dev` — 開發伺服器（顯示草稿）
+- `pnpm build` / `pnpm preview` — 正式建置（排除草稿）與預覽
+- `pnpm check` — 格式檢查、`astro check`、建置
+- `pnpm test` — 單元測試
+- `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）
+- `pnpm format` — 格式化
 
-## Testing Guidelines
+環境變數 `RECIPES_DIR` 選擇內容根目錄，預設 `content/recipes`；測試與 e2e 用 `tests/fixtures/recipes`。
 
-There is no test framework or coverage threshold yet. Add focused tests with the first executable behavior, and record the test command in `README.md`. Name tests for the behavior they cover so a failure identifies the affected feature. Include a regression test when fixing a reproducible bug.
+## 寫作與內容
 
-## Commit & Pull Request Guidelines
+撰寫菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。schema 規則見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
 
-This directory has no Git history, so there is no established commit-message convention. Use short, imperative commit subjects that describe the change. In pull requests, explain the purpose, summarize the checks run, and link the relevant issue when one exists. Include screenshots for visible interface changes.
+圖片規格慣例：WebP、1536×1024、不超過 300 KB。schema 不檢查這些，由後續的內容檢查（票 08／門檻第 4 項）強制。
+
+## 程式與測試
+
+註解與文件用繁體中文，程式識別字用英文。先寫失敗的測試再實作；修 bug 附回歸測試。提交前跑 `pnpm check && pnpm test && pnpm test:e2e`。
+
+## 代理權限
+
+- 草稿留在本地工作分支。
+- 準備好請站主審閱時，才推送工作分支並開 PR。
+- 不得推送 `main`，不得合入任何 PR（包含 `gh pr merge`）。合入由站主完成，等同發布核准。

@@ -1,0 +1,42 @@
+title: 番茄炒蛋
+summary: 蛋先炒到半熟盛起，再把番茄炒出汁，最後合在一起。蛋保持柔軟，番茄帶點湯汁，適合配飯。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 15
+ingredients:
+  - { name: 番茄, amount: { value: 2, unit: 顆 }, note: 約 300 g }
+  - { name: 雞蛋, amount: { value: 3, unit: 顆 } }
+  - { name: 青蔥, amount: { value: 1, unit: 支 }, note: 蔥白、蔥綠分開 }
+  - { name: 食用油, amount: { value: 30, unit: ml }, group: 調味 }
+  - { name: 糖, amount: { value: 5, unit: g }, group: 調味 }
+  - { name: 鹽, group: 調味 }
+  - { name: 水, amount: { value: 50, unit: ml }, group: 調味 }
+steps:
+  - text: 番茄去蒂切成小塊；青蔥切段，蔥白和蔥綠分開放。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上切好的番茄塊，旁邊分成兩小堆的蔥白與蔥綠
+  - text: 雞蛋打入碗中，加一小撮鹽打散。
+  - text: 熱鍋後倒入食用油，油熱倒入蛋液。蛋液邊緣凝固後輕推，約七分熟就盛起。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中剛下鍋、半凝固的蛋液與一把鍋鏟
+  - text: 原鍋放入蔥白炒香，下番茄翻炒到軟化出汁，加糖、鹽和水煮一分鐘。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中炒到出汁的番茄塊，間雜著幾段蔥白
+  - text: 倒回炒蛋拌勻，讓蛋吸一點湯汁，撒上蔥綠就起鍋。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋中拌勻的番茄與蓬鬆炒蛋，撒滿蔥綠
+hero:
+  src: ./hero.webp
+  alt: 白瓷盤中盛著番茄炒蛋，旁邊放著一雙筷子
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩顆番茄、三顆雞蛋、一支青蔥，以及小碟裝的糖、鹽、油和水
+tip: 番茄偏酸時可多加一點糖；想要湯汁多一些，水可加到 80 ml。

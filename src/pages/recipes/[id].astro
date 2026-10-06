@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import Base from "../../layouts/Base.astro";
+import {
+  DEFAULT_INGREDIENT_GROUP,
+  UNSPECIFIED_AMOUNT_LABEL,
+} from "../../content/recipe-schema";
+import { getVisibleRecipes } from "../../utils/recipes";
+import type { Recipe } from "../../utils/recipes";
+
+export async function getStaticPaths() {
+  const recipes = await getVisibleRecipes();
+  return recipes.map((recipe) => ({
+    params: { id: recipe.id },
+    props: { recipe },
+  }));
+}
+
+interface Props {
+  recipe: Recipe;
+}
+const { data } = Astro.props.recipe;
+
+// 材料依 group 分組，保留首次出現的順序；沒有分組的歸在「材料」。
+const groups = new Map<string, typeof data.ingredients>();
+for (const ingredient of data.ingredients) {
+  const name = ingredient.group ?? DEFAULT_INGREDIENT_GROUP;
+  groups.set(name, [...(groups.get(name) ?? []), ingredient]);
+}
+---
+
+<Base title={`${data.title}｜CarlKitchen`}>
+  <article>
+    <h1>{data.title}{data.draft && <span>（草稿）</span>}</h1>
+    <p>{data.summary}</p>
+    <p>{data.servings} 人份・{data.category}</p>
+    <p>依公開資料由 AI 整理、站主審閱，未經試做</p>
+
+    {data.hero && <Image src={data.hero.src} alt={data.hero.alt} />}
+
+    <h2>材料</h2>
+    {
+      data.ingredientsPhoto && (
+        <Image
+          src={data.ingredientsPhoto.src}
+          alt={data.ingredientsPhoto.alt}
+        />
+      )
+    }
+    {
+      [...groups].map(([group, ingredients]) => (
+        <section>
+          <h3>{group}</h3>
+          <ul>
+            {ingredients.map((ingredient) => (
+              <li>
+                {ingredient.name}{" "}
+                {ingredient.amount
+                  ? `${ingredient.amount.value} ${ingredient.amount.unit}`
+                  : UNSPECIFIED_AMOUNT_LABEL}
+                {ingredient.note && `（${ingredient.note}）`}
+                {ingredient.image && (
+                  <Image
+                    src={ingredient.image.src}
+                    alt={ingredient.image.alt}
+                    width={48}
+                  />
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+
+    <h2>做法</h2>
+    <ol>
+      {
+        data.steps.map((step) => (
+          <li>
+            <p>{step.text}</p>
+            {step.image && <Image src={step.image.src} alt={step.image.alt} />}
+          </li>
+        ))
+      }
+    </ol>
+
+    {
+      data.tip && (
+        <>
+          <h2>小提醒</h2>
+          <p>{data.tip}</p>
+        </>
+      )
+    }
+  </article>
+</Base>

@@ -1,0 +1,9 @@
+title: 草稿範例
+summary: 只用來驗證草稿在正式建置中被排除的菜譜，沒有圖片。
+servings: 1
+category: 湯
+draft: true
+ingredients:
+  - { name: 水, amount: { value: 500, unit: ml } }
+steps:
+  - text: 煮滾。

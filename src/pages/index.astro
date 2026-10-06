@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import { getVisibleRecipes, recipeHref } from "../utils/recipes";
+
+const recipes = await getVisibleRecipes();
+---
+
+<Base title="CarlKitchen">
+  <h1>CarlKitchen</h1>
+  {
+    recipes.length === 0 ? (
+      <p>目前還沒有菜譜。</p>
+    ) : (
+      <ul>
+        {recipes.map((recipe) => (
+          <li>
+            <a href={recipeHref(recipe)}>{recipe.data.title}</a>
+            {recipe.data.draft && <span>（草稿）</span>}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Base>

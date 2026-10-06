@@ -1,0 +1,13 @@
+dist
+.astro
+.wrangler
+node_modules
+pnpm-lock.yaml
+graft
+test-results
+playwright-report
+.cloudflare
+.scratch
+index.html
+PROTOTYPE_SPEC.md
+.claude
