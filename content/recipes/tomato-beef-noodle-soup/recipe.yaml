@@ -1,0 +1,88 @@
+title: 番茄牛肉麵
+summary: 牛肉塊與番茄、醬油、番茄醬一起燉約 2 小時，湯頭帶番茄的酸甜。盛進煮好的拉麵，配上燙青菜和蔥花，單吃就是一餐。
+servings: 3
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 155
+tags: [家常菜]
+ingredients:
+  - {
+      name: 牛肉,
+      amount: { value: 600, unit: g },
+      note: 嫩肩牛肉切大塊，也可用牛腩或牛腱,
+    }
+  - { name: 牛番茄, amount: { value: 2, unit: 顆 }, note: 約 350 g，切角 }
+  - { name: 薑, amount: { value: 35, unit: g }, note: 切片 }
+  - { name: 大蒜, amount: { value: 25, unit: g }, note: 略拍裂 }
+  - {
+      name: 青蔥,
+      amount: { value: 2, unit: 支 },
+      note: 約 25 g，蔥白打結、蔥綠切蔥花,
+    }
+  - { name: 拉麵, amount: { value: 3, unit: 把 }, note: 每人 1 把 }
+  - { name: 小白菜, note: 洗淨切段，燙熟配麵, group: 調味 }
+  - { name: 食用油, note: 少許, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 60, unit: ml },
+      note: 約 4 湯匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 60, unit: ml },
+      note: 約 4 湯匙，可省略,
+      group: 調味,
+    }
+  - {
+      name: 番茄醬,
+      amount: { value: 60, unit: ml },
+      note: 約 4 湯匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 600, unit: ml }, group: 調味 }
+  - {
+      name: 柴魚粉,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙，可省略,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 3, unit: g },
+      note: 約 1/2 茶匙，視鹹度調整,
+      group: 調味,
+    }
+steps:
+  - text: 牛肉切成大塊備用。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上一堆切成大塊的生牛肉，旁邊放著一把菜刀
+  - text: 牛番茄切角，薑切片，大蒜略拍裂。青蔥切下蔥白打成結，蔥綠切成蔥花留著盛碗用。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分開擺著切角的牛番茄、薑片、拍裂的大蒜、打結的蔥白和一小堆蔥花，旁邊放著一把菜刀
+  - text: 湯鍋下少許食用油，放入薑片、蔥白結和大蒜，炒到香氣出來。
+    image:
+      src: ./step-3.webp
+      alt: 不鏽鋼雙耳湯鍋裡有薑片、大蒜和打結的青蔥，鍋底帶著油光
+  - text: 下番茄略炒，淋入醬油，煮到醬油香氣飄出。
+  - text: 倒入米酒，再加入番茄醬拌開。
+  - text: 放入牛肉和水，煮滾後轉小火燉煮約 2 小時，煮到牛肉軟嫩；湯汁快蓋不住牛肉時補少量水，避免煮乾。
+    image:
+      src: ./step-6.webp
+      alt: 同一只湯鍋裡紅褐色的番茄湯汁，大塊牛肉和番茄浸在其中微微冒泡，蔥結浮在一旁
+  - text: 取出蔥結，加入柴魚粉和鹽，嚐湯汁鹹度。不夠鹹再補鹽，太鹹就加熱開水調整。
+  - text: 另燒一鍋滾水，放入拉麵煮約 3.5 分鐘，期間用筷子略微攪動，撈起瀝乾後分裝入碗。
+  - text: 小白菜洗淨切段，放進煮麵水燙約 1 分鐘，撈起瀝乾備用。
+  - text: 麵碗中盛入牛肉，澆上番茄牛肉湯，放上小白菜和蔥花。
+tip: 一般鍋子要燉約 2 小時；改用快鍋或電子壓力鍋燉煮，可以縮短燉煮時間。
+hero:
+  src: ./hero.webp
+  alt: 米白色陶瓷大碗盛著番茄牛肉麵，紅褐色的湯中有大塊牛肉和拉麵，旁邊放著燙青的小白菜，上面撒滿蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤切大塊的生牛肉、兩顆牛番茄、數片薑、一小堆大蒜、兩支青蔥、三把拉麵和一小把小白菜，以及小瓶裝的食用油、醬油、米酒、番茄醬，小碟裝的柴魚粉和鹽、一壺水
