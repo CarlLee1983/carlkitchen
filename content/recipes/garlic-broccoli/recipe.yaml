@@ -1,0 +1,43 @@
+title: 蒜炒花椰菜
+summary: 白、綠花椰菜先汆燙，再和紅蘿蔔片一起下鍋，與煸到金黃的蒜片快炒。口感清脆、帶蒜香，是簡單的家常炒青菜。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+tags: [家常菜]
+aliases: [炒花椰菜]
+ingredients:
+  - { name: 白花椰菜, amount: { value: 100, unit: g }, note: 切成小朵 }
+  - { name: 綠花椰菜, amount: { value: 100, unit: g }, note: 切成小朵 }
+  - { name: 紅蘿蔔, amount: { value: 30, unit: g }, note: 切片 }
+  - { name: 大蒜, amount: { value: 2, unit: 瓣 }, note: 切片 }
+  - {
+      name: 橄欖油,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+  - { name: 鹽, amount: { value: 3, unit: g }, note: 約 1/2 茶匙, group: 調味 }
+steps:
+  - text: 白花椰菜和綠花椰菜洗淨，切成一口大小的小朵，泡一下水後瀝乾；紅蘿蔔切片，大蒜切片。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分成四堆的材料：白花椰菜小朵、綠花椰菜小朵、圓形紅蘿蔔片和蒜片，旁邊放著一把菜刀
+  - text: 煮一鍋滾水，放入白花椰菜、綠花椰菜和紅蘿蔔片汆燙約 30 秒，撈起瀝乾水分。
+  - text: 不沾鍋倒入橄欖油，放入蒜片，以小火慢慢煸到蒜片呈金黃色。
+    image:
+      src: ./step-3.webp
+      alt: 不沾鍋中一層薄油，油裡的蒜片煸成金黃色，旁邊放著木鍋鏟
+  - text: 轉大火，放入燙好的花椰菜和紅蘿蔔片快炒，加鹽拌勻就盛盤。
+    image:
+      src: ./step-4.webp
+      alt: 不沾鍋中拌炒均勻的白花椰菜、翠綠的綠花椰菜、紅蘿蔔片和金黃蒜片，表面帶油光，旁邊放著木鍋鏟
+hero:
+  src: ./hero.webp
+  alt: 米白色瓷盤中盛著蒜炒花椰菜，白花椰菜與綠花椰菜間夾著紅蘿蔔片和金黃蒜片，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一小塊白花椰菜、一小塊綠花椰菜、一根小紅蘿蔔、兩瓣大蒜，以及一小瓶橄欖油和一小碟鹽
+tip: 家裡有高湯時，可改用煮滾的高湯汆燙花椰菜，讓花椰菜先帶點鹹味。

@@ -1,0 +1,59 @@
+title: 蒜炒空心菜
+summary: 蒜片、薑末和辣椒爆香後，先炒菜梗再下菜葉，大火快炒到翠綠就起鍋。菜梗脆、葉片軟，是常見的家常炒青菜。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+tags: [家常菜]
+aliases: [炒空心菜, 清炒空心菜]
+ingredients:
+  - { name: 空心菜, amount: { value: 500, unit: g }, note: 菜梗、菜葉分開 }
+  - { name: 大蒜, amount: { value: 3, unit: 瓣 }, note: 切薄片 }
+  - { name: 辣椒, amount: { value: 0.5, unit: 條 }, note: 切小丁 }
+  - { name: 薑末, amount: { value: 5, unit: g } }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+  - {
+      name: 熱水,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - { name: 鹽, amount: { value: 3, unit: g }, note: 約 1/2 茶匙, group: 調味 }
+  - { name: 雞粉, note: 約 1/2 茶匙, group: 調味 }
+steps:
+  - text: 空心菜切掉根部、洗淨，切成段，菜梗和菜葉分開放；辣椒切小丁，大蒜去膜切成薄片。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分成兩堆的空心菜段，一堆是中空的菜梗、一堆是菜葉，前方有一小堆蒜片和一小堆辣椒丁，旁邊放著一把菜刀
+  - text: 炒鍋燒熱後倒入食用油，放入薑末、辣椒丁和蒜片，炒到蒜片邊緣微黃、聞得到蒜香。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋中一層熱油，油裡有蒜片、薑末和紅色辣椒，旁邊放著木鍋鏟
+  - text: 轉大火，先放入空心菜梗快炒幾下，炒到菜梗都沾上油、顏色轉為鮮綠。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中帶油光的鮮綠空心菜梗，混著蒜片、薑末和紅色辣椒，還沒有菜葉，旁邊放著木鍋鏟
+  - text: 放入空心菜葉，加入米酒、熱水、鹽和雞粉，大火拌炒到菜葉縮軟、整體顏色更翠綠就起鍋。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中炒軟的翠綠空心菜梗與菜葉，夾著蒜片和辣椒，鍋底有少許湯汁，旁邊放著木鍋鏟
+hero:
+  src: ./hero.webp
+  alt: 米白色瓷盤中盛著翠綠帶油光的蒜炒空心菜，夾著蒜片與紅辣椒圈，盤底有少許湯汁，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一把帶根的空心菜、三瓣大蒜、半條紅辣椒、一小碟薑末，以及一小瓶食用油、一小瓶米酒、一小碟鹽、一小碟雞粉和一小杯水
+tip: 想讓香氣更足，可在爆香時加入 5 g 櫻花蝦一起炒。

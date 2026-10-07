@@ -1,0 +1,57 @@
+title: 麻婆豆腐
+summary: 絞肉炒熟後加辣豆瓣醬與醬汁煮滾，放入嫩豆腐再勾芡。豆腐軟嫩、醬汁微辣帶花椒香，適合配飯。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+tags: [家常菜]
+ingredients:
+  - { name: 嫩豆腐, amount: { value: 1, unit: 盒 } }
+  - { name: 豬絞肉, amount: { value: 100, unit: g } }
+  - { name: 青蔥, amount: { value: 2, unit: 支 }, note: 切成蔥花 }
+  - { name: 蒜末, amount: { value: 15, unit: g } }
+  - { name: 薑末, amount: { value: 10, unit: g } }
+  - { name: 食用油, note: 熱鍋用少許, group: 調味 }
+  - {
+      name: 辣豆瓣醬,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - { name: 醬油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - { name: 糖, amount: { value: 10, unit: ml }, note: 約 2 茶匙, group: 調味 }
+  - { name: 水, amount: { value: 100, unit: ml }, group: 調味 }
+  - {
+      name: 太白粉水,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+  - { name: 香油, note: 起鍋前淋少許, group: 調味 }
+  - { name: 花椒粉, note: 約 1/8 茶匙, group: 調味 }
+steps:
+  - text: 嫩豆腐瀝乾水分，切成小丁；青蔥切成蔥花。
+  - text: 炒鍋燒熱後倒入食用油，轉小火放入蒜末和薑末，炒到飄出香味。
+  - text: 加入豬絞肉，轉中火翻炒約 3 分鐘，炒到絞肉完全變色、散成小粒。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中炒熟散開、呈淺褐色的豬絞肉粒，夾雜少許蒜末和薑末，鍋底只有一層薄油，還沒有醬汁，鍋裡放著一支木鍋鏟
+  - text: 放入辣豆瓣醬炒出香味，再加醬油、糖和水拌勻，煮到醬汁滾起。
+  - text: 放入豆腐丁，用鍋鏟輕推讓豆腐浸到醬汁裡，煮到再次滾起。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋中白色豆腐丁浸在稀稀的紅褐色豆瓣醬汁裡，周圍是褐色絞肉粒，鍋裡放著一支木鍋鏟
+  - text: 轉小火，一邊慢慢淋入太白粉水，一邊搖晃鍋子，讓醬汁均勻變稠、裹住豆腐。
+    image:
+      src: ./step-6.webp
+      alt: 炒鍋中完整的豆腐丁和絞肉粒裹著變稠的紅褐色醬汁，鍋底不再有稀湯汁，鍋裡放著一支木鍋鏟
+  - text: 用鍋鏟輕推幾下，別把豆腐推碎，淋上香油後盛盤，撒上蔥花和花椒粉。
+hero:
+  src: ./hero.webp
+  alt: 米白陶瓷碗中盛著麻婆豆腐，豆腐丁和絞肉裹著紅褐色醬汁，撒有綠色蔥花與花椒粉，碗的右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盒嫩豆腐、一盤豬絞肉、兩支青蔥，以及分裝在小碟、小杯與小瓶中的蒜末、薑末、辣豆瓣醬、醬油、糖、水、太白粉水、食用油、香油和花椒粉
+tip: 辣豆瓣醬的份量可依吃辣程度增減；豆腐先瀝乾水分，醬汁比較不會被沖淡。

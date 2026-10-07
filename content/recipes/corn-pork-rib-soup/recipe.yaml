@@ -1,0 +1,46 @@
+title: 玉米排骨湯
+summary: 排骨汆燙後先燉 30 分鐘，再加玉米和紅、白蘿蔔燉 30 分鐘。湯色清淡、帶玉米的甜味，適合搭配家常菜。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+tags: [家常菜]
+aliases: [排骨玉米湯]
+ingredients:
+  - { name: 排骨, amount: { value: 300, unit: g } }
+  - { name: 玉米, amount: { value: 200, unit: g }, note: 約 2 根，切段 }
+  - { name: 紅蘿蔔, amount: { value: 200, unit: g }, note: 切塊 }
+  - { name: 白蘿蔔, amount: { value: 400, unit: g }, note: 切塊 }
+  - {
+      name: 鰹魚粉,
+      amount: { value: 7.5, unit: ml },
+      note: 約 1.5 茶匙,
+      group: 調味,
+    }
+  - { name: 鹽, group: 調味 }
+  - { name: 香菜, note: 少許，盛碗後點綴, group: 調味 }
+  - { name: 水, amount: { value: 1500, unit: ml }, group: 調味 }
+steps:
+  - text: 排骨放進滾水汆燙，燙去血水後撈起備用。
+  - text: 玉米洗淨切段；紅蘿蔔、白蘿蔔切塊。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分成三堆的玉米段、紅蘿蔔塊和白蘿蔔塊，旁邊放著一把菜刀
+  - text: 湯鍋倒入冷水，放進排骨，以中小火燉煮 30 分鐘。
+    image:
+      src: ./step-3.webp
+      alt: 不鏽鋼雙耳湯鍋裡，汆燙過的排骨泡在微微冒泡的清水中
+  - text: 加入玉米、紅蘿蔔和白蘿蔔，繼續燉煮 30 分鐘。
+    image:
+      src: ./step-4.webp
+      alt: 同一只湯鍋裡淡金色的湯，排骨、玉米段、紅蘿蔔塊和白蘿蔔塊一起燉煮
+  - text: 加入鰹魚粉和鹽調味，盛碗後放上少許香菜。
+hero:
+  src: ./hero.webp
+  alt: 米白色陶瓷湯碗盛著玉米排骨湯，淡金色湯中有排骨、玉米段、紅蘿蔔塊和白蘿蔔塊，上面點綴幾片香菜，碗的右側放著一支白瓷湯匙
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤生排骨、兩根玉米、一根紅蘿蔔、一段白蘿蔔、一小把香菜，以及小碟裝的鰹魚粉和鹽、一壺水
+tip: 想讓湯頭更濃，可以把水換成高湯。

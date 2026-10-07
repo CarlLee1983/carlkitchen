@@ -1,0 +1,65 @@
+title: 瓜仔肉
+summary: 豬絞肉拌入花瓜丁、蔥花和蒜末，甩打出彈性後壓成扁圓，放進電鍋蒸熟。做法簡單、不必顧爐火，適合配飯。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+tags: [家常菜]
+aliases: [花瓜蒸肉]
+ingredients:
+  - { name: 豬絞肉, amount: { value: 300, unit: g } }
+  - {
+      name: 罐頭花瓜,
+      amount: { value: 120, unit: ml },
+      note: 約 1/2 杯，切成細丁,
+    }
+  - {
+      name: 蔥花,
+      amount: { value: 45, unit: ml },
+      note: 約 3 湯匙，青蔥洗淨切末,
+    }
+  - {
+      name: 蒜末,
+      amount: { value: 22.5, unit: ml },
+      note: 約 1 又 1/2 湯匙，大蒜洗淨切末,
+    }
+  - { name: 鹽, amount: { value: 6, unit: g }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 6, unit: g }, note: 約 1/2 湯匙, group: 調味 }
+  - {
+      name: 香油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+steps:
+  - text: 罐頭花瓜取出，切成細丁；青蔥和大蒜洗淨，分別切成蔥花與蒜末。
+  - text: 豬絞肉放進大碗，加入鹽、醬油、糖和香油，拌到調味料均勻融入絞肉。
+  - text: 再放入花瓜丁、蔥花和蒜末，一起攪拌均勻。
+  - text: 把肉餡抓起往碗裡甩打，重複約 10 次，讓肉餡產生彈性。
+    image:
+      src: ./step-4.webp
+      alt: 深口白瓷大碗中一團拌勻的生豬絞肉餡，粉紅色肉餡裡均勻散著褐色花瓜丁、綠色蔥花與蒜末
+  - text: 肉餡移到盤中，用手按壓成一片扁圓形。
+    image:
+      src: ./step-5.webp
+      alt: 淺口白瓷盤中按壓成扁圓形的生肉餡，粉紅色肉面上點綴褐色花瓜丁與綠色蔥花
+  - text: 盤子放進電鍋，外鍋加 1/2 杯水。
+  - text: 蓋上鍋蓋按下開關，蒸約 20 分鐘，開關跳起、肉餡熟透就完成。
+    image:
+      src: ./step-7.webp
+      alt: 掀開鍋蓋的電鍋裡放著白瓷盤，盤中扁圓形的瓜仔肉已蒸熟變成淺褐色，周圍有一層淺褐色湯汁並冒著熱氣，鍋蓋放在右側
+hero:
+  src: ./hero.webp
+  alt: 米白色淺口瓷盤中盛著一片扁圓形的瓜仔肉，肉面散著褐色花瓜丁與綠色蔥花，周圍有一層淺褐色湯汁，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤生豬絞肉、一小碗切成細丁的花瓜、一小碟蔥花、一小碟蒜末，以及分裝在小碟與小瓶中的鹽、糖、醬油和香油
+tip: 想做成鹹蛋瓜仔肉，可先在盤底放鹹蛋黃，再鋪上肉餡壓實一起蒸。

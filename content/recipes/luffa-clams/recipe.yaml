@@ -1,0 +1,64 @@
+title: 絲瓜蛤蜊
+summary: 蛤蜊先汆燙，再和絲瓜小火煮到開口，最後勾薄芡、淋香油。絲瓜軟嫩、湯汁帶鮮味，適合配飯。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+tags: [家常菜]
+aliases: [蛤蜊絲瓜, 絲瓜炒蛤蜊]
+ingredients:
+  - { name: 絲瓜, amount: { value: 1, unit: 條 } }
+  - { name: 蛤蜊, amount: { value: 200, unit: g }, note: 先泡水吐沙 }
+  - { name: 青蔥, amount: { value: 1, unit: 支 }, note: 切成蔥粒 }
+  - { name: 薑, amount: { value: 10, unit: g }, note: 切末 }
+  - {
+      name: 食用油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 1.5, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 糖,
+      amount: { value: 0.7, unit: g },
+      note: 約 1/6 茶匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 50, unit: ml }, group: 調味 }
+  - {
+      name: 太白粉水,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，太白粉加水調勻,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 蛤蜊吐完沙後，放進滾水汆燙約 15 秒，撈出瀝乾。
+  - text: 絲瓜削皮、挖掉中間的籽，切成小塊；青蔥切成蔥粒，薑切末。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上一堆削皮去籽的淺綠色絲瓜塊，旁邊各一小堆蔥粒和薑末，以及一把菜刀
+  - text: 炒鍋燒熱後倒入食用油，轉小火放蔥粒和薑末，炒到聞得到薑香。
+  - text: 放入絲瓜塊翻炒幾下，讓表面沾上油，再加入蛤蜊、鹽、糖和水。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中沾著油光的絲瓜塊，上面放著殼還閉合的蛤蜊和蔥粒、薑末，鍋底有少許水，旁邊放著木鍋鏟
+  - text: 煮滾後轉小火，煮到蛤蜊殼全部打開。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋中煮軟、略呈半透明的絲瓜塊，蛤蜊全部開口露出蛤肉，鍋底有一層淡色湯汁，旁邊放著木鍋鏟
+  - text: 倒入太白粉水拌勻，湯汁變得微微濃稠，淋上香油就起鍋。
+hero:
+  src: ./hero.webp
+  alt: 米白色淺瓷碗中盛著絲瓜蛤蜊，淺綠色絲瓜塊間夾著開口的蛤蜊，帶著薄芡湯汁並撒有蔥粒和薑末，碗的右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一條帶皮的絲瓜、一碗蛤蜊、一支青蔥、一塊薑，以及分裝在小碟、小瓶與小杯中的鹽、糖、食用油、水、太白粉水和香油
+tip: 喜歡清爽的湯汁可以不勾芡；想帶點辣，可加 1 支辣椒切片，和薑一起爆香。

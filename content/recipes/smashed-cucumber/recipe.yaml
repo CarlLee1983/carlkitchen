@@ -1,0 +1,53 @@
+title: 涼拌小黃瓜
+summary: 小黃瓜拍裂切段，先用鹽醃出水分再濾乾，最後拌入蒜末、辣椒和糖醋香油。免開火，適合當配飯小菜。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+tags: [涼拌, 免開火]
+aliases: [涼拌拍黃瓜, 拍黃瓜]
+ingredients:
+  - { name: 小黃瓜, amount: { value: 400, unit: g } }
+  - { name: 大蒜, amount: { value: 15, unit: g }, note: 切末 }
+  - { name: 辣椒, amount: { value: 15, unit: g }, note: 切片 }
+  - {
+      name: 鹽,
+      amount: { value: 12, unit: g },
+      note: 約 2 茶匙，醃小黃瓜用,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 12, unit: g }, note: 約 1 湯匙, group: 調味 }
+  - {
+      name: 白醋,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+  - {
+      name: 香油,
+      amount: { value: 10, unit: ml },
+      note: 約 2 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 小黃瓜洗乾淨、切掉頭尾，用刀面拍到表皮裂開，再切成方便入口的長段。大蒜切末、辣椒切片備用。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上一堆拍裂後切段的小黃瓜，旁邊各一小堆蒜末和紅辣椒片，砧板下緣放著一把菜刀
+  - text: 小黃瓜段放進有蓋的容器，撒上鹽，靜置約 30 分鐘，等小黃瓜出水後把水濾乾。
+    image:
+      src: ./step-2.webp
+      alt: 米白陶碗中裝著醃過鹽的小黃瓜段，表面帶著水珠，碗底積了一層釋出的水
+  - text: 加入蒜末、辣椒、糖、白醋和香油，蓋上蓋子搖晃，到醬汁均勻沾滿小黃瓜就完成。
+    image:
+      src: ./step-3.webp
+      alt: 米白陶碗中拌好醬汁的小黃瓜段，表面帶著光澤，均勻散布著蒜末和紅辣椒片
+hero:
+  src: ./hero.webp
+  alt: 米白色圓瓷盤中盛著拍裂切段的涼拌小黃瓜，上面散著蒜末和紅辣椒片，盤底有少許醬汁，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 三條小黃瓜，以及分裝在小碟中的蒜末、紅辣椒片、鹽和糖，還有分裝在小瓶中的白醋和香油
+tip: 挑選小黃瓜時，外皮還帶著小刺的比較新鮮。

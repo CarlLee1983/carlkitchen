@@ -1,0 +1,42 @@
+title: 薑絲蛤蜊湯
+summary: 水滾後放入蛤蜊和薑絲，煮到蛤蜊開口再調味。湯色清澈、帶薑香與海味，做法快速，適合搭配家常菜。
+servings: 2
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+tags: [家常菜]
+aliases: [蛤蜊湯, 薑絲蛤仔湯]
+ingredients:
+  - { name: 蛤蜊, amount: { value: 250, unit: g } }
+  - { name: 薑, amount: { value: 20, unit: g }, note: 切成細絲 }
+  - {
+      name: 鹽,
+      amount: { value: 0.75, unit: g },
+      note: 約 1/8 茶匙；另備少許給蛤蜊吐沙,
+      group: 調味,
+    }
+  - { name: 米酒, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - { name: 水, amount: { value: 600, unit: ml }, group: 調味 }
+steps:
+  - text: 蛤蜊放進加了少許鹽的清水裡浸泡吐沙，吐完沙後搓洗外殼，撈起瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 米白色瓷碗裡的蛤蜊泡在清水中，幾顆微微張殼伸出水管，碗底沉著一層細沙
+  - text: 薑洗淨，切成細絲。
+  - text: 湯鍋倒入水，煮到大滾後放入蛤蜊和薑絲。
+    image:
+      src: ./step-3.webp
+      alt: 不鏽鋼雙耳湯鍋中的清水正大滾冒泡，裡面是外殼緊閉的蛤蜊和散開的薑絲
+  - text: 繼續煮到蛤蜊殼都打開，加入鹽和米酒攪勻，就可以熄火盛碗。蛤蜊開口後不要久煮，肉才不會變老。
+    image:
+      src: ./step-4.webp
+      alt: 同一只湯鍋裡清澈的湯，蛤蜊全都張開露出蛤蜊肉，薑絲漂在湯中
+hero:
+  src: ./hero.webp
+  alt: 米白色陶瓷湯碗盛著薑絲蛤蜊湯，清澈湯中是張開的蛤蜊與細細的薑絲，碗的右側放著一支白瓷湯匙
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤外殼緊閉的蛤蜊、一塊老薑，以及一壺水、小碟裝的鹽和小瓶裝的米酒
+tip: 想讓湯頭更鮮，起鍋前可再加約 1 茶匙雞粉，鹹度記得一起調整。
