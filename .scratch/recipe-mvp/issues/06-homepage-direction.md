@@ -22,7 +22,7 @@ Blocked by: 01
 
 ### 圖片
 
-- 全站料理圖片一律使用手繪水彩插畫，不用照片，規格見下節。每張 AI 製作的料理圖片旁標示「AI 繪製插畫」。
+- 全站料理圖片一律使用手繪水彩插畫，不用照片，規格見下節。圖旁不加圖說（站主 2026-10-07 決定移除原本的「AI 繪製插畫」標示）；AI 製作的揭露由頁底聲明與關於頁承擔。
 
 ## 圖片風格規格
 
@@ -42,9 +42,9 @@ Blocked by: 01
 ### 構圖
 
 - 一律橫幅 3:2，原圖 1536×1024。
-- 成品圖：成品盛在素色陶瓷盤或碗中，約 45 度俯視，主體略偏一側、約占畫面六成；可加一雙筷子或湯匙，不加其他道具。首頁與卡片會裁切，主體不可貼邊。
+- 成品圖：成品盛在素色陶瓷盤或碗中，約 45 度俯視，主體略偏一側、約占畫面六成；不畫筷子、湯匙、叉子等餐具，也不加其他道具。首頁與卡片會裁切，主體不可貼邊。
 - 材料合照：正上方俯視平鋪，各材料彼此分開不重疊；畫出的品項與數量須和材料清單一致，調味料以小碟、小瓶呈現。
-- 步驟圖：只畫該步驟完成時的關鍵狀態；同一份菜譜的鍋具、砧板、刀和盤子在各圖保持一致。
+- 步驟圖：只畫該步驟完成時的關鍵狀態；備料步驟（洗、切、泡、醃）每一步都要有圖；同一份菜譜的鍋具、砧板、刀和盤子在各圖保持一致。
 
 ### 禁止事項
 
@@ -54,18 +54,12 @@ Blocked by: 01
 
 - 同一份菜譜的全部圖片須像同一組：線條粗細、上色濃淡、背景色與視角一致。不一致時整組重製，不混用不同批次。
 - 圖與文字須一致（材料品項與數量、步驟狀態、成品樣貌）；不一致時依[本地 AI 製作流程](03-local-ai-review-workflow.md)重製或修正後才送審。
-- 每張圖旁標示「AI 繪製插畫」，並依[內容契約](02-recipe-content-contract.md)提供描述性替代文字。
+- 依[內容契約](02-recipe-content-contract.md)提供描述性替代文字。
 - 原圖約 2–2.5 MB 的 PNG 不進主分支；提交前轉成 WebP、1536×1024、不超過 300 KB，由[發布門檻](07-publishing-gates.md)檢查。
 
 ### 生成提示詞
 
-本地 AI 製圖時，每張圖的提示詞包含下列固定風格段與禁止段，再加上該圖的構圖描述；送入一張同菜譜已完成的圖作風格參考，以維持整組一致。
-
-```text
-STYLE: Warm hand-drawn illustration: loose fine ink linework with soft watercolor washes, slightly uneven lines, muted natural colors (tomato red, egg yellow, scallion green, warm grays), paper texture, calm and minimal like a Japanese cookbook illustration. Not photorealistic. Plain background close to #F7F6F3 with generous empty space. Landscape 3:2, 1536x1024.
-
-RULES: No text, letters, numbers, labels, logos or watermarks. No human faces. No faces or expressions on food. Hands are allowed but optional.
-```
+本地 AI 製圖時，每張圖的提示詞包含固定風格段與禁止段，再加上該圖的構圖描述；送入一張同菜譜已完成的圖作風格參考，以維持整組一致。固定段落與製圖腳本放在 `recipe-making` skill（`.claude/skills/recipe-making/style.txt`）。
 
 首頁原型與菜譜內頁原型已改用三道示意菜的手繪成品圖驗證：插畫放在首頁大圖、清單縮圖與內頁主圖都清楚可辨。生成圖的底色帶紙紋、略深於網頁底色 `#F7F6F3`，無法與版面無縫融合；版面應把插畫當成一張有自己底色的紙圖排版，不依賴去背或混色。
 
