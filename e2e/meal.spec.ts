@@ -12,7 +12,7 @@ import {
 } from "./a11y-helpers";
 
 // 這支規格跑在 meal 專案：以 tests/fixtures/meal-recipes 建置，
-// 候選池剛好是 5 道非湯菜（一道蔬菜菜加四道蛋白質菜）與 1 道湯。
+// 候選池剛好是 5 道非湯菜（一道蔬菜加四道肉蛋料理）與 1 道湯。
 const pool = mealCandidates("tests/fixtures/meal-recipes");
 const dishes = pool.filter((item) => !item.soup);
 const soups = pool.filter((item) => item.soup);
@@ -140,12 +140,12 @@ test.describe("替換無解", () => {
     await expect(status(page)).toContainText("沒有其他可替換的湯");
     expect(await titlesOnTable(page)).toEqual(before);
 
-    // 唯一的蔬菜菜換成蛋白質菜會失去平衡，所以也無解。
+    // 唯一的蔬菜換成肉蛋料理會失去平衡，所以也無解。
     await replaceOf(page, vegetableDish.title).click();
     await expect(status(page)).toContainText("符合平衡規則的替換菜色");
     expect(await titlesOnTable(page)).toEqual(before);
 
-    // 蛋白質菜可以換成沒被抽到的那一道，其餘位置不動。
+    // 肉蛋料理可以換成沒被抽到的那一道，其餘位置不動。
     const swapped = before.find(
       (title) => dishTitles.includes(title) && title !== vegetableDish.title,
     )!;

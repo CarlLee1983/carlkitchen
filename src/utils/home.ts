@@ -8,8 +8,8 @@ export const KIND_PARAM = "kind";
 /** 篩選選項的固定順序與中文標籤。 */
 const KIND_OPTIONS: readonly { value: KindFilter; label: string }[] = [
   { value: "all", label: "全部" },
-  { value: "vegetable", label: "蔬菜菜" },
-  { value: "protein", label: "蛋白質菜" },
+  { value: "vegetable", label: "蔬菜" },
+  { value: "protein", label: "肉蛋料理" },
   { value: "staple", label: "主食" },
   { value: "soup", label: "湯" },
 ];

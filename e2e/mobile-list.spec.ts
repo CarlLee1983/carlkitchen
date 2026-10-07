@@ -82,7 +82,7 @@ test.describe("篩選列折成兩行時", () => {
     expect(last.y, "前提：篩選列折成多行").toBeGreaterThan(first.y);
 
     const natural = await top(bar);
-    for (const name of ["蔬菜菜", "蛋白質菜", "湯"]) {
+    for (const name of ["蔬菜", "肉蛋料理", "湯"]) {
       await page.evaluate((y) => window.scrollTo(0, y + 120), natural);
       await expect
         .poll(async () => Math.round(await top(bar)), { message: "固定在頂端" })
