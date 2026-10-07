@@ -4,6 +4,7 @@ import Illustration from "../components/Illustration.astro";
 import Base from "../layouts/Base.astro";
 import chefAvatar from "../assets/about/chef-avatar.webp";
 import chef from "../assets/about/chef.webp";
+import { SITE_TAGLINE } from "../utils/site";
 ---
 
 <Base title="關於這個網站">
@@ -11,7 +12,7 @@ import chef from "../assets/about/chef.webp";
     <section class="about-intro">
       <div class="intro-text">
         <h1>關於這個網站</h1>
-        <p class="tagline">陪你把今天的飯煮出來。</p>
+        <p class="tagline">{SITE_TAGLINE}</p>
         <p class="summary">
           煮奔是一個繁體中文菜譜網站，整理家常料理的材料與做法，也提供一桌四菜一湯或五菜一湯的配菜參考。
         </p>
