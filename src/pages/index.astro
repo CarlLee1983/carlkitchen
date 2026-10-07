@@ -4,6 +4,50 @@ import Illustration from "../components/Illustration.astro";
 import { recipeKinds, visibleKindOptions } from "../utils/home";
 import { SITE_NAME, SITE_TAGLINE } from "../utils/site";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
+import solarTermsData from "../prototypes/solar-terms-data.json";
+
+// Prototype question: where does a small 24-solar-term reference fit on the homepage?
+// Three throwaway layouts are available in development through ?variant=a|b|c.
+const isPrototype = import.meta.env.DEV;
+const termArt: Record<string, string> = {
+  小寒: "xiaohan",
+  大寒: "dahan",
+  立春: "lichun",
+  雨水: "yushui",
+  驚蟄: "jingzhe",
+  春分: "chunfen",
+  清明: "qingming",
+  穀雨: "guyu",
+  立夏: "lixia",
+  小滿: "xiaoman",
+  芒種: "mangzhong",
+  夏至: "xiazhi",
+  小暑: "xiaoshu",
+  大暑: "dashu",
+  立秋: "liqiu",
+  處暑: "chushu",
+  白露: "bailu",
+  秋分: "qiufen",
+  寒露: "hanlu",
+  霜降: "shuangjiang",
+  立冬: "lidong",
+  小雪: "xiaoxue",
+  大雪: "daxue",
+  冬至: "dongzhi",
+};
+const terms = solarTermsData.terms.map((term) => ({
+  ...term,
+  at: new Date(`${term.date}T${term.time}:00+08:00`),
+}));
+const nextTerm =
+  terms.find((term) => term.at.getTime() >= Date.now()) ?? terms[0]!;
+const upcomingTerms = terms
+  .filter((term) => term.at >= nextTerm.at)
+  .slice(0, 4);
+const termDateLabel = (term: (typeof terms)[number]) => {
+  const [, month, day] = term.date.split("-").map(Number);
+  return `${month} 月 ${day} 日`;
+};
 
 const recipes = await getVisibleRecipes();
 // 草稿（開發模式才會出現）可能沒有成品圖，不參與大圖。
@@ -59,7 +103,50 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
         />
       </form>
       <a class="meal-link" href="/meal/">配一桌四菜一湯</a>
+      {
+        isPrototype && (
+          <section
+            class="term-note term-note-a"
+            data-term-variant="a"
+            hidden
+            aria-label="二十四節氣"
+          >
+            <img
+              class="term-note-illustration"
+              src={`/solar-terms/${termArt[nextTerm.name]}.webp`}
+              alt={`${nextTerm.name}節氣插畫`}
+              width="1536"
+              height="1024"
+            />
+            <span class="term-kicker">下一個節氣</span>
+            <strong>{nextTerm.name}</strong>
+            <span>
+              {termDateLabel(nextTerm)}　{nextTerm.time}
+            </span>
+            <small>資料：中央氣象署</small>
+          </section>
+        )
+      }
     </div>
+
+    {
+      isPrototype && (
+        <section
+          class="term-note term-note-b"
+          data-term-variant="b"
+          hidden
+          aria-labelledby="term-title-b"
+        >
+          <p class="term-kicker">二十四節氣・{nextTerm.at.getFullYear()}</p>
+          <h2 id="term-title-b">{nextTerm.name}</h2>
+          <p class="term-date">
+            {termDateLabel(nextTerm)} <span>{nextTerm.time}</span>
+          </p>
+          <p class="term-caption">太陽行經黃道的節氣時刻</p>
+          <p class="term-source">日期與時間｜中央氣象署</p>
+        </section>
+      )
+    }
 
     {
       recipes.length > 0 && (
@@ -113,6 +200,35 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       )
     }
     <section id="recipes" class="recipe-list" aria-labelledby="recipes-title">
+      {
+        isPrototype && (
+          <section
+            class="term-note term-note-c"
+            data-term-variant="c"
+            hidden
+            aria-labelledby="term-title-c"
+          >
+            <div class="term-heading">
+              <div>
+                <p class="term-kicker">一年二十四節氣</p>
+                <h2 id="term-title-c">接下來的時令</h2>
+              </div>
+              <small>中央氣象署資料</small>
+            </div>
+            <ol>
+              {upcomingTerms.map((term, index) => (
+                <li class={index === 0 ? "list-active" : undefined}>
+                  <span>{term.name}</span>
+                  <time datetime={`${term.date}T${term.time}:00+08:00`}>
+                    {termDateLabel(term)}　{term.time}
+                  </time>
+                </li>
+              ))}
+            </ol>
+            <p class="term-caption">節氣時間為臺灣時間（UTC+8）</p>
+          </section>
+        )
+      }
       <h2 id="recipes-title">菜譜清單</h2>
       {
         recipes.length === 0 ? (
@@ -174,7 +290,70 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
   import { initHome } from "../scripts/home";
 
   initHome();
+
+  if (document.querySelector(".prototype-switcher")) {
+    const variants = ["a", "b", "c"];
+    const labels: Record<string, string> = {
+      a: "日期旁簡註",
+      b: "編輯式節氣卡",
+      c: "近期節氣列表",
+    };
+    const requested = new URL(location.href).searchParams.get("variant");
+    const active = variants.includes(requested ?? "") ? requested! : "a";
+    document
+      .querySelectorAll<HTMLElement>("[data-term-variant]")
+      .forEach((section) => {
+        section.hidden = section.dataset.termVariant !== active;
+      });
+    document
+      .querySelector("[data-intro]")
+      ?.setAttribute("data-prototype-variant", active);
+    const switcher = document.querySelector<HTMLElement>(".prototype-switcher");
+    const label = switcher?.querySelector("[data-variant-label]");
+    if (label)
+      label.textContent = `版面原型 ${active.toUpperCase()} · ${labels[active]}`;
+    const index = variants.indexOf(active);
+    const previous = switcher?.querySelector<HTMLAnchorElement>(
+      "[data-variant-prev]",
+    );
+    const next = switcher?.querySelector<HTMLAnchorElement>(
+      "[data-variant-next]",
+    );
+    if (previous) previous.href = `/?variant=${variants[(index + 2) % 3]}`;
+    if (next) next.href = `/?variant=${variants[(index + 1) % 3]}`;
+
+    document.addEventListener("keydown", (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      if (
+        event.target instanceof HTMLElement &&
+        event.target.closest(
+          "input, textarea, select, [contenteditable='true']",
+        )
+      )
+        return;
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      const current = new URL(location.href).searchParams.get("variant") || "a";
+      const index = variants.indexOf(current);
+      const offset = event.key === "ArrowRight" ? 1 : -1;
+      location.href = `/?variant=${variants[(index + offset + variants.length) % variants.length]}`;
+    });
+  }
 </script>
+
+{
+  isPrototype && (
+    <nav class="prototype-switcher" aria-label="節氣版面原型切換">
+      <a href="/?variant=c" data-variant-prev aria-label="上一個原型">
+        ←
+      </a>
+      <span data-variant-label>版面原型 A · 日期旁簡註</span>
+      <a href="/?variant=b" data-variant-next aria-label="下一個原型">
+        →
+      </a>
+    </nav>
+  )
+}
 
 <style>
   .today {
@@ -246,6 +425,166 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     padding: 0 1.25rem;
     border: 1px solid var(--ink);
     text-decoration: none;
+  }
+  .term-note {
+    color: var(--ink);
+  }
+  .term-note[hidden] {
+    display: none;
+  }
+  .term-kicker {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+  }
+  .term-note-a {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line);
+  }
+  .term-note-illustration {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    display: block;
+    width: 5rem;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+  .term-note-a .term-kicker,
+  .term-note-a strong,
+  .term-note-a > span:last-of-type,
+  .term-note-a small {
+    grid-column: 2;
+  }
+  .term-note-a strong {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+  }
+  .term-note-a > span:last-of-type {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .term-note-a small {
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+  }
+  .term-note-b {
+    align-self: center;
+    padding: 2rem 2.25rem;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-align: center;
+  }
+  .term-note-b h2 {
+    margin: 0.35rem 0 0;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 0.16em;
+  }
+  .term-date {
+    margin: 0.25rem 0 0;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+  }
+  .term-date span {
+    color: var(--ink-soft);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+  }
+  .term-caption,
+  .term-source {
+    margin: 0.4rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+  .term-source {
+    margin-top: 1.25rem;
+  }
+  .term-note-c {
+    margin: 0 0 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .term-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+  }
+  .term-heading h2 {
+    margin: 0.25rem 0 0;
+    font-size: 1.5rem;
+  }
+  .term-heading small {
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+  }
+  .term-note-c ol {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .term-note-c li {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.75rem;
+    border-left: 1px solid var(--line);
+  }
+  .term-note-c li:first-child {
+    border-left: 2px solid var(--ink);
+  }
+  .term-note-c li span {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+  }
+  .term-note-c li time {
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+  }
+  .term-note-c li.list-active span {
+    font-weight: 700;
+  }
+  .term-note-c > .term-caption {
+    text-align: right;
+  }
+  .prototype-switcher {
+    position: fixed;
+    z-index: 5;
+    right: 50%;
+    bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transform: translateX(50%);
+    padding: 0.35rem 0.6rem;
+    border: 1px solid #444;
+    border-radius: 999px;
+    background: #333;
+    color: white;
+    box-shadow: 0 2px 12px #0003;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .prototype-switcher a {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: 50%;
+    color: inherit;
+    text-decoration: none;
+  }
+  .prototype-switcher a:hover {
+    background: #ffffff24;
   }
   .hero-pick {
     position: relative;
@@ -454,6 +793,24 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       padding-top: 0.75rem;
       scroll-margin-top: 6rem;
     }
+    .term-note-a {
+      grid-template-columns: 4rem minmax(0, 1fr);
+      column-gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+    .term-note-illustration {
+      width: 4rem;
+    }
+    .term-note-b {
+      margin: 1.5rem 0;
+      padding: 1.25rem;
+    }
+    .term-note-c ol {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .term-note-c li:nth-child(3) {
+      border-left: 2px solid var(--line);
+    }
     /* 截成 1 行；完整文字仍在 DOM，供螢幕閱讀器與 Pagefind 讀取 */
     .row-summary {
       display: -webkit-box;
@@ -466,6 +823,9 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 
   /* 有搜尋字詞時收起隨機大圖；窄螢幕大圖疊在清單上方，篩選時也收起，讓清單緊接篩選列。 */
   .home[data-has-query] .hero-pick {
+    display: none;
+  }
+  .home[data-prototype-variant="b"] .hero-pick {
     display: none;
   }
   @media (max-width: 63.99rem) {
