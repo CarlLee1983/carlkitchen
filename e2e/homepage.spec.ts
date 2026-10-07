@@ -189,28 +189,76 @@ test("成品大圖明確標示為隨機展示", async ({ page }) => {
   await expect(region).not.toContainText("今日主廚推薦");
 });
 
-test("分類篩選時手機與桌機都收起大圖，清除後恢復", async ({ page }) => {
-  for (const width of [390, 1366]) {
-    await page.setViewportSize({ width, height: 900 });
-    await page.goto("/");
-    await expect(hero(page)).toBeVisible();
+test("手機分類篩選時收起大圖，清除後恢復", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 900 });
+  await page.goto("/");
+  await expect(hero(page)).toBeVisible();
 
-    await page.getByRole("button", { name: "湯", exact: true }).click();
-    await expect(hero(page)).toBeHidden();
-    await expect(rows(page)).toHaveCount(soups.length);
-    await expect(page).toHaveURL(/[?&]kind=soup(&|$)/);
-    if (width === 1366) {
-      const searchWidth = (await page.getByRole("searchbox").boundingBox())!
-        .width;
-      const mainWidth = (await page.locator("main").boundingBox())!.width;
-      expect(searchWidth).toBeGreaterThan(mainWidth * 0.75);
-    }
+  await page.getByRole("button", { name: "湯", exact: true }).click();
+  await expect(hero(page)).toBeHidden();
+  await expect(rows(page)).toHaveCount(soups.length);
+  await expect(page).toHaveURL(/[?&]kind=soup(&|$)/);
 
-    await page.reload();
-    await expect(hero(page)).toBeHidden();
-    await page.getByRole("button", { name: "全部" }).click();
+  await page.reload();
+  await expect(hero(page)).toBeHidden();
+  await page.getByRole("button", { name: "全部" }).click();
+  await expect(hero(page)).toBeVisible();
+});
+
+test("寬螢幕分類篩選時保留左文右圖，大圖換成該類的菜", async ({ page }) => {
+  const hrefsOf = (list: typeof recipes) =>
+    list.map((recipe) => `/recipes/${recipe.id}/`);
+  await page.setViewportSize({ width: 1366, height: 900 });
+  await page.goto("/");
+
+  for (const [name, members] of [
+    ["湯", soups],
+    ["主食", staples],
+  ] as const) {
+    await page.getByRole("button", { name, exact: true }).click();
+    await expect(rows(page)).toHaveCount(members.length);
     await expect(hero(page)).toBeVisible();
+    expect(hrefsOf(members)).toContain(await hero(page).getAttribute("href"));
+    const search = (await page.getByRole("searchbox").boundingBox())!;
+    expect((await hero(page).boundingBox())!.x).toBeGreaterThan(
+      search.x + search.width,
+    );
   }
+
+  // 回到全部時沿用目前這道，不再換圖
+  const staple = await hero(page).getAttribute("href");
+  await page.getByRole("button", { name: "全部" }).click();
+  await expect(hero(page)).toHaveAttribute("href", staple!);
+
+  // 網址帶分類直接開啟時，大圖屬於該類（只驗結果，不驗是否先閃過別道再換）
+  await page.goto("/?kind=soup");
+  expect(hrefsOf(soups)).toContain(await hero(page).getAttribute("href"));
+
+  // 有搜尋字詞時收起圖片欄、搜尋框撐開；清掉字詞後大圖回來，仍屬於該類
+  await page.getByRole("searchbox").fill(soups[0]!.title);
+  await expect(rows(page)).toHaveCount(1);
+  await expect(hero(page)).toBeHidden();
+  const searchWidth = (await page.getByRole("searchbox").boundingBox())!.width;
+  const mainWidth = (await page.locator("main").boundingBox())!.width;
+  expect(searchWidth).toBeGreaterThan(mainWidth * 0.75);
+  await page.getByRole("searchbox").fill("");
+  await expect(hero(page)).toBeVisible();
+  expect(hrefsOf(soups)).toContain(await hero(page).getAttribute("href"));
+});
+
+test("窄螢幕篩選後放寬到左文右圖，大圖換成該類的菜", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 900 });
+  await page.addInitScript(() => {
+    Math.random = () => 0;
+  });
+  await page.goto("/");
+  await page.getByRole("button", { name: "湯", exact: true }).click();
+  await expect(hero(page)).toBeHidden();
+  await page.setViewportSize({ width: 1366, height: 900 });
+  await expect(hero(page)).toBeVisible();
+  expect(soups.map((recipe) => `/recipes/${recipe.id}/`)).toContain(
+    await hero(page).getAttribute("href"),
+  );
 });
 
 test("成品大圖與縮圖的載入設定：大圖優先載入，縮圖不下載超大尺寸", async ({
