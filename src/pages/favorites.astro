@@ -8,7 +8,11 @@ const recipes = (await getVisibleRecipes()).filter(
 );
 ---
 
-<Base title="我的收藏">
+<Base
+  title="我的收藏"
+  description="查看儲存在這個瀏覽器的煮奔菜譜收藏。"
+  noindex
+>
   <section class="favorites" aria-labelledby="favorites-title">
     <h1 id="favorites-title">我的收藏</h1>
     <p>收藏只保存在這個瀏覽器；換裝置或清除網站資料後不會保留。</p>

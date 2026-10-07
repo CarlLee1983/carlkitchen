@@ -22,7 +22,10 @@ const data: MealData = { candidates, recipes: display };
 const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
 ---
 
-<Base title="配一桌菜">
+<Base
+  title="配一桌菜"
+  description="從配菜候選中抽出或自選四菜一湯、五菜一湯，搭配今天的一桌家常菜。"
+>
   <h1>配一桌菜</h1>
   <p class="meal-intro">
     從配菜候選中抽出一桌四菜一湯或五菜一湯，也可從空白開始逐道自選。鎖定喜歡的菜，其餘可重新抽選、隨機替換或直接指定。

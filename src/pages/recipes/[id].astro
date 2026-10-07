@@ -47,7 +47,7 @@ const MAIN_SIZES = "(min-width: 64rem) 44rem, 100vw";
 const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
 ---
 
-<Base title={data.title}>
+<Base title={data.title} description={data.summary}>
   <!--
     Pagefind 索引範圍：整個站只要有 data-pagefind-body，沒有標記的頁面（首頁、關於頁等）就不進索引。
     這裡只標記可搜尋的欄位：菜名（加權）、摘要、材料名稱、受控標籤與別名；
