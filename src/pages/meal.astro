@@ -42,6 +42,11 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
     >
   </div>
 
+  <div class="meal-share" role="group" aria-label="分享菜單">
+    <button type="button" data-copy-meal disabled>複製菜單連結</button>
+    <button type="button" data-share-meal disabled hidden>分享菜單</button>
+  </div>
+
   <!-- 全頁唯一會朗讀的區域；其餘訊息只放一般文字，避免重複朗讀。 -->
   <p class="meal-status" role="status" data-status></p>
 
@@ -102,6 +107,7 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
     color: var(--ink);
   }
   .meal-reroll,
+  .meal-share button,
   .meal-item button {
     min-width: 44px;
     min-height: 44px;
@@ -115,6 +121,16 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
   .meal-item button[aria-pressed="true"] {
     background: var(--ink);
     color: var(--paper);
+  }
+  .meal-share {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .meal-share button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
   }
   .meal-actions label {
     display: inline-flex;

@@ -15,6 +15,7 @@ import {
   serializeDraft,
   serializePlan,
 } from "../utils/meal-session";
+import { decodeSharedMeal, encodeSharedMeal } from "../utils/meal-share";
 
 /** 建置時輸出給前端的資料：引擎的候選池，加上顯示用的菜名、連結與縮圖。 */
 export interface MealData {
@@ -23,6 +24,11 @@ export interface MealData {
 }
 
 const STALE_MESSAGE = "已保存的套餐已失效，已清除；請重新抽選。";
+const SAVE_FAILURE = "無法儲存這次變更，原菜單與網址已保留。";
+const SAVE_WARNING =
+  "已更新菜單，但瀏覽器無法保存分頁狀態；重新開啟後鎖定或草稿可能消失。";
+const ENTRY_MENU_KEY = "carlkitchenMealMenu";
+const ENTRY_DRAFT_KEY = "carlkitchenMealDraft";
 
 function randomSeed(): number {
   return crypto.getRandomValues(new Uint32Array(1))[0]!;
@@ -36,18 +42,12 @@ function readSaved(): string | null {
     return null;
   }
 }
-function writeSaved(plan: Plan) {
+function writeSaved(plan: Plan): boolean {
   try {
     sessionStorage.setItem(MEAL_STORAGE_KEY, serializePlan(plan));
+    return true;
   } catch {
-    /* 保存失敗只影響重整還原，不影響操作 */
-  }
-}
-function writeSavedDraft(draft: Draft) {
-  try {
-    sessionStorage.setItem(MEAL_STORAGE_KEY, serializeDraft(draft));
-  } catch {
-    /* 保存失敗只影響重整還原，不影響操作 */
+    return false;
   }
 }
 function clearSaved() {
@@ -83,6 +83,10 @@ export function initMeal() {
   ];
   const rerollButton = document.querySelector("[data-reroll]");
   const selfButton = document.querySelector("[data-self-select]");
+  const copyButton =
+    document.querySelector<HTMLButtonElement>("[data-copy-meal]");
+  const nativeButton =
+    document.querySelector<HTMLButtonElement>("[data-share-meal]");
   if (!dataElement?.textContent || !planList || !status || !emptyNote) return;
 
   const { candidates, recipes } = JSON.parse(
@@ -100,15 +104,170 @@ export function initMeal() {
   let draft: Draft | null = null;
   let message = "";
   const searches = new Map<string, string>();
-  const restored = restorePlan(readSaved(), candidates);
-  if (restored.kind === "restored") {
-    plan = restored.plan;
-  } else if (restored.kind === "restored-draft") {
-    draft = restored.draft;
-    message = draftProgress(candidates, draft).message;
-  } else if (restored.kind === "stale") {
-    clearSaved();
-    message = STALE_MESSAGE;
+
+  function entryState(
+    menu: string | null,
+    draftRaw?: string,
+  ): Record<string, unknown> {
+    const state = history.state;
+    const next: Record<string, unknown> =
+      state && typeof state === "object" ? { ...state } : {};
+    if (menu === null) {
+      delete next[ENTRY_MENU_KEY];
+      if (draftRaw === undefined) delete next[ENTRY_DRAFT_KEY];
+      else next[ENTRY_DRAFT_KEY] = draftRaw;
+    } else {
+      next[ENTRY_MENU_KEY] = menu;
+      delete next[ENTRY_DRAFT_KEY];
+    }
+    return next;
+  }
+
+  type CommitResult =
+    { ok: true; warning?: string } | { ok: false; reason: string };
+
+  function committedMessage(message: string, result: { warning?: string }) {
+    return result.warning ? `${message} ${result.warning}` : message;
+  }
+
+  function commitSaved(
+    raw: string,
+    menu: string | null | undefined,
+  ): CommitResult {
+    let previous: string | null = null;
+    let saved = false;
+    try {
+      previous = sessionStorage.getItem(MEAL_STORAGE_KEY);
+      sessionStorage.setItem(MEAL_STORAGE_KEY, raw);
+      saved = true;
+    } catch {
+      // 完整菜單仍由網址還原；草稿另存於這筆瀏覽紀錄。
+    }
+    if (menu === undefined)
+      return saved ? { ok: true } : { ok: true, warning: SAVE_WARNING };
+    const oldUrl = location.href;
+    const oldState = history.state;
+    const url = new URL(oldUrl);
+    if (menu === null) url.searchParams.delete("menu");
+    else url.searchParams.set("menu", menu);
+    try {
+      history.replaceState(
+        entryState(menu, menu === null ? raw : undefined),
+        "",
+        url,
+      );
+      return saved ? { ok: true } : { ok: true, warning: SAVE_WARNING };
+    } catch {
+      let recovered = true;
+      if (saved) {
+        try {
+          if (previous === null) sessionStorage.removeItem(MEAL_STORAGE_KEY);
+          else sessionStorage.setItem(MEAL_STORAGE_KEY, previous);
+        } catch {
+          recovered = false;
+        }
+      }
+      if (location.href !== oldUrl || history.state !== oldState) {
+        try {
+          history.replaceState(oldState, "", oldUrl);
+        } catch {
+          recovered = false;
+        }
+      }
+      return {
+        ok: false,
+        reason: recovered
+          ? SAVE_FAILURE
+          : "無法儲存這次變更，瀏覽器狀態可能未還原；請重新整理頁面。",
+      };
+    }
+  }
+
+  function commitComplete(next: Plan): CommitResult {
+    const encoded = encodeSharedMeal(next, candidates);
+    if (!encoded)
+      return { ok: false, reason: "目前菜單無法儲存或分享，原菜單已保留。" };
+    return commitSaved(serializePlan(next), encoded);
+  }
+
+  function commitDraft(next: Draft): CommitResult {
+    return commitSaved(serializeDraft(next), null);
+  }
+
+  function loadFromLocation(allowReloadLocks: boolean) {
+    plan = createPlan(randomSeed());
+    draft = null;
+    searches.clear();
+    message = "";
+    const values = new URL(location.href).searchParams.getAll("menu");
+    if (values.length > 0) {
+      if (values.length !== 1) {
+        message = "菜單連結含有多個 menu 參數，無法開啟。";
+        return;
+      }
+      const decoded = decodeSharedMeal(values[0]!, candidates);
+      if (!decoded.ok) {
+        message = decoded.reason;
+        return;
+      }
+      const restored = restorePlan(readSaved(), candidates);
+      const savedMatches =
+        restored.kind === "restored" &&
+        encodeSharedMeal(restored.plan, candidates) === values[0];
+      const marker = history.state?.[ENTRY_MENU_KEY] === values[0];
+      plan =
+        allowReloadLocks && marker && savedMatches
+          ? restored.plan
+          : { ...decoded.plan, seed: randomSeed() };
+      if (writeSaved(plan)) {
+        try {
+          history.replaceState(entryState(values[0]!), "", location.href);
+        } catch {
+          message = "菜單已開啟，但瀏覽器無法保存重新整理所需的分頁狀態。";
+        }
+      } else {
+        message = "菜單已開啟，但瀏覽器無法保存分頁狀態。";
+      }
+      return;
+    }
+    const entryDraft = history.state?.[ENTRY_DRAFT_KEY];
+    if (typeof entryDraft === "string") {
+      const fromEntry = restorePlan(entryDraft, candidates);
+      if (fromEntry.kind === "restored-draft") {
+        draft = fromEntry.draft;
+        message = draftProgress(candidates, draft).message;
+        try {
+          sessionStorage.setItem(MEAL_STORAGE_KEY, entryDraft);
+        } catch {
+          /* 這筆瀏覽紀錄仍能在同分頁重新整理後還原草稿。 */
+        }
+      } else {
+        message = "已保存的自選草稿已失效；請重新開始。";
+      }
+      return;
+    }
+    const restored = restorePlan(readSaved(), candidates);
+    if (restored.kind === "restored") {
+      plan = restored.plan;
+    } else if (restored.kind === "restored-draft") {
+      draft = restored.draft;
+      message = draftProgress(candidates, draft).message;
+    } else if (restored.kind === "stale") {
+      clearSaved();
+      message = STALE_MESSAGE;
+    }
+  }
+
+  const navigation = performance.getEntriesByType("navigation")[0] as
+    PerformanceNavigationTiming | undefined;
+  loadFromLocation(navigation?.type === "reload");
+
+  function shareUrl(): string | null {
+    const encoded = draft ? null : encodeSharedMeal(plan, candidates);
+    if (!encoded) return null;
+    const url = new URL("/meal/", location.origin);
+    url.searchParams.set("menu", encoded);
+    return url.href;
   }
 
   function tagsOf(id: string): string {
@@ -295,6 +454,9 @@ export function initMeal() {
       );
     }
     announce(message);
+    const canShare = shareUrl() !== null;
+    if (copyButton) copyButton.disabled = !canShare;
+    if (nativeButton) nativeButton.disabled = !canShare;
 
     if (focusKey) {
       planList!
@@ -308,11 +470,18 @@ export function initMeal() {
   function dispatch(action: Action) {
     const result = applyAction(candidates, plan, action);
     if (result.ok) {
-      plan = result.plan;
-      if (action.type === "assign") searches.delete(String(action.target));
-      else searches.clear();
-      writeSaved(plan);
-      message = result.message;
+      const committed =
+        action.type === "toggle"
+          ? commitSaved(serializePlan(result.plan), undefined)
+          : commitComplete(result.plan);
+      if (committed.ok) {
+        plan = result.plan;
+        if (action.type === "assign") searches.delete(String(action.target));
+        else searches.clear();
+        message = committedMessage(result.message, committed);
+      } else {
+        message = committed.reason;
+      }
     } else {
       message = result.reason; // 無解時引擎保證 plan 不變
     }
@@ -325,10 +494,18 @@ export function initMeal() {
       !window.confirm("從空白開始會捨棄目前選的菜色，確定嗎？")
     )
       return;
-    draft = createDraft(plan.seed, draft?.mode ?? plan.mode);
-    searches.clear();
-    writeSavedDraft(draft);
-    message = draftProgress(candidates, draft).message;
+    const next = createDraft(plan.seed, draft?.mode ?? plan.mode);
+    const committed = commitDraft(next);
+    if (committed.ok) {
+      draft = next;
+      searches.clear();
+      message = committedMessage(
+        draftProgress(candidates, next).message,
+        committed,
+      );
+    } else {
+      message = committed.reason;
+    }
     render();
   });
   rerollButton?.addEventListener("click", () => {
@@ -345,11 +522,15 @@ export function initMeal() {
         { type: "reroll" },
       );
       if (result.ok) {
-        plan = result.plan;
-        draft = null;
-        searches.clear();
-        writeSaved(plan);
-        message = result.message;
+        const committed = commitComplete(result.plan);
+        if (committed.ok) {
+          plan = result.plan;
+          draft = null;
+          searches.clear();
+          message = committedMessage(result.message, committed);
+        } else {
+          message = committed.reason;
+        }
       } else {
         message = result.reason;
       }
@@ -369,14 +550,22 @@ export function initMeal() {
           !window.confirm("切換四菜一湯會捨棄第五道菜，確定嗎？")
         )
           return;
-        draft = {
+        const next: Draft = {
           ...draft,
           mode,
           dishes:
             mode === 5 ? [...draft.dishes, null] : draft.dishes.slice(0, 4),
         };
-        writeSavedDraft(draft);
-        message = draftProgress(candidates, draft).message;
+        const committed = commitDraft(next);
+        if (committed.ok) {
+          draft = next;
+          message = committedMessage(
+            draftProgress(candidates, next).message,
+            committed,
+          );
+        } else {
+          message = committed.reason;
+        }
         render();
       } else {
         if (
@@ -414,17 +603,26 @@ export function initMeal() {
         select.value,
       );
       if (result.ok) {
-        draft = result.draft;
-        searches.delete(raw);
-        const progress = draftProgress(candidates, draft);
-        message = progress.message;
+        const progress = draftProgress(candidates, result.draft);
         if (progress.complete) {
-          plan = progress.plan;
-          draft = null;
-          searches.clear();
-          writeSaved(plan);
+          const committed = commitComplete(progress.plan);
+          if (committed.ok) {
+            plan = progress.plan;
+            draft = null;
+            searches.clear();
+            message = committedMessage(progress.message, committed);
+          } else {
+            message = committed.reason;
+          }
         } else {
-          writeSavedDraft(draft);
+          const committed = commitDraft(result.draft);
+          if (committed.ok) {
+            draft = result.draft;
+            searches.delete(raw);
+            message = committedMessage(progress.message, committed);
+          } else {
+            message = committed.reason;
+          }
         }
       } else {
         message = result.reason;
@@ -480,6 +678,41 @@ export function initMeal() {
     event.preventDefault();
     chooser!.value = matches[0]!.value;
     chooser!.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+
+  copyButton?.addEventListener("click", async () => {
+    const url = shareUrl();
+    if (!url) return;
+    try {
+      await navigator.clipboard.writeText(url);
+      message = "菜單連結已複製。";
+    } catch {
+      message = "無法複製菜單連結，請檢查瀏覽器的剪貼簿權限。";
+    }
+    announce(message);
+  });
+  if (nativeButton) {
+    nativeButton.hidden = typeof navigator.share !== "function";
+    nativeButton.addEventListener("click", async () => {
+      const url = shareUrl();
+      if (!url || typeof navigator.share !== "function") return;
+      try {
+        await navigator.share({ title: "配一桌菜", url });
+        message = "已分享菜單連結。";
+      } catch (error) {
+        message =
+          error instanceof DOMException && error.name === "AbortError"
+            ? "已取消分享。"
+            : "無法分享菜單連結，請改用複製連結。";
+      }
+      announce(message);
+    });
+  }
+
+  window.addEventListener("pageshow", (event) => {
+    if (!event.persisted) return;
+    loadFromLocation(false);
+    render();
   });
 
   render();

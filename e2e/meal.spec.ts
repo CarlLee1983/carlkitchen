@@ -48,6 +48,353 @@ const titlesOnTable = async (page: Page) =>
   (await items(page).getByRole("link").allTextContents()).map((text) =>
     text.trim(),
   );
+const sharedFour =
+  "v1.4.meal-beef,meal-cabbage,meal-chicken,meal-fish.meal-radish-soup";
+const sharedFive =
+  "v1.5.meal-beef,meal-cabbage,meal-chicken,meal-fish,meal-tofu.meal-radish-soup";
+
+test("完成自選後複製連結，另一個全新瀏覽器可依原順序查看菜譜並繼續編輯", async ({
+  page,
+  browser,
+}) => {
+  await page.goto("/meal/");
+  await chooseSelf(page).click();
+  const order = ["meal-beef", "meal-cabbage", "meal-chicken", "meal-fish"];
+  for (const [index, id] of order.entries()) {
+    await chooseOf(page, index).selectOption(id);
+  }
+  await items(page)
+    .last()
+    .getByRole("combobox", { name: /指定湯/ })
+    .selectOption(soups[0]!.id);
+  await expect(status(page)).toContainText("自選菜單已完成");
+  await expect(page).toHaveURL(/\/meal\/\?menu=v1\.4\./);
+  const original = await titlesOnTable(page);
+  await page.evaluate(() => {
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: {
+        writeText: async (value: string) => {
+          (window as Window & { __copied?: string }).__copied = value;
+        },
+      },
+    });
+  });
+  await page.getByRole("button", { name: "複製菜單連結" }).click();
+  const copied = await page.evaluate(
+    () => (window as Window & { __copied?: string }).__copied,
+  );
+  expect(copied).toBe(page.url());
+  const recipient = await browser.newContext();
+  try {
+    const received = await recipient.newPage();
+    await received.goto(copied!);
+    expect(await titlesOnTable(received)).toEqual(original);
+    await expect(items(received).getByRole("link")).toHaveCount(5);
+    for (const link of await items(received).getByRole("link").all()) {
+      await expect(link).toHaveAttribute("href", /\/recipes\//);
+    }
+    await expect(
+      received.getByRole("button", { name: "複製菜單連結" }),
+    ).toBeEnabled();
+    await chooseOf(received, 0).selectOption("meal-tofu");
+    await expect(
+      items(received).first().getByRole("link", { name: "香煎豆腐" }),
+    ).toBeVisible();
+    expect(new URL(received.url()).searchParams.get("menu")).toContain(
+      "meal-tofu,meal-cabbage",
+    );
+  } finally {
+    await recipient.close();
+  }
+});
+
+test("分享網址優先於分頁舊菜單；無效網址顯示原因且不回退私人菜單", async ({
+  page,
+}) => {
+  await page.goto("/meal/");
+  await reroll(page).click();
+  const oldSaved = await page.evaluate(
+    (key) => sessionStorage.getItem(key),
+    MEAL_STORAGE_KEY,
+  );
+  await page.goto(`/meal/?menu=${sharedFive}`);
+  await expect(modeButton(page, "五菜一湯")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  expect(await titlesOnTable(page)).toEqual([
+    "青椒牛肉",
+    "蒜炒高麗菜",
+    "香煎雞腿",
+    "清蒸魚",
+    "香煎豆腐",
+    "蘿蔔湯",
+  ]);
+  await expect(lockOf(page, dishes[0]!.title)).toHaveAttribute(
+    "aria-pressed",
+    "false",
+  );
+  const sharedSaved = await page.evaluate(
+    (key) => sessionStorage.getItem(key),
+    MEAL_STORAGE_KEY,
+  );
+  await page.goto("/meal/?menu=v2.4.bad");
+  await expect(items(page)).toHaveCount(0);
+  await expect(status(page)).toContainText("不支援這個版本");
+  await expect(
+    page.getByRole("button", { name: "複製菜單連結" }),
+  ).toBeDisabled();
+  expect(sharedSaved).not.toBe(oldSaved);
+  expect(
+    await page.evaluate((key) => sessionStorage.getItem(key), MEAL_STORAGE_KEY),
+  ).toBe(sharedSaved);
+  await page.goto(`/meal/?menu=${sharedFour}&menu=${sharedFive}`);
+  await expect(items(page)).toHaveCount(0);
+  await expect(status(page)).toContainText("多個 menu 參數");
+});
+
+test("編輯只取代目前網址並保留其他參數；重整保留新菜色與鎖定", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.goto(`/meal/?source=friend&menu=${sharedFour}#today`);
+  const original = await titlesOnTable(page);
+  await lockOf(page, original[1]!).click();
+  await page.reload();
+  await expect(lockOf(page, original[1]!)).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await chooseOf(page, 0).selectOption("meal-tofu");
+  const updated = await titlesOnTable(page);
+  expect(updated[0]).toBe("香煎豆腐");
+  const editedUrl = new URL(page.url());
+  expect(editedUrl.searchParams.get("source")).toBe("friend");
+  expect(editedUrl.hash).toBe("#today");
+  expect(editedUrl.searchParams.getAll("menu")).toEqual([
+    "v1.4.meal-tofu,meal-cabbage,meal-chicken,meal-fish.meal-radish-soup",
+  ]);
+  await page.reload();
+  expect(await titlesOnTable(page)).toEqual(updated);
+  await expect(lockOf(page, original[1]!)).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  const savedBeforeFailure = await page.evaluate(
+    (key) => sessionStorage.getItem(key),
+    MEAL_STORAGE_KEY,
+  );
+  await replaceOf(page, soups[0]!.title).click();
+  await expect(status(page)).toContainText("沒有其他可替換的湯");
+  expect(page.url()).toBe(editedUrl.href);
+  expect(
+    await page.evaluate((key) => sessionStorage.getItem(key), MEAL_STORAGE_KEY),
+  ).toBe(savedBeforeFailure);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/$/);
+  await page.goForward();
+  expect(await titlesOnTable(page)).toEqual(updated);
+  await expect(lockOf(page, original[1]!)).toHaveAttribute(
+    "aria-pressed",
+    "false",
+  );
+});
+
+test("進入草稿移除舊菜單參數，取消和失敗操作維持網址與保存內容", async ({
+  page,
+}) => {
+  await page.goto(`/meal/?source=friend&menu=${sharedFour}#today`);
+  const initialSaved = await page.evaluate(
+    (key) => sessionStorage.getItem(key),
+    MEAL_STORAGE_KEY,
+  );
+  page.once("dialog", (dialog) => dialog.dismiss());
+  await chooseSelf(page).click();
+  expect(new URL(page.url()).searchParams.get("menu")).toBe(sharedFour);
+  expect(
+    await page.evaluate((key) => sessionStorage.getItem(key), MEAL_STORAGE_KEY),
+  ).toBe(initialSaved);
+  page.once("dialog", (dialog) => dialog.accept());
+  await chooseSelf(page).click();
+  const draftUrl = new URL(page.url());
+  expect(draftUrl.searchParams.has("menu")).toBe(false);
+  expect(draftUrl.searchParams.get("source")).toBe("friend");
+  expect(draftUrl.hash).toBe("#today");
+  await chooseOf(page, 0).selectOption("meal-beef");
+  await page.reload();
+  await expect(
+    items(page).first().getByRole("link", { name: "青椒牛肉" }),
+  ).toBeVisible();
+  await expect(items(page).nth(1).getByText("尚未指定")).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "複製菜單連結" }),
+  ).toBeDisabled();
+});
+
+test("同一連結重新導覽會解鎖；複製與原生分享失敗會朗讀提示", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "share", {
+      configurable: true,
+      value: async () => {
+        throw new Error("blocked");
+      },
+    });
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: {
+        writeText: async () => {
+          throw new Error("blocked");
+        },
+      },
+    });
+  });
+  await page.goto(`/meal/?menu=${sharedFour}`);
+  await lockOf(page, "青椒牛肉").click();
+  await page.goto(`/meal/?menu=${sharedFour}`);
+  await expect(lockOf(page, "青椒牛肉")).toHaveAttribute(
+    "aria-pressed",
+    "false",
+  );
+  await page.getByRole("button", { name: "複製菜單連結" }).click();
+  await expect(status(page)).toContainText("無法複製");
+  await page.getByRole("button", { name: "分享菜單", exact: true }).click();
+  await expect(status(page)).toContainText("無法分享");
+  await expectNoOverflowNow(page, "分享菜單手機版");
+  await expectNoAxeViolations(page, "分享菜單手機版");
+});
+
+test("原生分享使用只有菜單參數的連結", async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "share", {
+      configurable: true,
+      value: async (data: ShareData) => {
+        (window as Window & { __shared?: ShareData }).__shared = data;
+      },
+    });
+  });
+  await page.goto(`/meal/?source=friend&menu=${sharedFour}#today`);
+  await page.getByRole("button", { name: "分享菜單", exact: true }).click();
+  await expect(status(page)).toContainText("已分享菜單連結");
+  const data = await page.evaluate(
+    () => (window as Window & { __shared?: ShareData }).__shared,
+  );
+  expect(data?.title).toBe("配一桌菜");
+  expect(new URL(data!.url!).search).toBe(
+    `?menu=${encodeURIComponent(sharedFour)}`,
+  );
+  expect(new URL(data!.url!).hash).toBe("");
+});
+
+test("分頁儲存被阻擋時，未抽選仍可重抽並從網址還原", async ({ page }) => {
+  await page.goto("/meal/");
+  await page.evaluate(() => {
+    Storage.prototype.setItem = () => {
+      throw new Error("storage blocked");
+    };
+  });
+  await reroll(page).click();
+  await expect(items(page).getByRole("link")).toHaveCount(5);
+  const before = await titlesOnTable(page);
+  expect(new URL(page.url()).searchParams.get("menu")).toMatch(/^v1\.4\./);
+  await expect(status(page)).toContainText("無法保存分頁狀態");
+  await page.reload();
+  expect(await titlesOnTable(page)).toEqual(before);
+});
+
+test("分頁儲存被阻擋時，分享菜單仍可指定且重整保留新網址", async ({ page }) => {
+  await page.goto(`/meal/?menu=${sharedFour}`);
+  await page.evaluate(() => {
+    Storage.prototype.setItem = () => {
+      throw new Error("storage blocked");
+    };
+  });
+  const urlBeforeLock = page.url();
+  await lockOf(page, "蒜炒高麗菜").click();
+  await expect(lockOf(page, "蒜炒高麗菜")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  expect(page.url()).toBe(urlBeforeLock);
+  await expect(status(page)).toContainText("無法保存分頁狀態");
+  await chooseOf(page, 0).selectOption("meal-tofu");
+  await expect(
+    items(page).first().getByRole("link", { name: "香煎豆腐" }),
+  ).toBeVisible();
+  await expect(lockOf(page, "蒜炒高麗菜")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(status(page)).toContainText("無法保存分頁狀態");
+  const updated = page.url();
+  expect(new URL(updated).searchParams.get("menu")).toContain("meal-tofu");
+  await page.reload();
+  expect(page.url()).toBe(updated);
+  await expect(
+    items(page).first().getByRole("link", { name: "香煎豆腐" }),
+  ).toBeVisible();
+  await expect(lockOf(page, "蒜炒高麗菜")).toHaveAttribute(
+    "aria-pressed",
+    "false",
+  );
+});
+
+test("分頁儲存被阻擋時，草稿不會在重整後回到舊完整菜單", async ({ page }) => {
+  await page.goto(`/meal/?menu=${sharedFour}`);
+  const oldSaved = await page.evaluate(
+    (key) => sessionStorage.getItem(key),
+    MEAL_STORAGE_KEY,
+  );
+  await page.evaluate(() => {
+    Storage.prototype.setItem = () => {
+      throw new Error("storage blocked");
+    };
+  });
+  page.once("dialog", (dialog) => dialog.accept());
+  await chooseSelf(page).click();
+  expect(new URL(page.url()).searchParams.has("menu")).toBe(false);
+  await expect(items(page)).toHaveCount(5);
+  await expect(items(page).getByRole("link")).toHaveCount(0);
+  await chooseOf(page, 0).selectOption("meal-beef");
+  await expect(
+    items(page).first().getByRole("link", { name: "青椒牛肉" }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate((key) => sessionStorage.getItem(key), MEAL_STORAGE_KEY),
+  ).toBe(oldSaved);
+  await expect(status(page)).toContainText("無法保存分頁狀態");
+  await page.reload();
+  await expect(items(page)).toHaveCount(5);
+  await expect(
+    items(page).first().getByRole("link", { name: "青椒牛肉" }),
+  ).toBeVisible();
+  await expect(items(page).getByRole("link")).toHaveCount(1);
+});
+
+test("網址取代失敗時，指定菜色回復分頁保存且保留可見菜單", async ({ page }) => {
+  await page.goto(`/meal/?menu=${sharedFour}`);
+  const before = await titlesOnTable(page);
+  const oldUrl = page.url();
+  const oldSaved = await page.evaluate(
+    (key) => sessionStorage.getItem(key),
+    MEAL_STORAGE_KEY,
+  );
+  await page.evaluate(() => {
+    history.replaceState = () => {
+      throw new Error("history blocked");
+    };
+  });
+  await chooseOf(page, 0).selectOption("meal-tofu");
+  expect(page.url()).toBe(oldUrl);
+  expect(await titlesOnTable(page)).toEqual(before);
+  expect(
+    await page.evaluate((key) => sessionStorage.getItem(key), MEAL_STORAGE_KEY),
+  ).toBe(oldSaved);
+  await expect(status(page)).toContainText("無法儲存這次變更");
+});
 
 test("自選菜名搜尋只顯示當前菜位可用候選，清除後能指定結果", async ({
   page,
