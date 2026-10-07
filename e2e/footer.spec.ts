@@ -6,8 +6,9 @@ for (const path of ["/", "/recipes/tomato-egg/", "/recipes/draft-sample/"]) {
     await page.goto(path);
     const footer = page.getByRole("contentinfo");
     await expect(footer).toContainText(
-      "菜譜由 AI 整理公開資料、站主審閱，未經試做，份量與時間僅供參考。",
+      "菜譜整理自公開資料、經站主審閱，份量與時間僅供參考。",
     );
+    await expect(footer).not.toContainText(/AI|試做/);
     await expect(
       footer.getByRole("link", { name: "了解更多" }),
     ).toHaveAttribute("href", "/about/");

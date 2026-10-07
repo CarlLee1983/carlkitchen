@@ -28,9 +28,10 @@ test.describe("關於頁", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: "關於這個網站" }),
     ).toBeVisible();
-    for (const text of ["公開資料", "插畫", "站主", "試做"]) {
+    for (const text of ["公開資料", "插畫", "站主", "僅供參考"]) {
       await expect(page.getByRole("main")).toContainText(text);
     }
+    await expect(page.getByRole("main")).not.toContainText(/AI|試做/);
     const hrefs = await page
       .getByRole("main")
       .getByRole("link")

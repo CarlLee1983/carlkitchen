@@ -1,0 +1,16 @@
+sources:
+  # 不結球白菜包含小白菜與青梗白菜（青江菜）的定義。
+  - title: 農業部食農教育資訊整合平臺：認識不結球白菜
+    url: https://fae.moa.gov.tw/map/food_item.php?id=28&type=AS01
+  # 雲林、桃園、高雄栽培面積前三；品種適應不同季節而全年生產（產季圖卡為「全年」）。資料指不結球白菜整體。
+  - title: 農業部食農教育資訊整合平臺：不結球白菜產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=28&type=AS03
+  # 挑選圖卡（植株硬挺、葉片葉柄完整不黃化）；保存前不洗、避免過乾、塑膠袋擠出空氣冷藏。沒有保存天數。
+  - title: 農業部食農教育資訊整合平臺：不結球白菜挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=28&type=AS06
+  # 青江菜專頁：挑選要點、剝開蒂頭逐片清洗、清炒汆燙、內餡與上海菜飯用途；最佳收穫期 6–7、10–11 月只寫進 scope，不作產期欄依據。
+  - title: 農業兒童網：一根根翠綠湯匙，青江菜秀色可餐
+    url: https://kids.moa.gov.tw/theme_data.php?theme=kids_school&sub_theme=food&type=A01&id=335
+  # 小白菜、青江菜要翻開葉片沖洗，注意葉柄與根部。
+  - title: 農業部食農教育資訊整合平臺：輕鬆洗，安心吃 3項清洗步驟
+    url: https://fae.moa.gov.tw/theme_data.php?theme=news&sub_theme=hot_news&id=1766

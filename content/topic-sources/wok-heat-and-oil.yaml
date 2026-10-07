@@ -1,0 +1,41 @@
+sources:
+  - title: America's Test Kitchen〈How to Make Your Stainless-Steel Skillet Nonstick〉
+    url: https://www.americastestkitchen.com/articles/8156-how-to-make-stainless-steel-nonstick
+  - title: America's Test Kitchen〈Prevent Meat and Fish From Sticking to the Pan〉
+    url: https://www.americastestkitchen.com/articles/6841-prevent-meat-and-fish-from-sticking-to-pan
+  - title: The Woks of Life〈How to Keep Food From Sticking to Your Wok or Pan〉
+    url: https://thewoksoflife.com/keep-food-from-sticking-wok-pan/
+  - title: 猶他州立大學〈USU Researchers Explore the Why Behind a Widely Used Cooking Trick〉
+    url: https://www.usu.edu/today/story/usu-researchers-explore-the-why-behind-a-widely-used-cooking-trick
+  - title: Chinese Cooking Demystified〈A Guide to 'Velveting'〉
+    url: https://chinesecookingdemystified.substack.com/p/a-guide-to-velveting
+  - title: The Woks of Life〈Wok-Fried Peanuts〉
+    url: https://thewoksoflife.com/wok-fried-peanuts/
+  - title: Omnivore's Cookbook〈Szechuan Spicy Peanuts〉
+    url: https://omnivorescookbook.com/szechuan-spicy-peanuts/
+  - title: Cook's Illustrated〈Blooming in Oil for Flavor〉
+    url: https://cooksillustrated.com/how_tos/6581-blooming-in-oil-for-flavor
+  - title: Impact of Oil Temperature and Splashing Frequency on Chili Oil Flavor（PMC）
+    url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11941942/
+sections:
+  - heading: 空鍋先燒熱再下油
+    urls:
+      - https://www.americastestkitchen.com/articles/8156-how-to-make-stainless-steel-nonstick
+      - https://www.americastestkitchen.com/articles/6841-prevent-meat-and-fish-from-sticking-to-pan
+      - https://thewoksoflife.com/keep-food-from-sticking-wok-pan/
+  - heading: 肉和魚煎到上色再翻面
+    urls:
+      - https://www.americastestkitchen.com/articles/6841-prevent-meat-and-fish-from-sticking-to-pan
+      - https://thewoksoflife.com/keep-food-from-sticking-wok-pan/
+  - heading: 用筷子看油溫
+    urls:
+      - https://www.usu.edu/today/story/usu-researchers-explore-the-why-behind-a-widely-used-cooking-trick
+      - https://chinesecookingdemystified.substack.com/p/a-guide-to-velveting
+  - heading: 炸花生從冷油開始
+    urls:
+      - https://thewoksoflife.com/wok-fried-peanuts/
+      - https://omnivorescookbook.com/szechuan-spicy-peanuts/
+  - heading: 辛香料先用油爆香
+    urls:
+      - https://cooksillustrated.com/how_tos/6581-blooming-in-oil-for-flavor
+      - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11941942/

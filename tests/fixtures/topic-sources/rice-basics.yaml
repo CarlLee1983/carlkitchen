@@ -1,0 +1,10 @@
+sources:
+  - title: 測試核准來源丙
+    url: https://example.com/topic-approved-c
+sections:
+  - heading: 洗米
+    urls:
+      - https://example.com/topic-approved-c
+  - heading: 水量
+    urls:
+      - https://example.com/topic-approved-c

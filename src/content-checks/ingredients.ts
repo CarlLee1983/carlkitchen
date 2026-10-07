@@ -19,8 +19,73 @@ const sourceSection =
   /<section\b[^>]*data-ingredient-sources="([^"]+)"[^>]*>([\s\S]*?)<\/section>/g;
 const href = /\bhref="([^"]+)"/g;
 
+/** 一篇食材條目讀取與 schema 驗證的結果；`entry` 只在驗證通過時有值。 */
+export interface IngredientRead {
+  id: string;
+  file: string;
+  issues: Issue[];
+  isDraft: boolean;
+  entry?: z.output<typeof schema>;
+}
+
+/** 讀取並驗證每篇食材條目；目錄不存在時回傳 null。食材檢查與專題的相關連結檢查共用這份結果。 */
+export function readIngredients(dir: string): IngredientRead[] | null {
+  const ids = listDirectories(dir);
+  if (!ids) return null;
+  return ids.map((id) => {
+    const file = join(dir, id, "ingredient.yaml");
+    const read: IngredientRead = { id, file, issues: [], isDraft: false };
+    if (!ID_PATTERN.test(id)) {
+      read.issues.push({
+        ingredient: id,
+        file,
+        message: "食材資料夾名稱必須是小寫英數字以連字號分隔。",
+      });
+    }
+    let raw: unknown;
+    try {
+      raw = readYaml(file);
+    } catch (error) {
+      read.issues.push({
+        ingredient: id,
+        file,
+        message: (error as Error).message,
+      });
+      return read;
+    }
+    if (raw === undefined) {
+      read.issues.push({
+        ingredient: id,
+        file,
+        message: "資料夾內沒有 ingredient.yaml。",
+      });
+      return read;
+    }
+    read.isDraft =
+      typeof raw === "object" &&
+      raw !== null &&
+      (raw as { draft?: unknown }).draft === true;
+    const result = schema.safeParse(raw);
+    if (result.success) {
+      read.entry = result.data;
+    } else {
+      read.issues.push(
+        ...result.error.issues.map((issue) => ({
+          ingredient: id,
+          file,
+          field: issue.path.join(".") || undefined,
+          message: issue.message,
+        })),
+      );
+    }
+    return read;
+  });
+}
+
 export interface IngredientCheckOptions {
   ingredientsDir: string;
+  /** `readIngredients(ingredientsDir)` 的結果；null 表示目錄不存在。 */
+  ingredients: readonly IngredientRead[] | null;
   ingredientSourcesDir: string;
   publicRecipeIds: readonly string[];
   files: readonly BuildFile[];
@@ -37,8 +102,7 @@ export async function checkIngredients(input: IngredientCheckOptions): Promise<{
   const draftIds: string[] = [];
   const sourceUrls: string[] = [];
   const files = input.files.map((file) => ({ ...file }));
-  const ids = listDirectories(input.ingredientsDir);
-  if (!ids) {
+  if (!input.ingredients) {
     return {
       issues: [
         {
@@ -51,7 +115,7 @@ export async function checkIngredients(input: IngredientCheckOptions): Promise<{
       files,
     };
   }
-  const knownIds = new Set(ids);
+  const knownIds = new Set(input.ingredients.map(({ id }) => id));
   const sourceIds = new Set(listSourceIds(input.ingredientSourcesDir));
   const sourcesById = new Map<string, { title: string; url: string }[]>();
   for (const id of sourceIds) {
@@ -93,49 +157,11 @@ export async function checkIngredients(input: IngredientCheckOptions): Promise<{
   }
 
   const publishedRecipes = new Set(input.publicRecipeIds);
-  for (const id of ids) {
-    const file = join(input.ingredientsDir, id, "ingredient.yaml");
-    if (!ID_PATTERN.test(id)) {
-      issues.push({
-        ingredient: id,
-        file,
-        message: "食材資料夾名稱必須是小寫英數字以連字號分隔。",
-      });
-    }
-    let raw: unknown;
-    try {
-      raw = readYaml(file);
-    } catch (error) {
-      issues.push({ ingredient: id, file, message: (error as Error).message });
-      continue;
-    }
-    if (raw === undefined) {
-      issues.push({
-        ingredient: id,
-        file,
-        message: "資料夾內沒有 ingredient.yaml。",
-      });
-      continue;
-    }
-    const isDraft =
-      typeof raw === "object" &&
-      raw !== null &&
-      (raw as { draft?: unknown }).draft === true;
-    if (isDraft) draftIds.push(id);
-    const result = schema.safeParse(raw);
-    if (!result.success) {
-      issues.push(
-        ...result.error.issues.map((issue) => ({
-          ingredient: id,
-          file,
-          field: issue.path.join(".") || undefined,
-          message: issue.message,
-        })),
-      );
-      continue;
-    }
-    const entry = result.data;
-    if (entry.draft) continue;
+  for (const read of input.ingredients) {
+    const { id, file, entry } = read;
+    issues.push(...read.issues);
+    if (read.isDraft) draftIds.push(id);
+    if (!entry || entry.draft) continue;
     entry.relatedRecipes.forEach((recipeId, index) => {
       if (!publishedRecipes.has(recipeId)) {
         issues.push({
@@ -147,16 +173,12 @@ export async function checkIngredients(input: IngredientCheckOptions): Promise<{
       }
     });
     if (entry.hero) {
-      const imageIssues = checkImageFile(
-        id,
-        { field: "hero", src: entry.hero.src, alt: entry.hero.alt },
-        await readImageInfo(join(input.ingredientsDir, id, entry.hero.src)),
-      );
       issues.push(
-        ...imageIssues.map(({ recipe: _recipe, ...issue }) => ({
-          ...issue,
-          ingredient: id,
-        })),
+        ...checkImageFile(
+          { ingredient: id },
+          { field: "hero", src: entry.hero.src, alt: entry.hero.alt },
+          await readImageInfo(join(input.ingredientsDir, id, entry.hero.src)),
+        ),
       );
     }
 

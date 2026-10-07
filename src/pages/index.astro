@@ -4,6 +4,7 @@ import Illustration from "../components/Illustration.astro";
 import { recipeKinds, visibleKindOptions } from "../utils/home";
 import { SITE_NAME, SITE_TAGLINE } from "../utils/site";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
+import { getVisibleTopicEntries } from "../utils/topic-entries";
 import solarTermsData from "../prototypes/solar-terms-data.json";
 
 // Prototype question: where does a small 24-solar-term reference fit on the homepage?
@@ -50,6 +51,7 @@ const termDateLabel = (term: (typeof terms)[number]) => {
 };
 
 const recipes = await getVisibleRecipes();
+const topics = await getVisibleTopicEntries();
 // 草稿（開發模式才會出現）可能沒有成品圖，不參與大圖。
 const heroRecipes = recipes.filter((recipe) => recipe.data.hero);
 
@@ -272,6 +274,24 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
                   <span class="kind">{recipe.data.category}</span>
                 </li>
               ))}
+              {
+                // 專題只在有搜尋字詞且命中時由腳本顯示；沒有字詞或套用分類篩選時不出現。
+                topics.map((topic) => (
+                  <li
+                    class="row"
+                    data-topic-row
+                    data-topic-id={topic.id}
+                    hidden
+                  >
+                    <h3>
+                      <a href={`/topics/${topic.id}/`}>{topic.data.title}</a>
+                      {topic.data.draft && <span>（草稿）</span>}
+                    </h3>
+                    <p class="row-summary">{topic.data.summary}</p>
+                    <span class="kind">專題</span>
+                  </li>
+                ))
+              }
             </ul>
             <div class="empty" data-empty hidden>
               <p data-empty-message />

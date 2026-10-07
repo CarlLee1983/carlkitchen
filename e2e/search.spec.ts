@@ -433,3 +433,83 @@ test("輸入法組字中不觸發搜尋，組字完成才套用", async ({ page 
   await expect(status(page)).toContainText(`「${title}」符合`);
   await expect(page).toHaveURL(/q=/);
 });
+
+// 專題進搜尋（固定專題在 tests/fixtures/topics）。「磨刀石」只出現在「刀工入門」的內文，
+// 「尚未發布的草稿專題」是草稿；兩者都不是菜譜欄位。
+const knifeRow = (page: Page) =>
+  rows(page).filter({
+    has: page.getByRole("link", { name: "刀工入門", exact: true }),
+  });
+
+test("搜尋專題內文的詞找得到專題，並標示為專題", async ({ page }) => {
+  await page.goto("/");
+  await search(page, "磨刀石");
+  await expect(knifeRow(page)).toBeVisible();
+  await expect(knifeRow(page).getByText("專題", { exact: true })).toBeVisible();
+  await expect(knifeRow(page).getByRole("link")).toHaveAttribute(
+    "href",
+    "/topics/knife-skills/",
+  );
+  await expect(knifeRow(page)).toContainText("切、片、剁三種基本刀法。");
+  await expect(rows(page)).toHaveCount(1);
+  await expect(status(page)).toContainText("專題 1 篇");
+  await expect(emptyMessage(page)).toBeHidden();
+});
+
+test("專題標題與短介也搜得到；菜譜結果不帶專題標記", async ({ page }) => {
+  await page.goto("/");
+  await search(page, "夏天的涼拌菜");
+  await expect(
+    rows(page).first().getByRole("link", { name: "夏天的涼拌菜" }),
+  ).toBeVisible();
+  await search(page, "切、片、剁");
+  await expect(knifeRow(page)).toBeVisible();
+  await search(page, recipes[0]!.title);
+  await expect(rowOf(page, recipes[0]!)).toBeVisible();
+  await expect(
+    rowOf(page, recipes[0]!).getByText("專題", { exact: true }),
+  ).toHaveCount(0);
+});
+
+test("選題參考區的字與封面替代文字不進索引", async ({ page }) => {
+  await page.goto("/");
+  for (const term of [
+    "測試作者甲",
+    "涼拌菜的基本原則",
+    "固定資料專題的測試封面",
+  ]) {
+    await search(page, term);
+    await expect(rows(page), `搜尋「${term}」`).toHaveCount(0);
+  }
+});
+
+test("套用菜譜分類篩選時搜尋結果不含專題", async ({ page }) => {
+  await page.goto("/");
+  await search(page, "磨刀石");
+  await expect(knifeRow(page)).toBeVisible();
+  for (const name of ["湯", "蔬菜", "肉蛋料理", "主食"]) {
+    await page.getByRole("button", { name, exact: true }).click();
+    await expect(rows(page), name).toHaveCount(0);
+    await expect(emptyMessage(page)).toBeVisible();
+  }
+  await page.getByRole("button", { name: "全部" }).click();
+  await expect(knifeRow(page)).toBeVisible();
+});
+
+test("沒有字詞時清單不含專題", async ({ page }) => {
+  await page.goto("/");
+  await search(page, "磨刀石");
+  await search(page, "");
+  await expect(rows(page)).toHaveCount(recipes.length);
+  await expect(knifeRow(page)).toHaveCount(0);
+});
+
+test("草稿專題不在索引，正式建置也沒有草稿頁", async ({ page }) => {
+  await page.goto("/");
+  for (const term of ["草稿內文", "尚未發布的草稿專題"]) {
+    await search(page, term);
+    await expect(rows(page), `搜尋「${term}」`).toHaveCount(0);
+  }
+  const response = await page.goto("/topics/draft-topic/");
+  expect(response?.status()).toBe(404);
+});

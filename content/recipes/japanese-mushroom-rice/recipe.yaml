@@ -1,0 +1,85 @@
+title: 日式菇菇炊飯
+summary: 綜合菇類鋪在米上，吸收日式高湯與醬油的風味，起鍋前拌入奶油、青蔥與海鹽片。
+servings: 4
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 65
+tags: [日式料理]
+ingredients:
+  - { name: 日本短粒白米, amount: { value: 300, unit: g } }
+  - {
+      name: 綜合菇類,
+      amount: { value: 200, unit: g },
+      note: 搭配例為鴻喜菇 50 g、小杏鮑菇 2 根、鮮香菇 5 朵，混合總重以 200 g 為準,
+    }
+  - { name: 大蒜, amount: { value: 1, unit: 瓣 } }
+  - { name: 青蔥, amount: { value: 5, unit: 支 } }
+  - { name: 日式高湯, amount: { value: 300, unit: ml }, group: 調味 }
+  - { name: 醬油, amount: { value: 30, unit: ml }, group: 調味 }
+  - { name: 味醂, amount: { value: 30, unit: ml }, group: 調味 }
+  - { name: 清酒, amount: { value: 30, unit: ml }, group: 調味 }
+  - {
+      name: 粗粒鹽,
+      amount: { value: 2, unit: g },
+      note: 約 1/2 茶匙 kosher salt，實際重量依鹽種而異,
+      group: 調味,
+    }
+  - {
+      name: 薑,
+      amount: { value: 2, unit: g },
+      note: 磨成泥後約 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 無鹽奶油,
+      amount: { value: 24, unit: g },
+      note: 約 2 湯匙，分成兩半使用,
+      group: 調味,
+    }
+  - {
+      name: 海鹽片,
+      amount: { value: 2, unit: g },
+      note: 約 1/2 茶匙，實際重量依鹽種而異,
+      group: 調味,
+    }
+steps:
+  - text: 將日本短粒白米用冷水快速沖洗，倒掉混濁的水；輕搓、換水沖洗至水變清，再用細網篩瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼細網篩內裝著洗淨瀝乾的日本短粒白米，下方放著米白色瓷碗
+  - text: 將綜合菇類切好：杏鮑菇切成約 3.8 公分長的薄片；鴻喜菇去根撥散，鮮香菇去蒂切薄片。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分放杏鮑菇薄片、撥散的鴻喜菇與鮮香菇薄片，旁邊放著菜刀
+  - text: 將薑去皮磨泥、大蒜切末，青蔥切細後留到上桌前使用。
+    image:
+      src: ./step-3.webp
+      alt: 木砧板上分放大蒜末與切細的青蔥，旁邊的小碟盛有薑泥
+  - text: 將日本短粒白米、日式高湯、醬油、味醂、清酒、粗粒鹽、薑與大蒜放入厚底鍋拌勻，鋪平米粒。
+    image:
+      src: ./step-4.webp
+      alt: 灰色厚底鍋中的生米鋪平浸在淡褐色高湯裡，可見少量薑泥與蒜末
+  - text: 將綜合菇類鋪在米的上方，不要攪拌；蓋鍋浸泡 20 至 30 分鐘。
+    image:
+      src: ./step-5.webp
+      alt: 透明鍋蓋下，厚底鍋中的生米浸在淡褐色高湯裡，上方鋪著三種切好的菇類
+  - text: 開中火煮滾，轉小火加蓋煮 12 至 13 分鐘至水分吸收；若仍有水，蓋回鍋蓋續煮。
+    image:
+      src: ./step-6.webp
+      alt: 灰色厚底鍋中的米已吸收湯汁，熟菇鋪在米飯上，鍋底不見游離湯汁
+  - text: 將整鍋移離爐火，保持加蓋靜置 10 分鐘，期間不要開蓋。
+  - text: 放入一半無鹽奶油，迅速蓋回鍋蓋，用餘熱融化。
+  - text: 加入剩餘無鹽奶油、青蔥與海鹽片，輕輕切拌綜合菇類與米飯，避免壓碎米粒。
+    image:
+      src: ./step-9.webp
+      alt: 灰色厚底鍋中拌勻的菇菇飯帶著青蔥碎，表面有正在融化的奶油與細小海鹽片，右側放著木飯匙
+hero:
+  src: ./hero.webp
+  alt: 灰色厚底鍋盛滿菇菇炊飯，米飯間有鴻喜菇、杏鮑菇片與香菇片，表面撒著青蔥與海鹽片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 白米、三種鮮菇、一瓣大蒜、五支青蔥，以及分裝的日式高湯、醬油、味醂、清酒、粗粒鹽、薑、奶油與海鹽片
+tip: 米和調味高湯先拌勻，菇類只鋪在上面，煮好後才拌入米飯；粗粒鹽與海鹽片的重量會隨顆粒大小而變。

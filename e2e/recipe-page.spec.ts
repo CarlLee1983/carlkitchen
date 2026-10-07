@@ -75,10 +75,10 @@ test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版�
   await expect(hero).not.toHaveAttribute("loading", "lazy");
 });
 
-test("頁底有未試做聲明，且頁面沒有外部或來源連結", async ({ page }) => {
+test("頁底有僅供參考聲明，且頁面沒有外部或來源連結", async ({ page }) => {
   await page.goto(url);
   await expect(page.getByRole("contentinfo")).toContainText(
-    "菜譜由 AI 整理公開資料、站主審閱，未經試做",
+    "菜譜整理自公開資料、經站主審閱，份量與時間僅供參考",
   );
   const hrefs = await page
     .getByRole("link")

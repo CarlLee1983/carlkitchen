@@ -9,6 +9,7 @@ import {
   parseKindParam,
   recipeIdFromUrl,
   recipeKinds,
+  topicIdFromUrl,
   visibleKindOptions,
 } from "../src/utils/home.ts";
 import type { RecipeCategory } from "../src/content/recipe-schema.ts";
@@ -203,6 +204,15 @@ describe("recipeIdFromUrl", () => {
     assert.equal(recipeIdFromUrl("/recipes/tomato-egg"), "tomato-egg");
     assert.equal(recipeIdFromUrl("/meal/"), null);
     assert.equal(recipeIdFromUrl("/"), null);
+  });
+});
+
+describe("topicIdFromUrl", () => {
+  it("從 Pagefind 結果網址取出專題識別值，其他網址回傳 null", () => {
+    assert.equal(topicIdFromUrl("/topics/knife-skills/"), "knife-skills");
+    assert.equal(topicIdFromUrl("/topics/knife-skills"), "knife-skills");
+    assert.equal(topicIdFromUrl("/topics/"), null);
+    assert.equal(topicIdFromUrl("/recipes/tomato-egg/"), null);
   });
 });
 

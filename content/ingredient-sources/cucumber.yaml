@@ -1,0 +1,10 @@
+sources:
+  # 主要產地與小胡瓜面積約 65%（胡瓜整體資料）；產季圖卡標示「全年」；南、中、北部的栽培適期（不是採收月份）與一年收穫次數。頁名為「胡瓜」。
+  - title: 農業部食農教育資訊整合平臺：胡瓜產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=99&type=AS03
+  # 小胡瓜挑選圖卡（只採小胡瓜一欄）；濕報紙或密封容器冷藏約一週。
+  - title: 農業部食農教育資訊整合平臺：胡瓜挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=99&type=AS06
+  # 流動清水搓洗蒂頭、連續採收須清洗或燙過；生食、拍打鹽漬涼拌；食譜例子中的小黃瓜煎蛋與壽司。
+  - title: 農業部食農教育資訊整合平臺：胡瓜料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=99&type=AS07

@@ -102,6 +102,11 @@ export function recipeIdFromUrl(url: string): string | null {
   return url.match(/^\/recipes\/([^/]+)\/?$/)?.[1] ?? null;
 }
 
+/** 從 Pagefind 結果網址（`/topics/<識別值>/`）取出專題識別值；不是專題頁回傳 null。 */
+export function topicIdFromUrl(url: string): string | null {
+  return url.match(/^\/topics\/([^/]+)\/?$/)?.[1] ?? null;
+}
+
 const segmenter = new Intl.Segmenter("zh-Hant", { granularity: "word" });
 
 const normalizeContent = (text: string) =>

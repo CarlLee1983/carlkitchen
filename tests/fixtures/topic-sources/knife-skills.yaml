@@ -1,0 +1,7 @@
+sources:
+  - title: 測試核准來源丁
+    url: https://example.com/topic-approved-d
+sections:
+  - heading: 握刀
+    urls:
+      - https://example.com/topic-approved-d

@@ -208,6 +208,19 @@ describe("runContentChecks", () => {
     assert.match(issues[0]!.file!, /recipes\/alpha\/index\.html$/);
   });
 
+  it("建置輸出的頁面文案提到 AI 或試做", async () => {
+    const s = scenario();
+    s.write(
+      join(s.root, "dist/recipes/alpha/index.html"),
+      "<p>依公開資料由 AI 整理，未經試做</p>",
+    );
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 2);
+    assert.ok(
+      issues.every((issue) => /recipes\/alpha\/index\.html$/.test(issue.file!)),
+    );
+  });
+
   it("找不到建置輸出目錄", async () => {
     const s = scenario();
     rmSync(join(s.root, "dist"), { recursive: true });
@@ -233,8 +246,13 @@ describe("runContentChecks", () => {
 });
 
 describe("check-content 指令", () => {
-  const run = (s: ReturnType<typeof scenario>, args: string[] = []) =>
-    spawnSync(
+  // 專題目錄指向情境內的空目錄，避免讀到正式內容的已發布專題
+  const run = (s: ReturnType<typeof scenario>, args: string[] = []) => {
+    const topicsDir = join(s.root, "topics");
+    const topicSourcesDir = join(s.root, "topic-sources");
+    mkdirSync(topicsDir, { recursive: true });
+    mkdirSync(topicSourcesDir, { recursive: true });
+    return spawnSync(
       process.execPath,
       ["--experimental-strip-types", cli, "--dist", s.options.distDir, ...args],
       {
@@ -245,9 +263,12 @@ describe("check-content 指令", () => {
           SOURCES_DIR: s.options.sourcesDir,
           INGREDIENTS_DIR: join(s.root, "ingredients"),
           INGREDIENT_SOURCES_DIR: join(s.root, "ingredient-sources"),
+          TOPICS_DIR: topicsDir,
+          TOPIC_SOURCES_DIR: topicSourcesDir,
         },
       },
     );
+  };
 
   it("通過時結束碼 0", () => {
     assert.equal(run(scenario()).status, 0);
