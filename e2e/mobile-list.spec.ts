@@ -70,8 +70,8 @@ test.describe("手機版（390×844）", () => {
 });
 
 test.describe("篩選列折成兩行時", () => {
-  // 360 寬放不下 5 個選項，篩選列折行變高；視窗縮矮，固定菜譜才夠長可以捲。
-  test.use({ viewport: { width: 360, height: 300 } });
+  // 320 寬放不下 5 個選項，篩選列折行變高；視窗縮矮，固定菜譜才夠長可以捲。
+  test.use({ viewport: { width: 320, height: 300 } });
 
   test("切換篩選後第一列緊接在固定的篩選列下方，不被遮住", async ({ page }) => {
     await page.goto("/");
