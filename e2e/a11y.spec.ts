@@ -22,14 +22,12 @@ const recipes = publishedFixtureRecipes();
 const box = (page: Page) => page.getByRole("searchbox");
 
 test.describe("關於頁", () => {
-  test("說明來源、AI 製作與站主審閱流程，且不列任何外部連結", async ({
-    page,
-  }) => {
+  test("說明來源、插畫與站主審閱流程，且不列任何外部連結", async ({ page }) => {
     await page.goto("/about/");
     await expect(
       page.getByRole("heading", { level: 1, name: "關於這個網站" }),
     ).toBeVisible();
-    for (const text of ["公開資料", "AI", "插畫", "站主", "試做"]) {
+    for (const text of ["公開資料", "插畫", "站主", "試做"]) {
       await expect(page.getByRole("main")).toContainText(text);
     }
     const hrefs = await page

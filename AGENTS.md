@@ -1,6 +1,6 @@
 # 專案守則
 
-CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網站。Astro 靜態輸出，部署在 Cloudflare Workers Static Assets（`carlkitchen.gravito.dev`）。
+CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。Astro 靜態輸出，部署在 Cloudflare Workers Static Assets（`carlkitchen.gravito.dev`）。
 
 ## 目錄結構
 
