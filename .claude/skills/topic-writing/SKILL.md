@@ -14,7 +14,7 @@ description: CarlKitchen 專題的寫作流程。站主給了選題參考（外�
 - 檢查項目：[topics.ts](../../../src/content-checks/topics.ts)
 - 範例：`tests/fixtures/topics/` 與 `tests/fixtures/topic-sources/`
 
-文字語氣與去 AI 味的規則見 [de-ai-voice](../de-ai-voice/SKILL.md)；用詞表見 [recipe-writing](../recipe-writing/SKILL.md)〈用詞〉。
+文字語氣與去 AI 味的規則見 [de-ai-voice](../de-ai-voice/SKILL.md)；用詞表見 [taiwan-terms.ts](../../../src/content/taiwan-terms.ts)。
 
 ## 步驟
 
@@ -48,23 +48,7 @@ description: CarlKitchen 專題的寫作流程。站主給了選題參考（外�
 
 站主指定這是撰文最重要的一點：**食材、調味料、廚具與烹調動作一律用臺灣用詞**。選題參考與來源常是中國用語，寫的時候逐項轉換。
 
-以 [recipe-writing](../recipe-writing/SKILL.md)〈用詞〉的表為準，並補充選題參考常見的詞。下表是補充，與 recipe-writing 或 `content/` 已發布菜譜的用法衝突時，以後者為準；拿不準的詞列進 PR 說明請站主定奪：
-
-| 原文詞         | 採用詞   |
-| -------------- | -------- |
-| 焯水           | 汆燙     |
-| 腌、腌制       | 醃、醃漬 |
-| 出鍋           | 起鍋     |
-| 肉末、肉餡     | 絞肉     |
-| 料酒           | 米酒     |
-| 生抽           | 醬油     |
-| 雞精           | 雞粉     |
-| 蒜蓉           | 蒜末     |
-| 小蔥、香蔥     | 青蔥     |
-| 電飯煲、電飯鍋 | 電子鍋   |
-| 高壓鍋         | 壓力鍋   |
-| 案板           | 砧板     |
-| 一勺（量匙）   | 一湯匙   |
+用詞表是 [taiwan-terms.ts](../../../src/content/taiwan-terms.ts)（與菜譜、食材條目共用的唯一事實來源）：`avoid` 欄的說法（含簡體寫法）一律改成 `use` 欄，`note` 說明不能直接互換的原因。`pnpm check:content` 會掃描專題的 frontmatter 與內文並擋下避免詞；被「」包住、說明用詞差異的引述（例如「中國菜譜寫的「料酒」，本篇寫作米酒」）與選題參考的作者、標題不算。表上沒有的詞，先查臺灣常見說法再寫，並把這個詞補進表；拿不準的詞列進 PR 說明請站主定奪。
 
 完成條件：全文找不到對岸說法，且 PR 說明附一份「來源詞 → 採用詞」對照（只列這篇實際轉換過的詞）。同一樣東西全篇只用一個名稱。
 

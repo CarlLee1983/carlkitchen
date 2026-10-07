@@ -29,6 +29,8 @@ function scenario() {
   cpSync(join(fixtures, "valid"), root, { recursive: true });
   mkdirSync(join(root, "ingredients"));
   mkdirSync(join(root, "ingredient-sources"));
+  mkdirSync(join(root, "topics"));
+  mkdirSync(join(root, "topic-sources"));
   return {
     root,
     options: {
@@ -245,12 +247,34 @@ describe("check-content 指令", () => {
           SOURCES_DIR: s.options.sourcesDir,
           INGREDIENTS_DIR: join(s.root, "ingredients"),
           INGREDIENT_SOURCES_DIR: join(s.root, "ingredient-sources"),
+          TOPICS_DIR: join(s.root, "topics"),
+          TOPIC_SOURCES_DIR: join(s.root, "topic-sources"),
         },
       },
     );
 
   it("通過時結束碼 0", () => {
     assert.equal(run(scenario()).status, 0);
+  });
+
+  it("未帶 --dist 時預設跟隨 ASTRO_OUT_DIR", () => {
+    const s = scenario();
+    const runWithoutDist = (outDir: string) =>
+      spawnSync(process.execPath, ["--experimental-strip-types", cli], {
+        encoding: "utf8",
+        env: {
+          ...process.env,
+          ASTRO_OUT_DIR: outDir,
+          RECIPES_DIR: s.options.recipesDir,
+          SOURCES_DIR: s.options.sourcesDir,
+          INGREDIENTS_DIR: join(s.root, "ingredients"),
+          INGREDIENT_SOURCES_DIR: join(s.root, "ingredient-sources"),
+          TOPICS_DIR: join(s.root, "topics"),
+          TOPIC_SOURCES_DIR: join(s.root, "topic-sources"),
+        },
+      });
+    assert.equal(runWithoutDist(s.options.distDir).status, 0);
+    assert.notEqual(runWithoutDist(join(s.root, "no-such-dist")).status, 0);
   });
 
   it("失敗時結束碼非 0 並逐項列出問題", () => {

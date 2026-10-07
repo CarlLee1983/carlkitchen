@@ -1,4 +1,4 @@
-// 內容與建置輸出檢查：node --experimental-strip-types scripts/check-content.ts [--launch] [--dist <目錄>]
+// 內容與建置輸出檢查：node --experimental-strip-types scripts/check-content.ts [--launch] [--dist <目錄>]（預設 ASTRO_OUT_DIR，再退回 dist）
 // 內容根目錄由 RECIPES_DIR 決定（同內容集合），來源紀錄目錄由 SOURCES_DIR 決定，專題目錄由 TOPICS_DIR、專題來源紀錄由 TOPIC_SOURCES_DIR 決定。
 import { parseArgs } from "node:util";
 import { formatIssue } from "../src/content-checks/issue.ts";
@@ -7,7 +7,7 @@ import { runContentChecks } from "../src/content-checks/run.ts";
 const { values } = parseArgs({
   options: {
     launch: { type: "boolean", default: false },
-    dist: { type: "string", default: "dist" },
+    dist: { type: "string", default: process.env.ASTRO_OUT_DIR || "dist" },
   },
 });
 

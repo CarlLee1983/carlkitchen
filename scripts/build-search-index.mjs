@@ -5,7 +5,7 @@
 import { execFileSync } from "node:child_process";
 import { existsSync, globSync } from "node:fs";
 
-const SITE = "dist";
+const SITE = process.env.ASTRO_OUT_DIR || "dist";
 const GLOBS = ["recipes/**/*.html", "topics/**/*.html"];
 
 if (!existsSync(SITE)) {
