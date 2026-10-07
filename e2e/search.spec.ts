@@ -17,7 +17,7 @@ const rowOf = (page: Page, recipe: FixtureRecipe) =>
   });
 const box = (page: Page) => page.getByRole("searchbox");
 const hero = (page: Page) =>
-  page.getByRole("region", { name: "隨機推薦菜譜" }).getByRole("link");
+  page.getByRole("region", { name: "隨機看看一道菜" }).getByRole("link");
 const status = (page: Page) => page.getByRole("status");
 const emptyMessage = (page: Page) => page.getByText("找不到符合");
 
@@ -267,12 +267,15 @@ test("字詞與篩選寫進網址，重新整理與開啟連結都能還原", as
 test("kind 寫進網址並與字詞一起還原", async ({ page }) => {
   const soup = soups[0]!;
   await page.goto(`/?q=${encodeURIComponent(soup.title)}&kind=soup`);
+  await expect(hero(page)).toBeHidden();
   await expect(box(page)).toHaveValue(soup.title);
   await expect(
     page.getByRole("button", { name: "湯", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
   await expect(rowOf(page, soup)).toBeVisible();
   await expect(rows(page)).toHaveCount(1);
+  await page.reload();
+  await expect(hero(page)).toBeHidden();
 });
 
 test("上一頁依網址還原搜尋字詞", async ({ page }) => {
@@ -284,6 +287,7 @@ test("上一頁依網址還原搜尋字詞", async ({ page }) => {
   await page.goBack();
   await expect(box(page)).toHaveValue(soups[0]!.title);
   await expect(rowOf(page, soups[0]!)).toBeVisible();
+  await expect(hero(page)).toBeHidden();
 });
 
 test("符合筆數寫在搜尋框下方的提示，全頁只有一個朗讀區", async ({ page }) => {
@@ -312,6 +316,7 @@ test("零筆時顯示訊息與清除條件按鈕，不自動放寬；清除後�
   await search(page, recipe.title);
   await expect(emptyMessage(page)).toContainText(recipe.title);
   await expect(rows(page)).toHaveCount(0);
+  await expect(hero(page)).toBeHidden();
 
   await page.getByRole("button", { name: "清除條件" }).click();
   await expect(emptyMessage(page)).toBeHidden();
@@ -323,6 +328,7 @@ test("零筆時顯示訊息與清除條件按鈕，不自動放寬；清除後�
     "aria-pressed",
     "true",
   );
+  await expect(hero(page)).toBeVisible();
 });
 
 test("有結果時不顯示零筆訊息與清除按鈕", async ({ page }) => {
@@ -374,12 +380,15 @@ test("手機搜尋中收起成品大圖，清空後再出現", async ({ page }) 
   await expect(hero(page)).toBeVisible();
 });
 
-test("寬螢幕搜尋時成品大圖仍在", async ({ page }) => {
+test("寬螢幕搜尋時收起成品大圖，不留下空白圖片欄", async ({ page }) => {
   await page.setViewportSize({ width: 1366, height: 900 });
   await page.goto("/");
   await search(page, recipes[0]!.title);
   await expect(rowOf(page, recipes[0]!)).toBeVisible();
-  await expect(hero(page)).toBeVisible();
+  await expect(hero(page)).toBeHidden();
+  const searchWidth = (await box(page).boundingBox())!.width;
+  const mainWidth = (await page.locator("main").boundingBox())!.width;
+  expect(searchWidth).toBeGreaterThan(mainWidth * 0.75);
 });
 
 test("搜尋框與清除條件按鈕觸控目標至少 44×44，鍵盤焦點可見", async ({

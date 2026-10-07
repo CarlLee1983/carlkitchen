@@ -11,7 +11,7 @@ const proteins = recipes.filter((recipe) => recipe.protein);
 const list = (page: Page) => page.getByRole("region", { name: "菜譜清單" });
 const rows = (page: Page) => list(page).getByRole("listitem");
 const hero = (page: Page) =>
-  page.getByRole("region", { name: "隨機推薦菜譜" }).getByRole("link");
+  page.getByRole("region", { name: "隨機看看一道菜" }).getByRole("link");
 // 全頁只有一個會朗讀的 status（搜尋框下方的筆數提示），避免重複朗讀。
 const count = (page: Page) => page.getByRole("status");
 
@@ -183,6 +183,38 @@ test("成品大圖連到存在的已發布菜譜，顯示的圖與菜名屬於�
   expect(hrefs.size).toBe(Math.min(2, recipes.length));
 });
 
+test("成品大圖明確標示為隨機展示", async ({ page }) => {
+  await page.goto("/");
+  const region = page.getByRole("region", { name: "隨機看看一道菜" });
+  await expect(region).toBeVisible();
+  await expect(region.getByText("隨機看看一道菜")).toBeVisible();
+  await expect(region).not.toContainText("今日主廚推薦");
+});
+
+test("分類篩選時手機與桌機都收起大圖，清除後恢復", async ({ page }) => {
+  for (const width of [390, 1366]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    await expect(hero(page)).toBeVisible();
+
+    await page.getByRole("button", { name: "湯", exact: true }).click();
+    await expect(hero(page)).toBeHidden();
+    await expect(rows(page)).toHaveCount(soups.length);
+    await expect(page).toHaveURL(/[?&]kind=soup(&|$)/);
+    if (width === 1366) {
+      const searchWidth = (await page.getByRole("searchbox").boundingBox())!
+        .width;
+      const mainWidth = (await page.locator("main").boundingBox())!.width;
+      expect(searchWidth).toBeGreaterThan(mainWidth * 0.75);
+    }
+
+    await page.reload();
+    await expect(hero(page)).toBeHidden();
+    await page.getByRole("button", { name: "全部" }).click();
+    await expect(hero(page)).toBeVisible();
+  }
+});
+
 test("成品大圖與縮圖的載入設定：大圖優先載入，縮圖不下載超大尺寸", async ({
   page,
 }) => {
@@ -237,6 +269,7 @@ test("點成品大圖進入該菜譜頁", async ({ page }) => {
 test("無法辨識的 kind 載入時從網址清掉", async ({ page }) => {
   await page.goto("/?kind=nonsense");
   await expect(page).not.toHaveURL(/kind=/);
+  await expect(hero(page)).toBeVisible();
 });
 
 test("上一頁會依網址還原篩選（hash 導航後選篩選再返回）", async ({ page }) => {
@@ -251,6 +284,7 @@ test("上一頁會依網址還原篩選（hash 導航後選篩選再返回）", 
   await page.goBack();
   await expect(page).not.toHaveURL(/kind=/);
   await expect(rows(page)).toHaveCount(recipes.length);
+  await expect(hero(page)).toBeVisible();
   await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
     "aria-pressed",
     "true",
