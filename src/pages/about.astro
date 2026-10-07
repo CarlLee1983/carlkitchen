@@ -6,33 +6,51 @@ import chefAvatar from "../assets/about/chef-avatar.webp";
 import chef from "../assets/about/chef.webp";
 ---
 
-<Base title="關於這個網站｜CarlKitchen">
+<Base title="關於這個網站">
   <article class="about">
-    <h1>關於這個網站</h1>
-    <Illustration
-      class="about-hero"
-      image={{
-        src: chef,
-        alt: "年輕廚師在爐火上甩鍋，番茄、炒蛋與蔥花隨火焰飛起的手繪水彩插畫",
-      }}
-      sizes="(min-width: 40rem) 40rem, 100vw"
-      priority
-    />
-    <p>
-      CarlKitchen
-      是一個繁體中文菜譜網站，整理家常料理的材料與做法，也提供一桌四菜一湯或五菜一湯的配菜參考。
-    </p>
+    <section class="about-intro">
+      <div class="intro-text">
+        <h1>關於這個網站</h1>
+        <p class="tagline">陪你把今天的飯煮出來。</p>
+        <p class="summary">
+          煮奔是一個繁體中文菜譜網站，整理家常料理的材料與做法，也提供一桌四菜一湯或五菜一湯的配菜參考。
+        </p>
 
-    <h2>內容從哪裡來</h2>
-    <p>
-      每道菜譜都依公開資料整理。整理時只取用資料中的事實，例如材料、用量、火候與順序，文字再用自己的句子重新寫過，不直接搬用原文或原圖。
-    </p>
+        <h2>為什麼叫煮奔</h2>
+        <p>
+          「煮奔」是台語「煮飯」（tsú-pn̄g）的諧音寫法。這個網站想做的事就這麼簡單：陪你把今天的飯煮出來。
+        </p>
+      </div>
 
-    <h2>AI 整理與繪製插畫</h2>
-    <p>
-      菜譜文字由 AI 整理成固定格式，網站上所有料理圖片也都是 AI
-      繪製的插畫。插畫用來幫助理解材料與步驟，不是實際成品的照片。
-    </p>
+      <div class="intro-art">
+        <Illustration
+          class="about-hero"
+          image={{
+            src: chef,
+            alt: "年輕廚師在爐火上甩鍋，番茄、炒蛋與蔥花隨火焰飛起的手繪水彩插畫",
+          }}
+          sizes="(min-width: 64rem) 32rem, 100vw"
+          priority
+        />
+      </div>
+    </section>
+
+    <section class="principles">
+      <div class="principle-item">
+        <h2>內容從哪裡來</h2>
+        <p>
+          每道菜譜都依公開資料整理。整理時只取用資料中的事實，例如材料、用量、火候與順序，文字再用自己的句子重新寫過，不直接搬用原文或原圖。
+        </p>
+      </div>
+
+      <div class="principle-item">
+        <h2>AI 整理與繪製插畫</h2>
+        <p>
+          菜譜文字由 AI 整理成固定格式，網站上所有料理圖片也都是 AI
+          繪製的插畫。插畫用來幫助理解材料與步驟，不是實際成品的照片。
+        </p>
+      </div>
+    </section>
 
     <section class="owner">
       <Image
@@ -50,34 +68,136 @@ import chef from "../assets/about/chef.webp";
       </div>
     </section>
 
-    <h2>未經試做</h2>
-    <p>
-      這些菜譜是整理而來，並沒有經過試做，份量與時間僅供參考。實際烹調時請依自己的爐具、食材大小與口味調整，並留意食材是否熟透。
-    </p>
+    <section class="disclaimer">
+      <h2>未經試做</h2>
+      <p>
+        這些菜譜是整理而來，並沒有經過試做，份量與時間僅供參考。實際烹調時請依自己的爐具、食材大小與口味調整，並留意食材是否熟透。
+      </p>
+    </section>
   </article>
 </Base>
 
 <style>
   .about {
-    max-width: 40rem;
+    max-width: 64rem;
   }
-  .about h2 {
-    margin-top: 2.5rem;
+
+  .about-intro {
+    display: grid;
+    gap: 2rem;
+    padding-bottom: 3.5rem;
   }
-  .about-hero {
-    margin-top: 1.5rem;
+
+  .intro-text h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    letter-spacing: 0.05em;
   }
-  /* 頭像與段落並排，頭像頂端對齊標題上緣。 */
+
+  .intro-text .tagline {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+    color: var(--ink);
+  }
+
+  .intro-text .summary {
+    color: var(--ink-soft);
+    margin: 0 0 2rem;
+  }
+
+  .intro-text h2 {
+    margin: 2rem 0 0.5rem;
+    font-size: 1.35rem;
+  }
+
+  .intro-text p {
+    margin: 0;
+  }
+
+  .intro-art {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 32rem;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    border-top: 1px solid var(--line);
+    padding: 3rem 0;
+  }
+
+  .principle-item h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.35rem;
+  }
+
+  .principle-item p {
+    margin: 0;
+  }
+
   .owner {
-    display: flex;
-    gap: 1.25rem;
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    gap: 2rem;
     align-items: flex-start;
+    border-top: 1px solid var(--line);
+    padding: 3rem 0;
   }
+
   .owner-avatar {
     flex: none;
     width: 6rem;
     height: 6rem;
-    margin-top: 2.5rem;
     border-radius: 50%;
+  }
+
+  .owner h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.35rem;
+  }
+
+  .owner p {
+    margin: 0;
+  }
+
+  .disclaimer {
+    border-top: 1px solid var(--line);
+    padding-top: 2.5rem;
+  }
+
+  .disclaimer h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+  }
+
+  .disclaimer p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  @media (min-width: 64rem) {
+    .about-intro {
+      grid-template-columns: minmax(0, 1fr) 30rem;
+      gap: 3.5rem;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    .principles {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .owner {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
   }
 </style>

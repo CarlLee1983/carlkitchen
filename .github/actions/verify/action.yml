@@ -24,6 +24,12 @@ runs:
       shell: bash
       run: pnpm exec playwright install --with-deps chromium
 
+    # Playwright 只附 WenQuanYi 與 IPA 字型，Chromium 用它們排直排時字高為 0，首頁直排標題會疊字。
+    # 裝 Noto CJK，讓瀏覽器測試量到的版面與一般讀者裝置一致。
+    - name: Install CJK fonts
+      shell: bash
+      run: sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
     - name: Check formatting, types, and production build
       shell: bash
       run: pnpm check

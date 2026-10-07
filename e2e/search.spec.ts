@@ -144,7 +144,7 @@ test("首頁等非菜譜頁的文字不進索引", async ({ page }) => {
   await page.goto("/");
   // 首頁才有的字（配菜入口）：Pagefind 會因為「配」等單字命中菜譜而退回部分匹配，
   // 前端的全字詞過濾要把它擋成零筆。
-  for (const term of ["配一桌四菜一湯", "CarlKitchen"]) {
+  for (const term of ["配一桌四菜一湯", "煮奔"]) {
     await search(page, term);
     await expect(emptyMessage(page), `搜尋「${term}」`).toContainText(term);
     await expect(rows(page)).toHaveCount(0);

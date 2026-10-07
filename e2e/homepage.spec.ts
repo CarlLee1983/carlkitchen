@@ -18,7 +18,7 @@ const count = (page: Page) => page.getByRole("status");
 test("第一屏有日期、標題、搜尋框與配菜入口", async ({ page }) => {
   await page.goto("/");
   await expect(
-    page.getByRole("heading", { level: 1, name: "CarlKitchen" }),
+    page.getByRole("heading", { level: 1, name: "煮奔" }),
   ).toBeVisible();
   await expect(
     page.getByText(/\d{1,2} 月 \d{1,2} 日　週[日一二三四五六]/),
