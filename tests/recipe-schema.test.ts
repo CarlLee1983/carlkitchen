@@ -60,7 +60,7 @@ describe("recipe schema", () => {
     assert.equal(result.protein, false);
   });
 
-  it("非湯料理至少要是蔬菜菜或蛋白質菜之一", () => {
+  it("非湯料理至少要是蔬菜或肉蛋料理之一", () => {
     for (const marks of [{ vegetable: true }, { protein: true }]) {
       const { vegetable: _v, ...base } = publishedRecipe();
       assert.equal(schema.safeParse({ ...base, ...marks }).success, true);
@@ -75,7 +75,7 @@ describe("recipe schema", () => {
     failsAt(neither, "protein");
   });
 
-  it("湯的蔬菜菜與蛋白質菜標記都必須為假", () => {
+  it("湯的蔬菜與肉蛋料理標記都必須為假", () => {
     const asSoup = { ...publishedRecipe(), category: "湯" };
     failsAt({ ...asSoup, vegetable: true, protein: false }, "vegetable");
     failsAt({ ...asSoup, vegetable: false, protein: true }, "protein");
@@ -85,7 +85,7 @@ describe("recipe schema", () => {
     );
   });
 
-  it("分類可以是主食；主食不可標蔬菜菜或蛋白質菜，也不可為配菜候選", () => {
+  it("分類可以是主食；主食不可標蔬菜或肉蛋料理，也不可為配菜候選", () => {
     const staple = {
       ...publishedRecipe(),
       category: "主食",

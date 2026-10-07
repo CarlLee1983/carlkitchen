@@ -50,13 +50,13 @@ test("清單依菜名排序，每列有縮圖、菜名、摘要與分類標籤�
   await expect(page.getByText("草稿範例")).toHaveCount(0);
 });
 
-test("篩選列依序為全部、蔬菜菜、蛋白質菜、湯，沒有非湯料理選項（固定菜譜有主食）", async ({
+test("篩選列依序為全部、蔬菜、肉蛋料理、主食、湯，沒有非湯料理選項（固定菜譜有主食）", async ({
   page,
 }) => {
   await page.goto("/");
   await expect(
     page.getByRole("group", { name: "篩選" }).getByRole("button"),
-  ).toHaveText(["全部", "蔬菜菜", "蛋白質菜", "主食", "湯"]);
+  ).toHaveText(["全部", "蔬菜", "肉蛋料理", "主食", "湯"]);
 });
 
 test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移除參數", async ({
@@ -73,12 +73,12 @@ test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移�
     await expect(rows(page).nth(i)).toContainText(soup.title);
   }
 
-  await page.getByRole("button", { name: "蔬菜菜" }).click();
+  await page.getByRole("button", { name: "蔬菜" }).click();
   await expect(rows(page)).toHaveCount(vegetables.length);
   await expect(count(page)).toContainText(String(vegetables.length));
   await expect(page).toHaveURL(/[?&]kind=vegetable(&|$)/);
 
-  await page.getByRole("button", { name: "蛋白質菜" }).click();
+  await page.getByRole("button", { name: "肉蛋料理" }).click();
   await expect(rows(page)).toHaveCount(proteins.length);
   await expect(page).toHaveURL(/[?&]kind=protein(&|$)/);
 
@@ -97,12 +97,10 @@ test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移�
   await expect(page).not.toHaveURL(/kind=/);
 });
 
-test("主食不出現在蔬菜菜、蛋白質菜與湯之下，菜譜頁標示主食", async ({
-  page,
-}) => {
+test("主食不出現在蔬菜、肉蛋料理與湯之下，菜譜頁標示主食", async ({ page }) => {
   expect(staples.length).toBeGreaterThan(0);
   await page.goto("/");
-  for (const name of ["蔬菜菜", "蛋白質菜", "湯"]) {
+  for (const name of ["蔬菜", "肉蛋料理", "湯"]) {
     await page.getByRole("button", { name, exact: true }).click();
     for (const staple of staples) {
       await expect(rows(page).filter({ hasText: staple.title })).toHaveCount(0);
@@ -112,13 +110,13 @@ test("主食不出現在蔬菜菜、蛋白質菜與湯之下，菜譜頁標示�
   await expect(page.getByText("主食", { exact: true })).toBeVisible();
 });
 
-test("兩種性質都有的菜同時出現在蔬菜菜與蛋白質菜之下", async ({ page }) => {
+test("兩種性質都有的菜同時出現在蔬菜與肉蛋料理之下", async ({ page }) => {
   const both = recipes.filter((recipe) => recipe.vegetable && recipe.protein);
   expect(both.length).toBeGreaterThan(0);
   await page.goto("/");
   const filters = [
-    { name: "蔬菜菜", kind: "vegetable", expected: vegetables },
-    { name: "蛋白質菜", kind: "protein", expected: proteins },
+    { name: "蔬菜", kind: "vegetable", expected: vegetables },
+    { name: "肉蛋料理", kind: "protein", expected: proteins },
   ];
   for (const { name, kind, expected } of filters) {
     await page.getByRole("button", { name }).click();

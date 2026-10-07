@@ -81,7 +81,7 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
               context.addIssue({
                 code: "custom",
                 path: [field],
-                message: "湯不可標記蔬菜菜或蛋白質菜。",
+                message: "湯不可標記蔬菜或肉蛋料理。",
               });
             }
           }
@@ -92,7 +92,7 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
               context.addIssue({
                 code: "custom",
                 path: [field],
-                message: "非湯料理的蔬菜菜與蛋白質菜至少要有一個為真。",
+                message: "非湯料理的蔬菜與肉蛋料理至少要有一個為真。",
               });
             }
           }
@@ -110,7 +110,7 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
                 message:
                   field === "mealCandidate"
                     ? "主食不可為配菜候選。"
-                    : "主食不可標記蔬菜菜或蛋白質菜。",
+                    : "主食不可標記蔬菜或肉蛋料理。",
               });
             }
           }

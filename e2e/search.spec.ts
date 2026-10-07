@@ -193,10 +193,10 @@ test("篩選在有字詞時只回該篩選下的菜", async ({ page }) => {
       recipe.category !== "非湯料理"
         ? [recipe.category]
         : [
-            ...(recipe.vegetable ? ["蔬菜菜"] : []),
-            ...(recipe.protein ? ["蛋白質菜"] : []),
+            ...(recipe.vegetable ? ["蔬菜"] : []),
+            ...(recipe.protein ? ["肉蛋料理"] : []),
           ];
-    const others = ["湯", "蔬菜菜", "蛋白質菜", "主食"].filter(
+    const others = ["湯", "蔬菜", "肉蛋料理", "主食"].filter(
       (name) => !own.includes(name),
     );
 
@@ -230,7 +230,7 @@ test("篩選在無字詞時依菜名排序，且網址 kind 值與按鈕對應",
 test("篩選與搜尋並用：結果是兩者的交集", async ({ page }) => {
   const both = recipes.find((recipe) => recipe.vegetable && recipe.protein)!;
   await page.goto("/");
-  await page.getByRole("button", { name: "蛋白質菜" }).click();
+  await page.getByRole("button", { name: "肉蛋料理" }).click();
   await search(page, both.title);
   await expect(rowOf(page, both)).toBeVisible();
   await expect(page).toHaveURL(/kind=protein/);

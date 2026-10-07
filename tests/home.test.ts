@@ -82,7 +82,7 @@ describe("applyHomeState", () => {
 });
 
 describe("recipeKinds", () => {
-  it("非湯料理依標記回傳蔬菜菜、蛋白質菜或兩者", () => {
+  it("非湯料理依標記回傳蔬菜、肉蛋料理或兩者", () => {
     const base = { category: "非湯料理" as const };
     assert.deepEqual(
       recipeKinds({ ...base, vegetable: true, protein: false }),
@@ -134,7 +134,7 @@ describe("visibleKindOptions", () => {
     );
   });
 
-  it("有主食時出現主食選項，位置在蛋白質菜與湯之間", () => {
+  it("有主食時出現主食選項，位置在肉蛋料理與湯之間", () => {
     assert.deepEqual(
       visibleKindOptions([
         recipe("湯", false, false),

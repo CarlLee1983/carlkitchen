@@ -93,7 +93,7 @@ function assertValid(pool: readonly Candidate[], plan: Plan) {
   const balanced = dishes.some(
     (a, i) => a.vegetable && dishes.some((b, j) => i !== j && b.protein),
   );
-  assert.ok(balanced, "必須有蔬菜菜與另一道蛋白質菜");
+  assert.ok(balanced, "必須有蔬菜與另一道肉蛋料理");
 }
 
 const reroll: Action = { type: "reroll" };
@@ -254,10 +254,10 @@ describe("候選不足與無法平衡", () => {
     assert.match(result.reason, /沒有湯/);
   });
 
-  it("沒有蛋白質菜時無法平衡，回無解", () => {
+  it("沒有肉蛋料理時無法平衡，回無解", () => {
     const pool = [veg("a"), veg("b"), veg("c"), veg("d"), veg("e"), soup("s")];
     const result = fail(applyAction(pool, createPlan(5), reroll));
-    assert.match(result.reason, /缺少蔬菜菜或另一道蛋白質菜/);
+    assert.match(result.reason, /缺少蔬菜或另一道肉蛋料理/);
     assert.doesNotMatch(result.reason, /鎖定/);
   });
 
@@ -319,7 +319,7 @@ describe("單道替換", () => {
   });
 
   it("替換位置不會被替成會破壞平衡的菜", () => {
-    // 唯一的蛋白質菜被替換，只有另一道蛋白質菜可補位，純素菜 c 不行
+    // 唯一的肉蛋料理被替換，只有另一道肉蛋料理可補位，純素菜 c 不行
     const pool = [
       veg("v"),
       pro("p"),
