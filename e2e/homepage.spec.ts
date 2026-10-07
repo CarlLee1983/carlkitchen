@@ -256,8 +256,10 @@ test("窄螢幕篩選後放寬到左文右圖，大圖換成該類的菜", async
   await expect(hero(page)).toBeHidden();
   await page.setViewportSize({ width: 1366, height: 900 });
   await expect(hero(page)).toBeVisible();
-  expect(soups.map((recipe) => `/recipes/${recipe.id}/`)).toContain(
-    await hero(page).getAttribute("href"),
+  // CSS 先讓大圖出現，media query 的 change 事件稍後才換圖，所以用會重試的斷言
+  await expect(hero(page)).toHaveAttribute(
+    "href",
+    new RegExp(`^/recipes/(${soups.map((recipe) => recipe.id).join("|")})/$`),
   );
 });
 
