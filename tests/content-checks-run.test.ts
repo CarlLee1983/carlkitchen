@@ -246,8 +246,13 @@ describe("runContentChecks", () => {
 });
 
 describe("check-content 指令", () => {
-  const run = (s: ReturnType<typeof scenario>, args: string[] = []) =>
-    spawnSync(
+  // 專題目錄指向情境內的空目錄，避免讀到正式內容的已發布專題
+  const run = (s: ReturnType<typeof scenario>, args: string[] = []) => {
+    const topicsDir = join(s.root, "topics");
+    const topicSourcesDir = join(s.root, "topic-sources");
+    mkdirSync(topicsDir, { recursive: true });
+    mkdirSync(topicSourcesDir, { recursive: true });
+    return spawnSync(
       process.execPath,
       ["--experimental-strip-types", cli, "--dist", s.options.distDir, ...args],
       {
@@ -258,9 +263,12 @@ describe("check-content 指令", () => {
           SOURCES_DIR: s.options.sourcesDir,
           INGREDIENTS_DIR: join(s.root, "ingredients"),
           INGREDIENT_SOURCES_DIR: join(s.root, "ingredient-sources"),
+          TOPICS_DIR: topicsDir,
+          TOPIC_SOURCES_DIR: topicSourcesDir,
         },
       },
     );
+  };
 
   it("通過時結束碼 0", () => {
     assert.equal(run(scenario()).status, 0);
