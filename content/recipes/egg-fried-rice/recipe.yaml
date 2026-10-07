@@ -1,0 +1,60 @@
+title: 蛋炒飯
+summary: 蛋液炒到稍微凝固就下白飯，大火炒到粒粒分明，再以醬油和白胡椒調味、撒上蔥花。一盤就是簡單的一餐。
+servings: 2
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - { name: 白飯, amount: { value: 400, unit: g }, note: 冷飯較容易炒散 }
+  - { name: 雞蛋, amount: { value: 2, unit: 顆 } }
+  - { name: 青蔥, amount: { value: 30, unit: g }, note: 切成蔥花 }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 1.5, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 0.5, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 青蔥切成蔥花；雞蛋打進碗中攪散。白飯用湯匙稍微壓散，下鍋時比較不會結塊。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上一小堆青綠的蔥花和一把菜刀，旁邊一碗攪散的蛋液，以及一碗插著木匙、已壓散的白飯
+  - text: 炒鍋大火燒熱後倒入食用油，下蛋液。蛋液稍微凝固時用鍋鏟劃散成小塊，表面還帶點濕潤就下一步。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋中劃散成小塊的嫩黃炒蛋，鍋底帶著油光，鍋鏟靠在鍋緣
+  - text: 放入白飯，大火一邊翻炒、一邊用鍋鏟輕壓，炒到飯粒粒粒分明、蛋塊完全凝固。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中炒散的白色飯粒，夾雜著完全凝固的小塊黃色炒蛋，鍋鏟靠在鍋緣
+  - text: 加入醬油、鹽和白胡椒粉翻炒，炒到每粒飯都均勻上色。
+  - text: 撒上蔥花，翻炒幾下讓蔥花均勻散開就起鍋。
+tip: 醬油可以沿著燒熱的鍋邊淋入再翻炒，醬油受熱後香氣更明顯。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤中盛著蛋炒飯，帶淺醬油色的飯粒間夾著黃色炒蛋塊，上面撒滿蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一碗白飯、兩顆雞蛋、一小碟蔥花，以及小瓶裝的食用油、醬油和小碟裝的鹽、白胡椒粉
