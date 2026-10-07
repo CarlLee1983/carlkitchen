@@ -80,7 +80,8 @@ export function initHome() {
     topicRows.map((row) => [row.dataset.topicId, row]),
   );
   const allRows = [...rows, ...topicRows];
-  const rowList = rows[0]?.parentElement;
+  // 菜譜列與專題列同在一個清單；沒有菜譜時仍要找得到清單。
+  const rowList = allRows[0]?.parentElement;
   const empty = document.querySelector<HTMLElement>("[data-empty]");
   const emptyMessage = document.querySelector("[data-empty-message]");
   const clearButton = document.querySelector("[data-clear]");
@@ -198,7 +199,7 @@ export function initHome() {
         : `共 ${recipeCount} 道`,
     );
     if (empty) {
-      empty.hidden = visible.length > 0 || rows.length === 0;
+      empty.hidden = visible.length > 0 || allRows.length === 0;
       if (emptyMessage) {
         emptyMessage.textContent = state.q
           ? `找不到符合「${state.q}」的菜譜。`

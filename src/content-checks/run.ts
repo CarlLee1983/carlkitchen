@@ -1,7 +1,7 @@
 import { join } from "node:path";
 import { existsSync } from "node:fs";
 import { checkHeroAlt, checkImageFile, collectImageRefs } from "./images.ts";
-import { checkIngredients } from "./ingredients.ts";
+import { checkIngredients, readIngredients } from "./ingredients.ts";
 import {
   collectBuildFiles,
   listDirectories,
@@ -33,19 +33,6 @@ export interface ContentCheckOptions {
 const RECIPE_ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 const failure = (file: string, message: string): Issue => ({ file, message });
-
-/** 食材條目資料夾中已發布（非草稿、有 ingredient.yaml）的識別值；目錄缺失或檔案壞掉時略過，由食材檢查回報。 */
-function publishedIngredientIds(ingredientsDir: string | undefined): string[] {
-  if (!ingredientsDir) return [];
-  return (listDirectories(ingredientsDir) ?? []).filter((id) => {
-    try {
-      const raw = readYaml(join(ingredientsDir, id, "ingredient.yaml"));
-      return raw !== undefined && !isDraft(raw);
-    } catch {
-      return false;
-    }
-  });
-}
 
 /** 組合所有檢查；回傳問題清單，空陣列代表通過。 */
 export async function runContentChecks(
@@ -109,8 +96,8 @@ export async function runContentChecks(
     if (!data || isDraft(raw)) continue;
     for (const ref of collectImageRefs(data)) {
       const info = await readImageInfo(join(options.recipesDir, id, ref.src));
-      issues.push(...checkImageFile(id, ref, info));
-      issues.push(...checkHeroAlt(id, ref));
+      issues.push(...checkImageFile({ recipe: id }, ref, info));
+      issues.push(...checkHeroAlt({ recipe: id }, ref));
     }
   }
 
@@ -147,6 +134,11 @@ export async function runContentChecks(
     }),
   );
 
+  // 食材條目只讀一次：食材檢查與專題的相關連結檢查共用
+  const ingredients = options.ingredientsDir
+    ? readIngredients(options.ingredientsDir)
+    : null;
+
   // 專題：schema、封面圖、內部來源紀錄，以及相關連結只能指向已發布的菜譜與食材條目
   // topicsDir 與 topicSourcesDir 要成對設定；只給一個是設定錯誤，不能靜默略過專題檢查。
   if (Boolean(options.topicsDir) !== Boolean(options.topicSourcesDir)) {
@@ -165,7 +157,9 @@ export async function runContentChecks(
           publicRecipeIds: recipes
             .filter(({ raw, data }) => data && !isDraft(raw))
             .map(({ id }) => id),
-          publicIngredientIds: publishedIngredientIds(options.ingredientsDir),
+          publicIngredientIds: (ingredients ?? [])
+            .filter(({ entry }) => entry && !entry.draft)
+            .map(({ id }) => id),
         })
       : { issues: [], draftIds: [], sourceUrls: [] };
   issues.push(...topicCheck.issues);
@@ -177,6 +171,7 @@ export async function runContentChecks(
       options.ingredientsDir && options.ingredientSourcesDir
         ? await checkIngredients({
             ingredientsDir: options.ingredientsDir,
+            ingredients,
             ingredientSourcesDir: options.ingredientSourcesDir,
             publicRecipeIds: recipes
               .filter(({ raw, data }) => data && !isDraft(raw))

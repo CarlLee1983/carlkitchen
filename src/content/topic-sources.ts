@@ -1,15 +1,15 @@
 import { z } from "astro/zod";
+import { httpUrl } from "./http-url.ts";
 
 const nonEmpty = z.string().trim().min(1);
-const httpUrl = z.url({ protocol: /^https?$/ });
 
 /**
- * 專題的內部來源紀錄：核准來源清單，以及小節標題到採用來源網址的段落對照。
+ * 專題的內部來源紀錄：核准來源清單（已發布專題至少一筆，由內容檢查把關，草稿可為空），以及小節標題到採用來源網址的段落對照。
  * 只由內容檢查讀取，不進內容集合也不進公開輸出；選題參考放在專題 frontmatter，不在這裡。
  */
 const topicSourceSchema = z
   .object({
-    sources: z.array(z.object({ title: nonEmpty, url: httpUrl })).min(1),
+    sources: z.array(z.object({ title: nonEmpty, url: httpUrl })),
     sections: z.array(
       z.object({ heading: nonEmpty, urls: z.array(httpUrl).min(1) }),
     ),

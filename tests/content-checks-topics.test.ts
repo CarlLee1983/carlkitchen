@@ -389,4 +389,60 @@ describe("專題內容檢查", () => {
       assert.ok(issues.some((issue) => /設定不完整/.test(issue.message)));
     }
   });
+
+  it("已發布專題內文的每個 ## 小節都要出現在段落對照", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: [], ingredients: [] }).replace(
+        "\n做法。",
+        "\n做法。\n\n## 涼拌豆腐\n\n更多。",
+      ),
+    );
+    const issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some(
+        (issue) =>
+          issue.topic === "summer-salads" &&
+          issue.field === "sections" &&
+          /涼拌豆腐/.test(issue.message),
+      ),
+    );
+  });
+
+  it("### 小節不強制列入段落對照，草稿不要求來源紀錄內容", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: [], ingredients: [] }).replace(
+        "\n做法。",
+        "\n做法。\n\n### 小技巧\n\n說明。",
+      ),
+    );
+    assert.deepEqual(await runContentChecks(s.options), []);
+    s.write(
+      s.file,
+      topic({ recipes: [], ingredients: [] })
+        .replace("draft: false", "draft: true")
+        .replace("\n做法。", "\n做法。\n\n## 未對照\n\n說明。"),
+    );
+    s.write(s.sourceFile, "sources: []\nsections: []\n");
+    assert.deepEqual(await runContentChecks(s.options), []);
+  });
+
+  it("程式碼區塊內的 ## 不算標題；收尾 fence 須同字元且不短於開頭", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: [], ingredients: [] }).replace(
+        "\n做法。",
+        "\n做法。\n\n````\n```\n## 區塊內假標題\n````\n\n## 區塊後真標題\n",
+      ),
+    );
+    const issues = await runContentChecks(s.options);
+    const messages = issues.map((issue) => issue.message).join("\n");
+    assert.doesNotMatch(messages, /區塊內假標題/);
+    assert.match(messages, /區塊後真標題/);
+    assert.equal(issues.length, 1, messages);
+  });
 });

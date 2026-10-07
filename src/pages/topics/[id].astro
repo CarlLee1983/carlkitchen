@@ -55,13 +55,6 @@ const published = formatPublishedDate(data.publishedAt);
   <article class="topic">
     <span hidden data-pagefind-filter="type:topic"></span>
     <p class="eyebrow">專題 / {data.title}</p>
-    <header>
-      <h1 data-pagefind-body data-pagefind-weight="10">
-        {data.title}{data.draft && <span class="draft">（草稿）</span>}
-      </h1>
-      <p class="lead" data-pagefind-body>{data.summary}</p>
-      <time datetime={published.iso}>{published.label}</time>
-    </header>
     {
       data.hero && (
         <Illustration
@@ -72,6 +65,13 @@ const published = formatPublishedDate(data.publishedAt);
         />
       )
     }
+    <header>
+      <h1 data-pagefind-body data-pagefind-weight="10">
+        {data.title}{data.draft && <span class="draft">（草稿）</span>}
+      </h1>
+      <p class="lead" data-pagefind-body>{data.summary}</p>
+      <time datetime={published.iso}>{published.label}</time>
+    </header>
     <div class="body" data-pagefind-body>
       <Content />
     </div>
@@ -164,7 +164,7 @@ const published = formatPublishedDate(data.publishedAt);
     font-size: 0.9rem;
   }
   .topic :global(figure.hero) {
-    margin: 2rem 0 0;
+    margin: 0 0 2rem;
   }
   .body {
     margin-top: 2.5rem;

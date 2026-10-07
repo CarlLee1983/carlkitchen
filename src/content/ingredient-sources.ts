@@ -2,13 +2,14 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "astro/zod";
 import { parse } from "yaml";
+import { httpUrl } from "./http-url.ts";
 
 const sourceSchema = z.object({
   sources: z
     .array(
       z.object({
         title: z.string().trim().min(1),
-        url: z.url({ protocol: /^https?$/ }),
+        url: httpUrl,
       }),
     )
     .min(1),

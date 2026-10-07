@@ -19,6 +19,8 @@ import { sourceCore } from "./leaks.ts";
 
 const schema = createTopicSchema(z.string());
 
+type Topic = z.output<typeof schema>;
+
 export interface TopicCheckOptions {
   topicsDir: string;
   topicSourcesDir: string;
@@ -26,22 +28,250 @@ export interface TopicCheckOptions {
   publicIngredientIds: readonly string[];
 }
 
-/** 內文裡 `##`、`###` 標題的純文字（略過程式碼區塊）。 */
-function bodyHeadings(body: string): Set<string> {
-  const headings = new Set<string>();
-  let fence: string | null = null;
+/** 一份通過驗證的來源紀錄：核准來源網址與段落對照的小節標題。 */
+interface SourceRecord {
+  approvedUrls: string[];
+  sectionHeadings: string[];
+}
+
+interface Heading {
+  level: number;
+  text: string;
+}
+
+/** 內文裡 `##`、`###` 標題的純文字；略過程式碼區塊（收尾 fence 須同字元且不短於開頭，CommonMark）。 */
+export function bodyHeadings(body: string): Heading[] {
+  const headings: Heading[] = [];
+  let fence: { char: string; length: number } | null = null;
   for (const line of body.split(/\r?\n/)) {
-    const marker = /^\s*(`{3,}|~{3,})/.exec(line)?.[1];
-    if (marker) {
-      if (!fence) fence = marker[0]!;
-      else if (marker[0] === fence) fence = null;
+    const run = /^ {0,3}(`{3,}|~{3,})(.*)$/.exec(line);
+    if (fence) {
+      const closing = /^ {0,3}(`{3,}|~{3,})\s*$/.exec(line)?.[1];
+      if (
+        closing &&
+        closing[0] === fence.char &&
+        closing.length >= fence.length
+      ) {
+        fence = null;
+      }
       continue;
     }
-    if (fence) continue;
-    const heading = /^#{2,3}\s+(.+?)\s*#*\s*$/.exec(line)?.[1];
-    if (heading) headings.add(heading);
+    if (run) {
+      fence = { char: run[1]![0]!, length: run[1]!.length };
+      continue;
+    }
+    const match = /^(#{2,3})\s+(.+?)\s*#*\s*$/.exec(line);
+    if (match) headings.push({ level: match[1]!.length, text: match[2]! });
   }
   return headings;
+}
+
+/** 讀取每份來源紀錄；回報孤兒、壞格式與無法辨識的檔案。 */
+function readSourceRecords(
+  dir: string,
+  topicIds: ReadonlySet<string>,
+): {
+  issues: Issue[];
+  fileIds: Set<string>;
+  records: Map<string, SourceRecord>;
+  urls: string[];
+} {
+  const issues: Issue[] = [];
+  const records = new Map<string, SourceRecord>();
+  const urls: string[] = [];
+  const fileIds = new Set(listSourceIds(dir));
+  for (const id of fileIds) {
+    const file = join(dir, `${id}.yaml`);
+    if (!topicIds.has(id)) {
+      issues.push({ file, message: `孤兒專題來源紀錄：找不到「${id}」。` });
+    }
+    try {
+      const result = parseTopicSourceRecord(readYaml(file));
+      if (result.success) {
+        const approvedUrls = result.data.sources.map((source) => source.url);
+        records.set(id, {
+          approvedUrls,
+          sectionHeadings: result.data.sections.map(({ heading }) => heading),
+        });
+        urls.push(...approvedUrls);
+      } else {
+        issues.push(
+          ...result.error.issues.map((issue) => ({
+            topic: id,
+            file,
+            field: issue.path.join("."),
+            message: issue.message,
+          })),
+        );
+      }
+    } catch (error) {
+      issues.push({ topic: id, file, message: (error as Error).message });
+    }
+  }
+  for (const name of listUnrecognizedSourceFiles(dir)) {
+    issues.push({
+      file: join(dir, name),
+      message: "無法辨識的專題來源紀錄檔（只接受 <識別值>.yaml）。",
+    });
+  }
+  return { issues, fileIds, records, urls };
+}
+
+/** 讀取並驗證 topic.md；回傳 frontmatter 資料與內文，失敗時只有問題。 */
+function readTopic(
+  topicsDir: string,
+  id: string,
+): { issues: Issue[]; topic?: Topic; body?: string } {
+  const file = join(topicsDir, id, "topic.md");
+  const issues: Issue[] = [];
+  if (!TOPIC_ID_PATTERN.test(id)) {
+    issues.push({
+      topic: id,
+      file,
+      message: "專題資料夾名稱必須是小寫英數字以連字號分隔。",
+    });
+  }
+  let markdown: ReturnType<typeof readMarkdown>;
+  try {
+    markdown = readMarkdown(file);
+  } catch (error) {
+    return {
+      issues: [
+        ...issues,
+        { topic: id, file, message: (error as Error).message },
+      ],
+    };
+  }
+  if (markdown === undefined) {
+    return {
+      issues: [
+        ...issues,
+        { topic: id, file, message: "資料夾內沒有 topic.md。" },
+      ],
+    };
+  }
+  const result = schema.safeParse(markdown.data);
+  if (!result.success) {
+    issues.push(
+      ...result.error.issues.map((issue) => ({
+        topic: id,
+        file,
+        field: issue.path.join(".") || undefined,
+        message: issue.message,
+      })),
+    );
+    return { issues };
+  }
+  return { issues, topic: result.data, body: markdown.body };
+}
+
+/** 相關連結只能指向已發布的菜譜與食材條目。 */
+function checkRelatedLinks(
+  id: string,
+  file: string,
+  topic: Topic,
+  published: { recipes: ReadonlySet<string>; ingredients: ReadonlySet<string> },
+): Issue[] {
+  const check = (
+    field: "relatedRecipes" | "relatedIngredients",
+    known: ReadonlySet<string>,
+    label: string,
+  ): Issue[] =>
+    topic[field].flatMap((target, index) =>
+      known.has(target)
+        ? []
+        : [
+            {
+              topic: id,
+              file,
+              field: `${field}.${index}`,
+              message: `${label}「${target}」不存在或尚未發布。`,
+            },
+          ],
+    );
+  return [
+    ...check("relatedRecipes", published.recipes, "相關菜譜"),
+    ...check("relatedIngredients", published.ingredients, "相關食材條目"),
+  ];
+}
+
+/** 封面圖規格與替代文字；圖片檢查不綁定菜譜，問題標在專題上。 */
+async function checkHero(
+  topicsDir: string,
+  id: string,
+  hero: NonNullable<Topic["hero"]>,
+): Promise<Issue[]> {
+  const ref = { field: "hero", src: hero.src, alt: hero.alt };
+  const info = await readImageInfo(join(topicsDir, id, ref.src));
+  return [
+    ...checkImageFile({ topic: id }, ref, info),
+    ...checkHeroAlt({ topic: id }, ref),
+  ];
+}
+
+/** 已發布專題的來源紀錄：存在、至少一筆核准來源，且段落對照涵蓋內文每個 `##` 小節。 */
+function checkSourceRecord(
+  id: string,
+  sourceFile: string,
+  record: SourceRecord | undefined,
+  body: string,
+): Issue[] {
+  if (!record) return [];
+  const issues: Issue[] = [];
+  if (record.approvedUrls.length === 0) {
+    issues.push({
+      topic: id,
+      file: sourceFile,
+      field: "sources",
+      message: "公開專題至少需要一筆核准來源。",
+    });
+  }
+  const headings = bodyHeadings(body);
+  const listed = new Set(record.sectionHeadings);
+  const actual = new Set(headings.map(({ text }) => text));
+  for (const heading of record.sectionHeadings) {
+    if (!actual.has(heading)) {
+      issues.push({
+        topic: id,
+        file: sourceFile,
+        field: "sections",
+        message: `段落對照的小節「${heading}」不是專題內文的 ## 或 ### 標題（以純文字照抄標題）。`,
+      });
+    }
+  }
+  for (const { level, text } of headings) {
+    if (level === 2 && !listed.has(text)) {
+      issues.push({
+        topic: id,
+        file: sourceFile,
+        field: "sections",
+        message: `專題內文的小節「${text}」沒有列入段落對照。`,
+      });
+    }
+  }
+  return issues;
+}
+
+/** 選題參考會公開顯示，不能同時是核准來源。 */
+function checkReferences(
+  id: string,
+  file: string,
+  topic: Topic,
+  approvedUrls: readonly string[],
+): Issue[] {
+  const approved = new Set(approvedUrls.map(sourceCore));
+  return topic.references.flatMap((reference, index) =>
+    approved.has(sourceCore(reference.url))
+      ? [
+          {
+            topic: id,
+            file,
+            field: `references.${index}.url`,
+            message: `選題參考網址 ${reference.url} 同時是核准來源；選題參考會公開顯示，不能當核准來源。`,
+          },
+        ]
+      : [],
+  );
 }
 
 /**
@@ -54,9 +284,6 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
   draftIds: string[];
   sourceUrls: string[];
 }> {
-  const issues: Issue[] = [];
-  const draftIds: string[] = [];
-  const sourceUrls: string[] = [];
   const ids = listDirectories(input.topicsDir);
   if (!ids) {
     return {
@@ -66,135 +293,33 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
           message: "找不到專題目錄（檢查 TOPICS_DIR）。",
         },
       ],
-      draftIds,
-      sourceUrls,
+      draftIds: [],
+      sourceUrls: [],
     };
   }
-
-  const knownIds = new Set(ids);
-  const sourceIds = new Set(listSourceIds(input.topicSourcesDir));
-  const approvedByTopic = new Map<string, string[]>();
-  const sectionsByTopic = new Map<string, string[]>();
-  for (const id of sourceIds) {
-    const sourceFile = join(input.topicSourcesDir, `${id}.yaml`);
-    if (!knownIds.has(id)) {
-      issues.push({
-        file: sourceFile,
-        message: `孤兒專題來源紀錄：找不到「${id}」。`,
-      });
-    }
-    try {
-      const result = parseTopicSourceRecord(readYaml(sourceFile));
-      if (result.success) {
-        const urls = result.data.sources.map((source) => source.url);
-        approvedByTopic.set(id, urls);
-        sectionsByTopic.set(
-          id,
-          result.data.sections.map((section) => section.heading),
-        );
-        sourceUrls.push(...urls);
-      } else {
-        issues.push(
-          ...result.error.issues.map((issue) => ({
-            topic: id,
-            file: sourceFile,
-            field: issue.path.join("."),
-            message: issue.message,
-          })),
-        );
-      }
-    } catch (error) {
-      issues.push({
-        topic: id,
-        file: sourceFile,
-        message: (error as Error).message,
-      });
-    }
-  }
-  for (const name of listUnrecognizedSourceFiles(input.topicSourcesDir)) {
-    issues.push({
-      file: join(input.topicSourcesDir, name),
-      message: "無法辨識的專題來源紀錄檔（只接受 <識別值>.yaml）。",
-    });
-  }
-
-  const publishedRecipes = new Set(input.publicRecipeIds);
-  const publishedIngredients = new Set(input.publicIngredientIds);
+  const sources = readSourceRecords(input.topicSourcesDir, new Set(ids));
+  const issues = [...sources.issues];
+  const draftIds: string[] = [];
+  const published = {
+    recipes: new Set(input.publicRecipeIds),
+    ingredients: new Set(input.publicIngredientIds),
+  };
   for (const id of ids) {
     const file = join(input.topicsDir, id, "topic.md");
-    if (!TOPIC_ID_PATTERN.test(id)) {
-      issues.push({
-        topic: id,
-        file,
-        message: "專題資料夾名稱必須是小寫英數字以連字號分隔。",
-      });
-    }
-    let markdown: ReturnType<typeof readMarkdown>;
-    try {
-      markdown = readMarkdown(file);
-    } catch (error) {
-      issues.push({ topic: id, file, message: (error as Error).message });
-      continue;
-    }
-    if (markdown === undefined) {
-      issues.push({ topic: id, file, message: "資料夾內沒有 topic.md。" });
-      continue;
-    }
-    const result = schema.safeParse(markdown.data);
-    if (!result.success) {
-      issues.push(
-        ...result.error.issues.map((issue) => ({
-          topic: id,
-          file,
-          field: issue.path.join(".") || undefined,
-          message: issue.message,
-        })),
-      );
-      continue;
-    }
-    const topic = result.data;
+    const { issues: topicIssues, topic, body } = readTopic(input.topicsDir, id);
+    issues.push(...topicIssues);
+    if (!topic || body === undefined) continue;
     if (topic.draft) {
       draftIds.push(id);
       continue;
     }
-
-    topic.relatedRecipes.forEach((recipeId, index) => {
-      if (!publishedRecipes.has(recipeId)) {
-        issues.push({
-          topic: id,
-          file,
-          field: `relatedRecipes.${index}`,
-          message: `相關菜譜「${recipeId}」不存在或尚未發布。`,
-        });
-      }
-    });
-    topic.relatedIngredients.forEach((ingredientId, index) => {
-      if (!publishedIngredients.has(ingredientId)) {
-        issues.push({
-          topic: id,
-          file,
-          field: `relatedIngredients.${index}`,
-          message: `相關食材條目「${ingredientId}」不存在或尚未發布。`,
-        });
-      }
-    });
-
+    issues.push(...checkRelatedLinks(id, file, topic, published));
     if (topic.hero) {
-      const ref = {
-        field: "hero",
-        src: topic.hero.src,
-        alt: topic.hero.alt,
-      };
-      const info = await readImageInfo(join(input.topicsDir, id, ref.src));
-      issues.push(
-        ...[...checkImageFile(id, ref, info), ...checkHeroAlt(id, ref)].map(
-          ({ recipe: _recipe, ...issue }) => ({ ...issue, topic: id }),
-        ),
-      );
+      issues.push(...(await checkHero(input.topicsDir, id, topic.hero)));
     }
-
     const sourceFile = join(input.topicSourcesDir, `${id}.yaml`);
-    if (!sourceIds.has(id)) {
+    const record = sources.records.get(id);
+    if (!sources.fileIds.has(id)) {
       issues.push({
         topic: id,
         file: sourceFile,
@@ -202,31 +327,10 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
       });
       continue;
     }
-    const approved = approvedByTopic.get(id);
-    if (!approved) continue;
-    const headings = bodyHeadings(markdown.body);
-    for (const heading of sectionsByTopic.get(id) ?? []) {
-      if (!headings.has(heading)) {
-        issues.push({
-          topic: id,
-          file: sourceFile,
-          field: "sections",
-          message: `段落對照的小節「${heading}」不是專題內文的 ## 或 ### 標題（以純文字照抄標題）。`,
-        });
-      }
+    issues.push(...checkSourceRecord(id, sourceFile, record, body));
+    if (record) {
+      issues.push(...checkReferences(id, file, topic, record.approvedUrls));
     }
-    // 選題參考會公開顯示，不能同時是核准來源。
-    const approvedCores = new Set(approved.map(sourceCore));
-    topic.references.forEach((reference, index) => {
-      if (approvedCores.has(sourceCore(reference.url))) {
-        issues.push({
-          topic: id,
-          file,
-          field: `references.${index}.url`,
-          message: `選題參考網址 ${reference.url} 同時是核准來源；選題參考會公開顯示，不能當核准來源。`,
-        });
-      }
-    });
   }
-  return { issues, draftIds, sourceUrls };
+  return { issues, draftIds, sourceUrls: sources.urls };
 }

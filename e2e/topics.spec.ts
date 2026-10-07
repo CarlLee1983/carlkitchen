@@ -72,10 +72,12 @@ test("文章頁依序顯示封面、標題、內文、相關連結與選題參�
   );
   await expect(link).toHaveAttribute("rel", /noopener/);
 
-  // 版面順序：封面 < 內文 < 相關連結 < 選題參考
+  // 版面順序：封面 < 標題 < 發布日期 < 內文 < 相關連結 < 選題參考
   const tops = await Promise.all(
     [
       main.getByRole("img").first(),
+      main.getByRole("heading", { level: 1 }),
+      main.locator("time"),
       main.getByRole("heading", { level: 2, name: "涼拌小黃瓜" }),
       related,
       references,
