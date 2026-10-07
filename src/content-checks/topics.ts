@@ -66,6 +66,58 @@ export function bodyHeadings(body: string): Heading[] {
   return headings;
 }
 
+type PageKind = "recipes" | "ingredients" | "topics";
+
+/** 內文（略過程式碼區塊與行內程式碼）裡指向菜譜、食材條目、專題頁的站內連結，含 Markdown 連結與 HTML href。 */
+export function bodyInternalLinks(
+  body: string,
+): { href: string; kind: PageKind; id: string }[] {
+  const prose = body
+    .replace(
+      /^ {0,3}(`{3,}|~{3,})[^\n]*\n[\s\S]*?(?:\n {0,3}\1[`~]*[ \t]*(?=\n|$)|$)/gm,
+      "",
+    )
+    .replace(/`[^`\n]*`/g, "");
+  const links: { href: string; kind: PageKind; id: string }[] = [];
+  for (const match of prose.matchAll(
+    /(?:\]\(\s*|\bhref=["'])(\/(recipes|ingredients|topics)\/([^/)\s"'#?]+)[^)\s"']*)/g,
+  )) {
+    links.push({
+      href: match[1]!,
+      kind: match[2] as PageKind,
+      id: match[3]!,
+    });
+  }
+  return links;
+}
+
+/** 已發布專題內文的站內連結只能指向已發布的菜譜、食材條目與專題。 */
+function checkBodyLinks(
+  id: string,
+  file: string,
+  body: string,
+  published: Record<PageKind, ReadonlySet<string>>,
+): Issue[] {
+  return bodyInternalLinks(body).flatMap((link) =>
+    published[link.kind].has(link.id)
+      ? []
+      : [
+          {
+            topic: id,
+            file,
+            field: "body",
+            message: `內文連結 ${link.href} 指向的${PAGE_LABELS[link.kind]}「${link.id}」不存在或尚未發布。`,
+          },
+        ],
+  );
+}
+
+const PAGE_LABELS: Record<PageKind, string> = {
+  recipes: "菜譜",
+  ingredients: "食材條目",
+  topics: "專題",
+};
+
 /** 讀取每份來源紀錄；回報孤兒、壞格式與無法辨識的檔案。 */
 function readSourceRecords(
   dir: string,
@@ -300,19 +352,23 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
   const sources = readSourceRecords(input.topicSourcesDir, new Set(ids));
   const issues = [...sources.issues];
   const draftIds: string[] = [];
+  const topics = ids.map((id) => ({ id, ...readTopic(input.topicsDir, id) }));
   const published = {
     recipes: new Set(input.publicRecipeIds),
     ingredients: new Set(input.publicIngredientIds),
+    topics: new Set(
+      topics.filter(({ topic }) => topic && !topic.draft).map(({ id }) => id),
+    ),
   };
-  for (const id of ids) {
+  for (const { id, issues: topicIssues, topic, body } of topics) {
     const file = join(input.topicsDir, id, "topic.md");
-    const { issues: topicIssues, topic, body } = readTopic(input.topicsDir, id);
     issues.push(...topicIssues);
     if (!topic || body === undefined) continue;
     if (topic.draft) {
       draftIds.push(id);
       continue;
     }
+    issues.push(...checkBodyLinks(id, file, body, published));
     issues.push(...checkRelatedLinks(id, file, topic, published));
     if (topic.hero) {
       issues.push(...(await checkHero(input.topicsDir, id, topic.hero)));

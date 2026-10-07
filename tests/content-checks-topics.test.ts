@@ -445,4 +445,83 @@ describe("專題內容檢查", () => {
     assert.match(messages, /區塊後真標題/);
     assert.equal(issues.length, 1, messages);
   });
+
+  describe("內文站內連結", () => {
+    const withBody = (s: ReturnType<typeof scenario>, extra: string) =>
+      s.write(
+        s.file,
+        topic({ recipes: [], ingredients: [] }).replace(
+          "\n做法。",
+          `\n做法。\n\n${extra}\n`,
+        ),
+      );
+
+    it("指向已發布的菜譜、食材條目與專題時通過", async () => {
+      const s = scenario();
+      s.write(
+        join(s.root, "topics/other/topic.md"),
+        topic({ recipes: [], ingredients: [] }).replace(
+          "\n## 涼拌小黃瓜\n\n做法。",
+          "",
+        ),
+      );
+      copyFileSync(s.hero, join(s.root, "topics/other/hero.webp"));
+      s.write(
+        join(s.root, "topic-sources/other.yaml"),
+        "sources:\n  - title: 來源\n    url: https://example.com/other\nsections: []\n",
+      );
+      withBody(
+        s,
+        "[菜](/recipes/alpha/) [食材](/ingredients/cabbage/) [專題](/topics/other/) [列表](/topics/) [錨點](/recipes/alpha/#steps)",
+      );
+      assert.deepEqual(await runContentChecks(s.options), []);
+    });
+
+    it("連到草稿或不存在的頁面時阻擋，訊息指出連結", async () => {
+      const s = scenario();
+      withBody(
+        s,
+        "[a](/recipes/beta-draft/) [b](/ingredients/garlic/) [c](/topics/nope/) [d](/recipes/typo/)",
+      );
+      const issues = (await runContentChecks(s.options)).filter(
+        (issue) => issue.field === "body",
+      );
+      assert.equal(issues.length, 4);
+      for (const link of [
+        "/recipes/beta-draft/",
+        "/ingredients/garlic/",
+        "/topics/nope/",
+        "/recipes/typo/",
+      ]) {
+        assert.ok(
+          issues.some((issue) => issue.message.includes(link)),
+          link,
+        );
+      }
+    });
+
+    it("HTML href 也檢查，程式碼區塊與行內程式碼中的連結不算", async () => {
+      const s = scenario();
+      withBody(
+        s,
+        '<a href="/recipes/typo/">x</a>\n\n`[a](/recipes/ghost/)`\n\n```\n[b](/recipes/ghost2/)\n```',
+      );
+      const issues = (await runContentChecks(s.options)).filter(
+        (issue) => issue.field === "body",
+      );
+      assert.equal(issues.length, 1);
+      assert.match(issues[0]!.message, /\/recipes\/typo\//);
+    });
+
+    it("草稿專題內文不受限", async () => {
+      const s = scenario();
+      s.write(
+        s.file,
+        topic({ recipes: [], ingredients: [] })
+          .replace("draft: false", "draft: true")
+          .replace("\n做法。", "\n做法。\n\n[a](/recipes/typo/)\n"),
+      );
+      assert.deepEqual(await runContentChecks(s.options), []);
+    });
+  });
 });
