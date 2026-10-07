@@ -1,0 +1,46 @@
+title: 香煎椒鹽雞腿排
+summary: 雞腿排用米酒、鹽和黑胡椒粉醃漬，靠雞皮煎出的油煎熟，表皮金黃酥脆。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 140
+tags: [家常菜]
+ingredients:
+  - { name: 去骨雞腿排, amount: { value: 500, unit: g }, note: 約 3 片，帶皮 }
+  - { name: 米酒, amount: { value: 15, unit: ml }, note: 1 湯匙, group: 調味 }
+  - { name: 鹽, amount: { value: 3, unit: g }, note: 約 3/4 茶匙, group: 調味 }
+  - {
+      name: 黑胡椒粉,
+      amount: { value: 2.5, unit: ml },
+      note: 1/2 茶匙，以體積量取,
+      group: 調味,
+    }
+steps:
+  - text: 將米酒、鹽、黑胡椒粉揉入去骨雞腿排，放入冰箱冷藏醃漬 1–2 小時。
+    image:
+      src: ./step-1.webp
+      alt: 米白陶瓷淺盤中放著三片帶皮生雞腿排，表面濕潤並均勻沾著黑胡椒粉
+  - text: 以中火預熱鑄鐵鍋，滴少許水測試；水能聚成滾動的水珠時，就可下去骨雞腿排。
+  - text: 將去骨雞腿排的雞皮面朝下排入鍋中，維持中火，煎到雞皮開始釋出油脂。
+    image:
+      src: ./step-3.webp
+      alt: 深色鑄鐵平底鍋中排著三片雞皮朝下的雞腿排，朝上的雞肉仍呈淡粉色，周圍已有少許雞油
+  - text: 鋪上防沾烘焙紙，壓上重物；轉中小火煎約 6–7 分鐘。
+    image:
+      src: ./step-4.webp
+      alt: 鑄鐵平底鍋中的雞腿排上鋪著防沾烘焙紙，紙上壓著有提把的圓形深色壓重，周圍可見雞油
+  - text: 拿開重物與烘焙紙，等雞皮變成金黃色、能離開鍋底時，再翻面。
+    image:
+      src: ./step-5.webp
+      alt: 同一只鑄鐵平底鍋中的三片雞腿排已翻面，朝上的雞皮呈金黃色並帶著黑胡椒粉
+  - text: 保持中小火煎熟另一面；用食物溫度計確認雞肉最厚處達 74°C，再起鍋。
+hero:
+  src: ./hero.webp
+  alt: 米白陶瓷盤中排著三片完整的椒鹽雞腿排，朝上的雞皮呈金黃色，表面散布黑胡椒粉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 三片帶皮生雞腿排分開放在米白陶瓷盤上，旁邊是一小瓶米酒，以及各一小碟鹽和黑胡椒粉
+tip: 鹽和黑胡椒粉的用量可依口味調整。
