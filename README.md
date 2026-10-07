@@ -35,8 +35,8 @@ content/recipes/tomato-egg/
 
 - `RECIPES_DIR` 環境變數指定菜譜目錄，預設 `content/recipes`；`SOURCES_DIR` 指定內部菜譜來源紀錄，預設 `content/sources`。
 - 食材條目位於 `content/ingredients/<識別值>/ingredient.yaml`，以 `INGREDIENTS_DIR` 切換；其核准來源紀錄位於 `content/ingredient-sources/<識別值>.yaml`，以 `INGREDIENT_SOURCES_DIR` 切換。來源紀錄的 `sources` 項目各有 `title` 與 `url`，條目頁文末從該紀錄顯示公開連結。
-- 食材條目必填短介、選用、處理、保存、用途及相關菜譜；蔬菜另填臺灣主要產期、最佳賞味期與適用範圍。圖片可省略；有圖時必填替代文字，並遵守 WebP、1536×1024、不超過 300 KB。
-- `draft: true` 的菜譜與食材條目只在 `pnpm dev` 看得到，正式建置不輸出草稿頁。高麗菜首篇已經站主逐篇審閱，可在正式建置開啟 `/ingredients/cabbage/`。
+- 食材條目必填短介、選用、處理、保存與用途；已發布條目至少連到一篇相關菜譜，草稿可暫無。蔬菜另填臺灣主要產期與適用範圍；只有來源明確記載最佳賞味期時才填該欄位。酒精或過敏原有來源可核對時，選填 `notices.alcohol` 或 `notices.allergens`，頁面會以獨立區塊顯示。圖片可省略；有圖時必填替代文字，並遵守 WebP、1536×1024、不超過 300 KB。
+- `draft: true` 的菜譜與食材條目只在 `pnpm dev` 看得到，正式建置不輸出草稿頁。高麗菜、空心菜、青花菜、米酒、蔥、薑、蒜、蝦米與醬油已經站主逐篇審閱，可在正式建置開啟各自條目。秋葵、醬油膏與素蠔油的草稿文字也已審閱，仍須等有對應的已發布菜譜後再送審發布。
 - 測試與 e2e 使用 `tests/fixtures/recipes/` 和 `tests/fixtures/ingredients/`，與正式內容分開。`pnpm build && pnpm check:content` 檢查內容與輸出；食材條目不進入目前只收錄菜譜的站內搜尋索引。
 
 ## 部署與回滾

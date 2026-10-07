@@ -40,3 +40,13 @@ test("手機上的食材條目可讀且沒有水平溢出", async ({ page }) => 
   );
   expect(overflows).toBe(false);
 });
+
+test("酒精與過敏原提醒在獨立區塊清楚顯示", async ({ page }) => {
+  await page.goto("/ingredients/soy-sauce/");
+  const notices = page.getByRole("region", { name: "食用提醒" });
+  await expect(notices).toContainText("測試產品標示含大豆及小麥");
+  await expect(notices).toContainText("酒精：測試產品的原料標示含酒精");
+  await expect(
+    notices.getByRole("heading", { name: "食用提醒" }),
+  ).toBeVisible();
+});

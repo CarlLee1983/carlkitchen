@@ -1,0 +1,13 @@
+sources:
+  # 食用部位與花蕾黃化的辨識。
+  - title: 農業部食農教育資訊整合平臺：認識青花菜
+    url: https://fae.moa.gov.tw/map/food_item.php?id=277&type=AS01
+  # 國產 10 月至翌年 5 月產期、雲林主要產地與夏季進口／冷凍區別。
+  - title: 農業部食農教育資訊整合平臺：青花菜產地
+    url: https://fae.moa.gov.tw/map/food_item.php?id=277&type=AS02
+  # 挑選及保存圖卡；不沿用固定冷藏天數。
+  - title: 農業部食農教育資訊整合平臺：挑選與保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=277&type=AS06
+  # 流動清水清洗、沿花莖分切與料理例。
+  - title: 農業部食農教育資訊整合平臺：料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=277&type=AS07

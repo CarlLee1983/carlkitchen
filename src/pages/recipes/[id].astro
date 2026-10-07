@@ -3,21 +3,41 @@ import Base from "../../layouts/Base.astro";
 import Illustration from "../../components/Illustration.astro";
 import { formatAmount, groupIngredients } from "../../utils/ingredients";
 import { recipeKinds } from "../../utils/home";
+import {
+  getVisibleIngredientEntries,
+  type IngredientEntry,
+} from "../../utils/ingredient-entries";
 import { getVisibleRecipes } from "../../utils/recipes";
 import type { Recipe } from "../../utils/recipes";
 
 export async function getStaticPaths() {
-  const recipes = await getVisibleRecipes();
+  const [recipes, ingredients] = await Promise.all([
+    getVisibleRecipes(),
+    getVisibleIngredientEntries(),
+  ]);
+  // 公開菜譜只連至已發布食材；草稿食材在開發模式仍可直訪預覽。
+  const publishedIngredients = ingredients.filter((entry) => !entry.data.draft);
   return recipes.map((recipe) => ({
     params: { id: recipe.id },
-    props: { recipe },
+    props: {
+      recipe,
+      relatedIngredients: publishedIngredients
+        .filter((entry) => entry.data.relatedRecipes.includes(recipe.id))
+        .sort(
+          (left, right) =>
+            left.data.title.localeCompare(right.data.title, "zh-Hant") ||
+            left.id.localeCompare(right.id),
+        ),
+    },
   }));
 }
 
 interface Props {
   recipe: Recipe;
+  relatedIngredients: IngredientEntry[];
 }
 const { data, id } = Astro.props.recipe;
+const { relatedIngredients } = Astro.props;
 const groups = groupIngredients(data.ingredients);
 // 讀者看不到、但要能搜到的詞：受控標籤與別名。
 const searchTerms = [...data.tags, ...data.aliases];
@@ -149,6 +169,26 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
         }
       </section>
     </div>
+
+    {
+      relatedIngredients.length > 0 && (
+        <section
+          class="ingredient-guide"
+          aria-labelledby="ingredient-guide-title"
+        >
+          <h2 id="ingredient-guide-title">了解食材</h2>
+          <ul>
+            {relatedIngredients.map((ingredient) => (
+              <li>
+                <a href={`/ingredients/${ingredient.id}/`}>
+                  {ingredient.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
     <section class="disclaimer" aria-label="聲明">
       <p>依公開資料由 AI 整理、站主審閱，未經試做</p>
@@ -287,6 +327,31 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     border-bottom: 0;
   }
 
+  .ingredient-guide {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+  .ingredient-guide h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+  }
+  .ingredient-guide ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .ingredient-guide a {
+    display: inline-flex;
+    align-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    text-underline-offset: 0.25em;
+  }
+
   .disclaimer {
     margin-top: 4rem;
     padding-top: 1rem;
@@ -314,6 +379,7 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
   /* 列印：只留成品圖、材料與做法；步驟圖與材料合照不印，確保一張紙 */
   @media print {
     .disclaimer,
+    .ingredient-guide,
     .favorite-actions,
     .ingredients :global(figure),
     .steps :global(figure) {

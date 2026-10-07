@@ -1,0 +1,14 @@
+title: 醬油
+summary: 固定資料調味料條目，用於分類瀏覽測試。
+category: seasoning
+draft: false
+selection: 依料理需要選用。
+preparation: 使用前確認份量。
+storage: 依包裝說明保存。
+uses: 可用於家常料理調味。
+notices:
+  alcohol: 測試產品的原料標示含酒精。
+  allergens:
+    - 測試產品標示含大豆及小麥，選購時請核對包裝。
+relatedRecipes:
+  - tomato-egg

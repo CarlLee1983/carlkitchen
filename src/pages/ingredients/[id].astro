@@ -82,9 +82,27 @@ const categoryLabel = {
         </section>
 
         {
+          data.notices && (
+            <section aria-labelledby="notices-title">
+              <h2 id="notices-title">食用提醒</h2>
+              {data.notices.alcohol && <p>酒精：{data.notices.alcohol}</p>}
+              {data.notices.allergens && (
+                <ul>
+                  {data.notices.allergens.map((notice) => (
+                    <li>{notice}</li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          )
+        }
+
+        {
           data.season && (
             <section aria-labelledby="season-title">
-              <h2 id="season-title">臺灣產期與賞味</h2>
+              <h2 id="season-title">
+                {data.season.bestFlavor ? "臺灣產期與賞味" : "臺灣產期"}
+              </h2>
               <dl>
                 {data.season.production.map((period) => (
                   <div>
@@ -92,33 +110,37 @@ const categoryLabel = {
                     <dd>{period.months}</dd>
                   </div>
                 ))}
-                <div>
-                  <>
+                {data.season.bestFlavor && (
+                  <div>
                     <dt>最佳賞味期</dt>
                     <dd>{data.season.bestFlavor}</dd>
-                  </>
-                </div>
+                  </div>
+                )}
               </dl>
               <p class="scope">適用範圍：{data.season.scope}</p>
             </section>
           )
         }
 
-        <div class="recipe-handoff" aria-labelledby="recipes-title">
-          <h2 id="recipes-title">相關菜譜 / 接著下廚</h2>
-          <ul>
-            {
-              relatedRecipes.map((recipe) => (
-                <li>
-                  <a href={`/recipes/${recipe.id}/`}>
-                    {recipe.data.title} <span aria-hidden="true">↗</span>
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-          <p>菜譜另提供材料、份量與步驟。</p>
-        </div>
+        {
+          relatedRecipes.length > 0 ? (
+            <div class="recipe-handoff" aria-labelledby="recipes-title">
+              <h2 id="recipes-title">相關菜譜 / 接著下廚</h2>
+              <ul>
+                {relatedRecipes.map((recipe) => (
+                  <li>
+                    <a href={`/recipes/${recipe.id}/`}>
+                      {recipe.data.title} <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <p>菜譜另提供材料、份量與步驟。</p>
+            </div>
+          ) : (
+            <p class="no-recipes">目前尚無相關菜譜。</p>
+          )
+        }
 
         {
           sources.length > 0 && (

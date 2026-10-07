@@ -110,6 +110,18 @@ describe("食材內容檢查", () => {
     assert.ok(issues.some((issue) => /草稿/.test(issue.message)));
   });
 
+  it("沒有相關菜譜的草稿不進正式輸出，且不要求公開來源區塊", async () => {
+    const s = scenario();
+    s.write(
+      s.paths.ingredient,
+      entry
+        .replace("draft: false", "draft: true")
+        .replace("relatedRecipes:\n  - alpha", "relatedRecipes: []"),
+    );
+    rmSync(s.paths.page);
+    assert.deepEqual(await runContentChecks(s.options), []);
+  });
+
   it("核准來源出現在其他頁面或來源區塊外仍視為洩漏", async () => {
     const s = scenario();
     s.write(join(s.root, "dist/index.html"), `<a href="${sourceUrl}">誤放</a>`);
