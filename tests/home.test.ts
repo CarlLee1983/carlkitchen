@@ -2,70 +2,149 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   applyHomeState,
-  categoryFilterValue,
   containsAllTerms,
   formatDateLabel,
-  matchesCategory,
   normalizeQuery,
-  parseCategoryParam,
   parseHomeState,
+  parseKindParam,
   recipeIdFromUrl,
+  recipeKinds,
+  visibleKindOptions,
 } from "../src/utils/home.ts";
 
-describe("parseCategoryParam", () => {
-  it("認得 soup 與 non-soup，其餘（含缺少）一律視為全部", () => {
-    assert.equal(parseCategoryParam("soup"), "soup");
-    assert.equal(parseCategoryParam("non-soup"), "non-soup");
-    assert.equal(parseCategoryParam("all"), "all");
-    assert.equal(parseCategoryParam(null), "all");
-    assert.equal(parseCategoryParam("nonsense"), "all");
+const ALL_OPTIONS = ["all", "vegetable", "protein", "soup"] as const;
+
+describe("parseKindParam", () => {
+  it("認得每個篩選值，其餘（含缺少、舊的 non-soup）一律視為全部", () => {
+    for (const value of ALL_OPTIONS) {
+      assert.equal(parseKindParam(value, ALL_OPTIONS), value);
+    }
+    assert.equal(parseKindParam(null, ALL_OPTIONS), "all");
+    assert.equal(parseKindParam("nonsense", ALL_OPTIONS), "all");
+    assert.equal(parseKindParam("non-soup", ALL_OPTIONS), "all");
+  });
+
+  it("目前被隱藏的選項視為全部", () => {
+    assert.equal(parseKindParam("soup", ["all", "vegetable"]), "all");
+    assert.equal(
+      parseKindParam("vegetable", ["all", "vegetable"]),
+      "vegetable",
+    );
   });
 });
 
 describe("parseHomeState", () => {
-  it("同時讀出搜尋字詞 q 與分類，缺少時各用預設值", () => {
+  it("同時讀出搜尋字詞 q 與 kind，缺少時各用預設值", () => {
     assert.deepEqual(
-      parseHomeState(new URLSearchParams("q=雞&category=soup")),
-      {
-        q: "雞",
-        category: "soup",
-      },
+      parseHomeState(new URLSearchParams("q=雞&kind=soup"), ALL_OPTIONS),
+      { q: "雞", kind: "soup" },
     );
-    assert.deepEqual(parseHomeState(new URLSearchParams("")), {
+    assert.deepEqual(parseHomeState(new URLSearchParams(""), ALL_OPTIONS), {
       q: "",
-      category: "all",
+      kind: "all",
     });
+  });
+
+  it("舊的 category 參數不再處理", () => {
+    assert.deepEqual(
+      parseHomeState(new URLSearchParams("category=soup"), ALL_OPTIONS),
+      { q: "", kind: "all" },
+    );
+  });
+
+  it("kind 是被隱藏的選項時視為全部", () => {
+    assert.equal(
+      parseHomeState(new URLSearchParams("kind=soup"), ["all", "protein"]).kind,
+      "all",
+    );
   });
 });
 
 describe("applyHomeState", () => {
-  it("寫入分類與 q 並保留其他參數，不改動輸入", () => {
+  it("寫入 kind 與 q 並保留其他參數，不改動輸入", () => {
     const input = new URLSearchParams("foo=1");
-    const result = applyHomeState(input, { q: "雞", category: "soup" });
-    assert.equal(result.get("category"), "soup");
+    const result = applyHomeState(input, { q: "雞", kind: "protein" });
+    assert.equal(result.get("kind"), "protein");
     assert.equal(result.get("q"), "雞");
     assert.equal(result.get("foo"), "1");
-    assert.equal(input.has("category"), false);
+    assert.equal(input.has("kind"), false);
   });
 
   it("選回全部、q 為空時移除對應參數", () => {
-    const result = applyHomeState(new URLSearchParams("category=soup&q=雞"), {
+    const result = applyHomeState(new URLSearchParams("kind=soup&q=雞"), {
       q: "",
-      category: "all",
+      kind: "all",
     });
-    assert.equal(result.has("category"), false);
+    assert.equal(result.has("kind"), false);
     assert.equal(result.has("q"), false);
   });
 });
 
-describe("matchesCategory", () => {
-  it("全部放行；非湯料理與湯各只放行自己", () => {
-    assert.equal(matchesCategory("all", "湯"), true);
-    assert.equal(matchesCategory("all", "非湯料理"), true);
-    assert.equal(matchesCategory("soup", "湯"), true);
-    assert.equal(matchesCategory("soup", "非湯料理"), false);
-    assert.equal(matchesCategory("non-soup", "非湯料理"), true);
-    assert.equal(matchesCategory("non-soup", "湯"), false);
+describe("recipeKinds", () => {
+  it("非湯料理依標記回傳蔬菜菜、蛋白質菜或兩者", () => {
+    const base = { category: "非湯料理" };
+    assert.deepEqual(
+      recipeKinds({ ...base, vegetable: true, protein: false }),
+      ["vegetable"],
+    );
+    assert.deepEqual(
+      recipeKinds({ ...base, vegetable: false, protein: true }),
+      ["protein"],
+    );
+    assert.deepEqual(recipeKinds({ ...base, vegetable: true, protein: true }), [
+      "vegetable",
+      "protein",
+    ]);
+  });
+
+  it("湯回傳 soup", () => {
+    assert.deepEqual(
+      recipeKinds({ category: "湯", vegetable: false, protein: false }),
+      ["soup"],
+    );
+  });
+});
+
+describe("visibleKindOptions", () => {
+  const recipe = (category: string, vegetable: boolean, protein: boolean) => ({
+    category,
+    vegetable,
+    protein,
+  });
+
+  it("固定順序，只留至少有一道菜的選項，全部一律顯示", () => {
+    assert.deepEqual(
+      visibleKindOptions([
+        recipe("湯", false, false),
+        recipe("非湯料理", true, true),
+      ]).map((option) => option.value),
+      ["all", "vegetable", "protein", "soup"],
+    );
+  });
+
+  it("沒有菜的選項不顯示", () => {
+    assert.deepEqual(
+      visibleKindOptions([recipe("非湯料理", true, false)]).map(
+        (option) => option.value,
+      ),
+      ["all", "vegetable"],
+    );
+  });
+
+  it("沒有任何菜時仍有全部", () => {
+    assert.deepEqual(
+      visibleKindOptions([]).map((option) => option.value),
+      ["all"],
+    );
+  });
+
+  it("選項附中文標籤", () => {
+    assert.deepEqual(
+      visibleKindOptions([recipe("湯", false, false)]).map(
+        (option) => option.label,
+      ),
+      ["全部", "湯"],
+    );
   });
 });
 
@@ -73,13 +152,6 @@ describe("formatDateLabel", () => {
   it("格式為「M 月 D 日　週X」", () => {
     assert.equal(formatDateLabel(new Date(2026, 9, 6)), "10 月 6 日　週二");
     assert.equal(formatDateLabel(new Date(2026, 0, 4)), "1 月 4 日　週日");
-  });
-});
-
-describe("categoryFilterValue", () => {
-  it("菜譜分類對應網址與 Pagefind 篩選值", () => {
-    assert.equal(categoryFilterValue("湯"), "soup");
-    assert.equal(categoryFilterValue("非湯料理"), "non-soup");
   });
 });
 

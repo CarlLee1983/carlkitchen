@@ -71,6 +71,28 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
       tip: nonEmpty.optional(),
     })
     .superRefine((recipe, context) => {
+      // 性質標記只屬於非湯料理，且非湯料理至少要有一個；草稿同樣適用
+      if (recipe.category === "湯") {
+        for (const field of ["vegetable", "protein"] as const) {
+          if (recipe[field]) {
+            context.addIssue({
+              code: "custom",
+              path: [field],
+              message: "湯不可標記蔬菜菜或蛋白質菜。",
+            });
+          }
+        }
+      } else if (!recipe.vegetable && !recipe.protein) {
+        for (const field of ["vegetable", "protein"] as const) {
+          context.addIssue({
+            code: "custom",
+            path: [field],
+            message: "非湯料理的蔬菜菜與蛋白質菜至少要有一個為真。",
+          });
+        }
+      }
+    })
+    .superRefine((recipe, context) => {
       // 已發布的菜譜必須圖片齊全；草稿可以缺
       if (recipe.draft) return;
       const requireField = (

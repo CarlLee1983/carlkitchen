@@ -1,27 +1,68 @@
-/** 首頁分類篩選：網址參數 `category` 的值；缺少或無法辨識一律視為全部。 */
-export type CategoryFilter = "all" | "non-soup" | "soup";
+/** 篩選值：網址參數 `kind` 的值，也是 Pagefind 篩選屬性 `kind` 的值。 */
+export type KindFilter = "all" | "vegetable" | "protein" | "soup";
 
-export const CATEGORY_PARAM = "category";
+export const KIND_PARAM = "kind";
 
-const FILTERS: readonly CategoryFilter[] = ["all", "non-soup", "soup"];
+/** 篩選選項的固定順序與中文標籤。 */
+const KIND_OPTIONS: readonly { value: KindFilter; label: string }[] = [
+  { value: "all", label: "全部" },
+  { value: "vegetable", label: "蔬菜菜" },
+  { value: "protein", label: "蛋白質菜" },
+  { value: "soup", label: "湯" },
+];
 
-export function parseCategoryParam(value: string | null): CategoryFilter {
-  return FILTERS.find((filter) => filter === value) ?? "all";
+/** 缺少、無法辨識或不在目前顯示的選項（`visible`）中的值一律視為全部。 */
+export function parseKindParam(
+  value: string | null,
+  visible: readonly KindFilter[],
+): KindFilter {
+  return visible.find((kind) => kind === value) ?? "all";
+}
+
+interface KindSource {
+  category: string;
+  vegetable: boolean;
+  protein: boolean;
+}
+
+/** 菜譜屬於哪些篩選值（不含 all）；兩種性質都有的非湯料理同時屬於兩個。 */
+export function recipeKinds(recipe: KindSource): Exclude<KindFilter, "all">[] {
+  if (recipe.category === "湯") return ["soup"];
+  return [
+    ...(recipe.vegetable ? (["vegetable"] as const) : []),
+    ...(recipe.protein ? (["protein"] as const) : []),
+  ];
+}
+
+/** 已發布菜譜要顯示的篩選選項：固定順序，只留至少有一道菜的，全部一律顯示。 */
+export function visibleKindOptions(
+  recipes: readonly KindSource[],
+): { value: KindFilter; label: string }[] {
+  const present = new Set(recipes.flatMap(recipeKinds));
+  return KIND_OPTIONS.filter(
+    (option) =>
+      option.value === "all" ||
+      present.has(option.value as Exclude<KindFilter, "all">),
+  );
 }
 
 /** 搜尋字詞去掉前後空白；只有空白視為沒有字詞。 */
 export const normalizeQuery = (value: string): string => value.trim();
 
-/** 首頁的網址狀態：搜尋字詞 q 與分類。 */
+/** 首頁的網址狀態：搜尋字詞 q 與篩選值 kind。 */
 export interface HomeState {
   q: string;
-  category: CategoryFilter;
+  kind: KindFilter;
 }
 
-export function parseHomeState(params: URLSearchParams): HomeState {
+/** `visible` 是目前顯示的篩選選項值，隱藏的選項視為全部。 */
+export function parseHomeState(
+  params: URLSearchParams,
+  visible: readonly KindFilter[],
+): HomeState {
   return {
     q: normalizeQuery(params.get("q") ?? ""),
-    category: parseCategoryParam(params.get(CATEGORY_PARAM)),
+    kind: parseKindParam(params.get(KIND_PARAM), visible),
   };
 }
 
@@ -33,28 +74,9 @@ export function applyHomeState(
   const next = new URLSearchParams(params);
   if (state.q) next.set("q", state.q);
   else next.delete("q");
-  if (state.category === "all") next.delete(CATEGORY_PARAM);
-  else next.set(CATEGORY_PARAM, state.category);
+  if (state.kind === "all") next.delete(KIND_PARAM);
+  else next.set(KIND_PARAM, state.kind);
   return next;
-}
-
-/** `recipeCategory` 是菜譜資料裡的分類值（「非湯料理」或「湯」）。 */
-export function matchesCategory(
-  filter: CategoryFilter,
-  recipeCategory: string,
-): boolean {
-  if (filter === "all") return true;
-  return (filter === "soup") === (recipeCategory === "湯");
-}
-
-/**
- * 菜譜分類值（「非湯料理」或「湯」）對應的篩選值：同時是網址 `category` 參數值
- * 與 Pagefind 篩選值（`data-pagefind-filter="category:…"`）。
- */
-export function categoryFilterValue(
-  recipeCategory: string,
-): Exclude<CategoryFilter, "all"> {
-  return recipeCategory === "湯" ? "soup" : "non-soup";
 }
 
 /** 例如「10 月 6 日　週二」，用讀者裝置的本地日期。 */

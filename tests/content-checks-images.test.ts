@@ -63,6 +63,7 @@ describe("collectImageRefs", () => {
       summary: "s",
       servings: 1,
       category: "非湯料理",
+      vegetable: true,
       draft: false,
       ingredients: [
         {

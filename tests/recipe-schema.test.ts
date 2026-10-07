@@ -11,6 +11,7 @@ const publishedRecipe = () => ({
   summary: "蛋先炒到半熟盛起，再把番茄炒出汁，最後合在一起。",
   servings: 2,
   category: "非湯料理",
+  vegetable: true,
   draft: false,
   ingredients: [
     { name: "番茄", amount: { value: 2, unit: "顆" }, note: "約 300 g" },
@@ -54,8 +55,45 @@ describe("recipe schema", () => {
   it("合法的已發布菜譜通過，並補上預設值", () => {
     const result = schema.parse(publishedRecipe());
     assert.equal(result.mealCandidate, false);
-    assert.equal(result.vegetable, false);
     assert.equal(result.protein, false);
+  });
+
+  it("非湯料理至少要是蔬菜菜或蛋白質菜之一", () => {
+    for (const marks of [{ vegetable: true }, { protein: true }]) {
+      const { vegetable: _v, ...base } = publishedRecipe();
+      assert.equal(schema.safeParse({ ...base, ...marks }).success, true);
+    }
+    assert.equal(
+      schema.safeParse({ ...publishedRecipe(), vegetable: true, protein: true })
+        .success,
+      true,
+    );
+    const neither = { ...publishedRecipe(), vegetable: false, protein: false };
+    failsAt(neither, "vegetable");
+    failsAt(neither, "protein");
+  });
+
+  it("湯的蔬菜菜與蛋白質菜標記都必須為假", () => {
+    const asSoup = { ...publishedRecipe(), category: "湯" };
+    failsAt({ ...asSoup, vegetable: true, protein: false }, "vegetable");
+    failsAt({ ...asSoup, vegetable: false, protein: true }, "protein");
+    assert.equal(
+      schema.safeParse({ ...asSoup, vegetable: false, protein: false }).success,
+      true,
+    );
+  });
+
+  it("標記規則草稿同樣適用", () => {
+    failsAt({ ...draftRecipe(), vegetable: true }, "vegetable");
+    failsAt({ ...draftRecipe(), category: "非湯料理" }, "vegetable");
+    assert.equal(
+      schema.safeParse({
+        ...draftRecipe(),
+        category: "非湯料理",
+        protein: true,
+      }).success,
+      true,
+    );
   });
 
   it("缺少標題失敗", () => {

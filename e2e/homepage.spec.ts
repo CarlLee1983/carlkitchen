@@ -4,7 +4,8 @@ import { publishedFixtureRecipes } from "./fixture-recipes";
 
 const recipes = publishedFixtureRecipes();
 const soups = recipes.filter((recipe) => recipe.category === "湯");
-const nonSoups = recipes.filter((recipe) => recipe.category === "非湯料理");
+const vegetables = recipes.filter((recipe) => recipe.vegetable);
+const proteins = recipes.filter((recipe) => recipe.protein);
 
 const list = (page: Page) => page.getByRole("region", { name: "菜譜清單" });
 const rows = (page: Page) => list(page).getByRole("listitem");
@@ -48,7 +49,16 @@ test("清單依菜名排序，每列有縮圖、菜名、摘要與分類標籤�
   await expect(page.getByText("草稿範例")).toHaveCount(0);
 });
 
-test("分類切換即時篩選、顯示筆數並寫進網址；選回全部移除參數", async ({
+test("篩選列依序為全部、蔬菜菜、蛋白質菜、湯，沒有非湯料理選項", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(
+    page.getByRole("group", { name: "篩選" }).getByRole("button"),
+  ).toHaveText(["全部", "蔬菜菜", "蛋白質菜", "湯"]);
+});
+
+test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移除參數", async ({
   page,
 }) => {
   await page.goto("/");
@@ -57,25 +67,43 @@ test("分類切換即時篩選、顯示筆數並寫進網址；選回全部移�
   await page.getByRole("button", { name: "湯", exact: true }).click();
   await expect(rows(page)).toHaveCount(soups.length);
   await expect(count(page)).toContainText(String(soups.length));
-  await expect(page).toHaveURL(/[?&]category=soup(&|$)/);
+  await expect(page).toHaveURL(/[?&]kind=soup(&|$)/);
   for (const [i, soup] of soups.entries()) {
     await expect(rows(page).nth(i)).toContainText(soup.title);
   }
 
-  await page.getByRole("button", { name: "非湯料理" }).click();
-  await expect(rows(page)).toHaveCount(nonSoups.length);
-  await expect(count(page)).toContainText(String(nonSoups.length));
-  await expect(page).toHaveURL(/[?&]category=non-soup(&|$)/);
+  await page.getByRole("button", { name: "蔬菜菜" }).click();
+  await expect(rows(page)).toHaveCount(vegetables.length);
+  await expect(count(page)).toContainText(String(vegetables.length));
+  await expect(page).toHaveURL(/[?&]kind=vegetable(&|$)/);
+
+  await page.getByRole("button", { name: "蛋白質菜" }).click();
+  await expect(rows(page)).toHaveCount(proteins.length);
+  await expect(page).toHaveURL(/[?&]kind=protein(&|$)/);
 
   await page.getByRole("button", { name: "全部" }).click();
   await expect(rows(page)).toHaveCount(recipes.length);
-  await expect(page).not.toHaveURL(/category=/);
+  await expect(page).not.toHaveURL(/kind=/);
 });
 
-test("開啟帶分類參數的網址會還原篩選與按鈕狀態；重新整理仍在", async ({
+test("兩種性質都有的菜同時出現在蔬菜菜與蛋白質菜之下", async ({ page }) => {
+  const both = recipes.filter((recipe) => recipe.vegetable && recipe.protein);
+  expect(both.length).toBeGreaterThan(0);
+  await page.goto("/");
+  for (const name of ["蔬菜菜", "蛋白質菜"]) {
+    await page.getByRole("button", { name }).click();
+    for (const recipe of both) {
+      await expect(
+        rows(page).filter({ hasText: recipe.title }).first(),
+      ).toBeVisible();
+    }
+  }
+});
+
+test("開啟帶 kind 參數的網址會還原篩選與按鈕狀態；重新整理仍在", async ({
   page,
 }) => {
-  await page.goto("/?category=soup");
+  await page.goto("/?kind=soup");
   await expect(rows(page)).toHaveCount(soups.length);
   await expect(
     page.getByRole("button", { name: "湯", exact: true }),
@@ -88,13 +116,15 @@ test("開啟帶分類參數的網址會還原篩選與按鈕狀態；重新整�
   await expect(rows(page)).toHaveCount(soups.length);
 });
 
-test("無法辨識的分類參數視為全部", async ({ page }) => {
-  await page.goto("/?category=nonsense");
-  await expect(rows(page)).toHaveCount(recipes.length);
-  await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
+test("無法辨識的 kind 與舊的 category 參數視為全部", async ({ page }) => {
+  for (const query of ["kind=nonsense", "category=soup", "kind=non-soup"]) {
+    await page.goto(`/?${query}`);
+    await expect(rows(page)).toHaveCount(recipes.length);
+    await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+  }
 });
 
 test("成品大圖連到存在的已發布菜譜，顯示的圖與菜名屬於所連菜譜，且不同亂數會推薦不同菜譜", async ({
@@ -169,12 +199,12 @@ test("點成品大圖進入該菜譜頁", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("無法辨識的分類參數載入時從網址清掉", async ({ page }) => {
-  await page.goto("/?category=nonsense");
-  await expect(page).not.toHaveURL(/category=/);
+test("無法辨識的 kind 載入時從網址清掉", async ({ page }) => {
+  await page.goto("/?kind=nonsense");
+  await expect(page).not.toHaveURL(/kind=/);
 });
 
-test("上一頁會依網址還原分類（hash 導航後選分類再返回）", async ({ page }) => {
+test("上一頁會依網址還原篩選（hash 導航後選分類再返回）", async ({ page }) => {
   await page.goto("/");
   await page
     .getByRole("navigation", { name: "主選單" })
@@ -184,7 +214,7 @@ test("上一頁會依網址還原分類（hash 導航後選分類再返回）", 
   await page.getByRole("button", { name: "湯", exact: true }).click();
   await expect(rows(page)).toHaveCount(soups.length);
   await page.goBack();
-  await expect(page).not.toHaveURL(/category=/);
+  await expect(page).not.toHaveURL(/kind=/);
   await expect(rows(page)).toHaveCount(recipes.length);
   await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
     "aria-pressed",

@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import Illustration from "../components/Illustration.astro";
+import { recipeKinds, visibleKindOptions } from "../utils/home";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
 
 const recipes = await getVisibleRecipes();
@@ -16,11 +17,7 @@ const HERO_PICK_SCRIPT = `(() => {
   if (section && pick) section.append(pick.content.cloneNode(true));
 })();`;
 
-const FILTERS = [
-  { value: "all", label: "全部" },
-  { value: "non-soup", label: "非湯料理" },
-  { value: "soup", label: "湯" },
-];
+const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 ---
 
 <Base title="CarlKitchen">
@@ -87,8 +84,8 @@ const FILTERS = [
       ) : (
         <>
           <div class="list-tools">
-            <div class="filters" role="group" aria-label="分類">
-              {FILTERS.map((filter) => (
+            <div class="filters" role="group" aria-label="篩選">
+              {filters.map((filter) => (
                 <button
                   type="button"
                   data-filter={filter.value}
@@ -105,7 +102,7 @@ const FILTERS = [
                 class="row"
                 data-recipe-row
                 data-recipe-id={recipe.id}
-                data-category={recipe.data.category}
+                data-kinds={recipeKinds(recipe.data).join(" ")}
               >
                 {recipe.data.hero && (
                   <Illustration

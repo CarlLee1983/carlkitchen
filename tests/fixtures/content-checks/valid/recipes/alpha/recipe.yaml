@@ -2,6 +2,7 @@ title: 範例菜
 summary: 檢查指令用的固定菜譜。
 servings: 2
 category: 非湯料理
+vegetable: true
 draft: false
 ingredients:
   - { name: 蛋, amount: { value: 2, unit: 顆 } }
