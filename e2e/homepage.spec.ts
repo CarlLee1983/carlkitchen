@@ -303,18 +303,67 @@ test("導覽列「菜譜」連到首頁清單", async ({ page }) => {
   ).toBeInViewport();
 });
 
-test("手機版依序為搜尋框、成品大圖、清單，且無水平捲動", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 800 });
+test("手機導覽到菜譜清單時標題不被固定篩選列遮住", async ({ page }) => {
+  // 短視窗可讓錨點捲到頂端，避免測試資料較少時被頁尾的最大捲動量掩蓋。
+  for (const width of [360, 390, 430]) {
+    await page.setViewportSize({ width, height: 400 });
+    await page.goto("/recipes/tomato-egg/");
+    await page
+      .getByRole("navigation", { name: "主選單" })
+      .getByRole("link", { name: "菜譜" })
+      .click();
+    const filterBox = await page
+      .getByRole("group", { name: "篩選" })
+      .boundingBox();
+    const headingBox = await list(page)
+      .getByRole("heading", { level: 2, name: "菜譜清單" })
+      .boundingBox();
+    expect(headingBox!.y).toBeGreaterThanOrEqual(
+      filterBox!.y + filterBox!.height,
+    );
+  }
+});
+
+test("手機只保留導覽列的配菜入口，較寬畫面保留搜尋區入口", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  const search = await page.getByRole("searchbox").boundingBox();
-  const heroBox = await hero(page).boundingBox();
-  const listBox = await list(page).boundingBox();
-  expect(heroBox!.y).toBeGreaterThan(search!.y);
-  expect(listBox!.y).toBeGreaterThan(heroBox!.y);
-  const overflow = await page.evaluate(
-    () => document.documentElement.scrollWidth - window.innerWidth,
-  );
-  expect(overflow).toBeLessThanOrEqual(0);
+  const navLink = page
+    .getByRole("navigation", { name: "主選單" })
+    .getByRole("link", { name: "四菜一湯" });
+  const introLink = page.getByRole("link", { name: "配一桌四菜一湯" });
+  await expect(navLink).toBeVisible();
+  await expect(introLink).toBeHidden();
+
+  for (const width of [640, 1023, 1366]) {
+    await page.setViewportSize({ width, height: 900 });
+    await expect(introLink).toBeVisible();
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await navLink.click();
+  await expect(page).toHaveURL(/\/meal\/$/);
+});
+
+test("手機搜尋、篩選與菜譜連結可依畫面順序用鍵盤操作", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  const search = page.getByRole("searchbox");
+  const firstFilter = page
+    .getByRole("group", { name: "篩選" })
+    .getByRole("button")
+    .first();
+  const firstRecipe = rows(page).first().getByRole("link");
+  await search.focus();
+  await expect(search).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(firstFilter).toBeFocused();
+  await expectFocusRing(firstFilter);
+  for (let i = 0; i < 10; i++) {
+    if (await firstRecipe.evaluate((el) => el === document.activeElement))
+      break;
+    await page.keyboard.press("Tab");
+  }
+  await expect(firstRecipe).toBeFocused();
+  await expectFocusRing(firstRecipe, "::after");
 });
 
 test("寬螢幕第一屏左文右圖", async ({ page }) => {
