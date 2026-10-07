@@ -1,10 +1,23 @@
 ---
+import { Image } from "astro:assets";
+import Illustration from "../components/Illustration.astro";
 import Base from "../layouts/Base.astro";
+import chefAvatar from "../assets/about/chef-avatar.webp";
+import chef from "../assets/about/chef.webp";
 ---
 
 <Base title="關於這個網站｜CarlKitchen">
   <article class="about">
     <h1>關於這個網站</h1>
+    <Illustration
+      class="about-hero"
+      image={{
+        src: chef,
+        alt: "年輕廚師在爐火上甩鍋，番茄、炒蛋與蔥花隨火焰飛起的手繪水彩插畫",
+      }}
+      sizes="(min-width: 40rem) 40rem, 100vw"
+      priority
+    />
     <p>
       CarlKitchen
       是一個繁體中文菜譜網站，整理家常料理的材料與做法，也提供一桌四菜一湯或五菜一湯的配菜參考。
@@ -21,10 +34,21 @@ import Base from "../layouts/Base.astro";
       繪製的插畫。插畫用來幫助理解材料與步驟，不是實際成品的照片。
     </p>
 
-    <h2>站主審閱</h2>
-    <p>
-      每道菜譜在公開前，都由站主逐篇看完成品，確認後才發布。尚未審閱的草稿不會出現在網站上。
-    </p>
+    <section class="owner">
+      <Image
+        class="owner-avatar"
+        src={chefAvatar}
+        alt="站主的代表人物：手拿木鍋鏟、咧嘴微笑的年輕廚師"
+        widths={[96, 192]}
+        sizes="96px"
+      />
+      <div>
+        <h2>站主審閱</h2>
+        <p>
+          每道菜譜在公開前，都由站主逐篇看完成品，確認後才發布。尚未審閱的草稿不會出現在網站上。
+        </p>
+      </div>
+    </section>
 
     <h2>未經試做</h2>
     <p>
@@ -39,5 +63,21 @@ import Base from "../layouts/Base.astro";
   }
   .about h2 {
     margin-top: 2.5rem;
+  }
+  .about-hero {
+    margin-top: 1.5rem;
+  }
+  /* 頭像與段落並排，頭像頂端對齊標題上緣。 */
+  .owner {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .owner-avatar {
+    flex: none;
+    width: 6rem;
+    height: 6rem;
+    margin-top: 2.5rem;
+    border-radius: 50%;
   }
 </style>
