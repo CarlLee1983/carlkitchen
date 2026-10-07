@@ -1,4 +1,5 @@
-import { join } from "node:path";
+import { basename, join } from "node:path";
+import { markdownToHast, type HastNode } from "satteri";
 import { z } from "astro/zod";
 import {
   createTopicSchema,
@@ -261,6 +262,73 @@ async function checkHero(
   ];
 }
 
+/** 與實際 Markdown 渲染相同的解析器，包含參照式圖片，避免把程式碼範例當成插畫。 */
+async function checkBodyImages(
+  topicsDir: string,
+  id: string,
+  body: string,
+): Promise<Issue[]> {
+  const issues: Issue[] = [];
+  const images: { src: string; alt: string }[] = [];
+  const visit = (node: HastNode) => {
+    if (
+      node.type === "raw" &&
+      /<img\b/i.test(node.value.replace(/<!--[\s\S]*?-->/g, ""))
+    ) {
+      issues.push({
+        topic: id,
+        field: "body.images",
+        message:
+          "內文圖片請使用 Markdown 語法，才能套用響應式圖片與替代文字檢查。",
+      });
+    }
+    if (node.type === "element" && node.tagName === "img") {
+      images.push({
+        src: String(node.properties.src ?? ""),
+        alt: String(node.properties.alt ?? ""),
+      });
+    }
+    if ("children" in node) node.children.forEach(visit);
+  };
+  visit(markdownToHast(body));
+  for (const [index, image] of images.entries()) {
+    const ref = { ...image, field: `body.images.${index}` };
+    if (!image.alt.trim()) {
+      issues.push({
+        topic: id,
+        field: `${ref.field}.alt`,
+        file: image.src,
+        message: "內文圖片必須填寫有意義的替代文字。",
+      });
+    }
+    let src: string;
+    try {
+      src = decodeURIComponent(image.src).replace(/^\.\//, "");
+    } catch {
+      src = "";
+    }
+    // 只准同資料夾的檔案，不能以網址、public 路徑或 ../ 繞過 Astro 資產處理。
+    if (
+      !src ||
+      basename(src) !== src ||
+      /[\\/:?#\0]/.test(src) ||
+      src === "." ||
+      src === ".."
+    ) {
+      issues.push({
+        topic: id,
+        field: ref.field,
+        file: image.src,
+        message: "內文圖片必須以相對路徑引用專題同一資料夾的本地檔案。",
+      });
+      continue;
+    }
+    const info = await readImageInfo(join(topicsDir, id, src));
+    issues.push(...checkImageFile({ topic: id }, ref, info));
+  }
+  return issues;
+}
+
 /** 已發布專題的來源紀錄：存在、至少一筆核准來源，且段落對照涵蓋內文每個 `##` 小節。 */
 function checkSourceRecord(
   id: string,
@@ -369,6 +437,7 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
       continue;
     }
     issues.push(...checkBodyLinks(id, file, body, published));
+    issues.push(...(await checkBodyImages(input.topicsDir, id, body)));
     issues.push(...checkRelatedLinks(id, file, topic, published));
     if (topic.hero) {
       issues.push(...(await checkHero(input.topicsDir, id, topic.hero)));
