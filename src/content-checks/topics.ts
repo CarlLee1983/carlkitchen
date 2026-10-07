@@ -16,10 +16,14 @@ import {
 } from "./io.ts";
 import type { Issue } from "./issue.ts";
 import { sourceCore } from "./leaks.ts";
+import { checkTerms, checkTermsInText } from "./terms.ts";
 
 const schema = createTopicSchema(z.string());
 
 type Topic = z.output<typeof schema>;
+
+/** 選題參考的作者與標題是原文引用，不受用詞表約束。 */
+const REFERENCE_TEXT = /^references\.\d+\.(?:title|author)$/;
 
 export interface TopicCheckOptions {
   topicsDir: string;
@@ -173,7 +177,13 @@ function readSourceRecords(
 function readTopic(
   topicsDir: string,
   id: string,
-): { issues: Issue[]; topic?: Topic; body?: string } {
+): {
+  issues: Issue[];
+  topic?: Topic;
+  body?: string;
+  /** frontmatter 與內文原文；schema 驗證失敗時用詞檢查仍可使用。 */
+  markdown?: { data: unknown; body: string };
+} {
   const file = join(topicsDir, id, "topic.md");
   const issues: Issue[] = [];
   if (!TOPIC_ID_PATTERN.test(id)) {
@@ -212,9 +222,9 @@ function readTopic(
         message: issue.message,
       })),
     );
-    return { issues };
+    return { issues, markdown };
   }
-  return { issues, topic: result.data, body: markdown.body };
+  return { issues, topic: result.data, body: markdown.body, markdown };
 }
 
 /** 相關連結只能指向已發布的菜譜與食材條目。 */
@@ -360,9 +370,16 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
       topics.filter(({ topic }) => topic && !topic.draft).map(({ id }) => id),
     ),
   };
-  for (const { id, issues: topicIssues, topic, body } of topics) {
+  for (const { id, issues: topicIssues, topic, body, markdown } of topics) {
     const file = join(input.topicsDir, id, "topic.md");
     issues.push(...topicIssues);
+    // 用詞：草稿也檢查
+    if (markdown) {
+      issues.push(
+        ...checkTerms({ topic: id }, file, markdown.data, REFERENCE_TEXT),
+        ...checkTermsInText({ topic: id }, file, "body", markdown.body),
+      );
+    }
     if (!topic || body === undefined) continue;
     if (topic.draft) {
       draftIds.push(id);

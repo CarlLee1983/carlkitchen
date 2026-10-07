@@ -21,6 +21,7 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `pnpm build` / `pnpm preview` — 正式建置（排除草稿，建置後以 Pagefind 建立含菜譜頁與專題頁的搜尋索引）與預覽。建置固定帶 `--force`，在 `RECIPES_DIR` 切換時清除 Astro 內容層快取，不可拿掉
 - `pnpm check` — 格式檢查、`astro check`、建置
 - `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄
+- 建置輸出目錄跟隨 `ASTRO_OUT_DIR`（預設 `dist`），`build`、`check:content`、`test:e2e` 的預設站台皆然；多個代理在同一 worktree 平行建置時各設不同 `ASTRO_OUT_DIR`（`dist-meal` 留給 e2e 配菜站台）。
 - `pnpm test` — 單元測試
 - `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）；建置輸出在 `dist`、port 以 `E2E_PORT_BASE`（預設 4321）起算，平行跑需各用一個 worktree 並錯開 port
 - `pnpm check:merge` — 在暫時 worktree 合併 `origin/main` 後跑 CI 的檢查（加 `--e2e` 含瀏覽器測試），抓分支本身全綠、合併後才壞的情況
@@ -41,6 +42,8 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 新增、修改菜譜或重製插畫依 `recipe-making` skill（`.claude/skills/recipe-making/`，含來源核准、Codex 生圖與轉檔腳本、送審清單）；菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。新增、修改食材條目文字依 `ingredient-writing` skill（`.claude/skills/ingredient-writing/`）。新增、修改專題依 `topic-writing` skill（`.claude/skills/topic-writing/`）：先請站主核准來源，再逐條查證，專題內文在 `content/topics/<識別值>/topic.md`，內部來源紀錄在 `content/topic-sources/<識別值>.yaml`；個人心得只由站主撰寫，食材、調味料、廚具與烹調動作一律用臺灣用詞。菜譜、食材條目與專題的文字送審前依 `de-ai-voice` skill（`.claude/skills/de-ai-voice/`）去 AI 味，只改腔調，不動事實與用量。菜譜 schema 見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
 
 圖片規格慣例：WebP、1536×1024、不超過 300 KB。schema 不檢查這些，由 `pnpm check:content` 強制（門檻第 4 項）。成品圖不畫餐具（`.scratch/recipe-mvp/issues/06-homepage-direction.md`〈圖片風格規格〉），`pnpm check:content` 以替代文字是否提到餐具把關。
+
+用詞一律用臺灣說法（食材、調味料、廚具與烹調動作尤其重要）。用詞表是 `src/content/taiwan-terms.ts`，菜譜、食材條目與專題共用；`pnpm check:content` 會掃描菜譜、食材條目、專題（含草稿）的文字欄位與專題內文，出現表上的避免詞即報錯，被「」或『』包住的引述、網址與選題參考的作者、標題除外。表上沒有的詞查臺灣常見說法後補進表。
 
 ## 程式與測試
 

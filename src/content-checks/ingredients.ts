@@ -25,6 +25,8 @@ export interface IngredientRead {
   file: string;
   issues: Issue[];
   isDraft: boolean;
+  /** YAML 原始資料；schema 驗證失敗時用詞檢查仍可使用。 */
+  raw?: unknown;
   entry?: z.output<typeof schema>;
 }
 
@@ -61,6 +63,7 @@ export function readIngredients(dir: string): IngredientRead[] | null {
       });
       return read;
     }
+    read.raw = raw;
     read.isDraft =
       typeof raw === "object" &&
       raw !== null &&

@@ -12,6 +12,7 @@ import {
 } from "./io.ts";
 import type { Issue } from "./issue.ts";
 import { checkLeaks } from "./leaks.ts";
+import { checkTerms } from "./terms.ts";
 import { checkTopics } from "./topics.ts";
 import { isDraft, parseRecipe, type Recipe } from "./recipes.ts";
 import { checkSourceCoverage, parseSourceRecord } from "./sources.ts";
@@ -92,6 +93,13 @@ export async function runContentChecks(
     }
   }
 
+  // 用詞：草稿也檢查，用詞錯誤越早抓越好
+  for (const { id, raw } of recipes) {
+    if (raw === undefined) continue;
+    const file = join(options.recipesDir, id, "recipe.yaml");
+    issues.push(...checkTerms({ recipe: id }, file, raw));
+  }
+
   for (const { id, raw, data } of recipes) {
     if (!data || isDraft(raw)) continue;
     for (const ref of collectImageRefs(data)) {
@@ -138,6 +146,10 @@ export async function runContentChecks(
   const ingredients = options.ingredientsDir
     ? readIngredients(options.ingredientsDir)
     : null;
+  for (const { id, file, raw } of ingredients ?? []) {
+    if (raw === undefined) continue;
+    issues.push(...checkTerms({ ingredient: id }, file, raw));
+  }
 
   // 專題：schema、封面圖、內部來源紀錄，以及相關連結只能指向已發布的菜譜與食材條目
   // topicsDir 與 topicSourcesDir 要成對設定；只給一個是設定錯誤，不能靜默略過專題檢查。
