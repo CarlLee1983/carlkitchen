@@ -344,7 +344,13 @@ export function initMeal() {
     chooserLabel.append(hint);
     chooserLabel.append(chooser);
     if (info && !draft) {
-      const lock = actionButton("鎖定", info.title, "toggle", target);
+      const lock = actionButton(
+        locked ? "已鎖定" : "鎖定",
+        info.title,
+        "toggle",
+        target,
+      );
+      lock.setAttribute("aria-label", `鎖定 ${info.title}`);
       lock.setAttribute("aria-pressed", String(locked));
       actions.append(lock, actionButton("替換", info.title, "replace", target));
     }
@@ -353,9 +359,7 @@ export function initMeal() {
     item.append(
       el(
         "span",
-        [slotLabel, locked && "已鎖定", id && tagsOf(id)]
-          .filter(Boolean)
-          .join("・"),
+        [slotLabel, id && tagsOf(id)].filter(Boolean).join("・"),
         "meal-slot",
       ),
       heading,
