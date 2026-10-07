@@ -21,7 +21,7 @@ test("菜譜頁顯示基本資訊、成品圖、材料兩組與合照、編號�
 }) => {
   await page.goto(url);
   await expect(
-    page.getByRole("navigation", { name: "主選單" }).getByText("CarlKitchen"),
+    page.getByRole("navigation", { name: "主選單" }).getByText("煮奔"),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", { level: 1, name: "番茄炒蛋" }),

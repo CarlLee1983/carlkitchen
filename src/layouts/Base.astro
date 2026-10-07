@@ -1,10 +1,13 @@
 ---
 import "../styles/global.css";
+import { SITE_NAME } from "../utils/site";
 
 interface Props {
-  title: string;
+  /** 頁面名稱；不傳（首頁）時 title 只顯示站名。 */
+  title?: string;
 }
 const { title } = Astro.props;
+const documentTitle = title ? `${title}｜${SITE_NAME}` : SITE_NAME;
 ---
 
 <!doctype html>
@@ -13,14 +16,15 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/logo-mark.svg" />
-    <title>{title}</title>
+    <title>{documentTitle}</title>
   </head>
   <body>
     <header class="site-header">
       <nav aria-label="主選單">
         <a class="brand" href="/">
           <img src="/logo-mark.svg" alt="" width="40" height="40" />
-          <span>CarlKitchen</span>
+          <span>{SITE_NAME}</span>
+          <span class="brand-roman" aria-hidden="true">TSU-PNG</span>
         </a>
         <a href="/#recipes">菜譜</a>
         <a href="/ingredients/">食材介紹</a>

@@ -22,3 +22,10 @@ test("關於頁〈站主審閱〉段落顯示站主頭像", async ({ page }) => 
   });
   await expectLoaded(section.getByRole("img", { name: /站主的代表人物/ }));
 });
+
+test("關於頁有〈為什麼叫煮奔〉段落", async ({ page }) => {
+  await page.goto("/about/");
+  await expect(
+    page.getByRole("heading", { level: 2, name: "為什麼叫煮奔" }),
+  ).toBeVisible();
+});

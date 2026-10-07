@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Illustration from "../components/Illustration.astro";
 import { recipeKinds, visibleKindOptions } from "../utils/home";
+import { SITE_NAME } from "../utils/site";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
 
 const recipes = await getVisibleRecipes();
@@ -20,11 +21,11 @@ const HERO_PICK_SCRIPT = `(() => {
 const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 ---
 
-<Base title="CarlKitchen">
+<Base>
   <div class="intro" data-intro>
     <div class="intro-text">
       <p class="today" data-today></p>
-      <h1>CarlKitchen</h1>
+      <h1>{SITE_NAME}</h1>
       <form class="search" role="search" data-search-form>
         <label for="search-input">搜尋菜譜</label>
         <input
@@ -154,8 +155,15 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
   }
   .intro h1 {
     margin: 0 0 2rem;
-    font-size: 2.5rem;
-    letter-spacing: 0.05em;
+    writing-mode: vertical-rl;
+    font-size: 3rem;
+    line-height: 1.1;
+    letter-spacing: 0.1em;
+  }
+  @media (min-width: 64rem) {
+    .intro h1 {
+      font-size: 4.5rem;
+    }
   }
   .search label {
     display: block;
@@ -339,6 +347,11 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     }
     .intro {
       margin-bottom: 0;
+    }
+    /* 直排大字在手機縮小，讓篩選列仍落在第一屏內 */
+    .intro h1 {
+      margin-bottom: 1.25rem;
+      font-size: 2rem;
     }
     /* 成品大圖由腳本複製進來，沒有 Astro 的範圍屬性，所以用 :global；裁切置中 */
     .hero-pick :global(figure.illustration img) {
