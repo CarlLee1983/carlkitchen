@@ -207,3 +207,84 @@ test("個人收藏與 404 不供搜尋收錄，社群圖片可公開讀取", asy
   const { width, height } = await sharp(await response.body()).metadata();
   expect({ width, height }).toEqual({ width: 1200, height: 630 });
 });
+
+test("菜譜結構化資料與讀者看到的材料和做法一致", async ({ page }) => {
+  await page.goto("/recipes/tomato-egg/");
+  const scripts = page.locator('script[type="application/ld+json"]');
+  await expect(scripts).toHaveCount(1);
+  const recipe = JSON.parse((await scripts.textContent()) ?? "") as Record<
+    string,
+    unknown
+  >;
+  expect(recipe["@context"]).toBe("https://schema.org");
+  expect(recipe["@type"]).toBe("Recipe");
+  expect(recipe.name).toBe(
+    await page.getByRole("heading", { level: 1 }).textContent(),
+  );
+  expect(recipe.description).toBe(await page.locator(".summary").textContent());
+  expect(recipe.image).toBe(`${origin}/recipes/tomato-egg/social.webp`);
+  expect(recipe.recipeYield).toBe("2 人份");
+  expect(recipe.totalTime).toBe("PT15M");
+  const ingredients = await page.locator(".ingredients li").allTextContents();
+  expect(recipe.recipeIngredient).toEqual(
+    ingredients.map((item) => item.trim().replace(/\s+/g, " ")),
+  );
+  const steps = await page.locator(".steps > li > p").allTextContents();
+  expect(recipe.recipeInstructions).toEqual(
+    steps.map((text) => ({ "@type": "HowToStep", text })),
+  );
+  for (const key of [
+    "aggregateRating",
+    "review",
+    "datePublished",
+    "prepTime",
+    "cookTime",
+  ]) {
+    expect(recipe).not.toHaveProperty(key);
+  }
+  await page.goto("/ingredients/tomato/");
+  await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(
+    0,
+  );
+});
+
+test("sitemap 僅列適合收錄的正式公開頁面，robots 指向清單", async ({
+  request,
+}) => {
+  const robots = await request.get("/robots.txt");
+  expect(robots.ok()).toBe(true);
+  expect(await robots.text()).toContain(`Sitemap: ${origin}/sitemap-index.xml`);
+  const index = await request.get("/sitemap-index.xml");
+  expect(index.ok()).toBe(true);
+  const names = [...(await index.text()).matchAll(/<loc>(.*?)<\/loc>/g)].map(
+    (match) => match[1]!,
+  );
+  expect(names.length).toBeGreaterThan(0);
+  const urls = (
+    await Promise.all(
+      names.map(
+        async (name) =>
+          await (await request.get(new URL(name).pathname)).text(),
+      ),
+    )
+  ).flatMap((xml) =>
+    [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]!),
+  );
+  expect(urls).toEqual(
+    expect.arrayContaining([
+      `${origin}/`,
+      `${origin}/about/`,
+      `${origin}/meal/`,
+      `${origin}/ingredients/`,
+      `${origin}/ingredients/tomato/`,
+      `${origin}/recipes/tomato-egg/`,
+    ]),
+  );
+  expect(
+    urls.every((url) => url.startsWith(origin) && !url.includes("?")),
+  ).toBe(true);
+  expect(
+    urls.some((url) => /favorites|404|draft-sample|social\.webp/.test(url)),
+  ).toBe(false);
+  expect(urls.length).toBe(new Set(urls).size);
+});
