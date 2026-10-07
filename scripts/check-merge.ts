@@ -32,7 +32,7 @@ try {
     ...(withE2e ? [["test:e2e"]] : []),
   ];
   for (const step of steps) {
-    console.log(`\n▶ pnpm ${step.join(" ")}（已合併 origin/main）`);
+    console.log(`\n【合併檢查】pnpm ${step.join(" ")}（已合併 origin/main）`);
     const result = spawnSync("pnpm", step, {
       cwd: dir,
       stdio: "inherit",
