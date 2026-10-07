@@ -188,6 +188,36 @@ main {
   padding: 3rem 1.5rem 5rem;
 }
 
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+.site-footer-inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer p + p {
+  margin-top: 0.5rem;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  .site-footer-inner {
+    padding: 1.5rem 1rem 2rem;
+  }
+}
+
 /* 插畫自帶紙底，直接排版，不做去背或混色。 */
 figure.illustration {
   margin: 0;
@@ -204,7 +234,8 @@ figure.illustration img {
     background: #fff;
     font-size: 11pt;
   }
-  .site-header {
+  .site-header,
+  .site-footer {
     display: none;
   }
   main {
