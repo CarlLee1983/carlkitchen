@@ -5,6 +5,7 @@ graft/
 node_modules/
 /dist/
 /dist-meal/
+/dist-*/
 .astro/
 test-results/
 playwright-report/

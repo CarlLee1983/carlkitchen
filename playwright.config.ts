@@ -28,13 +28,15 @@ export default defineConfig({
     command: `pnpm exec astro preview --port ${port}`,
     url: `http://localhost:${port}/`,
     // 一律自己起 preview：沿用殘留的 server 會測到別的工作目錄或舊建置的內容。
-    // port 被占用時 Playwright 直接報錯；平行跑請換 E2E_PORT_BASE，並各用一個 worktree（`dist` 也不共用）。
+    // port 被占用時 Playwright 直接報錯；平行跑請換 E2E_PORT_BASE，並各設不同 ASTRO_OUT_DIR（或各用一個 worktree）。
     reuseExistingServer: false,
     env: {
       // Astro 7 在偵測到代理環境時會把 preview 丟到背景並立刻結束，Playwright 會誤判為啟動失敗；
       // 設定此變數可略過代理偵測，維持前景執行。
       ASTRO_PREVIEW_BACKGROUND: "1",
-      ASTRO_OUT_DIR: mealSite ? "dist-meal" : "dist",
+      ASTRO_OUT_DIR: mealSite
+        ? "dist-meal"
+        : process.env.ASTRO_OUT_DIR || "dist",
     },
   },
 });
