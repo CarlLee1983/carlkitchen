@@ -51,14 +51,14 @@ try {
   });
   await page.goto(url, { waitUntil: "networkidle" });
   const result = await page.evaluate((screen) => {
-    const top = (el) =>
-      el ? Math.round(el.getBoundingClientRect().top + scrollY) : null;
+    const top = (el: Element | null): number =>
+      el ? Math.round(el.getBoundingClientRect().top + scrollY) : 0;
     const rows = [...document.querySelectorAll("[data-recipe-row]")];
     const heights = rows
       .map((row) => row.getBoundingClientRect().height)
       .sort((a, b) => a - b);
-    const firstRow = top(rows[0]);
-    const lines = {};
+    const firstRow = top(rows[0] ?? null);
+    const lines: Record<number, number> = {};
     for (const row of rows) {
       const summary = row.querySelector("p");
       if (!summary) continue;
@@ -75,9 +75,9 @@ try {
       firstRowTop: firstRow,
       rows: rows.length,
       rowHeight: {
-        min: Math.round(heights[0]),
-        median: Math.round(heights[Math.floor(heights.length / 2)]),
-        max: Math.round(heights.at(-1)),
+        min: Math.round(heights[0] ?? 0),
+        median: Math.round(heights[Math.floor(heights.length / 2)] ?? 0),
+        max: Math.round(heights.at(-1) ?? 0),
       },
       rowsPerScreen: rows.filter(
         (row) =>
@@ -93,5 +93,5 @@ try {
   if (values.shot) await page.screenshot({ path: values.shot });
   await browser.close();
 } finally {
-  process.kill(-preview.pid);
+  if (preview.pid) process.kill(-preview.pid);
 }

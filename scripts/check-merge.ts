@@ -7,7 +7,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 const withE2e = process.argv.includes("--e2e");
-const git = (...args) =>
+const git = (...args: string[]) =>
   execFileSync("git", args, { encoding: "utf8", stdio: "pipe" }).trim();
 
 git("fetch", "--quiet", "origin", "main");
@@ -44,7 +44,7 @@ try {
     }
   }
 } catch (error) {
-  console.error(error.message);
+  console.error(error instanceof Error ? error.message : error);
   failed = true;
 } finally {
   git("worktree", "remove", "--force", dir);

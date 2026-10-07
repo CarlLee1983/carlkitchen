@@ -20,7 +20,9 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 - `pnpm check` — 格式檢查、`astro check`、建置
 - `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄
 - `pnpm test` — 單元測試
-- `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）
+- `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）；建置輸出在 `dist`、port 以 `E2E_PORT_BASE`（預設 4321）起算，平行跑需各用一個 worktree 並錯開 port
+- `pnpm check:merge` — 在暫時 worktree 合併 `origin/main` 後跑 CI 的檢查（加 `--e2e` 含瀏覽器測試），抓分支本身全綠、合併後才壞的情況
+- `pnpm measure:mobile` — 量測首頁手機版版面（篩選列與第一列位置、列高、一屏列數）；需先 `pnpm build`。談版面數字先量再估
 - `pnpm format` — 格式化
 
 環境變數 `RECIPES_DIR` 選擇內容根目錄，預設 `content/recipes`；測試與 e2e 用 `tests/fixtures/recipes`。
@@ -40,7 +42,7 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 
 ## 程式與測試
 
-註解與文件用繁體中文，程式識別字用英文。先寫失敗的測試再實作；修 bug 附回歸測試。提交前跑 `pnpm check && pnpm test && pnpm test:e2e`。
+註解與文件用繁體中文，程式識別字用英文。先寫失敗的測試再實作；修 bug 附回歸測試。提交前跑 `pnpm check && pnpm test && pnpm test:e2e`；開 PR 或推送更新前再跑 `pnpm check:merge`。審查依 `CODING_STANDARDS.md`。
 
 ## 代理權限
 
