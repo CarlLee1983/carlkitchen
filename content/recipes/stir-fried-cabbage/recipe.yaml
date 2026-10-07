@@ -1,0 +1,51 @@
+title: 清炒高麗菜
+summary: 蒜片爆香後下高麗菜快炒，淋米酒蓋鍋燜軟，最後只用鹽調味。菜梗軟、葉片帶清甜，是最基本的家常炒青菜。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+tags: [家常菜]
+aliases: [炒高麗菜]
+ingredients:
+  - { name: 高麗菜, amount: { value: 500, unit: g } }
+  - { name: 大蒜, amount: { value: 20, unit: g }, note: 切片 }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+  - { name: 鹽, amount: { value: 3, unit: g }, note: 約 1/2 茶匙, group: 調味 }
+steps:
+  - text: 高麗菜洗淨、瀝乾，切成一口大小的片狀；大蒜切成薄片。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上一堆切成片狀的高麗菜，旁邊一小堆蒜片和一把菜刀
+  - text: 炒鍋燒熱後倒入食用油，油熱放入蒜片，炒到蒜片邊緣微黃、聞得到蒜香。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋中一層熱油，油裡有幾片邊緣微黃的蒜片，旁邊放著木鍋鏟
+  - text: 放入高麗菜，大火翻炒到每片葉子都沾上油、顏色變得鮮亮。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中堆滿翻炒過、帶油光的淡綠色高麗菜片，夾著幾片金黃蒜片，旁邊放著木鍋鏟
+  - text: 沿鍋邊淋入米酒，蓋上鍋蓋，以大火燜約 2 分鐘，燜到菜梗變軟。
+  - text: 開蓋加鹽，翻拌均勻，高麗菜縮小、鍋底出一點湯汁就起鍋。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋中炒軟縮小的高麗菜，菜梗呈半透明，混著蒜片，鍋底有少許清澈湯汁，旁邊放著木鍋鏟
+hero:
+  src: ./hero.webp
+  alt: 米白色瓷盤中盛著炒軟的高麗菜，帶油光並夾著金黃蒜片，盤底有少許湯汁，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一大塊高麗菜、四瓣去皮大蒜，以及一小瓶食用油、一小瓶米酒和一小碟鹽
+tip: 喜歡口感脆一點，可以不蓋鍋燜，直接大火炒到菜軟就加鹽起鍋。

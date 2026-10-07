@@ -1,0 +1,40 @@
+title: 番茄蛋花湯
+summary: 番茄先下鍋炒軟出汁，再加水煮滾、淋入蛋液成蛋花。湯色橘紅、蛋花細嫩，適合搭配家常菜。
+servings: 3
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+tags: [家常菜]
+aliases: [蕃茄蛋花湯]
+ingredients:
+  - { name: 番茄, amount: { value: 300, unit: g }, note: 牛番茄約 1 顆 }
+  - { name: 雞蛋, amount: { value: 3, unit: 顆 } }
+  - { name: 青蔥, amount: { value: 20, unit: g }, note: 約 2 支，切成蔥花 }
+  - { name: 食用油, note: 炒番茄用, group: 調味 }
+  - { name: 鹽, group: 調味 }
+  - { name: 香油, note: 少許，起鍋前淋上, group: 調味 }
+  - { name: 水, amount: { value: 800, unit: ml }, group: 調味 }
+steps:
+  - text: 番茄去蒂切成小塊，青蔥切成蔥花。雞蛋打進碗裡稍微攪散，還看得到蛋白與蛋黃的紋路就好，不必完全打勻。
+  - text: 湯鍋燒熱後倒入食用油，下番茄塊翻炒，炒到番茄變軟出水、油色轉紅。
+    image:
+      src: ./step-2.webp
+      alt: 不鏽鋼雙耳湯鍋中炒軟的番茄塊，鍋底的油被染成橘紅色，鍋裡斜放一支木鏟
+  - text: 倒入水煮到沸騰，滾了之後再續煮 3 分鐘，讓番茄味煮進湯裡。
+    image:
+      src: ./step-3.webp
+      alt: 同一只湯鍋裡橘紅色的湯正在沸騰冒泡，番茄塊浮在湯中，還沒有蛋花
+  - text: 加鹽調味。蛋液分幾次細細地繞圈倒入湯中，邊倒邊輕推湯面，等蛋液散開凝固成蛋花。
+    image:
+      src: ./step-4.webp
+      alt: 湯鍋中橘紅色的番茄湯浮著一條條黃白相間的蛋花，鍋邊靠著一支白瓷湯勺
+  - text: 撒入蔥花後立刻熄火，淋上香油就可以盛碗。
+hero:
+  src: ./hero.webp
+  alt: 米白色陶瓷湯碗盛著番茄蛋花湯，橘紅湯中有番茄塊、黃色蛋花與綠色蔥花，碗的右側放著一支白瓷湯匙
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一顆牛番茄、三顆雞蛋、兩支青蔥，以及小瓶裝的食用油、小碟裝的鹽、小瓶裝的香油和一壺水
+tip: 想要湯色更紅、番茄味更濃，可改用番茄 4 顆配 500 ml 水的比例，鹽約 1/2 茶匙。

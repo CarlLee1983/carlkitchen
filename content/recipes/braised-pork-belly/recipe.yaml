@@ -1,0 +1,47 @@
+title: 台式滷肉
+summary: 五花肉和辛香料炒香後，連同水煮蛋、油豆腐用醬油與滷包小火滷約 50 分鐘。肉質軟嫩、滷汁鹹甜，適合配白飯。
+servings: 6
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+tags: [家常菜]
+aliases: [滷五花肉, 家常滷肉]
+ingredients:
+  - { name: 五花肉, amount: { value: 1200, unit: g }, note: 切成厚片 }
+  - { name: 水煮蛋, amount: { value: 6, unit: 顆 }, note: 剝殼 }
+  - { name: 油豆腐, amount: { value: 300, unit: g } }
+  - { name: 青蔥, amount: { value: 30, unit: g }, note: 切段 }
+  - { name: 薑, amount: { value: 20, unit: g }, note: 切片 }
+  - { name: 大蒜, amount: { value: 40, unit: g }, note: 去皮 }
+  - { name: 辣椒, amount: { value: 3, unit: 根 }, note: 切段 }
+  - { name: 滷包, amount: { value: 1, unit: 包 }, group: 調味 }
+  - { name: 醬油, amount: { value: 200, unit: g }, group: 調味 }
+  - { name: 米酒, amount: { value: 100, unit: g }, group: 調味 }
+  - { name: 糖, amount: { value: 24, unit: g }, note: 約 2 湯匙, group: 調味 }
+  - { name: 水, amount: { value: 1000, unit: ml }, group: 調味 }
+  - { name: 食用油, note: 爆香用少許, group: 調味 }
+steps:
+  - text: 五花肉切成厚片；青蔥、辣椒切段，薑切片，大蒜去皮；水煮蛋剝殼備用。
+  - text: 鍋子燒熱後倒入少許食用油，放入薑片、大蒜、辣椒和蔥段，炒到散出香味。
+  - text: 下五花肉翻炒，炒到表面由粉紅完全轉白、不再有生肉顏色。
+    image:
+      src: ./step-3.webp
+      alt: 深灰色雙耳燉鍋中炒到表面轉白、微帶金黃的五花肉片，夾雜薑片、蒜瓣、紅辣椒段和蔥段，鍋裡放著一把木鏟
+  - text: 加入油豆腐、水煮蛋、醬油、米酒、糖、水和滷包，開大火煮到滾。
+    image:
+      src: ./step-4.webp
+      alt: 燉鍋中五花肉、白色水煮蛋、油豆腐、滷包和辛香料浸在淺褐色的醬油滷汁裡，滷汁正大滾冒泡
+  - text: 撈掉表面的浮沫，蓋上鍋蓋轉小火，保持微滾燉滷約 50 分鐘。
+    image:
+      src: ./step-5.webp
+      alt: 燉鍋中滷成深褐色、帶光澤的五花肉，表面上色的滷蛋與吸飽滷汁的油豆腐，泡在深色滷汁裡微微冒泡，旁邊還有滷包
+  - text: 夾出滷包丟掉，就可以盛盤上桌。
+hero:
+  src: ./hero.webp
+  alt: 米白色陶碗中盛著滷得油亮的五花肉、切半露出蛋黃的滷蛋和油豆腐，碗底有深色滷汁，點綴蔥段與紅辣椒，碗右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一整塊生五花肉、六顆剝殼水煮蛋、一小堆油豆腐、兩支青蔥、一塊薑、一小堆去皮蒜瓣、三根紅辣椒、一個布製滷包，以及瓶裝醬油和米酒、小碟裝的糖和食用油、一杯水
+tip: 炒五花肉時若擔心辛香料燒焦，可先把辛香料撥到鍋邊或先盛起，加滷汁時再放回鍋中一起滷。
