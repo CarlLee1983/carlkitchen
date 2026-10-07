@@ -1,0 +1,73 @@
+title: 蔥爆牛肉
+summary: 牛肉片醃過後先大火快炒到表面變白盛起，再和爆香的蔥段、薑絲、辣椒絲回鍋快炒，勾薄芡收尾。蔥香明顯，適合配飯。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+tags: [家常菜]
+ingredients:
+  - { name: 牛肉, amount: { value: 180, unit: g }, note: 切片 }
+  - { name: 青蔥, amount: { value: 150, unit: g }, note: 切段 }
+  - { name: 薑絲, amount: { value: 10, unit: g } }
+  - { name: 辣椒絲, amount: { value: 5, unit: g } }
+  - {
+      name: 醬油,
+      amount: { value: 20, unit: ml },
+      note: 醃肉用 5 ml（約 1 茶匙），炒醬汁用 15 ml（約 1 湯匙）,
+      group: 調味,
+    }
+  - {
+      name: 水,
+      amount: { value: 30, unit: ml },
+      note: 醃肉與炒醬汁各 15 ml（約 1 湯匙）,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 蛋白,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 食用油,
+      amount: { value: 45, unit: ml },
+      note: 醃好的牛肉拌 15 ml，炒牛肉約 30 ml,
+      group: 調味,
+    }
+  - {
+      name: 太白粉水,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 牛肉切成片；青蔥切段，備好薑絲和辣椒絲。
+  - text: 牛肉片加入醃肉用的醬油、水、太白粉和蛋白抓勻，醃 5 分鐘，再拌入 15 ml 食用油。
+  - text: 炒鍋燒熱，倒入約 30 ml 食用油，牛肉片下鍋用大火快炒，表面一變白就撈起。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中一片片表面剛變成淺灰褐色的牛肉片，鍋底一層薄油，還沒有蔥和醬汁，鍋裡放著一支木鍋鏟
+  - text: 鍋底留少許油，轉小火放入蔥段、薑絲和辣椒絲爆香，再加炒醬汁用的醬油和水炒勻。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中炒軟的綠色蔥段、薑絲和紅色辣椒絲，鍋底有少許深色醬汁，還沒有牛肉，鍋裡放著一支木鍋鏟
+  - text: 倒回牛肉片，轉大火快炒 10 秒，淋入太白粉水炒勻勾芡，灑上香油就起鍋。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋中牛肉片與蔥段、薑絲、辣椒絲拌在一起，裹著一層有光澤的褐色薄芡，鍋裡放著一支木鍋鏟
+hero:
+  src: ./hero.webp
+  alt: 米白陶瓷盤中盛著蔥爆牛肉，褐色牛肉片夾著綠色蔥段、薑絲和紅色辣椒絲，盤底帶一點醬汁，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一塊生牛肉、一小把青蔥、一小碟薑絲、一小碟辣椒絲，以及分裝在小瓶、小杯與小碟中的醬油、水、太白粉、蛋白、太白粉水、香油和食用油
+tip: 牛肉片容易炒老，第一次下鍋只要表面變白就撈起，回鍋後也只快炒 10 秒。

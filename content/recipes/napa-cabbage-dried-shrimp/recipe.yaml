@@ -1,0 +1,51 @@
+title: 開陽白菜
+summary: 大白菜先燙過，再和泡軟的蝦米、香菇一起煮，最後勾芡淋香油。白菜軟嫩、湯汁滑順，適合配飯。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+tags: [家常菜]
+aliases: [蝦米白菜]
+ingredients:
+  - { name: 大白菜, amount: { value: 500, unit: g }, note: 切片 }
+  - { name: 乾香菇, amount: { value: 30, unit: g }, note: 花菇，泡軟後切片 }
+  - { name: 蝦米, amount: { value: 30, unit: g } }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 200, unit: ml }, group: 調味 }
+  - { name: 高湯粉, note: 約 1 湯匙，可用干貝風味, group: 調味 }
+  - { name: 太白粉, note: 約 1 湯匙，加水調成太白粉水, group: 調味 }
+  - {
+      name: 香油,
+      amount: { value: 7.5, unit: ml },
+      note: 約 1/2 湯匙,
+      group: 調味,
+    }
+steps:
+  - text: 大白菜切成片，放進滾水燙過，撈起泡冷水降溫，再瀝乾水分。
+    image:
+      src: ./step-1.webp
+      alt: 金屬濾盆中一堆燙過、帶水光的大白菜片，菜葉淡綠、菜梗白而微透
+  - text: 乾香菇和蝦米用冷水泡軟，香菇撈出切片，浸泡香菇的水留下備用。
+  - text: 炒鍋倒入食用油，放入香菇片和蝦米爆炒，炒到香味出來。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中一層油，油裡有深褐色的香菇片和橘紅色的蝦米，還沒有白菜，旁邊放著木鍋鏟
+  - text: 倒入浸泡香菇的水，再加 200 ml 水，煮到滾後放入大白菜，煮約 2 分鐘。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中大白菜片泡在淡金色的清湯裡，夾著香菇片和蝦米，湯汁還沒勾芡，旁邊放著木鍋鏟
+  - text: 加入高湯粉拌勻，太白粉加水調勻後淋進鍋中勾芡，最後淋上香油拌勻就起鍋。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤中盛著開陽白菜，淡綠的大白菜片夾著蝦米與香菇片，裹著一層透亮的芡汁，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 縱切的半顆大白菜、一小碟乾香菇、一小碟蝦米，以及一小碟高湯粉、一小碟太白粉、一小瓶香油、一小瓶食用油和一小杯水
+tip: 不用高湯粉時，可把水換成 200 ml 高湯，改加鹽 1/2 茶匙和糖 1/4 茶匙調味；爆香時也可以加入 10 g 蒜末。
