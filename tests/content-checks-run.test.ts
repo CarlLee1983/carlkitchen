@@ -27,6 +27,8 @@ function scenario() {
   const root = mkdtempSync(join(tmpdir(), "content-checks-"));
   workDirs.push(root);
   cpSync(join(fixtures, "valid"), root, { recursive: true });
+  mkdirSync(join(root, "ingredients"));
+  mkdirSync(join(root, "ingredient-sources"));
   return {
     root,
     options: {
@@ -241,6 +243,8 @@ describe("check-content 指令", () => {
           ...process.env,
           RECIPES_DIR: s.options.recipesDir,
           SOURCES_DIR: s.options.sourcesDir,
+          INGREDIENTS_DIR: join(s.root, "ingredients"),
+          INGREDIENT_SOURCES_DIR: join(s.root, "ingredient-sources"),
         },
       },
     );
