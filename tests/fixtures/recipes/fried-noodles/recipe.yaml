@@ -1,0 +1,26 @@
+title: 台式炒麵
+summary: 油麵與高麗菜絲大火拌炒，淋上醬油提香，單吃就是一餐。
+servings: 2
+category: 主食
+draft: false
+mealCandidate: false
+tags: [麵食]
+aliases: [炒油麵]
+timeMinutes: 15
+ingredients:
+  - { name: 油麵, amount: { value: 300, unit: g } }
+  - { name: 高麗菜, amount: { value: 150, unit: g } }
+  - { name: 醬油, amount: { value: 2, unit: 大匙 }, group: 調味 }
+  - { name: 鹽, group: 調味 }
+steps:
+  - text: 高麗菜切絲，油麵用手抖鬆。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上切好的高麗菜絲與一團抖鬆的油麵
+  - text: 熱鍋下油，先炒軟高麗菜，再放油麵與醬油拌炒到均勻上色。
+hero:
+  src: ./hero.webp
+  alt: 白瓷盤中盛著炒好的台式炒麵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一份油麵、一堆高麗菜絲與一小碟醬油

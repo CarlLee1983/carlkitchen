@@ -117,7 +117,7 @@ describe("candidatesFromRecipes", () => {
   const recipe = (
     id: string,
     data: Partial<{
-      category: "非湯料理" | "湯";
+      category: "非湯料理" | "主食" | "湯";
       draft: boolean;
       mealCandidate: boolean;
       vegetable: boolean;
@@ -142,6 +142,7 @@ describe("candidatesFromRecipes", () => {
       recipe("c", { category: "湯" }),
       recipe("not-candidate", { mealCandidate: false }),
       recipe("draft", { draft: true }),
+      recipe("staple", { category: "主食" }),
     ]);
     assert.deepEqual(candidates, [
       { id: "a", soup: false, vegetable: true, protein: false },

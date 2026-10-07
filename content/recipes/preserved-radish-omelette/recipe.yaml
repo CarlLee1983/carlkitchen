@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: false
 protein: true
+timeMinutes: 15
 tags: [家常菜]
 aliases: [菜脯煎蛋, 蘿蔔乾煎蛋]
 ingredients:

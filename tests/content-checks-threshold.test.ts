@@ -9,7 +9,7 @@ import {
 const recipe = (
   id: string,
   over: Partial<{
-    category: "非湯料理" | "湯";
+    category: "非湯料理" | "主食" | "湯";
     draft: boolean;
     mealCandidate: boolean;
   }> = {},
@@ -56,6 +56,16 @@ describe("checkLaunchThreshold", () => {
       recipe("x", { draft: true }),
     ];
     recipes[0] = recipe("d0", { mealCandidate: false });
+    const issues = checkLaunchThreshold(recipes);
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.message, /缺 1 道/);
+  });
+
+  it("主食不計入，即使資料被標成配菜候選", () => {
+    const recipes = [
+      ...pool(MIN_DISHES - 1, MIN_SOUPS),
+      recipe("noodles", { category: "主食" }),
+    ];
     const issues = checkLaunchThreshold(recipes);
     assert.equal(issues.length, 1);
     assert.match(issues[0]!.message, /缺 1 道/);

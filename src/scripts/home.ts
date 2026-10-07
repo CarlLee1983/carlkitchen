@@ -2,11 +2,11 @@ import {
   applyHomeState,
   containsAllTerms,
   formatDateLabel,
-  matchesCategory,
   normalizeQuery,
   parseHomeState,
   recipeIdFromUrl,
   type HomeState,
+  type KindFilter,
 } from "../utils/home";
 
 /** 建置後由 `pagefind --site dist` 產生；開發模式沒有這份索引。 */
@@ -47,10 +47,10 @@ function loadPagefind(): Promise<Pagefind> {
 }
 
 /**
- * 首頁互動：日期、搜尋、分類篩選與網址同步。
- * 狀態是 `{ q, category }`，唯一來源是網址。
+ * 首頁互動：日期、搜尋、性質篩選與網址同步。
+ * 狀態是 `{ q, kind }`，唯一來源是網址。
  * 沒有字詞時完全不載入 Pagefind，清單依建置時的菜名排序；有字詞時依 Pagefind 結果
- * 的相關度重排，分類以 Pagefind 篩選屬性套用。
+ * 的相關度重排，篩選值以 Pagefind 篩選屬性套用。
  */
 export function initHome() {
   const today = document.querySelector("[data-today]");
@@ -75,7 +75,7 @@ export function initHome() {
   ): Promise<string[] | null> {
     const pagefind = await loadPagefind();
     const options: PagefindOptions =
-      state.category === "all" ? {} : { filters: { category: state.category } };
+      state.kind === "all" ? {} : { filters: { kind: state.kind } };
     const response = debounce
       ? await pagefind.debouncedSearch(state.q, options, DEBOUNCE_MS)
       : await pagefind.search(state.q, options);
@@ -103,7 +103,7 @@ export function initHome() {
     for (const button of buttons) {
       button.setAttribute(
         "aria-pressed",
-        String(button.dataset.filter === state.category),
+        String(button.dataset.filter === state.kind),
       );
     }
     intro?.toggleAttribute("data-searching", state.q !== "");
@@ -128,8 +128,10 @@ export function initHome() {
       if (ids === null || mine !== latest) return;
       visible = ids.flatMap((id) => rowsById.get(id) ?? []);
     } else {
-      visible = rows.filter((row) =>
-        matchesCategory(state.category, row.dataset.category ?? ""),
+      visible = rows.filter(
+        (row) =>
+          state.kind === "all" ||
+          (row.dataset.kinds ?? "").split(" ").includes(state.kind),
       );
     }
 
@@ -149,7 +151,7 @@ export function initHome() {
       if (emptyMessage) {
         emptyMessage.textContent = state.q
           ? `找不到符合「${state.q}」的菜譜。`
-          : "這個分類目前沒有菜譜。";
+          : "這個篩選目前沒有菜譜。";
       }
     }
   }
@@ -161,13 +163,17 @@ export function initHome() {
     history.replaceState(null, "", url);
   }
 
-  function setState(state: HomeState, debounce = false) {
+  function setState(state: HomeState, debounce = false): Promise<void> {
     writeUrl(state);
-    void render(state, debounce);
+    return render(state, debounce);
   }
 
+  // 建置時沒輸出的選項（沒有已發布菜色）不在按鈕裡，網址帶它視為全部。
+  const visibleKinds = buttons.map(
+    (button) => button.dataset.filter as KindFilter,
+  );
   const currentState = () =>
-    parseHomeState(new URL(location.href).searchParams);
+    parseHomeState(new URL(location.href).searchParams, visibleKinds);
 
   input?.addEventListener("focus", () => {
     // 輸入前先備好索引；沒有索引（開發模式）時等真正搜尋再回報
@@ -176,7 +182,7 @@ export function initHome() {
       .catch(() => {});
   });
   const applyInput = () =>
-    setState(
+    void setState(
       { ...currentState(), q: normalizeQuery(input?.value ?? "") },
       true,
     );
@@ -187,25 +193,37 @@ export function initHome() {
   });
   input?.addEventListener("compositionend", applyInput);
 
-  // Enter 不送出表單（會重新載入、丟掉分類），改為立刻套用目前字詞。
+  // Enter 不送出表單（會重新載入、丟掉篩選），改為立刻套用目前字詞。
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
-    setState({ ...currentState(), q: normalizeQuery(input?.value ?? "") });
+    void setState({ ...currentState(), q: normalizeQuery(input?.value ?? "") });
   });
+
+  /**
+   * 手機版篩選列固定在頂部；已捲到清單中段時，切換後把清單頂端對齊到篩選列實際的
+   * 下緣（折成兩行時列比較高，所以量測而不寫死）。
+   */
+  const isMobile = window.matchMedia("(max-width: 39.99rem)");
+  const bar = document.querySelector(".list-tools");
+  function keepListInView() {
+    if (!isMobile.matches || !bar || !rowList) return;
+    const barRect = bar.getBoundingClientRect();
+    if (barRect.top > 0) return;
+    window.scrollBy(0, rowList.getBoundingClientRect().top - barRect.bottom);
+  }
 
   for (const button of buttons) {
     button.addEventListener("click", () => {
-      setState({
+      // 有搜尋字詞時清單是非同步更新，等結果套用後再對齊
+      void setState({
         ...currentState(),
-        category: parseHomeState(
-          new URLSearchParams({ category: button.dataset.filter ?? "" }),
-        ).category,
-      });
+        kind: button.dataset.filter as KindFilter,
+      }).then(keepListInView);
     });
   }
 
   clearButton?.addEventListener("click", () => {
-    setState({ q: "", category: "all" });
+    void setState({ q: "", kind: "all" });
     input?.focus();
   });
 
@@ -213,5 +231,5 @@ export function initHome() {
   window.addEventListener("popstate", () => void render(currentState()));
 
   // 載入時依網址還原；無法辨識的參數值順便從網址清掉。
-  setState(currentState());
+  void setState(currentState());
 }

@@ -3,6 +3,7 @@ summary: 尚未發布。
 servings: 2
 category: 湯
 draft: true
+timeMinutes: 15
 ingredients:
   - { name: 水, amount: { value: 500, unit: ml } }
 steps:

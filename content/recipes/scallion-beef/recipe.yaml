@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: false
 protein: true
+timeMinutes: 15
 tags: [家常菜]
 ingredients:
   - { name: 牛肉, amount: { value: 180, unit: g }, note: 切片 }

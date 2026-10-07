@@ -87,6 +87,24 @@ test("尚未抽選時顯示提示，按下重新抽選得到四菜一湯並連�
   await expect(page).toHaveURL(`/recipes/${vegetableDish.id}/`);
 });
 
+test("固定菜譜中的主食不會被抽中", async ({ page }) => {
+  // 候選池層的防線由 tests/meal-planner.test.ts 的單元測試守住；這裡只驗證端到端的結果。
+  // 前提：固定菜譜確實有這道已發布的主食
+  await page.goto("/recipes/meal-noodles/");
+  await expect(
+    page.getByRole("heading", { level: 1, name: "台式炒麵" }),
+  ).toBeVisible();
+  await page.goto("/meal/");
+  for (const label of ["四菜一湯", "五菜一湯"] as const) {
+    await modeButton(page, label).click();
+    for (let i = 0; i < 10; i++) {
+      await reroll(page).click();
+      await expect(items(page).first()).toBeVisible();
+      expect(await titlesOnTable(page)).not.toContain("台式炒麵");
+    }
+  }
+});
+
 test("全頁只有一個朗讀區，訊息只出現在其中", async ({ page }) => {
   await page.goto("/meal/");
   await expect(status(page)).toHaveCount(1);

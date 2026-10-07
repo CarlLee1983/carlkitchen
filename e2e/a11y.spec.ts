@@ -84,12 +84,12 @@ test.describe("axe（WCAG 2.2 AA）", () => {
     await expectNoAxeViolations(page, "首頁零筆");
   });
 
-  test("首頁切換到湯分類零違規", async ({ page }) => {
+  test("首頁切換到湯篩選零違規", async ({ page }) => {
     await page.goto("/");
     const soup = page.getByRole("button", { name: "湯", exact: true });
     await soup.click();
     await expect(soup).toHaveAttribute("aria-pressed", "true");
-    await expectNoAxeViolations(page, "首頁湯分類");
+    await expectNoAxeViolations(page, "首頁湯篩選");
   });
 });
 
@@ -118,7 +118,7 @@ test.describe("鍵盤", () => {
     await expect(box(page)).toHaveValue("");
   });
 
-  test("只用鍵盤即可切換分類（Tab 抵達，空白鍵啟動）", async ({ page }) => {
+  test("只用鍵盤即可切換篩選（Tab 抵達，空白鍵啟動）", async ({ page }) => {
     await page.goto("/");
     const soup = page.getByRole("button", { name: "湯", exact: true });
     await tabTo(page, soup);
@@ -128,7 +128,7 @@ test.describe("鍵盤", () => {
   });
 });
 
-// 觸控目標 44×44：分類切換與首頁互動元件在 homepage.spec.ts、配菜按鈕在 meal.spec.ts，
+// 觸控目標 44×44：篩選切換與首頁互動元件在 homepage.spec.ts、配菜按鈕在 meal.spec.ts，
 // 這裡量頁首導覽連結（含關於），在五個寬度各量一次。
 test("頁首導覽連結（含關於）在各寬度觸控目標至少 44×44", async ({ page }) => {
   await page.goto("/about/");

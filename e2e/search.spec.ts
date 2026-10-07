@@ -186,38 +186,63 @@ test("草稿不出現在搜尋結果", async ({ page }) => {
   }
 });
 
-test("分類篩選在有字詞時只回該類", async ({ page }) => {
+test("篩選在有字詞時只回該篩選下的菜", async ({ page }) => {
   await page.goto("/");
   for (const recipe of recipes) {
-    const own = recipe.category === "湯" ? "湯" : "非湯料理";
-    const other = recipe.category === "湯" ? "非湯料理" : "湯";
+    const own =
+      recipe.category !== "非湯料理"
+        ? [recipe.category]
+        : [
+            ...(recipe.vegetable ? ["蔬菜菜"] : []),
+            ...(recipe.protein ? ["蛋白質菜"] : []),
+          ];
+    const others = ["湯", "蔬菜菜", "蛋白質菜", "主食"].filter(
+      (name) => !own.includes(name),
+    );
 
-    await page.getByRole("button", { name: own, exact: true }).click();
-    await search(page, recipe.title);
-    await expect(rowOf(page, recipe)).toBeVisible();
-    // 每一列都帶有該分類標籤，沒有另一類混進來
-    await expect(
-      rows(page).getByText(recipe.category, { exact: true }),
-    ).toHaveCount(await rows(page).count());
-
-    await page.getByRole("button", { name: other, exact: true }).click();
-    await expect(rowOf(page, recipe)).toHaveCount(0);
+    for (const name of own) {
+      await page.getByRole("button", { name, exact: true }).click();
+      await search(page, recipe.title);
+      await expect(
+        rowOf(page, recipe),
+        `${name}：${recipe.title}`,
+      ).toBeVisible();
+    }
+    for (const name of others) {
+      await page.getByRole("button", { name, exact: true }).click();
+      await expect(rowOf(page, recipe), `${name}：${recipe.title}`).toHaveCount(
+        0,
+      );
+    }
   }
 });
 
-test("分類篩選在無字詞時依菜名排序，且網址分類值對應湯與非湯", async ({
-  page,
-}) => {
+test("篩選在無字詞時依菜名排序，且網址 kind 值與按鈕對應", async ({ page }) => {
   await page.goto("/");
   await search(page, recipes[0]!.title);
   await page.getByRole("button", { name: "湯", exact: true }).click();
-  await expect(page).toHaveURL(/category=soup/);
+  await expect(page).toHaveURL(/kind=soup/);
   await search(page, "");
   await expect(rows(page)).toHaveCount(soups.length);
   expect(await titles(page)).toEqual(soups.map((recipe) => recipe.title));
 });
 
-test("字詞與分類寫進網址，重新整理與開啟連結都能還原", async ({ page }) => {
+test("篩選與搜尋並用：結果是兩者的交集", async ({ page }) => {
+  const both = recipes.find((recipe) => recipe.vegetable && recipe.protein)!;
+  await page.goto("/");
+  await page.getByRole("button", { name: "蛋白質菜" }).click();
+  await search(page, both.title);
+  await expect(rowOf(page, both)).toBeVisible();
+  await expect(page).toHaveURL(/kind=protein/);
+  await expect(page).toHaveURL(/q=/);
+  await expect(status(page)).toContainText("符合");
+
+  // 搜尋同一字詞，篩選換成湯就沒有結果
+  await page.getByRole("button", { name: "湯", exact: true }).click();
+  await expect(rows(page)).toHaveCount(0);
+});
+
+test("字詞與篩選寫進網址，重新整理與開啟連結都能還原", async ({ page }) => {
   const recipe = recipes[0]!;
   await page.goto("/");
   await search(page, recipe.title);
@@ -239,9 +264,9 @@ test("字詞與分類寫進網址，重新整理與開啟連結都能還原", as
   await expect(rowOf(page, recipe)).toBeVisible();
 });
 
-test("分類寫進網址並與字詞一起還原", async ({ page }) => {
+test("kind 寫進網址並與字詞一起還原", async ({ page }) => {
   const soup = soups[0]!;
-  await page.goto(`/?q=${encodeURIComponent(soup.title)}&category=soup`);
+  await page.goto(`/?q=${encodeURIComponent(soup.title)}&kind=soup`);
   await expect(box(page)).toHaveValue(soup.title);
   await expect(
     page.getByRole("button", { name: "湯", exact: true }),
@@ -283,7 +308,7 @@ test("零筆時顯示訊息與清除條件按鈕，不自動放寬；清除後�
   const recipe = recipes.find((r) => r.category === "非湯料理")!;
   await page.goto("/");
   await page.getByRole("button", { name: "湯", exact: true }).click();
-  // 這道菜不是湯：只有分類擋住它。不放寬代表仍然零筆。
+  // 這道菜不是湯：只有篩選擋住它。不放寬代表仍然零筆。
   await search(page, recipe.title);
   await expect(emptyMessage(page)).toContainText(recipe.title);
   await expect(rows(page)).toHaveCount(0);
@@ -293,7 +318,7 @@ test("零筆時顯示訊息與清除條件按鈕，不自動放寬；清除後�
   await expect(rows(page)).toHaveCount(recipes.length);
   await expect(box(page)).toHaveValue("");
   await expect(box(page)).toBeFocused();
-  await expect(page).not.toHaveURL(/[?&](q|category)=/);
+  await expect(page).not.toHaveURL(/[?&](q|kind)=/);
   await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
     "aria-pressed",
     "true",
@@ -318,7 +343,7 @@ test("按 Enter 不重新載入頁面、不丟狀態，並立即套用目前字�
   await box(page).fill(soup.title);
   await box(page).press("Enter");
   await expect(rowOf(page, soup)).toBeVisible();
-  await expect(page).toHaveURL(/category=soup/);
+  await expect(page).toHaveURL(/kind=soup/);
   await expect(page).toHaveURL(/q=/);
   expect(
     await page.evaluate(

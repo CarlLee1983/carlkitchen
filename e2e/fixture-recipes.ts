@@ -10,7 +10,9 @@ export interface FixtureRecipe {
   title: string;
   summary: string;
   heroAlt: string;
-  category: "非湯料理" | "湯";
+  category: "非湯料理" | "主食" | "湯";
+  vegetable: boolean;
+  protein: boolean;
   /** 材料名稱，依 YAML 順序；第一項即「第一項材料」。 */
   ingredientNames: string[];
   aliases: string[];
@@ -30,6 +32,8 @@ function toFixture(id: string, raw: RawRecipe): FixtureRecipe {
     summary: raw.summary,
     heroAlt: raw.hero?.alt ?? "",
     category: raw.category,
+    vegetable: raw.vegetable,
+    protein: raw.protein,
     ingredientNames: raw.ingredients.map((ingredient) => ingredient.name),
     aliases: raw.aliases ?? [],
     tags: raw.tags ?? [],

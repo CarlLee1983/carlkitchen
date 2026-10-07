@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: true
 protein: true
+timeMinutes: 40
 tags: [家常菜]
 aliases: [蛤蜊絲瓜, 絲瓜炒蛤蜊]
 ingredients:
