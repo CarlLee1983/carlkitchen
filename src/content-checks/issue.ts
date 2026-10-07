@@ -4,6 +4,8 @@ export interface Issue {
   recipe?: string;
   /** 食材條目識別值（資料夾名稱）。 */
   ingredient?: string;
+  /** 專題識別值（資料夾名稱）。 */
+  topic?: string;
   /** 菜譜中的欄位路徑，例如 `steps.0.image`。 */
   field?: string;
   /** 相關檔案路徑。 */
@@ -16,6 +18,7 @@ export function formatIssue(issue: Issue): string {
   const parts = [
     issue.recipe ? `[${issue.recipe}]` : "",
     issue.ingredient ? `[食材 ${issue.ingredient}]` : "",
+    issue.topic ? `[專題 ${issue.topic}]` : "",
     issue.field ?? "",
     issue.file ? `(${issue.file})` : "",
   ].filter(Boolean);

@@ -13,32 +13,38 @@ const good = { format: "webp", width: 1536, height: 1024, bytes: 1000 };
 
 describe("checkImageFile", () => {
   it("WebP、1536×1024、不超過 300 KB 即通過", () => {
-    assert.deepEqual(checkImageFile("a", ref, good), []);
+    assert.deepEqual(checkImageFile({ recipe: "a" }, ref, good), []);
     assert.deepEqual(
-      checkImageFile("a", ref, { ...good, bytes: MAX_IMAGE_BYTES }),
+      checkImageFile({ recipe: "a" }, ref, { ...good, bytes: MAX_IMAGE_BYTES }),
       [],
     );
   });
 
   it("檔案不存在", () => {
-    const issues = checkImageFile("a", ref, null);
+    const issues = checkImageFile({ recipe: "a" }, ref, null);
     assert.equal(issues[0]?.recipe, "a");
     assert.equal(issues[0]?.field, "hero");
     assert.match(issues[0]!.message, /找不到/);
   });
 
   it("格式不是 WebP", () => {
-    const issues = checkImageFile("a", ref, { ...good, format: "png" });
+    const issues = checkImageFile({ recipe: "a" }, ref, {
+      ...good,
+      format: "png",
+    });
     assert.match(issues[0]!.message, /WebP/);
   });
 
   it("尺寸不是 1536×1024", () => {
-    const issues = checkImageFile("a", ref, { ...good, width: 1024 });
+    const issues = checkImageFile({ recipe: "a" }, ref, {
+      ...good,
+      width: 1024,
+    });
     assert.match(issues[0]!.message, /1536/);
   });
 
   it("超過 300 KB", () => {
-    const issues = checkImageFile("a", ref, {
+    const issues = checkImageFile({ recipe: "a" }, ref, {
       ...good,
       bytes: MAX_IMAGE_BYTES + 1,
     });
@@ -46,7 +52,7 @@ describe("checkImageFile", () => {
   });
 
   it("多項違規逐項列出", () => {
-    const issues = checkImageFile("a", ref, {
+    const issues = checkImageFile({ recipe: "a" }, ref, {
       format: "png",
       width: 10,
       height: 10,
@@ -92,7 +98,7 @@ describe("collectImageRefs", () => {
 
 describe("checkHeroAlt", () => {
   it("成品圖的替代文字沒有餐具即通過", () => {
-    assert.deepEqual(checkHeroAlt("a", ref), []);
+    assert.deepEqual(checkHeroAlt({ recipe: "a" }, ref), []);
   });
 
   it("成品圖替代文字提到筷子、湯匙或叉子時回報", () => {
@@ -104,7 +110,7 @@ describe("checkHeroAlt", () => {
       "一副刀叉",
       "一支調羹",
     ]) {
-      const issues = checkHeroAlt("a", { ...ref, alt });
+      const issues = checkHeroAlt({ recipe: "a" }, { ...ref, alt });
       assert.equal(issues.length, 1, alt);
       assert.equal(issues[0]?.field, "hero");
       assert.match(issues[0]!.message, /餐具/);
@@ -113,11 +119,14 @@ describe("checkHeroAlt", () => {
 
   it("步驟圖不檢查：餐具可能是做法的一部分", () => {
     assert.deepEqual(
-      checkHeroAlt("a", {
-        field: "steps.1.image",
-        src: "./s.webp",
-        alt: "盤上橫放一支筷子",
-      }),
+      checkHeroAlt(
+        { recipe: "a" },
+        {
+          field: "steps.1.image",
+          src: "./s.webp",
+          alt: "盤上橫放一支筷子",
+        },
+      ),
       [],
     );
   });

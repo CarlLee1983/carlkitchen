@@ -278,13 +278,17 @@ test("sitemap 僅列適合收錄的正式公開頁面，robots 指向清單", as
       `${origin}/ingredients/`,
       `${origin}/ingredients/tomato/`,
       `${origin}/recipes/tomato-egg/`,
+      `${origin}/topics/`,
+      `${origin}/topics/summer-salads/`,
     ]),
   );
   expect(
     urls.every((url) => url.startsWith(origin) && !url.includes("?")),
   ).toBe(true);
   expect(
-    urls.some((url) => /favorites|404|draft-sample|social\.webp/.test(url)),
+    urls.some((url) =>
+      /favorites|404|draft-sample|draft-topic|social\.webp/.test(url),
+    ),
   ).toBe(false);
   expect(urls.length).toBe(new Set(urls).size);
 });
