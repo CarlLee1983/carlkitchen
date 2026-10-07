@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { existsSync } from "node:fs";
-import { checkImageFile, collectImageRefs } from "./images.ts";
+import { checkHeroAlt, checkImageFile, collectImageRefs } from "./images.ts";
 import {
   collectBuildFiles,
   listDirectories,
@@ -91,6 +91,7 @@ export async function runContentChecks(
     for (const ref of collectImageRefs(data)) {
       const info = await readImageInfo(join(options.recipesDir, id, ref.src));
       issues.push(...checkImageFile(id, ref, info));
+      issues.push(...checkHeroAlt(id, ref));
     }
   }
 
