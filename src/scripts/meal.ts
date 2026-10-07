@@ -99,6 +99,7 @@ export function initMeal() {
   let plan: Plan = createPlan(randomSeed());
   let draft: Draft | null = null;
   let message = "";
+  const searches = new Map<string, string>();
   const restored = restorePlan(readSaved(), candidates);
   if (restored.kind === "restored") {
     plan = restored.plan;
@@ -155,6 +156,18 @@ export function initMeal() {
     }
 
     const actions = el("div", undefined, "meal-actions");
+    const searchLabel = el("label", target === "soup" ? "搜尋湯" : "搜尋菜色");
+    const search = el("input");
+    search.type = "search";
+    search.setAttribute(
+      "aria-label",
+      `${target === "soup" ? "搜尋湯" : "搜尋菜色"} ${slotLabel}`,
+    );
+    search.dataset.action = "search";
+    search.dataset.target = String(target);
+    search.value = searches.get(String(target)) ?? "";
+    searchLabel.append(search);
+    actions.append(searchLabel);
     const chooserLabel = el("label", target === "soup" ? "指定湯" : "指定菜色");
     const chooser = el("select");
     chooser.setAttribute(
@@ -163,22 +176,12 @@ export function initMeal() {
     );
     chooser.dataset.action = "assign";
     chooser.dataset.target = String(target);
-    if (!id) {
-      const placeholder = el(
-        "option",
-        target === "soup" ? "請選擇湯" : "請選擇菜色",
-      );
-      placeholder.value = "";
-      chooser.append(placeholder);
-    }
-    for (const candidate of candidates.filter(
-      (item) => item.soup === (target === "soup"),
-    )) {
-      const option = el("option", recipes[candidate.id]!.title);
-      option.value = candidate.id;
-      chooser.append(option);
-    }
-    chooser.value = id ?? "";
+    const hint = el("span", undefined, "meal-search-hint");
+    hint.id = `meal-search-${target}`;
+    search.setAttribute("aria-describedby", hint.id);
+    chooser.setAttribute("aria-describedby", hint.id);
+    updateChoices(target, id, search.value, chooser, hint);
+    chooserLabel.append(hint);
     chooserLabel.append(chooser);
     if (info && !draft) {
       const lock = actionButton("鎖定", info.title, "toggle", target);
@@ -199,6 +202,50 @@ export function initMeal() {
       actions,
     );
     return item;
+  }
+
+  function updateChoices(
+    target: number | "soup",
+    currentId: string | null,
+    query: string,
+    chooser: HTMLSelectElement,
+    hint: HTMLElement,
+  ) {
+    const shown = draft ?? plan;
+    const searching = query.trim().length > 0;
+    const chosenElsewhere = new Set([
+      ...shown.dishes.map((slot, index) =>
+        index === target ? null : slot?.id,
+      ),
+      target === "soup" ? null : shown.soup?.id,
+    ]);
+    const matches = candidates.filter(
+      (candidate) =>
+        candidate.soup === (target === "soup") &&
+        !chosenElsewhere.has(candidate.id) &&
+        recipes[candidate.id]!.title.includes(query.trim()),
+    );
+    chooser.replaceChildren();
+    if (draft || !currentId || searching) {
+      const placeholder = el(
+        "option",
+        target === "soup" ? "請選擇湯" : "請選擇菜色",
+      );
+      placeholder.value = "";
+      chooser.append(placeholder);
+    }
+    for (const candidate of matches) {
+      const option = el("option", recipes[candidate.id]!.title);
+      option.value = candidate.id;
+      chooser.append(option);
+    }
+    chooser.value = matches.some((candidate) => candidate.id === currentId)
+      ? currentId!
+      : "";
+    const name = target === "soup" ? "湯" : "菜色";
+    hint.textContent = matches.length
+      ? `${searching ? "找到" : "可選"} ${matches.length} 道${name}。${searching && matches.length === 1 ? "按 Enter 可直接指定。" : ""}`
+      : `找不到可選${name}，請清除或更改搜尋。`;
   }
 
   /** 相同訊息連續出現時先清空、下一幀再寫入，讀屏軟體才會再朗讀一次。 */
@@ -262,6 +309,8 @@ export function initMeal() {
     const result = applyAction(candidates, plan, action);
     if (result.ok) {
       plan = result.plan;
+      if (action.type === "assign") searches.delete(String(action.target));
+      else searches.clear();
       writeSaved(plan);
       message = result.message;
     } else {
@@ -277,6 +326,7 @@ export function initMeal() {
     )
       return;
     draft = createDraft(plan.seed, draft?.mode ?? plan.mode);
+    searches.clear();
     writeSavedDraft(draft);
     message = draftProgress(candidates, draft).message;
     render();
@@ -297,6 +347,7 @@ export function initMeal() {
       if (result.ok) {
         plan = result.plan;
         draft = null;
+        searches.clear();
         writeSaved(plan);
         message = result.message;
       } else {
@@ -364,11 +415,13 @@ export function initMeal() {
       );
       if (result.ok) {
         draft = result.draft;
+        searches.delete(raw);
         const progress = draftProgress(candidates, draft);
         message = progress.message;
         if (progress.complete) {
           plan = progress.plan;
           draft = null;
+          searches.clear();
           writeSaved(plan);
         } else {
           writeSavedDraft(draft);
@@ -384,6 +437,49 @@ export function initMeal() {
       target: raw === "soup" ? "soup" : Number(raw),
       id: select.value,
     });
+  });
+
+  planList.addEventListener("input", (event) => {
+    const search = event.target;
+    if (
+      !(search instanceof HTMLInputElement) ||
+      search.dataset.action !== "search"
+    )
+      return;
+    const raw = search.dataset.target!;
+    searches.set(raw, search.value);
+    const item = search.closest(".meal-item")!;
+    const chooser = item.querySelector<HTMLSelectElement>(
+      "select[data-action='assign']",
+    )!;
+    const hint = item.querySelector<HTMLElement>(".meal-search-hint")!;
+    const target = raw === "soup" ? "soup" : Number(raw);
+    const shown = draft ?? plan;
+    const currentId =
+      target === "soup"
+        ? (shown.soup?.id ?? null)
+        : (shown.dishes[target]?.id ?? null);
+    updateChoices(target, currentId, search.value, chooser, hint);
+    announce(hint.textContent ?? "");
+  });
+  planList.addEventListener("keydown", (event) => {
+    const search = event.target;
+    if (
+      event.key !== "Enter" ||
+      !(search instanceof HTMLInputElement) ||
+      search.dataset.action !== "search"
+    )
+      return;
+    const chooser = search
+      .closest(".meal-item")
+      ?.querySelector<HTMLSelectElement>("select[data-action='assign']");
+    const matches = chooser?.querySelectorAll<HTMLOptionElement>(
+      "option:not([value=''])",
+    );
+    if (matches?.length !== 1) return;
+    event.preventDefault();
+    chooser!.value = matches[0]!.value;
+    chooser!.dispatchEvent(new Event("change", { bubbles: true }));
   });
 
   render();

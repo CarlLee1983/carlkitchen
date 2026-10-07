@@ -118,7 +118,9 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
     align-items: center;
     flex-wrap: wrap;
     gap: 0.5rem;
+    min-width: 0;
   }
+  .meal-actions input,
   .meal-actions select {
     min-width: 44px;
     min-height: 44px;
@@ -128,6 +130,11 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
     background: var(--paper);
     color: var(--ink);
     font: inherit;
+  }
+  .meal-search-hint {
+    width: 100%;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
   }
   .meal-status {
     margin: 0.5rem 0 1.5rem;

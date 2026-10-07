@@ -39,11 +39,153 @@ const chooseOf = (page: Page, index: number) =>
   items(page)
     .nth(index)
     .getByRole("combobox", { name: /指定菜色/ });
+const searchOf = (page: Page, index: number) =>
+  items(page)
+    .nth(index)
+    .getByRole("searchbox", { name: /搜尋菜色/ });
 
 const titlesOnTable = async (page: Page) =>
   (await items(page).getByRole("link").allTextContents()).map((text) =>
     text.trim(),
   );
+
+test("自選菜名搜尋只顯示當前菜位可用候選，清除後能指定結果", async ({
+  page,
+}) => {
+  await page.goto("/meal/");
+  await chooseSelf(page).click();
+  await searchOf(page, 0).fill("牛肉");
+  await expect(status(page)).toContainText("找到 1 道菜色");
+  await expect(
+    chooseOf(page, 0).getByRole("option", { name: "青椒牛肉" }),
+  ).toHaveCount(1);
+  await chooseOf(page, 0).selectOption("meal-beef");
+  await expect(
+    items(page).first().getByRole("link", { name: "青椒牛肉" }),
+  ).toBeVisible();
+
+  await searchOf(page, 1).fill("牛肉");
+  await expect(status(page)).toContainText("找不到可選菜色");
+  await expect(
+    chooseOf(page, 1).getByRole("option", { name: "青椒牛肉" }),
+  ).toHaveCount(0);
+  await searchOf(page, 1).fill("");
+  await expect(status(page)).toContainText("可選 4 道菜色");
+  await expect(
+    chooseOf(page, 1).getByRole("option", { name: "蒜炒高麗菜" }),
+  ).toHaveCount(1);
+  await expect(
+    chooseOf(page, 1).getByRole("option", { name: "青椒牛肉" }),
+  ).toHaveCount(0);
+  await expect(
+    chooseOf(page, 1).getByRole("option", { name: "台式炒麵" }),
+  ).toHaveCount(0);
+  await expect(
+    chooseOf(page, 1).getByRole("option", { name: "涼拌小黃瓜" }),
+  ).toHaveCount(0);
+  await searchOf(page, 1).fill("蒜炒");
+  await chooseOf(page, 1).selectOption("meal-cabbage");
+  await expect(
+    items(page).nth(1).getByRole("link", { name: "蒜炒高麗菜" }),
+  ).toBeVisible();
+
+  const soupSearch = items(page)
+    .last()
+    .getByRole("searchbox", { name: /搜尋湯/ });
+  await soupSearch.fill("草稿");
+  await expect(status(page)).toContainText("找不到可選湯");
+  await soupSearch.fill("蘿蔔");
+  await expect(
+    items(page)
+      .last()
+      .getByRole("combobox", { name: /指定湯/ })
+      .getByRole("option", { name: "蘿蔔湯" }),
+  ).toHaveCount(1);
+});
+
+test("自選搜尋可用鍵盤完成，手機上不溢出並有可讀提示", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.goto("/meal/");
+  await chooseSelf(page).click();
+  const search = searchOf(page, 0);
+  await tabTo(page, search);
+  await expectFocusRing(search);
+  await page.keyboard.type("牛肉");
+  await expect(search).toHaveValue("牛肉");
+  await expect(status(page)).toContainText("找到 1 道菜色");
+  await expect(search).toHaveAttribute("aria-describedby", "meal-search-0");
+  await expect(items(page).first().locator("#meal-search-0")).toContainText(
+    "找到 1 道菜色",
+  );
+  await page.keyboard.press("Enter");
+  await expect(
+    items(page).first().getByRole("link", { name: "青椒牛肉" }),
+  ).toBeVisible();
+  await expectNoOverflowNow(page, "自選搜尋手機版");
+  await expectNoAxeViolations(page, "自選搜尋後");
+});
+
+test("自選完成後搜尋仍在且保留焦點，可排除重複並替換菜色", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.goto("/meal/");
+  await chooseSelf(page).click();
+  await chooseOf(page, 0).selectOption("meal-beef");
+  await chooseOf(page, 1).selectOption("meal-cabbage");
+  await chooseOf(page, 2).selectOption("meal-chicken");
+  await items(page)
+    .last()
+    .getByRole("combobox", { name: /指定湯/ })
+    .selectOption(soups[0]!.id);
+  await searchOf(page, 3).fill("清蒸");
+  await searchOf(page, 3).press("Enter");
+  await expect(status(page)).toContainText("自選菜單已完成");
+  await expect(searchOf(page, 3)).toBeFocused();
+  await expect(searchOf(page, 0)).toBeVisible();
+
+  await searchOf(page, 1).fill("牛肉");
+  await expect(status(page)).toContainText("找不到可選菜色");
+  await expect(
+    chooseOf(page, 1).getByRole("option", { name: "青椒牛肉" }),
+  ).toHaveCount(0);
+  await searchOf(page, 1).fill("");
+  await expect(status(page)).toContainText("可選 2 道菜色");
+  expect(
+    (await chooseOf(page, 1).getByRole("option").allTextContents()).sort(),
+  ).toEqual(["蒜炒高麗菜", "香煎豆腐"].sort());
+  await searchOf(page, 0).fill("豆腐");
+  await expect(
+    chooseOf(page, 0).getByRole("option", { name: "香煎豆腐" }),
+  ).toHaveCount(1);
+  await searchOf(page, 0).press("Enter");
+  await expect(
+    items(page).first().getByRole("link", { name: "香煎豆腐" }),
+  ).toBeVisible();
+  await expect(
+    items(page).nth(1).getByRole("link", { name: "蒜炒高麗菜" }),
+  ).toBeVisible();
+  await expectNoOverflowNow(page, "完成菜單搜尋手機版");
+});
+
+test("抽選出的完整菜單也能依菜名搜尋並指定備選", async ({ page }) => {
+  await page.goto("/meal/");
+  await reroll(page).click();
+  const before = await titlesOnTable(page);
+  const missing = dishes.find((item) => !before.includes(item.title))!;
+  const index = before.findIndex(
+    (title) => title !== vegetableDish.title && title !== soups[0]!.title,
+  );
+  await searchOf(page, index).fill(missing.title);
+  await expect(status(page)).toContainText("找到 1 道菜色");
+  await expect(
+    chooseOf(page, index).getByRole("option", { name: missing.title }),
+  ).toHaveCount(1);
+  await searchOf(page, index).press("Enter");
+  await expect(
+    items(page).nth(index).getByRole("link", { name: missing.title }),
+  ).toBeVisible();
+  await expect(searchOf(page, index)).toBeFocused();
+  await expect(status(page)).toContainText("只指定了一道菜");
+});
 
 test("空白自選可任意順序填滿四菜一湯，完成後仍可鎖定與開啟菜譜", async ({
   page,
@@ -212,7 +354,7 @@ test("固定菜譜中的主食不會被抽中", async ({ page }) => {
   }
 });
 
-test("從菜位選擇候選只替換該位置；重複及鎖定會拒絕並保留菜單", async ({
+test("從菜位選擇候選只替換該位置；不列重複菜色且鎖定會拒絕", async ({
   page,
 }) => {
   await page.goto("/meal/");
@@ -224,7 +366,7 @@ test("從菜位選擇候選只替換該位置；重複及鎖定會拒絕並保�
   );
   const chooser = chooseOf(page, index);
   const options = await chooser.getByRole("option").allTextContents();
-  expect(options.sort()).toEqual(dishes.map((item) => item.title).sort());
+  expect(options.sort()).toEqual([before[index], missing.title].sort());
   expect(options).not.toContain("台式炒麵");
   await chooser.focus();
   await chooser.selectOption(missing.id);
@@ -236,10 +378,9 @@ test("從菜位選擇候選只替換該位置；重複及鎖定會拒絕並保�
     before.filter((title, i) => i !== index),
   );
 
-  await chooseOf(page, index).selectOption(
-    dishes.find((item) => item.title === vegetableDish.title)!.id,
-  );
-  await expect(status(page)).toContainText("重複");
+  await expect(
+    chooseOf(page, index).getByRole("option", { name: vegetableDish.title }),
+  ).toHaveCount(0);
   expect(await titlesOnTable(page)).toEqual(after);
   await lockOf(page, missing.title).click();
   await chooseOf(page, index).selectOption(
