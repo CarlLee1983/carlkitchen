@@ -208,6 +208,19 @@ describe("runContentChecks", () => {
     assert.match(issues[0]!.file!, /recipes\/alpha\/index\.html$/);
   });
 
+  it("建置輸出的頁面文案提到 AI 或試做", async () => {
+    const s = scenario();
+    s.write(
+      join(s.root, "dist/recipes/alpha/index.html"),
+      "<p>依公開資料由 AI 整理，未經試做</p>",
+    );
+    const issues = await runContentChecks(s.options);
+    assert.equal(issues.length, 2);
+    assert.ok(
+      issues.every((issue) => /recipes\/alpha\/index\.html$/.test(issue.file!)),
+    );
+  });
+
   it("找不到建置輸出目錄", async () => {
     const s = scenario();
     rmSync(join(s.root, "dist"), { recursive: true });

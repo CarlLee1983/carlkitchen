@@ -1,6 +1,7 @@
 import { join } from "node:path";
 import { existsSync } from "node:fs";
 import { checkHeroAlt, checkImageFile, collectImageRefs } from "./images.ts";
+import { checkCopy } from "./copy.ts";
 import { checkIngredients, readIngredients } from "./ingredients.ts";
 import {
   collectBuildFiles,
@@ -193,6 +194,7 @@ export async function runContentChecks(
         ],
       }),
     );
+    issues.push(...checkCopy(files));
   } else {
     issues.push(failure(options.distDir, "找不到建置輸出目錄，請先執行建置。"));
   }

@@ -18,7 +18,7 @@ test("首頁列出固定資料菜譜、不列草稿，並能點進菜譜頁", as
   ).toBeVisible();
   await expect(page.locator("ol li").first()).toBeVisible();
   await expect(
-    page.getByRole("contentinfo").getByText(/站主審閱，未經試做/),
+    page.getByRole("contentinfo").getByText(/經站主審閱，份量與時間僅供參考/),
   ).toBeVisible();
 });
 
