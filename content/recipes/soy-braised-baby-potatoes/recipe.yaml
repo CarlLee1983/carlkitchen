@@ -1,0 +1,53 @@
+title: 韓式醬燒小馬鈴薯
+summary: 帶皮小馬鈴薯先燜熟，再裹上醬油與米糖漿收成的鹹甜醬汁，最後拌入芝麻油、撒上熟芝麻。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 35
+tags: [韓式料理]
+ingredients:
+  - {
+      name: 小馬鈴薯,
+      amount: { value: 454, unit: g },
+      note: 鵪鶉蛋大小，整顆帶皮,
+    }
+  - { name: 大蒜, amount: { value: 1, unit: 瓣 } }
+  - { name: 食用油, amount: { value: 30, unit: ml }, group: 調味 }
+  - { name: 醬油, amount: { value: 45, unit: ml }, group: 調味 }
+  - { name: 米糖漿, amount: { value: 45, unit: ml }, group: 調味 }
+  - { name: 芝麻油, amount: { value: 5, unit: ml }, group: 調味 }
+  - {
+      name: 熟芝麻,
+      amount: { value: 12, unit: g },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+steps:
+  - text: 削除小馬鈴薯腐損或破裂的部分，用冷水洗去泥土並瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼瀝水籃中裝著洗淨的整顆帶皮小馬鈴薯，表面留有水珠
+  - text: 將大蒜切末。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板中央放著一小堆切碎的大蒜，旁邊是一把菜刀
+  - text: 將食用油倒入厚底平底鍋，開中火，放入小馬鈴薯。
+  - text: 蓋鍋燜煮 20 分鐘至小馬鈴薯全熟，每隔 5 分鐘晃動鍋子，讓受熱均勻、避免燒焦。
+    image:
+      src: ./step-4.webp
+      alt: 深灰色平底鍋中排著煮熟的整顆帶皮小馬鈴薯，表面呈淡金黃色，尚未裹醬
+  - text: 轉小火，加入醬油、米糖漿與大蒜，用木匙拌勻。
+  - text: 轉回中火，持續翻拌 4 至 5 分鐘，直到醬汁收濃、小馬鈴薯表皮發亮並起皺。
+    image:
+      src: ./step-6.webp
+      alt: 同一只深灰色平底鍋中的小馬鈴薯裹著褐色濃醬，帶皮表面起皺，鍋底留有少量醬汁與蒜末
+  - text: 離火後拌入芝麻油，撒上熟芝麻，再盛入碗中。
+hero:
+  src: ./hero.webp
+  alt: 米白色陶碗中堆著整顆帶皮小馬鈴薯，裹有褐色醬汁並撒上熟芝麻
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一堆整顆帶皮小馬鈴薯、一瓣大蒜，以及分裝在小杯和小碟中的食用油、醬油、米糖漿、芝麻油與熟芝麻
