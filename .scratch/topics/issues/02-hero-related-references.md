@@ -7,7 +7,7 @@
 **Status:** ready-for-agent
 
 - [ ] schema 加入 `hero { src, alt }`（alt 必填）；草稿可以沒有，已發布專題缺 `hero` 時失敗
-- [ ] schema 加入 `relatedRecipes`、`relatedIngredients`（識別值陣列，可為空），打錯的識別值在建置前被擋下
+- [ ] schema 加入 `relatedRecipes`、`relatedIngredients`（識別值陣列，可為空），打錯的識別值被擋下（實作決定：schema 只擋格式，存在與否由 `check:content` 檢查，與食材條目一致；CI 共用檢查會跑它）
 - [ ] 已發布專題連到草稿菜譜或草稿食材條目時失敗；草稿專題沒有這項限制；從該層的公開入口測試
 - [ ] schema 加入 `references`（每筆有作者、標題、網址），文章頁底部顯示
 - [ ] 列表卡片與文章頁顯示封面；文章頁顯示相關菜譜與食材條目連結
