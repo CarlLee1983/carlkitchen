@@ -1,0 +1,44 @@
+title: 乾煸四季豆
+summary: 四季豆先用較多的油煎到表皮起皺，再和絞肉、蒜末、辣椒一起拌炒調味。四季豆保有脆度，適合配飯或當便當菜。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 30
+tags: [家常菜, 便當菜]
+aliases: [乾扁四季豆]
+ingredients:
+  - { name: 四季豆, amount: { value: 300, unit: g }, note: 整根使用，不切段 }
+  - { name: 絞肉, amount: { value: 100, unit: g } }
+  - { name: 大蒜, amount: { value: 6, unit: 瓣 } }
+  - { name: 薑, amount: { value: 10, unit: g } }
+  - { name: 紅辣椒, amount: { value: 1, unit: 支 } }
+  - { name: 食用油, note: 煎四季豆時用量多一些, group: 調味 }
+  - { name: 醬油, amount: { value: 20, unit: ml }, group: 調味 }
+  - { name: 米酒, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 鹽, amount: { value: 2, unit: g }, group: 調味 }
+  - { name: 糖, amount: { value: 2, unit: g }, group: 調味 }
+  - { name: 白胡椒粉, amount: { value: 3, unit: g }, group: 調味 }
+steps:
+  - text: 四季豆洗淨，摘掉頭尾，撕去兩側的粗絲；大蒜和紅辣椒都切成末。
+  - text: 炒鍋倒入較多的食用油，放入四季豆煎，煎到表皮微微縮水起皺就取出，再把鍋裡的油瀝掉。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋中鋪著一層整根的四季豆，表皮微皺、帶些焦斑，鍋底有一層油，旁邊放著一支木鍋鏟
+  - text: 原鍋放入蒜末、薑、紅辣椒末和絞肉翻炒，炒到絞肉變色。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中炒到變色、散成細粒的絞肉，夾雜紅辣椒末與蒜末，鍋裡沒有四季豆，旁邊放著一支木鍋鏟
+  - text: 加入醬油、米酒、鹽、糖和白胡椒粉，倒回四季豆，翻炒到調味料均勻裹上就起鍋。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中整根的四季豆與絞肉、紅辣椒末拌炒均勻，鍋底沒有湯汁，旁邊放著一支木鍋鏟
+hero:
+  src: ./hero.webp
+  alt: 米白色圓瓷盤中盛著乾煸四季豆，整根表皮起皺的四季豆上撒著絞肉、蒜末和紅辣椒末，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一把整根的四季豆、六瓣大蒜、一塊薑、一支紅辣椒、一小碗絞肉，以及小瓶裝的醬油、米酒、食用油和小碟裝的鹽、糖、白胡椒粉
+tip: 想讓四季豆更乾香，可改用半鍋油把四季豆炸到表皮乾皺，撈起瀝油後再與絞肉拌炒。
