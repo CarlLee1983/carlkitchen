@@ -1,0 +1,159 @@
+---
+import Base from "../../layouts/Base.astro";
+import { INGREDIENT_CATEGORIES } from "../../content/ingredient-schema";
+import { getVisibleIngredientEntries } from "../../utils/ingredient-entries";
+
+const categoryLabels = {
+  vegetable: "蔬菜",
+  aromatic: "辛香料",
+  seasoning: "調味料",
+} as const;
+
+// 章節目錄只列已發布條目；開發模式仍可透過條目網址預覽草稿。
+const entries = (await getVisibleIngredientEntries()).filter(
+  (entry) => !entry.data.draft,
+);
+const groups = INGREDIENT_CATEGORIES.map((category) => ({
+  category,
+  label: categoryLabels[category],
+  entries: entries
+    .filter((entry) => entry.data.category === category)
+    .sort(
+      (left, right) =>
+        left.data.title.localeCompare(right.data.title, "zh-Hant") ||
+        left.id.localeCompare(right.id),
+    ),
+})).filter((group) => group.entries.length > 0);
+---
+
+<Base title="食材介紹｜CarlKitchen">
+  <div class="ingredient-guide">
+    <header class="intro">
+      <p class="eyebrow">INGREDIENT GUIDE</p>
+      <h1>食材介紹</h1>
+      <p class="lead">從選用、處理到保存，認識家常料理裡的食材。</p>
+      {
+        entries.length > 0 && (
+          <p class="count">共 {entries.length} 篇食材介紹</p>
+        )
+      }
+    </header>
+
+    {
+      entries.length === 0 ? (
+        <p class="empty">目前還沒有已發布的食材介紹，請稍後再來看看。</p>
+      ) : (
+        groups.map((group, index) => (
+          <section aria-labelledby={`category-${group.category}`}>
+            <div class="category-heading">
+              <span class="chapter-number" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h2 id={`category-${group.category}`}>{group.label}</h2>
+            </div>
+            <ul>
+              {group.entries.map((entry) => (
+                <li>
+                  <a href={`/ingredients/${entry.id}/`}>{entry.data.title}</a>
+                  <p>{entry.data.summary}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      )
+    }
+  </div>
+</Base>
+
+<style>
+  .ingredient-guide {
+    max-width: 54rem;
+    padding: 1rem 0 3rem;
+  }
+  .intro {
+    margin-bottom: 4rem;
+  }
+  .eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+  .lead {
+    max-width: 36rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+  }
+  .count {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  section {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 2rem;
+    border-top: 1px solid var(--line);
+    padding: 1.5rem 0 3rem;
+  }
+  .category-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .chapter-number {
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 1.25rem;
+  }
+  li + li {
+    padding-top: 1.25rem;
+  }
+  li a {
+    display: inline-block;
+    min-height: 44px;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 44px;
+    text-underline-offset: 0.25em;
+  }
+  li p {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+  .empty {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+  @media (max-width: 650px) {
+    .ingredient-guide {
+      padding-top: 0;
+    }
+    .intro {
+      margin-bottom: 3rem;
+    }
+    section {
+      display: block;
+    }
+    .category-heading {
+      margin-bottom: 1rem;
+    }
+  }
+</style>

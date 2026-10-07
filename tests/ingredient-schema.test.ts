@@ -29,12 +29,42 @@ describe("食材條目 schema", () => {
     assert.equal(schema.safeParse(cabbage).success, true);
   });
 
-  it("蔬菜必填臺灣產期、賞味期與範圍", () => {
+  it("蔬菜必填臺灣產期與範圍；有獨立證據時才填最佳賞味期", () => {
     const result = schema.safeParse({ ...cabbage, season: undefined });
     assert.equal(result.success, false);
     if (!result.success) {
       assert.ok(
         result.error.issues.some((issue) => issue.path[0] === "season"),
+      );
+    }
+    assert.equal(
+      schema.safeParse({
+        ...cabbage,
+        season: {
+          production: cabbage.season.production,
+          scope: cabbage.season.scope,
+        },
+      }).success,
+      true,
+    );
+  });
+
+  it("草稿可暫無相關菜譜，發布時仍須至少一篇", () => {
+    assert.equal(
+      schema.safeParse({ ...cabbage, relatedRecipes: [] }).success,
+      true,
+    );
+    const result = schema.safeParse({
+      ...cabbage,
+      draft: false,
+      relatedRecipes: [],
+    });
+    assert.equal(result.success, false);
+    if (!result.success) {
+      assert.ok(
+        result.error.issues.some(
+          (issue) => issue.path.join(".") === "relatedRecipes",
+        ),
       );
     }
   });
@@ -62,6 +92,22 @@ describe("食材條目 schema", () => {
           (issue) => issue.path.join(".") === "hero.alt",
         ),
       );
+    }
+  });
+
+  it("酒精與過敏原提醒可選填，但內容不得空白", () => {
+    assert.equal(
+      schema.safeParse({
+        ...cabbage,
+        notices: {
+          alcohol: "這款料理酒含酒精。",
+          allergens: ["此產品含大豆與小麥。"],
+        },
+      }).success,
+      true,
+    );
+    for (const notices of [{}, { alcohol: " " }, { allergens: [" "] }]) {
+      assert.equal(schema.safeParse({ ...cabbage, notices }).success, false);
     }
   });
 });

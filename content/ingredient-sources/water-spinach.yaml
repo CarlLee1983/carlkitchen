@@ -1,0 +1,16 @@
+sources:
+  # 葉型及旱田、水田品種差異。
+  - title: 農業部食農教育資訊整合平臺：認識空心菜
+    url: https://fae.moa.gov.tw/map/food_item.php?id=80&type=AS01
+  # 全年出產、4 至 9 月盛產、產期圖卡的最佳賞味期與臺灣產地。
+  - title: 農業部食農教育資訊整合平臺：產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=80&type=AS03
+  # 栽培方式與全年可生長的範圍。
+  - title: 農業部食農教育資訊整合平臺：生產方式
+    url: https://fae.moa.gov.tw/map/food_item.php?id=80&type=AS04
+  # 挑選與保存圖卡；保留約 10°C、勿低於 5°C 條件，不沿用固定保存天數。
+  - title: 農業部食農教育資訊整合平臺：挑選與保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=80&type=AS06
+  # 清洗、切段及料理用途。
+  - title: 農業部食農教育資訊整合平臺：料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=80&type=AS07
