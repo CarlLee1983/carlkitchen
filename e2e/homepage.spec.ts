@@ -107,7 +107,7 @@ test("成品大圖連到存在的已發布菜譜，顯示的圖與菜名屬於�
     }, value);
     await page.goto("/");
     await expect(hero(page)).toBeVisible();
-    await expect(hero(page)).toContainText("AI 繪製插畫");
+    await expect(hero(page)).not.toContainText("AI 繪製插畫");
     const href = (await hero(page).getAttribute("href"))!;
     const target = recipes.find((recipe) => href === `/recipes/${recipe.id}/`);
     expect(target).toBeDefined();
