@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
+  checkHeroAlt,
   checkImageFile,
   collectImageRefs,
   MAX_IMAGE_BYTES,
@@ -84,5 +85,38 @@ describe("collectImageRefs", () => {
       "ingredientsPhoto",
       "steps.1.image",
     ]);
+  });
+});
+
+describe("checkHeroAlt", () => {
+  it("成品圖的替代文字沒有餐具即通過", () => {
+    assert.deepEqual(checkHeroAlt("a", ref), []);
+  });
+
+  it("成品圖替代文字提到筷子、湯匙或叉子時回報", () => {
+    for (const alt of [
+      "盤子右側放著一雙木筷",
+      "碗旁一支白瓷湯匙",
+      "盤邊一把叉子",
+      "碗旁一支湯勺",
+      "一副刀叉",
+      "一支調羹",
+    ]) {
+      const issues = checkHeroAlt("a", { ...ref, alt });
+      assert.equal(issues.length, 1, alt);
+      assert.equal(issues[0]?.field, "hero");
+      assert.match(issues[0]!.message, /餐具/);
+    }
+  });
+
+  it("步驟圖不檢查：餐具可能是做法的一部分", () => {
+    assert.deepEqual(
+      checkHeroAlt("a", {
+        field: "steps.1.image",
+        src: "./s.webp",
+        alt: "盤上橫放一支筷子",
+      }),
+      [],
+    );
   });
 });

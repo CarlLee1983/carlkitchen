@@ -35,6 +35,22 @@ export function collectImageRefs(recipe: Recipe): ImageRef[] {
   return refs;
 }
 
+/** 替代文字描述圖中實際畫的內容，提到這些字就代表成品圖畫了餐具。 */
+const UTENSIL_PATTERN = /筷|匙|叉|勺|調羹|餐刀/;
+
+/** 成品圖只畫盛裝的盤或碗（規格見 06 票〈圖片風格規格〉）；步驟圖的餐具可能是做法的一部分，不檢查。 */
+export function checkHeroAlt(id: string, ref: ImageRef): Issue[] {
+  if (ref.field !== "hero" || !UTENSIL_PATTERN.test(ref.alt)) return [];
+  return [
+    {
+      recipe: id,
+      field: ref.field,
+      file: ref.src,
+      message: "成品圖不畫餐具，替代文字卻提到餐具；重製圖片並改寫替代文字。",
+    },
+  ];
+}
+
 /** `info` 為 null 表示檔案不存在。 */
 export function checkImageFile(
   id: string,

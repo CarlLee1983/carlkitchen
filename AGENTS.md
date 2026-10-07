@@ -18,7 +18,7 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 - `pnpm dev` — 開發伺服器（顯示草稿）
 - `pnpm build` / `pnpm preview` — 正式建置（排除草稿，建置後以 Pagefind 建立只含菜譜頁的搜尋索引）與預覽。建置固定帶 `--force`，在 `RECIPES_DIR` 切換時清除 Astro 內容層快取，不可拿掉
 - `pnpm check` — 格式檢查、`astro check`、建置
-- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄
+- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄
 - `pnpm test` — 單元測試
 - `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）
 - `pnpm format` — 格式化
@@ -36,7 +36,7 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 
 新增、修改菜譜或重製插畫依 `recipe-making` skill（`.claude/skills/recipe-making/`，含來源核准、Codex 生圖與轉檔腳本、送審清單）；菜譜文字寫法依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。schema 規則見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
 
-圖片規格慣例：WebP、1536×1024、不超過 300 KB。schema 不檢查這些，由 `pnpm check:content` 強制（門檻第 4 項）。
+圖片規格慣例：WebP、1536×1024、不超過 300 KB。schema 不檢查這些，由 `pnpm check:content` 強制（門檻第 4 項）。成品圖不畫餐具（`.scratch/recipe-mvp/issues/06-homepage-direction.md`〈圖片風格規格〉），`pnpm check:content` 以替代文字是否提到餐具把關。
 
 ## 程式與測試
 

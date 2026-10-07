@@ -24,7 +24,7 @@ Status: open
 - [本地 AI 製作與人工審核流程](issues/03-local-ai-review-workflow.md)：來源事前核准，AI 本地製作並在工作分支留草稿；站主逐篇看預覽與差異後合入主分支，來源不足或圖文不符就不公開。
 - [菜譜搜尋範圍與結果體驗](issues/04-search-behavior.md)：只索引公開菜譜的標題、摘要、材料、標籤與別名；菜／湯篩選、即時搜尋與可分享網址使用靜態 Pagefind。
 - [四菜一湯／五菜一湯的配菜規則](issues/05-meal-planner-rules.md)：候選菜不重複且由不同菜色滿足蔬菜與蛋白質最低要求；鎖定項保留，單道替換與模式切換無解時維持原套餐並提示。
-- [首頁視覺方向與素材邊界](issues/06-homepage-direction.md)：首頁採第一屏搜尋＋成品大圖、下接即時篩選菜譜清單；安靜克制的日系版面，全站料理圖片統一為手繪水彩插畫並標示「AI 繪製插畫」。
+- [首頁視覺方向與素材邊界](issues/06-homepage-direction.md)：首頁採第一屏搜尋＋成品大圖、下接即時篩選菜譜清單；安靜克制的日系版面，全站料理圖片統一為手繪水彩插畫並標示「AI 繪製插畫」（已由 [ADR-0001](../../docs/adr/0001-drop-illustration-caption.md) 取消）。
 - [靜態發布與品質驗收關卡](issues/07-publishing-gates.md)：公開儲存庫加分支保護，只有站主能合入；合入主分支即自動部署到 `carlkitchen.gravito.dev`，候選池未達標時停止部署；八項自動檢查阻擋合入與部署，以 `git revert` 回滾。
 - [MVP 頁面範圍與可驗收標準](issues/08-mvp-acceptance.md)：首頁、菜譜頁、配菜頁、關於頁與 404 五頁；菜譜頁只讀加列印並聲明未經試做；WCAG 2.2 AA 與多寬度版面自動檢查列入門檻，效能與人工操作在上線 PR 以檢核表驗收。
 

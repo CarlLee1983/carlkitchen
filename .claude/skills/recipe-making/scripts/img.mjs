@@ -73,9 +73,15 @@ function order(file) {
   return 2;
 }
 
-const modes = { preview: () => preview(src), webp: () => toWebp(src, out), sheet: () => sheet(src, out) };
+const modes = {
+  preview: () => preview(src),
+  webp: () => toWebp(src, out),
+  sheet: () => sheet(src, out),
+};
 if (!modes[mode] || !src || (mode !== "preview" && !out)) {
-  console.error("用法：node img.mjs preview <png> | webp <png> <out.webp> | sheet <菜譜資料夾> <out.jpg>");
+  console.error(
+    "用法：node img.mjs preview <png> | webp <png> <out.webp> | sheet <菜譜資料夾> <out.jpg>",
+  );
   process.exit(1);
 }
 await modes[mode]();
