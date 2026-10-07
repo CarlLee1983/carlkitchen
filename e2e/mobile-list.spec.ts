@@ -25,7 +25,7 @@ test.describe("手機版（390×844）", () => {
   test("成品大圖寬高比約 2:1", async ({ page }) => {
     await page.goto("/");
     const img = (await page
-      .getByRole("region", { name: "隨機推薦菜譜" })
+      .getByRole("region", { name: "隨機看看一道菜" })
       .getByRole("img")
       .boundingBox())!;
     expect(img.width / img.height).toBeCloseTo(2, 1);
@@ -61,7 +61,7 @@ test.describe("手機版（390×844）", () => {
     await page.goto("/");
     await page.getByRole("searchbox").fill(recipes[0]!.title);
     await expect(
-      page.getByRole("region", { name: "隨機推薦菜譜" }),
+      page.getByRole("region", { name: "隨機看看一道菜" }),
     ).toBeHidden();
   });
 });

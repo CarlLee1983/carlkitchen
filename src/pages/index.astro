@@ -21,7 +21,11 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 ---
 
 <Base title="CarlKitchen">
-  <div class="intro" data-intro>
+  <div
+    class="intro"
+    data-intro
+    data-has-hero={heroRecipes.length > 0 ? "" : undefined}
+  >
     <div class="intro-text">
       <p class="today" data-today></p>
       <h1>CarlKitchen</h1>
@@ -47,7 +51,8 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 
     {
       heroRecipes.length > 0 && (
-        <section class="hero-pick" aria-label="隨機推薦菜譜">
+        <section class="hero-pick" aria-label="隨機看看一道菜">
+          <p class="hero-label">隨機看看一道菜</p>
           {heroRecipes.map((recipe) => (
             <template data-hero-slot>
               <a href={recipeHref(recipe)}>
@@ -188,9 +193,25 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     border: 1px solid var(--ink);
     text-decoration: none;
   }
+  .hero-pick {
+    position: relative;
+  }
   .hero-pick a {
     display: block;
     text-decoration: none;
+  }
+  .hero-label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 1;
+    margin: 0;
+    padding: 0.1rem 0.5rem;
+    background: var(--paper);
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    pointer-events: none;
   }
   .hero-title {
     margin: 0.25rem 0 0;
@@ -363,16 +384,14 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     }
   }
 
-  /* 手機搜尋中收起成品大圖，結果緊接在搜尋框下方；寬螢幕左文右圖不受影響 */
-  @media (max-width: 63.99rem) {
-    .intro[data-searching] .hero-pick {
-      display: none;
-    }
+  /* 搜尋或篩選時收起隨機大圖；桌機同時收起圖片欄。 */
+  .intro[data-has-criteria] .hero-pick {
+    display: none;
   }
 
   /* 寬螢幕第一屏：左文右圖 */
   @media (min-width: 64rem) {
-    .intro {
+    .intro[data-has-hero]:not([data-has-criteria]) {
       grid-template-columns: minmax(0, 1fr) 36rem;
       gap: 4rem;
       align-items: center;
