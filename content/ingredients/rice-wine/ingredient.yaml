@@ -10,3 +10,6 @@ notices:
   alcohol: 臺灣菸酒嘉義酒廠這款紅標純米料理米酒標示酒精成分為 19.5%。
 relatedRecipes:
   - three-cup-chicken
+hero:
+  src: ./hero.webp
+  alt: 一瓶無標示的透明米酒與一只盛著透明酒液的素色小碟水彩插畫

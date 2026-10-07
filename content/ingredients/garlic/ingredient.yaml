@@ -8,3 +8,6 @@ storage: 完整未剝皮蒜球放乾燥、陰涼、通風處；農業部圖卡�
 uses: 蒜頭常用於調味，例如切成蒜末入鍋炒香；青蒜與蒜苔則可作新鮮蔬菜入菜。
 relatedRecipes:
   - garlic-water-spinach
+hero:
+  src: ./hero.webp
+  alt: 一顆帶薄皮的蒜球與兩瓣蒜頭的水彩插畫

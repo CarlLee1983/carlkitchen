@@ -14,3 +14,6 @@ season:
   scope: 農業部食農教育平臺分別記載全年出產、4 月至 9 月盛產，產期圖卡另標示 4 月至 9 月為最佳賞味期。臺灣各地栽培方式與品種不同，實際供應會隨產地及年度條件變動。
 relatedRecipes:
   - garlic-water-spinach
+hero:
+  src: ./hero.webp
+  alt: 一把帶空心菜莖與尖長葉片的空心菜水彩插畫

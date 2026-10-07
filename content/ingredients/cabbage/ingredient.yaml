@@ -16,3 +16,6 @@ season:
   scope: 以上是農業部資料所述的臺灣高麗菜主要產地月份與最佳賞味期；不同產地輪替使全年都有生產。實際產期與供應會隨產地、栽培及年度條件變動。
 relatedRecipes:
   - stir-fried-cabbage
+hero:
+  src: ./hero.webp
+  alt: 一顆圓形高麗菜，外層葉片自然翻開的水彩插畫

@@ -1,6 +1,13 @@
 import { expect, test } from "@playwright/test";
 import { execFileSync } from "node:child_process";
-import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import {
+  cpSync,
+  existsSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
@@ -64,6 +71,52 @@ test("手機可由主選單進入食材介紹，頁面沒有水平溢出", async
   await expectNoHorizontalScroll(page, "/ingredients/");
   await page.getByRole("link", { name: "番茄" }).click();
   await expect(page).toHaveURL(/\/ingredients\/tomato\/$/);
+});
+
+test("有插畫的食材在總覽顯示小尺寸縮圖，無插畫條目維持文字", () => {
+  const root = mkdtempSync(join(tmpdir(), "carlkitchen-ingredient-thumbs-"));
+  const output = join(root, "dist");
+  try {
+    cpSync("tests/fixtures/ingredients/tomato", join(root, "tomato"), {
+      recursive: true,
+    });
+    cpSync(
+      "tests/fixtures/recipes/tomato-egg/hero.webp",
+      join(root, "tomato/hero.webp"),
+    );
+    writeFileSync(
+      join(root, "tomato/ingredient.yaml"),
+      `${readFileSync(join(root, "tomato/ingredient.yaml"), "utf8")}\nhero:\n  src: ./hero.webp\n  alt: 番茄插畫\n`,
+    );
+    cpSync("tests/fixtures/ingredients/garlic", join(root, "garlic"), {
+      recursive: true,
+    });
+    execFileSync("pnpm", ["exec", "astro", "build", "--force"], {
+      env: {
+        ...process.env,
+        INGREDIENTS_DIR: root,
+        RECIPES_DIR: "tests/fixtures/recipes",
+        ASTRO_OUT_DIR: output,
+      },
+      stdio: "pipe",
+    });
+    const html = readFileSync(join(output, "ingredients/index.html"), "utf8");
+    const rows = html.match(/<li(?:\s|>)[^>]*>[\s\S]*?<\/li>/g) ?? [];
+    const tomatoRow = rows.find((row) =>
+      row.includes('href="/ingredients/tomato/"'),
+    );
+    expect(tomatoRow).toBeDefined();
+    expect(tomatoRow).toMatch(/<img[^>]+alt="番茄插畫"/);
+    expect(tomatoRow).toMatch(/<img[^>]+srcset="[^"]+"/);
+    expect(tomatoRow).toMatch(/<img[^>]+loading="lazy"/);
+    const garlicRow = rows.find((row) =>
+      row.includes('href="/ingredients/garlic/"'),
+    );
+    expect(garlicRow).toBeDefined();
+    expect(garlicRow).not.toContain("<img");
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
 });
 
 test("沒有已發布食材時顯示空狀態，也不產生草稿頁", () => {
