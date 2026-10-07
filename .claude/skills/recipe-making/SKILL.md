@@ -42,7 +42,7 @@ description: CarlKitchen 菜譜的製作流程：從來源核准、擷取、寫 
   - 非湯料理的 `vegetable`、`protein` 至少一個為真，依主角是蔬菜或蛋白質標記，可兩者皆是；
   - 湯和主食的 `vegetable`、`protein` 都必須為假；
   - 主食的 `mealCandidate` 必須為假（主食不參與四菜一湯、五菜一湯）。
-- 非湯料理與湯的 `mealCandidate` 預設 `true`，不適合當家常配菜時才填 `false` 並說明。
+- 非湯料理與湯的 `mealCandidate` 一律明寫，通常填 `true`（schema 預設為 `false`），不適合當家常配菜時才填 `false` 並說明。
 - 識別值是資料夾名，也是網址，合入後不改。
 
 ## 送審清單

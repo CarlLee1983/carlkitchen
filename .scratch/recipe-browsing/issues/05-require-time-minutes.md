@@ -4,9 +4,10 @@
 
 **Blocked by:** None (can start immediately)
 
-**Status:** needs-triage（屬於內容工作，需要站主確認推估原則後才交給代理）
+**Status:** ready-for-agent
 
-- [ ] 站主確認時間的計算範圍（是否含醃漬、浸泡、燉煮等待時間）與推估原則
+**站主決定（2026-10-07）：** `timeMinutes` 是從開始備料到上桌的總時間，含醃漬、泡發、燉煮等等待時間。核准來源寫有時間時以來源為準；來源沒寫時依步驟推估，並在 PR 中逐道註明依據。
+
 - [ ] schema 中 `timeMinutes` 為必填
 - [ ] 所有菜譜都有 `timeMinutes`；PR 逐道列出來源或推估依據
 - [ ] `tests/recipe-schema.test.ts` 涵蓋缺少 `timeMinutes` 時建置失敗
