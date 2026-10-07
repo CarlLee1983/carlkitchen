@@ -8,7 +8,8 @@ import { defineConfig, devices } from "@playwright/test";
 //   候選池剛好 5 道非湯菜加 1 道湯，只跑 `meal.spec.ts`。
 const mealSite = process.env.E2E_SITE === "meal";
 // 兩份站台用不同 port：即使本地殘留另一份 preview，也不會被誤重用；規格另會核對實際被 serve 的候選池。
-const port = mealSite ? 4322 : 4321;
+const portBase = Number(process.env.E2E_PORT_BASE ?? 4321);
+const port = portBase + Number(mealSite);
 
 const desktop = {
   ...devices["Desktop Chrome"],

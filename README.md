@@ -4,6 +4,8 @@
 
 技術：Astro 靜態輸出、TypeScript、pnpm、Playwright，部署於 Cloudflare Workers Static Assets。
 
+讀者可在菜譜頁加入收藏，並從「我的收藏」查看或移除。收藏只存在目前瀏覽器的本機儲存空間；換裝置、清除網站資料或停用瀏覽器儲存後不會同步保留。菜譜本身仍可用原本網址分享。
+
 ## 開發
 
 需要 Node.js 22.13 以上與 pnpm。
