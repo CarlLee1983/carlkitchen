@@ -1,0 +1,45 @@
+title: 蒜香義大利麵
+summary: 蒜片以橄欖油小火煎到金黃，拌入紅辣椒碎和煮到偏硬的義大利麵，大火快炒幾秒再撒上香芹。蒜香清爽，單盤就是一餐。
+servings: 1
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 30
+tags: [家常菜]
+aliases: [香蒜橄欖油義大利麵, 蒜香橄欖油義大利麵]
+ingredients:
+  - { name: 義大利麵, amount: { value: 160, unit: g } }
+  - { name: 橄欖油, amount: { value: 30, unit: ml } }
+  - { name: 蒜頭, amount: { value: 2, unit: 瓣 }, note: 切成薄片 }
+  - { name: 紅辣椒碎, amount: { value: 5, unit: g } }
+  - { name: 香芹, amount: { value: 2, unit: 束 }, note: 切末 }
+  - { name: 鹽, amount: { value: 10, unit: g }, note: 煮麵水用, group: 調味 }
+  - { name: 黑胡椒, note: 少許，可省略, group: 調味 }
+  - { name: 帕瑪森起司, note: 少許，可省略, group: 調味 }
+  - { name: 檸檬汁, note: 少許，可省略, group: 調味 }
+steps:
+  - text: 蒜頭剝皮後切成半透明的薄片；香芹去根洗淨，切成末備用。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上一小堆半透明的蒜片和一小堆青綠的香芹末，旁邊放著一把菜刀
+  - text: 一鍋水煮滾後加鹽，放入義大利麵煮到全熟但還偏硬，時間比包裝標示略短一些。撈起瀝乾，留一杓煮麵水備用。
+    image:
+      src: ./step-2.webp
+      alt: 不鏽鋼瀝水籃中盛著剛瀝乾、微微冒著蒸氣的淡黃色義大利麵，旁邊一杯煮麵水
+  - text: 冷鍋倒入橄欖油，放入蒜片，小火慢慢煎到金黃，再加入紅辣椒碎拌炒。
+    image:
+      src: ./step-3.webp
+      alt: 平底鍋中一層橄欖油，浮著幾片金黃的蒜片，撒著紅辣椒碎
+  - text: 倒入瀝乾的麵條，加入香芹末和一杓煮麵水，大火快炒約 10 秒就關火。
+    image:
+      src: ./step-4.webp
+      alt: 平底鍋中拌著油亮的義大利麵，麵條間夾雜金黃蒜片、紅辣椒碎和綠色香芹末，鍋底有一點油汁
+  - text: 撒上黑胡椒和帕瑪森起司，滴幾滴檸檬汁拌勻，盛盤上桌。這三樣都可以省略。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤中盛著一盤蒜香義大利麵，直麵捲成鬆散的一堆，油亮的麵條間有金黃蒜片、紅辣椒碎，上面撒著綠色香芹末
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一把捆起的義大利直麵、兩瓣蒜頭、兩支香芹，以及小碟裝的紅辣椒碎、鹽、黑胡椒、帕瑪森起司和檸檬汁，和一瓶橄欖油
