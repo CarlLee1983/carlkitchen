@@ -11,6 +11,7 @@ import {
   recipeKinds,
   visibleKindOptions,
 } from "../src/utils/home.ts";
+import type { RecipeCategory } from "../src/content/recipe-schema.ts";
 
 const ALL_OPTIONS = ["all", "vegetable", "protein", "soup"] as const;
 
@@ -82,7 +83,7 @@ describe("applyHomeState", () => {
 
 describe("recipeKinds", () => {
   it("非湯料理依標記回傳蔬菜菜、蛋白質菜或兩者", () => {
-    const base = { category: "非湯料理" };
+    const base = { category: "非湯料理" as const };
     assert.deepEqual(
       recipeKinds({ ...base, vegetable: true, protein: false }),
       ["vegetable"],
@@ -106,7 +107,11 @@ describe("recipeKinds", () => {
 });
 
 describe("visibleKindOptions", () => {
-  const recipe = (category: string, vegetable: boolean, protein: boolean) => ({
+  const recipe = (
+    category: RecipeCategory,
+    vegetable: boolean,
+    protein: boolean,
+  ) => ({
     category,
     vegetable,
     protein,

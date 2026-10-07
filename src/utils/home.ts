@@ -1,3 +1,5 @@
+import type { RecipeCategory } from "../content/recipe-schema";
+
 /** 篩選值：網址參數 `kind` 的值，也是 Pagefind 篩選屬性 `kind` 的值。 */
 export type KindFilter = "all" | "vegetable" | "protein" | "soup";
 
@@ -20,18 +22,25 @@ export function parseKindParam(
 }
 
 interface KindSource {
-  category: string;
+  category: RecipeCategory;
   vegetable: boolean;
   protein: boolean;
 }
 
 /** 菜譜屬於哪些篩選值（不含 all）；兩種性質都有的非湯料理同時屬於兩個。 */
 export function recipeKinds(recipe: KindSource): Exclude<KindFilter, "all">[] {
-  if (recipe.category === "湯") return ["soup"];
-  return [
-    ...(recipe.vegetable ? (["vegetable"] as const) : []),
-    ...(recipe.protein ? (["protein"] as const) : []),
-  ];
+  switch (recipe.category) {
+    case "湯":
+      return ["soup"];
+    case "非湯料理":
+      return [
+        ...(recipe.vegetable ? (["vegetable"] as const) : []),
+        ...(recipe.protein ? (["protein"] as const) : []),
+      ];
+    default:
+      // 分類列舉新增值時，這裡會在型別檢查時報錯，提醒補上對應的篩選值
+      return recipe.category satisfies never;
+  }
 }
 
 /** 已發布菜譜要顯示的篩選選項：固定順序，只留至少有一道菜的，全部一律顯示。 */

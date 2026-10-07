@@ -90,8 +90,14 @@ test("兩種性質都有的菜同時出現在蔬菜菜與蛋白質菜之下", as
   const both = recipes.filter((recipe) => recipe.vegetable && recipe.protein);
   expect(both.length).toBeGreaterThan(0);
   await page.goto("/");
-  for (const name of ["蔬菜菜", "蛋白質菜"]) {
+  const filters = [
+    { name: "蔬菜菜", kind: "vegetable", expected: vegetables },
+    { name: "蛋白質菜", kind: "protein", expected: proteins },
+  ];
+  for (const { name, kind, expected } of filters) {
     await page.getByRole("button", { name }).click();
+    await expect(page).toHaveURL(new RegExp(`[?&]kind=${kind}(&|$)`));
+    await expect(rows(page)).toHaveCount(expected.length);
     for (const recipe of both) {
       await expect(
         rows(page).filter({ hasText: recipe.title }).first(),
@@ -204,7 +210,7 @@ test("無法辨識的 kind 載入時從網址清掉", async ({ page }) => {
   await expect(page).not.toHaveURL(/kind=/);
 });
 
-test("上一頁會依網址還原篩選（hash 導航後選分類再返回）", async ({ page }) => {
+test("上一頁會依網址還原篩選（hash 導航後選篩選再返回）", async ({ page }) => {
   await page.goto("/");
   await page
     .getByRole("navigation", { name: "主選單" })
@@ -279,7 +285,7 @@ test("鍵盤 Tab 可走到清單第一列菜名，焦點外框可見", async ({ 
   await expectFocusRing(firstLink, "::after");
 });
 
-test("鍵盤可用 Enter 切換分類", async ({ page }) => {
+test("鍵盤可用 Enter 切換篩選", async ({ page }) => {
   await page.goto("/");
   const button = page.getByRole("button", { name: "湯", exact: true });
   await button.focus();
