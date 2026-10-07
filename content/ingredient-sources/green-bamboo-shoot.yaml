@@ -1,0 +1,13 @@
+sources:
+  # 綠竹筍外型特徵；涼拌沙拉筍、熱炒、煮湯、熬粥與菜例。
+  - title: 農業部食農教育資訊整合平臺：認識綠竹筍
+    url: https://fae.moa.gov.tw/map/food_item.php?id=97&type=AS01
+  # 北部與南部產區；5–10 月產期、6 月與 8 月高峰（圖文一致）。月份未分南北。
+  - title: 農業部食農教育資訊整合平臺：綠竹筍產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=97&type=AS03
+  # 挑選四字訣圖卡（平臺註明引自桃園區農業改良場教材）、出青說明；冷藏圖卡（帶殼煮熟、泡冰水、包好冷藏或泡冷水 5°C 每日換水）。沒有保存天數。
+  - title: 農業部食農教育資訊整合平臺：綠竹筍挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=97&type=AS06
+  # 劃一刀剝殼、滾刀切法；不能生吃，出青竹筍沸水煮 20 分鐘以上。
+  - title: 農業部食農教育資訊整合平臺：綠竹筍料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=97&type=AS07

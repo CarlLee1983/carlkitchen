@@ -1,0 +1,25 @@
+sources:
+  # 乾燥香菇與鮮食香菇的外觀差異；肉粽、香菇雞湯用途；近親菇類適合炒食、煮湯、火鍋料。
+  - title: 農業部食農教育資訊整合平臺：認識香菇
+    url: https://fae.moa.gov.tw/map/food_item.php?id=156&type=AS01
+  # 臺中、南投占八成以上，段木香菇以宜蘭、新竹為主；冬菇 1 月中旬至 5 月中旬、夏菇 5 月至 8 月中旬採收。
+  - title: 農業部食農教育資訊整合平臺：香菇產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=156&type=AS03
+  # 乾香菇與鮮香菇挑選圖卡；香菇品質和大小無關；乾香菇開封後夾鏈袋冷藏或冷凍約一年。
+  - title: 農業部食農教育資訊整合平臺：香菇挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=156&type=AS06
+  # 乾香菇先清洗、泡水舒展，香菇水可入菜；食譜寫「泡冷水至軟化」。來源未給泡發時間與水溫，不寫。
+  - title: 農業部食農教育資訊整合平臺：香菇料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=156&type=AS07
+  # 乾香菇選購要點；開封後夾鏈袋密封冰存可延長賞味期至 12 個月。
+  - title: 農業部農業知識入口網：香菇
+    url: https://kmweb.moa.gov.tw/subject/subject.php?id=35701
+  # 香菇圖卡：鮮香菇擦乾、擦手紙包覆、避免塑膠袋貼附、4°C 冷藏約 7–10 天；菇傘絨毛與含水量；菇柄褐變切除。
+  - title: 農業部農業E報：菇菇的保存挑選小教室
+    url: https://epost.moa.gov.tw/theme_data.php?theme=epost&sub_theme=photo&id=413
+  # 鮮菇不需清洗、紙巾擦拭、水洗須當餐用完；乾香菇先洗再泡、香菇水不倒掉。
+  - title: 農業部食農教育資訊整合平臺：菇類─要洗嗎？料理前這樣做，香氣截然不同
+    url: https://fae.moa.gov.tw/theme_data.php?theme=topics&sub_theme=knowledge&id=4772
+  # 乾香菇用於炒米粉、鹹粥、油飯、肉羹、香菇雞湯。
+  - title: 農業部食農教育資訊整合平臺：市面上常見的乾香菇，是國產的嗎？
+    url: https://fae.moa.gov.tw/theme_data.php?theme=topics&sub_theme=knowledge&id=3879

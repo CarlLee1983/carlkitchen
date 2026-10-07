@@ -1,0 +1,16 @@
+sources:
+  # 成分水、酒精、糯米；開封前陰涼通風、開封後冷藏；3 年；料理提味。只代表該產品。
+  - title: 萬家香：珍釀白醋
+    url: https://www.wanjashan.com.tw/product_detail.php?P_ID=20150609030
+  # 成分水、米、食用酒精、果糖；酸度 4.5% 以上；久放蛋白質沉澱與品質無關；頁面未寫保存方式。只代表該產品。
+  - title: 工研：白醋
+    url: https://kongyen.com.tw/product/1110/
+  # 糯米釀造、酸度 4.5% 以上；陰涼乾燥常溫保存；沉澱屬自然現象；涼拌、醃漬、熱炒燉煮、沾醬。只代表該產品。
+  - title: 十全：米醋 500ml
+    url: https://shih-chuan.com.tw/zh/products/product/rice-vinegar-500ML
+  # 選購看成分（越簡短越好）與酸度；開封後冷藏，與同品牌產品頁常溫保存說法不一致。
+  - title: 十全：米醋使用指南
+    url: https://shih-chuan.com.tw/zh/news/rice-vinegar-guide
+  # 醋的酸性抑制微生物，濃度高的醋放陰涼處不易變壞。香港公共機構。
+  - title: 香港消費者委員會：調味品發霉？變味？不可不知的儲存方法
+    url: https://www.consumer.org.hk/tc/article/526-condiment-storage/526_condiment_storage
