@@ -25,7 +25,7 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
 <Base title="配一桌菜">
   <h1>配一桌菜</h1>
   <p class="meal-intro">
-    從配菜候選中抽出一桌四菜一湯或五菜一湯。鎖定喜歡的菜，其餘可重新抽選、隨機替換或直接指定。
+    從配菜候選中抽出一桌四菜一湯或五菜一湯，也可從空白開始逐道自選。鎖定喜歡的菜，其餘可重新抽選、隨機替換或直接指定。
   </p>
 
   <div class="meal-tools">
@@ -34,6 +34,9 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
       <button type="button" data-mode="5" aria-pressed="false">五菜一湯</button>
     </div>
     <button type="button" class="meal-reroll" data-reroll>重新抽選</button>
+    <button type="button" class="meal-reroll" data-self-select
+      >從空白自選</button
+    >
   </div>
 
   <!-- 全頁唯一會朗讀的區域；其餘訊息只放一般文字，避免重複朗讀。 -->

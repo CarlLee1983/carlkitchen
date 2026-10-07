@@ -25,6 +25,8 @@ const itemOf = (page: Page, title: string) =>
   items(page).filter({ has: page.getByRole("link", { name: title }) });
 const status = (page: Page) => page.getByRole("status");
 const reroll = (page: Page) => page.getByRole("button", { name: "重新抽選" });
+const chooseSelf = (page: Page) =>
+  page.getByRole("button", { name: "從空白自選" });
 const modeButton = (page: Page, label: "四菜一湯" | "五菜一湯") =>
   page
     .getByRole("group", { name: "菜數" })
@@ -42,6 +44,106 @@ const titlesOnTable = async (page: Page) =>
   (await items(page).getByRole("link").allTextContents()).map((text) =>
     text.trim(),
   );
+
+test("空白自選可任意順序填滿四菜一湯，完成後仍可鎖定與開啟菜譜", async ({
+  page,
+}) => {
+  await page.goto("/meal/");
+  await chooseSelf(page).click();
+  await expect(items(page)).toHaveCount(5);
+  await expect(status(page)).toContainText("還缺 4 道非湯料理");
+  await chooseOf(page, 2).selectOption(vegetableDish.id);
+  await expect(
+    items(page).nth(2).getByRole("link", { name: vegetableDish.title }),
+  ).toBeVisible();
+  await expect(items(page).nth(0).getByRole("link")).toHaveCount(0);
+  await items(page)
+    .last()
+    .getByRole("combobox", { name: /指定湯/ })
+    .selectOption(soups[0]!.id);
+  const meat = dishes.filter((item) => item.id !== vegetableDish.id);
+  for (const [index, item] of [
+    [3, meat[0]!],
+    [0, meat[1]!],
+    [1, meat[2]!],
+  ] as const) {
+    await chooseOf(page, index).selectOption(item.id);
+  }
+  await expect(status(page)).toContainText("自選菜單已完成");
+  await expect(items(page).getByRole("link")).toHaveCount(5);
+  await lockOf(page, vegetableDish.title).click();
+  await expect(lockOf(page, vegetableDish.title)).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await chooseOf(page, 3).selectOption(meat[3]!.id);
+  await expect(
+    items(page).nth(3).getByRole("link", { name: meat[3]!.title }),
+  ).toBeVisible();
+  await page.getByRole("link", { name: vegetableDish.title }).click();
+  await expect(page).toHaveURL(`/recipes/${vegetableDish.id}/`);
+});
+
+test("完成的自選菜單切換菜數前確認，取消後保留原菜色與模式", async ({
+  page,
+}) => {
+  await page.goto("/meal/");
+  await chooseSelf(page).click();
+  for (const [index, item] of dishes.slice(0, 4).entries()) {
+    await chooseOf(page, index).selectOption(item.id);
+  }
+  await items(page)
+    .last()
+    .getByRole("combobox", { name: /指定湯/ })
+    .selectOption(soups[0]!.id);
+  await expect(status(page)).toContainText("自選菜單已完成");
+  const before = await titlesOnTable(page);
+
+  page.once("dialog", (dialog) => dialog.dismiss());
+  await modeButton(page, "五菜一湯").click();
+  await expect(modeButton(page, "四菜一湯")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  expect(await titlesOnTable(page)).toEqual(before);
+
+  page.once("dialog", (dialog) => dialog.accept());
+  await modeButton(page, "五菜一湯").click();
+  await expect(items(page)).toHaveCount(6);
+});
+
+test("五菜草稿切回四菜前提示可能丟失的第五道，手機鍵盤可選菜", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto("/meal/");
+  await chooseSelf(page).click();
+  await modeButton(page, "五菜一湯").click();
+  await expect(items(page)).toHaveCount(6);
+  await tabTo(page, chooseOf(page, 4));
+  await expectFocusRing(chooseOf(page, 4));
+  await chooseOf(page, 4).selectOption(vegetableDish.id);
+  page.once("dialog", (dialog) => dialog.dismiss());
+  await modeButton(page, "四菜一湯").click();
+  await expect(items(page)).toHaveCount(6);
+  await expect(
+    items(page).nth(4).getByRole("link", { name: vegetableDish.title }),
+  ).toBeVisible();
+  page.once("dialog", (dialog) => dialog.accept());
+  await modeButton(page, "四菜一湯").click();
+  await expect(items(page)).toHaveCount(5);
+  await modeButton(page, "五菜一湯").click();
+  for (const [index, item] of dishes.entries()) {
+    await chooseOf(page, index).selectOption(item.id);
+  }
+  await items(page)
+    .last()
+    .getByRole("combobox", { name: /指定湯/ })
+    .selectOption(soups[0]!.id);
+  await expect(status(page)).toContainText("自選菜單已完成");
+  await expect(items(page).getByRole("link")).toHaveCount(6);
+  await expectNoOverflowNow(page, "自選菜單手機版");
+});
 
 test.beforeAll(async ({ playwright }, testInfo) => {
   const request = await playwright.request.newContext({
@@ -100,6 +202,7 @@ test("固定菜譜中的主食不會被抽中", async ({ page }) => {
   ).toBeVisible();
   await page.goto("/meal/");
   for (const label of ["四菜一湯", "五菜一湯"] as const) {
+    if (label === "五菜一湯") page.once("dialog", (dialog) => dialog.accept());
     await modeButton(page, label).click();
     for (let i = 0; i < 10; i++) {
       await reroll(page).click();
@@ -197,6 +300,7 @@ test("切換五菜一湯用掉全部候選，再切回四菜一湯", async ({ pa
     [...dishTitles, soups[0]!.title].sort(),
   );
 
+  page.once("dialog", (dialog) => dialog.accept());
   await modeButton(page, "四菜一湯").click();
   await expect(items(page)).toHaveCount(5);
 });
@@ -251,6 +355,7 @@ test.describe("鎖定衝突", () => {
     }
     const before = await titlesOnTable(page);
 
+    page.once("dialog", (dialog) => dialog.accept());
     await modeButton(page, "四菜一湯").click();
     await expect(status(page)).toContainText("先解鎖");
     await expect(modeButton(page, "五菜一湯")).toHaveAttribute(
@@ -269,6 +374,7 @@ test.describe("鎖定衝突", () => {
       "aria-pressed",
       "false",
     );
+    page.once("dialog", (dialog) => dialog.accept());
     await modeButton(page, "四菜一湯").click();
     await expect(items(page)).toHaveCount(5);
     for (const title of dishTitles.slice(0, 4)) {
@@ -460,6 +566,7 @@ test.describe("無障礙", () => {
     await lockOf(page, vegetableDish.title).click();
     await expectNoAxeViolations(page, "配菜頁已抽選");
 
+    page.once("dialog", (dialog) => dialog.accept());
     await modeButton(page, "五菜一湯").click();
     await expect(modeButton(page, "五菜一湯")).toHaveAttribute(
       "aria-pressed",

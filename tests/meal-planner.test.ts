@@ -2,14 +2,85 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   applyAction,
+  applyDraftChoice,
   candidatesFromRecipes,
+  createDraft,
   createPlan,
+  draftProgress,
   isPlanUsable,
   type Action,
   type Candidate,
   type Plan,
   type Result,
 } from "../src/meal-planner/index.ts";
+
+describe("自選草稿", () => {
+  it("固定菜位可任意順序填入，未完成不能當完整菜單", () => {
+    const blank = createDraft(1, 4);
+    assert.deepEqual(blank.dishes, [null, null, null, null]);
+    const third = applyDraftChoice(normalPool, blank, 2, "tofu");
+    assert.equal(third.ok, true);
+    if (!third.ok) return;
+    assert.deepEqual(
+      third.draft.dishes.map((slot) => slot?.id ?? null),
+      [null, null, "tofu", null],
+    );
+    assert.equal(draftProgress(normalPool, third.draft).complete, false);
+    assert.match(
+      draftProgress(normalPool, third.draft).message,
+      /還缺 3 道非湯料理.*1 道湯.*蔬菜/,
+    );
+  });
+
+  it("草稿拒絕重複、錯位和非候選，失敗時保留原草稿", () => {
+    const chosen = applyDraftChoice(normalPool, createDraft(1), 0, "cabbage");
+    assert.equal(chosen.ok, true);
+    if (!chosen.ok) return;
+    for (const [target, id] of [
+      [1, "cabbage"],
+      ["soup", "tofu"],
+      [1, "radish-soup"],
+      [1, "missing"],
+    ] as const) {
+      const result = applyDraftChoice(normalPool, chosen.draft, target, id);
+      assert.equal(result.ok, false);
+      assert.deepEqual(result.draft, chosen.draft);
+    }
+  });
+
+  it("只有不同菜色滿足蔬菜與肉蛋料理才可完成五菜一湯", () => {
+    const pool = [
+      both("double"),
+      plain("a"),
+      plain("b"),
+      plain("c"),
+      plain("d"),
+      pro("tofu"),
+      soup("broth"),
+    ];
+    let draft = createDraft(2, 5);
+    for (const [target, id] of [
+      [4, "double"],
+      [0, "a"],
+      [1, "b"],
+      [2, "c"],
+      [3, "d"],
+      ["soup", "broth"],
+    ] as const) {
+      const result = applyDraftChoice(pool, draft, target, id);
+      assert.equal(result.ok, true);
+      if (result.ok) draft = result.draft;
+    }
+    assert.equal(draftProgress(pool, draft).complete, false);
+    assert.match(draftProgress(pool, draft).message, /另一道蔬菜或肉蛋料理/);
+    const result = applyDraftChoice(pool, draft, 0, "tofu");
+    assert.equal(result.ok, true);
+    if (!result.ok) return;
+    const progress = draftProgress(pool, result.draft);
+    assert.equal(progress.complete, true);
+    if (progress.complete) assertValid(pool, progress.plan);
+  });
+});
 
 const veg = (id: string): Candidate => ({
   id,

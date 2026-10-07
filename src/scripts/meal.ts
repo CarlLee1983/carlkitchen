@@ -1,6 +1,10 @@
 import {
   applyAction,
+  applyDraftChoice,
+  createDraft,
   createPlan,
+  draftProgress,
+  type Draft,
   type Action,
   type Candidate,
   type Plan,
@@ -70,6 +74,7 @@ export function initMeal() {
     ...document.querySelectorAll<HTMLButtonElement>("[data-mode]"),
   ];
   const rerollButton = document.querySelector("[data-reroll]");
+  const selfButton = document.querySelector("[data-self-select]");
   if (!dataElement?.textContent || !planList || !status || !emptyNote) return;
 
   const { candidates, recipes } = JSON.parse(
@@ -84,6 +89,7 @@ export function initMeal() {
   const kinds = new Map(candidates.map((item) => [item.id, item]));
 
   let plan: Plan = createPlan(randomSeed());
+  let draft: Draft | null = null;
   let message = "";
   const restored = restorePlan(readSaved(), candidates);
   if (restored.kind === "restored") {
@@ -117,22 +123,26 @@ export function initMeal() {
   }
 
   function renderItem(
-    id: string,
+    id: string | null,
     locked: boolean,
     target: number | "soup",
     slotLabel: string,
   ) {
-    const info = recipes[id]!;
+    const info = id ? recipes[id]! : null;
     const item = el("li", undefined, "meal-item");
-    const thumb = thumbs.get(id)?.content.firstElementChild?.cloneNode(true);
+    const thumb = id
+      ? thumbs.get(id)?.content.firstElementChild?.cloneNode(true)
+      : null;
     if (thumb) item.append(thumb);
     const heading = el("h2");
-    const link = el("a", info.title);
-    link.href = info.href;
-    heading.append(link);
+    if (info) {
+      const link = el("a", info.title);
+      link.href = info.href;
+      heading.append(link);
+    } else {
+      heading.textContent = "尚未指定";
+    }
 
-    const lock = actionButton("鎖定", info.title, "toggle", target);
-    lock.setAttribute("aria-pressed", String(locked));
     const actions = el("div", undefined, "meal-actions");
     const chooserLabel = el("label", target === "soup" ? "指定湯" : "指定菜色");
     const chooser = el("select");
@@ -142,6 +152,14 @@ export function initMeal() {
     );
     chooser.dataset.action = "assign";
     chooser.dataset.target = String(target);
+    if (!id) {
+      const placeholder = el(
+        "option",
+        target === "soup" ? "請選擇湯" : "請選擇菜色",
+      );
+      placeholder.value = "";
+      chooser.append(placeholder);
+    }
     for (const candidate of candidates.filter(
       (item) => item.soup === (target === "soup"),
     )) {
@@ -149,18 +167,21 @@ export function initMeal() {
       option.value = candidate.id;
       chooser.append(option);
     }
-    chooser.value = id;
+    chooser.value = id ?? "";
     chooserLabel.append(chooser);
-    actions.append(
-      lock,
-      actionButton("替換", info.title, "replace", target),
-      chooserLabel,
-    );
+    if (info && !draft) {
+      const lock = actionButton("鎖定", info.title, "toggle", target);
+      lock.setAttribute("aria-pressed", String(locked));
+      actions.append(lock, actionButton("替換", info.title, "replace", target));
+    }
+    actions.append(chooserLabel);
 
     item.append(
       el(
         "span",
-        [slotLabel, locked && "已鎖定", tagsOf(id)].filter(Boolean).join("・"),
+        [slotLabel, locked && "已鎖定", id && tagsOf(id)]
+          .filter(Boolean)
+          .join("・"),
         "meal-slot",
       ),
       heading,
@@ -191,19 +212,28 @@ export function initMeal() {
         ? `${active.dataset.action}:${active.dataset.target}`
         : null;
 
+    const shown = draft ?? plan;
     planList!.replaceChildren(
-      ...plan.dishes.map((slot, i) =>
-        renderItem(slot.id, slot.locked, i, `菜 ${i + 1}`),
+      ...shown.dishes.map((slot, i) =>
+        renderItem(slot?.id ?? null, slot?.locked ?? false, i, `菜 ${i + 1}`),
       ),
-      ...(plan.soup
-        ? [renderItem(plan.soup.id, plan.soup.locked, "soup", "湯")]
+      ...(draft || plan.soup
+        ? [
+            renderItem(
+              shown.soup?.id ?? null,
+              shown.soup?.locked ?? false,
+              "soup",
+              "湯",
+            ),
+          ]
         : []),
     );
-    emptyNote!.hidden = plan.dishes.length > 0 || plan.soup !== null;
+    emptyNote!.hidden =
+      draft !== null || plan.dishes.length > 0 || plan.soup !== null;
     for (const button of modeButtons) {
       button.setAttribute(
         "aria-pressed",
-        String(button.dataset.mode === String(plan.mode)),
+        String(button.dataset.mode === String(shown.mode)),
       );
     }
     announce(message);
@@ -229,11 +259,57 @@ export function initMeal() {
     render();
   }
 
-  rerollButton?.addEventListener("click", () => dispatch({ type: "reroll" }));
+  selfButton?.addEventListener("click", () => {
+    if (
+      (draft?.dishes.some(Boolean) || draft?.soup || plan.dishes.length > 0) &&
+      !window.confirm("從空白開始會捨棄目前選的菜色，確定嗎？")
+    )
+      return;
+    draft = createDraft(plan.seed, draft?.mode ?? plan.mode);
+    clearSaved();
+    message = draftProgress(candidates, draft).message;
+    render();
+  });
+  rerollButton?.addEventListener("click", () => {
+    if (
+      draft &&
+      (draft.dishes.some(Boolean) || draft.soup) &&
+      !window.confirm("重新抽選會捨棄目前自選的菜色，確定嗎？")
+    )
+      return;
+    if (draft) plan = createPlan(draft.seed, draft.mode);
+    draft = null;
+    dispatch({ type: "reroll" });
+  });
   for (const button of modeButtons) {
-    button.addEventListener("click", () =>
-      dispatch({ type: "mode", mode: button.dataset.mode === "5" ? 5 : 4 }),
-    );
+    button.addEventListener("click", () => {
+      const mode = button.dataset.mode === "5" ? 5 : 4;
+      if (draft) {
+        if (draft.mode === mode) return;
+        if (
+          mode === 4 &&
+          draft.dishes[4] &&
+          !window.confirm("切換四菜一湯會捨棄第五道菜，確定嗎？")
+        )
+          return;
+        draft = {
+          ...draft,
+          mode,
+          dishes:
+            mode === 5 ? [...draft.dishes, null] : draft.dishes.slice(0, 4),
+        };
+        message = draftProgress(candidates, draft).message;
+        render();
+      } else {
+        if (
+          plan.mode !== mode &&
+          plan.dishes.length > 0 &&
+          !window.confirm("切換菜數會重新抽選未鎖定的菜色，確定嗎？")
+        )
+          return;
+        dispatch({ type: "mode", mode });
+      }
+    });
   }
   planList.addEventListener("click", (event) => {
     const button = (event.target as Element).closest<HTMLElement>(
@@ -252,6 +328,28 @@ export function initMeal() {
     )
       return;
     const raw = select.dataset.target!;
+    if (draft) {
+      const result = applyDraftChoice(
+        candidates,
+        draft,
+        raw === "soup" ? "soup" : Number(raw),
+        select.value,
+      );
+      if (result.ok) {
+        draft = result.draft;
+        const progress = draftProgress(candidates, draft);
+        message = progress.message;
+        if (progress.complete) {
+          plan = progress.plan;
+          draft = null;
+          writeSaved(plan);
+        }
+      } else {
+        message = result.reason;
+      }
+      render();
+      return;
+    }
     dispatch({
       type: "assign",
       target: raw === "soup" ? "soup" : Number(raw),
