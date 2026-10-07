@@ -13,3 +13,6 @@ season:
   scope: 農業部食農教育平臺所述為國產青花菜產期；夏季市場可見進口品，也可能有先前採收的國產冷凍品，不能將購得時間當成當地採收期。實際產期依產地、栽培及年度條件變動。
 relatedRecipes:
   - garlic-broccoli
+hero:
+  src: ./hero.webp
+  alt: 一株翠綠青花菜，花蕾緊密，短莖與側葉可見的水彩插畫

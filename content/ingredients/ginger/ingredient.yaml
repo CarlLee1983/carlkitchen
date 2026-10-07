@@ -8,3 +8,6 @@ storage: 老薑可放通風處；嫩薑、粉薑用保鮮膜包起後放冰箱�
 uses: 農業部資料列出薑可醃製或做薑茶；薑絲蛤蜊湯是本站的一種料理例子。
 relatedRecipes:
   - clam-ginger-soup
+hero:
+  src: ./hero.webp
+  alt: 一塊分枝薑塊，切口露出淡黃色薑肉的水彩插畫

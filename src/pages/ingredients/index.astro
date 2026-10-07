@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Illustration from "../../components/Illustration.astro";
 import { INGREDIENT_CATEGORIES } from "../../content/ingredient-schema";
 import { getVisibleIngredientEntries } from "../../utils/ingredient-entries";
 
@@ -53,9 +54,18 @@ const groups = INGREDIENT_CATEGORIES.map((category) => ({
             </div>
             <ul>
               {group.entries.map((entry) => (
-                <li>
-                  <a href={`/ingredients/${entry.id}/`}>{entry.data.title}</a>
-                  <p>{entry.data.summary}</p>
+                <li class:list={{ "with-image": Boolean(entry.data.hero) }}>
+                  {entry.data.hero && (
+                    <Illustration
+                      image={entry.data.hero}
+                      sizes="(max-width: 650px) 88px, 112px"
+                      widths={[88, 112, 176, 224, 336]}
+                    />
+                  )}
+                  <div class="entry-copy">
+                    <a href={`/ingredients/${entry.id}/`}>{entry.data.title}</a>
+                    <p>{entry.data.summary}</p>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -123,20 +133,34 @@ const groups = INGREDIENT_CATEGORIES.map((category) => ({
     border-bottom: 1px solid var(--line);
     padding: 0 0 1.25rem;
   }
+  li.with-image {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+  }
+  .entry-copy {
+    min-width: 0;
+  }
+  li :global(figure.illustration) {
+    padding-top: 0.35rem;
+  }
   li + li {
     padding-top: 1.25rem;
   }
   li a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     min-height: 44px;
     font-family: var(--font-serif);
     font-size: 1.5rem;
-    line-height: 44px;
+    line-height: 1.4;
     text-underline-offset: 0.25em;
   }
   li p {
     margin: 0;
     color: var(--ink-soft);
+    overflow-wrap: anywhere;
   }
   .empty {
     border-top: 1px solid var(--line);
@@ -154,6 +178,10 @@ const groups = INGREDIENT_CATEGORIES.map((category) => ({
     }
     .category-heading {
       margin-bottom: 1rem;
+    }
+    li.with-image {
+      grid-template-columns: 5.5rem minmax(0, 1fr);
+      gap: 1rem;
     }
   }
 </style>

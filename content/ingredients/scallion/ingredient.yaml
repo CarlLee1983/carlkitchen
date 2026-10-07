@@ -8,3 +8,6 @@ storage: 桃園區農業改良場建議用紙包裹青蔥、放進塑膠袋，�
 uses: 青蔥可作為菜餚調味，也可切段入菜；蔥白與蔥綠在料理中的加入時機可依食譜調整。
 relatedRecipes:
   - scallion-beef
+hero:
+  src: ./hero.webp
+  alt: 三根帶根鬚、白色蔥白與綠色蔥葉的青蔥水彩插畫
