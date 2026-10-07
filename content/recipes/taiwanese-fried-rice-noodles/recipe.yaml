@@ -1,5 +1,5 @@
 title: 台式炒米粉
-summary: 乾米粉先汆燙再燜軟，和香菇、蝦米、肉絲與蔬菜加高湯一起拌炒入味，最後加芹菜末與香油。一盤就能當一餐。
+summary: 乾米粉先汆燙再燜軟，和香菇、蝦米、豬肉絲與蔬菜加高湯一起拌炒入味，最後加芹菜末與香油。一盤就能當一餐。
 servings: 3
 category: 主食
 draft: false
@@ -10,7 +10,11 @@ timeMinutes: 30
 tags: [家常菜]
 ingredients:
   - { name: 乾米粉, amount: { value: 200, unit: g } }
-  - { name: 肉絲, amount: { value: 100, unit: g } }
+  - {
+      name: 豬肉絲,
+      amount: { value: 100, unit: g },
+      note: 里肌肉切絲，也可用梅花肉或五花肉,
+    }
   - { name: 乾香菇, amount: { value: 3, unit: 朵 }, note: 泡軟後切絲 }
   - { name: 蝦米, amount: { value: 15, unit: g }, note: 泡軟 }
   - { name: 紅蔥頭, amount: { value: 10, unit: g }, note: 切末 }
@@ -57,11 +61,11 @@ steps:
     image:
       src: ./step-1.webp
       alt: 不鏽鋼鍋的鍋蓋斜靠在鍋緣，鍋中是瀝乾後燜軟的白色米粉，冒著些許蒸氣，旁邊放著一個空的不鏽鋼瀝水籃
-  - text: 燜米粉的同時，乾香菇和蝦米泡軟，香菇切絲；高麗菜切粗絲，紅蘿蔔切絲，紅蔥頭、芹菜切末，肉絲備好。
+  - text: 燜米粉的同時，乾香菇和蝦米泡軟，香菇切絲；高麗菜切粗絲，紅蘿蔔切絲，紅蔥頭、芹菜切末，里肌肉切絲。
     image:
       src: ./step-2.webp
       alt: 木砧板和菜刀上擺著高麗菜粗絲、紅蘿蔔絲、香菇絲、芹菜末和紅蔥末，旁邊有一碗泡軟的蝦米和一碗肉絲
-  - text: 炒鍋燒熱後倒入食用油，放紅蔥末爆香，再放香菇絲、蝦米和肉絲，炒約 1 分鐘。
+  - text: 炒鍋燒熱後倒入食用油，放紅蔥末爆香，再放香菇絲、蝦米和豬肉絲，炒約 1 分鐘。
     image:
       src: ./step-3.webp
       alt: 炒鍋中加了少許油，炒著紅蔥末、香菇絲、蝦米和已變色的肉絲，鍋鏟靠在鍋緣
