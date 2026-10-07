@@ -24,6 +24,9 @@ ingredients:
   - { name: 水, amount: { value: 1500, unit: ml }, group: 調味 }
 steps:
   - text: 排骨放進滾水汆燙，燙去血水後撈起備用。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼瀝水籃裡幾塊汆燙過的排骨，表面轉成灰白色，帶著水珠
   - text: 玉米洗淨切段；紅蘿蔔、白蘿蔔切塊。
     image:
       src: ./step-2.webp

@@ -41,6 +41,9 @@ ingredients:
   - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
 steps:
   - text: 蛤蜊吐完沙後，放進滾水汆燙約 15 秒，撈出瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼瀝水籃裡一堆剛汆燙撈起的蛤蜊，殼仍閉合，表面帶著水珠
   - text: 絲瓜削皮、挖掉中間的籽，切成小塊；青蔥切成蔥粒，薑切末。
     image:
       src: ./step-2.webp
