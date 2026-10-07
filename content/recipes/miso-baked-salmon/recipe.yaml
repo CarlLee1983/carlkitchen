@@ -1,0 +1,63 @@
+title: 味噌烤鮭魚
+summary: 帶皮鮭魚先以味噌、清酒與味醂冷藏醃漬，再擦去多餘醬料烤熟，做成鹹甜的魚料理。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 150
+tags: [日式料理]
+ingredients:
+  - {
+      name: 鮭魚,
+      amount: { value: 340, unit: g },
+      note: 帶皮魚片 2 片，每片厚度不超過 2.5 cm,
+    }
+  - {
+      name: 味噌,
+      amount: { value: 24, unit: g },
+      note: 約 2 湯匙，公制重量為推估,
+      group: 調味,
+    }
+  - { name: 清酒, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 味醂, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 醬油, amount: { value: 15, unit: ml }, group: 調味 }
+  - {
+      name: 熟芝麻油,
+      amount: { value: 1.25, unit: ml },
+      note: 1/4 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 摸查鮭魚表面與兩側，用魚骨夾拔除小刺；檢查魚皮，若有殘留魚鱗，用刀背刮除。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著兩片帶皮生鮭魚，旁邊有魚骨夾與菜刀
+  - text: 將味噌、清酒、味醂、醬油與熟芝麻油放入淺盤拌勻。
+    image:
+      src: ./step-2.webp
+      alt: 米白色長方淺盤中拌勻的淡褐色味噌醃醬
+  - text: 放入鮭魚，魚皮朝上，讓魚肉、側邊與魚皮都沾上醃醬。加蓋冷藏 1 至 2 小時。
+    image:
+      src: ./step-3.webp
+      alt: 兩片魚皮朝上的鮭魚裹著味噌醃醬，放在覆蓋透明蓋的米白色淺盤中
+  - text: 將烤箱預熱至 220°C，烤架置中層。烤盤鋪烘焙紙，刮除鮭魚表面多餘醃醬，魚皮朝下排入。
+    image:
+      src: ./step-4.webp
+      alt: 銀灰色烤盤鋪著烘焙紙，兩片刮去多餘醃醬的鮭魚以魚皮朝下排開
+  - text: 放入烤箱先烤 18 至 20 分鐘，再檢查熟度；烘烤期間不需翻面。
+    image:
+      src: ./step-5.webp
+      alt: 銀灰色烤盤中的兩片鮭魚已烘烤，魚肉呈不透明的淡橘色
+  - text: 將食物溫度計插入最厚處中心。未達 63°C 就繼續烤，確認達到 63°C 後取出盛盤。
+    image:
+      src: ./step-6.webp
+      alt: 米白色陶盤中盛著兩片魚皮朝下的烤鮭魚，表面帶淡褐色味噌色澤
+hero:
+  src: ./hero.webp
+  alt: 米白色橢圓陶盤中並排兩片帶皮烤鮭魚，表面呈淡褐色，魚肉為淡橘色
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩片帶皮生鮭魚，以及分裝在小碟與小杯中的味噌、清酒、味醂、醬油和熟芝麻油
+tip: 味噌容易烤焦，入爐前應刮除多餘醃醬。18 至 20 分鐘只是首次檢查時間，實際仍以最厚處中心達 63°C 為準。
