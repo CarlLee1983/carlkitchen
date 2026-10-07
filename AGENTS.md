@@ -20,7 +20,7 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `pnpm dev` — 開發伺服器（顯示草稿）
 - `pnpm build` / `pnpm preview` — 正式建置（排除草稿，建置後以 Pagefind 建立含菜譜頁與專題頁的搜尋索引）與預覽。建置固定帶 `--force`，在 `RECIPES_DIR` 切換時清除 Astro 內容層快取，不可拿掉
 - `pnpm check` — 格式檢查、`astro check`、建置
-- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄
+- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄
 - `pnpm test` — 單元測試
 - `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）；建置輸出在 `dist`、port 以 `E2E_PORT_BASE`（預設 4321）起算，平行跑需各用一個 worktree 並錯開 port
 - `pnpm check:merge` — 在暫時 worktree 合併 `origin/main` 後跑 CI 的檢查（加 `--e2e` 含瀏覽器測試），抓分支本身全綠、合併後才壞的情況

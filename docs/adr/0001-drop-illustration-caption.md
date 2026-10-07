@@ -1,6 +1,8 @@
 ---
-status: accepted
+status: superseded
 ---
+
+> 已由 [ADR 0004](0004-reference-only-copy.md) 取代：網站不再揭露 AI 製作，下文的揭露前提不再成立；不加逐圖圖說的結論維持不變。
 
 # 料理插畫不加「AI 繪製插畫」圖說
 
