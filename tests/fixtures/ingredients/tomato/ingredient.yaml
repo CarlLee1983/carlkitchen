@@ -1,0 +1,16 @@
+title: 番茄
+summary: 固定資料食材條目，用於讀者頁測試。
+category: vegetable
+draft: false
+selection: 挑選外觀完整的番茄。
+preparation: 清洗後依料理需求切分。
+storage: 放在適合的環境保存。
+uses: 可用於番茄炒蛋。
+season:
+  production:
+    - area: 臺灣
+      months: 12 月至翌年 4 月
+  bestFlavor: 12 月至翌年 4 月
+  scope: 僅供固定資料測試，不作正式內容。
+relatedRecipes:
+  - tomato-egg

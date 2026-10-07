@@ -18,7 +18,7 @@ pnpm preview                              # 預覽 dist/
 pnpm check                                # 格式檢查 + astro check + 建置
 pnpm test                                 # 單元測試
 pnpm exec playwright install chromium     # 第一次跑 e2e 前安裝瀏覽器
-pnpm test:e2e                             # 以固定菜譜建置後執行 Playwright
+pnpm test:e2e                             # 以固定菜譜與食材條目建置後執行 Playwright
 pnpm format                               # 格式化
 ```
 
@@ -33,9 +33,11 @@ content/recipes/tomato-egg/
   ...
 ```
 
-- `RECIPES_DIR` 環境變數指定內容根目錄，預設 `content/recipes`（正式內容，目前為空；沒有菜譜時建置仍會成功）。
-- 測試與 e2e 使用 `tests/fixtures/recipes/`（含一份草稿），與正式內容分開。
-- `draft: true` 的菜譜只在 `pnpm dev` 看得到，正式建置的頁面與清單都不含。
+- `RECIPES_DIR` 環境變數指定菜譜目錄，預設 `content/recipes`；`SOURCES_DIR` 指定內部菜譜來源紀錄，預設 `content/sources`。
+- 食材條目位於 `content/ingredients/<識別值>/ingredient.yaml`，以 `INGREDIENTS_DIR` 切換；其核准來源紀錄位於 `content/ingredient-sources/<識別值>.yaml`，以 `INGREDIENT_SOURCES_DIR` 切換。來源紀錄的 `sources` 項目各有 `title` 與 `url`，條目頁文末從該紀錄顯示公開連結。
+- 食材條目必填短介、選用、處理、保存、用途及相關菜譜；蔬菜另填臺灣主要產期、最佳賞味期與適用範圍。圖片可省略；有圖時必填替代文字，並遵守 WebP、1536×1024、不超過 300 KB。
+- `draft: true` 的菜譜與食材條目只在 `pnpm dev` 看得到，正式建置不輸出草稿頁。高麗菜首篇已經站主逐篇審閱，可在正式建置開啟 `/ingredients/cabbage/`。
+- 測試與 e2e 使用 `tests/fixtures/recipes/` 和 `tests/fixtures/ingredients/`，與正式內容分開。`pnpm build && pnpm check:content` 檢查內容與輸出；食材條目不進入目前只收錄菜譜的站內搜尋索引。
 
 ## 部署與回滾
 

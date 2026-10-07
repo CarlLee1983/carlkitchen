@@ -14,6 +14,9 @@ const { values } = parseArgs({
 const issues = await runContentChecks({
   recipesDir: process.env.RECIPES_DIR || "content/recipes",
   sourcesDir: process.env.SOURCES_DIR || "content/sources",
+  ingredientsDir: process.env.INGREDIENTS_DIR || "content/ingredients",
+  ingredientSourcesDir:
+    process.env.INGREDIENT_SOURCES_DIR || "content/ingredient-sources",
   distDir: values.dist,
   launch: values.launch,
 });

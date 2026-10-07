@@ -1,0 +1,281 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Illustration from "../../components/Illustration.astro";
+import { readIngredientSources } from "../../content/ingredient-sources";
+import Base from "../../layouts/Base.astro";
+import {
+  getVisibleIngredientEntries,
+  type IngredientEntry,
+} from "../../utils/ingredient-entries";
+
+export async function getStaticPaths() {
+  const [ingredients, recipes] = await Promise.all([
+    getVisibleIngredientEntries(),
+    getCollection("recipes", ({ data }) => !data.draft),
+  ]);
+  const byRecipeId = new Map(recipes.map((recipe) => [recipe.id, recipe]));
+  return ingredients.map((ingredient) => ({
+    params: { id: ingredient.id },
+    props: {
+      ingredient,
+      relatedRecipes: ingredient.data.relatedRecipes.flatMap((id) => {
+        const recipe = byRecipeId.get(id);
+        return recipe ? [recipe] : [];
+      }),
+      sources: readIngredientSources(ingredient.id),
+    },
+  }));
+}
+
+interface Props {
+  ingredient: IngredientEntry;
+  relatedRecipes: CollectionEntry<"recipes">[];
+  sources: ReturnType<typeof readIngredientSources>;
+}
+
+const { ingredient, relatedRecipes, sources } = Astro.props;
+const { data } = ingredient;
+const categoryLabel = {
+  vegetable: "蔬菜",
+  aromatic: "辛香料",
+  seasoning: "調味料",
+}[data.category];
+---
+
+<Base title={`${data.title}｜食材介紹｜CarlKitchen`}>
+  <article class="ingredient-entry">
+    <p class="eyebrow">食材介紹 / {categoryLabel} / {data.title}</p>
+    <div class="entry-grid">
+      <aside class="entry-aside" aria-label="條目類別">
+        <span class="chapter-number" aria-hidden="true">01</span>
+        <p>{categoryLabel}條目</p>
+      </aside>
+      <div class="entry-main">
+        <header>
+          <h1>
+            {data.title}{data.draft && <span class="draft">（草稿）</span>}
+          </h1>
+          <p class="lead">{data.summary}</p>
+        </header>
+
+        {
+          data.hero && (
+            <Illustration
+              image={data.hero}
+              sizes="(min-width: 64rem) 40rem, 100vw"
+              priority
+            />
+          )
+        }
+
+        <section aria-labelledby="selection-title">
+          <h2 id="selection-title">選用</h2><p>{data.selection}</p>
+        </section>
+        <section aria-labelledby="preparation-title">
+          <h2 id="preparation-title">處理</h2><p>{data.preparation}</p>
+        </section>
+        <section aria-labelledby="storage-title">
+          <h2 id="storage-title">保存</h2><p>{data.storage}</p>
+        </section>
+        <section aria-labelledby="uses-title">
+          <h2 id="uses-title">用途</h2><p>{data.uses}</p>
+        </section>
+
+        {
+          data.season && (
+            <section aria-labelledby="season-title">
+              <h2 id="season-title">臺灣產期與賞味</h2>
+              <dl>
+                {data.season.production.map((period) => (
+                  <div>
+                    <dt>{period.area}主要產期</dt>
+                    <dd>{period.months}</dd>
+                  </div>
+                ))}
+                <div>
+                  <>
+                    <dt>最佳賞味期</dt>
+                    <dd>{data.season.bestFlavor}</dd>
+                  </>
+                </div>
+              </dl>
+              <p class="scope">適用範圍：{data.season.scope}</p>
+            </section>
+          )
+        }
+
+        <div class="recipe-handoff" aria-labelledby="recipes-title">
+          <h2 id="recipes-title">相關菜譜 / 接著下廚</h2>
+          <ul>
+            {
+              relatedRecipes.map((recipe) => (
+                <li>
+                  <a href={`/recipes/${recipe.id}/`}>
+                    {recipe.data.title} <span aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <p>菜譜另提供材料、份量與步驟。</p>
+        </div>
+
+        {
+          sources.length > 0 && (
+            <section
+              class="source-list"
+              data-ingredient-sources={ingredient.id}
+              aria-labelledby="sources-title"
+            >
+              <h2 id="sources-title">公開來源</h2>
+              <ul>
+                {sources.map((source) => (
+                  <li>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {source.title} <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .ingredient-entry {
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+  }
+  .eyebrow {
+    margin: 0 0 2rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+  .entry-grid {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 40rem);
+    gap: 4rem;
+  }
+  .entry-aside {
+    border-right: 1px solid var(--line);
+  }
+  .entry-aside p {
+    color: var(--ink-soft);
+  }
+  .chapter-number {
+    font-family: var(--font-serif);
+    font-size: clamp(5rem, 12vw, 10rem);
+    line-height: 1;
+    color: #d8d2c5;
+  }
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    letter-spacing: 0.03em;
+  }
+  .draft {
+    font-size: 0.35em;
+    vertical-align: middle;
+    color: var(--ink-soft);
+  }
+  .lead {
+    max-width: 43rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+    line-height: 1.8;
+  }
+  .entry-main > section {
+    margin-top: 3rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .entry-main > section p {
+    max-width: 36rem;
+  }
+  dl {
+    margin: 1.25rem 0;
+    border-top: 1px solid var(--line);
+  }
+  dl > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  dt {
+    color: var(--ink-soft);
+  }
+  dd {
+    margin: 0;
+    text-align: right;
+  }
+  .scope {
+    margin-top: 1.5rem;
+  }
+  .recipe-handoff {
+    display: grid;
+    gap: 0.4rem;
+    margin-top: 4rem;
+    padding: 1.5rem;
+    border: 1px solid var(--ink);
+  }
+  .recipe-handoff h2 {
+    margin: 0;
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: 0.9rem;
+  }
+  .recipe-handoff ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .recipe-handoff li + li {
+    margin-top: 0.5rem;
+  }
+  .recipe-handoff a {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+  }
+  .recipe-handoff p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+  .source-list {
+    border-top-color: var(--ink) !important;
+  }
+  .source-list ul {
+    padding-left: 1.4rem;
+  }
+  .source-list li {
+    margin: 0.6rem 0;
+  }
+  .source-list a {
+    text-underline-offset: 0.25em;
+  }
+  @media (max-width: 650px) {
+    .ingredient-entry {
+      padding-top: 2rem;
+    }
+    .entry-grid {
+      display: block;
+    }
+    .entry-aside {
+      display: none;
+    }
+  }
+</style>
