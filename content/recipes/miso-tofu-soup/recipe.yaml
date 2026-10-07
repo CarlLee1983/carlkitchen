@@ -1,0 +1,57 @@
+# 站主已同意本菜譜沿用半盒、半塊、一包與一小撮，不以常見包裝重量推定克數。
+# 時間推估約 12 分鐘，依規範取最接近的 5 分鐘為 10：備料 3 與水煮沸 4 同時進行，另加煮高湯包 3、煮豆腐與油揚豆皮 3、拌料 1、靜置 1。
+title: 味噌豆腐湯
+summary: 豆腐與油揚豆皮放入日式高湯煮，再拌入味噌與海帶芽，最後可撒上青蔥。
+servings: 2
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 10
+tags: [家常菜]
+tip: 豆腐、油揚豆皮與日式高湯包的包裝大小因產品而異，半盒、半塊與一包不代表固定重量。
+ingredients:
+  - { name: 豆腐, amount: { value: 0.5, unit: 盒 }, note: 切成約 1 公分的方塊 }
+  - {
+      name: 油揚豆皮,
+      amount: { value: 0.5, unit: 塊 },
+      note: 切成約 1 × 3 公分的小片,
+    }
+  - { name: 海帶芽, amount: { value: 1, unit: 小撮 } }
+  - { name: 青蔥, amount: { value: 1, unit: 支 }, note: 蔥花，可省略 }
+  - { name: 水, amount: { value: 400, unit: g } }
+  - { name: 日式高湯包, amount: { value: 1, unit: 包 }, group: 調味 }
+  - { name: 味噌, amount: { value: 14, unit: g }, group: 調味 }
+steps:
+  - text: 將豆腐分切成約 1 公分的方塊，油揚豆皮分切成約 1 × 3 公分的小片。
+    image:
+      {
+        src: ./step-1.webp,
+        alt: 木砧板上分開放著豆腐方塊與金黃色油揚豆皮小片，旁邊有一把菜刀,
+      }
+  - text: 煮沸水後放入日式高湯包；持續煮 3 分鐘，再把日式高湯包撈出。
+    image:
+      {
+        src: ./step-2.webp,
+        alt: 素色湯鍋中是淡黃色高湯，濾網托起一包日式高湯包，湯汁滴回鍋中,
+      }
+  - text: 放入豆腐與油揚豆皮，煮 3 分鐘後拌入味噌。
+    image:
+      {
+        src: ./step-3.webp,
+        alt: 素色湯鍋中有拌入味噌的湯汁、豆腐方塊與油揚豆皮小片，表面冒出少量氣泡,
+      }
+  - text: 關火後加入海帶芽，稍微拌勻，再靜置 1 分鐘。
+    image:
+      {
+        src: ./step-4.webp,
+        alt: 素色湯鍋中的味噌湯表面平靜，豆腐方塊、油揚豆皮與海帶芽分布在湯中,
+      }
+  - text: 撒上切好的青蔥即可上桌；不加青蔥也可以。
+hero:
+  src: ./hero.webp
+  alt: 敞口素色湯鍋盛著味噌湯，湯中有豆腐方塊、油揚豆皮與海帶芽，表面撒著青蔥
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 半盒份量的豆腐、半塊油揚豆皮、一包日式高湯包、一小撮海帶芽、一支青蔥，以及分開盛裝的味噌和水
