@@ -88,6 +88,7 @@ test("尚未抽選時顯示提示，按下重新抽選得到四菜一湯並連�
 });
 
 test("固定菜譜中的主食不會被抽中", async ({ page }) => {
+  // 候選池層的防線由 tests/meal-planner.test.ts 的單元測試守住；這裡只驗證端到端的結果。
   // 前提：固定菜譜確實有這道已發布的主食
   await page.goto("/recipes/meal-noodles/");
   await expect(

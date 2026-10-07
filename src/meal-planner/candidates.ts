@@ -21,14 +21,24 @@ export function candidatesFromRecipes(
   recipes: readonly RecipeLike[],
 ): Candidate[] {
   return recipes
-    .filter(
-      ({ data }) =>
-        data.mealCandidate && !data.draft && data.category !== "主食",
-    )
-    .map(({ id, data }) => ({
-      id,
-      soup: data.category === "湯",
-      vegetable: data.vegetable,
-      protein: data.protein,
-    }));
+    .filter(({ data }) => data.mealCandidate && !data.draft)
+    .flatMap(({ id, data }): Candidate[] => {
+      switch (data.category) {
+        case "非湯料理":
+        case "湯":
+          return [
+            {
+              id,
+              soup: data.category === "湯",
+              vegetable: data.vegetable,
+              protein: data.protein,
+            },
+          ];
+        case "主食":
+          return [];
+        default:
+          // 分類列舉新增值時，這裡會在型別檢查時報錯，提醒決定它能否進候選池
+          return data.category satisfies never;
+      }
+    });
 }
