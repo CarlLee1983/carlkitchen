@@ -163,9 +163,9 @@ export function initHome() {
     history.replaceState(null, "", url);
   }
 
-  function setState(state: HomeState, debounce = false) {
+  function setState(state: HomeState, debounce = false): Promise<void> {
     writeUrl(state);
-    void render(state, debounce);
+    return render(state, debounce);
   }
 
   // 建置時沒輸出的選項（沒有已發布菜色）不在按鈕裡，網址帶它視為全部。
@@ -182,7 +182,7 @@ export function initHome() {
       .catch(() => {});
   });
   const applyInput = () =>
-    setState(
+    void setState(
       { ...currentState(), q: normalizeQuery(input?.value ?? "") },
       true,
     );
@@ -196,30 +196,34 @@ export function initHome() {
   // Enter 不送出表單（會重新載入、丟掉篩選），改為立刻套用目前字詞。
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
-    setState({ ...currentState(), q: normalizeQuery(input?.value ?? "") });
+    void setState({ ...currentState(), q: normalizeQuery(input?.value ?? "") });
   });
 
-  /** 手機版篩選列固定在頂部；已捲到清單中段時，切換後把清單頂端對齊到列下方。 */
+  /**
+   * 手機版篩選列固定在頂部；已捲到清單中段時，切換後把清單頂端對齊到篩選列實際的
+   * 下緣（折成兩行時列比較高，所以量測而不寫死）。
+   */
   const isMobile = window.matchMedia("(max-width: 39.99rem)");
   const bar = document.querySelector(".list-tools");
   function keepListInView() {
-    if (isMobile.matches && bar && bar.getBoundingClientRect().top <= 0) {
-      rowList?.scrollIntoView({ block: "start" });
-    }
+    if (!isMobile.matches || !bar || !rowList) return;
+    const barRect = bar.getBoundingClientRect();
+    if (barRect.top > 0) return;
+    window.scrollBy(0, rowList.getBoundingClientRect().top - barRect.bottom);
   }
 
   for (const button of buttons) {
     button.addEventListener("click", () => {
-      setState({
+      // 有搜尋字詞時清單是非同步更新，等結果套用後再對齊
+      void setState({
         ...currentState(),
         kind: button.dataset.filter as KindFilter,
-      });
-      keepListInView();
+      }).then(keepListInView);
     });
   }
 
   clearButton?.addEventListener("click", () => {
-    setState({ q: "", kind: "all" });
+    void setState({ q: "", kind: "all" });
     input?.focus();
   });
 
@@ -227,5 +231,5 @@ export function initHome() {
   window.addEventListener("popstate", () => void render(currentState()));
 
   // 載入時依網址還原；無法辨識的參數值順便從網址清掉。
-  setState(currentState());
+  void setState(currentState());
 }

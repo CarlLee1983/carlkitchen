@@ -353,10 +353,6 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       background: var(--paper);
       border-bottom: 1px solid var(--line);
     }
-    /* 切換篩選後腳本把清單捲到這個位置，第一列才不會被固定的篩選列蓋住 */
-    .rows {
-      scroll-margin-top: 3rem;
-    }
     /* 截成 1 行；完整文字仍在 DOM，供螢幕閱讀器與 Pagefind 讀取 */
     .row-summary {
       display: -webkit-box;
