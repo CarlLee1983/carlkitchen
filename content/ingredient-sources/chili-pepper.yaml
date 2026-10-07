@@ -1,0 +1,13 @@
+sources:
+  # 挑選（光澤、硬實、避開乾枯腐爛；果形尖、果肉薄者較辣）；炒食、煮湯、調味佐料及辣椒醬、豆瓣醬等加工品；產地與 12 至 6 月盛產期。
+  - title: 農業部農業知識入口網：越辣越吃香－辣椒
+    url: https://kmweb.moa.gov.tw/theme_data.php?theme=news&sub_theme=agri_life&id=53871
+  # 處理前戴塑膠手套、被辣到可抹食用油或沖熱水；用不完裝保鮮盒（袋）冷凍；表面或蒂頭腐爛整根丟棄。未給冷凍天數。
+  - title: 農業部食農教育資訊整合平臺：椒是小的辣，臺灣常見辣椒排行榜
+    url: https://fae.moa.gov.tw/theme_data.php?theme=topics&sub_theme=knowledge&id=1845
+  # 料理例子麻婆豆腐、酸辣湯；產期列全年，與上方盛產期口徑不同，只寫入 scope。
+  - title: 農業部農業知識入口網：辣椒（農漁生產地圖）
+    url: https://kmweb.moa.gov.tw/theme_data.php?theme=production_map&id=14
+  # 物流儲運條件，只取辣椒不耐低溫的定性說法；不引用天數，0 至 5℃ 欄位與冷害溫度矛盾，不採用。
+  - title: 衛生福利部食品藥物管理署：生鮮蔬果建議儲運溫度
+    url: https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638187181500468579

@@ -1,0 +1,13 @@
+sources:
+  # 太白粉須於內容物如實標示原料（樹薯粉、馬鈴薯粉等），2017 年 1 月 1 日起製造之產品適用。
+  - title: 衛生福利部：106 年太白粉標示規定
+    url: https://www.mohw.gov.tw/cp-16-9681-1.html
+  # 樹薯澱粉、原產地泰國；陰涼乾燥避免日照、開封後儘早食用；2 年；調羹勾芡、沾炸、冰淇淋布丁軟糕材料。只代表該產品。WebFetch 連線被重置，以 curl 讀取原頁核對。
+  - title: 仙知味食品：太白粉
+    url: http://www.sanwi.com.tw/product.php?act=view&id=6
+  # 太白粉加冷水調勻後加入熱菜勾芡，使湯汁濃稠、外表有光澤。
+  - title: 食力 foodNEXT：馬鈴薯變太白粉，為什麼能讓食物黏黏的呢？
+    url: https://www.foodnext.net/science/knowledge/paper/5098271023
+  # 生粉等粉狀調味料放密封器皿、陰涼處。香港公共機構。
+  - title: 香港消費者委員會：調味品發霉？變味？不可不知的儲存方法
+    url: https://www.consumer.org.hk/tc/article/526-condiment-storage/526_condiment_storage

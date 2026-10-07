@@ -1,0 +1,13 @@
+sources:
+  # 前五大產地與約 65% 面積；中國南瓜秋冬作為主、西洋南瓜中南部秋冬作、北部春作（採用為產期欄依據）。產季圖卡 3–11 月盛產只寫進 scope。
+  - title: 農業部食農教育資訊整合平臺：南瓜產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=405&type=AS03
+  # 挑選五秘訣圖卡；保存圖卡（整顆通風陰涼約 2 個月、切面保鮮膜冷藏、切塊冷凍、蒸熟冷凍約 4 週）。
+  - title: 農業部食農教育資訊整合平臺：南瓜挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=405&type=AS06
+  # 食譜清單中的南瓜海鮮濃湯、南瓜糙米米粉、烤雞南瓜嫩飯、紫米蓮子南瓜飯，作為濃湯、米粉、南瓜飯用途。
+  - title: 農業部食農教育資訊整合平臺：南瓜料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=405&type=AS07
+  # 果皮洗淨可食、種子與綿狀纖維可一起打成濃湯；中國南瓜做金瓜米粉、東昇南瓜做濃湯或南瓜泥。3–10 月盛產與 3–6 個月常溫保存只寫進 scope。
+  - title: 農業兒童網：顏值高營養讚 南瓜料理鹹甜皆宜
+    url: https://kids.moa.gov.tw/theme_data.php?theme=kids_school&sub_theme=food&type=D01&id=313

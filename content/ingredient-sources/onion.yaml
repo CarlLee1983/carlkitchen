@@ -1,0 +1,10 @@
+sources:
+  # 知名產地；彰化雲林 12 月進入產季、高雄 1 月底至 3 月初、屏東 3 至 4 月盛產；12 月至翌年 4 月最鮮甜（產季圖卡標為「最佳賞味期」）；屏東冷藏後 7 至 8 月仍可買到、8 至 11 月仰賴進口。
+  - title: 農業部食農教育資訊整合平臺：洋蔥產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=73&type=AS03
+  # 挑選圖卡；國產與進口洋蔥的分辨；陰涼乾燥通風、勿冷藏；發芽與變軟的說明。沒有保存天數。
+  - title: 農業部食農教育資訊整合平臺：洋蔥挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=73&type=AS06
+  # 切根泡水減少流淚、切圈片粒、切絲泡冷開水減辛辣；食譜例子中的莎莎醬、洋蔥拌雞絲、洋蔥起司舟。
+  - title: 農業部食農教育資訊整合平臺：洋蔥料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=73&type=AS07

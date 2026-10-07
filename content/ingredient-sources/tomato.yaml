@@ -1,0 +1,10 @@
+sources:
+  # 全年生產、12 月至翌年 4 月盛產；縣市產量圖前五名為嘉義、南投、臺南、高雄、雲林（圖上未標年度）。
+  - title: 農業部食農教育資訊整合平臺：番茄產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=87&type=AS03
+  # 大果與小果番茄挑選圖卡；已熟不洗裝袋冷藏、未熟放通風陰涼處後熟；碰水易裂果。沒有保存天數。
+  - title: 農業部食農教育資訊整合平臺：番茄挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=87&type=AS06
+  # 流動水加軟毛刷清洗、大果去蒂與小果留蒂；食譜例子中的番茄炒蛋、番茄醬、雞湯與燙皮。
+  - title: 農業部食農教育資訊整合平臺：番茄料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=87&type=AS07

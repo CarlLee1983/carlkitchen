@@ -1,0 +1,10 @@
+sources:
+  # 成分只有白胡椒粒；同產線生產含麩質穀物、奶、大豆、芝麻製品；開封後壓緊蓋放冰箱；24 個月；白肉、湯品、台式小吃。只代表該產品。
+  - title: 小磨坊：純白胡椒粉
+    url: https://www.tomax.com.tw/product/ins.php?index_id=69&index_m1_id=22&index_m2_id=35
+  # 白胡椒 50% 加麩皮粉、麥芽糊精、玉米澱粉、辣椒；含麩質穀物；開封後密封冷藏；24 個月；魚類、清淡菜餚、醬料、餡料、湯。只代表該產品。
+  - title: 小磨坊：調和白胡椒粉
+    url: https://www.tomax.com.tw/product/ins.php?index_id=93&index_m1_id=22&index_m2_id=36
+  # 乾燥調味品放密封器皿、陰涼處，不冷藏；與小磨坊開封後冷藏的標示不同。香港公共機構。
+  - title: 香港消費者委員會：調味品發霉？變味？不可不知的儲存方法
+    url: https://www.consumer.org.hk/tc/article/526-condiment-storage/526_condiment_storage

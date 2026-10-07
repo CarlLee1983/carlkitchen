@@ -1,0 +1,16 @@
+sources:
+  # 食用玉米產地（雲林近六成、臺南、嘉義）；全年生產、秋作與裡作為主、9 月至翌年 5 月盛產。產季圖卡寫「全年」，採頁面文字。資料指食用玉米整體。
+  - title: 農業部食農教育資訊整合平臺：玉米(食用)產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=151&type=AS03
+  # 挑選圖卡與玉米鬚判讀（平臺註明轉引自由時報）；保存圖卡（常溫通風陰涼 2 天內、冷藏塑膠袋 7 天內）；甜玉米 30°C 24 小時失去 60% 糖分。
+  - title: 農業部食農教育資訊整合平臺：玉米(食用)挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=151&type=AS06
+  # 水煮玉米、剝玉米粒、黃金玉米三杯雞食譜。
+  - title: 農業部食農教育資訊整合平臺：玉米(食用)料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=151&type=AS07
+  # 玉米濃湯用途。
+  - title: 農業部食農教育資訊整合平臺：認識玉米
+    url: https://fae.moa.gov.tw/map/food_item.php?id=151&type=AS01
+  # 食用玉米分甜玉米、糯玉米、白玉米、玉米筍四類，國內以甜玉米為大宗；雲林、嘉義、臺南栽培面積前三。
+  - title: 臺南區農業專訊 122 期：甜玉米市場概況及常見品種介紹
+    url: https://book.tndais.gov.tw/Magazine/mag122/122-2.pdf

@@ -1,0 +1,22 @@
+sources:
+  # 不結球白菜包含小白菜的定義。
+  - title: 農業部食農教育資訊整合平臺：認識不結球白菜
+    url: https://fae.moa.gov.tw/map/food_item.php?id=28&type=AS01
+  # 雲林、桃園、高雄栽培面積前三；品種分全年、夏季、冷涼栽培，全年生產。資料指不結球白菜整體。
+  - title: 農業部食農教育資訊整合平臺：不結球白菜產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=28&type=AS03
+  # 挑選圖卡；保存前不洗、避免過乾、塑膠袋擠出空氣冷藏。
+  - title: 農業部食農教育資訊整合平臺：不結球白菜挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=28&type=AS06
+  # 小白菜建議快炒或汆燙，搭配蒜末、薑絲、米酒（原句講小白菜）。
+  - title: 農業部食農教育資訊整合平臺：不結球白菜料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=28&type=AS07
+  # 挑選（葉子翠綠挺直、莖肉厚實）、攤開吹乾後冷藏、乾癟泡水回復；煮久變老，宜快炒或川燙；湯麵、餛飩湯常用。
+  - title: 農業兒童網：小白菜長得快 30天給你好菜
+    url: https://kids.moa.gov.tw/theme_data.php?theme=kids_school&sub_theme=food&type=A01&id=61
+  # 冬季除北部略少外整年生產（只寫進 scope，產期欄採 AS03）；包裹冷藏 2–3 天、連根約再延長 2 天；白灼小白菜。
+  - title: 農業部農業知識入口網：小白菜（農漁生產地圖）
+    url: https://kmweb.moa.gov.tw/theme_data.php?theme=production_map&id=166
+  # 小白菜、青江菜要翻開葉片沖洗，注意葉柄與根部。
+  - title: 農業部食農教育資訊整合平臺：輕鬆洗，安心吃 3項清洗步驟
+    url: https://fae.moa.gov.tw/theme_data.php?theme=news&sub_theme=hot_news&id=1766
