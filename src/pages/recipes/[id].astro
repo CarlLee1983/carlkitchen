@@ -225,10 +225,6 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
         </section>
       )
     }
-
-    <section class="disclaimer" aria-label="聲明">
-      <p>依公開資料整理、站主審閱，未經試做</p>
-    </section>
   </article>
 </Base>
 
@@ -388,17 +384,6 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     text-underline-offset: 0.25em;
   }
 
-  .disclaimer {
-    margin-top: 4rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--line);
-    color: var(--ink-soft);
-    font-size: 0.85rem;
-  }
-  .disclaimer p {
-    margin: 0;
-  }
-
   /* 寬螢幕：材料在左欄、捲動做法時保持可見（只 sticky，不設捲動區）；手機單欄 */
   @media (min-width: 64rem) {
     .recipe-body {
@@ -414,7 +399,6 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
 
   /* 列印：只留成品圖、材料與做法；步驟圖與材料合照不印，確保一張紙 */
   @media print {
-    .disclaimer,
     .ingredient-guide,
     .favorite-actions,
     .ingredients :global(figure),

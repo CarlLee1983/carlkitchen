@@ -77,8 +77,8 @@ test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版�
 
 test("頁底有未試做聲明，且頁面沒有外部或來源連結", async ({ page }) => {
   await page.goto(url);
-  await expect(page.getByRole("region", { name: "聲明" })).toContainText(
-    "依公開資料整理、站主審閱，未經試做",
+  await expect(page.getByRole("contentinfo")).toContainText(
+    "菜譜由 AI 整理公開資料、站主審閱，未經試做",
   );
   const hrefs = await page
     .getByRole("link")
@@ -115,7 +115,7 @@ test("寬螢幕捲動做法時材料欄仍在視窗內；手機為單欄", async
   const stepsBox = await steps.boundingBox();
   expect(asideBox!.x + asideBox!.width).toBeLessThanOrEqual(stepsBox!.x + 1);
 
-  await page.getByRole("region", { name: "聲明" }).scrollIntoViewIfNeeded();
+  await page.getByRole("contentinfo").scrollIntoViewIfNeeded();
   expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
   await expect(aside).toBeInViewport();
 
@@ -146,7 +146,7 @@ test("列印媒體：隱藏導覽、聲明與步驟圖，保留材料、做法�
   await page.goto(url);
   await page.emulateMedia({ media: "print" });
   await expect(page.getByRole("navigation")).toBeHidden();
-  await expect(page.getByRole("region", { name: "聲明" })).toBeHidden();
+  await expect(page.getByRole("contentinfo")).toBeHidden();
   const article = page.getByRole("article");
   await expect(article.getByRole("figure").first()).toBeVisible();
   await expect(page.getByRole("complementary", { name: "材料" })).toBeVisible();

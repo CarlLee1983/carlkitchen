@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { SITE_NAME } from "../utils/site";
+import { copyrightYears, SITE_NAME } from "../utils/site";
 
 interface Props {
   /** 頁面名稱；不傳（首頁）時 title 只顯示站名。 */
@@ -127,5 +127,15 @@ const imageUrl = new URL(image.src, Astro.site).href;
     <main>
       <slot />
     </main>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p>
+          菜譜由 AI 整理公開資料、站主審閱，未經試做，份量與時間僅供參考。<a
+            href="/about/">了解更多</a
+          >
+        </p>
+        <p>© {copyrightYears(new Date().getFullYear())} {SITE_NAME}</p>
+      </div>
+    </footer>
   </body>
 </html>
