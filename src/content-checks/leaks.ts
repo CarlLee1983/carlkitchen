@@ -69,12 +69,25 @@ function sourceCore(url: string): string {
 export function checkLeaks(input: {
   files: readonly BuildFile[];
   draftIds: readonly string[];
+  draftIngredientIds?: readonly string[];
   sourceUrls: readonly string[];
 }): Issue[] {
-  const draftPatterns = input.draftIds.map((id) => ({
+  const draftPatterns = [
+    ...input.draftIds.map((id) => ({
+      id,
+      kind: "recipe" as const,
+      base: "recipes",
+    })),
+    ...(input.draftIngredientIds ?? []).map((id) => ({
+      id,
+      kind: "ingredient" as const,
+      base: "ingredients",
+    })),
+  ].map(({ id, kind, base }) => ({
     id,
+    kind,
     pattern: new RegExp(
-      `(?<![a-z0-9-])recipes/${escapeRegExp(id)}(?![a-z0-9-])`,
+      `(?<![a-z0-9-])${base}/${escapeRegExp(id)}(?![a-z0-9-])`,
     ),
   }));
   const cores = input.sourceUrls.map((url) => ({
@@ -86,16 +99,16 @@ export function checkLeaks(input: {
   for (const file of input.files) {
     const path = file.path.toLowerCase();
     const text = normalizeText(file.text);
-    for (const { id, pattern } of draftPatterns) {
+    for (const { id, kind, pattern } of draftPatterns) {
       if (pattern.test(path)) {
         issues.push({
-          recipe: id,
+          [kind]: id,
           file: file.path,
           message: "建置輸出含草稿頁面或檔案。",
         });
       } else if (pattern.test(text)) {
         issues.push({
-          recipe: id,
+          [kind]: id,
           file: file.path,
           message: "建置輸出內容含草稿頁面連結。",
         });

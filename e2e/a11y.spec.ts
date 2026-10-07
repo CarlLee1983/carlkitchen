@@ -8,11 +8,12 @@ import {
 } from "./a11y-helpers";
 import { publishedFixtureRecipes } from "./fixture-recipes";
 
-// 預設站台的四個頁面；配菜頁在 meal 站台，見 meal.spec.ts 的「無障礙」。
+// 預設站台的頁面；配菜頁在 meal 站台，見 meal.spec.ts 的「無障礙」。
 // 404 用一個不存在的網址，確認 preview 真的回 404 狀態碼與這個頁面。
 const pages = [
   { name: "首頁", path: "/" },
   { name: "菜譜頁", path: "/recipes/tomato-egg/" },
+  { name: "食材條目頁", path: "/ingredients/tomato/" },
   { name: "關於頁", path: "/about/" },
   { name: "404 頁", path: "/no-such-page/" },
 ];
