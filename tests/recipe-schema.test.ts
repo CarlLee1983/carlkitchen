@@ -83,6 +83,37 @@ describe("recipe schema", () => {
     );
   });
 
+  it("分類可以是主食；主食不可標蔬菜菜或蛋白質菜，也不可為配菜候選", () => {
+    const staple = {
+      ...publishedRecipe(),
+      category: "主食",
+      vegetable: false,
+      protein: false,
+      mealCandidate: false,
+    };
+    assert.equal(schema.safeParse(staple).success, true);
+    failsAt({ ...staple, vegetable: true }, "vegetable");
+    failsAt({ ...staple, protein: true }, "protein");
+    failsAt({ ...staple, mealCandidate: true }, "mealCandidate");
+  });
+
+  it("主食規則草稿同樣適用", () => {
+    const draftStaple = {
+      ...draftRecipe(),
+      category: "主食",
+      mealCandidate: true,
+    };
+    failsAt(draftStaple, "mealCandidate");
+    failsAt(
+      { ...draftStaple, mealCandidate: false, vegetable: true },
+      "vegetable",
+    );
+    assert.equal(
+      schema.safeParse({ ...draftStaple, mealCandidate: false }).success,
+      true,
+    );
+  });
+
   it("標記規則草稿同樣適用", () => {
     failsAt({ ...draftRecipe(), vegetable: true }, "vegetable");
     failsAt({ ...draftRecipe(), category: "非湯料理" }, "vegetable");

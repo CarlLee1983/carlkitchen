@@ -190,13 +190,13 @@ test("篩選在有字詞時只回該篩選下的菜", async ({ page }) => {
   await page.goto("/");
   for (const recipe of recipes) {
     const own =
-      recipe.category === "湯"
-        ? ["湯"]
+      recipe.category !== "非湯料理"
+        ? [recipe.category]
         : [
             ...(recipe.vegetable ? ["蔬菜菜"] : []),
             ...(recipe.protein ? ["蛋白質菜"] : []),
           ];
-    const others = ["湯", "蔬菜菜", "蛋白質菜"].filter(
+    const others = ["湯", "蔬菜菜", "蛋白質菜", "主食"].filter(
       (name) => !own.includes(name),
     );
 

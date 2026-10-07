@@ -1,7 +1,7 @@
 import type { RecipeCategory } from "../content/recipe-schema";
 
 /** 篩選值：網址參數 `kind` 的值，也是 Pagefind 篩選屬性 `kind` 的值。 */
-export type KindFilter = "all" | "vegetable" | "protein" | "soup";
+export type KindFilter = "all" | "vegetable" | "protein" | "staple" | "soup";
 
 export const KIND_PARAM = "kind";
 
@@ -10,6 +10,7 @@ const KIND_OPTIONS: readonly { value: KindFilter; label: string }[] = [
   { value: "all", label: "全部" },
   { value: "vegetable", label: "蔬菜菜" },
   { value: "protein", label: "蛋白質菜" },
+  { value: "staple", label: "主食" },
   { value: "soup", label: "湯" },
 ];
 
@@ -32,6 +33,8 @@ export function recipeKinds(recipe: KindSource): Exclude<KindFilter, "all">[] {
   switch (recipe.category) {
     case "湯":
       return ["soup"];
+    case "主食":
+      return ["staple"];
     case "非湯料理":
       return [
         ...(recipe.vegetable ? (["vegetable"] as const) : []),

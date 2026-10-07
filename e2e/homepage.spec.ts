@@ -4,6 +4,7 @@ import { publishedFixtureRecipes } from "./fixture-recipes";
 
 const recipes = publishedFixtureRecipes();
 const soups = recipes.filter((recipe) => recipe.category === "湯");
+const staples = recipes.filter((recipe) => recipe.category === "主食");
 const vegetables = recipes.filter((recipe) => recipe.vegetable);
 const proteins = recipes.filter((recipe) => recipe.protein);
 
@@ -49,13 +50,13 @@ test("清單依菜名排序，每列有縮圖、菜名、摘要與分類標籤�
   await expect(page.getByText("草稿範例")).toHaveCount(0);
 });
 
-test("篩選列依序為全部、蔬菜菜、蛋白質菜、湯，沒有非湯料理選項", async ({
+test("篩選列依序為全部、蔬菜菜、蛋白質菜、湯，沒有非湯料理選項（固定菜譜有主食）", async ({
   page,
 }) => {
   await page.goto("/");
   await expect(
     page.getByRole("group", { name: "篩選" }).getByRole("button"),
-  ).toHaveText(["全部", "蔬菜菜", "蛋白質菜", "湯"]);
+  ).toHaveText(["全部", "蔬菜菜", "蛋白質菜", "主食", "湯"]);
 });
 
 test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移除參數", async ({
@@ -81,9 +82,34 @@ test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移�
   await expect(rows(page)).toHaveCount(proteins.length);
   await expect(page).toHaveURL(/[?&]kind=protein(&|$)/);
 
+  await page.getByRole("button", { name: "主食" }).click();
+  await expect(rows(page)).toHaveCount(staples.length);
+  await expect(page).toHaveURL(/[?&]kind=staple(&|$)/);
+  for (const [i, staple] of staples.entries()) {
+    await expect(rows(page).nth(i)).toContainText(staple.title);
+    await expect(
+      rows(page).nth(i).getByText("主食", { exact: true }),
+    ).toBeVisible();
+  }
+
   await page.getByRole("button", { name: "全部" }).click();
   await expect(rows(page)).toHaveCount(recipes.length);
   await expect(page).not.toHaveURL(/kind=/);
+});
+
+test("主食不出現在蔬菜菜、蛋白質菜與湯之下，菜譜頁標示主食", async ({
+  page,
+}) => {
+  expect(staples.length).toBeGreaterThan(0);
+  await page.goto("/");
+  for (const name of ["蔬菜菜", "蛋白質菜", "湯"]) {
+    await page.getByRole("button", { name, exact: true }).click();
+    for (const staple of staples) {
+      await expect(rows(page).filter({ hasText: staple.title })).toHaveCount(0);
+    }
+  }
+  await page.goto(`/recipes/${staples[0]!.id}/`);
+  await expect(page.getByText("主食", { exact: true })).toBeVisible();
 });
 
 test("兩種性質都有的菜同時出現在蔬菜菜與蛋白質菜之下", async ({ page }) => {

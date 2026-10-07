@@ -13,7 +13,7 @@ import {
 } from "../src/utils/home.ts";
 import type { RecipeCategory } from "../src/content/recipe-schema.ts";
 
-const ALL_OPTIONS = ["all", "vegetable", "protein", "soup"] as const;
+const ALL_OPTIONS = ["all", "vegetable", "protein", "staple", "soup"] as const;
 
 describe("parseKindParam", () => {
   it("認得每個篩選值，其餘（含缺少、舊的 non-soup）一律視為全部", () => {
@@ -98,6 +98,13 @@ describe("recipeKinds", () => {
     ]);
   });
 
+  it("主食回傳 staple，不管標記", () => {
+    assert.deepEqual(
+      recipeKinds({ category: "主食", vegetable: false, protein: false }),
+      ["staple"],
+    );
+  });
+
   it("湯回傳 soup", () => {
     assert.deepEqual(
       recipeKinds({ category: "湯", vegetable: false, protein: false }),
@@ -125,6 +132,29 @@ describe("visibleKindOptions", () => {
       ]).map((option) => option.value),
       ["all", "vegetable", "protein", "soup"],
     );
+  });
+
+  it("有主食時出現主食選項，位置在蛋白質菜與湯之間", () => {
+    assert.deepEqual(
+      visibleKindOptions([
+        recipe("湯", false, false),
+        recipe("主食", false, false),
+        recipe("非湯料理", true, true),
+      ]).map((option) => option.value),
+      ["all", "vegetable", "protein", "staple", "soup"],
+    );
+    assert.equal(
+      visibleKindOptions([recipe("主食", false, false)])[1]?.label,
+      "主食",
+    );
+  });
+
+  it("沒有主食時不顯示主食選項", () => {
+    const values = visibleKindOptions([
+      recipe("非湯料理", true, true),
+      recipe("湯", false, false),
+    ]).map((option) => option.value);
+    assert.equal(values.includes("staple"), false);
   });
 
   it("沒有菜的選項不顯示", () => {

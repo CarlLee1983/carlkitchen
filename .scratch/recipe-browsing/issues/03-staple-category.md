@@ -6,13 +6,13 @@
 
 **Status:** ready-for-agent
 
-- [ ] 分類列舉為「非湯料理」「主食」「湯」
-- [ ] schema 規則：主食的 `vegetable`、`protein`、`mealCandidate` 都必須為假，草稿同樣適用，錯誤訊息附欄位路徑
-- [ ] 篩選列在有已發布主食時出現「主食」選項，位置在蛋白質菜與湯之間；主食的篩選值為 `staple`
-- [ ] 配一桌候選池只納入非湯料理與湯；即使主食資料被標成候選也會排除；部署前候選池門檻計數不含主食
-- [ ] 固定菜譜新增一道已發布主食；Playwright 驗證「主食」選項只回這道菜、清單標籤顯示「主食」、配一桌不會抽中它
-- [ ] `tests/home.test.ts`：沒有主食時不顯示主食選項，有主食時顯示
-- [ ] `tests/recipe-schema.test.ts`、`tests/meal-planner.test.ts` 涵蓋上述規則
-- [ ] `recipe-making`、`recipe-writing` skill 說明主食的判定方式（湯麵歸為主食）與三條分類規則
-- [ ] `06-homepage-direction` 中舊的分類切換描述旁加一行註記，指向本規格
-- [ ] `pnpm check && pnpm test && pnpm test:e2e` 全部通過
+- [x] 分類列舉為「非湯料理」「主食」「湯」
+- [x] schema 規則：主食的 `vegetable`、`protein`、`mealCandidate` 都必須為假，草稿同樣適用，錯誤訊息附欄位路徑
+- [x] 篩選列在有已發布主食時出現「主食」選項，位置在蛋白質菜與湯之間；主食的篩選值為 `staple`
+- [x] 配一桌候選池只納入非湯料理與湯；即使主食資料被標成候選也會排除；部署前候選池門檻計數不含主食
+- [x] 固定菜譜新增一道已發布主食；Playwright 驗證「主食」選項只回這道菜、清單標籤顯示「主食」、配一桌不會抽中它
+- [x] `tests/home.test.ts`：沒有主食時不顯示主食選項，有主食時顯示
+- [x] `tests/recipe-schema.test.ts`、`tests/meal-planner.test.ts` 涵蓋上述規則
+- [x] `recipe-making`、`recipe-writing` skill 說明主食的判定方式（湯麵歸為主食）與三條分類規則
+- [x] `06-homepage-direction` 中舊的分類切換描述旁加一行註記，指向本規格
+- [x] `pnpm check && pnpm test && pnpm test:e2e` 全部通過

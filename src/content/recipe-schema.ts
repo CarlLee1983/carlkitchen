@@ -1,6 +1,6 @@
 import { z } from "astro/zod";
 
-export const RECIPE_CATEGORIES = ["非湯料理", "湯"] as const;
+export const RECIPE_CATEGORIES = ["非湯料理", "主食", "湯"] as const;
 
 export type RecipeCategory = (typeof RECIPE_CATEGORIES)[number];
 
@@ -73,7 +73,7 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
       tip: nonEmpty.optional(),
     })
     .superRefine((recipe, context) => {
-      // 性質標記只屬於非湯料理，且非湯料理至少要有一個；草稿同樣適用
+      // 性質標記只屬於非湯料理，且非湯料理至少要有一個；主食不參與配一桌；草稿同樣適用
       switch (recipe.category) {
         case "湯":
           for (const field of ["vegetable", "protein"] as const) {
@@ -93,6 +93,24 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
                 code: "custom",
                 path: [field],
                 message: "非湯料理的蔬菜菜與蛋白質菜至少要有一個為真。",
+              });
+            }
+          }
+          break;
+        case "主食":
+          for (const field of [
+            "vegetable",
+            "protein",
+            "mealCandidate",
+          ] as const) {
+            if (recipe[field]) {
+              context.addIssue({
+                code: "custom",
+                path: [field],
+                message:
+                  field === "mealCandidate"
+                    ? "主食不可為配菜候選。"
+                    : "主食不可標記蔬菜菜或蛋白質菜。",
               });
             }
           }
