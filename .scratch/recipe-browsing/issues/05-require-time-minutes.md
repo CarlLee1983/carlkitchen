@@ -8,8 +8,8 @@
 
 **站主決定（2026-10-07）：** `timeMinutes` 是從開始備料到上桌的總時間，含醃漬、泡發、燉煮等等待時間。核准來源寫有時間時以來源為準；來源沒寫時依步驟推估，並在 PR 中逐道註明依據。
 
-- [ ] schema 中 `timeMinutes` 為必填
-- [ ] 所有菜譜都有 `timeMinutes`；PR 逐道列出來源或推估依據
-- [ ] `tests/recipe-schema.test.ts` 涵蓋缺少 `timeMinutes` 時建置失敗
-- [ ] `recipe-making`、`recipe-writing` skill 說明時間欄位的寫法
-- [ ] `pnpm check && pnpm test && pnpm test:e2e` 全部通過
+- [x] schema 中 `timeMinutes` 為必填
+- [x] 所有菜譜都有 `timeMinutes`；PR 逐道列出來源或推估依據
+- [x] `tests/recipe-schema.test.ts` 涵蓋缺少 `timeMinutes` 時建置失敗
+- [x] `recipe-making`、`recipe-writing` skill 說明時間欄位的寫法
+- [x] `pnpm check && pnpm test && pnpm test:e2e` 全部通過

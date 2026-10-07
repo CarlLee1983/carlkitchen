@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: true
 protein: false
+timeMinutes: 30
 tags: [家常菜]
 aliases: [炒花椰菜]
 ingredients:

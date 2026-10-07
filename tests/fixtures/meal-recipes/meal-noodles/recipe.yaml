@@ -3,6 +3,7 @@ summary: 油麵與高麗菜絲大火拌炒，單吃就是一餐。
 servings: 2
 category: 主食
 draft: false
+timeMinutes: 15
 mealCandidate: false
 ingredients:
   - { name: 主料, amount: { value: 300, unit: g } }

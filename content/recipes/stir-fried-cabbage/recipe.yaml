@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: true
 protein: false
+timeMinutes: 10
 tags: [家常菜]
 aliases: [炒高麗菜]
 ingredients:

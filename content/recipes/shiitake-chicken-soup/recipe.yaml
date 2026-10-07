@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: false
 protein: false
+timeMinutes: 45
 tags: [家常菜]
 ingredients:
   - { name: 雞肉, amount: { value: 600, unit: g } }

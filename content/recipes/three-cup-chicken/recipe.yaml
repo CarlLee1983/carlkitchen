@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: false
 protein: true
+timeMinutes: 25
 tags: [家常菜]
 ingredients:
   - { name: 雞肉塊, amount: { value: 400, unit: g }, note: 可用雞腿肉剁成小塊 }

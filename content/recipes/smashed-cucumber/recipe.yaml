@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: true
 protein: false
+timeMinutes: 40
 tags: [涼拌, 免開火]
 aliases: [涼拌拍黃瓜, 拍黃瓜]
 ingredients:

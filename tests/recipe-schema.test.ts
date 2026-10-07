@@ -13,6 +13,7 @@ const publishedRecipe = () => ({
   category: "非湯料理",
   vegetable: true,
   draft: false,
+  timeMinutes: 15,
   ingredients: [
     { name: "番茄", amount: { value: 2, unit: "顆" }, note: "約 300 g" },
     { name: "鹽", group: "調味" },
@@ -37,6 +38,7 @@ const draftRecipe = () => ({
   servings: 1,
   category: "湯",
   draft: true,
+  timeMinutes: 10,
   ingredients: [{ name: "水", amount: { value: 500, unit: "ml" } }],
   steps: [{ text: "煮滾。" }],
 });
@@ -145,6 +147,19 @@ describe("recipe schema", () => {
   it("draft 為必填，不可省略", () => {
     const { draft: _draft, ...rest } = publishedRecipe();
     failsAt(rest, "draft");
+  });
+
+  it("烹調時間為必填，草稿也一樣", () => {
+    const { timeMinutes: _published, ...published } = publishedRecipe();
+    failsAt(published, "timeMinutes");
+    const { timeMinutes: _draft, ...draft } = draftRecipe();
+    failsAt(draft, "timeMinutes");
+  });
+
+  it("烹調時間須為正整數分鐘", () => {
+    for (const timeMinutes of [0, -5, 12.5]) {
+      failsAt({ ...publishedRecipe(), timeMinutes }, "timeMinutes");
+    }
   });
 
   it("材料為空失敗", () => {

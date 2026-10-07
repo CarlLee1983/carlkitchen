@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: true
 protein: false
+timeMinutes: 40
 tags: [家常菜]
 aliases: [蝦米白菜]
 ingredients:

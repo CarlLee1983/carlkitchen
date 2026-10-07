@@ -3,6 +3,7 @@ summary: 尚未發布的湯，不應出現在配菜候選。
 servings: 2
 category: 湯
 draft: true
+timeMinutes: 30
 mealCandidate: true
 ingredients:
   - { name: 水, amount: { value: 500, unit: ml } }

@@ -6,6 +6,7 @@ draft: false
 mealCandidate: true
 vegetable: true
 protein: true
+timeMinutes: 15
 tags: [家常菜]
 aliases: [蕃茄炒蛋]
 ingredients:

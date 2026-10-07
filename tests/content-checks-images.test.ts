@@ -65,6 +65,7 @@ describe("collectImageRefs", () => {
       category: "非湯料理",
       vegetable: true,
       draft: false,
+      timeMinutes: 5,
       ingredients: [
         {
           name: "蛋",

@@ -65,7 +65,7 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
       mealCandidate: z.boolean().default(false),
       vegetable: z.boolean().default(false),
       protein: z.boolean().default(false),
-      timeMinutes: z.number().int().positive().optional(),
+      timeMinutes: z.number().int().positive(),
       difficulty: nonEmpty.optional(),
       cuisine: nonEmpty.optional(),
       tags: z.array(nonEmpty).default([]),

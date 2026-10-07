@@ -9,6 +9,7 @@ const published = () => ({
   category: "非湯料理",
   vegetable: true,
   draft: false,
+  timeMinutes: 10,
   ingredients: [{ name: "蛋", amount: { value: 2, unit: "顆" } }],
   steps: [{ text: "炒。", image: { src: "./s.webp", alt: "步驟圖" } }],
   hero: { src: "./hero.webp", alt: "成品" },
