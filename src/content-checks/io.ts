@@ -63,15 +63,16 @@ export function readYaml(file: string): unknown {
   }
 }
 
-/** 讀取 Markdown 檔開頭的 YAML frontmatter；缺檔回傳 undefined，沒有 frontmatter 或語法錯誤時丟出錯誤。 */
-export function readFrontmatter(file: string): unknown {
+/** 讀取 Markdown 檔：開頭的 YAML frontmatter 與其後的內文；缺檔回傳 undefined，沒有 frontmatter 或語法錯誤時丟出錯誤。 */
+export function readMarkdown(
+  file: string,
+): { data: unknown; body: string } | undefined {
   if (!existsSync(file)) return undefined;
-  const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(
-    readFileSync(file, "utf8"),
-  );
+  const text = readFileSync(file, "utf8");
+  const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(text);
   if (!match) throw new Error("找不到 frontmatter（檔案須以 --- 區塊開頭）。");
   try {
-    return parse(match[1]!);
+    return { data: parse(match[1]!), body: text.slice(match[0].length) };
   } catch (error) {
     throw new Error(`frontmatter 無法解析：${(error as Error).message}`, {
       cause: error,

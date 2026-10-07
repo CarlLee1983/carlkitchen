@@ -23,6 +23,7 @@ export interface ContentCheckOptions {
   ingredientsDir?: string;
   ingredientSourcesDir?: string;
   topicsDir?: string;
+  topicSourcesDir?: string;
   distDir: string;
   /** 開啟候選池門檻檢查（部署前）。 */
   launch: boolean;
@@ -146,18 +147,28 @@ export async function runContentChecks(
     }),
   );
 
-  // 專題：schema，以及相關連結只能指向已發布的菜譜與食材條目
-  if (options.topicsDir) {
+  // 專題：schema、封面圖、內部來源紀錄，以及相關連結只能指向已發布的菜譜與食材條目
+  // topicsDir 與 topicSourcesDir 要成對設定；只給一個是設定錯誤，不能靜默略過專題檢查。
+  if (Boolean(options.topicsDir) !== Boolean(options.topicSourcesDir)) {
     issues.push(
-      ...checkTopics({
-        topicsDir: options.topicsDir,
-        publicRecipeIds: recipes
-          .filter(({ raw, data }) => data && !isDraft(raw))
-          .map(({ id }) => id),
-        publicIngredientIds: publishedIngredientIds(options.ingredientsDir),
-      }),
+      failure(
+        options.topicsDir ?? options.topicSourcesDir!,
+        "專題檢查設定不完整：topicsDir 與 topicSourcesDir 必須同時提供（檢查 TOPICS_DIR、TOPIC_SOURCES_DIR）。",
+      ),
     );
   }
+  const topicCheck =
+    options.topicsDir && options.topicSourcesDir
+      ? await checkTopics({
+          topicsDir: options.topicsDir,
+          topicSourcesDir: options.topicSourcesDir,
+          publicRecipeIds: recipes
+            .filter(({ raw, data }) => data && !isDraft(raw))
+            .map(({ id }) => id),
+          publicIngredientIds: publishedIngredientIds(options.ingredientsDir),
+        })
+      : { issues: [], draftIds: [], sourceUrls: [] };
+  issues.push(...topicCheck.issues);
 
   // 建置輸出洩漏
   if (existsSync(options.distDir)) {
@@ -179,7 +190,12 @@ export async function runContentChecks(
         files: ingredientCheck.files,
         draftIds: recipes.filter(({ raw }) => isDraft(raw)).map(({ id }) => id),
         draftIngredientIds: ingredientCheck.draftIds,
-        sourceUrls: [...sourceUrls, ...ingredientCheck.sourceUrls],
+        draftTopicIds: topicCheck.draftIds,
+        sourceUrls: [
+          ...sourceUrls,
+          ...ingredientCheck.sourceUrls,
+          ...topicCheck.sourceUrls,
+        ],
       }),
     );
   } else {

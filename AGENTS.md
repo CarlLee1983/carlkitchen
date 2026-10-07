@@ -7,7 +7,8 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `src/` — 網站程式：`content.config.ts`（內容集合）、`content/recipe-schema.ts`（菜譜 schema）、`pages/`、`layouts/`、`utils/`
 - `content/recipes/<菜譜識別值>/` — 正式菜譜：`recipe.yaml` 與同資料夾的 WebP 圖片（YAML 以相對路徑引用）。資料夾名稱即識別值與網址 `/recipes/<識別值>/`；識別值只能是小寫英數字以連字號分隔（`^[a-z0-9]+(?:-[a-z0-9]+)*$`，例如 `tomato-egg`），內容檢查會擋下其他格式
 - `content/sources/<菜譜識別值>.yaml` — 內部來源紀錄：`urls` 列出至少一個核准來源網址。位於內容集合載入範圍（`content/recipes`）與 `public/` 之外，不被任何頁面或建置流程讀取，只由內容檢查指令讀取
-- `content/topics/<專題識別值>/topic.md` — 專題：Markdown 加 frontmatter（`title`、`summary`、`draft`、`publishedAt`）。資料夾名稱即識別值與網址 `/topics/<識別值>/`，格式規則同菜譜；目前尚無正式專題，目錄以 `.gitkeep` 保留
+- `content/topics/<專題識別值>/topic.md` — 專題：Markdown 加 frontmatter（`title`、`summary`、`draft`、`publishedAt`、`hero`、`relatedRecipes`、`relatedIngredients`、`references`），封面圖放同資料夾。資料夾名稱即識別值與網址 `/topics/<識別值>/`，格式規則同菜譜；目前尚無正式專題，目錄以 `.gitkeep` 保留
+- `content/topic-sources/<專題識別值>.yaml` — 專題內部來源紀錄：`sources`（`title`、`url`）與段落對照 `sections`（`heading` 為內文 `##`／`###` 標題純文字，`urls` 須列在 `sources`）。位置與角色同 `content/sources/`，不進內容集合與公開輸出；選題參考放專題 frontmatter，不是核准來源
 - `tests/` — 單元測試（Node 內建測試執行器）；`tests/fixtures/recipes/` 為測試用固定菜譜，含一份草稿
 - `e2e/` — Playwright 瀏覽器測試
 - `.scratch/` — 規格與票；`.claude/skills/` — 菜譜製作（`recipe-making`）、菜譜寫作（`recipe-writing`）、食材寫作（`ingredient-writing`）與去 AI 味（`de-ai-voice`）skill
@@ -19,14 +20,14 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `pnpm dev` — 開發伺服器（顯示草稿）
 - `pnpm build` / `pnpm preview` — 正式建置（排除草稿，建置後以 Pagefind 建立只含菜譜頁的搜尋索引）與預覽。建置固定帶 `--force`，在 `RECIPES_DIR` 切換時清除 Astro 內容層快取，不可拿掉
 - `pnpm check` — 格式檢查、`astro check`、建置
-- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄
+- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄
 - `pnpm test` — 單元測試
 - `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）；建置輸出在 `dist`、port 以 `E2E_PORT_BASE`（預設 4321）起算，平行跑需各用一個 worktree 並錯開 port
 - `pnpm check:merge` — 在暫時 worktree 合併 `origin/main` 後跑 CI 的檢查（加 `--e2e` 含瀏覽器測試），抓分支本身全綠、合併後才壞的情況
 - `pnpm measure:mobile` — 量測首頁手機版版面（篩選列與第一列位置、列高、一屏列數）；需先 `pnpm build`。談版面數字先量再估
 - `pnpm format` — 格式化
 
-環境變數 `RECIPES_DIR` 選擇內容根目錄，預設 `content/recipes`；測試與 e2e 用 `tests/fixtures/recipes`。環境變數 `TOPICS_DIR` 選擇專題根目錄，預設 `content/topics`；e2e 用 `tests/fixtures/topics`（含一份草稿）。
+環境變數 `RECIPES_DIR` 選擇內容根目錄，預設 `content/recipes`；測試與 e2e 用 `tests/fixtures/recipes`。環境變數 `TOPICS_DIR` 選擇專題根目錄，預設 `content/topics`；e2e 用 `tests/fixtures/topics`（含一份草稿），專題來源紀錄 `TOPIC_SOURCES_DIR` 預設 `content/topic-sources`、測試用 `tests/fixtures/topic-sources`。
 
 ## 部署
 
