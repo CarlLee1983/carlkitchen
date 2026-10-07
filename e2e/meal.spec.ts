@@ -384,6 +384,50 @@ test.describe("鎖定衝突", () => {
 });
 
 test.describe("同分頁重整", () => {
+  test("草稿重抽成功後保存完整套餐", async ({ page }) => {
+    await page.goto("/meal/");
+    await chooseSelf(page).click();
+    await chooseOf(page, 1).selectOption(vegetableDish.id);
+    page.once("dialog", (dialog) => dialog.accept());
+    await reroll(page).click();
+    await expect(items(page).getByRole("link")).toHaveCount(5);
+    const before = await titlesOnTable(page);
+    await page.reload();
+    expect(await titlesOnTable(page)).toEqual(before);
+  });
+
+  test("未完成自選草稿重整後保留模式、空位及指定位置", async ({ page }) => {
+    const meat = dishes.find((item) => item.id !== vegetableDish.id)!;
+    await page.goto("/meal/");
+    await chooseSelf(page).click();
+    await modeButton(page, "五菜一湯").click();
+    await chooseOf(page, 1).selectOption(meat.id);
+    await chooseOf(page, 4).selectOption(vegetableDish.id);
+    await page.reload();
+    await expect(modeButton(page, "五菜一湯")).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    await expect(items(page)).toHaveCount(6);
+    await expect(items(page).nth(0).getByText("尚未指定")).toBeVisible();
+    await expect(
+      items(page).nth(1).getByRole("link", { name: meat.title }),
+    ).toBeVisible();
+    await expect(
+      items(page).nth(4).getByRole("link", { name: vegetableDish.title }),
+    ).toBeVisible();
+    await expect(items(page).last().getByText("尚未指定")).toBeVisible();
+    await expect(status(page)).toContainText("還缺 3 道非湯料理");
+  });
+
+  test("全空自選草稿重整後仍顯示固定空位", async ({ page }) => {
+    await page.goto("/meal/");
+    await chooseSelf(page).click();
+    await page.reload();
+    await expect(items(page)).toHaveCount(5);
+    await expect(status(page)).toContainText("還缺 4 道非湯料理");
+  });
+
   test("重整後還原套餐、模式與鎖定；新分頁重新開始", async ({
     page,
     context,
@@ -417,6 +461,37 @@ test.describe("同分頁重整", () => {
 });
 
 test.describe("失效套餐", () => {
+  test("下架菜色的草稿清除並提示失效，不顯示其他已選菜色", async ({ page }) => {
+    await page.goto("/meal/");
+    const stale = {
+      kind: "draft",
+      draft: {
+        mode: 4,
+        dishes: [
+          { id: "no-longer-published", locked: false },
+          { id: dishes[1]!.id, locked: false },
+          null,
+          null,
+        ],
+        soup: null,
+        seed: 1,
+      },
+    };
+    await page.evaluate(
+      ([key, value]) => sessionStorage.setItem(key!, value!),
+      [MEAL_STORAGE_KEY, JSON.stringify(stale)],
+    );
+    await page.reload();
+    await expect(items(page)).toHaveCount(0);
+    await expect(status(page)).toContainText("已失效");
+    expect(
+      await page.evaluate(
+        (key) => sessionStorage.getItem(key),
+        MEAL_STORAGE_KEY,
+      ),
+    ).toBeNull();
+  });
+
   test("失去蔬菜搭配的完整套餐清除並提示重抽", async ({ page }) => {
     await page.goto("/meal/");
     const stale = {

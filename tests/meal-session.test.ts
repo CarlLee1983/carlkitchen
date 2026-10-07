@@ -1,7 +1,11 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import type { Candidate, Plan } from "../src/meal-planner/index.ts";
-import { restorePlan, serializePlan } from "../src/utils/meal-session.ts";
+import type { Candidate, Draft, Plan } from "../src/meal-planner/index.ts";
+import {
+  restorePlan,
+  serializeDraft,
+  serializePlan,
+} from "../src/utils/meal-session.ts";
 
 const dish = (id: string, vegetable: boolean, protein: boolean): Candidate => ({
   id,
@@ -22,8 +26,70 @@ const plan: Plan = {
   soup: { id: "s", locked: true },
   seed: 7,
 };
+const draft: Draft = {
+  mode: 5,
+  dishes: [
+    null,
+    { id: "b", locked: false },
+    null,
+    { id: "a", locked: false },
+    null,
+  ],
+  soup: { id: "s", locked: false },
+  seed: 7,
+};
 
 describe("restorePlan", () => {
+  it("未完成草稿保留空位、菜數與指定位置，即使尚未滿足完整搭配", () => {
+    assert.deepEqual(restorePlan(serializeDraft(draft), pool), {
+      kind: "restored-draft",
+      draft,
+    });
+  });
+
+  it("全空的自選草稿與尚未抽選的套餐分開還原", () => {
+    const blank: Draft = {
+      mode: 4,
+      dishes: [null, null, null, null],
+      soup: null,
+      seed: 1,
+    };
+    assert.deepEqual(restorePlan(serializeDraft(blank), pool), {
+      kind: "restored-draft",
+      draft: blank,
+    });
+  });
+
+  it("失效草稿拒絕下架、錯位、重複、菜數不符與損毀內容", () => {
+    const invalid: unknown[] = [
+      {
+        ...draft,
+        dishes: [null, { id: "gone", locked: false }, null, null, null],
+      },
+      {
+        ...draft,
+        dishes: [null, { id: "s", locked: false }, null, null, null],
+      },
+      {
+        ...draft,
+        dishes: [
+          null,
+          { id: "a", locked: false },
+          null,
+          { id: "a", locked: false },
+          null,
+        ],
+      },
+      { ...draft, dishes: draft.dishes.slice(0, 4) },
+      { ...draft, dishes: [null, { id: "a", locked: "no" }, null, null, null] },
+    ];
+    for (const candidate of invalid) {
+      assert.deepEqual(
+        restorePlan(JSON.stringify({ kind: "draft", draft: candidate }), pool),
+        { kind: "stale" },
+      );
+    }
+  });
   it("沒有保存內容時回報 none", () => {
     assert.deepEqual(restorePlan(null, pool), { kind: "none" });
   });

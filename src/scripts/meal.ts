@@ -12,6 +12,7 @@ import {
 import {
   MEAL_STORAGE_KEY,
   restorePlan,
+  serializeDraft,
   serializePlan,
 } from "../utils/meal-session";
 
@@ -38,6 +39,13 @@ function readSaved(): string | null {
 function writeSaved(plan: Plan) {
   try {
     sessionStorage.setItem(MEAL_STORAGE_KEY, serializePlan(plan));
+  } catch {
+    /* 保存失敗只影響重整還原，不影響操作 */
+  }
+}
+function writeSavedDraft(draft: Draft) {
+  try {
+    sessionStorage.setItem(MEAL_STORAGE_KEY, serializeDraft(draft));
   } catch {
     /* 保存失敗只影響重整還原，不影響操作 */
   }
@@ -94,6 +102,9 @@ export function initMeal() {
   const restored = restorePlan(readSaved(), candidates);
   if (restored.kind === "restored") {
     plan = restored.plan;
+  } else if (restored.kind === "restored-draft") {
+    draft = restored.draft;
+    message = draftProgress(candidates, draft).message;
   } else if (restored.kind === "stale") {
     clearSaved();
     message = STALE_MESSAGE;
@@ -266,7 +277,7 @@ export function initMeal() {
     )
       return;
     draft = createDraft(plan.seed, draft?.mode ?? plan.mode);
-    clearSaved();
+    writeSavedDraft(draft);
     message = draftProgress(candidates, draft).message;
     render();
   });
@@ -277,8 +288,23 @@ export function initMeal() {
       !window.confirm("重新抽選會捨棄目前自選的菜色，確定嗎？")
     )
       return;
-    if (draft) plan = createPlan(draft.seed, draft.mode);
-    draft = null;
+    if (draft) {
+      const result = applyAction(
+        candidates,
+        createPlan(draft.seed, draft.mode),
+        { type: "reroll" },
+      );
+      if (result.ok) {
+        plan = result.plan;
+        draft = null;
+        writeSaved(plan);
+        message = result.message;
+      } else {
+        message = result.reason;
+      }
+      render();
+      return;
+    }
     dispatch({ type: "reroll" });
   });
   for (const button of modeButtons) {
@@ -298,6 +324,7 @@ export function initMeal() {
           dishes:
             mode === 5 ? [...draft.dishes, null] : draft.dishes.slice(0, 4),
         };
+        writeSavedDraft(draft);
         message = draftProgress(candidates, draft).message;
         render();
       } else {
@@ -343,6 +370,8 @@ export function initMeal() {
           plan = progress.plan;
           draft = null;
           writeSaved(plan);
+        } else {
+          writeSavedDraft(draft);
         }
       } else {
         message = result.reason;
