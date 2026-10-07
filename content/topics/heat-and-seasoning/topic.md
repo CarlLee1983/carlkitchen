@@ -1,7 +1,7 @@
 ---
 title: 火候與調味
 summary: 湯為什麼會清或白、肉和配菜為什麼分開炒、鹽和米酒什麼時候下鍋、鍋底的焦褐怎麼用，以及醬油和老抽的分工。
-draft: true
+draft: false
 publishedAt: 2026-10-07
 hero:
   src: hero.webp
