@@ -34,3 +34,28 @@ test("候選不足時說明原因，不產生不完整的套餐", async ({ page 
   await page.getByRole("button", { name: "五菜一湯" }).click();
   await expect(page.getByRole("status")).toContainText("候選池的非湯菜不足");
 });
+
+test("自選草稿重抽失敗後仍保留菜色，重整也能接續", async ({ page }) => {
+  const chosen = pool.find((item) => !item.soup)!;
+  await page.goto("/meal/");
+  await page.getByRole("button", { name: "從空白自選" }).click();
+  const items = page
+    .getByRole("list", { name: "本桌菜色" })
+    .getByRole("listitem");
+  await items
+    .nth(1)
+    .getByRole("combobox", { name: /指定菜色/ })
+    .selectOption(chosen.id);
+  page.once("dialog", (dialog) => dialog.accept());
+  await page.getByRole("button", { name: "重新抽選" }).click();
+  await expect(page.getByRole("status")).toContainText("候選池的非湯菜不足");
+  await expect(items).toHaveCount(5);
+  await expect(
+    items.nth(1).getByRole("link", { name: chosen.title }),
+  ).toBeVisible();
+  await page.reload();
+  await expect(items).toHaveCount(5);
+  await expect(
+    items.nth(1).getByRole("link", { name: chosen.title }),
+  ).toBeVisible();
+});

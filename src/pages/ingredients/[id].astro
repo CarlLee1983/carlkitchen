@@ -42,7 +42,7 @@ const categoryLabel = {
 }[data.category];
 ---
 
-<Base title={`${data.title}｜食材介紹`}>
+<Base title={`${data.title}｜食材介紹`} description={data.summary}>
   <article class="ingredient-entry">
     <p class="eyebrow">食材介紹 / {categoryLabel} / {data.title}</p>
     <div class="entry-grid">

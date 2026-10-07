@@ -28,6 +28,8 @@ export function applyAction(
       return draw(pool, plan, action.mode);
     case "replace":
       return replace(pool, plan, action.target);
+    case "assign":
+      return assign(pool, plan, action.target, action.id);
     case "toggle":
       return toggle(plan, action.target);
   }
@@ -63,7 +65,7 @@ function toggle(plan: Plan, target: number | "soup"): Result {
   };
 }
 
-const STALE = "目前套餐含已不在候選池的菜色；請重新抽選。";
+const STALE = "目前套餐已失效；請重新抽選。";
 
 type Pick = { dishes: Candidate[] } | { failure: string };
 
@@ -275,5 +277,51 @@ function replace(
       seed: rng.seed,
     },
     message: "只替換了一道菜，其他菜色保持原樣。",
+  };
+}
+
+function assign(
+  pool: readonly Candidate[],
+  plan: Plan,
+  target: number | "soup",
+  id: string,
+): Result {
+  const old = slotAt(plan, target);
+  if (!old) return refuse(plan, NEED_DRAW);
+  if (old.locked) return refuse(plan, "此菜色已鎖定；請先解鎖才能指定。");
+  const candidate = pool.find((item) => item.id === id);
+  if (!candidate)
+    return refuse(plan, "這道菜不在目前的配菜候選中；原套餐保留。");
+  if (target === "soup" && !candidate.soup) {
+    return refuse(plan, "湯位只能指定湯；原套餐保留。");
+  }
+  if (target !== "soup" && candidate.soup) {
+    return refuse(plan, "菜位只能指定非湯料理；原套餐保留。");
+  }
+  if (id === old.id) return refuse(plan, "已經是這道菜；原套餐保留。");
+  if (plan.dishes.some((slot) => slot.id === id) || plan.soup?.id === id) {
+    return refuse(plan, "同一桌不能有重複菜色；原套餐保留。");
+  }
+  const next: Plan = {
+    ...plan,
+    dishes: plan.dishes.map((slot, index) =>
+      index === target ? { id, locked: false } : { ...slot },
+    ),
+    soup:
+      target === "soup" ? { id, locked: false } : plan.soup && { ...plan.soup },
+  };
+  if (!isPlanUsable(pool, next)) {
+    return refuse(
+      plan,
+      "指定後不符合蔬菜與另一道肉蛋料理的平衡規則；原套餐保留。",
+    );
+  }
+  return {
+    ok: true,
+    plan: next,
+    message:
+      target === "soup"
+        ? "只指定了湯，其他菜色保持原樣。"
+        : "只指定了一道菜，其他菜色保持原樣。",
   };
 }

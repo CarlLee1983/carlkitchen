@@ -39,6 +39,28 @@ interface Props {
 const { data, id } = Astro.props.recipe;
 const { relatedIngredients } = Astro.props;
 const groups = groupIngredients(data.ingredients);
+const recipeJsonLd =
+  !data.draft &&
+  data.hero &&
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    name: data.title,
+    description: data.summary,
+    image: new URL(`/recipes/${id}/social.webp`, Astro.site).href,
+    recipeYield: `${data.servings} 人份`,
+    totalTime: `PT${data.timeMinutes}M`,
+    recipeIngredient: groups.flatMap((group) =>
+      group.items.map(
+        (ingredient) =>
+          `${ingredient.name} ${formatAmount(ingredient.amount)}${ingredient.note ? `（${ingredient.note}）` : ""}`,
+      ),
+    ),
+    recipeInstructions: data.steps.map((step) => ({
+      "@type": "HowToStep",
+      text: step.text,
+    })),
+  }).replace(/</g, "\\u003c");
 // 讀者看不到、但要能搜到的詞：受控標籤與別名。
 const searchTerms = [...data.tags, ...data.aliases];
 
@@ -47,7 +69,21 @@ const MAIN_SIZES = "(min-width: 64rem) 44rem, 100vw";
 const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
 ---
 
-<Base title={data.title}>
+<Base
+  title={data.title}
+  description={data.summary}
+  socialImage={data.hero && {
+    src: `/recipes/${id}/social.webp`,
+    alt: data.hero.alt,
+    width: 1200,
+    height: 630,
+  }}
+>
+  {
+    recipeJsonLd && (
+      <script type="application/ld+json" set:html={recipeJsonLd} />
+    )
+  }
   <!--
     Pagefind 索引範圍：整個站只要有 data-pagefind-body，沒有標記的頁面（首頁、關於頁等）就不進索引。
     這裡只標記可搜尋的欄位：菜名（加權）、摘要、材料名稱、受控標籤與別名；

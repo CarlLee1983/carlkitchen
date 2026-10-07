@@ -1,4 +1,14 @@
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+
+/** @param {string} page */
+const publicPage = (page) => {
+  const path = new URL(page).pathname;
+  return (
+    ["/", "/about/", "/meal/", "/ingredients/"].includes(path) ||
+    /^\/(?:recipes|ingredients)\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/.test(path)
+  );
+};
 
 export default defineConfig({
   site: "https://carlkitchen.gravito.dev",
@@ -8,4 +18,5 @@ export default defineConfig({
   outDir: process.env.ASTRO_OUT_DIR ?? "dist",
   // 圖片一律輸出響應式 srcset／sizes；母檔 1536 寬，Astro 依斷點產生較小尺寸。
   image: { layout: "constrained" },
+  integrations: [sitemap({ filter: publicPage })],
 });

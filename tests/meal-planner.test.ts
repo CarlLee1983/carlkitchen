@@ -2,14 +2,85 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   applyAction,
+  applyDraftChoice,
   candidatesFromRecipes,
+  createDraft,
   createPlan,
+  draftProgress,
   isPlanUsable,
   type Action,
   type Candidate,
   type Plan,
   type Result,
 } from "../src/meal-planner/index.ts";
+
+describe("自選草稿", () => {
+  it("固定菜位可任意順序填入，未完成不能當完整菜單", () => {
+    const blank = createDraft(1, 4);
+    assert.deepEqual(blank.dishes, [null, null, null, null]);
+    const third = applyDraftChoice(normalPool, blank, 2, "tofu");
+    assert.equal(third.ok, true);
+    if (!third.ok) return;
+    assert.deepEqual(
+      third.draft.dishes.map((slot) => slot?.id ?? null),
+      [null, null, "tofu", null],
+    );
+    assert.equal(draftProgress(normalPool, third.draft).complete, false);
+    assert.match(
+      draftProgress(normalPool, third.draft).message,
+      /還缺 3 道非湯料理.*1 道湯.*蔬菜/,
+    );
+  });
+
+  it("草稿拒絕重複、錯位和非候選，失敗時保留原草稿", () => {
+    const chosen = applyDraftChoice(normalPool, createDraft(1), 0, "cabbage");
+    assert.equal(chosen.ok, true);
+    if (!chosen.ok) return;
+    for (const [target, id] of [
+      [1, "cabbage"],
+      ["soup", "tofu"],
+      [1, "radish-soup"],
+      [1, "missing"],
+    ] as const) {
+      const result = applyDraftChoice(normalPool, chosen.draft, target, id);
+      assert.equal(result.ok, false);
+      assert.deepEqual(result.draft, chosen.draft);
+    }
+  });
+
+  it("只有不同菜色滿足蔬菜與肉蛋料理才可完成五菜一湯", () => {
+    const pool = [
+      both("double"),
+      plain("a"),
+      plain("b"),
+      plain("c"),
+      plain("d"),
+      pro("tofu"),
+      soup("broth"),
+    ];
+    let draft = createDraft(2, 5);
+    for (const [target, id] of [
+      [4, "double"],
+      [0, "a"],
+      [1, "b"],
+      [2, "c"],
+      [3, "d"],
+      ["soup", "broth"],
+    ] as const) {
+      const result = applyDraftChoice(pool, draft, target, id);
+      assert.equal(result.ok, true);
+      if (result.ok) draft = result.draft;
+    }
+    assert.equal(draftProgress(pool, draft).complete, false);
+    assert.match(draftProgress(pool, draft).message, /另一道蔬菜或肉蛋料理/);
+    const result = applyDraftChoice(pool, draft, 0, "tofu");
+    assert.equal(result.ok, true);
+    if (!result.ok) return;
+    const progress = draftProgress(pool, result.draft);
+    assert.equal(progress.complete, true);
+    if (progress.complete) assertValid(pool, progress.plan);
+  });
+});
 
 const veg = (id: string): Candidate => ({
   id,
@@ -152,6 +223,124 @@ describe("candidatesFromRecipes", () => {
   });
 });
 
+describe("指定菜色", () => {
+  const slot = (id: string, locked = false) => ({ id, locked });
+  const before: Plan = {
+    mode: 4,
+    dishes: [slot("cabbage"), slot("tofu"), slot("fish"), slot("chicken")],
+    soup: slot("radish-soup"),
+    seed: 11,
+  };
+
+  it("指定一道非湯菜或湯時只改該位置，保留種子與其他菜色", () => {
+    const dish = ok(
+      applyAction(normalPool, before, {
+        type: "assign",
+        target: 2,
+        id: "beef",
+      }),
+    ).plan;
+    assert.deepEqual(
+      dish.dishes.map((item) => item.id),
+      ["cabbage", "tofu", "beef", "chicken"],
+    );
+    assert.deepEqual(dish.soup, before.soup);
+    assert.equal(dish.seed, before.seed);
+    const changedSoup = ok(
+      applyAction(normalPool, dish, {
+        type: "assign",
+        target: "soup",
+        id: "egg-soup",
+      }),
+    ).plan;
+    assert.deepEqual(changedSoup.dishes, dish.dishes);
+    assert.equal(changedSoup.soup?.id, "egg-soup");
+    assertValid(normalPool, changedSoup);
+  });
+
+  it("重複、位置錯誤、非候選與鎖定指定會說明原因且保留原套餐", () => {
+    for (const [plan, target, id, reason] of [
+      [before, 2, "tofu", /重複/],
+      [before, 2, "egg-soup", /菜位/],
+      [before, "soup", "beef", /湯位/],
+      [before, 2, "staple", /候選/],
+      [withLocks(before, [2]), 2, "beef", /解鎖/],
+    ] as const) {
+      const result = fail(
+        applyAction(normalPool, plan, { type: "assign", target, id }),
+      );
+      assert.match(result.reason, reason);
+      assert.deepEqual(result.plan, plan);
+    }
+  });
+
+  it("不得讓雙標記菜獨自滿足蔬菜與另一道肉蛋料理", () => {
+    const pool = [
+      both("x"),
+      pro("p"),
+      plain("a"),
+      plain("b"),
+      plain("c"),
+      soup("s"),
+    ];
+    const plan: Plan = {
+      mode: 4,
+      dishes: [slot("x"), slot("p"), slot("a"), slot("b")],
+      soup: slot("s"),
+      seed: 3,
+    };
+    assertValid(pool, plan);
+    const result = fail(
+      applyAction(pool, plan, { type: "assign", target: 1, id: "c" }),
+    );
+    assert.match(result.reason, /平衡/);
+    assert.deepEqual(result.plan, plan);
+  });
+
+  it("五菜一湯可指定未使用候選；用盡候選時拒絕重複與池外指定", () => {
+    const five: Plan = {
+      ...before,
+      mode: 5,
+      dishes: [...before.dishes, slot("beef")],
+    };
+    const replaced = ok(
+      applyAction(normalPool, five, {
+        type: "assign",
+        target: 4,
+        id: "shrimp",
+      }),
+    ).plan;
+    assert.deepEqual(replaced.dishes.slice(0, 4), five.dishes.slice(0, 4));
+    assert.equal(replaced.dishes[4]?.id, "shrimp");
+    assertValid(normalPool, replaced);
+
+    const exactPool = [
+      veg("v"),
+      pro("p1"),
+      pro("p2"),
+      pro("p3"),
+      pro("p4"),
+      soup("s"),
+    ];
+    const full: Plan = {
+      mode: 5,
+      dishes: [slot("v"), slot("p1"), slot("p2"), slot("p3"), slot("p4")],
+      soup: slot("s"),
+      seed: 9,
+    };
+    for (const [id, reason] of [
+      ["p2", /重複/],
+      ["outside", /候選/],
+    ] as const) {
+      const result = fail(
+        applyAction(exactPool, full, { type: "assign", target: 1, id }),
+      );
+      assert.match(result.reason, reason);
+      assert.deepEqual(result.plan, full);
+    }
+  });
+});
+
 describe("初次抽選與重抽", () => {
   it("產生 4 道互不重複的非湯菜加 1 道湯，成功訊息為繁中", () => {
     const result = ok(applyAction(normalPool, createPlan(7), reroll));
@@ -261,7 +450,7 @@ describe("候選不足與無法平衡", () => {
     assert.doesNotMatch(result.reason, /鎖定/);
   });
 
-  it("鎖定項使套餐無法平衡時回無解並保留原套餐", () => {
+  it("鎖定的失衡完整套餐不可重抽，原套餐保留", () => {
     const pool = [
       veg("v1"),
       plain("a"),
@@ -284,7 +473,7 @@ describe("候選不足與無法平衡", () => {
     };
     const result = fail(applyAction(pool, before, reroll));
     assert.deepEqual(result.plan, before);
-    assert.match(result.reason, /鎖定/);
+    assert.match(result.reason, /已失效.*重新抽選/);
   });
 
   it("套餐含不在候選池的菜色時回無解", () => {
@@ -295,7 +484,7 @@ describe("候選不足與無法平衡", () => {
       seed: 1,
     };
     const result = fail(applyAction(normalPool, before, reroll));
-    assert.match(result.reason, /候選池/);
+    assert.match(result.reason, /已失效.*重新抽選/);
     assert.deepEqual(result.plan, before);
   });
 });
@@ -620,6 +809,18 @@ describe("失效套餐（isPlanUsable）", () => {
     assert.equal(isPlanUsable(normalPool, createPlan(1)), true);
     assert.equal(isPlanUsable(normalPool, drawn(2)), true);
     assert.equal(isPlanUsable(normalPool, drawn(2, 5)), true);
+  });
+
+  it("完整套餐須由不同菜色滿足蔬菜與肉蛋搭配", () => {
+    const pool = [both("x"), plain("a"), plain("b"), plain("c"), soup("s")];
+    const plan: Plan = {
+      mode: 4,
+      dishes: [slot("x"), slot("a"), slot("b"), slot("c")],
+      soup: slot("s"),
+      seed: 1,
+    };
+    assert.equal(isPlanUsable(pool, plan), false);
+    stale(applyAction(pool, plan, reroll), plan);
   });
 
   it("鎖定的非湯菜放在湯位時不可用，重抽回無解", () => {
