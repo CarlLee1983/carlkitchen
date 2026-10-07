@@ -1,7 +1,7 @@
 ---
 title: 熱鍋與起鍋油
 summary: 鍋要燒到多熱才下油、煎肉煎魚什麼時候翻面、油溫怎麼看、花生為什麼從冷油炸，以及爆香為什麼用油。整理開火到食材下鍋這一段的原理與判斷訊號。
-draft: true
+draft: false
 publishedAt: 2026-10-07
 hero:
   src: hero.webp

@@ -1,7 +1,7 @@
 ---
 title: 看熟度與脫離菜譜
 summary: 肉、海鮮、蔬菜各有判斷熟度的訊號，肉類以中心溫度為準；再把常做的家常菜歸成素炒、肉炒、清燉三套流程。
-draft: true
+draft: false
 publishedAt: 2026-10-07
 hero:
   src: ./hero.webp
