@@ -1,0 +1,66 @@
+title: 辣椒炒肉
+summary: 糯米椒先燜炒到變軟、帶點焦黃，再和煸出油的肥肉片、蒜頭、豆豉與醃過的瘦肉片同炒。湖南家常菜，適合配白飯。
+servings: 3
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 25
+tags: [家常菜]
+aliases: [湖南辣椒炒肉]
+ingredients:
+  - { name: 豬梅花肉, amount: { value: 200, unit: g }, note: 取瘦肉部分 }
+  - { name: 豬肥肉, amount: { value: 90, unit: g }, note: 可帶皮，與瘦肉約 1:3 }
+  - {
+      name: 糯米椒,
+      amount: { value: 200, unit: g },
+      note: 炒後會縮，可增加到 250 g,
+    }
+  - { name: 蒜頭, amount: { value: 50, unit: g } }
+  - { name: 豆豉, amount: { value: 5, unit: g } }
+  - {
+      name: 鹽,
+      amount: { value: 2.5, unit: g },
+      note: 醃肉 0.5 g，炒辣椒 2 g,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 17, unit: g },
+      note: 醃肉 10 g，起鍋前淋 7 g,
+      group: 調味,
+    }
+  - {
+      name: 食用油,
+      amount: { value: 20, unit: g },
+      note: 原做法用菜籽油,
+      group: 調味,
+    }
+steps:
+  - text: 豬梅花肉分出肥肉與瘦肉。肥肉切薄片；瘦肉逆紋切薄片，加鹽 0.5 g 和醬油 10 g 抓揉到肉片有黏性。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著切成薄片的生肥肉，有些帶皮，旁邊有一把菜刀；右側白色瓷碗中盛著裹上褐色醃料的瘦肉薄片
+  - text: 糯米椒對半剖開、去籽，斜切成段，洗過後瀝乾。蒜頭輕拍到裂開即可，不要拍爛。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上一堆去籽、斜切成段的糯米椒，旁邊一堆拍裂的蒜瓣，砧板右側放著一把菜刀
+  - text: 炒鍋開中小火，放入糯米椒，蓋上鍋蓋燜 1 分鐘。
+  - text: 開蓋翻炒，把水分炒乾後加鹽 2 g，邊炒邊用鍋鏟壓，炒到辣椒變軟、帶點焦黃就盛起。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中只有斜切的糯米椒段，已經炒軟，表面散布焦黃斑點，鍋裡放著一支木鍋鏟
+  - text: 鍋子洗淨，倒入食用油 20 g，轉小火把肥肉片煸到出油、捲曲。帶皮的肥肉不要煸太久，否則豬皮會變硬。
+  - text: 放入蒜頭和豆豉爆香，蒜頭邊緣轉金黃後倒回糯米椒，火稍微開大，把辣椒炒香。
+    image:
+      src: ./step-6.webp
+      alt: 炒鍋中有煸到捲曲的肥肉片、邊緣金黃的蒜瓣、黑色豆豉與帶焦斑的糯米椒段，還沒有瘦肉片，鍋裡放著一支木鍋鏟
+  - text: 放入瘦肉片滑散，炒到熟，沿鍋邊淋入醬油 7 g，翻勻起鍋。
+tip: 湖南原做法用皮薄微辣的螺絲椒，這裡以糯米椒代替；喜歡辣可另加幾支小辣椒。
+hero:
+  src: ./hero.webp
+  alt: 米白陶瓷盤中盛著辣椒炒肉，斜切的糯米椒段帶焦黃斑點，夾著醬色瘦肉片、捲曲的肥肉片、金黃蒜瓣與黑色豆豉，盤底有少許油汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一塊生豬梅花肉、一塊帶皮的生豬肥肉、一把整支糯米椒、一堆帶皮蒜瓣，以及一小碟豆豉、一小碟鹽、一小瓶醬油和一小瓶食用油
