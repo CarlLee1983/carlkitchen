@@ -1,0 +1,39 @@
+title: 乾煎櫛瓜
+summary: 櫛瓜與紅蘿蔔不加油乾煎，兩面上色後撒上香草鹽。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 10
+tags: [家常菜]
+ingredients:
+  - { name: 櫛瓜, amount: { value: 1, unit: 根 }, note: 切成約 1 cm 厚的片 }
+  - {
+      name: 紅蘿蔔,
+      amount: { value: 0.5, unit: 根 },
+      note: 切成約 0.5 cm 厚的片,
+    }
+  - { name: 香草鹽, note: 少許, group: 調味 }
+steps:
+  - text: 洗淨櫛瓜和紅蘿蔔，擦乾水分。將櫛瓜切成約 1 cm 厚的片，紅蘿蔔切成約 0.5 cm 厚的片。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分開放著櫛瓜厚片和紅蘿蔔薄片，旁邊是一把菜刀
+  - text: 將櫛瓜片與紅蘿蔔片放入平底鍋，再開中火，不加油乾煎。
+    image:
+      src: ./step-2.webp
+      alt: 深灰色平底鍋中平放著尚未上色的櫛瓜片與紅蘿蔔片
+  - text: 煎到朝下的一面上色，再翻過來煎另一面。
+  - text: 煎至兩面都上色，撒上香草鹽，再盛到盤中。
+    image:
+      src: ./step-4.webp
+      alt: 深灰色平底鍋中的櫛瓜片與紅蘿蔔片表面已煎出褐色斑點，撒有細碎香草鹽
+hero:
+  src: ./hero.webp
+  alt: 素色陶瓷盤裡盛著煎出褐色斑點的櫛瓜片與紅蘿蔔片，表面散有細碎香草鹽
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一根櫛瓜、一段切開的紅蘿蔔，以及小碟中的香草鹽
+tip: 沒有香草鹽時，可改用一般的鹽，或不加鹽。

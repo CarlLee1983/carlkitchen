@@ -1,0 +1,86 @@
+title: 椰奶鷹嘴豆咖哩
+summary: 鷹嘴豆和紅甜椒以椰奶、番茄燉煮，最後拌入嫩菠菜、香菜和萊姆汁。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 30
+tags: [咖哩]
+ingredients:
+  - {
+      name: 鷹嘴豆罐頭,
+      amount: { value: 2, unit: 罐 },
+      note: 每罐包裝標示 400 g，使用前瀝乾；非瀝乾後重量,
+    }
+  - { name: 洋蔥, amount: { value: 1, unit: 顆 }, note: 切碎 }
+  - {
+      name: 紅甜椒,
+      amount: { value: 1, unit: 顆 },
+      note: 切成約 3 × 0.75 cm 的條狀,
+    }
+  - { name: 蒜頭, amount: { value: 2, unit: 瓣 }, note: 切末 }
+  - { name: 嫩菠菜, amount: { value: 50, unit: g } }
+  - { name: 椰奶, amount: { value: 400, unit: ml }, note: 使用全脂椰奶 }
+  - { name: 碎番茄罐頭, amount: { value: 400, unit: ml } }
+  - { name: 低鈉蔬菜高湯, amount: { value: 250, unit: ml } }
+  - { name: 香菜, amount: { value: 45, unit: ml }, note: 粗切，原量 3 大匙 }
+  - {
+      name: 橄欖油,
+      amount: { value: 22.5, unit: ml },
+      note: 原量 1.5 大匙,
+      group: 調味,
+    }
+  - {
+      name: 紅椒粉,
+      amount: { value: 15, unit: ml },
+      note: paprika，原量 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 孜然粉,
+      amount: { value: 15, unit: ml },
+      note: 原量 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 糖,
+      amount: { value: 7.5, unit: ml },
+      note: 原量 1.5 小匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 2.5, unit: ml },
+      note: 原量 0.5 小匙,
+      group: 調味,
+    }
+  - {
+      name: 萊姆汁,
+      amount: { value: 15, unit: ml },
+      note: 原量 1 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 瀝乾鷹嘴豆罐頭。洋蔥切碎，蒜頭切末，紅甜椒切成約 3 × 0.75 cm 的條狀，香菜粗切。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分開放著洋蔥碎、蒜末、紅甜椒條和粗切香菜，旁邊是瀝乾的鷹嘴豆與菜刀
+  - text: 在深鍋中以大火加熱橄欖油，放洋蔥和蒜頭炒 1 分鐘。加入紅甜椒炒 2 分鐘，至洋蔥半透明、邊緣略呈金黃。
+  - text: 加入鷹嘴豆罐頭、椰奶、碎番茄罐頭、低鈉蔬菜高湯、紅椒粉、孜然粉、糖和鹽，拌勻煮至微滾。
+  - text: 轉中小火，保持微滾 12–15 分鐘，至醬汁由淡粉色轉為橘紅色。
+    image:
+      src: ./step-4.webp
+      alt: 深灰色雙耳深鍋裡的鷹嘴豆、紅甜椒條與洋蔥碎在橘紅色醬汁中微滾
+  - text: 放入嫩菠菜，拌至葉片剛軟化，再拌入香菜和萊姆汁即可。
+    image:
+      src: ./step-5.webp
+      alt: 深灰色雙耳深鍋裡的鷹嘴豆咖哩混有紅甜椒條、軟化的嫩菠菜與細碎香菜
+hero:
+  src: ./hero.webp
+  alt: 素色陶瓷碗裡盛著橘紅色鷹嘴豆咖哩，混有紅甜椒條、嫩菠菜和細碎香菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩罐鷹嘴豆、一顆洋蔥、一顆紅甜椒、兩瓣蒜頭、嫩菠菜、香菜，以及分裝的椰奶、碎番茄、蔬菜高湯、橄欖油、紅椒粉、孜然粉、糖、鹽與萊姆汁
+tip: 料理時間約 30 分鐘，不含煮飯。量匙以 1 小匙 5 ml、1 大匙 15 ml 換算。
