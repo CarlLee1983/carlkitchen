@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Illustration from "../components/Illustration.astro";
 import { recipeKinds, visibleKindOptions } from "../utils/home";
-import { SITE_NAME } from "../utils/site";
+import { SITE_NAME, SITE_TAGLINE } from "../utils/site";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
 
 const recipes = await getVisibleRecipes();
@@ -29,7 +29,10 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
   >
     <div class="intro-text">
       <p class="today" data-today></p>
-      <h1>{SITE_NAME}</h1>
+      <div class="masthead">
+        <h1>{SITE_NAME}</h1>
+        <p class="tagline">{SITE_TAGLINE}</p>
+      </div>
       <form class="search" role="search" data-search-form>
         <label for="search-input">搜尋菜譜</label>
         <input
@@ -170,8 +173,28 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     font-size: 0.9rem;
     letter-spacing: 0.1em;
   }
-  .intro-text h1 {
+  /* 站名與標語組成直排題字：依直排由右往左的讀序，站名在右、標語在左。 */
+  .masthead {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1.25rem;
     margin: 0 0 2rem;
+  }
+  .masthead .tagline {
+    margin: 0.4em 0 0;
+    writing-mode: vertical-rl;
+    /* 一欄七字，在「飯」後換欄 */
+    inline-size: 8.1em;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    letter-spacing: 0.15em;
+  }
+  .intro-text h1 {
+    margin: 0;
     writing-mode: vertical-rl;
     font-size: 3rem;
     line-height: 1.1;
@@ -383,9 +406,15 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       padding-top: 1.5rem;
     }
     /* 直排大字在手機縮小，讓第一道菜仍落在第一屏內 */
-    .intro-text h1 {
+    .masthead {
+      gap: 0.75rem;
       margin-bottom: 1rem;
+    }
+    .intro-text h1 {
       font-size: 2rem;
+    }
+    .masthead .tagline {
+      font-size: 0.8rem;
     }
     .meal-link,
     .desktop-list-tools {
