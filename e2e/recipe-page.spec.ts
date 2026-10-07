@@ -50,7 +50,7 @@ test("菜譜頁顯示基本資訊、成品圖、材料兩組與合照、編號�
   await expect(method.getByRole("figure")).toHaveCount(stepImageCount);
 });
 
-test("每張料理圖都有替代文字與「AI 繪製插畫」標示", async ({ page }) => {
+test("每張料理圖都有替代文字，且不加圖說", async ({ page }) => {
   await page.goto(url);
   const article = page.getByRole("article");
   const images = article.getByRole("img");
@@ -61,7 +61,7 @@ test("每張料理圖都有替代文字與「AI 繪製插畫」標示", async ({
   const figures = article.getByRole("figure");
   await expect(figures).toHaveCount(imageCount);
   for (let i = 0; i < imageCount; i++) {
-    await expect(figures.nth(i)).toContainText("AI 繪製插畫");
+    await expect(figures.nth(i)).not.toContainText("AI 繪製插畫");
   }
 });
 
@@ -149,9 +149,6 @@ test("列印媒體：隱藏導覽、聲明與步驟圖，保留材料、做法�
   await expect(page.getByRole("region", { name: "聲明" })).toBeHidden();
   const article = page.getByRole("article");
   await expect(article.getByRole("figure").first()).toBeVisible();
-  await expect(article.getByRole("figure").first()).toContainText(
-    "AI 繪製插畫",
-  );
   await expect(page.getByRole("complementary", { name: "材料" })).toBeVisible();
   await expect(
     page.getByRole("complementary", { name: "材料" }).getByRole("figure"),
