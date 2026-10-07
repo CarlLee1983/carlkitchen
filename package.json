@@ -14,6 +14,8 @@
     "preview": "astro preview",
     "check": "pnpm format:check && astro check && pnpm build",
     "check:content": "node --experimental-strip-types scripts/check-content.ts",
+    "check:merge": "node --experimental-strip-types scripts/check-merge.ts",
+    "measure:mobile": "node --experimental-strip-types scripts/measure-mobile.ts",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "build:e2e-meal": "RECIPES_DIR=tests/fixtures/meal-recipes ASTRO_OUT_DIR=dist-meal astro build --force",
     "test:e2e": "RECIPES_DIR=tests/fixtures/recipes INGREDIENTS_DIR=tests/fixtures/ingredients INGREDIENT_SOURCES_DIR=tests/fixtures/ingredient-sources pnpm build && pnpm build:e2e-meal && node scripts/run-e2e.mjs",
