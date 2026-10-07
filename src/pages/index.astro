@@ -329,6 +329,44 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     }
   }
 
+  /*
+   * 手機版（< 40rem）清單密度：首屏收緊讓篩選列落在第一個畫面內、摘要截成 1 行、
+   * 篩選列捲動時固定在頂部。寬螢幕版面不受影響。
+   */
+  @media (max-width: 39.99rem) {
+    :global(main) {
+      padding-top: 1.5rem;
+    }
+    .intro {
+      margin-bottom: 0;
+    }
+    /* 成品大圖由腳本複製進來，沒有 Astro 的範圍屬性，所以用 :global；裁切置中 */
+    .hero-pick :global(figure.illustration img) {
+      aspect-ratio: 2 / 1;
+      object-fit: cover;
+      object-position: center;
+    }
+    .list-tools {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    /* 切換篩選後腳本把清單捲到這個位置，第一列才不會被固定的篩選列蓋住 */
+    .rows {
+      scroll-margin-top: 3rem;
+    }
+    /* 截成 1 行；完整文字仍在 DOM，供螢幕閱讀器與 Pagefind 讀取 */
+    .row-summary {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      overflow: hidden;
+    }
+  }
+
   /* 手機搜尋中收起成品大圖，結果緊接在搜尋框下方；寬螢幕左文右圖不受影響 */
   @media (max-width: 63.99rem) {
     .intro[data-searching] .hero-pick {

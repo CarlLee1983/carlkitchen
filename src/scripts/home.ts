@@ -199,12 +199,22 @@ export function initHome() {
     setState({ ...currentState(), q: normalizeQuery(input?.value ?? "") });
   });
 
+  /** 手機版篩選列固定在頂部；已捲到清單中段時，切換後把清單頂端對齊到列下方。 */
+  const isMobile = window.matchMedia("(max-width: 39.99rem)");
+  const bar = document.querySelector(".list-tools");
+  function keepListInView() {
+    if (isMobile.matches && bar && bar.getBoundingClientRect().top <= 0) {
+      rowList?.scrollIntoView({ block: "start" });
+    }
+  }
+
   for (const button of buttons) {
     button.addEventListener("click", () => {
       setState({
         ...currentState(),
         kind: button.dataset.filter as KindFilter,
       });
+      keepListInView();
     });
   }
 
