@@ -17,6 +17,7 @@
   ```
 
   頁面內嵌的 JSON-LD（`recipeIngredient`、`HowToStep`）最乾淨。楊桃的頁面不標份數，只標出處書名或期別。
+
 - 其他站：curl 後去掉 script 與標籤，找材料與步驟段落。
 - 抓下的 HTML 放 scratchpad，不進儲存庫。
 - 多個來源衝突時選一種做法，在 PR 說明取捨；沒採用的核准來源不寫進 `content/sources/`。

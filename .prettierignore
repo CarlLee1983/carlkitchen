@@ -11,4 +11,4 @@ playwright-report
 .scratch
 index.html
 PROTOTYPE_SPEC.md
-.claude
+.claude/scheduled_tasks.lock
