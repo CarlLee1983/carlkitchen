@@ -4,6 +4,7 @@ import {
   createDraft,
   createPlan,
   draftProgress,
+  isCompletePlan,
   type Draft,
   type Action,
   type Candidate,
@@ -382,6 +383,23 @@ export function initMeal() {
       (candidate) =>
         candidate.soup === (target === "soup") &&
         !chosenElsewhere.has(candidate.id) &&
+        (draft !== null ||
+          candidate.id === currentId ||
+          isCompletePlan(candidates, {
+            ...plan,
+            dishes:
+              target === "soup"
+                ? plan.dishes
+                : plan.dishes.map((slot, index) =>
+                    index === target
+                      ? { id: candidate.id, locked: false }
+                      : slot,
+                  ),
+            soup:
+              target === "soup"
+                ? { id: candidate.id, locked: false }
+                : plan.soup,
+          })) &&
         recipes[candidate.id]!.title.includes(query.trim()),
     );
     chooser.replaceChildren();

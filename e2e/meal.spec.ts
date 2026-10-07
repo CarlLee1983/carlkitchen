@@ -495,10 +495,10 @@ test("自選完成後搜尋仍在且保留焦點，可排除重複並替換菜�
     chooseOf(page, 1).getByRole("option", { name: "青椒牛肉" }),
   ).toHaveCount(0);
   await searchOf(page, 1).fill("");
-  await expect(status(page)).toContainText("可選 2 道菜色");
-  expect(
-    (await chooseOf(page, 1).getByRole("option").allTextContents()).sort(),
-  ).toEqual(["蒜炒高麗菜", "香煎豆腐"].sort());
+  await expect(status(page)).toContainText("可選 1 道菜色");
+  await expect(chooseOf(page, 1).getByRole("option")).toHaveText([
+    "蒜炒高麗菜",
+  ]);
   await searchOf(page, 0).fill("豆腐");
   await expect(
     chooseOf(page, 0).getByRole("option", { name: "香煎豆腐" }),
@@ -735,6 +735,36 @@ test("從菜位選擇候選只替換該位置；不列重複菜色且鎖定會�
   );
   await expect(status(page)).toContainText("先解鎖");
   expect(await titlesOnTable(page)).toEqual(after);
+});
+
+test("完整菜單的唯一蔬菜只列平衡替換，草稿仍可暫選肉蛋料理", async ({
+  page,
+}) => {
+  await page.goto("/meal/");
+  await reroll(page).click();
+  const vegetableIndex = (await titlesOnTable(page)).indexOf(
+    vegetableDish.title,
+  );
+  const chooser = chooseOf(page, vegetableIndex);
+  await expect(chooser.getByRole("option")).toHaveText([vegetableDish.title]);
+  await searchOf(page, vegetableIndex).fill("牛肉");
+  await expect(status(page)).toContainText("找不到可選菜色");
+  await expect(chooser.getByRole("option", { name: "青椒牛肉" })).toHaveCount(
+    0,
+  );
+  await searchOf(page, vegetableIndex).fill("");
+  await expect(status(page)).toContainText("可選 1 道菜色");
+  await expect(
+    chooser.getByRole("option", { name: vegetableDish.title }),
+  ).toHaveCount(1);
+
+  page.once("dialog", (dialog) => dialog.accept());
+  await chooseSelf(page).click();
+  await chooseOf(page, vegetableIndex).selectOption("meal-beef");
+  await expect(
+    items(page).nth(vegetableIndex).getByRole("link", { name: "青椒牛肉" }),
+  ).toBeVisible();
+  await expect(status(page)).toContainText("還缺蔬菜");
 });
 
 test("湯位只列湯；手機上可用鍵盤抵達指定欄位並保留焦點", async ({ page }) => {
