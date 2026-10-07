@@ -1,0 +1,68 @@
+sources:
+  - title: America's Test Kitchen〈For a Clearer Stock, Simmer; Don't Boil〉
+    url: https://www.americastestkitchen.com/how_tos/9260-for-a-clearer-stock-simmer-dont-boil
+  - title: Foods（2024）〈Migration of Nutrient Substances and Characteristic Changes of Chicken White Soup Emulsion from Chicken Skeleton during Cooking〉
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10855391/
+  - title: "The Woks of Life〈How to Make a Clear Broth: 2 Key Secrets!〉"
+    url: https://thewoksoflife.com/how-to-make-a-clear-broth/
+  - title: America's Test Kitchen〈Beef Stir-Fry with Bok Choy and Green Beans〉
+    url: https://www.americastestkitchen.com/recipes/12293-beef-stir-fry-with-bok-choy-and-green-beans
+  - title: America's Test Kitchen〈What Is Velveting? Ask Paul〉
+    url: https://www.americastestkitchen.com/articles/6803-what-is-velveting-ask-paul
+  - title: America's Test Kitchen〈Why You Should Salt Watery Vegetables Before Cooking〉
+    url: https://www.americastestkitchen.com/articles/4102-why-you-should-salt-watery-vegetables-before-cooking
+  - title: 伊利諾大學推廣教育〈The Whys and Hows of Cooking Vegetables〉
+    url: https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf
+  - title: America's Test Kitchen〈Salting Meat〉
+    url: https://www.americastestkitchen.com/how_tos/5681-salting-meat
+  - title: 寶酒造〈料理酒（清酒）の調理効果～消臭と軟化～〉
+    url: https://chomiryo.takarashuzo.co.jp/knowledge/detail/112
+  - title: 寶酒造〈においの解決策② ～におい物質の物理的除去、香りによるマスキング～〉
+    url: https://chomiryo.takarashuzo.co.jp/knowledge/detail/90
+  - title: USDA〈Table of Nutrient Retention Factors, Release 6〉
+    url: https://www.ars.usda.gov/ARSUserFiles/80400525/Data/retn/retn06.pdf
+  - title: 衛福部食藥署〈常常聽人說料理不要加味精，味精真的有毒嗎？〉
+    url: https://www.fda.gov.tw/tc/newsContent.aspx?id=19450&chk=ceebf354-d158-4b08-b111-639c1ea55f66
+  - title: 李錦記臺灣〈醬油、醬油膏、蠔油差別小教室〉
+    url: https://tw.lkk.com/zh-hk/cooking-stories/oyster-sauce-vs-soy-sauce
+  - title: America's Test Kitchen〈What Is Fond?〉
+    url: https://www.americastestkitchen.com/how_tos/11945-what-is-fond
+  - title: 李錦記英國〈Light vs Dark Soy Sauce〉
+    url: https://uk.lkk.com/culinary-guide/all/light-vs-dark-soy-sauce
+  - title: 臺中區農業改良場〈認識醬油〉
+    url: https://www.tcdares.gov.tw/ws.php?id=1454
+  - title: 寶酒造〈味の種類と相互作用〉
+    url: https://chomiryo.takarashuzo.co.jp/knowledge/detail/24
+sections:
+  - heading: 清湯微滾，白湯大滾
+    urls:
+      - https://www.americastestkitchen.com/how_tos/9260-for-a-clearer-stock-simmer-dont-boil
+      - https://pmc.ncbi.nlm.nih.gov/articles/PMC10855391/
+      - https://thewoksoflife.com/how-to-make-a-clear-broth/
+  - heading: 肉片先起鍋，最後回鍋
+    urls:
+      - https://www.americastestkitchen.com/recipes/12293-beef-stir-fry-with-bok-choy-and-green-beans
+      - https://www.americastestkitchen.com/articles/6803-what-is-velveting-ask-paul
+  - heading: 青菜起鍋前下鹽，肉先用鹽醃
+    urls:
+      - https://www.americastestkitchen.com/articles/4102-why-you-should-salt-watery-vegetables-before-cooking
+      - https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf
+      - https://www.americastestkitchen.com/how_tos/5681-salting-meat
+  - heading: 米酒去腥靠揮發，酒精不會燒光
+    urls:
+      - https://chomiryo.takarashuzo.co.jp/knowledge/detail/112
+      - https://chomiryo.takarashuzo.co.jp/knowledge/detail/90
+      - https://www.ars.usda.gov/ARSUserFiles/80400525/Data/retn/retn06.pdf
+  - heading: 雞粉、蠔油起鍋前加
+    urls:
+      - https://www.fda.gov.tw/tc/newsContent.aspx?id=19450&chk=ceebf354-d158-4b08-b111-639c1ea55f66
+      - https://tw.lkk.com/zh-hk/cooking-stories/oyster-sauce-vs-soy-sauce
+  - heading: 鍋底的焦褐用水溶開
+    urls:
+      - https://www.americastestkitchen.com/how_tos/11945-what-is-fond
+  - heading: 醬油調味，老抽上色
+    urls:
+      - https://uk.lkk.com/culinary-guide/all/light-vs-dark-soy-sauce
+      - https://www.tcdares.gov.tw/ws.php?id=1454
+      - https://tw.lkk.com/zh-hk/cooking-stories/oyster-sauce-vs-soy-sauce
+      - https://chomiryo.takarashuzo.co.jp/knowledge/detail/24
