@@ -106,7 +106,10 @@ export function initHome() {
         String(button.dataset.filter === state.kind),
       );
     }
-    intro?.toggleAttribute("data-searching", state.q !== "");
+    intro?.toggleAttribute(
+      "data-has-criteria",
+      state.q !== "" || state.kind !== "all",
+    );
     if (input && normalizeQuery(input.value) !== state.q) {
       input.value = state.q;
     }

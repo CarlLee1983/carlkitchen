@@ -22,7 +22,11 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 ---
 
 <Base>
-  <div class="intro" data-intro>
+  <div
+    class="home"
+    data-intro
+    data-has-hero={heroRecipes.length > 0 ? "" : undefined}
+  >
     <div class="intro-text">
       <p class="today" data-today></p>
       <h1>{SITE_NAME}</h1>
@@ -47,8 +51,27 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     </div>
 
     {
+      recipes.length > 0 && (
+        <div class="list-tools mobile-list-tools">
+          <div class="filters" role="group" aria-label="篩選">
+            {filters.map((filter) => (
+              <button
+                type="button"
+                data-filter={filter.value}
+                aria-pressed={filter.value === "all" ? "true" : "false"}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {
       heroRecipes.length > 0 && (
-        <section class="hero-pick" aria-label="隨機推薦菜譜">
+        <section class="hero-pick" aria-label="隨機看看一道菜">
+          <p class="hero-label">隨機看看一道菜</p>
           {heroRecipes.map((recipe) => (
             <template data-hero-slot>
               <a href={recipeHref(recipe)}>
@@ -75,63 +98,62 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
         </section>
       )
     }
-  </div>
-
-  <section id="recipes" class="recipe-list" aria-labelledby="recipes-title">
-    <h2 id="recipes-title">菜譜清單</h2>
-    {
-      recipes.length === 0 ? (
-        <p>目前還沒有菜譜。</p>
-      ) : (
-        <>
-          <div class="list-tools">
-            <div class="filters" role="group" aria-label="篩選">
-              {filters.map((filter) => (
-                <button
-                  type="button"
-                  data-filter={filter.value}
-                  aria-pressed={filter.value === "all" ? "true" : "false"}
-                >
-                  {filter.label}
-                </button>
-              ))}
+    <section id="recipes" class="recipe-list" aria-labelledby="recipes-title">
+      <h2 id="recipes-title">菜譜清單</h2>
+      {
+        recipes.length === 0 ? (
+          <p>目前還沒有菜譜。</p>
+        ) : (
+          <>
+            <div class="list-tools desktop-list-tools">
+              <div class="filters" role="group" aria-label="篩選">
+                {filters.map((filter) => (
+                  <button
+                    type="button"
+                    data-filter={filter.value}
+                    aria-pressed={filter.value === "all" ? "true" : "false"}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-          <ul class="rows">
-            {recipes.map((recipe) => (
-              <li
-                class="row"
-                data-recipe-row
-                data-recipe-id={recipe.id}
-                data-kinds={recipeKinds(recipe.data).join(" ")}
-              >
-                {recipe.data.hero && (
-                  <Illustration
-                    class="thumb"
-                    image={recipe.data.hero}
-                    sizes="(min-width: 40rem) 120px, 72px"
-                    widths={[144, 240, 360]}
-                  />
-                )}
-                <h3>
-                  <a href={recipeHref(recipe)}>{recipe.data.title}</a>
-                  {recipe.data.draft && <span>（草稿）</span>}
-                </h3>
-                <p class="row-summary">{recipe.data.summary}</p>
-                <span class="kind">{recipe.data.category}</span>
-              </li>
-            ))}
-          </ul>
-          <div class="empty" data-empty hidden>
-            <p data-empty-message />
-            <button type="button" data-clear>
-              清除條件
-            </button>
-          </div>
-        </>
-      )
-    }
-  </section>
+            <ul class="rows">
+              {recipes.map((recipe) => (
+                <li
+                  class="row"
+                  data-recipe-row
+                  data-recipe-id={recipe.id}
+                  data-kinds={recipeKinds(recipe.data).join(" ")}
+                >
+                  {recipe.data.hero && (
+                    <Illustration
+                      class="thumb"
+                      image={recipe.data.hero}
+                      sizes="(min-width: 40rem) 120px, 72px"
+                      widths={[144, 240, 360]}
+                    />
+                  )}
+                  <h3>
+                    <a href={recipeHref(recipe)}>{recipe.data.title}</a>
+                    {recipe.data.draft && <span>（草稿）</span>}
+                  </h3>
+                  <p class="row-summary">{recipe.data.summary}</p>
+                  <span class="kind">{recipe.data.category}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="empty" data-empty hidden>
+              <p data-empty-message />
+              <button type="button" data-clear>
+                清除條件
+              </button>
+            </div>
+          </>
+        )
+      }
+    </section>
+  </div>
 </Base>
 
 <script>
@@ -141,11 +163,6 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 </script>
 
 <style>
-  .intro {
-    display: grid;
-    gap: 2rem;
-    margin-bottom: 4rem;
-  }
   .today {
     margin: 0 0 0.5rem;
     min-height: 1.8em;
@@ -153,7 +170,7 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     font-size: 0.9rem;
     letter-spacing: 0.1em;
   }
-  .intro h1 {
+  .intro-text h1 {
     margin: 0 0 2rem;
     writing-mode: vertical-rl;
     font-size: 3rem;
@@ -161,7 +178,7 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     letter-spacing: 0.1em;
   }
   @media (min-width: 64rem) {
-    .intro h1 {
+    .intro-text h1 {
       font-size: 4.5rem;
     }
   }
@@ -196,9 +213,28 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     border: 1px solid var(--ink);
     text-decoration: none;
   }
+  .hero-pick {
+    position: relative;
+  }
   .hero-pick a {
     display: block;
     text-decoration: none;
+  }
+  .hero-pick {
+    margin-top: 2rem;
+  }
+  .hero-label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 1;
+    margin: 0;
+    padding: 0.1rem 0.5rem;
+    background: var(--paper);
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    pointer-events: none;
   }
   .hero-title {
     margin: 0.25rem 0 0;
@@ -207,6 +243,7 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
   }
 
   .recipe-list {
+    margin-top: 4rem;
     scroll-margin-top: 1rem;
     border-top: 1px solid var(--line);
     padding-top: 2rem;
@@ -221,6 +258,9 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem 1.5rem;
+  }
+  .mobile-list-tools {
+    display: none;
   }
   .filters {
     display: flex;
@@ -337,34 +377,42 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     }
   }
 
-  /*
-   * 手機版（< 40rem）清單密度：首屏收緊讓篩選列落在第一個畫面內、摘要截成 1 行、
-   * 篩選列捲動時固定在頂部。寬螢幕版面不受影響。
-   */
+  /* 手機版以整個首頁作為固定篩選列的範圍，讓篩選列捲過大圖後仍留在清單上方。 */
   @media (max-width: 39.99rem) {
     :global(main) {
       padding-top: 1.5rem;
     }
-    .intro {
-      margin-bottom: 0;
-    }
-    /* 直排大字在手機縮小，讓篩選列仍落在第一屏內 */
-    .intro h1 {
-      margin-bottom: 1.25rem;
+    /* 直排大字在手機縮小，讓第一道菜仍落在第一屏內 */
+    .intro-text h1 {
+      margin-bottom: 1rem;
       font-size: 2rem;
     }
-    /* 成品大圖由腳本複製進來，沒有 Astro 的範圍屬性，所以用 :global；裁切置中 */
-    .hero-pick :global(figure.illustration img) {
-      aspect-ratio: 2 / 1;
-      object-fit: cover;
-      object-position: center;
+    .meal-link,
+    .desktop-list-tools {
+      display: none;
     }
-    .list-tools {
+    .mobile-list-tools {
+      display: flex;
       position: sticky;
       top: 0;
       z-index: 1;
+      margin: 0.75rem 0;
       background: var(--paper);
       border-bottom: 1px solid var(--line);
+    }
+    .hero-pick {
+      margin-top: 0;
+    }
+    /* 成品大圖由腳本複製進來，沒有 Astro 的範圍屬性，所以用 :global；裁切置中 */
+    .hero-pick :global(figure.illustration img) {
+      aspect-ratio: 2.25 / 1;
+      object-fit: cover;
+      object-position: center;
+    }
+    .recipe-list {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      scroll-margin-top: 6rem;
     }
     /* 截成 1 行；完整文字仍在 DOM，供螢幕閱讀器與 Pagefind 讀取 */
     .row-summary {
@@ -376,19 +424,26 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     }
   }
 
-  /* 手機搜尋中收起成品大圖，結果緊接在搜尋框下方；寬螢幕左文右圖不受影響 */
-  @media (max-width: 63.99rem) {
-    .intro[data-searching] .hero-pick {
-      display: none;
-    }
+  /* 搜尋或篩選時收起隨機大圖；桌機同時收起圖片欄。 */
+  .home[data-has-criteria] .hero-pick {
+    display: none;
   }
 
   /* 寬螢幕第一屏：左文右圖 */
   @media (min-width: 64rem) {
-    .intro {
+    .home[data-has-hero]:not([data-has-criteria]) {
+      display: grid;
       grid-template-columns: minmax(0, 1fr) 36rem;
-      gap: 4rem;
-      align-items: center;
+      column-gap: 4rem;
+    }
+    .intro-text {
+      align-self: center;
+    }
+    .hero-pick {
+      margin-top: 0;
+    }
+    .recipe-list {
+      grid-column: 1 / -1;
     }
   }
 </style>

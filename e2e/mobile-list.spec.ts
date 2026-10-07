@@ -16,19 +16,22 @@ const bottom = async (locator: Locator) => {
 test.describe("手機版（390×844）", () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
-  test("第一個畫面就看得到篩選列", async ({ page }) => {
+  test("首屏依序看到搜尋、完整篩選列、大圖與第一道菜名", async ({ page }) => {
     await page.goto("/");
+    const search = page.getByRole("searchbox");
+    const hero = page.getByRole("region", { name: "隨機看看一道菜" });
+    const firstTitle = rows(page).first().getByRole("heading");
+
+    expect(await top(filterBar(page))).toBeGreaterThanOrEqual(
+      await bottom(search),
+    );
     expect(await top(filterBar(page))).toBeGreaterThanOrEqual(0);
     expect(await bottom(filterBar(page))).toBeLessThanOrEqual(844);
-  });
-
-  test("成品大圖寬高比約 2:1", async ({ page }) => {
-    await page.goto("/");
-    const img = (await page
-      .getByRole("region", { name: "隨機推薦菜譜" })
-      .getByRole("img")
-      .boundingBox())!;
-    expect(img.width / img.height).toBeCloseTo(2, 1);
+    expect(await top(hero)).toBeGreaterThanOrEqual(
+      await bottom(filterBar(page)),
+    );
+    expect(await top(firstTitle)).toBeGreaterThanOrEqual(await bottom(hero));
+    expect(await bottom(firstTitle)).toBeLessThanOrEqual(844);
   });
 
   test("清單列的摘要只佔 1 行高，完整文字仍在 DOM", async ({ page }) => {
@@ -61,7 +64,7 @@ test.describe("手機版（390×844）", () => {
     await page.goto("/");
     await page.getByRole("searchbox").fill(recipes[0]!.title);
     await expect(
-      page.getByRole("region", { name: "隨機推薦菜譜" }),
+      page.getByRole("region", { name: "隨機看看一道菜" }),
     ).toBeHidden();
   });
 });
