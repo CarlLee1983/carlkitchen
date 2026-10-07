@@ -1,0 +1,77 @@
+title: 高麗菜飯
+summary: 香菇、蝦米與肉絲先炒拌，再和高麗菜、白米一起煮成飯。用電子鍋完成一鍋菜飯。
+servings: 4
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 75
+tags: [家常菜]
+aliases: []
+ingredients:
+  - {
+      name: 白米,
+      amount: { value: 4, unit: 杯 },
+      note: 杯容量未確認，保留原單位,
+    }
+  - {
+      name: 高麗菜,
+      amount: { value: 0.5, unit: 個 },
+      note: 大小不同會影響份量，洗淨後用手剝成片,
+    }
+  - { name: 肉絲, amount: { value: 150, unit: g } }
+  - { name: 香菇, amount: { value: 8, unit: 朵 }, note: 泡軟後去蒂、切絲 }
+  - {
+      name: 蝦米,
+      amount: { value: 45, unit: ml },
+      note: 3 大匙，泡水約 15 分鐘,
+    }
+  - {
+      name: 水,
+      amount: { value: 3.5, unit: 杯 },
+      note: 煮飯用，杯容量未確認，保留原單位,
+    }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 鹽, amount: { value: 10, unit: ml }, note: 2 小匙, group: 調味 }
+  - { name: 白胡椒, amount: { value: 10, unit: ml }, note: 2 小匙, group: 調味 }
+  - {
+      name: 淡色醬油,
+      amount: { value: 45, unit: ml },
+      note: 3 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 泡軟香菇，去蒂後切成絲；蝦米泡水約 15 分鐘，變軟後洗淨。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上切成絲的香菇與菜刀，旁邊米白色小碗裝著泡軟洗淨的蝦米
+  - text: 洗淨白米；高麗菜洗淨後，用手剝成片。
+    image:
+      src: ./step-2.webp
+      alt: 兩只米白色瓷碗分別盛著洗淨的白米和剝成片的高麗菜
+  - text: 以中火熱鍋，倒入食用油，先後放入香菇、蝦米和肉絲翻炒。
+    image:
+      src: ./step-3.webp
+      alt: 灰色炒鍋內拌炒香菇絲、蝦米與肉絲
+  - text: 加進白米和高麗菜，再放入鹽、白胡椒、淡色醬油，把鍋中材料炒拌均勻。
+    image:
+      src: ./step-4.webp
+      alt: 灰色炒鍋內拌勻白米、高麗菜片、香菇絲、蝦米與肉絲
+  - text: 移入電子鍋內鍋，加入 3.5 杯水，確認液面蓋過白米和其他材料，再啟動電子鍋煮飯。
+  - text: 等電子鍋跳起後，用飯匙翻拌高麗菜飯，將米飯和配料拌勻。
+    image:
+      src: ./step-6.webp
+      alt: 深灰色電子鍋內鍋中，煮熟的米飯與高麗菜、香菇絲、蝦米、肉絲拌在一起
+hero:
+  src: ./hero.webp
+  alt: 米白色瓷碗盛著高麗菜飯，米飯中混有高麗菜片、香菇絲、蝦米與肉絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 白米、半個高麗菜、肉絲、八朵香菇、蝦米，以及分裝的水、食用油、鹽、白胡椒與淡色醬油
+tip: 編輯用量提醒：米、水建議用同一個杯子量取，但原杯容量未確認；高麗菜大小與杯量差異都會影響這份約 4 人份的實際份量。
