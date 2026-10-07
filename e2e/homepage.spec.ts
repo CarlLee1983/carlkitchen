@@ -151,9 +151,12 @@ test("關閉 JS 時只有一張大圖（第一道菜），不會下載全部", a
   );
   await expect(hero(page).getByRole("img")).toBeVisible();
   await page.waitForLoadState("load");
-  // 大圖一張；清單縮圖每列一張（可能延遲載入）；不應出現每道菜各一張額外大圖
+  // 只計 Astro 處理的菜譜圖片，排除頁首 Logo；大圖一張，清單縮圖每列一張（可能延遲載入）。
   const heroSrc = await hero(page).getByRole("img").getAttribute("src");
-  expect(imageRequests.length).toBeLessThanOrEqual(recipes.length + 1);
+  expect(
+    imageRequests.filter((url) => new URL(url).pathname.startsWith("/_astro/"))
+      .length,
+  ).toBeLessThanOrEqual(recipes.length + 1);
   expect(heroSrc).toBeTruthy();
   await context.close();
 });
