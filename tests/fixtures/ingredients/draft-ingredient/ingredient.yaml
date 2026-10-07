@@ -1,0 +1,10 @@
+title: 草稿食材
+summary: 固定資料草稿。
+category: seasoning
+draft: true
+selection: 草稿選用。
+preparation: 草稿處理。
+storage: 草稿保存。
+uses: 草稿用途。
+relatedRecipes:
+  - tomato-egg

@@ -12,13 +12,18 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/logo-mark.svg" />
     <title>{title}</title>
   </head>
   <body>
     <header class="site-header">
       <nav aria-label="主選單">
-        <a class="brand" href="/">CarlKitchen</a>
+        <a class="brand" href="/">
+          <img src="/logo-mark.svg" alt="" width="40" height="40" />
+          <span>CarlKitchen</span>
+        </a>
         <a href="/#recipes">菜譜</a>
+        <a href="/favorites/">我的收藏</a>
         <a href="/meal/">四菜一湯</a>
         <a href="/about/">關於</a>
       </nav>

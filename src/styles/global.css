@@ -64,10 +64,31 @@ a {
 }
 
 .site-header .brand {
+  gap: 0.5rem;
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 600;
   margin-right: auto;
+}
+
+.site-header .brand img {
+  display: block;
+  flex: none;
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 600px) {
+  .site-header nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 0.5rem;
+  }
+
+  .site-header .brand {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
 }
 
 main {

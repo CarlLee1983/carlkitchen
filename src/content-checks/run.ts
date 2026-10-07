@@ -1,6 +1,7 @@
 import { join } from "node:path";
 import { existsSync } from "node:fs";
 import { checkHeroAlt, checkImageFile, collectImageRefs } from "./images.ts";
+import { checkIngredients } from "./ingredients.ts";
 import {
   collectBuildFiles,
   listDirectories,
@@ -18,6 +19,8 @@ import { checkLaunchThreshold } from "./threshold.ts";
 export interface ContentCheckOptions {
   recipesDir: string;
   sourcesDir: string;
+  ingredientsDir?: string;
+  ingredientSourcesDir?: string;
   distDir: string;
   /** 開啟候選池門檻檢查（部署前）。 */
   launch: boolean;
@@ -130,11 +133,25 @@ export async function runContentChecks(
 
   // 建置輸出洩漏
   if (existsSync(options.distDir)) {
+    const files = collectBuildFiles(options.distDir);
+    const ingredientCheck =
+      options.ingredientsDir && options.ingredientSourcesDir
+        ? await checkIngredients({
+            ingredientsDir: options.ingredientsDir,
+            ingredientSourcesDir: options.ingredientSourcesDir,
+            publicRecipeIds: recipes
+              .filter(({ raw, data }) => data && !isDraft(raw))
+              .map(({ id }) => id),
+            files,
+          })
+        : { issues: [], draftIds: [], sourceUrls: [], files };
+    issues.push(...ingredientCheck.issues);
     issues.push(
       ...checkLeaks({
-        files: collectBuildFiles(options.distDir),
+        files: ingredientCheck.files,
         draftIds: recipes.filter(({ raw }) => isDraft(raw)).map(({ id }) => id),
-        sourceUrls,
+        draftIngredientIds: ingredientCheck.draftIds,
+        sourceUrls: [...sourceUrls, ...ingredientCheck.sourceUrls],
       }),
     );
   } else {

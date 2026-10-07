@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CarlKitchen Logo 比較原型</title>
+    <!-- 可丟棄原型：同一頁以 ?variant=A/B/C 比較三種站名識別，不是正式 Logo 資產。 -->
+    <style>
+      :root {
+        --paper: #f7f6f3;
+        --ink: #33322f;
+        --soft: #6b6862;
+        --line: #d9d6cf;
+        --green: #697b61;
+        --red: #b56e5b;
+        color-scheme: light;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #eeece7; color: var(--ink); font-family: "PingFang TC", "Noto Sans TC", system-ui, sans-serif; }
+      button { font: inherit; }
+      .intro { max-width: 1100px; margin: 0 auto; padding: 34px 24px 22px; }
+      .eyebrow { margin: 0 0 8px; color: var(--soft); font-size: .73rem; letter-spacing: .18em; text-transform: uppercase; }
+      h1 { margin: 0; font-family: Georgia, "Noto Serif TC", serif; font-size: clamp(1.65rem, 3vw, 2.35rem); font-weight: 500; }
+      .intro p:last-child { max-width: 700px; margin: 12px 0 0; color: var(--soft); font-size: .9rem; line-height: 1.7; }
+      .variant { max-width: 1100px; margin: 0 auto 120px; padding: 0 24px; }
+      .variant[hidden] { display: none; }
+      .variant-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin: 0 0 18px; }
+      .variant-head h2 { margin: 0; font-family: Georgia, "Noto Serif TC", serif; font-size: 1.4rem; font-weight: 500; }
+      .variant-head p { margin: 0; color: var(--soft); font-size: .83rem; }
+      .stage { display: grid; grid-template-columns: minmax(0, 1fr) 365px; gap: 24px; align-items: start; }
+      .desktop, .phone, .small-use { background: var(--paper); border: 1px solid #d5d1c9; box-shadow: 0 9px 30px #4b463216; }
+      .desktop { min-height: 480px; }
+      .site-header { border-bottom: 1px solid var(--line); }
+      .site-nav { display: flex; align-items: center; gap: 24px; min-height: 76px; padding: 0 30px; font-size: .86rem; white-space: nowrap; }
+      .site-nav a { color: inherit; text-decoration: none; }
+      .site-nav .brand { margin-right: auto; }
+      .site-nav .active { border-bottom: 1px solid var(--ink); }
+      .site-main { display: grid; grid-template-columns: .9fr 1fr; align-items: center; gap: 26px; min-height: 390px; padding: 34px 38px 42px; }
+      .today { margin: 0 0 12px; color: var(--soft); font-size: .7rem; letter-spacing: .12em; }
+      .site-main h3 { margin: 0 0 12px; font-family: Georgia, "Noto Serif TC", serif; font-size: 2.4rem; font-weight: 500; line-height: 1.25; }
+      .site-main p { margin: 0; max-width: 25em; color: var(--soft); line-height: 1.8; font-size: .81rem; }
+      .site-main img { width: 100%; display: block; aspect-ratio: 3 / 2; object-fit: cover; }
+      .side { display: grid; gap: 18px; }
+      .phone { width: 100%; min-height: 395px; overflow: hidden; }
+      .phone .site-nav { min-height: 68px; padding: 0 15px; gap: 15px; font-size: .7rem; }
+      .phone .site-nav a:last-child { display: none; }
+      .phone .site-main { display: block; min-height: 325px; padding: 28px 22px; }
+      .phone .site-main h3 { font-size: 1.7rem; }
+      .phone .site-main img { margin-top: 18px; max-height: 145px; }
+      .small-use { display: flex; align-items: center; gap: 18px; padding: 17px 21px; }
+      .small-use p { margin: 0; color: var(--soft); font-size: .79rem; line-height: 1.5; }
+      .tab-icon { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 42px; height: 42px; background: var(--paper); border: 1px solid var(--line); color: var(--ink); }
+      .notes { margin: 19px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .notes div { border-top: 1px solid #c9c5bd; padding-top: 10px; }
+      .notes strong { display: block; font-size: .8rem; font-weight: 600; }
+      .notes span { display: block; margin-top: 4px; color: var(--soft); font-size: .8rem; line-height: 1.6; }
+      .wordmark-a { font-family: Georgia, "Noto Serif TC", serif; font-size: 1.45rem; font-weight: 400; letter-spacing: -.045em; line-height: 1; }
+      .wordmark-a b { font-weight: 400; letter-spacing: -.065em; }
+      .wordmark-a .division { display: inline-block; width: 5px; }
+      .phone .wordmark-a { font-size: 1.17rem; }
+      .small-a { font-family: Georgia, serif; font-size: 24px; letter-spacing: -.12em; padding-right: 3px; }
+      .brand-b, .brand-c { display: inline-flex; align-items: center; gap: 9px; }
+      .brand-b svg { width: 31px; height: 31px; flex: none; }
+      .brand-b span { font-family: Georgia, "Noto Serif TC", serif; font-size: 1.33rem; letter-spacing: -.045em; }
+      .phone .brand-b { gap: 6px; }
+      .phone .brand-b svg { width: 25px; height: 25px; }
+      .phone .brand-b span { font-size: 1rem; }
+      .small-b svg { width: 29px; height: 29px; }
+      .brand-c { gap: 10px; }
+      .brand-c svg { width: 30px; height: 30px; flex: none; }
+      .brand-c span { display: grid; font-family: Georgia, "Noto Serif TC", serif; font-size: 1.24rem; line-height: 1.08; letter-spacing: -.045em; }
+      .brand-c em { font-style: normal; font-family: "PingFang TC", system-ui, sans-serif; font-size: .54rem; font-weight: 400; letter-spacing: .25em; text-transform: uppercase; }
+      .phone .brand-c { gap: 6px; }
+      .phone .brand-c svg { width: 24px; height: 24px; }
+      .phone .brand-c span { font-size: .94rem; }
+      .phone .brand-c em { font-size: .42rem; }
+      .small-c svg { width: 27px; height: 27px; }
+      .switcher { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 5; display: flex; align-items: center; gap: 11px; padding: 7px; border-radius: 999px; background: #2d2c29; color: white; box-shadow: 0 8px 25px #0004; white-space: nowrap; }
+      .switcher button { width: 38px; height: 38px; border: 0; border-radius: 50%; background: #ffffff17; color: white; cursor: pointer; font-size: 1.2rem; }
+      .switcher button:hover, .switcher button:focus-visible { background: #ffffff32; outline: 2px solid white; outline-offset: 2px; }
+      .switcher output { min-width: 168px; text-align: center; font-size: .78rem; }
+      @media (max-width: 900px) { .stage { grid-template-columns: 1fr; } .desktop .site-nav { gap: 14px; } .side { grid-template-columns: minmax(0, 365px) minmax(0, 1fr); align-items: start; } }
+      @media (max-width: 670px) { .intro, .variant { padding-left: 16px; padding-right: 16px; } .variant-head { display: block; } .variant-head p { margin-top: 7px; } .desktop { display: none; } .side { grid-template-columns: 1fr; } .phone { max-width: 390px; } .notes { grid-template-columns: 1fr; } .switcher output { min-width: 134px; } }
+    </style>
+  </head>
+  <body>
+    <div class="intro">
+      <p class="eyebrow">CarlKitchen · Logo study · prototype</p>
+      <h1>站名放進真正的版面，再選方向</h1>
+      <p>這份可丟棄原型比較純文字、盤與葉圖形、字母印記三個結構方向。用下方切換器或鍵盤左右鍵切換；網址中的 variant 可直接分享。所有版本保留英文站名與網站現有的米白、炭灰、細線節奏。</p>
+    </div>
+
+    <section class="variant" data-variant="A">
+      <div class="variant-head"><h2>A · 靜字</h2><p>文字就是識別；靠比例、字距與留白站穩。</p></div>
+      <div class="stage">
+        <div class="desktop">
+          <header class="site-header"><nav class="site-nav"><a href="#" class="brand wordmark-a">Carl<span class="division"></span><b>Kitchen</b></a><a class="active" href="#">菜譜</a><a href="#">四菜一湯</a><a href="#">關於</a></nav></header>
+          <div class="site-main"><div><p class="today">10 月 7 日　週三</p><h3>今天想煮什麼？</h3><p>從一份菜譜開始，慢慢找到合胃口的家常料理。</p></div><img src="hero-reference.webp" alt="番茄炒蛋水彩插畫示意" /></div>
+        </div>
+        <div class="side">
+          <div class="phone"><header class="site-header"><nav class="site-nav"><a href="#" class="brand wordmark-a">Carl<span class="division"></span><b>Kitchen</b></a><a href="#">菜譜</a><a href="#">四菜一湯</a><a href="#">關於</a></nav></header><div class="site-main"><p class="today">10 月 7 日　週三</p><h3>今天想煮什麼？</h3><p>從一份菜譜開始。</p><img src="hero-reference.webp" alt="番茄炒蛋水彩插畫示意" /></div></div>
+          <div class="small-use"><span class="tab-icon small-a" aria-label="CK 字母縮寫">CK</span><p>小尺寸只能改用 CK 縮寫；完整站名在導覽列保留。</p></div>
+        </div>
+      </div>
+      <div class="notes"><div><strong>長處</strong><span>最接近現有網站，安靜且不會與料理插畫搶主角。</span></div><div><strong>要判斷的點</strong><span>沒有獨立圖形，縮成書籤圖示時辨識力取決於字母。</span></div></div>
+    </section>
+
+    <section class="variant" data-variant="B" hidden>
+      <div class="variant-head"><h2>B · 盤與葉</h2><p>餐盤一筆開口，葉片輕觸盤緣；食材感更明確。</p></div>
+      <div class="stage">
+        <div class="desktop"><header class="site-header"><nav class="site-nav"><a href="#" class="brand brand-b"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M29.3 9.5A15.7 15.7 0 1 0 34.6 26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M31 9.8c-4.5 1.8-6.3 5-5.5 8.7 5.2-.3 7.8-3.4 5.5-8.7Z" fill="var(--green)"/><path d="M25.5 18.5 33.5 6.5" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round"/></svg><span>CarlKitchen</span></a><a class="active" href="#">菜譜</a><a href="#">四菜一湯</a><a href="#">關於</a></nav></header><div class="site-main"><div><p class="today">10 月 7 日　週三</p><h3>今天想煮什麼？</h3><p>從一份菜譜開始，慢慢找到合胃口的家常料理。</p></div><img src="hero-reference.webp" alt="番茄炒蛋水彩插畫示意" /></div></div>
+        <div class="side"><div class="phone"><header class="site-header"><nav class="site-nav"><a href="#" class="brand brand-b"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M29.3 9.5A15.7 15.7 0 1 0 34.6 26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M31 9.8c-4.5 1.8-6.3 5-5.5 8.7 5.2-.3 7.8-3.4 5.5-8.7Z" fill="var(--green)"/><path d="M25.5 18.5 33.5 6.5" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round"/></svg><span>CarlKitchen</span></a><a href="#">菜譜</a><a href="#">四菜一湯</a><a href="#">關於</a></nav></header><div class="site-main"><p class="today">10 月 7 日　週三</p><h3>今天想煮什麼？</h3><p>從一份菜譜開始。</p><img src="hero-reference.webp" alt="番茄炒蛋水彩插畫示意" /></div></div><div class="small-use"><span class="tab-icon small-b" aria-label="盤與葉圖形"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M29.3 9.5A15.7 15.7 0 1 0 34.6 26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M31 9.8c-4.5 1.8-6.3 5-5.5 8.7 5.2-.3 7.8-3.4 5.5-8.7Z" fill="var(--green)"/><path d="M25.5 18.5 33.5 6.5" stroke="var(--green)" stroke-width="1.2" stroke-linecap="round"/></svg></span><p>圖形可單獨縮成頁籤或書籤圖示。</p></div></div>
+      </div>
+      <div class="notes"><div><strong>長處</strong><span>直接連到食材與料理，標記獨立使用時仍看得出形狀。</span></div><div><strong>要判斷的點</strong><span>比 A 多一個明確圖案，是否搶了首頁插畫的視覺重量。</span></div></div>
+    </section>
+
+    <section class="variant" data-variant="C" hidden>
+      <div class="variant-head"><h2>C · 廚房印記</h2><p>把 C 與 K 收進一枚印記；偏向個人收藏的簽章感。</p></div>
+      <div class="stage">
+        <div class="desktop"><header class="site-header"><nav class="site-nav"><a href="#" class="brand brand-c"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M31.5 9.5a15 15 0 1 0 .1 21" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/><path d="M18 10v20m0-10 8-9m-8 9 9.5 10" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>CarlKitchen<em>recipe notes</em></span></a><a class="active" href="#">菜譜</a><a href="#">四菜一湯</a><a href="#">關於</a></nav></header><div class="site-main"><div><p class="today">10 月 7 日　週三</p><h3>今天想煮什麼？</h3><p>從一份菜譜開始，慢慢找到合胃口的家常料理。</p></div><img src="hero-reference.webp" alt="番茄炒蛋水彩插畫示意" /></div></div>
+        <div class="side"><div class="phone"><header class="site-header"><nav class="site-nav"><a href="#" class="brand brand-c"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M31.5 9.5a15 15 0 1 0 .1 21" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/><path d="M18 10v20m0-10 8-9m-8 9 9.5 10" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>CarlKitchen<em>recipe notes</em></span></a><a href="#">菜譜</a><a href="#">四菜一湯</a><a href="#">關於</a></nav></header><div class="site-main"><p class="today">10 月 7 日　週三</p><h3>今天想煮什麼？</h3><p>從一份菜譜開始。</p><img src="hero-reference.webp" alt="番茄炒蛋水彩插畫示意" /></div></div><div class="small-use"><span class="tab-icon small-c" aria-label="C K 字母印記"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M31.5 9.5a15 15 0 1 0 .1 21" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"/><path d="M18 10v20m0-10 8-9m-8 9 9.5 10" stroke="var(--red)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p>字母圖形可獨立用於小圖示，但要檢查縮小後的筆畫。</p></div></div>
+      </div>
+      <div class="notes"><div><strong>長處</strong><span>比食物圖形抽象，較像長期可用的個人出版標記。</span></div><div><strong>要判斷的點</strong><span>雙層文字在手機上可能偏小；C/K 圖形是否好認。</span></div></div>
+    </section>
+
+    <div class="switcher" aria-label="原型版本切換">
+      <button type="button" id="prev" aria-label="上一個版本">←</button>
+      <output id="current" aria-live="polite"></output>
+      <button type="button" id="next" aria-label="下一個版本">→</button>
+    </div>
+    <script>
+      const keys = ["A", "B", "C"];
+      const names = { A: "靜字", B: "盤與葉", C: "廚房印記" };
+      let current = new URLSearchParams(location.search).get("variant")?.toUpperCase();
+      if (!keys.includes(current)) current = "A";
+      function show(key) {
+        current = key;
+        document.querySelectorAll(".variant").forEach((section) => { section.hidden = section.dataset.variant !== key; });
+        document.querySelector("#current").textContent = `${key} · ${names[key]}`;
+        const url = new URL(location.href);
+        url.searchParams.set("variant", key);
+        history.replaceState(null, "", url);
+      }
+      function move(offset) { show(keys[(keys.indexOf(current) + offset + keys.length) % keys.length]); }
+      document.querySelector("#prev").addEventListener("click", () => move(-1));
+      document.querySelector("#next").addEventListener("click", () => move(1));
+      addEventListener("keydown", (event) => {
+        if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName) || document.activeElement?.isContentEditable) return;
+        if (event.key === "ArrowLeft") move(-1);
+        if (event.key === "ArrowRight") move(1);
+      });
+      addEventListener("popstate", () => show(new URLSearchParams(location.search).get("variant")?.toUpperCase() || "A"));
+      show(current);
+    </script>
+  </body>
+</html>
