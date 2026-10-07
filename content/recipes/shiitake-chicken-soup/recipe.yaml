@@ -1,0 +1,43 @@
+title: 香菇雞湯
+summary: 雞肉、乾香菇和薑片加水與米酒，大火煮滾後轉小火燉 30 分鐘。湯色清澈、帶香菇香氣，適合搭配家常菜。
+servings: 3
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+tags: [家常菜]
+ingredients:
+  - { name: 雞肉, amount: { value: 600, unit: g } }
+  - { name: 乾香菇, amount: { value: 8, unit: 朵 }, note: 洗過即可，不泡水 }
+  - { name: 薑片, amount: { value: 15, unit: g } }
+  - { name: 米酒, amount: { value: 25, unit: g }, group: 調味 }
+  - {
+      name: 鹽,
+      amount: { value: 1.5, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 750, unit: ml }, group: 調味 }
+steps:
+  - text: 乾香菇用清水沖洗一遍就好，不要泡水。
+  - text: 湯鍋裡放入雞肉、乾香菇和薑片。
+    image:
+      src: ./step-2.webp
+      alt: 不鏽鋼雙耳湯鍋裡放著生的帶骨雞肉塊、整朵乾香菇和幾片薑片，還沒加水，鍋蓋放在一旁
+  - text: 倒入水和米酒，蓋上鍋蓋，以大火煮到滾。
+    image:
+      src: ./step-3.webp
+      alt: 同一只湯鍋裡的水已經大滾，表面浮著一層灰白色浮沫，底下可見雞肉塊、香菇和薑片
+  - text: 撈掉表面的浮沫，轉小火，蓋上鍋蓋續煮 30 分鐘。
+    image:
+      src: ./step-4.webp
+      alt: 同一只湯鍋裡浮沫已撈淨，淡金色的清湯中有煮熟的雞肉塊、吸飽湯汁的整朵香菇和薑片
+  - text: 加鹽調味，拌勻就可以盛碗。
+hero:
+  src: ./hero.webp
+  alt: 米白色陶瓷湯碗盛著香菇雞湯，淡金色清湯中有帶骨雞肉塊、整朵香菇和薑片，碗的右側放著一支白瓷湯匙
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤生的帶骨雞肉塊、八朵乾香菇、一小碟薑片，以及一瓶米酒、一小碟鹽和一壺水
+tip: 想讓香菇味更濃，可以先把乾香菇泡軟，用少許油炒香再下鍋，泡香菇的水也一起加進湯裡燉煮。

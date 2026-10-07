@@ -1,0 +1,42 @@
+title: 菜脯蛋
+summary: 菜脯先乾炒收乾水分，再拌進加了蔥花的蛋液，煎成一整片兩面金黃的厚蛋。帶菜脯鹹香，適合配飯。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+tags: [家常菜]
+aliases: [菜脯煎蛋, 蘿蔔乾煎蛋]
+ingredients:
+  - { name: 雞蛋, amount: { value: 3, unit: 顆 } }
+  - { name: 菜脯, amount: { value: 50, unit: g }, note: 碎蘿蔔乾 }
+  - { name: 青蔥, amount: { value: 20, unit: g }, note: 切成蔥花 }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - { name: 鹽, note: 約 1/6 茶匙, group: 調味 }
+  - { name: 白胡椒粉, note: 約 1/6 茶匙, group: 調味 }
+steps:
+  - text: 菜脯稍微沖洗後瀝乾，放進不加油的炒鍋，以小火乾炒到水分收乾就盛出。
+    image:
+      src: ./step-1.webp
+      alt: 沒有放油的炒鍋中一小堆乾炒過的淺褐色菜脯碎，旁邊斜放著一支木鍋鏟
+  - text: 雞蛋打散，加入蔥花、炒過的菜脯、鹽和白胡椒粉，攪打到均勻。
+    image:
+      src: ./step-2.webp
+      alt: 白瓷碗中拌勻的黃色蛋液，裡面散布著菜脯碎和綠色蔥花，碗口橫放一雙木筷
+  - text: 炒鍋另外燒熱，倒入食用油後下蛋液。以中火快速翻拌到蛋液略為凝固，再轉小火，讓蛋煎到定型。
+  - text: 底面煎到微微金黃就翻面，以小火再煎約 1 分鐘，兩面都呈金黃即可起鍋。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中一整片剛翻面的圓形厚蛋，朝上那面煎得金黃，可見菜脯碎與蔥花，鍋邊放著木鍋鏟
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤中盛著一整片圓形菜脯蛋，表面金黃帶焦色斑點，可見菜脯碎與蔥花，盤子右側放著一雙木筷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 三顆雞蛋、一小碗菜脯碎、一小碗蔥花，以及小碟裝的鹽、白胡椒粉和一小瓶食用油
