@@ -78,7 +78,7 @@ test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版�
 test("頁底有未試做聲明，且頁面沒有外部或來源連結", async ({ page }) => {
   await page.goto(url);
   await expect(page.getByRole("region", { name: "聲明" })).toContainText(
-    "依公開資料由 AI 整理、站主審閱，未經試做",
+    "依公開資料整理、站主審閱，未經試做",
   );
   const hrefs = await page
     .getByRole("link")

@@ -1,6 +1,6 @@
 # CarlKitchen
 
-由 AI 依公開資料整理、站主審閱的繁體中文菜譜網站。內容未經試做。網址：<https://carlkitchen.gravito.dev>
+依公開資料整理、站主審閱的繁體中文菜譜網站。內容未經試做。網址：<https://carlkitchen.gravito.dev>
 
 技術：Astro 靜態輸出、TypeScript、pnpm、Playwright，部署於 Cloudflare Workers Static Assets。
 
