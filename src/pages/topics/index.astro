@@ -1,4 +1,5 @@
 ---
+import Illustration from "../../components/Illustration.astro";
 import Base from "../../layouts/Base.astro";
 import {
   formatPublishedDate,
@@ -25,13 +26,22 @@ const entries = await getVisibleTopicEntries();
           {entries.map((entry) => {
             const published = formatPublishedDate(entry.data.publishedAt);
             return (
-              <li>
-                <a href={`/topics/${entry.id}/`}>
-                  {entry.data.title}
-                  {entry.data.draft && <span class="draft">（草稿）</span>}
-                </a>
-                <p>{entry.data.summary}</p>
-                <time datetime={published.iso}>{published.label}</time>
+              <li class:list={{ "with-image": Boolean(entry.data.hero) }}>
+                {entry.data.hero && (
+                  <Illustration
+                    image={entry.data.hero}
+                    sizes="(max-width: 650px) 88px, 192px"
+                    widths={[88, 176, 192, 384]}
+                  />
+                )}
+                <div class="topic-copy">
+                  <a href={`/topics/${entry.id}/`}>
+                    {entry.data.title}
+                    {entry.data.draft && <span class="draft">（草稿）</span>}
+                  </a>
+                  <p>{entry.data.summary}</p>
+                  <time datetime={published.iso}>{published.label}</time>
+                </div>
               </li>
             );
           })}
@@ -74,6 +84,18 @@ const entries = await getVisibleTopicEntries();
     border-bottom: 1px solid var(--line);
     padding: 1.25rem 0;
   }
+  li.with-image {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+  }
+  .topic-copy {
+    min-width: 0;
+  }
+  li :global(figure.illustration) {
+    margin: 0;
+  }
   li a {
     display: inline-flex;
     align-items: center;
@@ -106,6 +128,10 @@ const entries = await getVisibleTopicEntries();
     }
     .intro {
       margin-bottom: 2rem;
+    }
+    li.with-image {
+      grid-template-columns: 5.5rem minmax(0, 1fr);
+      gap: 1rem;
     }
   }
 </style>

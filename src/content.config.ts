@@ -41,7 +41,7 @@ const topics = defineCollection({
     pattern: "*/topic.md",
     generateId: ({ entry }) => entry.split("/")[0]!,
   }),
-  schema: createTopicSchema(),
+  schema: ({ image }) => createTopicSchema(image()),
 });
 
 export const collections = { recipes, ingredients, topics };

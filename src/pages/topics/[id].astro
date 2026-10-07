@@ -1,5 +1,6 @@
 ---
-import { render } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Illustration from "../../components/Illustration.astro";
 import Base from "../../layouts/Base.astro";
 import {
   formatPublishedDate,
@@ -8,18 +9,38 @@ import {
 } from "../../utils/topic-entries";
 
 export async function getStaticPaths() {
-  const topics = await getVisibleTopicEntries();
+  const [topics, recipes, ingredients] = await Promise.all([
+    getVisibleTopicEntries(),
+    getCollection("recipes", ({ data }) => !data.draft),
+    getCollection("ingredients", ({ data }) => !data.draft),
+  ]);
+  const recipesById = new Map(recipes.map((recipe) => [recipe.id, recipe]));
+  const ingredientsById = new Map(
+    ingredients.map((ingredient) => [ingredient.id, ingredient]),
+  );
+  // 找不到的識別值（開發模式的草稿專題才可能發生）直接略過；已發布專題由 check:content 把關。
+  const pick = <T,>(ids: string[], byId: Map<string, T>) =>
+    ids.flatMap((id) => {
+      const entry = byId.get(id);
+      return entry ? [entry] : [];
+    });
   return topics.map((topic) => ({
     params: { id: topic.id },
-    props: { topic },
+    props: {
+      topic,
+      relatedRecipes: pick(topic.data.relatedRecipes, recipesById),
+      relatedIngredients: pick(topic.data.relatedIngredients, ingredientsById),
+    },
   }));
 }
 
 interface Props {
   topic: TopicEntry;
+  relatedRecipes: CollectionEntry<"recipes">[];
+  relatedIngredients: CollectionEntry<"ingredients">[];
 }
 
-const { topic } = Astro.props;
+const { topic, relatedRecipes, relatedIngredients } = Astro.props;
 const { data } = topic;
 const { Content } = await render(topic);
 const published = formatPublishedDate(data.publishedAt);
@@ -35,9 +56,73 @@ const published = formatPublishedDate(data.publishedAt);
       <p class="lead">{data.summary}</p>
       <time datetime={published.iso}>{published.label}</time>
     </header>
+    {
+      data.hero && (
+        <Illustration
+          class="hero"
+          image={data.hero}
+          sizes="(min-width: 40rem) 40rem, 100vw"
+          priority
+        />
+      )
+    }
     <div class="body">
       <Content />
     </div>
+    {
+      (relatedRecipes.length > 0 || relatedIngredients.length > 0) && (
+        <section class="related" aria-labelledby="related-title">
+          <h2 id="related-title">相關連結</h2>
+          {relatedRecipes.length > 0 && (
+            <>
+              <h3>相關菜譜</h3>
+              <ul data-topic-related="recipes">
+                {relatedRecipes.map((recipe) => (
+                  <li>
+                    <a href={`/recipes/${recipe.id}/`}>{recipe.data.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {relatedIngredients.length > 0 && (
+            <>
+              <h3>相關食材條目</h3>
+              <ul data-topic-related="ingredients">
+                {relatedIngredients.map((ingredient) => (
+                  <li>
+                    <a href={`/ingredients/${ingredient.id}/`}>
+                      {ingredient.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </section>
+      )
+    }
+    {
+      data.references.length > 0 && (
+        <section class="references" aria-labelledby="references-title">
+          <h2 id="references-title">選題參考</h2>
+          <ul>
+            {data.references.map((reference) => (
+              <li>
+                {reference.author}《{reference.title}》
+                <a
+                  href={reference.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  原文連結 <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
   </article>
 </Base>
 
@@ -72,6 +157,9 @@ const published = formatPublishedDate(data.publishedAt);
     color: var(--ink-soft);
     font-size: 0.9rem;
   }
+  .topic :global(figure.hero) {
+    margin: 2rem 0 0;
+  }
   .body {
     margin-top: 2.5rem;
     border-top: 1px solid var(--line);
@@ -85,6 +173,34 @@ const published = formatPublishedDate(data.publishedAt);
   .body :global(h3) {
     margin-top: 2rem;
     font-size: 1.15rem;
+  }
+  .related,
+  .references {
+    margin-top: 3rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+  .related h2,
+  .references h2 {
+    font-size: 1.4rem;
+  }
+  .related h3 {
+    margin: 1.5rem 0 0.25rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .related ul,
+  .references ul {
+    margin: 0;
+    padding-left: 1.4rem;
+  }
+  .related li,
+  .references li {
+    margin: 0.6rem 0;
+  }
+  .related a,
+  .references a {
+    text-underline-offset: 0.25em;
   }
   @media (max-width: 650px) {
     .topic {

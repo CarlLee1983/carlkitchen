@@ -27,6 +27,72 @@ test("專題列表只列已發布專題，依發布日期由新到舊，卡片�
   await expect(page.getByText("尚未發布的草稿專題")).toHaveCount(0);
 });
 
+test("列表卡片顯示封面圖與替代文字", async ({ page }) => {
+  await page.goto("/topics/");
+  const cards = page.getByRole("main").getByRole("listitem");
+  for (let index = 0; index < publishedNewestFirst.length; index += 1) {
+    const image = cards.nth(index).getByRole("img");
+    await expect(image).toHaveAttribute("alt", "固定資料專題的測試封面");
+    await expect(image).toBeVisible();
+  }
+});
+
+test("文章頁依序顯示封面、標題、內文、相關連結與選題參考，連結指向正確目標", async ({
+  page,
+}) => {
+  await page.goto("/topics/summer-salads/");
+  const main = page.getByRole("main");
+  await expect(
+    main.getByRole("img", { name: "固定資料專題的測試封面" }),
+  ).toBeVisible();
+
+  const related = main.getByRole("region", { name: "相關連結" });
+  const recipeLinks = related.locator('[data-topic-related="recipes"] a');
+  await expect(recipeLinks).toHaveText(["番茄炒蛋", "蒜香青菜"]);
+  await expect(recipeLinks.first()).toHaveAttribute(
+    "href",
+    "/recipes/tomato-egg/",
+  );
+  const ingredientLinks = related.locator(
+    '[data-topic-related="ingredients"] a',
+  );
+  await expect(ingredientLinks).toHaveText(["番茄", "蒜頭"]);
+  await expect(ingredientLinks.first()).toHaveAttribute(
+    "href",
+    "/ingredients/tomato/",
+  );
+
+  const references = main.getByRole("region", { name: "選題參考" });
+  await expect(references).toContainText("測試作者甲");
+  await expect(references).toContainText("涼拌菜的基本原則");
+  const link = references.getByRole("link").first();
+  await expect(link).toHaveAttribute(
+    "href",
+    "https://example.com/topic-reference-a",
+  );
+  await expect(link).toHaveAttribute("rel", /noopener/);
+
+  // 版面順序：封面 < 內文 < 相關連結 < 選題參考
+  const tops = await Promise.all(
+    [
+      main.getByRole("img").first(),
+      main.getByRole("heading", { level: 2, name: "涼拌小黃瓜" }),
+      related,
+      references,
+    ].map(async (locator) => (await locator.boundingBox())!.y),
+  );
+  expect(tops).toEqual([...tops].sort((a, b) => a - b));
+
+  await recipeLinks.first().click();
+  await expect(page).toHaveURL(/\/recipes\/tomato-egg\/$/);
+});
+
+test("沒有相關連結與選題參考的專題不顯示這兩個區塊", async ({ page }) => {
+  await page.goto("/topics/knife-skills/");
+  await expect(page.getByRole("region", { name: "相關連結" })).toHaveCount(0);
+  await expect(page.getByRole("region", { name: "選題參考" })).toHaveCount(0);
+});
+
 test("專題文章頁顯示標題、發布日期與內文，小節標題層級正確", async ({
   page,
 }) => {

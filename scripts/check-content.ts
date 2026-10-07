@@ -1,5 +1,5 @@
 // 內容與建置輸出檢查：node --experimental-strip-types scripts/check-content.ts [--launch] [--dist <目錄>]
-// 內容根目錄由 RECIPES_DIR 決定（同內容集合），來源紀錄目錄由 SOURCES_DIR 決定。
+// 內容根目錄由 RECIPES_DIR 決定（同內容集合），來源紀錄目錄由 SOURCES_DIR 決定，專題目錄由 TOPICS_DIR 決定。
 import { parseArgs } from "node:util";
 import { formatIssue } from "../src/content-checks/issue.ts";
 import { runContentChecks } from "../src/content-checks/run.ts";
@@ -17,6 +17,7 @@ const issues = await runContentChecks({
   ingredientsDir: process.env.INGREDIENTS_DIR || "content/ingredients",
   ingredientSourcesDir:
     process.env.INGREDIENT_SOURCES_DIR || "content/ingredient-sources",
+  topicsDir: process.env.TOPICS_DIR || "content/topics",
   distDir: values.dist,
   launch: values.launch,
 });

@@ -5,8 +5,8 @@ import sitemap from "@astrojs/sitemap";
 const publicPage = (page) => {
   const path = new URL(page).pathname;
   return (
-    ["/", "/about/", "/meal/", "/ingredients/"].includes(path) ||
-    /^\/(?:recipes|ingredients)\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/.test(path)
+    ["/", "/about/", "/meal/", "/ingredients/", "/topics/"].includes(path) ||
+    /^\/(?:recipes|ingredients|topics)\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/.test(path)
   );
 };
 

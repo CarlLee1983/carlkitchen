@@ -12,6 +12,7 @@ import {
 } from "./io.ts";
 import type { Issue } from "./issue.ts";
 import { checkLeaks } from "./leaks.ts";
+import { checkTopics } from "./topics.ts";
 import { isDraft, parseRecipe, type Recipe } from "./recipes.ts";
 import { checkSourceCoverage, parseSourceRecord } from "./sources.ts";
 import { checkLaunchThreshold } from "./threshold.ts";
@@ -21,6 +22,7 @@ export interface ContentCheckOptions {
   sourcesDir: string;
   ingredientsDir?: string;
   ingredientSourcesDir?: string;
+  topicsDir?: string;
   distDir: string;
   /** 開啟候選池門檻檢查（部署前）。 */
   launch: boolean;
@@ -30,6 +32,19 @@ export interface ContentCheckOptions {
 const RECIPE_ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 const failure = (file: string, message: string): Issue => ({ file, message });
+
+/** 食材條目資料夾中已發布（非草稿、有 ingredient.yaml）的識別值；目錄缺失或檔案壞掉時略過，由食材檢查回報。 */
+function publishedIngredientIds(ingredientsDir: string | undefined): string[] {
+  if (!ingredientsDir) return [];
+  return (listDirectories(ingredientsDir) ?? []).filter((id) => {
+    try {
+      const raw = readYaml(join(ingredientsDir, id, "ingredient.yaml"));
+      return raw !== undefined && !isDraft(raw);
+    } catch {
+      return false;
+    }
+  });
+}
 
 /** 組合所有檢查；回傳問題清單，空陣列代表通過。 */
 export async function runContentChecks(
@@ -130,6 +145,19 @@ export async function runContentChecks(
       sourceIds,
     }),
   );
+
+  // 專題：schema，以及相關連結只能指向已發布的菜譜與食材條目
+  if (options.topicsDir) {
+    issues.push(
+      ...checkTopics({
+        topicsDir: options.topicsDir,
+        publicRecipeIds: recipes
+          .filter(({ raw, data }) => data && !isDraft(raw))
+          .map(({ id }) => id),
+        publicIngredientIds: publishedIngredientIds(options.ingredientsDir),
+      }),
+    );
+  }
 
   // 建置輸出洩漏
   if (existsSync(options.distDir)) {

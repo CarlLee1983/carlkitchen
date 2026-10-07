@@ -63,6 +63,22 @@ export function readYaml(file: string): unknown {
   }
 }
 
+/** 讀取 Markdown 檔開頭的 YAML frontmatter；缺檔回傳 undefined，沒有 frontmatter 或語法錯誤時丟出錯誤。 */
+export function readFrontmatter(file: string): unknown {
+  if (!existsSync(file)) return undefined;
+  const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(
+    readFileSync(file, "utf8"),
+  );
+  if (!match) throw new Error("找不到 frontmatter（檔案須以 --- 區塊開頭）。");
+  try {
+    return parse(match[1]!);
+  } catch (error) {
+    throw new Error(`frontmatter 無法解析：${(error as Error).message}`, {
+      cause: error,
+    });
+  }
+}
+
 /** 來源目錄中的 `<識別值>.yaml`；不存在時視為空。 */
 export function listSourceIds(dir: string): string[] {
   if (!existsSync(dir)) return [];
