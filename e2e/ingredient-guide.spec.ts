@@ -63,6 +63,7 @@ test("鍵盤能從主選單走到食材條目，再前往相關菜譜", async ({
 test("手機可由主選單進入食材介紹，頁面沒有水平溢出", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
+  await page.getByRole("button", { name: "選單" }).click();
   await page
     .getByRole("navigation", { name: "主選單" })
     .getByRole("link", { name: "食材介紹" })

@@ -42,16 +42,24 @@ a {
 
 .site-header {
   border-bottom: 1px solid var(--line);
+  background: var(--paper);
 }
 
-.site-header nav {
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  min-height: 56px;
+  position: relative;
+}
+
+.site-header .site-nav-links {
   display: flex;
   align-items: center;
   gap: 0.5rem 2rem;
   flex-wrap: wrap;
-  max-width: var(--page-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 .site-header a {
@@ -87,16 +95,90 @@ a {
   height: 40px;
 }
 
+/* 手機版漢堡切換按鈕 */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.nav-toggle-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.nav-toggle-icon span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* 展開時的 X 圖示動態 */
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 600px) {
-  .site-header nav {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 0.5rem;
+  .site-header-inner {
+    padding: 0 1rem;
+    min-height: 56px;
+    flex-wrap: wrap;
   }
 
-  .site-header .brand {
-    grid-column: 1 / -1;
-    justify-self: start;
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .site-header .site-nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 0 1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .site-header .site-nav-links.is-open {
+    display: flex;
+  }
+
+  .site-header .site-nav-links a {
+    justify-content: flex-start;
+    padding: 0.6rem 0.5rem;
+    min-height: 44px;
+    border-bottom: 1px solid rgba(217, 214, 207, 0.4);
+    font-size: 1rem;
+  }
+
+  .site-header .site-nav-links a:last-child {
+    border-bottom: none;
   }
 }
 

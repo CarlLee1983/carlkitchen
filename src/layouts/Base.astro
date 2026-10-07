@@ -20,19 +20,83 @@ const documentTitle = title ? `${title}｜${SITE_NAME}` : SITE_NAME;
   </head>
   <body>
     <header class="site-header">
-      <nav aria-label="主選單">
+      <nav class="site-header-inner" aria-label="主選單">
         <a class="brand" href="/">
           <img src="/logo-mark.svg" alt="" width="40" height="40" />
           <span>{SITE_NAME}</span>
           <span class="brand-roman" aria-hidden="true">TSU-PNG</span>
         </a>
-        <a href="/#recipes">菜譜</a>
-        <a href="/ingredients/">食材介紹</a>
-        <a href="/favorites/">我的收藏</a>
-        <a href="/meal/">四菜一湯</a>
-        <a href="/about/">關於</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav-menu"
+          aria-label="選單"
+        >
+          <span class="nav-toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div id="site-nav-menu" class="site-nav-links">
+          <a href="/#recipes">菜譜</a>
+          <a href="/ingredients/">食材介紹</a>
+          <a href="/favorites/">我的收藏</a>
+          <a href="/meal/">四菜一湯</a>
+          <a href="/about/">關於</a>
+        </div>
       </nav>
     </header>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
+      const nav = document.querySelector<HTMLElement>(".site-nav-links");
+
+      if (toggle && nav) {
+        const setExpanded = (expanded: boolean) => {
+          toggle.setAttribute("aria-expanded", String(expanded));
+          if (expanded) {
+            nav.classList.add("is-open");
+          } else {
+            nav.classList.remove("is-open");
+          }
+        };
+
+        toggle.addEventListener("click", () => {
+          const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+          setExpanded(!isExpanded);
+        });
+
+        // 點擊選單項目後收合
+        nav.addEventListener("click", (e) => {
+          const target = e.target as HTMLElement | null;
+          if (target && target.closest("a")) {
+            setExpanded(false);
+          }
+        });
+
+        // Escape 鍵關閉並還原焦點
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            toggle.getAttribute("aria-expanded") === "true"
+          ) {
+            setExpanded(false);
+            toggle.focus();
+          }
+        });
+
+        // 點擊頁面其他地方關閉選單
+        document.addEventListener("click", (e) => {
+          if (toggle.getAttribute("aria-expanded") === "true") {
+            const target = e.target as Node | null;
+            if (target && !nav.contains(target) && !toggle.contains(target)) {
+              setExpanded(false);
+            }
+          }
+        });
+      }
+    </script>
     <main>
       <slot />
     </main>

@@ -306,6 +306,7 @@ test("手機導覽到菜譜清單時標題不被固定篩選列遮住", async ({
   for (const width of [360, 390, 430]) {
     await page.setViewportSize({ width, height: 400 });
     await page.goto("/recipes/tomato-egg/");
+    await page.getByRole("button", { name: "選單" }).click();
     await page
       .getByRole("navigation", { name: "主選單" })
       .getByRole("link", { name: "菜譜" })
@@ -325,11 +326,9 @@ test("手機導覽到菜譜清單時標題不被固定篩選列遮住", async ({
 test("手機只保留導覽列的配菜入口，較寬畫面保留搜尋區入口", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  const navLink = page
-    .getByRole("navigation", { name: "主選單" })
-    .getByRole("link", { name: "四菜一湯" });
+  const toggleBtn = page.getByRole("button", { name: "選單" });
+  await expect(toggleBtn).toBeVisible();
   const introLink = page.getByRole("link", { name: "配一桌四菜一湯" });
-  await expect(navLink).toBeVisible();
   await expect(introLink).toBeHidden();
 
   for (const width of [640, 1023, 1366]) {
@@ -337,6 +336,10 @@ test("手機只保留導覽列的配菜入口，較寬畫面保留搜尋區入�
     await expect(introLink).toBeVisible();
   }
   await page.setViewportSize({ width: 390, height: 844 });
+  await toggleBtn.click();
+  const navLink = page
+    .getByRole("navigation", { name: "主選單" })
+    .getByRole("link", { name: "四菜一湯" });
   await navLink.click();
   await expect(page).toHaveURL(/\/meal\/$/);
 });
