@@ -9,7 +9,7 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 - `content/sources/<菜譜識別值>.yaml` — 內部來源紀錄：`urls` 列出至少一個核准來源網址。位於內容集合載入範圍（`content/recipes`）與 `public/` 之外，不被任何頁面或建置流程讀取，只由內容檢查指令讀取
 - `tests/` — 單元測試（Node 內建測試執行器）；`tests/fixtures/recipes/` 為測試用固定菜譜，含一份草稿
 - `e2e/` — Playwright 瀏覽器測試
-- `.scratch/` — 規格與票；`.claude/skills/` — 菜譜製作（`recipe-making`）與寫作（`recipe-writing`）skill
+- `.scratch/` — 規格與票；`.claude/skills/` — 菜譜製作（`recipe-making`）、菜譜寫作（`recipe-writing`）與食材寫作（`ingredient-writing`）skill
 
 ## 指令
 
@@ -36,7 +36,7 @@ CarlKitchen：由 AI 整理公開資料、站主審閱的繁體中文菜譜網�
 
 ## 寫作與內容
 
-新增、修改菜譜或重製插畫依 `recipe-making` skill（`.claude/skills/recipe-making/`，含來源核准、Codex 生圖與轉檔腳本、送審清單）；菜譜文字寫法依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。schema 規則見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
+新增、修改菜譜或重製插畫依 `recipe-making` skill（`.claude/skills/recipe-making/`，含來源核准、Codex 生圖與轉檔腳本、送審清單）；菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。新增、修改食材條目文字依 `ingredient-writing` skill（`.claude/skills/ingredient-writing/`）。菜譜 schema 見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
 
 圖片規格慣例：WebP、1536×1024、不超過 300 KB。schema 不檢查這些，由 `pnpm check:content` 強制（門檻第 4 項）。成品圖不畫餐具（`.scratch/recipe-mvp/issues/06-homepage-direction.md`〈圖片風格規格〉），`pnpm check:content` 以替代文字是否提到餐具把關。
 
