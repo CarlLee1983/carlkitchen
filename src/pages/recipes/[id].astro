@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 interface Props {
   recipe: Recipe;
 }
-const { data } = Astro.props.recipe;
+const { data, id } = Astro.props.recipe;
 const groups = groupIngredients(data.ingredients);
 // 讀者看不到、但要能搜到的詞：受控標籤與別名。
 const searchTerms = [...data.tags, ...data.aliases];
@@ -55,6 +55,22 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
         {data.timeMinutes && <span>{data.timeMinutes} 分鐘</span>}
         <span>{data.category}</span>
       </p>
+      {
+        !data.draft && (
+          <div class="favorite-actions">
+            <button
+              type="button"
+              data-favorite-id={id}
+              aria-pressed="false"
+              hidden
+            >
+              收藏這道菜
+            </button>
+            <span data-favorite-state hidden />
+            <p data-favorite-error role="alert" />
+          </div>
+        )
+      }
     </header>
 
     {
@@ -138,6 +154,12 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
   </article>
 </Base>
 
+<script>
+  import { initRecipeFavorite } from "../../scripts/favorites";
+
+  initRecipeFavorite();
+</script>
+
 <style>
   .recipe-head {
     max-width: 40rem;
@@ -159,6 +181,37 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     border-top: 1px solid var(--line);
     color: var(--ink-soft);
     font-size: 0.9rem;
+  }
+  .favorite-actions {
+    margin-top: 1rem;
+  }
+  .favorite-actions span {
+    margin-left: 0.75rem;
+    color: var(--ink-soft);
+  }
+  .favorite-actions button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.35rem 1rem;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  .favorite-actions button[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .favorite-actions button[hidden],
+  .favorite-actions span[hidden],
+  .favorite-actions p:empty {
+    display: none;
+  }
+  .favorite-actions p {
+    margin: 0.5rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
   }
   /* 以下 :global 選取 Illustration 元件內部的 figure */
   .recipe :global(.hero) {
@@ -259,6 +312,7 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
   /* 列印：只留成品圖、材料與做法；步驟圖與材料合照不印，確保一張紙 */
   @media print {
     .disclaimer,
+    .favorite-actions,
     .ingredients :global(figure),
     .steps :global(figure) {
       display: none;
