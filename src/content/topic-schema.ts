@@ -18,6 +18,8 @@ export function createTopicSchema<Image extends z.ZodType>(image: Image) {
       title: nonEmpty,
       summary: nonEmpty,
       draft: z.boolean(),
+      // 逐篇啟用；未指定的既有專題維持原本的閱讀版面。
+      editorialLayout: z.boolean().default(false),
       publishedAt: z.coerce.date(),
       hero: z.object({ src: image, alt: nonEmpty }).optional(),
       relatedRecipes: z.array(contentId),

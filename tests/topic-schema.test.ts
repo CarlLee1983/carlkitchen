@@ -21,6 +21,21 @@ const topic = {
 } as const;
 
 describe("專題 schema", () => {
+  it("編輯式版面須明確啟用，既有專題預設關閉且不接受字串", () => {
+    assert.equal(schema.parse(topic).editorialLayout, false);
+    assert.equal(
+      schema.parse({ ...topic, editorialLayout: true }).editorialLayout,
+      true,
+    );
+    assert.equal(
+      schema.parse({ ...topic, editorialLayout: false }).editorialLayout,
+      false,
+    );
+    assert.equal(
+      schema.safeParse({ ...topic, editorialLayout: "true" }).success,
+      false,
+    );
+  });
   it("接受完整欄位，日期轉成 Date", () => {
     const result = schema.safeParse(topic);
     assert.equal(result.success, true);

@@ -109,6 +109,9 @@ importers:
 
   .:
     dependencies:
+      '@astrojs/markdown-satteri':
+        specifier: 0.3.8
+        version: 0.3.8
       '@astrojs/sitemap':
         specifier: ^3.7.4
         version: 3.7.4
@@ -118,6 +121,9 @@ importers:
       pagefind:
         specifier: 1.5.2
         version: 1.5.2
+      satteri:
+        specifier: 0.10.5
+        version: 0.10.5
       sharp:
         specifier: 0.35.2
         version: 0.35.2

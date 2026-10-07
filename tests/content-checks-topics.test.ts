@@ -103,6 +103,111 @@ after(() => {
 });
 
 describe("專題內容檢查", () => {
+  describe("Markdown 內文圖片", () => {
+    const withImages = (s: ReturnType<typeof scenario>, body: string) =>
+      s.write(s.file, topic({ recipes: [], ingredients: [] }) + body);
+
+    it("接受相對路徑與參照式圖片，步驟圖的替代文字可以有餐具", async () => {
+      const s = scenario();
+      withImages(
+        s,
+        '\n![用湯匙拌勻](./hero.webp)\n\n![備菜圖][prep]\n\n[prep]: hero.webp "備菜"\n',
+      );
+      assert.deepEqual(await runContentChecks(s.options), []);
+    });
+
+    it("一般與參照式圖片都要有非空白替代文字", async () => {
+      const s = scenario();
+      withImages(s, "\n![](hero.webp)\n\n![  ][prep]\n\n[prep]: hero.webp\n");
+      const issues = await runContentChecks(s.options);
+      assert.equal(issues.length, 2);
+      assert.ok(
+        issues.every(
+          (issue) =>
+            /替代文字/.test(issue.message) && issue.topic === "summer-salads",
+        ),
+      );
+    });
+
+    it("不存在的本地圖片須指出圖片與內文欄位", async () => {
+      const s = scenario();
+      withImages(s, "\n![備菜](missing.webp)\n");
+      const issues = await runContentChecks(s.options);
+      assert.ok(
+        issues.some(
+          (issue) =>
+            issue.file === "missing.webp" &&
+            issue.field === "body.images.0" &&
+            /找不到/.test(issue.message),
+        ),
+      );
+    });
+
+    it("逐張檢查內文圖片的格式、尺寸與 300 KB 上限", async () => {
+      const s = scenario();
+      const invalid = join(s.root, "topics/summer-salads/invalid.png");
+      await sharp(randomBytes(160 * 100 * 3), {
+        raw: { width: 160, height: 100, channels: 3 },
+      })
+        .png()
+        .toFile(invalid);
+      withImages(s, "\n![備菜](invalid.png)\n");
+      let issues = await runContentChecks(s.options);
+      assert.ok(issues.some((issue) => /WebP/.test(issue.message)));
+      assert.ok(issues.some((issue) => /1536×1024/.test(issue.message)));
+      const huge = join(s.root, "topics/summer-salads/huge.webp");
+      await sharp(randomBytes(1536 * 1024 * 3), {
+        raw: { width: 1536, height: 1024, channels: 3 },
+      })
+        .webp({ lossless: true })
+        .toFile(huge);
+      withImages(s, "\n![備菜](huge.webp)\n");
+      issues = await runContentChecks(s.options);
+      assert.ok(issues.some((issue) => /300 KB/.test(issue.message)));
+    });
+
+    it("禁止遠端、絕對與跨資料夾的內文圖片，無法繞過在地規格檢查", async () => {
+      const s = scenario();
+      for (const src of [
+        "https://example.com/a.webp",
+        "/images/a.webp",
+        "../other/a.webp",
+        "./%2e%2e/other/a.webp",
+        "hero.webp?raw",
+      ]) {
+        withImages(s, `\n![備菜](${src})\n`);
+        const issues = await runContentChecks(s.options);
+        assert.ok(
+          issues.some((issue) => /同一資料夾/.test(issue.message)),
+          src,
+        );
+      }
+    });
+
+    it("HTML img 也會被阻擋，要求使用可最佳化的 Markdown 圖片", async () => {
+      const s = scenario();
+      withImages(s, '\n<img src="hero.webp" alt="備菜">\n');
+      const issues = await runContentChecks(s.options);
+      assert.ok(issues.some((issue) => /Markdown/.test(issue.message)));
+    });
+
+    it("程式碼範例與跳脫符號不當成圖片；草稿不強制圖片規格", async () => {
+      const s = scenario();
+      withImages(
+        s,
+        '\n`![](missing.webp)`\n\n```\n![](missing.webp)\n<img src="missing.webp">\n```\n\n\\![普通文字](missing.webp)\n',
+      );
+      assert.deepEqual(await runContentChecks(s.options), []);
+      s.write(
+        s.file,
+        topic({ recipes: [], ingredients: [] }).replace(
+          "draft: false",
+          "draft: true",
+        ) + "\n![](missing.webp)\n",
+      );
+      assert.deepEqual(await runContentChecks(s.options), []);
+    });
+  });
   it("相關連結都指向已發布的菜譜與食材條目時通過", async () => {
     assert.deepEqual(await runContentChecks(scenario().options), []);
   });
