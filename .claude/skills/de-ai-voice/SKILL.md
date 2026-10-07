@@ -7,7 +7,7 @@ description: 去 AI 味。專題、菜譜、食材條目的文字寫完、送審
 
 文字寫完、送審前，把機器腔調改回平實的整理文字。**只改腔調**：事實、立場、臺灣用語、數值原樣保留。站主看到的稿子不必逐句再修腔調。
 
-專題、菜譜、食材條目共用這一步；各自的欄位與結構以 `topic-writing`、[recipe-writing](../recipe-writing/SKILL.md)、[ingredient-writing](../ingredient-writing/SKILL.md) 為準，本 skill 不改欄位內容的取捨。
+專題、菜譜、食材條目共用這一步；各自的欄位與結構以 [topic-writing](../topic-writing/SKILL.md)、[recipe-writing](../recipe-writing/SKILL.md)、[ingredient-writing](../ingredient-writing/SKILL.md) 為準，本 skill 不改欄位內容的取捨。
 
 ## 步驟
 
