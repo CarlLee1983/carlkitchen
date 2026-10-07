@@ -51,6 +51,43 @@ describe("restorePlan", () => {
     assert.deepEqual(restorePlan(serializePlan(gone), pool), { kind: "stale" });
   });
 
+  it("單一道雙標記菜不能獨自滿足完整套餐的搭配", () => {
+    const candidates = [
+      dish("both", true, true),
+      dish("plain-a", false, false),
+      dish("plain-b", false, false),
+      dish("plain-c", false, false),
+      pool[4]!,
+    ];
+    const unbalanced: Plan = {
+      ...plan,
+      dishes: ["both", "plain-a", "plain-b", "plain-c"].map((id) => ({
+        id,
+        locked: false,
+      })),
+    };
+    assert.deepEqual(restorePlan(serializePlan(unbalanced), candidates), {
+      kind: "stale",
+    });
+  });
+
+  it("有部分菜位、缺湯或菜湯放錯位置時不還原", () => {
+    const invalid = [
+      { ...plan, dishes: plan.dishes.slice(0, 2) },
+      { ...plan, soup: null },
+      {
+        ...plan,
+        dishes: [{ id: "s", locked: false }, ...plan.dishes.slice(1)],
+      },
+      { ...plan, soup: { id: "a", locked: false } },
+    ];
+    for (const candidate of invalid) {
+      assert.deepEqual(restorePlan(serializePlan(candidate), pool), {
+        kind: "stale",
+      });
+    }
+  });
+
   it("菜數與模式不符、重複菜色都視為 stale", () => {
     const wrongMode = { ...plan, mode: 5 as const };
     assert.deepEqual(restorePlan(serializePlan(wrongMode), pool), {

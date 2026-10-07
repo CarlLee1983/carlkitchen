@@ -63,7 +63,7 @@ function toggle(plan: Plan, target: number | "soup"): Result {
   };
 }
 
-const STALE = "目前套餐含已不在候選池的菜色；請重新抽選。";
+const STALE = "目前套餐已失效；請重新抽選。";
 
 type Pick = { dishes: Candidate[] } | { failure: string };
 

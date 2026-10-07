@@ -239,6 +239,29 @@ test.describe("同分頁重整", () => {
 });
 
 test.describe("失效套餐", () => {
+  test("失去蔬菜搭配的完整套餐清除並提示重抽", async ({ page }) => {
+    await page.goto("/meal/");
+    const stale = {
+      mode: 4,
+      dishes: dishes
+        .filter((item) => !item.vegetable)
+        .slice(0, 4)
+        .map((item) => ({ id: item.id, locked: false })),
+      soup: { id: soups[0]!.id, locked: false },
+      seed: 1,
+    };
+    await page.evaluate(
+      ([key, value]) => sessionStorage.setItem(key!, value!),
+      [MEAL_STORAGE_KEY, JSON.stringify(stale)],
+    );
+    await page.reload();
+    await expect(items(page)).toHaveCount(0);
+    await expect(status(page)).toContainText("已失效");
+    await expect(status(page)).toContainText("請重新抽選");
+    await reroll(page).click();
+    await expect(items(page)).toHaveCount(5);
+  });
+
   test("保存的菜譜不在候選池時清除並請讀者重抽", async ({ page }) => {
     await page.goto("/meal/");
     const stale = {

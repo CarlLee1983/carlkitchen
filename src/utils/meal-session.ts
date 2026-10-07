@@ -1,4 +1,4 @@
-import { isPlanUsable } from "../meal-planner/index.ts";
+import { isCompletePlan, isUndrawnPlan } from "../meal-planner/index.ts";
 import type { Candidate, Plan, Slot } from "../meal-planner/index.ts";
 
 /** 同一分頁保存套餐的 sessionStorage 鍵；內容是 `serializePlan` 的輸出。 */
@@ -20,7 +20,7 @@ const isSlot = (value: unknown): value is Slot =>
   typeof (value as Slot).id === "string" &&
   typeof (value as Slot).locked === "boolean";
 
-/** 保存的內容來自外部儲存，先確認形狀，再交給引擎的 `isPlanUsable` 判斷是否仍合法。 */
+/** 保存的內容來自外部儲存，先確認形狀，再驗證完整套餐或未抽選狀態。 */
 function parsePlan(raw: string): Plan | null {
   let value: unknown;
   try {
@@ -43,6 +43,8 @@ export function restorePlan(
 ): Restored {
   if (raw === null) return { kind: "none" };
   const plan = parsePlan(raw);
-  if (!plan || !isPlanUsable(pool, plan)) return { kind: "stale" };
+  if (!plan || (!isUndrawnPlan(plan) && !isCompletePlan(pool, plan))) {
+    return { kind: "stale" };
+  }
   return { kind: "restored", plan };
 }

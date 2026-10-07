@@ -261,7 +261,7 @@ describe("候選不足與無法平衡", () => {
     assert.doesNotMatch(result.reason, /鎖定/);
   });
 
-  it("鎖定項使套餐無法平衡時回無解並保留原套餐", () => {
+  it("鎖定的失衡完整套餐不可重抽，原套餐保留", () => {
     const pool = [
       veg("v1"),
       plain("a"),
@@ -284,7 +284,7 @@ describe("候選不足與無法平衡", () => {
     };
     const result = fail(applyAction(pool, before, reroll));
     assert.deepEqual(result.plan, before);
-    assert.match(result.reason, /鎖定/);
+    assert.match(result.reason, /已失效.*重新抽選/);
   });
 
   it("套餐含不在候選池的菜色時回無解", () => {
@@ -295,7 +295,7 @@ describe("候選不足與無法平衡", () => {
       seed: 1,
     };
     const result = fail(applyAction(normalPool, before, reroll));
-    assert.match(result.reason, /候選池/);
+    assert.match(result.reason, /已失效.*重新抽選/);
     assert.deepEqual(result.plan, before);
   });
 });
@@ -620,6 +620,18 @@ describe("失效套餐（isPlanUsable）", () => {
     assert.equal(isPlanUsable(normalPool, createPlan(1)), true);
     assert.equal(isPlanUsable(normalPool, drawn(2)), true);
     assert.equal(isPlanUsable(normalPool, drawn(2, 5)), true);
+  });
+
+  it("完整套餐須由不同菜色滿足蔬菜與肉蛋搭配", () => {
+    const pool = [both("x"), plain("a"), plain("b"), plain("c"), soup("s")];
+    const plan: Plan = {
+      mode: 4,
+      dishes: [slot("x"), slot("a"), slot("b"), slot("c")],
+      soup: slot("s"),
+      seed: 1,
+    };
+    assert.equal(isPlanUsable(pool, plan), false);
+    stale(applyAction(pool, plan, reroll), plan);
   });
 
   it("鎖定的非湯菜放在湯位時不可用，重抽回無解", () => {
