@@ -5,6 +5,7 @@ import {
   normalizeQuery,
   parseHomeState,
   recipeIdFromUrl,
+  topicIdFromUrl,
   type HomeState,
   type KindFilter,
 } from "../utils/home";
@@ -71,6 +72,14 @@ export function initHome() {
   const buttons = [...document.querySelectorAll<HTMLElement>("[data-filter]")];
   const rows = [...document.querySelectorAll<HTMLElement>("[data-recipe-row]")];
   const rowsById = new Map(rows.map((row) => [row.dataset.recipeId, row]));
+  // 專題列預設隱藏，只在搜尋命中時顯示；沒有字詞或套用分類篩選時不會出現。
+  const topicRows = [
+    ...document.querySelectorAll<HTMLElement>("[data-topic-row]"),
+  ];
+  const topicRowsById = new Map(
+    topicRows.map((row) => [row.dataset.topicId, row]),
+  );
+  const allRows = [...rows, ...topicRows];
   const rowList = rows[0]?.parentElement;
   const empty = document.querySelector<HTMLElement>("[data-empty]");
   const emptyMessage = document.querySelector("[data-empty-message]");
@@ -98,11 +107,11 @@ export function initHome() {
     if (current && pick) current.replaceWith(pick.content.cloneNode(true));
   }
 
-  /** 以 Pagefind 搜尋，回傳依相關度排序的菜譜識別值；被取代時回傳 null。 */
-  async function findIds(
+  /** 以 Pagefind 搜尋，回傳依相關度排序的菜譜列與專題列；被取代時回傳 null。 */
+  async function findRows(
     state: HomeState,
     debounce: boolean,
-  ): Promise<string[] | null> {
+  ): Promise<HTMLElement[] | null> {
     const pagefind = await loadPagefind();
     const options: PagefindOptions =
       state.kind === "all" ? {} : { filters: { kind: state.kind } };
@@ -117,7 +126,13 @@ export function initHome() {
     // 所以再以全字詞過濾；排序沿用 Pagefind 的相關度。
     return pages
       .filter((page) => containsAllTerms(page.content, state.q))
-      .flatMap((page) => recipeIdFromUrl(page.url) ?? []);
+      .flatMap((page) => {
+        const recipeId = recipeIdFromUrl(page.url);
+        const row = recipeId
+          ? rowsById.get(recipeId)
+          : topicRowsById.get(topicIdFromUrl(page.url) ?? "");
+        return row ? [row] : [];
+      });
   }
 
   /** 文字沒變就不重寫，避免朗讀區無謂重播，也不動伺服器預先輸出的內容。 */
@@ -148,9 +163,9 @@ export function initHome() {
 
     let visible: HTMLElement[];
     if (state.q) {
-      let ids: string[] | null;
+      let found: HTMLElement[] | null;
       try {
-        ids = await findIds(state, debounce);
+        found = await findRows(state, debounce);
       } catch (error) {
         console.error("載入搜尋索引失敗", error);
         if (mine === latest && status) {
@@ -160,8 +175,8 @@ export function initHome() {
         }
         return;
       }
-      if (ids === null || mine !== latest) return;
-      visible = ids.flatMap((id) => rowsById.get(id) ?? []);
+      if (found === null || mine !== latest) return;
+      visible = found;
     } else {
       visible = rows.filter(
         (row) => state.kind === "all" || hasKind(row, state.kind),
@@ -169,15 +184,18 @@ export function initHome() {
     }
 
     const shown = new Set(visible);
-    for (const row of rows) row.hidden = !shown.has(row);
+    for (const row of allRows) row.hidden = !shown.has(row);
     // 重排：顯示的列依結果順序在前，其餘維持原本（菜名）順序。
-    rowList?.append(...visible, ...rows.filter((row) => !shown.has(row)));
+    rowList?.append(...visible, ...allRows.filter((row) => !shown.has(row)));
 
+    // 筆數「道」只算菜譜；命中專題時另外補「專題 N 篇」。
+    const topicCount = visible.filter((row) => "topicId" in row.dataset).length;
+    const recipeCount = visible.length - topicCount;
     setText(
       status,
       state.q
-        ? `「${state.q}」符合 ${visible.length} 道`
-        : `共 ${visible.length} 道`,
+        ? `「${state.q}」符合 ${recipeCount} 道${topicCount > 0 ? `，專題 ${topicCount} 篇` : ""}`
+        : `共 ${recipeCount} 道`,
     );
     if (empty) {
       empty.hidden = visible.length > 0 || rows.length === 0;

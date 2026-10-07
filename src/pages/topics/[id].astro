@@ -47,13 +47,19 @@ const published = formatPublishedDate(data.publishedAt);
 ---
 
 <Base title={`${data.title}｜專題`} description={data.summary}>
+  <!--
+    Pagefind 索引範圍：比照菜譜頁，只標記標題（加權）、短介與內文；
+    封面替代文字由 Illustration 排除，相關連結區與選題參考區不標記。
+    篩選屬性 type:topic 讓搜尋結果分辨專題；菜譜頁沒有 type，kind 篩選因此不含專題。
+  -->
   <article class="topic">
+    <span hidden data-pagefind-filter="type:topic"></span>
     <p class="eyebrow">專題 / {data.title}</p>
     <header>
-      <h1>
+      <h1 data-pagefind-body data-pagefind-weight="10">
         {data.title}{data.draft && <span class="draft">（草稿）</span>}
       </h1>
-      <p class="lead">{data.summary}</p>
+      <p class="lead" data-pagefind-body>{data.summary}</p>
       <time datetime={published.iso}>{published.label}</time>
     </header>
     {
@@ -66,7 +72,7 @@ const published = formatPublishedDate(data.publishedAt);
         />
       )
     }
-    <div class="body">
+    <div class="body" data-pagefind-body>
       <Content />
     </div>
     {
