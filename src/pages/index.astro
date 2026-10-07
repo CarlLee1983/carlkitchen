@@ -10,11 +10,17 @@ const recipes = await getVisibleRecipes();
 const heroRecipes = recipes.filter((recipe) => recipe.data.hero);
 
 // 解析到大圖區就同步挑圖並插入（腳本緊接在 template 之後），首次繪製前版面已定、不會位移。
-// 每次開啟隨機；template 內容不會載入，只有選中的那張下載。內容是 JS，不能含 TS 語法。
+// 每次開啟隨機；網址帶分類時從該類挑，免得腳本載入後再換圖。
+// template 內容不會載入，只有選中的那張下載。內容是 JS，不能含 TS 語法。
 const HERO_PICK_SCRIPT = `(() => {
   const section = document.currentScript?.parentElement;
-  const slots = section?.getElementsByTagName("template");
-  const pick = slots?.[Math.floor(Math.random() * slots.length)];
+  const slots = [...(section?.getElementsByTagName("template") ?? [])];
+  const kind = new URLSearchParams(location.search).get("kind");
+  const matching = slots.filter((slot) =>
+    slot.content.firstElementChild?.dataset.kinds?.split(" ").includes(kind),
+  );
+  const pool = matching.length > 0 ? matching : slots;
+  const pick = pool[Math.floor(Math.random() * pool.length)];
   if (section && pick) section.append(pick.content.cloneNode(true));
 })();`;
 
@@ -79,7 +85,10 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
           <p class="hero-label">隨機看看一道菜</p>
           {heroRecipes.map((recipe) => (
             <template data-hero-slot>
-              <a href={recipeHref(recipe)}>
+              <a
+                href={recipeHref(recipe)}
+                data-kinds={recipeKinds(recipe.data).join(" ")}
+              >
                 <Illustration
                   image={recipe.data.hero!}
                   sizes="(min-width: 64rem) 36rem, 100vw"
@@ -455,14 +464,19 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     }
   }
 
-  /* 搜尋或篩選時收起隨機大圖；桌機同時收起圖片欄。 */
-  .home[data-has-criteria] .hero-pick {
+  /* 有搜尋字詞時收起隨機大圖；窄螢幕大圖疊在清單上方，篩選時也收起，讓清單緊接篩選列。 */
+  .home[data-has-query] .hero-pick {
     display: none;
   }
+  @media (max-width: 63.99rem) {
+    .home[data-has-criteria] .hero-pick {
+      display: none;
+    }
+  }
 
-  /* 寬螢幕第一屏：左文右圖 */
+  /* 寬螢幕第一屏：左文右圖；篩選時大圖由腳本換成該類的菜，搜尋時收起圖片欄。 */
   @media (min-width: 64rem) {
-    .home[data-has-hero]:not([data-has-criteria]) {
+    .home[data-has-hero]:not([data-has-query]) {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 36rem;
       column-gap: 4rem;

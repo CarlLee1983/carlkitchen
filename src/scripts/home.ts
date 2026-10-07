@@ -34,6 +34,14 @@ interface Pagefind {
   ): Promise<PagefindResponse | null>;
 }
 
+/** 元素的 `data-kinds`（以空白分隔的篩選值）是否包含此篩選值。 */
+function hasKind(element: Element | null | undefined, kind: KindFilter) {
+  return (
+    element instanceof HTMLElement &&
+    (element.dataset.kinds ?? "").split(" ").includes(kind)
+  );
+}
+
 let pagefindPromise: Promise<Pagefind> | undefined;
 
 function loadPagefind(): Promise<Pagefind> {
@@ -67,6 +75,28 @@ export function initHome() {
   const empty = document.querySelector<HTMLElement>("[data-empty]");
   const emptyMessage = document.querySelector("[data-empty-message]");
   const clearButton = document.querySelector("[data-clear]");
+  const heroPick = document.querySelector<HTMLElement>(".hero-pick");
+
+  /**
+   * 篩選時大圖仍顯示（寬螢幕），而目前這道不屬於該類，就從該類隨機換一道。
+   * 大圖收起時不換，免得下載看不到的圖；回到全部時沿用目前這道。
+   */
+  function matchHero(kind: KindFilter) {
+    if (
+      !heroPick ||
+      kind === "all" ||
+      getComputedStyle(heroPick).display === "none"
+    ) {
+      return;
+    }
+    const current = heroPick.querySelector("a[data-kinds]");
+    if (hasKind(current, kind)) return;
+    const slots = [
+      ...heroPick.querySelectorAll<HTMLTemplateElement>("template"),
+    ].filter((slot) => hasKind(slot.content.firstElementChild, kind));
+    const pick = slots[Math.floor(Math.random() * slots.length)];
+    if (current && pick) current.replaceWith(pick.content.cloneNode(true));
+  }
 
   /** 以 Pagefind 搜尋，回傳依相關度排序的菜譜識別值；被取代時回傳 null。 */
   async function findIds(
@@ -110,6 +140,8 @@ export function initHome() {
       "data-has-criteria",
       state.q !== "" || state.kind !== "all",
     );
+    intro?.toggleAttribute("data-has-query", state.q !== "");
+    matchHero(state.kind);
     if (input && normalizeQuery(input.value) !== state.q) {
       input.value = state.q;
     }
@@ -132,9 +164,7 @@ export function initHome() {
       visible = ids.flatMap((id) => rowsById.get(id) ?? []);
     } else {
       visible = rows.filter(
-        (row) =>
-          state.kind === "all" ||
-          (row.dataset.kinds ?? "").split(" ").includes(state.kind),
+        (row) => state.kind === "all" || hasKind(row, state.kind),
       );
     }
 
@@ -229,6 +259,11 @@ export function initHome() {
     void setState({ q: "", kind: "all" });
     input?.focus();
   });
+
+  // 窄螢幕篩選時大圖收起不換；放寬（如平板轉橫向）後大圖重新出現，要補換成該類。
+  window
+    .matchMedia("(min-width: 64rem)")
+    .addEventListener("change", () => matchHero(currentState().kind));
 
   // 上一頁／下一頁（含 hash 導航產生的歷史紀錄）：依網址重新還原。
   window.addEventListener("popstate", () => void render(currentState()));
