@@ -33,6 +33,10 @@ const lockOf = (page: Page, title: string) =>
   page.getByRole("button", { name: `鎖定 ${title}` });
 const replaceOf = (page: Page, title: string) =>
   page.getByRole("button", { name: `替換 ${title}` });
+const chooseOf = (page: Page, index: number) =>
+  items(page)
+    .nth(index)
+    .getByRole("combobox", { name: /指定菜色/ });
 
 const titlesOnTable = async (page: Page) =>
   (await items(page).getByRole("link").allTextContents()).map((text) =>
@@ -103,6 +107,74 @@ test("固定菜譜中的主食不會被抽中", async ({ page }) => {
       expect(await titlesOnTable(page)).not.toContain("台式炒麵");
     }
   }
+});
+
+test("從菜位選擇候選只替換該位置；重複及鎖定會拒絕並保留菜單", async ({
+  page,
+}) => {
+  await page.goto("/meal/");
+  await reroll(page).click();
+  const before = await titlesOnTable(page);
+  const missing = dishes.find((item) => !before.includes(item.title))!;
+  const index = before.findIndex(
+    (title) => title !== vegetableDish.title && title !== soups[0]!.title,
+  );
+  const chooser = chooseOf(page, index);
+  const options = await chooser.getByRole("option").allTextContents();
+  expect(options.sort()).toEqual(dishes.map((item) => item.title).sort());
+  expect(options).not.toContain("台式炒麵");
+  await chooser.focus();
+  await chooser.selectOption(missing.id);
+  await expect(status(page)).toContainText("只指定了一道菜");
+  await expect(chooseOf(page, index)).toBeFocused();
+  const after = await titlesOnTable(page);
+  expect(after[index]).toBe(missing.title);
+  expect(after.filter((title, i) => i !== index)).toEqual(
+    before.filter((title, i) => i !== index),
+  );
+
+  await chooseOf(page, index).selectOption(
+    dishes.find((item) => item.title === vegetableDish.title)!.id,
+  );
+  await expect(status(page)).toContainText("重複");
+  expect(await titlesOnTable(page)).toEqual(after);
+  await lockOf(page, missing.title).click();
+  await chooseOf(page, index).selectOption(
+    dishes.find((item) => item.title === before[index])!.id,
+  );
+  await expect(status(page)).toContainText("先解鎖");
+  expect(await titlesOnTable(page)).toEqual(after);
+});
+
+test("湯位只列湯；手機上可用鍵盤抵達指定欄位並保留焦點", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto("/meal/");
+  await reroll(page).click();
+  const soupChooser = items(page)
+    .last()
+    .getByRole("combobox", { name: /指定湯/ });
+  await expect(soupChooser.getByRole("option")).toHaveCount(1);
+  await expect(soupChooser.getByRole("option")).toHaveText(soups[0]!.title);
+  await expect(soupChooser.getByRole("option", { name: "草稿湯" })).toHaveCount(
+    0,
+  );
+  const before = await titlesOnTable(page);
+  const missing = dishes.find((item) => !before.includes(item.title))!;
+  const index = before.findIndex(
+    (title) => title !== vegetableDish.title && title !== soups[0]!.title,
+  );
+  await tabTo(page, chooseOf(page, index));
+  await expectFocusRing(chooseOf(page, index));
+  await chooseOf(page, index).selectOption(missing.id);
+  await expect(chooseOf(page, index)).toHaveValue(missing.id);
+  await expect(status(page)).toContainText("只指定了一道菜");
+  await expect(chooseOf(page, index)).toBeFocused();
+  const after = await titlesOnTable(page);
+  expect(after[index]).toBe(missing.title);
+  expect(after.filter((title, slotIndex) => slotIndex !== index)).toEqual(
+    before.filter((title, slotIndex) => slotIndex !== index),
+  );
+  await expectNoOverflowNow(page, "指定菜色手機版");
 });
 
 test("全頁只有一個朗讀區，訊息只出現在其中", async ({ page }) => {

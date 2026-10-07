@@ -25,7 +25,7 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
 <Base title="配一桌菜">
   <h1>配一桌菜</h1>
   <p class="meal-intro">
-    從配菜候選中抽出一桌四菜一湯或五菜一湯。鎖定喜歡的菜，其餘可重新抽選或單道替換。
+    從配菜候選中抽出一桌四菜一湯或五菜一湯。鎖定喜歡的菜，其餘可重新抽選、隨機替換或直接指定。
   </p>
 
   <div class="meal-tools">
@@ -109,6 +109,22 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
   .meal-item button[aria-pressed="true"] {
     background: var(--ink);
     color: var(--paper);
+  }
+  .meal-actions label {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .meal-actions select {
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
   }
   .meal-status {
     margin: 0.5rem 0 1.5rem;

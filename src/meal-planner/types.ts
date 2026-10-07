@@ -13,6 +13,7 @@ export type Action =
   | { type: "reroll" }
   | { type: "mode"; mode: 4 | 5 }
   | { type: "replace"; target: number | "soup" }
+  | { type: "assign"; target: number | "soup"; id: string }
   | { type: "toggle"; target: number | "soup" };
 
 /** 無解時 `plan` 與輸入內容相同，`reason` 與 `message` 都是繁體中文。 */

@@ -134,7 +134,28 @@ export function initMeal() {
     const lock = actionButton("鎖定", info.title, "toggle", target);
     lock.setAttribute("aria-pressed", String(locked));
     const actions = el("div", undefined, "meal-actions");
-    actions.append(lock, actionButton("替換", info.title, "replace", target));
+    const chooserLabel = el("label", target === "soup" ? "指定湯" : "指定菜色");
+    const chooser = el("select");
+    chooser.setAttribute(
+      "aria-label",
+      `${target === "soup" ? "指定湯" : "指定菜色"} ${slotLabel}`,
+    );
+    chooser.dataset.action = "assign";
+    chooser.dataset.target = String(target);
+    for (const candidate of candidates.filter(
+      (item) => item.soup === (target === "soup"),
+    )) {
+      const option = el("option", recipes[candidate.id]!.title);
+      option.value = candidate.id;
+      chooser.append(option);
+    }
+    chooser.value = id;
+    chooserLabel.append(chooser);
+    actions.append(
+      lock,
+      actionButton("替換", info.title, "replace", target),
+      chooserLabel,
+    );
 
     item.append(
       el(
@@ -216,12 +237,26 @@ export function initMeal() {
   }
   planList.addEventListener("click", (event) => {
     const button = (event.target as Element).closest<HTMLElement>(
-      "[data-action]",
+      "button[data-action]",
     );
     if (!button) return;
     const raw = button.dataset.target!;
     const target = raw === "soup" ? "soup" : Number(raw);
     dispatch({ type: button.dataset.action as "toggle" | "replace", target });
+  });
+  planList.addEventListener("change", (event) => {
+    const select = event.target;
+    if (
+      !(select instanceof HTMLSelectElement) ||
+      select.dataset.action !== "assign"
+    )
+      return;
+    const raw = select.dataset.target!;
+    dispatch({
+      type: "assign",
+      target: raw === "soup" ? "soup" : Number(raw),
+      id: select.value,
+    });
   });
 
   render();
