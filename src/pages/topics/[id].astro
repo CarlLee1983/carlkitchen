@@ -1,0 +1,94 @@
+---
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import {
+  formatPublishedDate,
+  getVisibleTopicEntries,
+  type TopicEntry,
+} from "../../utils/topic-entries";
+
+export async function getStaticPaths() {
+  const topics = await getVisibleTopicEntries();
+  return topics.map((topic) => ({
+    params: { id: topic.id },
+    props: { topic },
+  }));
+}
+
+interface Props {
+  topic: TopicEntry;
+}
+
+const { topic } = Astro.props;
+const { data } = topic;
+const { Content } = await render(topic);
+const published = formatPublishedDate(data.publishedAt);
+---
+
+<Base title={`${data.title}｜專題`} description={data.summary}>
+  <article class="topic">
+    <p class="eyebrow">專題 / {data.title}</p>
+    <header>
+      <h1>
+        {data.title}{data.draft && <span class="draft">（草稿）</span>}
+      </h1>
+      <p class="lead">{data.summary}</p>
+      <time datetime={published.iso}>{published.label}</time>
+    </header>
+    <div class="body">
+      <Content />
+    </div>
+  </article>
+</Base>
+
+<style>
+  .topic {
+    max-width: 40rem;
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+  }
+  .eyebrow {
+    margin: 0 0 2rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    letter-spacing: 0.03em;
+  }
+  .draft {
+    font-size: 0.35em;
+    vertical-align: middle;
+    color: var(--ink-soft);
+  }
+  .lead {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+    line-height: 1.8;
+  }
+  time {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .body {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+    overflow-wrap: anywhere;
+  }
+  .body :global(h2) {
+    margin-top: 3rem;
+    font-size: 1.4rem;
+  }
+  .body :global(h3) {
+    margin-top: 2rem;
+    font-size: 1.15rem;
+  }
+  @media (max-width: 650px) {
+    .topic {
+      padding-top: 2rem;
+    }
+  }
+</style>
