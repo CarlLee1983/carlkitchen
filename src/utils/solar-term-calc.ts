@@ -50,7 +50,7 @@ export function computeSolarTerms(
 }
 
 /**
- * 公告資料照用；最後一筆公告之後，以推算值補到 untilYear 年底。
+ * 公告資料照用；最後一筆公告之後，以推算值補到 untilYear 年底，另附隔年小寒作為結束界線。
  * 公告資料為必要輸入，須依時間排序。取捨見 docs/adr/0007-solar-terms-official-then-computed.md。
  */
 export function solarTermSchedule(
@@ -65,7 +65,12 @@ export function solarTermSchedule(
   if (!last) throw new Error("缺少中央氣象署節氣公告資料");
   const lastStart = Date.parse(`${last.date}T${last.time}:00+08:00`);
   const firstYear = Number(last.date.slice(0, 4));
-  for (const term of computeSolarTerms(firstYear, untilYear)) {
+  // 多推算隔年小寒當冬至的結束界線，否則最後一年冬至後到年底選不出節氣。
+  const [nextLesserCold] = computeSolarTerms(untilYear + 1, untilYear + 1);
+  for (const term of [
+    ...computeSolarTerms(firstYear, untilYear),
+    nextLesserCold!,
+  ]) {
     // 同一節氣的推算值與公告可能差一分鐘，只收晚於最後一筆公告交節時刻 24 小時以上的推算值。
     if (Date.parse(`${term.date}T${term.time}:00+08:00`) > lastStart + DAY)
       schedule.push({ ...term, source: "computed" });

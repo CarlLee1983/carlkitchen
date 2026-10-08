@@ -6,6 +6,7 @@ import {
   solarTermSchedule,
   toTaipei,
 } from "../src/utils/solar-term-calc.ts";
+import { selectSolarTerm } from "../src/utils/solar-terms.ts";
 
 // 年份從公告資料推導，補進新年度公告後測試不用改。
 const yearOf = (term: { date: string }) => Number(term.date.slice(0, 4));
@@ -66,8 +67,21 @@ describe("節氣時程：公告為主，推算補位", () => {
     assert.equal(next.name, "小寒");
     assert.ok(next.date.startsWith("2028-01-"));
     assert.equal(next.source, "computed");
-    assert.equal(schedule.at(-1)!.name, "冬至");
-    assert.ok(schedule.at(-1)!.date.startsWith("2028-12-"));
+    // 最後一筆是隔年小寒，只當冬至的結束界線。
+    assert.equal(schedule.at(-2)!.name, "冬至");
+    assert.ok(schedule.at(-2)!.date.startsWith("2028-12-"));
+    assert.equal(schedule.at(-1)!.name, "小寒");
+    assert.ok(schedule.at(-1)!.date.startsWith("2029-01-"));
+  });
+
+  it("推算最後一年的冬至之後到年底，仍選得出冬至", () => {
+    const schedule = solarTermSchedule(official, 2028);
+    const selected = selectSolarTerm(
+      schedule,
+      new Date("2028-12-31T23:00:00+08:00"),
+    );
+    assert.equal(selected?.name, "冬至");
+    assert.ok(selected?.date.startsWith("2028-12-"));
   });
 
   it("依交節時刻遞增且沒有重複節氣", () => {
@@ -76,7 +90,7 @@ describe("節氣時程：公告為主，推算補位", () => {
     const starts = schedule.map(start);
     for (let index = 1; index < starts.length; index++)
       assert.ok(starts[index]! > starts[index - 1]!, schedule[index]!.date);
-    assert.equal(schedule.length, data.terms.length + 24 * 3);
+    assert.equal(schedule.length, data.terms.length + 24 * 3 + 1);
   });
 
   it("沒有公告資料時拋錯，不默默只推算一年", () => {
