@@ -61,3 +61,14 @@ export function selectSolarTerm<Term extends SolarTerm>(
   const index = terms.findIndex((term) => startOf(term) > time);
   return index > 0 ? terms[index - 1] : undefined;
 }
+
+const TAIPEI_OFFSET = 8 * 3_600_000;
+
+/** 讀者當下臺灣時間所在年份的各節氣交節紀錄，保留原排序；該年沒有紀錄就是空陣列。 */
+export function solarTermsOfYear<Term extends SolarTerm>(
+  terms: readonly Term[],
+  now = new Date(),
+): Term[] {
+  const year = new Date(now.getTime() + TAIPEI_OFFSET).getUTCFullYear();
+  return terms.filter((term) => term.date.startsWith(`${year}-`));
+}

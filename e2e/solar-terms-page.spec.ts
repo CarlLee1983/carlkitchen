@@ -1,4 +1,5 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
+import data from "../src/data/solar-terms.json" with { type: "json" };
 import { solarTermArt } from "../src/utils/solar-terms";
 
 // axe 與各寬度無水平捲動由 a11y.spec.ts 的頁面清單涵蓋。
@@ -61,6 +62,64 @@ test("首頁節氣列連到總覽頁上該節氣的位置", async ({ page }) => 
   await link.click();
   await expect(page).toHaveURL(/\/solar-terms\/#hanlu$/);
   await expect(page.locator("#hanlu")).toBeInViewport();
+});
+
+// 今年日期與目前節氣：由瀏覽器依讀者當下時間填入（ADR 0006、0007）。
+const current = (page: Page) => page.locator("main [aria-current]");
+const hanlu = (page: Page) => page.locator("#hanlu");
+
+test("依讀者當下時間標出目前節氣，並填入今年的交節日期時刻與出處", async ({
+  page,
+}) => {
+  await page.clock.setFixedTime(new Date("2026-10-10T12:00:00+08:00"));
+  await page.goto("/solar-terms/");
+  await expect(current(page)).toHaveCount(1);
+  await expect(current(page)).toHaveAttribute("id", "hanlu");
+  await expect(current(page)).toContainText("目前節氣");
+  await expect(hanlu(page)).toContainText("10 月 8 日 14:29");
+  await expect(hanlu(page)).toContainText("資料：中央氣象署");
+  // 其他節氣也填了今年的日期，但不標為目前節氣。
+  await expect(page.locator("#lichun")).toContainText("2 月 4 日");
+  await expect(page.locator("#lichun")).not.toContainText("目前節氣");
+  await expect(page.locator("main time:visible")).toHaveCount(24);
+});
+
+test("目前節氣於交節時刻（臺灣時間）切換", async ({ page }) => {
+  for (const [date, id] of [
+    ["2026-10-23T17:37:00+08:00", "hanlu"],
+    ["2026-10-23T17:38:00+08:00", "shuangjiang"],
+  ]) {
+    await page.clock.setFixedTime(new Date(date!));
+    await page.goto("/solar-terms/");
+    await expect(current(page)).toHaveCount(1);
+    await expect(current(page)).toHaveAttribute("id", id!);
+  }
+});
+
+test("公告用完的年份顯示「依天文推算」", async ({ page }) => {
+  const afterOfficial = Number(data.terms.at(-1)!.date.slice(0, 4)) + 1;
+  await page.clock.setFixedTime(
+    new Date(`${afterOfficial}-10-10T12:00:00+08:00`),
+  );
+  await page.goto("/solar-terms/");
+  await expect(current(page)).toHaveAttribute("id", "hanlu");
+  await expect(hanlu(page)).toContainText("10 月");
+  await expect(hanlu(page)).toContainText("依天文推算");
+  await expect(page.getByRole("main")).not.toContainText("中央氣象署");
+});
+
+test("停用 JavaScript 時插畫與說明照常，且沒有日期與目前節氣標記", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await page.goto("/solar-terms/");
+  await expect(hanlu(page)).toContainText("固定資料的寒露說明，只用於測試。");
+  await expect(page.getByRole("img")).toHaveCount(24);
+  await expect(page.locator("main time:visible")).toHaveCount(0);
+  await expect(page.getByRole("main")).not.toContainText("目前節氣");
+  await expect(page.getByRole("main")).not.toContainText("交節");
+  await context.close();
 });
 
 test("站內搜尋索引收錄總覽頁，搜尋節氣名找得到", async ({ page }) => {

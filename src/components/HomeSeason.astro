@@ -54,32 +54,24 @@ const Row = linked ? "a" : "div";
 </section>
 
 <script>
-  import type { ScheduledSolarTerm } from "../utils/solar-term-calc";
   import {
-    formatSolarTermTime,
-    solarTermSourceLabel,
-  } from "../utils/solar-term-display";
+    fillSolarTermTime,
+    readSolarTermSchedule,
+  } from "../utils/solar-term-client";
+  import { solarTermSourceLabel } from "../utils/solar-term-display";
   import {
     selectSolarTerm,
     solarTermArt,
     type SolarTermName,
   } from "../utils/solar-terms";
   const row = document.querySelector<HTMLElement>("[data-solar-term]");
-  const data = document.querySelector(
-    "[data-solar-term-schedule]",
-  )?.textContent;
-  const schedule: ScheduledSolarTerm[] = data ? JSON.parse(data) : [];
-  const selected = selectSolarTerm(schedule);
+  const selected = selectSolarTerm(readSolarTermSchedule());
   const template = document.querySelector<HTMLTemplateElement>(
     `[data-solar-term-slot="${selected?.name}"]`,
   );
   if (row && selected && template) {
     const content = template.content.cloneNode(true) as DocumentFragment;
-    const time = content.querySelector("time")!;
-    const formatted = formatSolarTermTime(selected);
-    time.dateTime = formatted.dateTime;
-    time.title = formatted.title;
-    time.textContent = formatted.text;
+    fillSolarTermTime(content.querySelector("time")!, selected);
     content.querySelector("[data-solar-term-source]")!.textContent =
       solarTermSourceLabel(selected.source);
     row.replaceChildren(content);
