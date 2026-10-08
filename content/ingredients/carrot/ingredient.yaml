@@ -1,7 +1,7 @@
 title: 紅蘿蔔
 summary: 紅蘿蔔又稱胡蘿蔔，屬於冬季作物，主要產在臺南、雲林與彰化。這篇整理挑選、清洗、保存與常見用途；實際下廚的份量和步驟請看相關菜譜。
 category: vegetable
-draft: true
+draft: false
 selection: 挑表皮光滑、橫紋間隔平均、根鬚少的紅蘿蔔，蒂頭應是綠色、沒有發黃。
 preparation: 紅蘿蔔越靠近表皮的部分味道越濃，把外皮刷洗乾淨後，可以不削皮直接料理。
 storage: 紅蘿蔔怕濕氣，保存時要隔絕水氣。整根切掉葉子、洗淨擦乾後包一層報紙，裝進保鮮袋冷藏，約可放 1 至 2 週；切開的部分用保鮮膜包好，約 3 至 4 天內吃完。一次用不完時，可把切塊汆燙約 30 秒，瀝乾放涼、用紙巾壓乾水分後裝袋冷凍，約可放 2 至 4 個月。
@@ -18,3 +18,6 @@ relatedRecipes:
   - hot-and-sour-soup
   - radish-pork-rib-soup
   - taiwanese-fried-rice-noodles
+hero:
+  src: ./hero.webp
+  alt: 三根帶綠色葉梗的橙色紅蘿蔔並排的水彩插畫
