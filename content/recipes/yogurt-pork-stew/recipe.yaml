@@ -8,6 +8,16 @@ vegetable: true
 protein: true
 timeMinutes: 55
 tags: [家常菜, 燉煮]
+hero:
+  {
+    src: ./hero.webp,
+    alt: 白色陶碗盛著優格醬汁中的豬肉、馬鈴薯、洋蔥、杏鮑菇與紅黃甜椒，表面有少量綠色碎屑和黑色顆粒。,
+  }
+ingredientsPhoto:
+  {
+    src: ./ingredients.webp,
+    alt: 豬肉塊、馬鈴薯、洋蔥、杏鮑菇、紅黃甜椒、原味優格、水、鹽和食用油分開擺放。,
+  }
 ingredients:
   - { name: 豬後腿肉, amount: { value: 300, unit: g }, note: 切大塊 }
   - { name: 馬鈴薯, amount: { value: 150, unit: g }, note: 切塊 }
@@ -26,6 +36,19 @@ ingredients:
     }
 steps:
   - text: 豬後腿肉切大塊，放入滾水汆燙後瀝乾。
+    image: { src: ./step-1.webp, alt: 汆燙後的豬肉大塊放在不鏽鋼瀝水籃中。 }
   - text: 熱鍋加入少許油，炒香洋蔥，放入豬肉炒至表面上色。
+    image:
+      { src: ./step-2.webp, alt: 深色平底鍋中炒香洋蔥，豬肉大塊表面略微上色。 }
   - text: 加入馬鈴薯、紅甜椒、黃甜椒和杏鮑菇炒香，再加入水煮滾。
+    image:
+      {
+        src: ./step-3.webp,
+        alt: 深色平底鍋裡的豬肉、馬鈴薯、洋蔥、杏鮑菇與紅黃甜椒在水中煮滾。,
+      }
   - text: 轉小火，拌入鹽和原味優格；鍋蓋留縫燉煮約 30 分鐘。
+    image:
+      {
+        src: ./step-4.webp,
+        alt: 深色平底鍋鍋蓋留縫，豬肉和蔬菜在淺色優格醬汁中燉煮。,
+      }
