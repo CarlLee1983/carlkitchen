@@ -27,6 +27,7 @@ export interface ContentCheckOptions {
   topicsDir?: string;
   topicSourcesDir?: string;
   solarTermsDir?: string;
+  solarTermSourcesDir?: string;
   distDir: string;
   /** 開啟候選池門檻檢查（部署前）。 */
   launch: boolean;
@@ -167,17 +168,27 @@ export async function runContentChecks(
       : { issues: [], draftIds: [], sourceUrls: [] };
   issues.push(...topicCheck.issues);
 
-  // 節氣：當令食材只能指向已發布的食材條目
-  if (options.solarTermsDir) {
+  // 節氣：24 筆齊全、schema、來源對照，以及當令食材只能指向已發布的食材條目
+  // solarTermsDir 與 solarTermSourcesDir 要成對設定，理由同專題。
+  if (Boolean(options.solarTermsDir) !== Boolean(options.solarTermSourcesDir)) {
     issues.push(
-      ...checkSolarTerms({
-        solarTermsDir: options.solarTermsDir,
-        publicIngredientIds: (ingredients ?? [])
-          .filter(({ entry }) => entry && !entry.draft)
-          .map(({ id }) => id),
-      }),
+      failure(
+        options.solarTermsDir ?? options.solarTermSourcesDir!,
+        "節氣檢查設定不完整：solarTermsDir 與 solarTermSourcesDir 必須同時提供（檢查 SOLAR_TERMS_DIR、SOLAR_TERM_SOURCES_DIR）。",
+      ),
     );
   }
+  const solarTermCheck =
+    options.solarTermsDir && options.solarTermSourcesDir
+      ? checkSolarTerms({
+          solarTermsDir: options.solarTermsDir,
+          solarTermSourcesDir: options.solarTermSourcesDir,
+          publicIngredientIds: (ingredients ?? [])
+            .filter(({ entry }) => entry && !entry.draft)
+            .map(({ id }) => id),
+        })
+      : { issues: [], sourceUrls: [] };
+  issues.push(...solarTermCheck.issues);
 
   // 建置輸出洩漏
   if (existsSync(options.distDir)) {
@@ -205,6 +216,7 @@ export async function runContentChecks(
           ...sourceUrls,
           ...ingredientCheck.sourceUrls,
           ...topicCheck.sourceUrls,
+          ...solarTermCheck.sourceUrls,
         ],
       }),
     );
