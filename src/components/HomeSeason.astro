@@ -1,0 +1,157 @@
+---
+import type { ImageMetadata } from "astro";
+import HomeTopic from "./HomeTopic.astro";
+import Illustration from "./Illustration.astro";
+import { solarTermArt, type SolarTermName } from "../utils/solar-terms";
+import type { TopicEntry } from "../utils/topic-entries";
+
+interface Props {
+  topics: TopicEntry[];
+}
+
+const art = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/solar-terms/*.webp",
+  { eager: true },
+);
+const illustration = (name: SolarTermName) => {
+  const image = art[`../assets/solar-terms/${solarTermArt[name]}.webp`];
+  if (!image) throw new Error(`節氣「${name}」缺少插畫`);
+  return { src: image.default, alt: `${name}節氣插畫` };
+};
+const names = Object.keys(solarTermArt) as SolarTermName[];
+---
+
+{/* 專題在上、節氣在下；兩列都隱藏時整區不顯示。 */}
+<section class="season" aria-labelledby="season-title">
+  <p class="kicker" id="season-title">這個時節</p>
+  <HomeTopic topics={Astro.props.topics} />
+  {
+    /* 節氣依讀者當下時間由腳本挑選，靜態輸出不預填，免得停在建置當下的節氣；
+       取捨同 docs/adr/0006-browser-topic-scheduling.md。 */
+  }
+  <div class="term" data-solar-term hidden></div>
+  {
+    names.map((name) => (
+      <template data-solar-term-slot={name}>
+        <Illustration image={illustration(name)} sizes="64px" width={128} />
+        <span class="copy">
+          <strong>{name}</strong>
+          <span>
+            <time data-solar-term-time /> 交節
+            <small>資料：中央氣象署</small>
+          </span>
+        </span>
+      </template>
+    ))
+  }
+</section>
+
+<script>
+  import solarTerms from "../data/solar-terms.json";
+  import { selectSolarTerm } from "../utils/solar-terms";
+  const row = document.querySelector<HTMLElement>("[data-solar-term]");
+  const selected = selectSolarTerm(solarTerms.terms);
+  const template = document.querySelector<HTMLTemplateElement>(
+    `[data-solar-term-slot="${selected?.name}"]`,
+  );
+  if (row && selected && template) {
+    const content = template.content.cloneNode(true) as DocumentFragment;
+    const time = content.querySelector("time")!;
+    const [, month, day] = selected.date.split("-").map(Number);
+    time.dateTime = `${selected.date}T${selected.time}+08:00`;
+    time.title = "臺灣時間";
+    time.textContent = `${month} 月 ${day} 日 ${selected.time}`;
+    row.replaceChildren(content);
+    row.hidden = false;
+  }
+</script>
+
+<style>
+  .season {
+    margin-top: 1rem;
+    border-top: 1px solid var(--line);
+    padding-top: 0.5rem;
+  }
+  .season:not(
+    :has(> [data-home-topic]:not([hidden]), > [data-solar-term]:not([hidden]))
+  ) {
+    display: none;
+  }
+  .kicker {
+    margin: 0 0 0.25rem;
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+  .term {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    height: 48px;
+    margin-top: 0.5rem;
+  }
+  .term[hidden] {
+    display: none;
+  }
+  .term :global(figure) {
+    flex: 0 0 64px;
+    margin: 0;
+  }
+  .term :global(img) {
+    display: block;
+    width: 64px;
+    height: 43px;
+    object-fit: cover;
+  }
+  .copy {
+    display: block;
+    min-width: 0;
+  }
+  .copy strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+  }
+  .copy > span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+  .copy small {
+    margin-left: 0.5em;
+    font-size: 0.7rem;
+  }
+  /* 手機只留一行文字，不顯示插畫，少佔首屏高度。 */
+  /* 間距與行高一併收緊，讓第一道菜名仍留在 390×844 首屏內。 */
+  @media (max-width: 39.99rem) {
+    .season {
+      margin-top: 0.5rem;
+    }
+    .kicker {
+      margin-bottom: 0.125rem;
+      line-height: 1.4;
+    }
+    /* 插畫不顯示，文字仍對齊專題列的文字欄（64px 縮圖加間距）。 */
+    .term {
+      height: auto;
+      margin-top: 0.125rem;
+      padding-left: calc(64px + 0.75rem);
+      line-height: 1.25;
+    }
+    .term :global(figure) {
+      display: none;
+    }
+    .copy {
+      display: flex;
+      gap: 0.75em;
+      align-items: baseline;
+      min-width: 0;
+    }
+    .copy strong {
+      flex: none;
+    }
+  }
+</style>

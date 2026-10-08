@@ -17,6 +17,8 @@ test.describe("手機版（390×844）", () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
   test("首屏依序看到搜尋、完整篩選列、大圖與第一道菜名", async ({ page }) => {
+    // 固定在節氣列會顯示的日期，首屏高度才把「這個時節」整區算進去。
+    await page.clock.setFixedTime(new Date("2026-10-10T12:00:00+08:00"));
     await page.goto("/");
     const search = page.getByRole("searchbox");
     const hero = page.getByRole("region", { name: "隨機看看一道菜" });
