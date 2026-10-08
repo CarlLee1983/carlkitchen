@@ -1,3 +1,13 @@
 name: 小寒
 description: 太陽到達黃經 285 度時交節，氣候稍寒，太陽漸向北移，北半球白天逐漸變長。臺灣中北部的作物這時很容易遭受低溫寒害或霜害。
-seasonalIngredients: []
+seasonalIngredients:
+  - broccoli
+  - carrot
+  - celery
+  - chili-pepper
+  - coriander
+  - daikon
+  - green-bell-pepper
+  - onion
+  - sweet-corn
+  - tomato

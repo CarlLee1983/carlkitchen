@@ -1,3 +1,6 @@
 name: 處暑
 description: 太陽到達黃經 150 度時交節，二期稻作進入孕穗期。這時作物最怕雨水過多，遇上颱風災情更重。
-seasonalIngredients: []
+seasonalIngredients:
+  - eggplant
+  - loofah
+  - water-spinach

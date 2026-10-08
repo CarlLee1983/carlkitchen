@@ -1,6 +1,6 @@
 # 節氣當令食材建議：工單 07
 
-**狀態：待站主確認。** 這份清單只是建議，沒有寫進 `content/solar-terms/`；每個節氣的 `seasonalIngredients` 目前都是空陣列。站主勾選後再寫入節氣資料。
+**狀態：站主已於 2026-10-08 確認照建議全列（含紅蔥頭、香菜）。** 已依下列清單寫入 `content/solar-terms/` 各節氣的 `seasonalIngredients`。
 
 ## 怎麼選的
 
@@ -37,39 +37,39 @@
 
 ### 春季
 
-- [ ] 立春 `lichun`（12）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shallot`、`shiitake`、`sweet-corn`、`tomato`
-- [ ] 雨水 `yushui`（12）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shallot`、`shiitake`、`sweet-corn`、`tomato`
-- [ ] 驚蟄 `jingzhe`（12）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shallot`、`shiitake`、`sweet-corn`、`tomato`
-- [ ] 春分 `chunfen`（12）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shallot`、`shiitake`、`sweet-corn`、`tomato`
-- [ ] 清明 `qingming`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`green-bell-pepper`、`onion`、`shiitake`、`sweet-corn`、`tomato`、`water-spinach`
-- [ ] 穀雨 `guyu`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`green-bell-pepper`、`onion`、`shiitake`、`sweet-corn`、`tomato`、`water-spinach`
+- [x] 立春 `lichun`（12）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shallot`、`shiitake`、`sweet-corn`、`tomato`
+- [x] 雨水 `yushui`（12）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shallot`、`shiitake`、`sweet-corn`、`tomato`
+- [x] 驚蟄 `jingzhe`（12）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shallot`、`shiitake`、`sweet-corn`、`tomato`
+- [x] 春分 `chunfen`（12）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shallot`、`shiitake`、`sweet-corn`、`tomato`
+- [x] 清明 `qingming`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`green-bell-pepper`、`onion`、`shiitake`、`sweet-corn`、`tomato`、`water-spinach`
+- [x] 穀雨 `guyu`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`green-bell-pepper`、`onion`、`shiitake`、`sweet-corn`、`tomato`、`water-spinach`
 
 ### 夏季
 
-- [ ] 立夏 `lixia`（8）：`broccoli`、`chili-pepper`、`eggplant`、`green-bell-pepper`、`loofah`、`shiitake`、`sweet-corn`、`water-spinach`
-- [ ] 小滿 `xiaoman`（8）：`broccoli`、`chili-pepper`、`eggplant`、`green-bell-pepper`、`loofah`、`shiitake`、`sweet-corn`、`water-spinach`
-- [ ] 芒種 `mangzhong`（5）：`chili-pepper`、`eggplant`、`loofah`、`shiitake`、`water-spinach`
-- [ ] 夏至 `xiazhi`（5）：`chili-pepper`、`eggplant`、`loofah`、`shiitake`、`water-spinach`
-- [ ] 小暑 `xiaoshu`（4）：`eggplant`、`loofah`、`shiitake`、`water-spinach`
-- [ ] 大暑 `dashu`（4）：`eggplant`、`loofah`、`shiitake`、`water-spinach`
+- [x] 立夏 `lixia`（8）：`broccoli`、`chili-pepper`、`eggplant`、`green-bell-pepper`、`loofah`、`shiitake`、`sweet-corn`、`water-spinach`
+- [x] 小滿 `xiaoman`（8）：`broccoli`、`chili-pepper`、`eggplant`、`green-bell-pepper`、`loofah`、`shiitake`、`sweet-corn`、`water-spinach`
+- [x] 芒種 `mangzhong`（5）：`chili-pepper`、`eggplant`、`loofah`、`shiitake`、`water-spinach`
+- [x] 夏至 `xiazhi`（5）：`chili-pepper`、`eggplant`、`loofah`、`shiitake`、`water-spinach`
+- [x] 小暑 `xiaoshu`（4）：`eggplant`、`loofah`、`shiitake`、`water-spinach`
+- [x] 大暑 `dashu`（4）：`eggplant`、`loofah`、`shiitake`、`water-spinach`
 
 ### 秋季
 
-- [ ] 立秋 `liqiu`（4）：`eggplant`、`loofah`、`shiitake`、`water-spinach`
-- [ ] 處暑 `chushu`（3）：`eggplant`、`loofah`、`water-spinach`
-- [ ] 白露 `bailu`（4）：`eggplant`、`loofah`、`sweet-corn`、`water-spinach`
-- [ ] 秋分 `qiufen`（4）：`eggplant`、`loofah`、`sweet-corn`、`water-spinach`
-- [ ] 寒露 `hanlu`（6）：`broccoli`、`celery`、`coriander`、`daikon`、`eggplant`、`sweet-corn`
-- [ ] 霜降 `shuangjiang`（6）：`broccoli`、`celery`、`coriander`、`daikon`、`eggplant`、`sweet-corn`
+- [x] 立秋 `liqiu`（4）：`eggplant`、`loofah`、`shiitake`、`water-spinach`
+- [x] 處暑 `chushu`（3）：`eggplant`、`loofah`、`water-spinach`
+- [x] 白露 `bailu`（4）：`eggplant`、`loofah`、`sweet-corn`、`water-spinach`
+- [x] 秋分 `qiufen`（4）：`eggplant`、`loofah`、`sweet-corn`、`water-spinach`
+- [x] 寒露 `hanlu`（6）：`broccoli`、`celery`、`coriander`、`daikon`、`eggplant`、`sweet-corn`
+- [x] 霜降 `shuangjiang`（6）：`broccoli`、`celery`、`coriander`、`daikon`、`eggplant`、`sweet-corn`
 
 ### 冬季
 
-- [ ] 立冬 `lidong`（7）：`broccoli`、`carrot`、`celery`、`coriander`、`daikon`、`eggplant`、`sweet-corn`
-- [ ] 小雪 `xiaoxue`（7）：`broccoli`、`carrot`、`celery`、`coriander`、`daikon`、`eggplant`、`sweet-corn`
-- [ ] 大雪 `daxue`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`sweet-corn`、`tomato`
-- [ ] 冬至 `dongzhi`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`sweet-corn`、`tomato`
-- [ ] 小寒 `xiaohan`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`sweet-corn`、`tomato`
-- [ ] 大寒 `dahan`（11）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shiitake`、`sweet-corn`、`tomato`
+- [x] 立冬 `lidong`（7）：`broccoli`、`carrot`、`celery`、`coriander`、`daikon`、`eggplant`、`sweet-corn`
+- [x] 小雪 `xiaoxue`（7）：`broccoli`、`carrot`、`celery`、`coriander`、`daikon`、`eggplant`、`sweet-corn`
+- [x] 大雪 `daxue`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`sweet-corn`、`tomato`
+- [x] 冬至 `dongzhi`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`sweet-corn`、`tomato`
+- [x] 小寒 `xiaohan`（10）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`sweet-corn`、`tomato`
+- [x] 大寒 `dahan`（11）：`broccoli`、`carrot`、`celery`、`chili-pepper`、`coriander`、`daikon`、`green-bell-pepper`、`onion`、`shiitake`、`sweet-corn`、`tomato`
 
 冬春節氣多達 10 到 12 項，因為多數條目是冷涼季節的蔬菜；若站主希望每格精簡，可以只留盛產期較集中的條目。
 

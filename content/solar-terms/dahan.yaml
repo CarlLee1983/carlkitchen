@@ -1,3 +1,14 @@
 name: 大寒
 description: 太陽到達黃經 300 度時交節，諺語把大寒當作一年中最冷的時節。另有諺語說「大寒不寒，春分不暖」，意思是大寒若不冷，冷天會往後延到春分。
-seasonalIngredients: []
+seasonalIngredients:
+  - broccoli
+  - carrot
+  - celery
+  - chili-pepper
+  - coriander
+  - daikon
+  - green-bell-pepper
+  - onion
+  - shiitake
+  - sweet-corn
+  - tomato

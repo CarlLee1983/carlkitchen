@@ -1,3 +1,11 @@
 name: 小滿
 description: 太陽到達黃經 60 度時交節，名稱象徵稻穀即將結實。梅雨季節也從這時開始。
-seasonalIngredients: []
+seasonalIngredients:
+  - broccoli
+  - chili-pepper
+  - eggplant
+  - green-bell-pepper
+  - loofah
+  - shiitake
+  - sweet-corn
+  - water-spinach

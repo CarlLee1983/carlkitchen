@@ -1,3 +1,9 @@
 name: 霜降
 description: 太陽到達黃經 210 度時交節。臺灣平地沒有結霜的紀錄，二期稻作這時進入收割期，到十一月也仍有颱風侵襲的紀錄。
-seasonalIngredients: []
+seasonalIngredients:
+  - broccoli
+  - celery
+  - coriander
+  - daikon
+  - eggplant
+  - sweet-corn

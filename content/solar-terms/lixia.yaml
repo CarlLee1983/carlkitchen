@@ -1,3 +1,11 @@
 name: 立夏
 description: 太陽到達黃經 45 度時交節，夏季從這時開始。早植稻即將抽穗，病蟲害也開始活動。
-seasonalIngredients: []
+seasonalIngredients:
+  - broccoli
+  - chili-pepper
+  - eggplant
+  - green-bell-pepper
+  - loofah
+  - shiitake
+  - sweet-corn
+  - water-spinach

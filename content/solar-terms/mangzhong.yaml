@@ -1,3 +1,8 @@
 name: 芒種
 description: 太陽到達黃經 75 度時交節，天氣已經熱了。農諺把芒種這時下的雨看作豐收的預兆。
-seasonalIngredients: []
+seasonalIngredients:
+  - chili-pepper
+  - eggplant
+  - loofah
+  - shiitake
+  - water-spinach

@@ -1,3 +1,7 @@
 name: 立秋
 description: 太陽到達黃經 135 度時交節，秋季以立秋為起點。二期稻作要趕在立秋前後插完秧，再晚就難有收成。
-seasonalIngredients: []
+seasonalIngredients:
+  - eggplant
+  - loofah
+  - shiitake
+  - water-spinach
