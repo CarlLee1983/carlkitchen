@@ -1,0 +1,53 @@
+title: 蒜泥蚵仔
+summary: 蚵仔裹上粗地瓜粉後以熱水煮熟，盛在九層塔上，再淋上蒜泥醬油汁。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+ingredients:
+  - { name: 蚵仔, amount: { value: 300, unit: g } }
+  - { name: 九層塔, note: 墊盤用，來源未列用量, group: 調味 }
+  - { name: 粗地瓜粉, note: 裹蚵仔用，來源未列用量, group: 調味 }
+  - { name: 鹽, note: 洗蚵仔用，來源未列用量, group: 調味 }
+  - { name: 蒜泥, amount: { value: 12, unit: g }, note: 約 1 大匙, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 2, unit: g }, note: 約 1/2 茶匙, group: 調味 }
+  - {
+      name: 水,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，調醬用,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 蚵仔用鹽洗淨。煮開半鍋水，轉中小火，讓水溫維持在約 85～90°C。
+    image:
+      src: ./step-1.webp
+      alt: 碗裡的鮮蚵洗淨備用，旁邊的鍋中熱水正微微冒泡
+  - text: 蚵仔均勻裹上粗地瓜粉，抖掉多餘的粉後下鍋。輕晃鍋身避免沾黏，煮約 3 分鐘。
+    image:
+      src: ./step-2.webp
+      alt: 裹上粗地瓜粉的蚵仔在熱水中汆煮
+  - text: 蒜泥、醬油、糖、水和香油拌勻成醬料。
+    image:
+      src: ./step-3.webp
+      alt: 小碗中的蒜泥醬油汁已拌勻
+  - text: 九層塔鋪在盤中，撈起蚵仔放上，淋上醬料。
+    image:
+      src: ./step-4.webp
+      alt: 九層塔葉鋪在盤底，上面放著汆熟的蚵仔並淋上醬料
+hero:
+  src: ./hero.webp
+  alt: 淺盤盛著鋪在九層塔上的蒜泥蚵仔，表面淋有醬油汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 鮮蚵、九層塔與粗地瓜粉，旁邊分裝鹽、蒜泥、醬油、糖、水和香油
+tip: 想吃冷食時，可將撈起的蚵仔用涼開水沖涼，再淋上醬料。

@@ -1,0 +1,43 @@
+title: 味噌蒸雞
+summary: 雞腿塊拌入味噌醬汁，與香菇、辣椒和蔥段一起蒸熟。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+tags: [家常菜]
+ingredients:
+  - { name: 雞腿, amount: { value: 1, unit: 支 }, note: 洗淨剁小塊 }
+  - { name: 泡發香菇, amount: { value: 50, unit: g }, note: 切小塊 }
+  - { name: 紅辣椒, amount: { value: 1, unit: 條 }, note: 切片 }
+  - { name: 薑末, amount: { value: 5, unit: g } }
+  - { name: 蔥段, amount: { value: 20, unit: g } }
+  - {
+      name: 味噌醬,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 細糖, amount: { value: 4, unit: g }, note: 約 1 茶匙, group: 調味 }
+  - { name: 醬油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 太白粉,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙；來源未說明加入步驟,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 30, unit: ml }, note: 約 2 大匙, group: 調味 }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 雞腿洗淨剁小塊；泡發香菇切小塊，紅辣椒切片。
+  - text: 泡發香菇放入滾水中略汆燙，撈起瀝乾。
+  - text: 味噌醬、細糖、醬油、米酒和水拌勻，再加入雞腿、紅辣椒與薑末拌勻。
+  - text: 加入泡發香菇與香油拌勻，放上蔥段。待蒸籠水滾，以大火蒸約 20 分鐘。

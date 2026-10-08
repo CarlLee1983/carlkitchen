@@ -1,0 +1,36 @@
+title: 蒜味炸魚片
+summary: 鯛魚片與蒜片炸至金黃，淋上醬油膏、黑醋調成的醬汁。
+servings: 3
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [家常菜, 魚料理]
+ingredients:
+  - { name: 鯛魚片, amount: { value: 300, unit: g }, note: 切小片 }
+  - { name: 蒜頭, amount: { value: 5, unit: 顆 }, note: 切片 }
+  - {
+      name: 醬油膏,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 黑醋,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 開水, amount: { value: 5, unit: ml }, note: 約 1 小匙, group: 調味 }
+  - { name: 糖, amount: { value: 5, unit: ml }, note: 約 1 小匙, group: 調味 }
+  - { name: 胡椒粉, note: 少許，魚片醃料, group: 調味 }
+  - { name: 鹽, note: 少許，魚片醃料, group: 調味 }
+  - { name: 小黃瓜, note: 切片鋪盤底；來源材料表未列, group: 調味 }
+  - { name: 炸油, note: 適量，來源未標用量, group: 調味 }
+steps:
+  - text: 蒜頭切片，鯛魚片切小片後撒上胡椒粉和鹽。
+  - text: 將醬油膏、黑醋、開水和糖混合成調味醬；小黃瓜切片鋪在盤底。
+  - text: 油鍋加熱，放入魚片和蒜片，以中油溫炸至金黃後撈起瀝油。
+  - text: 炸魚片和蒜片裝盤，淋上調味醬。

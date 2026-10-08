@@ -1,0 +1,68 @@
+title: 醋溜魚片
+summary: 鯛魚片炸至金黃後，與青椒、紅甜椒和黑木耳拌入糖醋醬汁。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 25
+tags: [家常菜]
+ingredients:
+  - { name: 鯛魚肉, amount: { value: 180, unit: g }, note: 切厚片 }
+  - { name: 青椒, amount: { value: 25, unit: g }, note: 洗淨切片 }
+  - { name: 紅甜椒, amount: { value: 25, unit: g }, note: 洗淨切片 }
+  - { name: 黑木耳, amount: { value: 25, unit: g }, note: 洗淨切片 }
+  - {
+      name: 鹽,
+      amount: { value: 1.25, unit: ml },
+      note: 醃料，約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 蛋白,
+      amount: { value: 15, unit: ml },
+      note: 醃料，約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 1.25, unit: ml },
+      note: 醃料，約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 料酒,
+      amount: { value: 5, unit: ml },
+      note: 醃料，約 1 茶匙,
+      group: 調味,
+    }
+  - { name: 糖醋汁, amount: { value: 0.5, unit: 杯 }, group: 調味 }
+  - {
+      name: 太白粉,
+      amount: { value: 60, unit: ml },
+      note: 來源調味料列 4 大匙，未說明使用時機,
+      group: 調味,
+    }
+  - { name: 裹粉用太白粉, note: 來源寫材料外，未標用量, group: 調味 }
+  - {
+      name: 太白粉水,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 沙拉油,
+      amount: { value: 2, unit: 碗 },
+      note: 炸魚用；來源寫材料外，另有少許炒菜用油,
+      group: 調味,
+    }
+  - { name: 炒菜用油, note: 少許；來源寫材料外, group: 調味 }
+steps:
+  - text: 鯛魚肉切厚片，加入拌勻的鹽、蛋白、白胡椒粉和料酒，醃約 2 分鐘。
+  - text: 青椒、紅甜椒和黑木耳洗淨切片。
+  - text: 鯛魚肉均勻裹上裹粉用太白粉，用手略捏緊。
+  - text: 鍋中倒入約 2 碗沙拉油，燒至約 180°C。以中火炸鯛魚肉約 2 分鐘，至表面金黃後撈起瀝油。
+  - text: 另鍋加少許炒菜用油，以大火炒青椒、紅甜椒和黑木耳。倒入糖醋汁煮滾，以太白粉水勾芡。
+  - text: 放回鯛魚肉快速炒勻，淋上香油。

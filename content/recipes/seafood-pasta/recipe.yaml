@@ -1,0 +1,59 @@
+title: 海鮮義大利麵
+summary: 海鮮與蔬菜加入番茄高湯燉煮，再拌入義大利麵和香料。
+servings: 2
+category: 主食
+draft: true
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 40
+tags: [義式料理, 麵食, 海鮮]
+ingredients:
+  - { name: 義大利直麵, amount: { value: 180, unit: g } }
+  - { name: 中卷, amount: { value: 1, unit: 尾 } }
+  - { name: 蝦仁, amount: { value: 120, unit: g } }
+  - { name: 蛤蜊, amount: { value: 150, unit: g } }
+  - { name: 青椒, amount: { value: 0.5, unit: 個 } }
+  - { name: 紅椒, amount: { value: 0.5, unit: 個 } }
+  - { name: 洋蔥, amount: { value: 0.5, unit: 個 } }
+  - { name: 番茄, amount: { value: 1, unit: 個 } }
+  - { name: 紅蘿蔔, note: 少許, group: 調味 }
+  - { name: 月桂葉, amount: { value: 1, unit: 片 }, group: 調味 }
+  - { name: 九層塔, note: 少許, group: 調味 }
+  - { name: 高湯, amount: { value: 300, unit: ml } }
+  - { name: 橄欖油, note: 少許, group: 調味 }
+  - {
+      name: 番茄醬,
+      amount: { value: 60, unit: ml },
+      note: 約 4 大匙,
+      group: 調味,
+    }
+  - {
+      name: 番茄糊,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 俄力岡, note: 少許, group: 調味 }
+  - { name: 義大利香料, note: 少許，與俄力岡分開使用, group: 調味 }
+  - { name: 鹽, amount: { value: 5, unit: ml }, note: 約 1 小匙, group: 調味 }
+  - {
+      name: 糖,
+      amount: { value: 12, unit: g },
+      note: 約 1 大匙，換算估值,
+      group: 調味,
+    }
+  - {
+      name: 白酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 奶油, note: 適量，來源未標數量, group: 調味 }
+  - { name: 蒜末, note: 少許，來源步驟提及但材料表未列, group: 調味 }
+steps:
+  - text: 義大利麵放入滾水煮約 8 分鐘，撈起備用。
+  - text: 中卷切段；蝦仁、蛤蜊洗淨。青椒、紅椒、洋蔥、番茄與紅蘿蔔切好備用。
+  - text: 鍋中加入橄欖油，放入海鮮炒至蛤蜊開口，淋白酒後先取出。
+  - text: 以奶油炒香蒜末、洋蔥、番茄和月桂葉，加入番茄醬、番茄糊、青椒、紅椒、紅蘿蔔與高湯煮開。
+  - text: 放入義大利麵、九層塔、俄力岡、義大利香料、鹽、糖和海鮮拌炒均勻。

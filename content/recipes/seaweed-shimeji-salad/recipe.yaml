@@ -1,0 +1,47 @@
+title: 海帶芽拌雪白菇
+summary: 雪白菇和海帶芽汆燙後，趁熱拌入薑絲、辣椒絲與醬汁，作為家常配菜。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - { name: 雪白菇, amount: { value: 120, unit: g }, note: 去蒂後剝散 }
+  - { name: 海帶芽, note: 來源未標用量, group: 調味 }
+  - { name: 薑, amount: { value: 10, unit: g }, note: 切絲 }
+  - { name: 辣椒, amount: { value: 10, unit: g }, note: 切絲 }
+  - {
+      name: 鰹魚醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 味醋,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 糖, note: 少許, group: 調味 }
+steps:
+  - text: 雪白菇去蒂後剝散，洗淨備用。
+    image:
+      src: ./step-1.webp
+      alt: 洗淨剝散的雪白菇盛在碗中，砧板上放著切除的菇蒂
+  - text: 煮一鍋水，放入雪白菇汆燙後撈起，再汆燙海帶芽。
+    image:
+      src: ./step-2.webp
+      alt: 汆燙後的雪白菇在瀝水籃中，海帶芽正在鍋內汆燙
+  - text: 趁熱把雪白菇、海帶芽、薑絲、辣椒絲和鰹魚醬油、味醋、糖拌勻。
+    image:
+      src: ./step-3.webp
+      alt: 碗中雪白菇、海帶芽、薑絲和辣椒絲已拌勻並裹上醬汁
+hero:
+  src: ./hero.webp
+  alt: 淺碗盛著海帶芽拌雪白菇，拌有薑絲與紅辣椒絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 雪白菇、海帶芽、薑絲與紅辣椒絲分開擺放，旁邊有鰹魚醬油、味醋和糖

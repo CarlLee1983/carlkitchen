@@ -1,0 +1,61 @@
+title: 洋蔥炒蛋
+summary: 先炒好雞蛋，再將洋蔥炒軟，兩者拌在一起，帶有黑胡椒味。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - { name: 洋蔥, amount: { value: 0.5, unit: 顆 }, note: 去皮切粗絲 }
+  - { name: 雞蛋, amount: { value: 3, unit: 顆 } }
+  - {
+      name: 沙拉油,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙，炒蛋用 2 大匙、炒洋蔥用 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 雞粉,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 黑胡椒粉,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 30, unit: ml }, note: 約 2 大匙, group: 調味 }
+steps:
+  - text: 將洋蔥去皮切成粗絲，雞蛋打散。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上的洋蔥粗絲與旁邊碗中的生蛋液
+  - text: 炒鍋燒熱後倒入 30 ml 沙拉油，加入雞蛋炒到凝固，先盛出。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋中已凝固並炒散的蛋塊
+  - text: 在原鍋倒入剩餘的 15 ml 沙拉油，放入洋蔥炒軟。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中的洋蔥絲已炒軟，表面略呈半透明
+  - text: 加入水略炒，再放入鹽、雞粉與黑胡椒粉拌勻，最後將炒好的雞蛋回鍋拌勻。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中的蛋塊與洋蔥絲混合均勻
+hero:
+  src: ./hero.webp
+  alt: 白色淺盤盛著混有洋蔥絲的金黃色炒蛋
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 半顆洋蔥與三顆雞蛋，旁邊分裝沙拉油、鹽、雞粉、黑胡椒粉與水

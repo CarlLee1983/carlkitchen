@@ -1,0 +1,83 @@
+title: 宮保雞丁
+summary: 雞腿肉先炸熟，再與宮保、蔥和蒜快炒，拌入酸甜兌汁、花生米和香油。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [家常菜]
+ingredients:
+  - { name: 雞腿肉, amount: { value: 400, unit: g } }
+  - { name: 蒜末, amount: { value: 5, unit: g } }
+  - { name: 蔥, amount: { value: 40, unit: g }, note: 切小段 }
+  - { name: 宮保, amount: { value: 5, unit: g } }
+  - { name: 花生米, amount: { value: 30, unit: ml }, note: 約 2 大匙 }
+  - { name: 雞蛋, amount: { value: 15, unit: ml }, note: 約 1 大匙，醃料用 }
+  - {
+      name: 食用油,
+      amount: { value: 530, unit: ml },
+      note: 醃料後拌入 15 ml、炸雞約 500 ml、快炒 15 ml,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃料用,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃料用,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，醃料用,
+      group: 調味,
+    }
+  - {
+      name: 白醋,
+      amount: { value: 10, unit: ml },
+      note: 約 2 茶匙，兌汁用,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 22.5, unit: ml },
+      note: 約 1.5 大匙，兌汁用,
+      group: 調味,
+    }
+  - {
+      name: 水,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，兌汁用,
+      group: 調味,
+    }
+  - {
+      name: 細糖,
+      amount: { value: 10, unit: ml },
+      note: 約 2 茶匙，兌汁用,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙，兌汁用,
+      group: 調味,
+    }
+  - {
+      name: 香油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 將雞腿肉表面交叉剁出約 0.5 公分深的刀痕，再切成小塊。加入醃料用的醬油、太白粉、米酒和雞蛋抓勻，醃 1 分鐘後拌入 15 ml 食用油。
+  - text: 將蔥切成小段。把白醋、兌汁用的醬油、水、細糖和太白粉調勻。
+  - text: 將約 500 ml 食用油加熱到約 150°C，放入雞腿肉，以中火拌開並炸約 2 分鐘至熟，撈起瀝油。
+  - text: 洗淨鍋子，加入 15 ml 食用油，以小火炒香宮保、蔥和蒜末。放入雞腿肉，轉大火快炒 10 秒。
+  - text: 邊炒邊淋入兌汁，炒勻後加入花生米與香油，再拌勻。

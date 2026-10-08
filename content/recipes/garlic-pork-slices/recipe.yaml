@@ -1,0 +1,68 @@
+title: 蒜泥白肉
+summary: 五花肉與薑片、蔥段同煮，切片後淋上帶烏醋的蒜泥醬。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 50
+tags: [家常菜]
+ingredients:
+  - {
+      name: 五花肉,
+      amount: { value: 600, unit: g },
+      note: 煮肉時水量須蓋過五花肉,
+    }
+  - { name: 薑片, amount: { value: 3, unit: 片 } }
+  - { name: 蔥段, amount: { value: 20, unit: g } }
+  - { name: 蒜泥, amount: { value: 10, unit: g }, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 7.5, unit: ml },
+      note: 約 1/2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油膏,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 2, unit: g },
+      note: 約 1/2 小匙,
+      group: 調味,
+    }
+  - { name: 烏醋, amount: { value: 5, unit: ml }, note: 約 1 小匙, group: 調味 }
+  - {
+      name: 冷開水,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 將蒜泥、醬油、醬油膏、細砂糖、烏醋和冷開水拌勻，放在一旁備用。
+    image:
+      src: ./step-1.webp
+      alt: 白色瓷碗中拌勻的深褐色蒜泥醬，可見細碎蒜泥
+  - text: 五花肉洗淨，與薑片、蔥段放進鍋中；倒入水，水量蓋過五花肉，煮到滾。
+    image:
+      src: ./step-2.webp
+      alt: 素色鍋中的整塊五花肉、三片薑片和蔥段浸在滾水中
+  - text: 轉小火，讓五花肉在鍋中煮約 30 分鐘。
+    image:
+      src: ./step-3.webp
+      alt: 素色鍋中的五花肉、薑片與蔥段浸在微滾的水中
+  - text: 熄火後讓五花肉留在鍋中燜約 5 分鐘，再取出。
+  - text: 將五花肉切片排盤，淋上拌好的蒜泥醬。
+    image:
+      src: ./step-5.webp
+      alt: 砧板上切成薄片的五花肉，旁邊白色瓷盤中排著肉片與蒜泥醬
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤中排著蒜泥白肉，五花肉片上淋有深褐色蒜泥醬
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一塊生五花肉、三片薑片、蔥段，以及分裝在六只小碟中的蒜泥、醬油、醬油膏、細砂糖、烏醋與少量冷開水

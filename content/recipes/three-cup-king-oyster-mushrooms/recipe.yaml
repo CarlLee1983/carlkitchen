@@ -1,0 +1,58 @@
+title: 三杯杏鮑菇
+summary: 杏鮑菇先炸到略帶金黃，再與薑、蒜仁、紅辣椒和醬汁炒至收乾，最後拌入九層塔。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 30
+tags: [家常菜]
+ingredients:
+  - { name: 杏鮑菇, amount: { value: 500, unit: g }, note: 切大塊 }
+  - { name: 薑, amount: { value: 50, unit: g }, note: 切片 }
+  - { name: 紅辣椒, amount: { value: 2, unit: 根 }, note: 剖半 }
+  - { name: 蒜仁, amount: { value: 40, unit: g } }
+  - { name: 九層塔, amount: { value: 10, unit: g }, note: 去粗莖後洗淨 }
+  - { name: 食用油, note: 炸杏鮑菇用，來源未標用量, group: 調味 }
+  - {
+      name: 胡麻油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 米酒, amount: { value: 50, unit: ml }, group: 調味 }
+  - {
+      name: 醬油膏,
+      amount: { value: 60, unit: ml },
+      note: 約 4 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 50, unit: ml }, group: 調味 }
+steps:
+  - text: 杏鮑菇切成大塊，紅辣椒縱切兩半，薑切片；九層塔摘掉粗莖後洗淨。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上切成大塊的杏鮑菇、薑片與紅辣椒，旁邊有洗淨的九層塔
+  - text: 將食用油加熱至約 160°C，下杏鮑菇以大火炸；表面略呈金黃色時撈出。
+    image:
+      src: ./step-2.webp
+      alt: 杏鮑菇塊在熱油中炸至表面略呈金黃色
+  - text: 炸完先把鍋洗淨，重新燒熱後加胡麻油；下蒜仁、薑和紅辣椒，用小火炒香。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋裡的蒜仁、薑片與紅辣椒正在胡麻油中拌炒
+  - text: 加入杏鮑菇、米酒、醬油膏與水，開大火煮滾後翻炒至湯汁收乾。
+    image:
+      src: ./step-4.webp
+      alt: 杏鮑菇在深色醬汁中翻炒，鍋底湯汁逐漸收乾
+  - text: 放入九層塔，稍微拌勻即可。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋中的杏鮑菇與新加入的九層塔葉拌在一起
+hero:
+  src: ./hero.webp
+  alt: 白色盤中盛著裹有深色醬汁的杏鮑菇塊，點綴九層塔
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 杏鮑菇、薑、紅辣椒、蒜仁和九層塔，旁邊分裝胡麻油、米酒、醬油膏與水

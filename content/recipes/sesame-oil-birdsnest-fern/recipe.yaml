@@ -1,0 +1,36 @@
+title: 麻油炒山蘇
+summary: 薑絲以胡麻油煸香，加入山蘇、枸杞、米酒和鹽快炒。
+servings: 3
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [家常菜, 蔬食]
+ingredients:
+  - { name: 山蘇, amount: { value: 300, unit: g }, note: 去硬梗洗淨瀝乾 }
+  - { name: 枸杞, amount: { value: 3, unit: g } }
+  - { name: 老薑, amount: { value: 20, unit: g }, note: 切絲 }
+  - {
+      name: 胡麻油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 山蘇去除硬梗，洗淨瀝乾；老薑切絲，枸杞洗淨。
+  - text: 鍋中加入胡麻油，以小火煸香薑絲。
+  - text: 加入山蘇、枸杞、米酒和鹽，翻炒約 30 秒至山蘇變軟。

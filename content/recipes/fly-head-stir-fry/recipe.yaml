@@ -1,0 +1,59 @@
+title: 蒼蠅頭
+summary: 韭菜花、豬絞肉與豆豉快炒，再加入皮蛋拌出鹹香下飯的家常菜。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 25
+tags: [家常菜]
+ingredients:
+  - { name: 韭菜花, amount: { value: 200, unit: g }, note: 切小段 }
+  - { name: 豬絞肉, amount: { value: 100, unit: g } }
+  - { name: 豆豉, amount: { value: 1, unit: 大匙 }, note: 泡冷水後瀝乾 }
+  - { name: 皮蛋, amount: { value: 1, unit: 顆 }, note: 去殼切丁 }
+  - { name: 大蒜, amount: { value: 2, unit: 粒 }, note: 切末 }
+  - { name: 辣椒, amount: { value: 1, unit: 條 }, note: 切片 }
+  - { name: 沙拉油, note: 適量, group: 調味 }
+  - {
+      name: 香油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 蠔油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙,
+      group: 調味,
+    }
+steps:
+  - text: 豆豉泡冷水約 15 分鐘後瀝乾；韭菜花切小段，大蒜切末、辣椒切片，皮蛋去殼切丁。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上放著韭菜花段、蒜末、辣椒片和皮蛋丁，旁邊有菜刀與一小碗豆豉
+  - text: 炒鍋加沙拉油燒熱，放入豬絞肉炒散，直到肉色轉白。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋中的豬絞肉炒散至變白，旁邊放著木鍋鏟
+  - text: 加入韭菜花、皮蛋、蒜末和辣椒翻炒，再放入瀝乾的豆豉、香油、蠔油與白胡椒粉炒勻。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋裡的韭菜花、皮蛋和豬絞肉加入豆豉與調味料拌炒
+  - text: 待材料與醬料均勻混合、韭菜花炒熟後即可起鍋。
+    image:
+      src: ./step-4.webp
+      alt: 炒熟的韭菜花、豬絞肉和皮蛋盛在白色盤中，豆豉與辣椒點綴其間
+hero:
+  src: ./hero.webp
+  alt: 白色淺盤盛著韭菜花豬絞肉與皮蛋，豆豉和辣椒均勻分布
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 韭菜花、豬絞肉、豆豉、皮蛋、大蒜和辣椒，以及分裝的沙拉油、香油、蠔油和白胡椒粉

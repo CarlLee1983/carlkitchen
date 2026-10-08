@@ -1,0 +1,53 @@
+title: 雙蛋燴青花菜
+summary: 青花菜汆燙後，淋上皮蛋與熟鹹蛋煮成的芡汁。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 20
+tags: [家常菜]
+ingredients:
+  - { name: 青花菜, amount: { value: 130, unit: g }, note: 去除老纖維，切小朵 }
+  - { name: 皮蛋, amount: { value: 1, unit: 顆 }, note: 去殼切小丁 }
+  - { name: 熟鹹蛋, amount: { value: 1, unit: 顆 }, note: 去殼切小丁 }
+  - { name: 蒜末, amount: { value: 5, unit: g } }
+  - { name: 水, amount: { value: 800, unit: ml }, note: 約量，汆燙用 }
+  - {
+      name: 鹽,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，汆燙用,
+      group: 調味,
+    }
+  - {
+      name: 沙拉油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 高湯, amount: { value: 100, unit: ml }, group: 調味 }
+  - {
+      name: 細糖,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 雞精粉,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 太白粉水,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，來源未列粉水比例,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 將青花菜去除老纖維，洗淨切成小朵。皮蛋和熟鹹蛋去殼，分別切成小丁。
+  - text: 將約 800 ml 水煮滾，加入鹽，放入青花菜汆燙約 1 分鐘，撈起瀝乾並盛盤。
+  - text: 洗淨鍋子，倒入沙拉油，以小火炒香蒜末。加入高湯、細糖、雞精粉、皮蛋和熟鹹蛋，煮至滾沸。
+  - text: 倒入太白粉水勾芡，拌入香油，再把芡汁淋在青花菜上。

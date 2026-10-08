@@ -1,0 +1,52 @@
+title: 家常燒豆腐
+summary: 板豆腐煎至兩面焦黃，再和豬肉絲、薑蔥及醬汁燒到湯汁略收。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [家常菜]
+ingredients:
+  - { name: 板豆腐, amount: { value: 300, unit: g }, note: 切約 1.5 公分厚片 }
+  - { name: 豬肉絲, amount: { value: 30, unit: g } }
+  - { name: 蔥絲, amount: { value: 10, unit: g } }
+  - { name: 薑絲, amount: { value: 10, unit: g } }
+  - { name: 紅辣椒絲, amount: { value: 5, unit: g } }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，分兩次各用 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 12, unit: g },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 75, unit: ml }, note: 約 5 大匙, group: 調味 }
+  - {
+      name: 香油,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 板豆腐切成約 1.5 公分厚片。鍋中加 15 ml 食用油，將板豆腐煎到兩面焦黃後取出。
+  - text: 鍋中再加 15 ml 食用油，以小火炒香薑絲、蔥絲和紅辣椒絲。
+  - text: 加入豬肉絲炒散、炒熟，再加醬油、細砂糖、米酒和水炒勻。
+  - text: 放回板豆腐，以小火煮約 2 分鐘至湯汁略收，淋上香油。

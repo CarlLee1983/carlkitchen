@@ -1,0 +1,53 @@
+title: 薑汁燒肉蓋飯
+summary: 薑泥與柴魚醬油煮成醬汁，再放入豬肉片煮熟，連同洋蔥和紅蘿蔔鋪在白飯上。
+servings: 1
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - { name: 豬肉片, amount: { value: 120, unit: g } }
+  - { name: 薑, amount: { value: 40, unit: g }, note: 磨成泥 }
+  - { name: 洋蔥, amount: { value: 60, unit: g }, note: 切絲 }
+  - { name: 紅蘿蔔, amount: { value: 20, unit: g }, note: 切絲 }
+  - { name: 白飯, amount: { value: 1, unit: 碗 }, note: 煮熟 }
+  - { name: 奶油, amount: { value: 5, unit: g }, group: 調味 }
+  - {
+      name: 味醂,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 柴魚醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 150, unit: ml }, group: 調味 }
+steps:
+  - text: 把薑磨成泥，洋蔥與紅蘿蔔分別切絲。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著洋蔥絲、紅蘿蔔絲和薑泥，旁邊有一把菜刀
+  - text: 鍋中放入奶油加熱融化，加入洋蔥絲和紅蘿蔔絲，以小火炒香。
+    image:
+      src: ./step-2.webp
+      alt: 平底鍋裡的洋蔥絲和紅蘿蔔絲以奶油拌炒，旁邊放著木鍋鏟
+  - text: 加入薑泥、柴魚醬油、水和味醂，轉中火煮至醬汁沸騰。
+    image:
+      src: ./step-3.webp
+      alt: 平底鍋中煮滾的薑泥醬汁混有洋蔥絲和紅蘿蔔絲
+  - text: 放入豬肉片並拌開，煮約 1 分鐘至肉色變白且熟透後關火，再將肉片和醬汁舀在白飯上。
+    image:
+      src: ./step-4.webp
+      alt: 白飯上鋪著煮熟的豬肉片、洋蔥絲和紅蘿蔔絲，淋有薑汁醬汁
+hero:
+  src: ./hero.webp
+  alt: 白色陶碗盛著白飯，上面鋪有豬肉片、洋蔥絲和紅蘿蔔絲，淋著薑汁醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 豬肉片、薑、洋蔥、紅蘿蔔、白飯，以及分裝的奶油、味醂、柴魚醬油和水

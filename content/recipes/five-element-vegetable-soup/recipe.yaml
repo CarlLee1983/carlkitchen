@@ -1,0 +1,35 @@
+title: 五行蔬菜湯
+summary: 紅白蘿蔔、牛蒡、乾香菇和白蘿蔔葉放入電鍋煮成蔬菜湯。
+servings: 4
+category: 湯
+draft: true
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [家常湯]
+ingredients:
+  - { name: 紅蘿蔔, amount: { value: 100, unit: g }, note: 去皮切小塊 }
+  - { name: 白蘿蔔, amount: { value: 150, unit: g }, note: 去皮切小塊 }
+  - { name: 白蘿蔔葉, amount: { value: 80, unit: g }, note: 洗淨切開 }
+  - { name: 牛蒡, amount: { value: 80, unit: g }, note: 去皮切片 }
+  - { name: 乾香菇, amount: { value: 10, unit: 朵 } }
+  - { name: 薑片, amount: { value: 10, unit: g } }
+  - { name: 水, amount: { value: 1000, unit: ml } }
+  - { name: 外鍋用水, amount: { value: 1, unit: 杯 }, note: 電鍋外鍋用 }
+  - {
+      name: 鹽,
+      amount: { value: 7.5, unit: ml },
+      note: 約 1 又 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 紹興酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 紅蘿蔔、白蘿蔔洗淨去皮切小塊，牛蒡去皮切片，白蘿蔔葉洗淨切開。
+  - text: 將紅蘿蔔、白蘿蔔、白蘿蔔葉、牛蒡、乾香菇、薑片、水和紹興酒放入電鍋內鍋。
+  - text: 外鍋加入 1 杯外鍋用水，蓋上鍋蓋按下開關，煮到開關跳起。加入鹽調味。

@@ -1,0 +1,76 @@
+title: 客家小炒
+summary: 五花肉與豆干炒出香氣，再拌入魷魚、蝦米及蒜苗、青蔥、芹菜。醬香濃郁，適合配飯。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 740
+tags: [家常菜]
+ingredients:
+  - {
+      name: 乾魷魚,
+      amount: { value: 1, unit: 尾 },
+      note: 加少許鹽泡水一晚，去除表面薄膜後切條,
+    }
+  - { name: 蝦米, amount: { value: 20, unit: g }, note: 泡發後瀝乾 }
+  - { name: 五花肉, amount: { value: 300, unit: g }, note: 洗淨切條 }
+  - { name: 豆干, amount: { value: 300, unit: g }, note: 洗淨切條 }
+  - { name: 蒜苗, amount: { value: 60, unit: g }, note: 切段，蒜白與蒜綠分開 }
+  - { name: 青蔥, amount: { value: 60, unit: g }, note: 切段，蔥白與蔥綠分開 }
+  - { name: 芹菜, amount: { value: 60, unit: g }, note: 切段 }
+  - { name: 辣椒, amount: { value: 10, unit: g }, note: 切絲 }
+  - {
+      name: 食用油,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 22.5, unit: ml },
+      note: 約 1 又 1/2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油膏,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙,
+      group: 調味,
+    }
+  - { name: 鹽, note: 少許, group: 調味 }
+  - { name: 糖, amount: { value: 4, unit: g }, note: 約 1 小匙, group: 調味 }
+  - { name: 白胡椒粉, note: 少許, group: 調味 }
+  - { name: 五香粉, note: 少許, group: 調味 }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 香油, note: 少許, group: 調味 }
+steps:
+  - text: 乾魷魚加少許鹽泡水一晚，撕去表面薄膜後切條；蝦米泡發瀝乾。五花肉與豆干洗淨切條；蒜苗、青蔥洗淨切段，白色與綠色部分分開。芹菜切段，辣椒切絲。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分放切條的魷魚、五花肉與豆干、泡發的蝦米，以及切好的蒜苗、青蔥、芹菜和辣椒絲，右側放著菜刀
+  - text: 在熱鍋中倒入食用油，先炒五花肉至表面油亮，再放入豆干炒到略帶焦色。
+    image:
+      src: ./step-2.webp
+      alt: 深色炒鍋裡，五花肉條表面油亮，豆干條略帶焦色，旁邊放著木鍋鏟
+  - text: 加入乾魷魚和蝦米炒香。
+    image:
+      src: ./step-3.webp
+      alt: 深色炒鍋裡，魷魚條和小蝦米與煎香的五花肉條、豆干條一起翻炒
+  - text: 放入蒜苗的蒜白、青蔥的蔥白與辣椒，倒入醬油、醬油膏、米酒和香油，撒入鹽、糖、白胡椒粉、五香粉，炒勻。
+  - text: 加入蒜苗的蒜綠、青蔥的蔥綠及芹菜，翻炒至味道拌勻後盛起。
+    image:
+      src: ./step-5.webp
+      alt: 深色炒鍋裡，五花肉、豆干、魷魚、蝦米、辣椒與蒜苗、青蔥和芹菜翻炒拌勻
+hero:
+  src: ./hero.webp
+  alt: 橢圓白色陶瓷盤盛著客家小炒，可見五花肉條、豆干條、捲曲的魷魚條、小蝦米及蒜苗、青蔥、芹菜與辣椒絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 盤中分放乾魷魚、蝦米、五花肉、豆干、蒜苗、青蔥、芹菜和辣椒，前方小碟盛著油、醬料與粉狀調味料

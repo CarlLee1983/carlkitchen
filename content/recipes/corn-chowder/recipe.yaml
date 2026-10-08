@@ -1,0 +1,61 @@
+title: 玉米濃湯
+summary: 玉米醬與高湯煮開後勾薄芡，關火再拌入蛋液，湯中帶有玉米顆粒和蛋花。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常湯]
+ingredients:
+  - { name: 玉米醬, amount: { value: 1, unit: 罐 } }
+  - { name: 雞蛋, amount: { value: 1, unit: 顆 } }
+  - { name: 高湯, amount: { value: 600, unit: ml } }
+  - {
+      name: 鹽,
+      amount: { value: 1.5, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 1, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 0.5, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 太白粉水,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 將雞蛋打散成蛋液。
+    image:
+      src: ./step-1.webp
+      alt: 素色瓷碗裡盛著打散的黃色蛋液
+  - text: 將高湯與玉米醬倒入湯鍋煮開，轉小火，拌入鹽、細砂糖和白胡椒粉。
+    image:
+      src: ./step-2.webp
+      alt: 敞口湯鍋裡，帶玉米顆粒的黃色湯汁正微微冒泡
+  - text: 再次煮開後倒入太白粉水，攪拌至湯汁略為濃稠，然後熄火。
+    image:
+      src: ./step-3.webp
+      alt: 敞口湯鍋裡，玉米湯已呈薄芡，表面可見玉米顆粒
+  - text: 將蛋液倒入湯中，輕輕拌開成蛋花。
+    image:
+      src: ./step-4.webp
+      alt: 敞口湯鍋裡，黃色玉米湯中散開細條狀的蛋花
+hero:
+  src: ./hero.webp
+  alt: 離火的素色敞口湯鍋盛著玉米濃湯，黃色湯面可見玉米顆粒與細條狀蛋花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一罐玉米醬、一顆雞蛋與一壺高湯，前方小碟分裝鹽、細砂糖、白胡椒粉和太白粉水

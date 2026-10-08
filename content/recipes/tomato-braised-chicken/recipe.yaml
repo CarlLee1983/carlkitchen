@@ -1,0 +1,32 @@
+title: 番茄燒雞肉
+summary: 雞腿塊與番茄、洋蔥同煮，番茄醬、糖和水形成燒煮醬汁。
+servings: 4
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 35
+tags: [家常菜]
+ingredients:
+  - {
+      name: 台灣棒棒腿,
+      amount: { value: 500, unit: g },
+      note: 剁成約 2 公分的小塊,
+    }
+  - { name: 番茄, amount: { value: 200, unit: g }, note: 切塊 }
+  - { name: 洋蔥, amount: { value: 60, unit: g }, note: 切塊 }
+  - { name: 蒜末, amount: { value: 10, unit: g } }
+  - {
+      name: 番茄醬,
+      amount: { value: 60, unit: ml },
+      note: 約 4 大匙,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 12, unit: g }, note: 約 1 大匙, group: 調味 }
+  - { name: 水, amount: { value: 200, unit: ml }, group: 調味 }
+  - { name: 炒油, note: 少許, group: 調味 }
+steps:
+  - text: 台灣棒棒腿剁成約 2 公分的小塊，番茄和洋蔥切塊。
+  - text: 鍋中放少許炒油，以中小火炒香洋蔥和蒜末；加入台灣棒棒腿，炒到表面變白。
+  - text: 加入番茄、番茄醬、糖和水，蓋上鍋蓋轉小火煮約 20 分鐘。

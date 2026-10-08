@@ -1,0 +1,68 @@
+title: 鹽酥雞
+summary: 雞胸肉醃過後裹地瓜粉炸到金黃，起鍋前放入九層塔，最後撒胡椒鹽與辣椒粉。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: false
+vegetable: false
+protein: true
+timeMinutes: 50
+tags: [家常菜]
+ingredients:
+  - {
+      name: 雞胸肉,
+      amount: { value: 0.5, unit: 塊 },
+      note: 去皮去骨，切成拇指大小,
+    }
+  - { name: 蔥末, amount: { value: 20, unit: g } }
+  - { name: 薑末, amount: { value: 10, unit: g } }
+  - { name: 蒜末, amount: { value: 40, unit: g } }
+  - { name: 九層塔, amount: { value: 100, unit: g }, note: 洗淨瀝乾，剪去粗梗 }
+  - { name: 地瓜粉, amount: { value: 100, unit: g } }
+  - {
+      name: 五香粉,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙，醃汁用,
+      group: 調味,
+    }
+  - {
+      name: 糖,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃汁用,
+      group: 調味,
+    }
+  - {
+      name: 味精,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，醃汁用,
+      group: 調味,
+    }
+  - {
+      name: 醬油膏,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃汁用,
+      group: 調味,
+    }
+  - {
+      name: 小蘇打,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙，醃汁用,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 50, unit: ml }, note: 醃汁用, group: 調味 }
+  - {
+      name: 料理米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃汁用,
+      group: 調味,
+    }
+  - { name: 食用油, note: 炸油，來源未列用量, group: 調味 }
+  - { name: 胡椒鹽, note: 適量；來源前後各列一次，僅明示起鍋前撒, group: 調味 }
+  - { name: 辣椒粉, note: 適量，起鍋前撒, group: 調味 }
+steps:
+  - text: 將雞胸肉去皮去骨，切成約拇指大小。九層塔洗淨瀝乾，剪去粗梗。
+  - text: 把蔥末、薑末、蒜末、五香粉、糖、味精、醬油膏、小蘇打、水與料理米酒放入果汁機，攪打約 30 秒成醃汁。
+  - text: 將雞胸肉放入醃汁，醃約 30 分鐘。
+  - text: 將雞胸肉均勻裹上地瓜粉，再放入粗孔篩輕搖，篩掉多餘的粉。
+  - text: 把食用油加熱至約 150°C，放入雞胸肉炸約 2 分鐘，直到表面金黃酥脆。加入九層塔，約 2 秒後一同撈起瀝油。
+  - text: 撒上胡椒鹽與辣椒粉。

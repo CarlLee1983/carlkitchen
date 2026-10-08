@@ -1,0 +1,31 @@
+title: 滷雞腿
+summary: 蔥薑爆香後煮出滷汁，再放入雞腿以小火煮熟並燜入味。
+servings: 4
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 50
+tags: [家常菜, 滷味]
+ingredients:
+  - { name: 雞腿, amount: { value: 4, unit: 支 } }
+  - { name: 蔥段, amount: { value: 30, unit: g } }
+  - { name: 薑片, amount: { value: 20, unit: g } }
+  - { name: 市售滷包, amount: { value: 1, unit: 包 } }
+  - {
+      name: 沙拉油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，來源步驟有列，材料表未列,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 700, unit: ml } }
+  - { name: 米酒, amount: { value: 50, unit: ml } }
+  - { name: 醬油, amount: { value: 200, unit: ml } }
+  - { name: 糖, amount: { value: 30, unit: g } }
+steps:
+  - text: 雞腿洗淨、瀝乾。
+  - text: 熱鍋加入沙拉油，放入蔥段和薑片爆香至微焦，再移入湯鍋。
+  - text: 加入滷包、水、米酒、醬油和糖煮滾，小火煮約 5 分鐘至香氣散出。
+  - text: 放入雞腿煮開，轉小火保持微滾，開蓋煮約 5 分鐘。
+  - text: 蓋上鍋蓋後關火，燜約 20 分鐘再取出雞腿。
