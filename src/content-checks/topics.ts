@@ -6,6 +6,7 @@ import {
   TOPIC_ID_PATTERN,
 } from "../content/topic-schema.ts";
 import { parseTopicSourceRecord } from "../content/topic-sources.ts";
+import { homeTopicIssues } from "../utils/home-topics.ts";
 import { checkHeroAlt, checkImageFile } from "./images.ts";
 import {
   listDirectories,
@@ -421,6 +422,16 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
   const issues = [...sources.issues];
   const draftIds: string[] = [];
   const topics = ids.map((id) => ({ id, ...readTopic(input.topicsDir, id) }));
+  issues.push(
+    ...homeTopicIssues(
+      topics.flatMap(({ id, topic }) => (topic ? [{ id, ...topic }] : [])),
+    ).map(({ id, message }) => ({
+      topic: id,
+      file: join(input.topicsDir, id, "topic.md"),
+      field: "homeRecommendation",
+      message,
+    })),
+  );
   const published = {
     recipes: new Set(input.publicRecipeIds),
     ingredients: new Set(input.publicIngredientIds),

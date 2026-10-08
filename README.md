@@ -39,6 +39,24 @@ content/recipes/tomato-egg/
 - `draft: true` 的菜譜與食材條目只在 `pnpm dev` 看得到，正式建置不輸出草稿頁。高麗菜、空心菜、青花菜、米酒、蔥、薑、蒜、蝦米與醬油已經站主逐篇審閱，可在正式建置開啟各自條目。秋葵、醬油膏與素蠔油的草稿文字也已審閱，仍須等有對應的已發布菜譜後再送審發布。
 - 測試與 e2e 使用 `tests/fixtures/recipes/` 和 `tests/fixtures/ingredients/`，與正式內容分開。`pnpm build && pnpm check:content` 檢查內容與輸出；食材條目不進入目前只收錄菜譜的站內搜尋索引。
 
+## 首頁專題推薦
+
+首頁一次顯示一篇「本期專題」，檔期設定寫在已發布專題的 `topic.md` frontmatter。常青備選加 `homeFallback: true`（全站最多一篇），目前指定〈備菜與預處理〉。推薦檔期使用下列欄位；順位數字越小越優先，不能與其他專題重複。
+
+```yaml
+homeRecommendation:
+  kind: recurring
+  start: "11-01"
+  end: "01-31"
+  priority: 2
+```
+
+`recurring` 每年重用月日，支援跨年且包含起訖日。特定年度的節慶改用 `kind: dated`，`start`、`end` 都填加引號的完整日期，例如 `"2026-11-01"`；結束日不得早於開始日。每篇先安排一個檔期，草稿不加入有效推薦。只在閏年存在的 2/29 可用完整日期安排。
+
+瀏覽器開啟首頁時依台北日期選題；沒有當期專題就顯示常青備選，兩者皆無則隱藏整區。未執行 JavaScript 時顯示常青備選；裝置時間錯誤可能選錯檔期，已開啟頁面不會在午夜立即換題。改 frontmatter 需經正常審閱與發布，已發布的檔期跨季切換不需重新部署。
+
+菜譜頁的「相關專題」由專題 `relatedRecipes` 自動反查，最多顯示三篇已發布文章，依發布日期由新到舊排序，不需在菜譜重複設定。回滾首頁推薦可移除 `homeRecommendation`／`homeFallback`，保留文章與網址；架構取捨見 [ADR 0006](docs/adr/0006-browser-topic-scheduling.md)。
+
 ## 部署與回滾
 
 推送 `main` 或手動觸發（手動觸發也只部署 `main`，選其他分支會跳過）時，`.github/workflows/deploy.yml` 依序執行：與 CI 相同的必要檢查（共用 `.github/actions/verify`，PR 的 job 名稱仍是 `verify`）、以正式內容重新建置、`pnpm check:content --launch`（候選池門檻：非湯料理 ≥ 12、湯 ≥ 3），最後 `wrangler deploy`。任一步驟失敗就不部署；未達門檻時日誌會列出缺額，這不影響合入。沒有排程，並行部署排隊、不互相取消。網站只在 `carlkitchen.gravito.dev` 提供（`wrangler.jsonc` 已關閉 workers.dev 與預覽網址）。部署用的 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID` 存在儲存庫 secrets。

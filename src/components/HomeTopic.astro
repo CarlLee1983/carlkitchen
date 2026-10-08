@@ -1,0 +1,145 @@
+---
+import Illustration from "./Illustration.astro";
+import type { TopicEntry } from "../utils/topic-entries";
+
+interface Props {
+  topics: TopicEntry[];
+}
+const topics = Astro.props.topics.filter(
+  (topic) =>
+    !topic.data.draft &&
+    (topic.data.homeFallback || topic.data.homeRecommendation),
+);
+const fallback = topics.find((topic) => topic.data.homeFallback);
+const candidates = topics.map((topic) => ({
+  id: topic.id,
+  homeFallback: topic.data.homeFallback,
+  homeRecommendation: topic.data.homeRecommendation,
+}));
+---
+
+{
+  topics.length > 0 && (
+    <section
+      class="home-topic"
+      aria-label="本期專題"
+      data-home-topic
+      hidden={!fallback}
+    >
+      <p class="kicker">本期專題</p>
+      <div data-home-topic-current>
+        {fallback && (
+          <a href={`/topics/${fallback.id}/`}>
+            <Illustration
+              image={fallback.data.hero!}
+              sizes="64px"
+              widths={[128]}
+            />
+            <span class="copy">
+              <strong>{fallback.data.title}</strong>
+              <span>{fallback.data.summary}</span>
+            </span>
+          </a>
+        )}
+      </div>
+      {topics.map((topic) => (
+        <template data-home-topic-slot={topic.id}>
+          <a href={`/topics/${topic.id}/`}>
+            <Illustration
+              image={topic.data.hero!}
+              sizes="64px"
+              widths={[128]}
+            />
+            <span class="copy">
+              <strong>{topic.data.title}</strong>
+              <span>{topic.data.summary}</span>
+            </span>
+          </a>
+        </template>
+      ))}
+      <script
+        type="application/json"
+        data-home-topic-candidates
+        set:html={JSON.stringify(candidates).replace(/</g, "\\u003c")}
+      />
+    </section>
+  )
+}
+
+<script>
+  import { selectHomeTopic, type HomeTopic } from "../utils/home-topics";
+  const section = document.querySelector<HTMLElement>("[data-home-topic]");
+  const data = section?.querySelector(
+    "[data-home-topic-candidates]",
+  )?.textContent;
+  if (section && data) {
+    const candidates: HomeTopic[] = JSON.parse(data);
+    const selected = selectHomeTopic(candidates);
+    const template = [
+      ...section.querySelectorAll<HTMLTemplateElement>(
+        "[data-home-topic-slot]",
+      ),
+    ].find((slot) => slot.dataset.homeTopicSlot === selected);
+    const current = section.querySelector("[data-home-topic-current]");
+    if (template && current) {
+      current.replaceChildren(template.content.cloneNode(true));
+      section.hidden = false;
+    } else {
+      section.hidden = true;
+    }
+  }
+</script>
+
+<style>
+  .home-topic {
+    margin-top: 1rem;
+    border-top: 1px solid var(--line);
+    padding-top: 0.5rem;
+  }
+  .home-topic[hidden] {
+    display: none;
+  }
+  .kicker {
+    margin: 0 0 0.25rem;
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+  .home-topic a {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    height: 48px;
+    text-decoration: none;
+  }
+  .home-topic :global(figure) {
+    flex: 0 0 64px;
+    margin: 0;
+  }
+  .home-topic :global(img) {
+    display: block;
+    width: 64px;
+    height: 43px;
+    object-fit: cover;
+  }
+  .copy {
+    display: block;
+    min-width: 0;
+  }
+  .copy strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+  }
+  .copy > span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+  }
+</style>

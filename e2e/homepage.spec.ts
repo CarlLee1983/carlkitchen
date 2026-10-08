@@ -406,7 +406,9 @@ test("手機只保留導覽列的配菜入口，較寬畫面保留搜尋區入�
   await expect(page).toHaveURL(/\/meal\/$/);
 });
 
-test("手機搜尋、篩選與菜譜連結可依畫面順序用鍵盤操作", async ({ page }) => {
+test("手機搜尋、專題、篩選與菜譜連結可依畫面順序用鍵盤操作", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   const search = page.getByRole("searchbox");
@@ -417,6 +419,12 @@ test("手機搜尋、篩選與菜譜連結可依畫面順序用鍵盤操作", as
   const firstRecipe = rows(page).first().getByRole("link");
   await search.focus();
   await expect(search).toBeFocused();
+  await page.keyboard.press("Tab");
+  const featured = page
+    .getByRole("region", { name: "本期專題" })
+    .getByRole("link");
+  await expect(featured).toBeFocused();
+  await expectFocusRing(featured);
   await page.keyboard.press("Tab");
   await expect(firstFilter).toBeFocused();
   await expectFocusRing(firstFilter);

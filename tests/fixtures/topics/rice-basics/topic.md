@@ -2,6 +2,11 @@
 title: 煮飯的基本功
 summary: 洗米、水量與燜飯的幾個關鍵。
 draft: false
+homeRecommendation:
+  kind: dated
+  start: "2026-11-01"
+  end: "2026-11-03"
+  priority: 1
 publishedAt: 2026-08-15
 hero:
   src: hero.webp

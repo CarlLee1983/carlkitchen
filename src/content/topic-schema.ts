@@ -1,5 +1,6 @@
 import { z } from "astro/zod";
 import { httpUrl } from "./http-url.ts";
+import { homeRecommendationSchema } from "./home-recommendation.ts";
 
 /** 專題識別值（資料夾名即網址 slug）：格式規則和菜譜相同。 */
 export const TOPIC_ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -20,6 +21,8 @@ export function createTopicSchema<Image extends z.ZodType>(image: Image) {
       draft: z.boolean(),
       // 逐篇啟用；未指定的既有專題維持原本的閱讀版面。
       editorialLayout: z.boolean().default(false),
+      homeFallback: z.boolean().default(false),
+      homeRecommendation: homeRecommendationSchema.optional(),
       publishedAt: z.coerce.date(),
       hero: z.object({ src: image, alt: nonEmpty }).optional(),
       relatedRecipes: z.array(contentId),

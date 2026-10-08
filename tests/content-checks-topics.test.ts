@@ -103,6 +103,43 @@ after(() => {
 });
 
 describe("專題內容檢查", () => {
+  it("首頁推薦設定在內容檢查也拒絕草稿與多個常青備選", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: [], ingredients: [] }).replace(
+        "draft: false",
+        "draft: true\nhomeFallback: true",
+      ),
+    );
+    let issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some(
+        (issue) =>
+          issue.topic === "summer-salads" &&
+          issue.message.includes("只能指定已發布"),
+      ),
+    );
+    s.write(
+      s.file,
+      topic({ recipes: [], ingredients: [] }).replace(
+        "draft: false",
+        "draft: false\nhomeFallback: true",
+      ),
+    );
+    const other = join(s.root, "topics/other/topic.md");
+    s.write(
+      other,
+      topic({ recipes: [], ingredients: [] }).replace(
+        "draft: false",
+        "draft: false\nhomeFallback: true",
+      ),
+    );
+    issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some((issue) => issue.message.includes("常青備選只能有一篇")),
+    );
+  });
   describe("Markdown 內文圖片", () => {
     const withImages = (s: ReturnType<typeof scenario>, body: string) =>
       s.write(s.file, topic({ recipes: [], ingredients: [] }) + body);

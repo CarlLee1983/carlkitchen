@@ -1,0 +1,41 @@
+title: 麻油雞
+summary: 老薑用麻油煸炒，再加入土雞、米酒與水燉煮。雞肉煮到軟爛後，蓋鍋浸泡。
+servings: 6
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 85
+tags: [家常菜]
+ingredients:
+  - { name: 土雞, amount: { value: 1350, unit: g }, note: 帶骨肉塊 }
+  - { name: 老薑, amount: { value: 150, unit: g }, note: 切片 }
+  - { name: 水, amount: { value: 500, unit: ml } }
+  - { name: 麻油, amount: { value: 50, unit: g }, group: 調味 }
+  - { name: 米酒, amount: { value: 500, unit: ml }, group: 調味 }
+  - { name: 鹽, amount: { value: 2.5, unit: ml }, note: 1/2 茶匙, group: 調味 }
+steps:
+  - text: 把老薑洗乾淨，再切成片。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著一堆切好的老薑片，旁邊是一把菜刀
+  - text: 將老薑與麻油一起放進鍋裡，開小火煸炒，直到薑片邊緣略為捲起。
+    image:
+      src: ./step-2.webp
+      alt: 雙耳湯鍋底部的老薑片邊緣略為捲起，薑片間可見少量麻油與鍋底
+  - text: 放入土雞肉塊，炒到表面轉白。
+    image:
+      src: ./step-3.webp
+      alt: 雙耳湯鍋中有表面轉白的帶骨土雞塊和老薑片，尚未加入湯水
+  - text: 倒入米酒和水，煮滾後改小火燉煮約 40 分鐘，直到雞骨突出、雞肉軟爛。
+    image:
+      src: ./step-4.webp
+      alt: 雙耳湯鍋中的帶骨土雞塊與老薑片浸在金黃色湯裡，湯面邊緣冒著細小氣泡
+  - text: 加入鹽調味，蓋好鍋蓋，讓雞肉在湯裡浸泡約 10 至 15 分鐘。
+hero:
+  src: ./hero.webp
+  alt: 敞口雙耳湯鍋盛著金黃色麻油雞湯，湯面有帶骨土雞塊、老薑片與細小油珠
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤生的帶骨土雞塊、一堆老薑片、一碟麻油、一碟鹽，以及兩壺分開裝的水與米酒

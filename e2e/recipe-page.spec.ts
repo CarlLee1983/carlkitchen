@@ -66,6 +66,27 @@ test("每張料理圖都有替代文字，且不加圖說", async ({ page }) => 
   }
 });
 
+test("相關專題列出引用這道菜的已發布文章與短介，不納入菜譜搜尋內容", async ({
+  page,
+}) => {
+  await page.goto(url);
+  const related = page.getByRole("region", { name: "相關專題" });
+  await expect(
+    related.getByRole("link", { name: "夏天的涼拌菜" }),
+  ).toHaveAttribute("href", "/topics/summer-salads/");
+  await expect(related).toContainText("三種十分鐘內完成的涼拌做法。");
+  await expect(related.getByRole("link")).toHaveCount(1);
+  await expect(related.locator("[data-pagefind-body]")).toHaveCount(0);
+
+  await page.goto("/recipes/egg-drop-soup/");
+  await expect(
+    page.getByRole("region", { name: "相關專題" }).getByRole("link"),
+  ).toHaveAttribute("href", "/topics/rice-basics/");
+
+  await page.goto("/recipes/fried-noodles/");
+  await expect(page.getByRole("region", { name: "相關專題" })).toHaveCount(0);
+});
+
 test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版面一致", async ({
   page,
 }) => {
