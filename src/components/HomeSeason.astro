@@ -1,9 +1,10 @@
 ---
-import type { ImageMetadata } from "astro";
+import { getCollection } from "astro:content";
 import HomeTopic from "./HomeTopic.astro";
 import Illustration from "./Illustration.astro";
 import { buildSolarTermSchedule } from "../utils/solar-term-schedule";
 import { inlineJson } from "../utils/inline-json";
+import { solarTermIllustration } from "../utils/solar-term-art";
 import { solarTermArt, type SolarTermName } from "../utils/solar-terms";
 import type { TopicEntry } from "../utils/topic-entries";
 
@@ -11,17 +12,11 @@ interface Props {
   topics: TopicEntry[];
 }
 
-const art = import.meta.glob<{ default: ImageMetadata }>(
-  "../assets/solar-terms/*.webp",
-  { eager: true },
-);
-const illustration = (name: SolarTermName) => {
-  const image = art[`../assets/solar-terms/${solarTermArt[name]}.webp`];
-  if (!image) throw new Error(`節氣「${name}」缺少插畫`);
-  return { src: image.default, alt: `${name}節氣插畫` };
-};
 const names = Object.keys(solarTermArt) as SolarTermName[];
 const schedule = buildSolarTermSchedule();
+// 空集合規則：沒有節氣資料就沒有總覽頁，節氣列也不加連結。
+const linked = (await getCollection("solarTerms")).length > 0;
+const Row = linked ? "a" : "div";
 ---
 
 {/* 專題在上、節氣在下；兩列都隱藏時整區不顯示。 */}
@@ -32,11 +27,15 @@ const schedule = buildSolarTermSchedule();
     /* 節氣依讀者當下時間由腳本挑選，靜態輸出不預填，免得停在建置當下的節氣；
        取捨同 docs/adr/0006-browser-topic-scheduling.md。 */
   }
-  <div class="term" data-solar-term hidden></div>
+  <Row class="term" data-solar-term hidden />
   {
     names.map((name) => (
       <template data-solar-term-slot={name}>
-        <Illustration image={illustration(name)} sizes="64px" width={128} />
+        <Illustration
+          image={solarTermIllustration(name)}
+          sizes="64px"
+          width={128}
+        />
         <span class="copy">
           <strong>{name}</strong>
           <span>
@@ -60,7 +59,11 @@ const schedule = buildSolarTermSchedule();
     formatSolarTermTime,
     solarTermSourceLabel,
   } from "../utils/solar-term-display";
-  import { selectSolarTerm } from "../utils/solar-terms";
+  import {
+    selectSolarTerm,
+    solarTermArt,
+    type SolarTermName,
+  } from "../utils/solar-terms";
   const row = document.querySelector<HTMLElement>("[data-solar-term]");
   const data = document.querySelector(
     "[data-solar-term-schedule]",
@@ -80,6 +83,9 @@ const schedule = buildSolarTermSchedule();
     content.querySelector("[data-solar-term-source]")!.textContent =
       solarTermSourceLabel(selected.source);
     row.replaceChildren(content);
+    if (row instanceof HTMLAnchorElement) {
+      row.href = `/solar-terms/#${solarTermArt[selected.name as SolarTermName]}`;
+    }
     row.hidden = false;
   }
 </script>
@@ -107,6 +113,13 @@ const schedule = buildSolarTermSchedule();
     align-items: center;
     height: 48px;
     margin-top: 0.5rem;
+  }
+  a.term {
+    color: inherit;
+    text-decoration: none;
+  }
+  a.term:hover strong {
+    text-decoration: underline;
   }
   .term[hidden] {
     display: none;

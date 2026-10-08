@@ -7,7 +7,14 @@ import { topicMarkdown } from "./src/markdown/topic-markdown.ts";
 const publicPage = (page) => {
   const path = new URL(page).pathname;
   return (
-    ["/", "/about/", "/meal/", "/ingredients/", "/topics/"].includes(path) ||
+    [
+      "/",
+      "/about/",
+      "/meal/",
+      "/ingredients/",
+      "/topics/",
+      "/solar-terms/",
+    ].includes(path) ||
     /^\/(?:recipes|ingredients|topics)\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/.test(path)
   );
 };

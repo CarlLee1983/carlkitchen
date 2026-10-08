@@ -1,5 +1,6 @@
 // 內容與建置輸出檢查：node --experimental-strip-types scripts/check-content.ts [--launch] [--dist <目錄>]
 // 內容根目錄由 RECIPES_DIR 決定（同內容集合），來源紀錄目錄由 SOURCES_DIR 決定，專題目錄由 TOPICS_DIR、專題來源紀錄由 TOPIC_SOURCES_DIR 決定。
+// 節氣目錄 SOLAR_TERMS_DIR（預設 content/solar-terms）與節氣來源紀錄 SOLAR_TERM_SOURCES_DIR（預設 content/solar-term-sources）尚未納入檢查。
 import { parseArgs } from "node:util";
 import { formatIssue } from "../src/content-checks/issue.ts";
 import { runContentChecks } from "../src/content-checks/run.ts";

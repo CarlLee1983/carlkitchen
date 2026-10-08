@@ -3,7 +3,13 @@ import { sizesSlot } from "./image-helpers";
 
 // 各頁插畫的 sizes 不得低估實際顯示寬度，否則瀏覽器挑太小的圖、畫面模糊。
 // 高估只是多下載，由首頁與菜譜頁的 ±1px 測試在代表寬度把關。
-const pages = ["/", "/recipes/tomato-egg/", "/about/", "/topics/rice-basics/"];
+const pages = [
+  "/",
+  "/recipes/tomato-egg/",
+  "/about/",
+  "/topics/rice-basics/",
+  "/solar-terms/",
+];
 const widths = [360, 390, 640, 651, 800, 1023, 1024, 1366];
 
 for (const path of pages) {

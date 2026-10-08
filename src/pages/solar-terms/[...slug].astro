@@ -1,0 +1,131 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+import Illustration from "../../components/Illustration.astro";
+import Base from "../../layouts/Base.astro";
+import { solarTermIllustration } from "../../utils/solar-term-art";
+import { groupSolarTermsBySeason } from "../../utils/solar-term-sections";
+import type { SolarTermName } from "../../utils/solar-terms";
+
+// 用 rest 參數才能在沒有節氣資料時一頁都不產生（空集合規則）；有資料時只輸出 /solar-terms/。
+export async function getStaticPaths() {
+  const sections = groupSolarTermsBySeason(await getCollection("solarTerms"));
+  return sections.length > 0
+    ? [{ params: { slug: undefined }, props: { sections } }]
+    : [];
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { sections } = Astro.props;
+---
+
+<Base title="二十四節氣" description="依春夏秋冬看二十四節氣的插畫與簡短說明。">
+  <!--
+    Pagefind 索引範圍：整個內容區；插畫替代文字由 Illustration 排除。
+  -->
+  <div class="solar-terms" data-pagefind-body>
+    <header class="intro">
+      <p class="eyebrow">SOLAR TERMS</p>
+      <h1>二十四節氣</h1>
+      <p class="lead">從立春到大寒，依春夏秋冬看一年的時節變化。</p>
+    </header>
+
+    {
+      sections.map(({ season, terms }) => (
+        <section aria-labelledby={`season-${season}`}>
+          <h2 id={`season-${season}`}>{season}季</h2>
+          <ul>
+            {terms.map((term) => (
+              <li id={term.id}>
+                <Illustration
+                  image={solarTermIllustration(term.data.name as SolarTermName)}
+                  sizes="(max-width: 650px) 88px, 192px"
+                  widths={[88, 176, 192, 384]}
+                />
+                <div class="term-copy">
+                  <h3>{term.data.name}</h3>
+                  <p>{term.data.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .solar-terms {
+    max-width: 54rem;
+    padding: 1rem 0 3rem;
+  }
+  .intro {
+    margin-bottom: 3rem;
+  }
+  .eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+  .lead {
+    max-width: 36rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+  }
+  section + section {
+    margin-top: 3rem;
+  }
+  h2 {
+    margin: 0 0 1rem;
+    font-size: 1.75rem;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    list-style: none;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem 0;
+  }
+  li :global(figure.illustration) {
+    margin: 0;
+  }
+  .term-copy {
+    min-width: 0;
+  }
+  h3 {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+  .term-copy p {
+    margin: 0;
+    color: var(--ink-soft);
+    overflow-wrap: anywhere;
+  }
+  @media (max-width: 650px) {
+    .solar-terms {
+      padding-top: 0;
+    }
+    .intro {
+      margin-bottom: 2rem;
+    }
+    li {
+      grid-template-columns: 5.5rem minmax(0, 1fr);
+      gap: 1rem;
+    }
+  }
+</style>

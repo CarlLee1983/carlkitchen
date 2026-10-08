@@ -27,6 +27,17 @@ export const solarTermArt = {
 } as const;
 export type SolarTermName = keyof typeof solarTermArt;
 
+/** 節氣總覽的四季分組，從立春排起；季節只在這裡定義，節氣資料不重複記錄。 */
+export const solarTermSeasons = [
+  { season: "春", names: ["立春", "雨水", "驚蟄", "春分", "清明", "穀雨"] },
+  { season: "夏", names: ["立夏", "小滿", "芒種", "夏至", "小暑", "大暑"] },
+  { season: "秋", names: ["立秋", "處暑", "白露", "秋分", "寒露", "霜降"] },
+  { season: "冬", names: ["立冬", "小雪", "大雪", "冬至", "小寒", "大寒"] },
+] as const satisfies readonly {
+  season: string;
+  names: readonly SolarTermName[];
+}[];
+
 export interface SolarTerm {
   /** 交節日期（臺灣時間），YYYY-MM-DD */
   date: string;
