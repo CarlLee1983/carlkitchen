@@ -10,7 +10,7 @@
 - 菜譜反向連結：`src/utils/related-topics.ts` 與 `src/pages/recipes/[id].astro`，沿用專題的 `relatedRecipes`，只列已發布文章，最多三篇。
 - 單元測試：`tests/home-topics.test.ts`、`tests/related-topics.test.ts`、`tests/content-checks-topics.test.ts`。
 - 瀏覽器測試：`e2e/home-topics.spec.ts`、`e2e/homepage.spec.ts`、`e2e/recipe-page.spec.ts`，及三份固定專題的推薦欄位。
-- 文件：文化專題寫作分支、詞彙、README 操作方式、驗收清單、ADR 0005 與本批規格；原專題規格增加指向本次範圍擴充的連結。
+- 文件：文化專題寫作分支、詞彙、README 操作方式、驗收清單、ADR 0006 與本批規格；原專題規格增加指向本次範圍擴充的連結。
 
 ## 驗證結果
 

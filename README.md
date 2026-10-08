@@ -55,7 +55,7 @@ homeRecommendation:
 
 瀏覽器開啟首頁時依台北日期選題；沒有當期專題就顯示常青備選，兩者皆無則隱藏整區。未執行 JavaScript 時顯示常青備選；裝置時間錯誤可能選錯檔期，已開啟頁面不會在午夜立即換題。改 frontmatter 需經正常審閱與發布，已發布的檔期跨季切換不需重新部署。
 
-菜譜頁的「相關專題」由專題 `relatedRecipes` 自動反查，最多顯示三篇已發布文章，依發布日期由新到舊排序，不需在菜譜重複設定。回滾首頁推薦可移除 `homeRecommendation`／`homeFallback`，保留文章與網址；架構取捨見 [ADR 0005](docs/adr/0005-browser-topic-scheduling.md)。
+菜譜頁的「相關專題」由專題 `relatedRecipes` 自動反查，最多顯示三篇已發布文章，依發布日期由新到舊排序，不需在菜譜重複設定。回滾首頁推薦可移除 `homeRecommendation`／`homeFallback`，保留文章與網址；架構取捨見 [ADR 0006](docs/adr/0006-browser-topic-scheduling.md)。
 
 ## 部署與回滾
 
