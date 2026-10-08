@@ -10,7 +10,7 @@ timeMinutes: 25
 tags: [家常菜]
 ingredients:
   - { name: 菠菜, amount: { value: 300, unit: g }, note: 洗淨切小段 }
-  - { name: 豬絞肉, amount: { value: 50, unit: g } }
+  - { name: 豬梅花絞肉, amount: { value: 50, unit: g } }
   - { name: 紅蔥頭, amount: { value: 20, unit: g }, note: 切碎 }
   - { name: 蒜末, amount: { value: 20, unit: g } }
   - { name: 食用油, note: 炒肉燥用，來源未標用量, group: 調味 }
@@ -37,7 +37,7 @@ steps:
     image:
       src: ./step-1.webp
       alt: 切碎的紅蔥頭放在砧板上，旁邊是洗淨切段的菠菜
-  - text: 平底鍋加少許食用油，以小火炒香紅蔥頭和蒜末，加入豬絞肉炒散至變白。
+  - text: 平底鍋加少許食用油，以小火炒香紅蔥頭和蒜末，加入豬梅花絞肉炒散至變白。
     image:
       src: ./step-2.webp
       alt: 紅蔥頭與蒜末炒香後，拌炒中的豬絞肉大多已變白

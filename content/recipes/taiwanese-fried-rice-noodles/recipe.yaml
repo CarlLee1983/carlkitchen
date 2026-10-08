@@ -11,9 +11,9 @@ tags: [家常菜]
 ingredients:
   - { name: 乾米粉, amount: { value: 200, unit: g } }
   - {
-      name: 豬肉絲,
+      name: 豬里肌肉絲,
       amount: { value: 100, unit: g },
-      note: 里肌肉切絲，也可用梅花肉或五花肉,
+      note: 也可用梅花肉或五花肉切絲,
     }
   - { name: 乾香菇, amount: { value: 3, unit: 朵 }, note: 泡軟後切絲 }
   - { name: 蝦米, amount: { value: 15, unit: g }, note: 泡軟 }
@@ -65,7 +65,7 @@ steps:
     image:
       src: ./step-2.webp
       alt: 木砧板和菜刀上擺著高麗菜粗絲、紅蘿蔔絲、香菇絲、芹菜末和紅蔥末，旁邊有一碗泡軟的蝦米和一碗肉絲
-  - text: 炒鍋燒熱後倒入食用油，放紅蔥末爆香，再放香菇絲、蝦米和豬肉絲，炒約 1 分鐘。
+  - text: 炒鍋燒熱後倒入食用油，放紅蔥末爆香，再放香菇絲、蝦米和豬里肌肉絲，炒約 1 分鐘。
     image:
       src: ./step-3.webp
       alt: 炒鍋中加了少許油，炒著紅蔥末、香菇絲、蝦米和已變色的肉絲，鍋鏟靠在鍋緣

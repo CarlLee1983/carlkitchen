@@ -9,7 +9,7 @@ protein: true
 timeMinutes: 35
 tags: [家常菜, 電鍋料理]
 ingredients:
-  - { name: 豬絞肉, amount: { value: 500, unit: g } }
+  - { name: 豬梅花絞肉, amount: { value: 500, unit: g } }
   - { name: 乾香菇, amount: { value: 3, unit: 朵 } }
   - { name: 蔥, amount: { value: 1, unit: 支 }, note: 切末 }
   - { name: 薑, amount: { value: 20, unit: g }, note: 切末 }
@@ -59,7 +59,7 @@ ingredients:
   - { name: 水, amount: { value: 200, unit: ml }, note: 調味 B, group: 調味 }
   - { name: 外鍋水, amount: { value: 1, unit: 杯 }, note: 電鍋外鍋用 }
 steps:
-  - text: 乾香菇泡軟後切末，蔥和薑切末；與豬絞肉、調味 A 拌勻並捏成肉丸。
+  - text: 乾香菇泡軟後切末，蔥和薑切末；與豬梅花絞肉、調味 A 拌勻並捏成肉丸。
   - text: 紅蘿蔔切薄圓片，鋪在盤中，每片紅蘿蔔上放一顆肉丸。
   - text: 盤子放入電鍋，外鍋加入 1 杯水，蒸約 20 分鐘。
   - text: 調味 B 煮沸，以太白粉水勾芡後淋在肉丸上。
