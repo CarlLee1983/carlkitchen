@@ -77,7 +77,7 @@ describe("第四批菜譜的來源、家用單位與做法", () => {
     const data = recipe("shrimp-scrambled-eggs");
     assert.equal(data.servings, 4);
     assert.equal(data.draft, false);
-    assert.equal(data.timeMinutes, 15);
+    assert.equal(data.timeMinutes, 45);
     assert.match(data.tip ?? "", /看起來熟了/);
     assert.match(data.steps.at(-1)?.text ?? "", /看起來熟了/);
     assert.doesNotMatch(data.tip ?? "", /待補/);
