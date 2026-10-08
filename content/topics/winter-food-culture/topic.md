@@ -11,7 +11,7 @@ editorialLayout: true
 publishedAt: 2026-10-08
 hero:
   src: ./hero.webp
-  alt: 兩只敞口鍋分別盛著帶骨雞塊與薑片的麻油雞，以及鴨肉塊和拍扁老薑的薑母鴨
+  alt: 初冬陰天的田野，收割後的稻田留著稻梗與稻草堆，遠處是農舍與山巒；前景屋簷下的木凳上，有一只冒著熱氣、湯裡浮著薑片的陶鍋，旁邊是一塊老薑和一瓶米酒
 relatedRecipes:
   - sesame-oil-chicken
   - ginger-duck
