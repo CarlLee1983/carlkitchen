@@ -410,6 +410,8 @@ test("手機搜尋、專題、篩選與菜譜連結可依畫面順序用鍵盤�
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
+  // 固定在節氣列會顯示的日期：節氣列是連到總覽頁的連結，位在專題與篩選之間。
+  await page.clock.setFixedTime(new Date("2026-10-10T12:00:00+08:00"));
   await page.goto("/");
   const search = page.getByRole("searchbox");
   const firstFilter = page
@@ -425,6 +427,12 @@ test("手機搜尋、專題、篩選與菜譜連結可依畫面順序用鍵盤�
     .getByRole("link");
   await expect(featured).toBeFocused();
   await expectFocusRing(featured);
+  await page.keyboard.press("Tab");
+  const term = page
+    .getByRole("region", { name: "這個時節" })
+    .locator("[data-solar-term]");
+  await expect(term).toBeFocused();
+  await expectFocusRing(term);
   await page.keyboard.press("Tab");
   await expect(firstFilter).toBeFocused();
   await expectFocusRing(firstFilter);

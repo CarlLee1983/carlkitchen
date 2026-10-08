@@ -1,4 +1,5 @@
 import { z } from "astro/zod";
+import { CONTENT_ID_PATTERN } from "./content-id.ts";
 
 export const INGREDIENT_CATEGORIES = [
   "vegetable",
@@ -7,7 +8,7 @@ export const INGREDIENT_CATEGORIES = [
 ] as const;
 
 const nonEmpty = z.string().trim().min(1);
-const recipeId = nonEmpty.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+const recipeId = nonEmpty.regex(CONTENT_ID_PATTERN);
 
 /** 食材條目與菜譜分開建模；蔬菜須標明臺灣產期的適用範圍。 */
 export function createIngredientSchema<Image extends z.ZodType>(image: Image) {

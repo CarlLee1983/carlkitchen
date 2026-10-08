@@ -1,0 +1,148 @@
+sources:
+  - title: 引用臺北市立天文科學教育館24節氣資料(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507770
+  - title: 小寒（國曆1月5或6或7日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507771
+  - title: 大寒（國曆1月19或20或21日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507772
+  - title: 立春（國曆2月3或4或5日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507773
+  - title: 雨水（國曆2月18或19或20日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507774
+  - title: 驚蟄（國曆3月5或6或7日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507775
+  - title: 春分（國曆3月20或21或22日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507776
+  - title: 清明（國曆4月4或5或6日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507777
+  - title: 穀雨（國曆4月19或20或21日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507778
+  - title: 立夏（國曆5月5或6或7日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507779
+  - title: 小滿（國曆5月20或21或22日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507780
+  - title: 芒種（國曆6月5或6或7日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507781
+  - title: 夏至（國曆6月20或21或22日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507782
+  - title: 小暑（國曆7月6或7或8日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507783
+  - title: 大暑（國曆7月22或23或24日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507784
+  - title: 立秋（國曆8月7或8或9日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507785
+  - title: 處暑（國曆8月22或23或24日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507786
+  - title: 白露（國曆9月7或8或9日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507787
+  - title: 秋分（國曆9月22或23或24日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507788
+  - title: 寒露（國曆10月7或8或9日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507789
+  - title: 霜降（國曆10月23或24日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507790
+  - title: 立冬（國曆11月7或8日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507791
+  - title: 小雪（國曆11月21或22或23日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507792
+  - title: 大雪（國曆12月6或7或8日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507793
+  - title: 冬至（國曆12月21或22或23日）(農業部全球資訊網)
+    url: https://www.moa.gov.tw/ws.php?id=2507794
+terms:
+  - id: xiaohan
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507771
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: dahan
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507772
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: lichun
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507773
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: yushui
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507774
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: jingzhe
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507775
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: chunfen
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507776
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: qingming
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507777
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: guyu
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507778
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: lixia
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507779
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: xiaoman
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507780
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: mangzhong
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507781
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: xiazhi
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507782
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: xiaoshu
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507783
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: dashu
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507784
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: liqiu
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507785
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: chushu
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507786
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: bailu
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507787
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: qiufen
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507788
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: hanlu
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507789
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: shuangjiang
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507790
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: lidong
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507791
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: xiaoxue
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507792
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: daxue
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507793
+      - https://www.moa.gov.tw/ws.php?id=2507770
+  - id: dongzhi
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507794
+      - https://www.moa.gov.tw/ws.php?id=2507770

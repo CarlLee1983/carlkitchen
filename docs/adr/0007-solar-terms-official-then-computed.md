@@ -1,0 +1,16 @@
+---
+status: accepted
+---
+
+# 節氣以中央氣象署公告為準，公告用完才以天文推算補位
+
+首頁「這個時節」的節氣時刻有兩個來源：中央氣象署開放資料 A-A0087-003 的公告（`src/data/solar-terms.json`），以及建置時用 astronomy-engine 依太陽視黃經推算的值（`src/utils/solar-term-calc.ts`）。公告涵蓋的年份一律用公告，頁面標示「資料：中央氣象署」；最後一筆公告之後才接推算值，補到建置年後 5 年，頁面標示「依天文推算」。
+
+以公告為準，是因為本站內容以可指名的權威出處為原則，頁面能直接寫出資料來源。推算值的用處是讓節氣不會在兩次補資料之間突然消失。2026–2027 年 48 筆實測比對：日期全部相同，時刻差在 −42 到 +60 秒之間，有 15 筆顯示的分鐘差 1。這個差距小到容易讓人想「簡化」成只用其中一種：
+
+- 拿掉公告、全部改用推算：頁面約三分之一的節氣時刻會和氣象署公告差 1 分鐘，出處也只能寫「依天文推算」。
+- 拿掉推算、只用公告：公告沒有補上時，節氣列會在最後一筆之後隱藏。
+
+兩者都屬於重新決定，不是清理。站主於 2026-10-08 選定此作法。
+
+**Falsified if:** `tests/solar-term-calc.test.ts` 的公告比對不再成立（日期不同，或時刻差超過 2 分鐘），表示推算已不足以當補位；或氣象署停止提供這份資料、`src/data/solar-terms.json` 不再更新，此時應改以推算為主並重新評估出處標示。依賴的檔案：`src/utils/solar-term-calc.ts`、`src/utils/solar-term-schedule.ts`、`src/data/solar-terms.json`、`src/components/HomeSeason.astro`、`src/pages/solar-terms/[...slug].astro`。

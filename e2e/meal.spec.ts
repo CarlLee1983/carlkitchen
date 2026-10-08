@@ -1248,3 +1248,20 @@ for (const width of [320, 390, 768, 1280]) {
     await expectNoOverflowNow(page, `無搜尋結果 ${width}px`);
   });
 }
+
+// 節氣集合為空的站台（build:e2e-meal 以 SOLAR_TERMS_DIR=tests/fixtures/solar-terms-empty 建置）：空集合規則。
+test.describe("沒有節氣資料", () => {
+  test("不產生節氣總覽頁，首頁節氣列不加連結", async ({ page }) => {
+    const response = await page.goto("/solar-terms/");
+    expect(response?.status()).toBe(404);
+
+    await page.clock.setFixedTime(new Date("2026-10-10T12:00:00+08:00"));
+    await page.goto("/");
+    const row = page
+      .getByRole("region", { name: "這個時節" })
+      .locator("[data-solar-term]");
+    await expect(row).toContainText("寒露");
+    await expect(row).not.toHaveJSProperty("tagName", "A");
+    await expect(row.getByRole("link")).toHaveCount(0);
+  });
+});

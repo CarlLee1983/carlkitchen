@@ -118,6 +118,9 @@ importers:
       astro:
         specifier: 7.2.9
         version: 7.2.9(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@types/node@22.20.5)(yaml@2.8.3)
+      astronomy-engine:
+        specifier: 2.1.19
+        version: 2.1.19
       pagefind:
         specifier: 1.5.2
         version: 1.5.2
@@ -1574,6 +1577,9 @@ packages:
     peerDependenciesMeta:
       '@astrojs/markdown-remark':
         optional: true
+
+  astronomy-engine@2.1.19:
+    resolution: {integrity: sha512-8yWKNf7UeNbH458h3sAJ6ZgAjE5jTXp/mNNRFoC20j2SHwZIjAQeEsBB2Q3uCFRaTCCJRv33K2XhkhZQMXoX6w==}
 
   axe-core@4.13.0:
     resolution: {integrity: sha512-UzGt8zg7Ny8djbYMhxl2zuEevVa7r2gJjYY5Lwr1xM7+XU2nd6CkIWFTVcCIbAP63vSz71NaVyyuSk9lHKcy0A==}
@@ -3738,6 +3744,8 @@ snapshots:
       - tsx
       - uploadthing
       - yaml
+
+  astronomy-engine@2.1.19: {}
 
   axe-core@4.13.0: {}
 

@@ -1,0 +1,291 @@
+---
+import type { InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+import Illustration from "../../components/Illustration.astro";
+import Base from "../../layouts/Base.astro";
+import { inlineJson } from "../../utils/inline-json";
+import { buildSolarTermSchedule } from "../../utils/solar-term-schedule";
+import { solarTermIllustration } from "../../utils/solar-term-art";
+import { groupSolarTermsBySeason } from "../../utils/solar-term-sections";
+import type { SolarTermName } from "../../utils/solar-terms";
+
+// 用 rest 參數才能在沒有節氣資料時一頁都不產生（空集合規則）；有資料時只輸出 /solar-terms/。
+export async function getStaticPaths() {
+  const [terms, ingredients] = await Promise.all([
+    getCollection("solarTerms"),
+    getCollection("ingredients", ({ data }) => !data.draft),
+  ]);
+  const sections = groupSolarTermsBySeason(terms);
+  const ingredientsById = new Map(
+    ingredients.map((ingredient) => [ingredient.id, ingredient]),
+  );
+  // 找不到的識別值直接略過（同專題頁的相關食材）；指向不存在或未發布條目由 check:content 把關。
+  const ingredientsOfTerm = Object.fromEntries(
+    terms.map((term) => [
+      term.id,
+      term.data.seasonalIngredients.flatMap((id) => {
+        const entry = ingredientsById.get(id);
+        return entry ? [entry] : [];
+      }),
+    ]),
+  );
+  return sections.length > 0
+    ? [
+        {
+          params: { slug: undefined },
+          props: { sections, ingredientsOfTerm },
+        },
+      ]
+    : [];
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { sections, ingredientsOfTerm } = Astro.props;
+const schedule = buildSolarTermSchedule();
+---
+
+<Base title="二十四節氣" description="依春夏秋冬看二十四節氣的插畫與簡短說明。">
+  <!--
+    Pagefind 索引範圍：整個內容區；插畫替代文字由 Illustration 排除。
+  -->
+  <div class="solar-terms" data-pagefind-body>
+    <header class="intro">
+      <p class="eyebrow">SOLAR TERMS</p>
+      <h1>二十四節氣</h1>
+      <p class="lead">從立春到大寒，依春夏秋冬看一年的時節變化。</p>
+      <p class="note">產期依地區與年度變動，僅供參考。</p>
+    </header>
+
+    {
+      sections.map(({ season, terms }) => (
+        <section aria-labelledby={`season-${season}`}>
+          <h2 id={`season-${season}`}>{season}季</h2>
+          <ul class="term-list">
+            {terms.map((term) => (
+              <li id={term.id}>
+                <Illustration
+                  image={solarTermIllustration(term.data.name as SolarTermName)}
+                  sizes="(max-width: 650px) 88px, 192px"
+                  widths={[88, 176, 192, 384]}
+                />
+                <div class="term-copy">
+                  <h3>{term.data.name}</h3>
+                  <p>{term.data.description}</p>
+                  {ingredientsOfTerm[term.id]!.length > 0 && (
+                    <>
+                      <h4 id={`${term.id}-ingredients`}>當令食材</h4>
+                      <ul
+                        class="ingredients"
+                        aria-labelledby={`${term.id}-ingredients`}
+                      >
+                        {ingredientsOfTerm[term.id]!.map((ingredient) => (
+                          <li>
+                            <a href={`/ingredients/${ingredient.id}/`}>
+                              {ingredient.data.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+
+    {
+      /* 今年日期與目前節氣依讀者當下時間由腳本填入，靜態輸出不預填，
+         免得停在建置當下；取捨同 docs/adr/0006-browser-topic-scheduling.md。
+         樣板與時程都不是頁面內容，不進搜尋索引。 */
+    }
+    <template data-solar-term-date-slot data-pagefind-ignore>
+      <p class="term-date">
+        <time data-solar-term-time></time> 交節
+        <small data-solar-term-source></small>
+      </p>
+    </template>
+    <template data-solar-term-current-slot data-pagefind-ignore>
+      <strong class="current-badge">目前節氣</strong>
+    </template>
+    <script
+      type="application/json"
+      data-solar-term-schedule
+      data-pagefind-ignore
+      set:html={inlineJson(schedule)}
+    />
+  </div>
+</Base>
+
+<script>
+  import {
+    fillSolarTermTime,
+    readSolarTermSchedule,
+  } from "../../utils/solar-term-client";
+  import { solarTermSourceLabel } from "../../utils/solar-term-display";
+  import {
+    selectSolarTerm,
+    solarTermArt,
+    solarTermsOfYear,
+    type SolarTermName,
+  } from "../../utils/solar-terms";
+
+  const dateSlot = document.querySelector<HTMLTemplateElement>(
+    "[data-solar-term-date-slot]",
+  );
+  const currentSlot = document.querySelector<HTMLTemplateElement>(
+    "[data-solar-term-current-slot]",
+  );
+  const schedule = readSolarTermSchedule();
+  const now = new Date();
+  const block = (name: string) =>
+    document.getElementById(solarTermArt[name as SolarTermName]);
+
+  // 目前節氣取全時程中已交節的最近一個（與首頁同一個選取邏輯）。
+  const selected = selectSolarTerm(schedule, now);
+
+  // 今年各節氣的交節日期與出處；該年沒有紀錄的節氣不顯示日期。
+  // 目前節氣顯示它實際交節的那筆：年初到小寒之前是去年的冬至，不是今年尚未到的冬至。
+  const shown = solarTermsOfYear(schedule, now).map((term) =>
+    selected?.name === term.name ? selected : term,
+  );
+  if (selected && !shown.includes(selected)) shown.push(selected);
+  for (const term of shown) {
+    const copy = block(term.name)?.querySelector(".term-copy");
+    if (!copy || !dateSlot) continue;
+    const content = dateSlot.content.cloneNode(true) as DocumentFragment;
+    fillSolarTermTime(content.querySelector("time")!, term);
+    content.querySelector("[data-solar-term-source]")!.textContent =
+      solarTermSourceLabel(term.source);
+    copy.append(content);
+  }
+
+  const target = selected && block(selected.name);
+  if (target && currentSlot) {
+    target.setAttribute("aria-current", "true");
+    target
+      .querySelector("h3")
+      ?.after(currentSlot.content.cloneNode(true) as DocumentFragment);
+  }
+</script>
+
+<style>
+  .solar-terms {
+    max-width: 54rem;
+    padding: 1rem 0 3rem;
+  }
+  .intro {
+    margin-bottom: 3rem;
+  }
+  .eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+  .lead {
+    max-width: 36rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+  }
+  section + section {
+    margin-top: 3rem;
+  }
+  h2 {
+    margin: 0 0 1rem;
+    font-size: 1.75rem;
+  }
+  .term-list {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    list-style: none;
+  }
+  .term-list > li {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem 0;
+  }
+  .term-list > li :global(figure.illustration) {
+    margin: 0;
+  }
+  .term-copy {
+    min-width: 0;
+  }
+  h3 {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+  .note {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  h4 {
+    margin: 1rem 0 0.25rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+  .ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .ingredients li {
+    display: block;
+    border: 0;
+    padding: 0;
+  }
+  .term-copy :global(p) {
+    margin: 0;
+    color: var(--ink-soft);
+    overflow-wrap: anywhere;
+  }
+  /* 日期列與目前節氣標記由腳本在執行時加入，不帶 Astro 的範圍屬性。 */
+  .term-copy :global(.term-date) {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .term-copy :global(.term-date small) {
+    margin-left: 0.5em;
+    font-size: 0.7rem;
+  }
+  .term-list > li[aria-current] {
+    border-left: 4px solid var(--ink);
+    padding-left: 1rem;
+    background: color-mix(in srgb, var(--ink) 5%, transparent);
+  }
+  .term-copy :global(.current-badge) {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--ink);
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+  @media (max-width: 650px) {
+    .solar-terms {
+      padding-top: 0;
+    }
+    .intro {
+      margin-bottom: 2rem;
+    }
+    .term-list > li {
+      grid-template-columns: 5.5rem minmax(0, 1fr);
+      gap: 1rem;
+    }
+  }
+</style>

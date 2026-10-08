@@ -1,0 +1,76 @@
+sources:
+  - title: 測試核准來源丁
+    url: https://example.com/solar-term-approved
+terms:
+  - id: xiaohan
+    urls:
+      - https://example.com/solar-term-approved
+  - id: dahan
+    urls:
+      - https://example.com/solar-term-approved
+  - id: lichun
+    urls:
+      - https://example.com/solar-term-approved
+  - id: yushui
+    urls:
+      - https://example.com/solar-term-approved
+  - id: jingzhe
+    urls:
+      - https://example.com/solar-term-approved
+  - id: chunfen
+    urls:
+      - https://example.com/solar-term-approved
+  - id: qingming
+    urls:
+      - https://example.com/solar-term-approved
+  - id: guyu
+    urls:
+      - https://example.com/solar-term-approved
+  - id: lixia
+    urls:
+      - https://example.com/solar-term-approved
+  - id: xiaoman
+    urls:
+      - https://example.com/solar-term-approved
+  - id: mangzhong
+    urls:
+      - https://example.com/solar-term-approved
+  - id: xiazhi
+    urls:
+      - https://example.com/solar-term-approved
+  - id: xiaoshu
+    urls:
+      - https://example.com/solar-term-approved
+  - id: dashu
+    urls:
+      - https://example.com/solar-term-approved
+  - id: liqiu
+    urls:
+      - https://example.com/solar-term-approved
+  - id: chushu
+    urls:
+      - https://example.com/solar-term-approved
+  - id: bailu
+    urls:
+      - https://example.com/solar-term-approved
+  - id: qiufen
+    urls:
+      - https://example.com/solar-term-approved
+  - id: hanlu
+    urls:
+      - https://example.com/solar-term-approved
+  - id: shuangjiang
+    urls:
+      - https://example.com/solar-term-approved
+  - id: lidong
+    urls:
+      - https://example.com/solar-term-approved
+  - id: xiaoxue
+    urls:
+      - https://example.com/solar-term-approved
+  - id: daxue
+    urls:
+      - https://example.com/solar-term-approved
+  - id: dongzhi
+    urls:
+      - https://example.com/solar-term-approved

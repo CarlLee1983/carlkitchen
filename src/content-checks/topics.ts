@@ -1,10 +1,8 @@
 import { basename, join } from "node:path";
 import { markdownToHast, type HastNode } from "satteri";
 import { z } from "astro/zod";
-import {
-  createTopicSchema,
-  TOPIC_ID_PATTERN,
-} from "../content/topic-schema.ts";
+import { CONTENT_ID_PATTERN } from "../content/content-id.ts";
+import { createTopicSchema } from "../content/topic-schema.ts";
 import { parseTopicSourceRecord } from "../content/topic-sources.ts";
 import { homeTopicIssues } from "../utils/home-topics.ts";
 import { checkHeroAlt, checkImageFile } from "./images.ts";
@@ -178,7 +176,7 @@ function readTopic(
 ): { issues: Issue[]; topic?: Topic; body?: string } {
   const file = join(topicsDir, id, "topic.md");
   const issues: Issue[] = [];
-  if (!TOPIC_ID_PATTERN.test(id)) {
+  if (!CONTENT_ID_PATTERN.test(id)) {
     issues.push({
       topic: id,
       file,
