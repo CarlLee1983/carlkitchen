@@ -2,7 +2,11 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { existsSync } from "node:fs";
 import data from "../src/data/solar-terms.json" with { type: "json" };
-import { selectSolarTerm, solarTermArt } from "../src/utils/solar-terms.ts";
+import {
+  selectSolarTerm,
+  solarTermArt,
+  solarTermsOfYear,
+} from "../src/utils/solar-terms.ts";
 
 const terms = [
   { date: "2026-09-23", name: "秋分", time: "06:05" },
@@ -52,6 +56,31 @@ describe("首頁當前節氣", () => {
     assert.equal(
       selectSolarTerm([], at("2026-10-10T00:00:00+08:00")),
       undefined,
+    );
+  });
+});
+
+describe("總覽頁今年的交節紀錄", () => {
+  const schedule = [
+    { date: "2026-12-22", name: "冬至", time: "23:50" },
+    { date: "2027-01-05", name: "小寒", time: "17:00" },
+    { date: "2027-12-22", name: "冬至", time: "05:42" },
+    { date: "2028-01-06", name: "小寒", time: "04:00" },
+  ];
+
+  it("依臺灣時間的年份取該年各節氣，跨年交界以臺灣時間為準", () => {
+    // UTC 2026-12-31 16:30 即臺灣 2027-01-01 00:30。
+    const names = solarTermsOfYear(
+      schedule,
+      new Date("2026-12-31T16:30:00Z"),
+    ).map((term) => `${term.date}${term.name}`);
+    assert.deepEqual(names, ["2027-01-05小寒", "2027-12-22冬至"]);
+  });
+
+  it("該年沒有紀錄時回傳空陣列", () => {
+    assert.deepEqual(
+      solarTermsOfYear(schedule, new Date("2030-06-01T00:00:00+08:00")),
+      [],
     );
   });
 });

@@ -16,6 +16,7 @@ const pages = [
   { name: "菜譜頁", path: "/recipes/tomato-egg/" },
   { name: "食材條目頁", path: "/ingredients/tomato/" },
   { name: "關於頁", path: "/about/" },
+  { name: "節氣總覽頁", path: "/solar-terms/" },
   { name: "404 頁", path: "/no-such-page/" },
 ];
 

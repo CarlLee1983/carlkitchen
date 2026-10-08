@@ -9,6 +9,7 @@ const pages = [
   "/about/",
   "/topics/rice-basics/",
   "/topics/summer-salads/",
+  "/solar-terms/",
 ];
 const widths = [360, 390, 640, 651, 800, 1023, 1024, 1366];
 

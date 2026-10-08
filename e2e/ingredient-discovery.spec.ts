@@ -58,7 +58,12 @@ test("Pagefind 建置索引只含菜譜，食材結果不混入搜尋與分享�
     ).then((pages) => pages.map((item) => item.url));
   });
   expect(indexedUrls.length).toBeGreaterThan(0);
-  expect(indexedUrls.every((url) => url.startsWith("/recipes/"))).toBe(true);
+  // 節氣總覽頁列有當令食材名稱，搜尋食材名會合理地找到它；食材條目頁本身不得進索引。
+  expect(
+    indexedUrls.every(
+      (url) => url.startsWith("/recipes/") || url === "/solar-terms/",
+    ),
+  ).toBe(true);
   expect(indexedUrls.some((url) => url.startsWith("/ingredients/"))).toBe(
     false,
   );

@@ -9,7 +9,9 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `content/sources/<菜譜識別值>.yaml` — 內部來源紀錄：`urls` 列出至少一個核准來源網址。位於內容集合載入範圍（`content/recipes`）與 `public/` 之外，不被任何頁面或建置流程讀取，只由內容檢查指令讀取
 - `content/topics/<專題識別值>/topic.md` — 專題：Markdown 加 frontmatter（`title`、`summary`、`draft`、`publishedAt`、`hero`、`relatedRecipes`、`relatedIngredients`、`references`），封面圖放同資料夾。資料夾名稱即識別值與網址 `/topics/<識別值>/`，格式規則同菜譜；目前尚無正式專題，目錄以 `.gitkeep` 保留
 - `content/topic-sources/<專題識別值>.yaml` — 專題內部來源紀錄：`sources`（`title`、`url`）與段落對照 `sections`（`heading` 為內文 `##`／`###` 標題純文字，`urls` 須列在 `sources`）。位置與角色同 `content/sources/`，不進內容集合與公開輸出；選題參考放專題 frontmatter，不是核准來源
-- `src/data/solar-terms.json` — 首頁「這個時節」的二十四節氣交節時刻（中央氣象署開放資料 A-A0087-003，臺灣時間），插畫在 `src/assets/solar-terms/`。資料目前到 2027-12-22 冬至，最後一筆之後節氣列會自動隱藏；到期前從同一資料集補下一年
+- `content/solar-terms/<節氣識別值>.yaml` — 節氣總覽（`/solar-terms/`）的資料：每個節氣一個檔，固定 24 個識別值，與 `src/assets/solar-terms/` 的插畫檔名相同（`lichun`、`lidong` 等）。欄位 `name`、`description`（一兩句）、`seasonalIngredients`（當令食材條目識別值，可為空陣列）；沒有 `draft`，所屬季節由識別值決定（`src/utils/solar-terms.ts` 的 `solarTermSeasons`）。目錄沒有任何資料時不產生 `/solar-terms/`、首頁節氣列不加連結；有資料就必須 24 筆齊全，否則建置失敗。目前尚無正式節氣資料，目錄以 `.gitkeep` 保留
+- `content/solar-term-sources/solar-terms.yaml` — 節氣說明的內部來源紀錄，位置與角色同 `content/topic-sources/`（不進內容集合與公開輸出，只由內容檢查讀取）。24 段說明共用同一組來源，所以單一檔涵蓋全部節氣，目錄內不得有其他檔案（`.gitkeep` 除外）：`sources`（`title`、`url`，至少一筆核准來源）與對照 `terms`（每筆 `id` 為節氣識別值、`urls` 須列在 `sources`），以節氣識別值取代專題的段落標題。節氣有資料時，每個節氣都要有對照；目前尚無正式資料，目錄以 `.gitkeep` 保留
+- `src/data/solar-terms.json` — 首頁「這個時節」的二十四節氣交節時刻（中央氣象署開放資料 A-A0087-003，臺灣時間），插畫在 `src/assets/solar-terms/`。公告資料目前到 2027-12-22 冬至；之後由 `src/utils/solar-term-calc.ts` 在建置時依太陽視黃經推算，補到建置年後 5 年，頁面標示「依天文推算」。氣象署公告新年度後補進 JSON，推算值即被取代；單元測試會比對推算與公告，日期須相同、時刻差不超過 2 分鐘
 - `tests/` — 單元測試（Node 內建測試執行器）；`tests/fixtures/recipes/` 為測試用固定菜譜，含一份草稿
 - `e2e/` — Playwright 瀏覽器測試
 - `.scratch/` — 規格與票；`.claude/skills/` — 菜譜製作（`recipe-making`）、菜譜寫作（`recipe-writing`）、食材寫作（`ingredient-writing`）、專題寫作（`topic-writing`）與去 AI 味（`de-ai-voice`）skill
@@ -21,14 +23,14 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `pnpm dev` — 開發伺服器（顯示草稿）
 - `pnpm build` / `pnpm preview` — 正式建置（排除草稿，建置後以 Pagefind 建立含菜譜頁與專題頁的搜尋索引）與預覽。建置固定帶 `--force`，在 `RECIPES_DIR` 切換時清除 Astro 內容層快取，不可拿掉
 - `pnpm check` — 格式檢查、`astro check`、建置
-- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄
+- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。節氣：目錄有資料時 24 個識別值須齊全且無未知檔名、每筆通過 schema、當令食材只指向已發布食材條目、每個節氣的說明在來源紀錄有對照且網址列於 `sources`，核准來源網址不得出現在輸出（空目錄通過）。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄，`SOLAR_TERMS_DIR` 可改節氣目錄（預設 `content/solar-terms`），`SOLAR_TERM_SOURCES_DIR` 可改節氣來源紀錄目錄（預設 `content/solar-term-sources`）
 - `pnpm test` — 單元測試
 - `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）；建置輸出在 `dist`、port 以 `E2E_PORT_BASE`（預設 4321）起算，平行跑需各用一個 worktree 並錯開 port
 - `pnpm check:merge` — 在暫時 worktree 合併 `origin/main` 後跑 CI 的檢查（加 `--e2e` 含瀏覽器測試），抓分支本身全綠、合併後才壞的情況
 - `pnpm measure:mobile` — 量測首頁手機版版面（篩選列與第一列位置、列高、一屏列數）；需先 `pnpm build`。談版面數字先量再估
 - `pnpm format` — 格式化
 
-環境變數 `RECIPES_DIR` 選擇內容根目錄，預設 `content/recipes`；測試與 e2e 用 `tests/fixtures/recipes`。環境變數 `TOPICS_DIR` 選擇專題根目錄，預設 `content/topics`；e2e 用 `tests/fixtures/topics`（含一份草稿），專題來源紀錄 `TOPIC_SOURCES_DIR` 預設 `content/topic-sources`、測試用 `tests/fixtures/topic-sources`。
+環境變數 `RECIPES_DIR` 選擇內容根目錄，預設 `content/recipes`；測試與 e2e 用 `tests/fixtures/recipes`。環境變數 `TOPICS_DIR` 選擇專題根目錄，預設 `content/topics`；e2e 用 `tests/fixtures/topics`（含一份草稿），專題來源紀錄 `TOPIC_SOURCES_DIR` 預設 `content/topic-sources`、測試用 `tests/fixtures/topic-sources`。環境變數 `SOLAR_TERMS_DIR` 選擇節氣根目錄，預設 `content/solar-terms`；e2e 用 `tests/fixtures/solar-terms`（24 筆齊全），配菜站台用空的 `tests/fixtures/solar-terms-empty` 驗證空集合規則；節氣來源紀錄 `SOLAR_TERM_SOURCES_DIR` 預設 `content/solar-term-sources`、測試用 `tests/fixtures/solar-term-sources`。
 
 ## 部署
 

@@ -1,14 +1,24 @@
-// 建置後以 Pagefind 為已發布菜譜頁與專題頁建立搜尋索引，並在 dist/index.html 注入 LCP 圖片 preload。
-// 只收 recipes/、topics/ 底下的頁面：正式內容為空時，Pagefind 預設會改為索引全站，
+// 建置後以 Pagefind 為已發布菜譜頁、專題頁與節氣總覽頁建立搜尋索引，並在 dist/index.html 注入 LCP 圖片 preload。
+// 只收 recipes/、topics/、solar-terms/ 底下的頁面：正式內容為空時，Pagefind 預設會改為索引全站，
 // 但沒有任何這類頁面時 `--glob` 又會讓它因「沒有 HTML」而失敗，所以沒有就略過。
-// 兩類頁面都以 data-pagefind-body 標記可搜尋範圍，專題列表頁沒有標記所以不進索引。
+// 這些頁面都以 data-pagefind-body 標記可搜尋範圍，專題列表頁沒有標記所以不進索引。
 
 import { execFileSync } from "node:child_process";
-import { existsSync, globSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  globSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { join } from "node:path";
 
 const SITE = "dist";
-const GLOBS = ["recipes/**/*.html", "topics/**/*.html"];
+const GLOBS = [
+  "recipes/**/*.html",
+  "topics/**/*.html",
+  "solar-terms/**/*.html",
+];
 
 if (!existsSync(SITE)) {
   console.error(`找不到 ${SITE}，請先執行 astro build。`);
@@ -16,12 +26,31 @@ if (!existsSync(SITE)) {
 }
 
 if (GLOBS.every((glob) => globSync(glob, { cwd: SITE }).length === 0)) {
-  console.log("沒有菜譜頁或專題頁，略過 Pagefind 索引。");
+  console.log("沒有菜譜頁、專題頁或節氣總覽頁，略過 Pagefind 索引。");
 } else {
   // 沿用 pnpm 腳本環境的 PATH 找到 pagefind；失敗時直接讓建置失敗。
   execFileSync("pagefind", ["--site", SITE, "--glob", `{${GLOBS.join(",")}}`], {
     stdio: "inherit",
   });
+
+  // Pagefind 預設輸出預製的搜尋 UI 套件（含舊版 ES5 相容 helper 如 classCallCheck）。
+  // 本站首頁直接以原生動態 import 使用 pagefind.js / pagefind-worker.js 與 wasm 核心 API，
+  // 不使用任何 Pagefind 預製 UI 產物。清理多餘檔案可減少部署體積並消除「避免提供舊版 JavaScript」警告。
+  const UNUSED_PAGEFIND_UI = [
+    "pagefind/pagefind-ui.js",
+    "pagefind/pagefind-ui.css",
+    "pagefind/pagefind-modular-ui.js",
+    "pagefind/pagefind-modular-ui.css",
+    "pagefind/pagefind-component-ui.js",
+    "pagefind/pagefind-component-ui.css",
+    "pagefind/pagefind-highlight.js",
+  ];
+  for (const file of UNUSED_PAGEFIND_UI) {
+    const filePath = join(SITE, file);
+    if (existsSync(filePath)) {
+      rmSync(filePath);
+    }
+  }
 }
 
 // Lighthouse LCP Request Discovery 優化：

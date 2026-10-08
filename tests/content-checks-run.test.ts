@@ -7,6 +7,7 @@ import {
   rmSync,
   writeFileSync,
   readFileSync,
+  readdirSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -237,6 +238,80 @@ describe("runContentChecks", () => {
     assert.match(issues[0]!.file!, /recipes$/);
   });
 
+  it("節氣的當令食材指向不存在的食材條目時回報；空的節氣目錄通過", async () => {
+    const s = scenario();
+    const solarTermsDir = join(s.root, "solar-terms");
+    const solarTermSourcesDir = join(s.root, "solar-term-sources");
+    mkdirSync(solarTermsDir);
+    mkdirSync(solarTermSourcesDir);
+    const options = {
+      ...s.options,
+      ingredientsDir: join(s.root, "ingredients"),
+      solarTermsDir,
+      solarTermSourcesDir,
+    };
+    assert.deepEqual(await runContentChecks(options), []);
+    s.write(
+      join(solarTermsDir, "lichun.yaml"),
+      "name: 立春\ndescription: 說明。\nseasonalIngredients: [no-such]\n",
+    );
+    const issues = await runContentChecks(options);
+    // 缺的 23 個節氣一併回報，當令食材問題在其中
+    assert.ok(issues.some((issue) => issue.field === "seasonalIngredients.0"));
+    assert.ok(issues.some((issue) => /缺少節氣/.test(issue.message)));
+  });
+
+  it("節氣來源網址出現在建置輸出時被洩漏檢查擋下", async () => {
+    const s = scenario();
+    const solarTermsDir = join(s.root, "solar-terms");
+    const solarTermSourcesDir = join(s.root, "solar-term-sources");
+    cpSync(
+      fileURLToPath(new URL("./fixtures/solar-terms", import.meta.url)),
+      solarTermsDir,
+      { recursive: true },
+    );
+    cpSync(
+      fileURLToPath(new URL("./fixtures/solar-term-sources", import.meta.url)),
+      solarTermSourcesDir,
+      { recursive: true },
+    );
+    // 固定節氣的當令食材指向固定食材條目；這裡只測來源洩漏，清空當令食材
+    for (const file of readdirSync(solarTermsDir)) {
+      const path = join(solarTermsDir, file);
+      const text = readFileSync(path, "utf8");
+      s.write(
+        path,
+        text.replace(
+          /seasonalIngredients:[\s\S]*$/,
+          "seasonalIngredients: []\n",
+        ),
+      );
+    }
+    const options = {
+      ...s.options,
+      ingredientsDir: join(s.root, "ingredients"),
+      solarTermsDir,
+      solarTermSourcesDir,
+    };
+    assert.deepEqual(await runContentChecks(options), []);
+    s.write(
+      join(s.root, "dist/solar-terms/index.html"),
+      '<a href="https://example.com/solar-term-approved">出處</a>',
+    );
+    const issues = await runContentChecks(options);
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.file!, /solar-terms\/index\.html$/);
+  });
+
+  it("solarTermsDir 與 solarTermSourcesDir 只給一個時回報設定不完整", async () => {
+    const s = scenario();
+    const solarTermsDir = join(s.root, "solar-terms");
+    mkdirSync(solarTermsDir);
+    const issues = await runContentChecks({ ...s.options, solarTermsDir });
+    assert.equal(issues.length, 1);
+    assert.match(issues[0]!.message, /設定不完整/);
+  });
+
   it("門檻模式列出缺額，預設模式不檢查", async () => {
     const s = scenario();
     assert.deepEqual(await runContentChecks(s.options), []);
@@ -252,6 +327,10 @@ describe("check-content 指令", () => {
     const topicSourcesDir = join(s.root, "topic-sources");
     mkdirSync(topicsDir, { recursive: true });
     mkdirSync(topicSourcesDir, { recursive: true });
+    const solarTermsDir = join(s.root, "solar-terms");
+    mkdirSync(solarTermsDir, { recursive: true });
+    const solarTermSourcesDir = join(s.root, "solar-term-sources");
+    mkdirSync(solarTermSourcesDir, { recursive: true });
     return spawnSync(
       process.execPath,
       ["--experimental-strip-types", cli, "--dist", s.options.distDir, ...args],
@@ -265,6 +344,8 @@ describe("check-content 指令", () => {
           INGREDIENT_SOURCES_DIR: join(s.root, "ingredient-sources"),
           TOPICS_DIR: topicsDir,
           TOPIC_SOURCES_DIR: topicSourcesDir,
+          SOLAR_TERMS_DIR: solarTermsDir,
+          SOLAR_TERM_SOURCES_DIR: solarTermSourcesDir,
         },
       },
     );

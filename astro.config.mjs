@@ -7,7 +7,14 @@ import { topicMarkdown } from "./src/markdown/topic-markdown.ts";
 const publicPage = (page) => {
   const path = new URL(page).pathname;
   return (
-    ["/", "/about/", "/meal/", "/ingredients/", "/topics/"].includes(path) ||
+    [
+      "/",
+      "/about/",
+      "/meal/",
+      "/ingredients/",
+      "/topics/",
+      "/solar-terms/",
+    ].includes(path) ||
     /^\/(?:recipes|ingredients|topics)\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/.test(path)
   );
 };
@@ -29,6 +36,12 @@ export default defineConfig({
   },
   // CSS 一律內嵌：每頁樣式只有數 KB，外部檔換來的快取效益抵不過首屏多一個阻擋繪製的請求（PageSpeed render-blocking）。
   build: { inlineStylesheets: "always" },
+  vite: {
+    build: {
+      // 現代基準（Baseline）：避免轉譯已在所有現代瀏覽器原生支援的語法，消除冗餘 polyfill 與 helper。
+      target: "es2022",
+    },
+  },
   markdown: {
     processor: satteri({
       hastPlugins: [
