@@ -233,6 +233,10 @@ export function initHome() {
   // 上一頁／下一頁（含 hash 導航產生的歷史紀錄）：依網址重新還原。
   window.addEventListener("popstate", () => void render(currentState()));
 
-  // 載入時依網址還原；無法辨識的參數值順便從網址清掉。
-  void setState(currentState());
+  // 載入時依網址還原；若為預設狀態（無搜尋字詞且篩選為全部），HTML 結構已完整對應，避免重排與重排清單
+  const initial = currentState();
+  writeUrl(initial);
+  if (initial.q !== "" || initial.kind !== "all") {
+    void render(initial);
+  }
 }
