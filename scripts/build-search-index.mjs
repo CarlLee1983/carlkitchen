@@ -1,9 +1,11 @@
-// 建置後以 Pagefind 為已發布菜譜頁與專題頁建立搜尋索引。
+// 建置後以 Pagefind 為已發布菜譜頁與專題頁建立搜尋索引，並在 dist/index.html 注入 LCP 圖片 preload。
 // 只收 recipes/、topics/ 底下的頁面：正式內容為空時，Pagefind 預設會改為索引全站，
 // 但沒有任何這類頁面時 `--glob` 又會讓它因「沒有 HTML」而失敗，所以沒有就略過。
 // 兩類頁面都以 data-pagefind-body 標記可搜尋範圍，專題列表頁沒有標記所以不進索引。
+
 import { execFileSync } from "node:child_process";
-import { existsSync, globSync } from "node:fs";
+import { existsSync, globSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
 const SITE = "dist";
 const GLOBS = ["recipes/**/*.html", "topics/**/*.html"];
@@ -20,4 +22,28 @@ if (GLOBS.every((glob) => globSync(glob, { cwd: SITE }).length === 0)) {
   execFileSync("pagefind", ["--site", SITE, "--glob", `{${GLOBS.join(",")}}`], {
     stdio: "inherit",
   });
+}
+
+// Lighthouse LCP Request Discovery 優化：
+// 從 dist/index.html 的 noscript 擷取預設首圖的 src、srcset 與 sizes，在 <head> 注入 <link rel="preload">。
+const indexPath = join(SITE, "index.html");
+if (existsSync(indexPath)) {
+  const html = readFileSync(indexPath, "utf8");
+  const noscriptImg = html.match(
+    /<noscript>[\s\S]*?<img([^>]+)>[\s\S]*?<\/noscript>/,
+  );
+  if (noscriptImg && !html.includes('rel="preload" as="image"')) {
+    const attrs = noscriptImg[1];
+    if (attrs) {
+      const src = attrs.match(/src="([^"]+)"/)?.[1];
+      const srcset = attrs.match(/srcset="([^"]+)"/)?.[1];
+      const sizes = attrs.match(/sizes="([^"]+)"/)?.[1];
+      if (src && srcset && sizes) {
+        const preloadTag = `<link rel="preload" as="image" href="${src}" imagesrcset="${srcset}" imagesizes="${sizes}" fetchpriority="high">`;
+        const injected = html.replace("</head>", `${preloadTag}</head>`);
+        writeFileSync(indexPath, injected, "utf8");
+        console.log("已在 dist/index.html 注入 LCP 圖片預載宣告。");
+      }
+    }
+  }
 }
