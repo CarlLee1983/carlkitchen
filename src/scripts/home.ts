@@ -4,7 +4,11 @@ import {
   formatDateLabel,
   normalizeQuery,
   parseHomeState,
+  readSavedCount,
+  readSavedScroll,
   recipeIdFromUrl,
+  SAVED_COUNT_KEY,
+  SAVED_SCROLL_KEY,
   showMore,
   topicIdFromUrl,
   truncateRows,
@@ -167,9 +171,32 @@ export function initHome() {
     setText(showMoreButton, `再顯示 ${nextCount} 道（還有 ${remaining} 道）`);
   }
 
+  /** 把欄位併進目前這筆瀏覽紀錄的 state，網址不變；既有的一般物件 state 保留，其餘當空物件。 */
+  function saveState(patch: Record<string, number>) {
+    const current: unknown = history.state;
+    const base =
+      typeof current === "object" && current !== null && !Array.isArray(current)
+        ? current
+        : {};
+    history.replaceState({ ...base, ...patch }, "", location.href);
+  }
+  const saveCount = (count: number) => saveState({ [SAVED_COUNT_KEY]: count });
+
+  // 離開首頁時（點進菜譜、重新整理）記下捲動位置。上一頁回來時，帶搜尋字詞的清單要等
+  // 非同步搜尋完成才排好，瀏覽器內建的捲動還原會落空，所以展開過的紀錄要自己還原一次。
+  window.addEventListener("pagehide", () => {
+    if (requestedCount !== undefined) {
+      saveState({ [SAVED_SCROLL_KEY]: window.scrollY });
+    }
+  });
+
   showMoreButton?.addEventListener("click", () => {
+    // 換條件後結果還在非同步載入時（搜尋防抖動、Pagefind），畫面上仍是舊清單，
+    // 這時的點擊不生效，免得把舊清單的展開數量帶進新結果。
+    if (settledRender !== latest) return;
     const step = showMore(candidateRows.length, batchSize, requestedCount);
     requestedCount = step.shown;
+    saveCount(step.shown);
     for (const row of candidateRows.slice(0, step.shown)) row.hidden = false;
     applyTruncation(candidateRows);
     if (step.firstNewIndex !== null) {
@@ -179,6 +206,8 @@ export function initHome() {
 
   // 較新的 render 開始後，舊的非同步結果作廢，避免慢的回應蓋掉新的狀態。
   let latest = 0;
+  // 最近一次已套用（或已報錯收尾）的 render；與 latest 不同代表有較新的 render 還在等結果。
+  let settledRender = 0;
 
   async function render(state: HomeState, debounce = false) {
     const mine = ++latest;
@@ -205,6 +234,7 @@ export function initHome() {
         found = await findRows(state, debounce);
       } catch (error) {
         console.error("載入搜尋索引失敗", error);
+        if (mine === latest) settledRender = mine;
         if (mine === latest && status) {
           status.textContent = import.meta.env.DEV
             ? "開發模式沒有搜尋索引，請用 pnpm build && pnpm preview"
@@ -225,6 +255,7 @@ export function initHome() {
     // 重排：顯示的列依結果順序在前，其餘維持原本（菜名）順序。
     rowList?.append(...visible, ...allRows.filter((row) => !shown.has(row)));
     applyTruncation(visible);
+    settledRender = mine;
 
     // 筆數「道」只算菜譜；命中專題時另外補「專題 N 篇」。
     const topicCount = visible.filter((row) => "topicId" in row.dataset).length;
@@ -245,11 +276,16 @@ export function initHome() {
     }
   }
 
-  /** 以 replaceState 把正規化後的狀態寫回網址，保留 hash。 */
-  function writeUrl(state: HomeState) {
+  /** 目前網址換上正規化後的狀態，保留 hash。 */
+  function urlFor(state: HomeState) {
     const url = new URL(location.href);
     url.search = applyHomeState(url.searchParams, state).toString();
-    history.replaceState(null, "", url);
+    return url;
+  }
+
+  /** 換條件時寫回網址；history state 一律清成 null，連同保存的展開數量。 */
+  function writeUrl(state: HomeState) {
+    history.replaceState(null, "", urlFor(state));
   }
 
   function setState(state: HomeState, debounce = false): Promise<void> {
@@ -322,18 +358,26 @@ export function initHome() {
     .matchMedia("(min-width: 64rem)")
     .addEventListener("change", () => matchHero(currentState().kind));
 
-  // 上一頁／下一頁（含 hash 導航產生的歷史紀錄）：依網址重新還原。
-  window.addEventListener("popstate", () => {
-    requestedCount = undefined;
+  // 上一頁／下一頁（含 hash 導航產生的歷史紀錄）：依網址重新還原，展開數量取自該筆紀錄的 state。
+  window.addEventListener("popstate", (event) => {
+    requestedCount = readSavedCount(event.state);
     void render(currentState());
   });
 
   // 載入時依網址還原；若為預設狀態（無搜尋字詞且篩選為全部），HTML 結構已完整對應，避免重排與重排清單
+  // 展開數量取自目前這筆紀錄的 state（重新整理、上一頁回來）；新連結進入時沒有，就是一批。
   const initial = currentState();
-  writeUrl(initial);
+  requestedCount = readSavedCount(history.state);
+  const savedScroll =
+    requestedCount === undefined ? undefined : readSavedScroll(history.state);
+  history.replaceState(history.state, "", urlFor(initial)); // 只正規化網址，保留 state
+  const restoreScroll = () => {
+    if (savedScroll !== undefined) window.scrollTo(0, savedScroll);
+  };
   if (initial.q !== "" || initial.kind !== "all") {
-    void render(initial);
+    void render(initial).then(restoreScroll);
   } else {
     applyTruncation(rows);
+    restoreScroll();
   }
 }

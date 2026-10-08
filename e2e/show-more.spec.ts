@@ -217,6 +217,169 @@ test("空結果沒有按鈕，空狀態訊息照舊", async ({ page }) => {
   await expect(emptyMessage(page)).toHaveText("找不到符合「zzzz」的菜譜。");
 });
 
+/** 按兩次顯示更多（批量從頁面讀），回傳目前顯示的列數；固定菜譜要多於三批，展開兩次後才還有按鈕。 */
+async function expandTwice(page: Page) {
+  const { batch, total } = await readSizes(page);
+  expect(total, "展開兩次後還要有剩餘，才驗得到保存值").toBeGreaterThan(
+    batch * 3,
+  );
+  await moreButton(page).click();
+  await moreButton(page).click();
+  const shown = batch * 3;
+  await expect(rows(page)).toHaveCount(shown);
+  return { batch, total, shown };
+}
+
+/** 小視窗，確保展開後的頁面一定需要捲動。 */
+const useSmallViewport = (page: Page) =>
+  page.setViewportSize({ width: 390, height: 500 });
+const scrollY = (page: Page) => page.evaluate(() => window.scrollY);
+const SCROLL_TOLERANCE = 5;
+
+/** 捲到頁面底部並回傳 scrollY；先斷言真的捲動了，後面的還原才有意義。 */
+async function scrollToBottom(page: Page) {
+  await page.evaluate(() =>
+    window.scrollTo(0, document.documentElement.scrollHeight),
+  );
+  const y = await scrollY(page);
+  expect(y, "離開前頁面要真的捲動過").toBeGreaterThan(0);
+  return y;
+}
+
+/** 回到首頁後捲動位置要落在離開前的位置附近（等瀏覽器與腳本還原完成）。 */
+const expectScrollRestored = (page: Page, before: number) =>
+  expect
+    .poll(async () => Math.abs((await scrollY(page)) - before), {
+      message: "捲動位置要還原",
+    })
+    .toBeLessThanOrEqual(SCROLL_TOLERANCE);
+
+test("展開後點進菜譜再上一頁，維持展開數量與捲動位置", async ({ page }) => {
+  await useSmallViewport(page);
+  await page.goto("/");
+  const { batch, total, shown } = await expandTwice(page);
+  const before = await scrollToBottom(page);
+  await rows(page)
+    .nth(shown - 1)
+    .getByRole("link")
+    .click();
+  await expect(page).toHaveURL(/\/recipes\//);
+  await page.goBack();
+  await expect(rows(page)).toHaveCount(shown);
+  await expectMoreButton(page, batch, total - shown);
+  await expectScrollRestored(page, before);
+});
+
+test("搜尋結果展開後點進頁面再上一頁，維持展開數量與捲動位置（非同步還原路徑）", async ({
+  page,
+}) => {
+  await useSmallViewport(page);
+  await page.goto("/");
+  const { batch } = await readSizes(page);
+  await search(page, "鹽");
+  const total = await readResultTotal(page);
+  expect(total).toBeGreaterThan(batch);
+  await expandAll(page);
+  const before = await scrollToBottom(page);
+  await rows(page)
+    .nth(total - 1)
+    .getByRole("link")
+    .click();
+  await expect(page).not.toHaveURL(/\/\?q=/);
+  await page.goBack();
+  await expect(page).toHaveURL(/q=/);
+  await expect(rows(page)).toHaveCount(total);
+  await expectScrollRestored(page, before);
+});
+
+test("展開、換篩選、點進菜譜再上一頁，回到第一批", async ({ page }) => {
+  await page.goto("/");
+  await expandTwice(page);
+  await page.getByRole("button", { name: "蔬菜" }).click();
+  const filtered = await readListTotal(page);
+  const { batch } = await readSizes(page);
+  expect(filtered).toBeGreaterThan(batch);
+  await rows(page).first().getByRole("link").click();
+  await expect(page).toHaveURL(/\/recipes\//);
+  await page.goBack();
+  await expect(page).toHaveURL(/kind=vegetable/);
+  await expect(rows(page)).toHaveCount(batch);
+  await expectMoreButton(page, batch, filtered - batch);
+});
+
+test("換搜尋字詞的結果還在載入時按顯示更多不生效，新結果只顯示第一批", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const { batch } = await readSizes(page);
+  await search(page, "鹽");
+  await moreButton(page).click(); // 先展開一次，讓舊清單的展開數量大於一批
+  // 在同一個工作裡改字詞並按按鈕：搜尋有防抖動，此時畫面上還是舊清單
+  await page.evaluate(() => {
+    const input = document.querySelector<HTMLInputElement>("#search-input")!;
+    input.value = "油";
+    input.dispatchEvent(new InputEvent("input", { bubbles: true }));
+    document.querySelector<HTMLButtonElement>("[data-show-more]")!.click();
+  });
+  await expect(count(page)).toContainText("「油」符合");
+  const total = await readResultTotal(page);
+  expect(total).toBeGreaterThan(batch);
+  await expect(rows(page)).toHaveCount(batch);
+  await expectMoreButton(page, batch, total - batch);
+});
+
+test("展開後重新整理，維持展開數量", async ({ page }) => {
+  await page.goto("/");
+  const { batch, total, shown } = await expandTwice(page);
+  await page.reload();
+  await expect(rows(page)).toHaveCount(shown);
+  await expectMoreButton(page, batch, total - shown);
+});
+
+test("展開前後網址完全相同，不出現展開數量", async ({ page }) => {
+  await page.goto("/");
+  const before = page.url();
+  await expandTwice(page);
+  expect(page.url()).toBe(before);
+  expect(await page.evaluate(() => location.search + location.hash)).toBe("");
+});
+
+test("展開後換篩選再重新整理，保存值已清掉，只顯示第一批", async ({ page }) => {
+  await page.goto("/");
+  await expandTwice(page);
+  await page.getByRole("button", { name: "蔬菜" }).click();
+  const filtered = await readListTotal(page);
+  await page.reload();
+  const { batch } = await readSizes(page);
+  expect(filtered).toBeGreaterThan(batch);
+  await expect(rows(page)).toHaveCount(batch);
+  await expectMoreButton(page, batch, filtered - batch);
+});
+
+test("以新連結進入首頁只顯示第一批", async ({ page, context }) => {
+  await page.goto("/");
+  await expandTwice(page);
+  const fresh = await context.newPage();
+  await fresh.goto("/");
+  const { batch, total } = await readSizes(fresh);
+  await expect(rows(fresh)).toHaveCount(batch);
+  await expectMoreButton(fresh, batch, total - batch);
+});
+
+test("hash 導航：新紀錄是一批，回到原紀錄維持展開數量", async ({ page }) => {
+  await page.goto("/");
+  const { batch, total, shown } = await expandTwice(page);
+  await page.evaluate(() => {
+    location.hash = "#x";
+  });
+  await expect(page).toHaveURL(/#x$/);
+  await expect(rows(page)).toHaveCount(batch);
+  await page.goBack();
+  await expect(page).not.toHaveURL(/#x/);
+  await expect(rows(page)).toHaveCount(shown);
+  await expectMoreButton(page, batch, total - shown);
+});
+
 test("停用 JavaScript 時顯示完整清單，看不到按鈕", async ({
   page,
   browser,

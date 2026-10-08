@@ -9,6 +9,8 @@ import {
   parseHomeState,
   parseBatchSize,
   parseKindParam,
+  readSavedCount,
+  readSavedScroll,
   recipeIdFromUrl,
   recipeKinds,
   showMore,
@@ -316,6 +318,53 @@ describe("truncateRows", () => {
       remaining: 0,
       nextCount: 0,
     });
+  });
+});
+
+describe("readSavedCount", () => {
+  it("只認 history state 裡的正整數 showMore", () => {
+    assert.equal(readSavedCount({ showMoreCount: 40 }), 40);
+    assert.equal(readSavedCount({ other: 1, showMoreCount: 3 }), 3);
+  });
+
+  it("其他一律視為沒有保存值", () => {
+    for (const state of [
+      null,
+      undefined,
+      "showMore",
+      42,
+      [],
+      {},
+      { showMoreCount: "40" },
+      { showMoreCount: 0 },
+      { showMoreCount: -5 },
+      { showMoreCount: 1.5 },
+      { showMoreCount: Number.NaN },
+      { showMoreCount: Number.POSITIVE_INFINITY },
+    ]) {
+      assert.equal(readSavedCount(state), undefined, JSON.stringify(state));
+    }
+  });
+});
+
+describe("readSavedScroll", () => {
+  it("接受 0 與正數", () => {
+    assert.equal(readSavedScroll({ showMoreScrollY: 0 }), 0);
+    assert.equal(readSavedScroll({ showMoreScrollY: 1234.5 }), 1234.5);
+  });
+
+  it("其他一律視為沒有保存值", () => {
+    for (const state of [
+      null,
+      "x",
+      {},
+      { showMoreScrollY: "10" },
+      { showMoreScrollY: -1 },
+      { showMoreScrollY: Number.NaN },
+      { showMoreScrollY: Number.POSITIVE_INFINITY },
+    ]) {
+      assert.equal(readSavedScroll(state), undefined, JSON.stringify(state));
+    }
   });
 });
 

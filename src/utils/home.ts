@@ -78,6 +78,36 @@ export function parseHomeState(
   };
 }
 
+/** 展開數量在 `history.state` 裡的欄位名。 */
+export const SAVED_COUNT_KEY = "showMoreCount";
+
+/** 離開首頁前的捲動位置在 `history.state` 裡的欄位名。 */
+export const SAVED_SCROLL_KEY = "showMoreScrollY";
+
+function readStateField(state: unknown, key: string): unknown {
+  if (typeof state !== "object" || state === null) return undefined;
+  return (state as Record<string, unknown>)[key];
+}
+
+/**
+ * 從 `history.state`（外部資料，型別不可信）讀出保存的展開數量；
+ * 只有正整數才採用，其餘一律視為沒有保存值。
+ */
+export function readSavedCount(state: unknown): number | undefined {
+  const value = readStateField(state, SAVED_COUNT_KEY);
+  return Number.isInteger(value) && (value as number) > 0
+    ? (value as number)
+    : undefined;
+}
+
+/** 讀出保存的捲動位置；只有有限且不小於 0 的數字才採用。 */
+export function readSavedScroll(state: unknown): number | undefined {
+  const value = readStateField(state, SAVED_SCROLL_KEY);
+  return typeof value === "number" && Number.isFinite(value) && value >= 0
+    ? value
+    : undefined;
+}
+
 /** 回傳新的參數：預設值（空 q、全部）不寫進網址，其他參數原樣保留。 */
 export function applyHomeState(
   params: URLSearchParams,
