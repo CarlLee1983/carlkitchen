@@ -1,7 +1,7 @@
 ---
 title: 辦桌：一桌菜從冷盤吃到甜點
 summary: 從辭典與總舖師的說法認識辦桌、流水席和出菜順序，再用清蒸魚、肉羹湯與一碗甜湯在家擺一桌。
-draft: true
+draft: false
 editorialLayout: true
 publishedAt: 2026-10-08
 hero:

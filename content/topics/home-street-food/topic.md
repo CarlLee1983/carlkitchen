@@ -1,7 +1,7 @@
 ---
 title: 在家做小吃
 summary: 從台語辭典與臺南擔仔麵的舊記錄看小吃和攤子，再看炒米粉、肉燥麵、肉羹湯、鹽酥雞與蒜泥蚵仔在家裡怎麼做，依時間、器材和食材挑一道。
-draft: true
+draft: false
 editorialLayout: true
 publishedAt: 2026-10-08
 hero:
