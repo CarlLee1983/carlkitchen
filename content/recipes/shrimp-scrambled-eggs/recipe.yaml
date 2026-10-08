@@ -2,11 +2,11 @@ title: 蝦仁炒蛋
 summary: 蝦仁先汆燙，再拌入加了香油與蔥花的蛋液，快速翻炒成鬆軟蛋塊。
 servings: 4
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
-timeMinutes: 15
+timeMinutes: 45
 tags:
   - 家常菜
 ingredients:
@@ -19,7 +19,7 @@ ingredients:
     amount:
       value: 8
       unit: 顆
-    note: 大顆，來源使用常溫蛋；回溫所需時間待補
+    note: 大顆，烹煮前先取出回溫
   - name: 青蔥
     amount:
       value: 2
@@ -69,11 +69,11 @@ steps:
     image:
       src: ./step-4.webp
       alt: 深灰色炒鍋裡的黃色蛋液開始凝成蛋塊，混有粉紅色蝦仁與蔥花，一把木鏟伸入鍋中
-  - text: 炒至蛋熟後盛盤，撒上預留青蔥。來源未提供明確最終熟度判準，待補。
+  - text: 炒至蛋看起來熟了即可盛盤，撒上預留青蔥，避免過熟。
     image:
       src: ./step-5.webp
       alt: 深灰色炒鍋裡盛著凝固的黃色蛋塊、粉紅白色蝦仁與綠色蔥花
-tip: 來源標示 15 分鐘，但未交代雞蛋回溫所需時間，總時間待補。最終熟度的補充來源尚待核准，本菜譜暫留草稿。
+tip: 雞蛋先取出回溫，炒鍋與油加熱後快速翻折蛋液；蛋看起來熟了就盛盤，避免過熟。
 hero:
   src: ./hero.webp
   alt: 素色陶瓷盤裡盛著黃色蛋塊、粉紅白色蝦仁和綠色蔥花

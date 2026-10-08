@@ -8,6 +8,11 @@ vegetable: false
 protein: true
 timeMinutes: 30
 tags: [家常菜]
+hero:
+  {
+    src: ./hero.webp,
+    alt: 白色陶盤盛著雞腿丁、蔥段、宮保與花生米，裹著棕色醬汁。,
+  }
 ingredients:
   - { name: 雞腿肉, amount: { value: 400, unit: g } }
   - { name: 蒜末, amount: { value: 5, unit: g } }

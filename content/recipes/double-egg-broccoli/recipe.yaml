@@ -2,12 +2,19 @@ title: 雙蛋燴青花菜
 summary: 青花菜汆燙後，淋上皮蛋與熟鹹蛋煮成的芡汁。
 servings: 2
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: true
 protein: true
 timeMinutes: 20
 tags: [家常菜]
+hero:
+  { src: ./hero.webp, alt: 白色陶盤裡的青花菜淋上帶有皮蛋與熟鹹蛋丁的芡汁。 }
+ingredientsPhoto:
+  {
+    src: ./ingredients.webp,
+    alt: 青花菜小朵、皮蛋丁、熟鹹蛋丁、蒜末與調味料分別擺放。,
+  }
 ingredients:
   - { name: 青花菜, amount: { value: 130, unit: g }, note: 去除老纖維，切小朵 }
   - { name: 皮蛋, amount: { value: 1, unit: 顆 }, note: 去殼切小丁 }
@@ -48,6 +55,23 @@ ingredients:
   - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
 steps:
   - text: 將青花菜去除老纖維，洗淨切成小朵。皮蛋和熟鹹蛋去殼，分別切成小丁。
+    image:
+      {
+        src: ./step-1.webp,
+        alt: 木砧板上放著青花菜小朵，旁邊兩個碗分別盛著皮蛋丁與熟鹹蛋丁。,
+      }
   - text: 將約 800 ml 水煮滾，加入鹽，放入青花菜汆燙約 1 分鐘，撈起瀝乾並盛盤。
+    image:
+      { src: ./step-2.webp, alt: 汆燙後的青花菜在不鏽鋼瀝水籃與白色陶盤中。 }
   - text: 洗淨鍋子，倒入沙拉油，以小火炒香蒜末。加入高湯、細糖、雞精粉、皮蛋和熟鹹蛋，煮至滾沸。
+    image:
+      {
+        src: ./step-3.webp,
+        alt: 黑色平底鍋中的高湯與皮蛋丁、熟鹹蛋丁煮至滾沸。,
+      }
   - text: 倒入太白粉水勾芡，拌入香油，再把芡汁淋在青花菜上。
+    image:
+      {
+        src: ./step-4.webp,
+        alt: 黑色平底鍋把帶有雙蛋丁的芡汁淋到陶盤中的青花菜上。,
+      }

@@ -2,7 +2,7 @@ title: 肉燥菠菜
 summary: 菠菜汆燙後盛盤，淋上以紅蔥頭、蒜末和豬絞肉煮成的肉燥。
 servings: 2
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: true
 protein: true
@@ -46,6 +46,9 @@ steps:
       src: ./step-3.webp
       alt: 豬絞肉和醬油膏在鍋中煮至醬汁略收
   - text: 另煮一鍋水，加入食用油和菠菜，蓋上鍋蓋煮至水再次沸騰，翻動菠菜後再煮約 10 秒，撈出瀝乾。
+    image:
+      src: ./step-4.webp
+      alt: 汆燙後的菠菜在不鏽鋼瀝水籃瀝乾，旁邊有裝著熱水的小鍋
   - text: 菠菜盛盤，淋上肉燥。
     image:
       src: ./step-5.webp

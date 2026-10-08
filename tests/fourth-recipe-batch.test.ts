@@ -27,7 +27,7 @@ describe("第四批菜譜的來源、家用單位與做法", () => {
   for (const [id, source] of Object.entries(sources)) {
     it(`${id} 圖文齊全並保留核准來源`, () => {
       const data = recipe(id);
-      assert.equal(data.draft, id === "shrimp-scrambled-eggs");
+      assert.equal(data.draft, false);
       assert.equal(data.category, "非湯料理");
       assert.equal(data.mealCandidate, true);
       assert.ok(data.hero && data.ingredientsPhoto);
@@ -73,12 +73,14 @@ describe("第四批菜譜的來源、家用單位與做法", () => {
     assert.match(steps, /不加油/);
     assert.match(steps, /兩面.*上色/);
   });
-  it("蝦仁炒蛋維持來源主料並保留未解決時間與熟度草稿", () => {
+  it("蝦仁炒蛋依來源補足時間與熟度後可發布", () => {
     const data = recipe("shrimp-scrambled-eggs");
     assert.equal(data.servings, 4);
-    assert.equal(data.draft, true);
-    assert.match(data.tip ?? "", /總時間待補/);
-    assert.match(data.tip ?? "", /熟度/);
+    assert.equal(data.draft, false);
+    assert.equal(data.timeMinutes, 45);
+    assert.match(data.tip ?? "", /看起來熟了/);
+    assert.match(data.steps.at(-1)?.text ?? "", /看起來熟了/);
+    assert.doesNotMatch(data.tip ?? "", /待補/);
     assert.deepEqual(data.ingredients.find((i) => i.name === "蝦仁")?.amount, {
       value: 340,
       unit: "g",

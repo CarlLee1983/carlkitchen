@@ -2,18 +2,38 @@ title: 紅豆湯
 summary: 紅豆浸泡後以小火煮至豆皮略微裂開，加糖調味並燜熟。
 servings: 4
 category: 湯
-draft: true
+draft: false
 mealCandidate: false
 vegetable: false
 protein: false
 timeMinutes: 180
 tags: [甜湯, 豆類]
+hero:
+  {
+    src: ./hero.webp,
+    alt: 敞口淺色湯鍋盛著紅褐色湯汁與煮軟、部分豆皮微裂的紅豆。,
+  }
+ingredientsPhoto:
+  { src: ./ingredients.webp, alt: 乾紅豆、清水與細砂糖分別盛在素色容器中。 }
 ingredients:
   - { name: 紅豆, amount: { value: 300, unit: g } }
   - { name: 水, amount: { value: 1200, unit: ml } }
   - { name: 細砂糖, note: 適量，依喜好調整, group: 調味 }
 steps:
   - text: 紅豆洗淨，加入水浸泡約 2 小時。
+    image: { src: ./step-1.webp, alt: 紅豆浸在白色陶碗的清水中。 }
   - text: 紅豆連同浸泡水煮滾，撈除浮沫後轉小火，蓋鍋煮約 40 分鐘。
+    image:
+      {
+        src: ./step-2.webp,
+        alt: 淺色湯鍋鍋蓋半掀，紅豆在水中小火煮至冒出細泡。,
+      }
   - text: 煮至紅豆豆皮略微裂開，依喜好加入細砂糖拌勻。
+    image:
+      { src: ./step-3.webp, alt: 細砂糖從小碟倒入湯鍋，鍋中部分紅豆豆皮微裂。 }
   - text: 熄火後燜約 15 分鐘。
+    image:
+      {
+        src: ./step-4.webp,
+        alt: 湯鍋鍋蓋半掀，露出燜後煮軟且部分豆皮微裂的紅豆湯。,
+      }

@@ -2,7 +2,7 @@ title: 鹽酥雞
 summary: 雞胸肉醃過後裹地瓜粉炸到金黃，起鍋前放入九層塔，最後撒胡椒鹽與辣椒粉。
 servings: 2
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: false
 vegetable: false
 protein: true
@@ -61,8 +61,32 @@ ingredients:
   - { name: 辣椒粉, note: 適量，起鍋前撒, group: 調味 }
 steps:
   - text: 將雞胸肉去皮去骨，切成約拇指大小。九層塔洗淨瀝乾，剪去粗梗。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著切成拇指大小的生雞胸肉塊、九層塔葉和一把菜刀
   - text: 把蔥末、薑末、蒜末、五香粉、糖、味精、醬油膏、小蘇打、水與料理米酒放入果汁機，攪打約 30 秒成醃汁。
+    image:
+      src: ./step-2.webp
+      alt: 透明果汁機杯中盛著攪打好的棕色醃汁
   - text: 將雞胸肉放入醃汁，醃約 30 分鐘。
+    image:
+      src: ./step-3.webp
+      alt: 白色瓷碗中盛著浸在棕色醃汁裡的生雞胸肉塊
   - text: 將雞胸肉均勻裹上地瓜粉，再放入粗孔篩輕搖，篩掉多餘的粉。
+    image:
+      src: ./step-4.webp
+      alt: 金屬粗網篩中放著裹上地瓜粉的生雞胸肉塊
   - text: 把食用油加熱至約 150°C，放入雞胸肉炸約 2 分鐘，直到表面金黃酥脆。加入九層塔，約 2 秒後一同撈起瀝油。
+    image:
+      src: ./step-5.webp
+      alt: 深色油鍋中，金黃的炸雞塊與九層塔葉正在熱油裡起泡
   - text: 撒上胡椒鹽與辣椒粉。
+    image:
+      src: ./step-6.webp
+      alt: 白色瓷盤中的金黃炸雞塊與九層塔葉，表面撒著胡椒鹽和紅色辣椒粉
+hero:
+  src: ./hero.webp
+  alt: 白色瓷盤中盛著金黃的鹽酥雞塊與炸九層塔，表面撒有胡椒鹽和辣椒粉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 生雞胸肉塊、蔥末、薑末、蒜末、九層塔與地瓜粉分開擺放，旁邊是分裝在小碟和容器中的醃料、炸油、胡椒鹽及辣椒粉

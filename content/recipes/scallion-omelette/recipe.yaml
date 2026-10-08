@@ -2,7 +2,7 @@ title: 蔥花蛋
 summary: 蛋液拌入蔥花與調味料，煎到兩面金黃。
 servings: 2
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
@@ -37,5 +37,20 @@ ingredients:
     }
 steps:
   - text: 將蔥切成蔥花。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著一堆切好的青綠蔥花與一把菜刀
   - text: 把雞蛋打散，加入鹽、酒、雞精粉和蔥花拌勻。
+    image:
+      src: ./step-2.webp
+      alt: 白色瓷碗中盛著拌入蔥花的黃色生蛋液，表面有少量氣泡
   - text: 將食用油入鍋燒熱，倒入蛋液，煎至兩面金黃。
+    image:
+      src: ./step-3.webp
+      alt: 深色平底鍋中煎好的金黃蔥花蛋，表面散布綠色蔥花
+hero:
+  src: ./hero.webp
+  alt: 白色瓷盤中盛著一整片金黃的蔥花蛋，蛋面散布翠綠蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩顆雞蛋、一份切好的蔥花，以及分裝在小碗中的食用油、鹽、酒和雞精粉
