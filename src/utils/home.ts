@@ -78,6 +78,36 @@ export function parseHomeState(
   };
 }
 
+/** 展開數量在 `history.state` 裡的欄位名。 */
+export const SAVED_COUNT_KEY = "showMoreCount";
+
+/** 離開首頁前的捲動位置在 `history.state` 裡的欄位名。 */
+export const SAVED_SCROLL_KEY = "showMoreScrollY";
+
+function readStateField(state: unknown, key: string): unknown {
+  if (typeof state !== "object" || state === null) return undefined;
+  return (state as Record<string, unknown>)[key];
+}
+
+/**
+ * 從 `history.state`（外部資料，型別不可信）讀出保存的展開數量；
+ * 只有正整數才採用，其餘一律視為沒有保存值。
+ */
+export function readSavedCount(state: unknown): number | undefined {
+  const value = readStateField(state, SAVED_COUNT_KEY);
+  return Number.isInteger(value) && (value as number) > 0
+    ? (value as number)
+    : undefined;
+}
+
+/** 讀出保存的捲動位置；只有有限且不小於 0 的數字才採用。 */
+export function readSavedScroll(state: unknown): number | undefined {
+  const value = readStateField(state, SAVED_SCROLL_KEY);
+  return typeof value === "number" && Number.isFinite(value) && value >= 0
+    ? value
+    : undefined;
+}
+
 /** 回傳新的參數：預設值（空 q、全部）不寫進網址，其他參數原樣保留。 */
 export function applyHomeState(
   params: URLSearchParams,
@@ -122,4 +152,62 @@ export function containsAllTerms(content: string, q: string): boolean {
   return [...segmenter.segment(normalizeContent(q))]
     .filter((part) => part.isWordLike)
     .every((part) => haystack.includes(part.segment));
+}
+
+/** 首頁菜譜清單每批顯示的列數預設值；建置時可用 `HOME_BATCH_SIZE` 覆寫（僅供 e2e 使用）。 */
+export const DEFAULT_BATCH_SIZE = 20;
+
+/** 解析建置環境變數 `HOME_BATCH_SIZE`：未設定或空字串用預設值，其餘必須是正整數，否則丟錯讓建置失敗。 */
+export function parseBatchSize(raw: string | undefined): number {
+  if (raw === undefined || raw === "") return DEFAULT_BATCH_SIZE;
+  if (!/^[1-9]\d*$/.test(raw)) {
+    throw new Error(
+      `HOME_BATCH_SIZE 必須是正整數，收到「${raw}」（未設定時預設 ${DEFAULT_BATCH_SIZE}）。`,
+    );
+  }
+  return Number(raw);
+}
+
+/** 顯示更多的截斷結果。 */
+export interface Truncation {
+  /** 實際顯示的列數。 */
+  shown: number;
+  /** 被收起的列數。 */
+  remaining: number;
+  /** 下一次按鈕要再顯示的列數；沒有剩餘時為 0。 */
+  nextCount: number;
+}
+
+/**
+ * 依可見列總數、每批數量與目前要顯示的數量算出截斷結果。
+ * `requested` 未設定時顯示一批；其餘夾在 min(一批, 總數) 與總數之間。呼叫端只傳整數。
+ */
+export function truncateRows(
+  total: number,
+  batch: number,
+  requested?: number,
+): Truncation {
+  const lower = Math.min(batch, total);
+  const shown = Math.min(Math.max(requested ?? batch, lower), total);
+  const remaining = total - shown;
+  return { shown, remaining, nextCount: Math.min(batch, remaining) };
+}
+
+/** 按一次「顯示更多」後的狀態；`firstNewIndex` 是新出現第一列在可見列中的位置，沒有新列時為 null。 */
+export interface ShowMoreStep extends Truncation {
+  firstNewIndex: number | null;
+}
+
+/** 在目前截斷結果之上再顯示一批。 */
+export function showMore(
+  total: number,
+  batch: number,
+  requested?: number,
+): ShowMoreStep {
+  const before = truncateRows(total, batch, requested);
+  const next = truncateRows(total, batch, before.shown + before.nextCount);
+  return {
+    ...next,
+    firstNewIndex: next.shown > before.shown ? before.shown : null,
+  };
 }

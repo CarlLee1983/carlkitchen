@@ -2,14 +2,20 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   applyHomeState,
+  DEFAULT_BATCH_SIZE,
   containsAllTerms,
   formatDateLabel,
   normalizeQuery,
   parseHomeState,
+  parseBatchSize,
   parseKindParam,
+  readSavedCount,
+  readSavedScroll,
   recipeIdFromUrl,
   recipeKinds,
+  showMore,
   topicIdFromUrl,
+  truncateRows,
   visibleKindOptions,
 } from "../src/utils/home.ts";
 import type { RecipeCategory } from "../src/content/recipe-schema.ts";
@@ -234,5 +240,169 @@ describe("containsAllTerms", () => {
   it("沒有字詞（空白或標點）時符合", () => {
     assert.equal(containsAllTerms(content, "  "), true);
     assert.equal(containsAllTerms(content, "，"), true);
+  });
+});
+
+describe("parseBatchSize", () => {
+  it("未設定或空字串用預設值", () => {
+    assert.equal(parseBatchSize(undefined), DEFAULT_BATCH_SIZE);
+    assert.equal(parseBatchSize(""), DEFAULT_BATCH_SIZE);
+  });
+
+  it("接受正整數", () => {
+    assert.equal(parseBatchSize("2"), 2);
+    assert.equal(parseBatchSize("20"), 20);
+  });
+
+  it("非正整數丟錯並說明", () => {
+    for (const raw of ["0", "-3", "1.5", "abc", " 2", "2x"]) {
+      assert.throws(() => parseBatchSize(raw), /HOME_BATCH_SIZE/, raw);
+    }
+  });
+});
+
+describe("truncateRows", () => {
+  it("總數小於一批：全部顯示、沒有剩餘", () => {
+    assert.deepEqual(truncateRows(5, 20), {
+      shown: 5,
+      remaining: 0,
+      nextCount: 0,
+    });
+  });
+
+  it("總數等於一批：全部顯示、沒有剩餘", () => {
+    assert.deepEqual(truncateRows(20, 20), {
+      shown: 20,
+      remaining: 0,
+      nextCount: 0,
+    });
+  });
+
+  it("總數大於一批：未設定時顯示一批", () => {
+    assert.deepEqual(truncateRows(68, 20), {
+      shown: 20,
+      remaining: 48,
+      nextCount: 20,
+    });
+  });
+
+  it("最後一批不足：下次只再顯示剩餘的數量", () => {
+    assert.deepEqual(truncateRows(68, 20, 60), {
+      shown: 60,
+      remaining: 8,
+      nextCount: 8,
+    });
+  });
+
+  it("要求的數量超過總數或小於一批時夾到範圍內", () => {
+    assert.deepEqual(truncateRows(68, 20, 500), {
+      shown: 68,
+      remaining: 0,
+      nextCount: 0,
+    });
+    assert.deepEqual(truncateRows(68, 20, 3), {
+      shown: 20,
+      remaining: 48,
+      nextCount: 20,
+    });
+    assert.deepEqual(truncateRows(5, 20, 100), {
+      shown: 5,
+      remaining: 0,
+      nextCount: 0,
+    });
+  });
+
+  it("沒有列時什麼都不顯示", () => {
+    assert.deepEqual(truncateRows(0, 20), {
+      shown: 0,
+      remaining: 0,
+      nextCount: 0,
+    });
+  });
+});
+
+describe("readSavedCount", () => {
+  it("只認 history state 裡的正整數 showMore", () => {
+    assert.equal(readSavedCount({ showMoreCount: 40 }), 40);
+    assert.equal(readSavedCount({ other: 1, showMoreCount: 3 }), 3);
+  });
+
+  it("其他一律視為沒有保存值", () => {
+    for (const state of [
+      null,
+      undefined,
+      "showMore",
+      42,
+      [],
+      {},
+      { showMoreCount: "40" },
+      { showMoreCount: 0 },
+      { showMoreCount: -5 },
+      { showMoreCount: 1.5 },
+      { showMoreCount: Number.NaN },
+      { showMoreCount: Number.POSITIVE_INFINITY },
+    ]) {
+      assert.equal(readSavedCount(state), undefined, JSON.stringify(state));
+    }
+  });
+});
+
+describe("readSavedScroll", () => {
+  it("接受 0 與正數", () => {
+    assert.equal(readSavedScroll({ showMoreScrollY: 0 }), 0);
+    assert.equal(readSavedScroll({ showMoreScrollY: 1234.5 }), 1234.5);
+  });
+
+  it("其他一律視為沒有保存值", () => {
+    for (const state of [
+      null,
+      "x",
+      {},
+      { showMoreScrollY: "10" },
+      { showMoreScrollY: -1 },
+      { showMoreScrollY: Number.NaN },
+      { showMoreScrollY: Number.POSITIVE_INFINITY },
+    ]) {
+      assert.equal(readSavedScroll(state), undefined, JSON.stringify(state));
+    }
+  });
+});
+
+describe("showMore", () => {
+  it("多顯示一批，新出現的第一列是原本顯示數量的位置", () => {
+    assert.deepEqual(showMore(68, 20), {
+      shown: 40,
+      remaining: 28,
+      nextCount: 20,
+      firstNewIndex: 20,
+    });
+  });
+
+  it("最後一批不足時只多顯示剩餘的數量", () => {
+    assert.deepEqual(showMore(68, 20, 60), {
+      shown: 68,
+      remaining: 0,
+      nextCount: 0,
+      firstNewIndex: 60,
+    });
+  });
+
+  it("要求的數量小於一批時先夾回一批再多顯示一批", () => {
+    assert.deepEqual(showMore(68, 20, 3), {
+      shown: 40,
+      remaining: 28,
+      nextCount: 20,
+      firstNewIndex: 20,
+    });
+  });
+
+  it("已全部顯示或總數不超過一批時沒有新列", () => {
+    assert.deepEqual(showMore(68, 20, 68), {
+      shown: 68,
+      remaining: 0,
+      nextCount: 0,
+      firstNewIndex: null,
+    });
+    assert.equal(showMore(5, 20).firstNewIndex, null);
   });
 });

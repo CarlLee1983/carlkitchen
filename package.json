@@ -18,7 +18,9 @@
     "measure:mobile": "node --experimental-strip-types scripts/measure-mobile.ts",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "build:e2e-meal": "RECIPES_DIR=tests/fixtures/meal-recipes SOLAR_TERMS_DIR=tests/fixtures/solar-terms-empty ASTRO_OUT_DIR=dist-meal astro build --force",
-    "test:e2e": "RECIPES_DIR=tests/fixtures/recipes INGREDIENTS_DIR=tests/fixtures/ingredients TOPICS_DIR=tests/fixtures/topics SOLAR_TERMS_DIR=tests/fixtures/solar-terms INGREDIENT_SOURCES_DIR=tests/fixtures/ingredient-sources pnpm build && pnpm build:e2e-meal && node scripts/run-e2e.mjs",
+    "build:e2e": "RECIPES_DIR=tests/fixtures/recipes INGREDIENTS_DIR=tests/fixtures/ingredients TOPICS_DIR=tests/fixtures/topics SOLAR_TERMS_DIR=tests/fixtures/solar-terms INGREDIENT_SOURCES_DIR=tests/fixtures/ingredient-sources pnpm build",
+    "build:e2e-show-more": "HOME_BATCH_SIZE=1 ASTRO_OUT_DIR=dist-show-more pnpm build:e2e",
+    "test:e2e": "pnpm build:e2e && pnpm build:e2e-meal && pnpm build:e2e-show-more && node scripts/run-e2e.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

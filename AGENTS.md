@@ -25,10 +25,12 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `pnpm check` — 格式檢查、`astro check`、建置
 - `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。節氣：目錄有資料時 24 個識別值須齊全且無未知檔名、每筆通過 schema、當令食材只指向已發布食材條目、每個節氣的說明在來源紀錄有對照且網址列於 `sources`，核准來源網址不得出現在輸出（空目錄通過）。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄，`SOLAR_TERMS_DIR` 可改節氣目錄（預設 `content/solar-terms`），`SOLAR_TERM_SOURCES_DIR` 可改節氣來源紀錄目錄（預設 `content/solar-term-sources`）
 - `pnpm test` — 單元測試
-- `pnpm test:e2e` — 以固定菜譜建置後跑 Playwright（chromium）；建置輸出在 `dist`、port 以 `E2E_PORT_BASE`（預設 4321）起算，平行跑需各用一個 worktree 並錯開 port
+- `pnpm test:e2e` — 以固定菜譜建置三份站台後依序跑三輪 Playwright（chromium）：預設站台（`dist`）、配菜站台（`dist-meal`，只跑 `meal.spec.ts`）、顯示更多站台（`dist-show-more`，每批 1 道、含搜尋索引，只跑 `show-more.spec.ts`）；port 以 `E2E_PORT_BASE`（預設 4321）起算，三份站台依序占 +0／+1／+2，平行跑需各用一個 worktree 並錯開 port
 - `pnpm check:merge` — 在暫時 worktree 合併 `origin/main` 後跑 CI 的檢查（加 `--e2e` 含瀏覽器測試），抓分支本身全綠、合併後才壞的情況
 - `pnpm measure:mobile` — 量測首頁手機版版面（篩選列與第一列位置、列高、一屏列數）；需先 `pnpm build`。談版面數字先量再估
 - `pnpm format` — 格式化
+
+建置環境變數 `HOME_BATCH_SIZE` 設定首頁菜譜清單每批顯示的列數（正整數，預設 20，非正整數建置失敗），僅供顯示更多 e2e 站台使用（設為 1），定義處是 `src/utils/home.ts` 的 `parseBatchSize`。
 
 環境變數 `RECIPES_DIR` 選擇內容根目錄，預設 `content/recipes`；測試與 e2e 用 `tests/fixtures/recipes`。環境變數 `TOPICS_DIR` 選擇專題根目錄，預設 `content/topics`；e2e 用 `tests/fixtures/topics`（含一份草稿），專題來源紀錄 `TOPIC_SOURCES_DIR` 預設 `content/topic-sources`、測試用 `tests/fixtures/topic-sources`。環境變數 `SOLAR_TERMS_DIR` 選擇節氣根目錄，預設 `content/solar-terms`；e2e 用 `tests/fixtures/solar-terms`（24 筆齊全），配菜站台用空的 `tests/fixtures/solar-terms-empty` 驗證空集合規則；節氣來源紀錄 `SOLAR_TERM_SOURCES_DIR` 預設 `content/solar-term-sources`、測試用 `tests/fixtures/solar-term-sources`。
 

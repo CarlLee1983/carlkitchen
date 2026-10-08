@@ -13,7 +13,8 @@ import {
 } from "node:fs";
 import { join } from "node:path";
 
-const SITE = "dist";
+// 輸出目錄與 astro.config.mjs 一致（ASTRO_OUT_DIR，預設 dist）；e2e 的額外站台各自建索引。
+const SITE = process.env.ASTRO_OUT_DIR ?? "dist";
 const GLOBS = [
   "recipes/**/*.html",
   "topics/**/*.html",
