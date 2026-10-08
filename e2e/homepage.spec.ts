@@ -1,6 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { expectFocusRing, expectTouchTargets } from "./a11y-helpers";
 import { publishedFixtureRecipes } from "./fixture-recipes";
+import { sizesSlot } from "./image-helpers";
 
 const recipes = publishedFixtureRecipes();
 const soups = recipes.filter((recipe) => recipe.category === "湯");
@@ -275,6 +276,17 @@ test("成品大圖與縮圖的載入設定：大圖優先載入，縮圖不下�
   const widths = [...srcset.matchAll(/\s(\d+)w/g)].map((m) => Number(m[1]));
   expect(Math.max(...widths)).toBeLessThanOrEqual(400);
 });
+
+for (const width of [390, 1366]) {
+  test(`成品大圖的 sizes 與實際顯示寬度一致（視窗 ${width}px），瀏覽器不會挑過大的圖`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    const { slot, rendered } = await sizesSlot(hero(page).getByRole("img"));
+    expect(Math.abs(slot - rendered)).toBeLessThanOrEqual(1);
+  });
+}
 
 test("關閉 JS 時只有一張大圖（第一道菜），不會下載全部", async ({
   browser,

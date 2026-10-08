@@ -72,9 +72,10 @@ const recipeJsonLd =
 // 讀者看不到、但要能搜到的詞：受控標籤與別名。
 const searchTerms = [...data.tags, ...data.aliases];
 
-// sizes 對應下方 CSS：寬螢幕主欄與成品圖上限 44rem，手機單欄約等於視窗寬。
-const MAIN_SIZES = "(min-width: 64rem) 44rem, 100vw";
-const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
+// sizes 對應下方 CSS：手機單欄為視窗寬扣掉左右 1.5rem 頁面留白；成品圖上限 44rem，步驟圖再扣 2.5rem 編號縮排。
+const MAIN_SIZES = "(min-width: 47rem) 44rem, calc(100vw - 3rem)";
+const SIDE_SIZES = "(min-width: 64rem) 20rem, calc(100vw - 3rem)";
+const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
 ---
 
 <Base
@@ -197,7 +198,7 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
               <li>
                 <p>{step.text}</p>
                 {step.image && (
-                  <Illustration image={step.image} sizes={MAIN_SIZES} />
+                  <Illustration image={step.image} sizes={STEP_SIZES} />
                 )}
               </li>
             ))

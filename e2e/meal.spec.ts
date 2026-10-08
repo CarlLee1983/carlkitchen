@@ -1169,3 +1169,82 @@ test.describe("無障礙", () => {
     await expectNoAxeViolations(page, "配菜頁五菜一湯");
   });
 });
+
+for (const width of [320, 390, 768, 1280]) {
+  test(`菜單欄位在 ${width}px 保持可讀寬度、單行標籤與自然縮圖比例`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto(`/meal/?menu=${sharedFour}`);
+    for (const item of await items(page).all()) {
+      const search = item.getByRole("searchbox");
+      const chooser = item.getByRole("combobox");
+      for (const control of [search, chooser]) {
+        const box = await control.boundingBox();
+        expect(box!.width).toBeGreaterThanOrEqual(200);
+        expect(box!.height).toBeGreaterThanOrEqual(44);
+        const label = await control.evaluate((element) => {
+          const node = element.closest("label")!.firstChild!;
+          const range = document.createRange();
+          range.selectNodeContents(node);
+          const box = range.getBoundingClientRect();
+          const lineHeight = parseFloat(
+            getComputedStyle(element.closest("label")!).lineHeight,
+          );
+          return { height: box.height, lineHeight };
+        });
+        expect(label.height).toBeLessThanOrEqual(label.lineHeight + 1);
+      }
+      const searchBox = (await search.boundingBox())!;
+      const chooserBox = (await chooser.boundingBox())!;
+      if (width <= 390) {
+        const rowBox = (await item.boundingBox())!;
+        expect(chooserBox.y).toBeGreaterThanOrEqual(
+          searchBox.y + searchBox.height,
+        );
+        expect(chooserBox.width).toBeCloseTo(rowBox.width, 0);
+      } else {
+        expect(chooserBox.y).toBeCloseTo(searchBox.y, 0);
+        expect(chooserBox.x).toBeGreaterThanOrEqual(
+          searchBox.x + searchBox.width,
+        );
+      }
+      const lockBox = (await item
+        .getByRole("button", { name: /^鎖定 / })
+        .boundingBox())!;
+      expect(lockBox.y).toBeGreaterThanOrEqual(
+        chooserBox.y + chooserBox.height,
+      );
+      const textFits = await chooser.evaluate((element) => {
+        const select = element as HTMLSelectElement;
+        const style = getComputedStyle(select);
+        const context = document.createElement("canvas").getContext("2d")!;
+        context.font = `${style.fontSize} ${style.fontFamily}`;
+        const longest = Math.max(
+          ...Array.from(
+            select.options,
+            (option) => context.measureText(option.text).width,
+          ),
+        );
+        return (
+          longest +
+            parseFloat(style.paddingLeft) +
+            parseFloat(style.paddingRight) +
+            24 <=
+          select.clientWidth
+        );
+      });
+      expect(textFits, "菜名與選單箭頭有足夠顯示空間").toBe(true);
+      const image = await item.getByRole("img").boundingBox();
+      expect(image!.width / image!.height).toBeCloseTo(1.5, 1);
+    }
+    await expectNoOverflowNow(page, `欄位可讀 ${width}px`);
+    page.once("dialog", (dialog) => dialog.accept());
+    await chooseSelf(page).click();
+    const blankSelect = await chooseOf(page, 0).boundingBox();
+    expect(blankSelect!.width).toBeGreaterThanOrEqual(200);
+    await searchOf(page, 0).fill("沒有這道菜");
+    await expect(items(page).first()).toContainText("找不到可選菜色");
+    await expectNoOverflowNow(page, `無搜尋結果 ${width}px`);
+  });
+}

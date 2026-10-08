@@ -316,7 +316,9 @@ export function initMeal() {
     }
 
     const actions = el("div", undefined, "meal-actions");
-    const searchLabel = el("label", target === "soup" ? "搜尋湯" : "搜尋菜色");
+    const pickers = el("div", undefined, "meal-pickers");
+    const searchLabel = el("label");
+    searchLabel.append(el("span", target === "soup" ? "搜尋湯" : "搜尋菜色"));
     const search = el("input");
     search.type = "search";
     search.setAttribute(
@@ -327,8 +329,9 @@ export function initMeal() {
     search.dataset.target = String(target);
     search.value = searches.get(String(target)) ?? "";
     searchLabel.append(search);
-    actions.append(searchLabel);
-    const chooserLabel = el("label", target === "soup" ? "指定湯" : "指定菜色");
+    pickers.append(searchLabel);
+    const chooserLabel = el("label");
+    chooserLabel.append(el("span", target === "soup" ? "指定湯" : "指定菜色"));
     const chooser = el("select");
     chooser.setAttribute(
       "aria-label",
@@ -341,8 +344,9 @@ export function initMeal() {
     search.setAttribute("aria-describedby", hint.id);
     chooser.setAttribute("aria-describedby", hint.id);
     updateChoices(target, id, search.value, chooser, hint);
-    chooserLabel.append(hint);
-    chooserLabel.append(chooser);
+    chooserLabel.append(chooser, hint);
+    pickers.append(chooserLabel);
+    actions.append(pickers);
     if (info && !draft) {
       const lock = actionButton(
         locked ? "已鎖定" : "鎖定",
@@ -352,9 +356,13 @@ export function initMeal() {
       );
       lock.setAttribute("aria-label", `鎖定 ${info.title}`);
       lock.setAttribute("aria-pressed", String(locked));
-      actions.append(lock, actionButton("替換", info.title, "replace", target));
+      const quickActions = el("div", undefined, "meal-quick-actions");
+      quickActions.append(
+        lock,
+        actionButton("替換", info.title, "replace", target),
+      );
+      actions.append(quickActions);
     }
-    actions.append(chooserLabel);
 
     item.append(
       el(

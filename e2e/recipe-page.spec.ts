@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
+import { sizesSlot } from "./image-helpers";
 
 const url = "/recipes/tomato-egg/";
 
@@ -95,6 +96,18 @@ test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版�
   await expect(hero).toHaveAttribute("sizes", /44rem/);
   await expect(hero).not.toHaveAttribute("loading", "lazy");
 });
+
+for (const width of [390, 800, 1366]) {
+  test(`成品圖的 sizes 與實際顯示寬度一致（視窗 ${width}px），瀏覽器不會挑過大的圖`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto(url);
+    const hero = page.getByRole("article").getByRole("img").first();
+    const { slot, rendered } = await sizesSlot(hero);
+    expect(Math.abs(slot - rendered)).toBeLessThanOrEqual(1);
+  });
+}
 
 test("頁底有僅供參考聲明，且頁面沒有外部或來源連結", async ({ page }) => {
   await page.goto(url);
