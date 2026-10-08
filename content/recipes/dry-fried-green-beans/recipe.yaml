@@ -11,7 +11,7 @@ tags: [家常菜, 便當菜]
 aliases: [乾扁四季豆]
 ingredients:
   - { name: 四季豆, amount: { value: 300, unit: g }, note: 整根使用，不切段 }
-  - { name: 絞肉, amount: { value: 100, unit: g } }
+  - { name: 豬絞肉, amount: { value: 100, unit: g } }
   - { name: 大蒜, amount: { value: 6, unit: 瓣 } }
   - { name: 薑, amount: { value: 10, unit: g } }
   - { name: 紅辣椒, amount: { value: 1, unit: 支 } }
@@ -30,7 +30,7 @@ steps:
     image:
       src: ./step-2.webp
       alt: 炒鍋中鋪著一層整根的四季豆，表皮微皺、帶些焦斑，鍋底有一層油，旁邊放著一支木鍋鏟
-  - text: 原鍋放入蒜末、薑、紅辣椒末和絞肉翻炒，炒到絞肉變色。
+  - text: 原鍋放入蒜末、薑、紅辣椒末和豬絞肉翻炒，炒到豬絞肉變色。
     image:
       src: ./step-3.webp
       alt: 炒鍋中炒到變色、散成細粒的絞肉，夾雜紅辣椒末與蒜末，鍋裡沒有四季豆，旁邊放著一支木鍋鏟
@@ -44,4 +44,4 @@ hero:
 ingredientsPhoto:
   src: ./ingredients.webp
   alt: 一把整根的四季豆、六瓣大蒜、一塊薑、一支紅辣椒、一小碗絞肉，以及小瓶裝的醬油、米酒、食用油和小碟裝的鹽、糖、白胡椒粉
-tip: 想讓四季豆更乾香，可改用半鍋油把四季豆炸到表皮乾皺，撈起瀝油後再與絞肉拌炒。
+tip: 想讓四季豆更乾香，可改用半鍋油把四季豆炸到表皮乾皺，撈起瀝油後再與豬絞肉拌炒。
