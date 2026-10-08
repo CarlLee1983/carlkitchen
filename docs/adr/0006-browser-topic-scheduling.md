@@ -8,6 +8,6 @@ status: accepted
 
 取捨是讀者裝置日期不準時可能顯示錯誤檔期，未執行 JavaScript 的讀者與搜尋引擎可能只看到常青版本；不承諾已開啟頁面於午夜即時切換。站主於 2026-10-08 確認完整方案並接受此取捨。若未來要求搜尋引擎與所有讀者在指定時刻看到一致的當期推薦，需重新評估伺服器時間及部署策略。
 
-首頁「這個時節」區塊的當前節氣沿用同一作法（`src/components/HomeSeason.astro`）：瀏覽器依讀者當下時間從 `src/data/solar-terms.json` 選出已交節的最近一個，靜態 HTML 不預填，未執行 JavaScript 時不顯示節氣，避免出現建置當下的過期節氣。
+首頁「這個時節」區塊的當前節氣沿用同一作法（`src/components/HomeSeason.astro`）：瀏覽器依讀者當下時間，從建置時嵌入頁面的節氣時程（資料來源見 [ADR 0007](0007-solar-terms-official-then-computed.md)）選出已交節的最近一個，靜態 HTML 不預填，未執行 JavaScript 時不顯示節氣，避免出現建置當下的過期節氣。
 
 回滾時移除首頁日期選取與檔期設定即可，既有專題內容與網址不變。

@@ -42,10 +42,10 @@ const startOf = (term: SolarTerm) =>
  * 回傳 now 所在的節氣：已交節的最近一個。資料須依時間排序。
  * 最後一個節氣之後無法確認何時結束，與第一個之前一樣不回傳，由呼叫端隱藏。
  */
-export function selectSolarTerm(
-  terms: readonly SolarTerm[],
+export function selectSolarTerm<Term extends SolarTerm>(
+  terms: readonly Term[],
   now = new Date(),
-): SolarTerm | undefined {
+): Term | undefined {
   const time = now.getTime();
   const index = terms.findIndex((term) => startOf(term) > time);
   return index > 0 ? terms[index - 1] : undefined;

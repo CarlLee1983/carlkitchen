@@ -2,6 +2,12 @@
 import type { ImageMetadata } from "astro";
 import HomeTopic from "./HomeTopic.astro";
 import Illustration from "./Illustration.astro";
+import solarTerms from "../data/solar-terms.json";
+import {
+  COMPUTED_YEARS_AHEAD,
+  solarTermSchedule,
+} from "../utils/solar-term-calc";
+import { inlineJson } from "../utils/inline-json";
 import { solarTermArt, type SolarTermName } from "../utils/solar-terms";
 import type { TopicEntry } from "../utils/topic-entries";
 
@@ -19,6 +25,11 @@ const illustration = (name: SolarTermName) => {
   return { src: image.default, alt: `${name}節氣插畫` };
 };
 const names = Object.keys(solarTermArt) as SolarTermName[];
+// 中央氣象署公告用完後以天文推算補位，資料不會在兩次部署之間突然用完（ADR 0007）。
+const schedule = solarTermSchedule(
+  solarTerms.terms,
+  new Date().getFullYear() + COMPUTED_YEARS_AHEAD,
+);
 ---
 
 {/* 專題在上、節氣在下；兩列都隱藏時整區不顯示。 */}
@@ -38,19 +49,32 @@ const names = Object.keys(solarTermArt) as SolarTermName[];
           <strong>{name}</strong>
           <span>
             <time data-solar-term-time /> 交節
-            <small>資料：中央氣象署</small>
+            <small data-solar-term-source />
           </span>
         </span>
       </template>
     ))
   }
+  <script
+    type="application/json"
+    data-solar-term-schedule
+    set:html={inlineJson(schedule)}
+  />
 </section>
 
 <script>
-  import solarTerms from "../data/solar-terms.json";
+  import type { ScheduledSolarTerm } from "../utils/solar-term-calc";
   import { selectSolarTerm } from "../utils/solar-terms";
+  const SOURCE_LABEL = {
+    cwa: "資料：中央氣象署",
+    computed: "依天文推算",
+  } satisfies Record<ScheduledSolarTerm["source"], string>;
   const row = document.querySelector<HTMLElement>("[data-solar-term]");
-  const selected = selectSolarTerm(solarTerms.terms);
+  const data = document.querySelector(
+    "[data-solar-term-schedule]",
+  )?.textContent;
+  const schedule: ScheduledSolarTerm[] = data ? JSON.parse(data) : [];
+  const selected = selectSolarTerm(schedule);
   const template = document.querySelector<HTMLTemplateElement>(
     `[data-solar-term-slot="${selected?.name}"]`,
   );
@@ -61,6 +85,8 @@ const names = Object.keys(solarTermArt) as SolarTermName[];
     time.dateTime = `${selected.date}T${selected.time}+08:00`;
     time.title = "臺灣時間";
     time.textContent = `${month} 月 ${day} 日 ${selected.time}`;
+    content.querySelector("[data-solar-term-source]")!.textContent =
+      SOURCE_LABEL[selected.source];
     row.replaceChildren(content);
     row.hidden = false;
   }
