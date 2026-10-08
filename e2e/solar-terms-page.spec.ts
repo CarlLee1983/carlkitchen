@@ -96,6 +96,25 @@ test("目前節氣於交節時刻（臺灣時間）切換", async ({ page }) => 
   }
 });
 
+test("年初到小寒之前，目前節氣是去年的冬至，顯示它實際交節的日期", async ({
+  page,
+}) => {
+  const dongzhi2026 = data.terms.find(
+    (term) => term.name === "冬至" && term.date.startsWith("2026-"),
+  )!;
+  await page.clock.setFixedTime(new Date("2027-01-02T12:00:00+08:00"));
+  await page.goto("/solar-terms/");
+  await expect(current(page)).toHaveCount(1);
+  await expect(current(page)).toHaveAttribute("id", "dongzhi");
+  await expect(current(page)).toContainText("12 月 22 日");
+  await expect(current(page).locator("time")).toHaveAttribute(
+    "datetime",
+    `${dongzhi2026.date}T${dongzhi2026.time}+08:00`,
+  );
+  // 其餘節氣照今年：小寒在今年 1 月。
+  await expect(page.locator("#xiaohan")).toContainText("1 月");
+});
+
 test("公告用完的年份顯示「依天文推算」", async ({ page }) => {
   const afterOfficial = Number(data.terms.at(-1)!.date.slice(0, 4)) + 1;
   await page.clock.setFixedTime(
@@ -116,6 +135,16 @@ test("停用 JavaScript 時插畫與說明照常，且沒有日期與目前節�
   await page.goto("/solar-terms/");
   await expect(hanlu(page)).toContainText("固定資料的寒露說明，只用於測試。");
   await expect(page.getByRole("img")).toHaveCount(24);
+  // 當令食材連結不依賴 JavaScript。
+  await expect(
+    page.locator("#lichun").getByRole("link", { name: "番茄" }),
+  ).toBeVisible();
+  await expect(
+    page
+      .locator("#dongzhi")
+      .getByRole("list", { name: "當令食材" })
+      .getByRole("link"),
+  ).toHaveText(["高麗菜", "蒜頭"]);
   await expect(page.locator("main time:visible")).toHaveCount(0);
   await expect(page.getByRole("main")).not.toContainText("目前節氣");
   await expect(page.getByRole("main")).not.toContainText("交節");

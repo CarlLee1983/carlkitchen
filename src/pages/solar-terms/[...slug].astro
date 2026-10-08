@@ -146,8 +146,16 @@ const schedule = buildSolarTermSchedule();
   const block = (name: string) =>
     document.getElementById(solarTermArt[name as SolarTermName]);
 
+  // 目前節氣取全時程中已交節的最近一個（與首頁同一個選取邏輯）。
+  const selected = selectSolarTerm(schedule, now);
+
   // 今年各節氣的交節日期與出處；該年沒有紀錄的節氣不顯示日期。
-  for (const term of solarTermsOfYear(schedule, now)) {
+  // 目前節氣顯示它實際交節的那筆：年初到小寒之前是去年的冬至，不是今年尚未到的冬至。
+  const shown = solarTermsOfYear(schedule, now).map((term) =>
+    selected?.name === term.name ? selected : term,
+  );
+  if (selected && !shown.includes(selected)) shown.push(selected);
+  for (const term of shown) {
     const copy = block(term.name)?.querySelector(".term-copy");
     if (!copy || !dateSlot) continue;
     const content = dateSlot.content.cloneNode(true) as DocumentFragment;
@@ -157,8 +165,6 @@ const schedule = buildSolarTermSchedule();
     copy.append(content);
   }
 
-  // 目前節氣取全時程中已交節的最近一個（與首頁同一個選取邏輯）。
-  const selected = selectSolarTerm(schedule, now);
   const target = selected && block(selected.name);
   if (target && currentSlot) {
     target.setAttribute("aria-current", "true");
