@@ -30,6 +30,12 @@ const HERO_PICK_SCRIPT = `(() => {
 // 每批顯示列數：建置時決定、寫進按鈕的 data-batch 供腳本讀取；唯一定義處是 parseBatchSize。
 const batchSize = parseBatchSize(process.env.HOME_BATCH_SIZE);
 
+// 手機版大圖（< 40rem）佔內容寬的比例，只在這裡定義：CSS 以 --hero-image-width 取用，sizes 由它算出。
+// 插畫是 3:2，佔一半寬時框高是內容寬 ÷ 3；調整依 pnpm measure:mobile 的第一列底端。
+const HERO_MOBILE_WIDTH_RATIO = 0.5;
+// sizes 照實際顯示寬度寫：寬螢幕 36rem、平板整個內容寬、手機依上面的比例。
+const HERO_SIZES = `(min-width: 64rem) 36rem, (min-width: 40rem) calc(100vw - 3rem), calc((100vw - 3rem) * ${HERO_MOBILE_WIDTH_RATIO})`;
+
 const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 ---
 
@@ -88,17 +94,23 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 
     {
       heroRecipes.length > 0 && (
-        <section class="hero-pick" aria-label="隨機看看一道菜">
-          <p class="hero-label">隨機看看一道菜</p>
+        <section
+          class="hero-pick"
+          aria-label="隨機看看一道菜"
+          style={`--hero-image-width: ${HERO_MOBILE_WIDTH_RATIO * 100}%`}
+        >
           {heroRecipes.map((recipe) => (
             <template data-hero-slot>
               <a
                 href={recipeHref(recipe)}
                 data-kinds={recipeKinds(recipe.data).join(" ")}
               >
+                <p class="hero-label" aria-hidden="true">
+                  隨機看看一道菜
+                </p>
                 <Illustration
                   image={recipe.data.hero!}
-                  sizes="(min-width: 64rem) 36rem, calc(100vw - 3rem)"
+                  sizes={HERO_SIZES}
                   priority
                 />
                 <p class="hero-title">{recipe.data.title}</p>
@@ -107,9 +119,12 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
           ))}
           <noscript>
             <a href={recipeHref(heroRecipes[0]!)}>
+              <p class="hero-label" aria-hidden="true">
+                隨機看看一道菜
+              </p>
               <Illustration
                 image={heroRecipes[0]!.data.hero!}
-                sizes="(min-width: 64rem) 36rem, calc(100vw - 3rem)"
+                sizes={HERO_SIZES}
                 priority
               />
               <p class="hero-title">{heroRecipes[0]!.data.title}</p>
@@ -497,16 +512,47 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     .hero-pick {
       margin-top: 0;
     }
-    /* 成品大圖由腳本複製進來，沒有 Astro 的範圍屬性，所以用 :global；裁切置中 */
-    .hero-pick :global(figure.illustration img) {
-      aspect-ratio: 2.25 / 1;
-      object-fit: cover;
-      object-position: center;
+    /* 圖左、文字右：右欄上方小字標籤、下方菜名；整塊仍是同一個連結 */
+    .hero-pick a {
+      display: grid;
+      grid-template-columns: var(--hero-image-width) minmax(0, 1fr);
+      grid-template-rows: auto 1fr;
+      column-gap: 1rem;
+      align-items: start;
+    }
+    /* 成品大圖由腳本複製進來，圖本身是子元件、沒有本頁的範圍屬性，所以用 :global */
+    .hero-pick a > :global(figure.illustration) {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+    /* 標籤不再疊在圖上，成為右欄上方的小字 */
+    .hero-label {
+      position: static;
+      grid-column: 2;
+      grid-row: 1;
+      padding: 0;
+      background: none;
+    }
+    .hero-title {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    /* 標題只在視覺上隱藏，仍在 DOM 與標題階層，區塊的 aria-labelledby 不變 */
+    .recipe-list h2 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
     }
     .recipe-list {
       margin-top: 0.75rem;
       padding-top: 0.75rem;
       scroll-margin-top: 6rem;
+      /* 標題隱藏後區塊頂線會緊貼第一列的上框線，只留列的那一條 */
+      border-top: none;
     }
     /* 截成 1 行；完整文字仍在 DOM，供螢幕閱讀器與 Pagefind 讀取 */
     .row-summary {

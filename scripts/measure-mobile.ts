@@ -1,4 +1,4 @@
-// 量測首頁手機版版面：篩選列與第一列的位置、可見列數與總列數、每列高度、一屏列數、摘要行數。
+// 量測首頁手機版版面：篩選列與第一列的位置（頂端與底端）、可見列數與總列數、每列高度、一屏列數、摘要行數。
 // 列數、列高與頁面高度只計顯示更多截斷後可見的列。
 // 先 `pnpm build`（正式內容），本腳本自己起 preview、量完即關。
 // 用法：pnpm measure:mobile [--width 390] [--height 844] [--shot 截圖.png] [--port 4621]
@@ -62,7 +62,12 @@ try {
     const heights = rows
       .map((row) => row.getBoundingClientRect().height)
       .sort((a, b) => a - b);
+    const firstRowRect = rows[0]?.getBoundingClientRect();
     const firstRow = top(rows[0] ?? null);
+    // 底端以未取整的頂端加高度再取整；沒有列時為 null
+    const firstRowBottom = firstRowRect
+      ? Math.round(firstRowRect.top + scrollY + firstRowRect.height)
+      : null;
     const lines: Record<number, number> = {};
     for (const row of rows) {
       const summary = row.querySelector("p");
@@ -78,6 +83,7 @@ try {
     return {
       filterBarTop: top(document.querySelector('[role="group"]')),
       firstRowTop: firstRow,
+      firstRowBottom,
       rows: rows.length,
       totalRows: allRows.length,
       rowHeight: {
