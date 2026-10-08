@@ -3,6 +3,7 @@ title: 備菜與預處理
 summary: 切肉的方向、青菜莖葉的處理、醃肉上漿與汆燙，下鍋前這幾步各自的原因與判斷方法。
 draft: false
 editorialLayout: true
+homeFallback: true
 publishedAt: 2026-10-07
 hero:
   src: hero.webp

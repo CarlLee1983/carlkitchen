@@ -3,6 +3,8 @@
 Status: open
 Label: ready-for-agent
 
+後續範圍擴充見 [季節與議題專題規格](../seasonal-topics/spec.md)：文化專題寫法、首頁檔期推薦與菜譜頁反向連結。這些項目取代本文件第一版對首頁露出及反向連結的排除；其餘既有內容契約沿用。
+
 詞彙依 `GLOSSARY.md`：**專題**、**選題參考**、**核准來源**、**菜譜**、**食材條目**。本規格由 2026-10-07 的 grill 討論整理而成。
 
 ## Problem Statement

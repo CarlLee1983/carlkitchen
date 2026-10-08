@@ -2,6 +2,7 @@
 title: 刀工入門
 summary: 切、片、剁三種基本刀法。
 draft: false
+homeFallback: true
 publishedAt: 2026-07-01
 hero:
   src: hero.webp

@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import Illustration from "../components/Illustration.astro";
+import HomeTopic from "../components/HomeTopic.astro";
 import { recipeKinds, visibleKindOptions } from "../utils/home";
 import { SITE_NAME, SITE_TAGLINE } from "../utils/site";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
@@ -129,6 +130,7 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
           </section>
         )
       }
+      <HomeTopic topics={topics} />
     </div>
 
     {

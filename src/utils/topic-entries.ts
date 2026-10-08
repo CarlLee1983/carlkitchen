@@ -1,14 +1,20 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { filterDrafts } from "./drafts";
+import { homeTopicIssues } from "./home-topics";
 
 export type TopicEntry = CollectionEntry<"topics">;
 
 /** 開發預覽含草稿，正式建置只產生已發布專題；依發布日期由新到舊，同日以識別值排序。 */
 export async function getVisibleTopicEntries(): Promise<TopicEntry[]> {
-  const entries = filterDrafts(
-    await getCollection("topics"),
-    import.meta.env.DEV,
+  const allEntries = await getCollection("topics");
+  const issues = homeTopicIssues(
+    allEntries.map((entry) => ({ id: entry.id, ...entry.data })),
   );
+  if (issues.length)
+    throw new Error(
+      issues.map((issue) => `${issue.id}：${issue.message}`).join("\n"),
+    );
+  const entries = filterDrafts(allEntries, import.meta.env.DEV);
   return entries.sort(
     (left, right) =>
       right.data.publishedAt.getTime() - left.data.publishedAt.getTime() ||

@@ -2,6 +2,11 @@
 title: 夏天的涼拌菜
 summary: 三種十分鐘內完成的涼拌做法。
 draft: false
+homeRecommendation:
+  kind: recurring
+  start: "06-01"
+  end: "08-31"
+  priority: 2
 editorialLayout: true
 publishedAt: 2026-09-01
 hero:
