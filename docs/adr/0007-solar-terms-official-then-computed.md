@@ -13,4 +13,4 @@ status: accepted
 
 兩者都屬於重新決定，不是清理。站主於 2026-10-08 選定此作法。
 
-**Falsified if:** `tests/solar-term-calc.test.ts` 的公告比對不再成立（日期不同，或時刻差超過 2 分鐘），表示推算已不足以當補位；或氣象署停止提供這份資料、`src/data/solar-terms.json` 不再更新，此時應改以推算為主並重新評估出處標示。依賴的檔案：`src/utils/solar-term-calc.ts`、`src/utils/solar-term-schedule.ts`、`src/data/solar-terms.json`、`src/components/HomeSeason.astro`。
+**Falsified if:** `tests/solar-term-calc.test.ts` 的公告比對不再成立（日期不同，或時刻差超過 2 分鐘），表示推算已不足以當補位；或氣象署停止提供這份資料、`src/data/solar-terms.json` 不再更新，此時應改以推算為主並重新評估出處標示。依賴的檔案：`src/utils/solar-term-calc.ts`、`src/utils/solar-term-schedule.ts`、`src/data/solar-terms.json`、`src/components/HomeSeason.astro`、`src/pages/solar-terms/[...slug].astro`。
