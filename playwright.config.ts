@@ -1,15 +1,47 @@
-import { defineConfig, devices } from "@playwright/test";
+import {
+  defineConfig,
+  devices,
+  type PlaywrightTestProject,
+} from "@playwright/test";
 
-// 不在這裡建置：`pnpm test:e2e` 先建置兩份站台，再由 scripts/run-e2e.mjs 依序跑兩輪 playwright（astro preview 同一專案
-// 一次只能起一個，所以兩份站台不能同時 serve）。以 E2E_SITE 選擇這一輪測哪份站台：
-// - 預設（chromium 專案）：`tests/fixtures/recipes` 建置到 `dist`，跑除 `meal.spec.ts` 以外的規格；
+// 不在這裡建置：`pnpm test:e2e` 先建置三份站台，再由 scripts/run-e2e.mjs 依序跑三輪 playwright（astro preview 同一專案
+// 一次只能起一個，所以三份站台不能同時 serve）。以 E2E_SITE 選擇這一輪測哪份站台：
+// - 預設（chromium 專案）：`tests/fixtures/recipes` 建置到 `dist`，跑除 `meal.spec.ts`、`show-more.spec.ts` 以外的規格；
 //   它的候選池不足四菜一湯，同時用來驗證「候選不足」。
 // - E2E_SITE=meal（meal 專案）：`tests/fixtures/meal-recipes` 建置到 `dist-meal`，
 //   候選池剛好 5 道非湯菜加 1 道湯，只跑 `meal.spec.ts`。
-const mealSite = process.env.E2E_SITE === "meal";
-// 兩份站台用不同 port：即使本地殘留另一份 preview，也不會被誤重用；規格另會核對實際被 serve 的候選池。
+// - E2E_SITE=show-more（show-more 專案）：預設的固定菜譜以每批 1 道（HOME_BATCH_SIZE=1）建置到
+//   `dist-show-more`（含 Pagefind 索引），只跑 `show-more.spec.ts`。
+// 新增站台時，scripts/run-e2e.mjs 的 rounds 與 package.json 的建置指令要同步改。
+const SITES: Record<
+  string,
+  { outDir: string; portOffset: number; project: PlaywrightTestProject }
+> = {
+  default: {
+    outDir: "dist",
+    portOffset: 0,
+    project: {
+      name: "chromium",
+      testIgnore: ["**/meal.spec.ts", "**/show-more.spec.ts"],
+    },
+  },
+  meal: {
+    outDir: "dist-meal",
+    portOffset: 1,
+    project: { name: "meal", testMatch: "**/meal.spec.ts" },
+  },
+  "show-more": {
+    outDir: "dist-show-more",
+    portOffset: 2,
+    project: { name: "show-more", testMatch: "**/show-more.spec.ts" },
+  },
+};
+const siteName = process.env.E2E_SITE ?? "default";
+if (!(siteName in SITES)) throw new Error(`未知的 E2E_SITE：${siteName}`);
+const site = SITES[siteName]!;
+// 三份站台用不同 port：即使本地殘留另一份 preview，也不會被誤重用；規格另會核對實際被 serve 的候選池。
 const portBase = Number(process.env.E2E_PORT_BASE ?? 4321);
-const port = portBase + Number(mealSite);
+const port = portBase + site.portOffset;
 
 const desktop = {
   ...devices["Desktop Chrome"],
@@ -21,9 +53,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? "github" : "list",
-  projects: mealSite
-    ? [{ name: "meal", testMatch: "**/meal.spec.ts", use: desktop }]
-    : [{ name: "chromium", testIgnore: "**/meal.spec.ts", use: desktop }],
+  projects: [{ ...site.project, use: desktop }],
   webServer: {
     command: `pnpm exec astro preview --port ${port}`,
     url: `http://localhost:${port}/`,
@@ -34,7 +64,7 @@ export default defineConfig({
       // Astro 7 在偵測到代理環境時會把 preview 丟到背景並立刻結束，Playwright 會誤判為啟動失敗；
       // 設定此變數可略過代理偵測，維持前景執行。
       ASTRO_PREVIEW_BACKGROUND: "1",
-      ASTRO_OUT_DIR: mealSite ? "dist-meal" : "dist",
+      ASTRO_OUT_DIR: site.outDir,
     },
   },
 });

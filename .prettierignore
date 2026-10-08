@@ -1,5 +1,6 @@
 dist
 dist-meal
+dist-show-more
 .astro
 .wrangler
 node_modules

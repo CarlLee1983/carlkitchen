@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Illustration from "../components/Illustration.astro";
 import HomeSeason from "../components/HomeSeason.astro";
-import { recipeKinds, visibleKindOptions } from "../utils/home";
+import { parseBatchSize, recipeKinds, visibleKindOptions } from "../utils/home";
 import { SITE_NAME, SITE_TAGLINE } from "../utils/site";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
 import { getVisibleTopicEntries } from "../utils/topic-entries";
@@ -26,6 +26,9 @@ const HERO_PICK_SCRIPT = `(() => {
   const pick = pool[Math.floor(Math.random() * pool.length)];
   if (section && pick) section.append(pick.content.cloneNode(true));
 })();`;
+
+// 每批顯示列數：建置時決定、寫進按鈕的 data-batch 供腳本讀取；唯一定義處是 parseBatchSize。
+const batchSize = parseBatchSize(process.env.HOME_BATCH_SIZE);
 
 const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 ---
@@ -179,6 +182,18 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
                 ))
               }
             </ul>
+            {
+              // 漸進增強：建置輸出全部列可見、按鈕隱藏；腳本初始化後才收起超出的列並顯示按鈕。
+            }
+            <button
+              type="button"
+              class="show-more"
+              data-show-more
+              data-batch={batchSize}
+              hidden
+            >
+              顯示更多
+            </button>
             <div class="empty" data-empty hidden>
               <p data-empty-message />
               <button type="button" data-clear>
@@ -348,6 +363,18 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
   .empty button {
     min-width: 44px;
     min-height: 44px;
+    padding: 0 1.25rem;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .show-more {
+    width: 100%;
+    min-height: 44px;
+    margin: 1.5rem 0;
     padding: 0 1.25rem;
     border: 1px solid var(--ink);
     background: transparent;

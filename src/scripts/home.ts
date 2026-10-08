@@ -5,7 +5,9 @@ import {
   normalizeQuery,
   parseHomeState,
   recipeIdFromUrl,
+  showMore,
   topicIdFromUrl,
+  truncateRows,
   type HomeState,
   type KindFilter,
 } from "../utils/home";
@@ -85,6 +87,9 @@ export function initHome() {
   const empty = document.querySelector<HTMLElement>("[data-empty]");
   const emptyMessage = document.querySelector("[data-empty-message]");
   const clearButton = document.querySelector("[data-clear]");
+  const showMoreButton =
+    document.querySelector<HTMLButtonElement>("[data-show-more]");
+  const batchSize = Number(showMoreButton?.dataset.batch);
   const heroPick = document.querySelector<HTMLElement>(".hero-pick");
 
   /**
@@ -141,6 +146,37 @@ export function initHome() {
     if (element && element.textContent !== text) element.textContent = text;
   }
 
+  // 顯示更多：候選列（篩選與搜尋之後、截斷之前，已依顯示順序）與要顯示的數量；undefined 表示一批。
+  let candidateRows: HTMLElement[] = [];
+  let requestedCount: number | undefined;
+
+  /**
+   * render 的最後一步：依候選列的順序，把超出顯示數量的列收起，並更新按鈕。
+   * 只改 hidden 與按鈕，不動順序、狀態文字與空狀態。
+   */
+  function applyTruncation(candidates: HTMLElement[]) {
+    candidateRows = candidates;
+    if (!showMoreButton) return;
+    const { shown, remaining, nextCount } = truncateRows(
+      candidates.length,
+      batchSize,
+      requestedCount,
+    );
+    for (const row of candidates.slice(shown)) row.hidden = true;
+    showMoreButton.hidden = remaining === 0;
+    setText(showMoreButton, `再顯示 ${nextCount} 道（還有 ${remaining} 道）`);
+  }
+
+  showMoreButton?.addEventListener("click", () => {
+    const step = showMore(candidateRows.length, batchSize, requestedCount);
+    requestedCount = step.shown;
+    for (const row of candidateRows.slice(0, step.shown)) row.hidden = false;
+    applyTruncation(candidateRows);
+    if (step.firstNewIndex !== null) {
+      candidateRows[step.firstNewIndex]?.querySelector("a")?.focus();
+    }
+  });
+
   // 較新的 render 開始後，舊的非同步結果作廢，避免慢的回應蓋掉新的狀態。
   let latest = 0;
 
@@ -188,6 +224,7 @@ export function initHome() {
     for (const row of allRows) row.hidden = !shown.has(row);
     // 重排：顯示的列依結果順序在前，其餘維持原本（菜名）順序。
     rowList?.append(...visible, ...allRows.filter((row) => !shown.has(row)));
+    applyTruncation(visible);
 
     // 筆數「道」只算菜譜；命中專題時另外補「專題 N 篇」。
     const topicCount = visible.filter((row) => "topicId" in row.dataset).length;
@@ -216,6 +253,7 @@ export function initHome() {
   }
 
   function setState(state: HomeState, debounce = false): Promise<void> {
+    requestedCount = undefined; // 換篩選或搜尋字詞，清單回到只顯示第一批
     writeUrl(state);
     return render(state, debounce);
   }
@@ -285,12 +323,17 @@ export function initHome() {
     .addEventListener("change", () => matchHero(currentState().kind));
 
   // 上一頁／下一頁（含 hash 導航產生的歷史紀錄）：依網址重新還原。
-  window.addEventListener("popstate", () => void render(currentState()));
+  window.addEventListener("popstate", () => {
+    requestedCount = undefined;
+    void render(currentState());
+  });
 
   // 載入時依網址還原；若為預設狀態（無搜尋字詞且篩選為全部），HTML 結構已完整對應，避免重排與重排清單
   const initial = currentState();
   writeUrl(initial);
   if (initial.q !== "" || initial.kind !== "all") {
     void render(initial);
+  } else {
+    applyTruncation(rows);
   }
 }
