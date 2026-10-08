@@ -1,6 +1,6 @@
 # 〈在家做小吃〉插畫規畫
 
-專題：`content/topics/home-street-food/topic.md`（草稿）。本次只規畫，不產圖；正文目前沒有插圖，`hero` 也未填（schema 只在 `draft: false` 時要求封面）。產圖時照 topic-writing〈插畫製作〉：封面用 `STYLE_FILE=.claude/skills/topic-writing/style.txt`，正文圖用預設風格檔，WebP、1536×1024、不超過 300 KB。
+專題：`content/topics/home-street-food/topic.md`（草稿）。已依本規畫產圖（2026-10-08），實際檔名、位置與重產紀錄見文末〈產圖紀錄〉。產圖時照 topic-writing〈插畫製作〉：封面用 `STYLE_FILE=.claude/skills/topic-writing/style.txt`，正文圖用預設風格檔，WebP、1536×1024、不超過 300 KB。
 
 畫面只放核准來源支持的東西。不畫具名店家、招牌文字、人物臉孔、度小月燈籠上的字、清末水仙宮或任何歷史場景重建；不畫夜市人潮、攤販設備的大小或火力對比（來源沒有）。
 
@@ -52,3 +52,36 @@
 - 構圖：同一張檯面上排開電鍋、果汁機、粗孔篩、炒鍋、湯鍋，每件旁放一樣主要食材（肉羹、雞胸肉塊、絞肉、乾米粉、蚵仔）。不畫溫度計（來源沒有指定量溫工具）。
 
 > A home kitchen counter with five pieces of equipment in a row: an electric rice cooker-steamer with pork paste pieces beside it, a blender and a coarse-mesh sieve with raw chicken breast cubes, a wok with raw minced pork, a stockpot with a bundle of dry rice vermicelli, and a small pot of hot water with fresh oysters. No thermometer, no bowls, no chopsticks.
+
+## 產圖紀錄
+
+2026-10-08 產出。PNG 原圖只留在 scratchpad（`/Users/carl/.claude/jobs/4271601d/tmp/images/home-street-food/`），WebP 存在 `content/topics/home-street-food/`，皆 1536×1024。
+
+| 檔名 | 位置 | 大小 | 產圖次數 | 重產原因 |
+| --- | --- | --- | --- | --- |
+| `hero.webp` | frontmatter `hero` | 279 KB | 2 | 第 1 次沙鍋裡畫成大塊燉肉，不像肉燥；第 2 次加「finely minced, NOT chunks」後符合 |
+| `noodle-stall-broth-pot.webp` | 〈肉燥麵〉1953 年記錄那段之後 | 196 KB | 1（另有 1 次作廢） | 第一次與封面同時在同一目錄平行產圖，codex 把封面複製成這張（兩檔 MD5 相同）；之後改為逐張依序產圖，不算入重產 |
+| `pork-thick-soup-paste.webp` | 〈肉羹湯〉辭典兩種意思那段之後 | 164 KB | 1 | — |
+| `oysters-coated-starch.webp` | 〈蒜泥蚵仔〉第二段之後（小節末） | 117 KB | 1 | — |
+| `home-equipment-five-dishes.webp` | 〈家裡怎麼做〉第二段之後 | 122 KB | 2（另有 1 次沒產檔重試） | 第 1 次電鍋旁的肉羹畫成圓肉丸；第 2 次指定長條肉漿後符合 |
+
+與規畫的差異：
+
+- 圖 4 依修訂後的正文調整：〈家裡怎麼做〉已縮成兩段、不再提粗孔篩，所以拿掉粗孔篩，保留果汁機（〈怎麼選〉提到鹽酥雞要果汁機打醃汁）；油鍋規畫原本就沒進提示詞，維持不畫。放在〈家裡怎麼做〉第二段之後。
+- 圖 1 提示詞不寫麵的顏色（1953 年記錄是切麵，辭典說擔仔麵用油麵，兩者不同），沙鍋肉燥同封面加「finely minced」。
+- 封面與圖 4 的實際提示詞以下列為準。
+
+實際提示詞（風格段由 `gen.sh` 自動帶入；封面用 `STYLE_FILE=.claude/skills/topic-writing/style.txt`、附 `winter-food-culture/hero.webp` 作風格參考；圖 1 附 `winter-food-culture/shared-aromatics.webp`，圖 2、3 附圖 1 的 PNG，圖 4 附圖 3 的 PNG）：
+
+- `hero`：A quiet Taiwanese street at dusk. In the far background, a row of low market-stall awnings glows with warm lights, soft and indistinct, no people and no signage text. In the middle ground, an empty patch of ground beside the street holds a traditional wooden carrying pole resting on the ground with a lidded wooden bucket hanging at each end, nobody carrying it. In the foreground, under a tiled eave, a small wooden stool holds a small clay sandpot with its lid slightly ajar showing dark brown braised minced pork sauce: finely minced, crumbly small bits of ground pork in glossy dark sauce, NOT chunks or cubes of meat. Beside the pot: a bunch of fresh Thai basil with green stems, and a few whole shallots with reddish-purple skins. Soft evening sky with muted warm tints, low saturation. No tableware, no chopsticks, no bowls, no lanterns.
+- `noodle-stall-broth-pot`：Three items side by side, clearly separated, seen at a gentle 45-degree angle: on the left a deep plain stockpot of steaming clear broth with a bamboo basket-shaped noodle strainer dipped into it, the strainer holding a handful of cooked noodles and a few bean sprouts; in the middle a small clay sandpot of dark brown braised minced pork (finely minced crumbly bits in glossy sauce, not chunks) with a ladle resting in it; on the right a small plain dish of golden fried shallot oil with crisp shallot bits. Nothing else. No bowls, no chopsticks, no spoons, no people, no stall, no table surface.
+- `pork-thick-soup-paste`：Left half: on a plain wooden cutting board, a few raw pale pink pork paste strips (irregular hand-pinched strips of smooth meat paste) and a few raw pork slices each coated in a layer of pale paste, all separated. Right half: an open plain stockpot of thickened, glossy translucent brown soup with cooked pork paste pieces, shredded shiitake mushroom, shredded carrot and shredded bamboo shoot visible on the surface, a little steam. Nothing else. No bowls, no spoons, no chopsticks, no knife.
+- `oysters-coated-starch`：Three things side by side, clearly separated: a plain ceramic bowl of fresh raw shucked oysters (soft grey-cream oyster meat, no shells); a shallow plain plate of coarse sweet potato starch (white coarse granules) with several shucked oysters coated in it; and a plain stockpot about half full of hot water with only a few small bubbles barely rising, gentle steam, not a rolling boil. Nothing else. No bowls of sauce, no garlic, no spoons, no chopsticks.
+- `home-equipment-five-dishes`：Five home kitchen setups arranged in two loose rows on plain paper background, each clearly separated, seen at a gentle 45-degree angle. Back row: a plain white electric cooker-steamer (no logo, no text) with a small plate of pork thick-soup pieces beside it: irregular elongated pale pink strips of pork paste, like short fat noodles, NOT round meatballs; a clear glass blender jug with a small plate of raw chicken breast cubes beside it; a wok with raw minced pork in it. Front row: a plain stockpot with a bundle of dry white rice vermicelli beside it; a small pot of hot water with a small bowl of fresh shucked oysters beside it. Nothing else. No thermometer, no chopsticks, no spoons, no labels, no text.
+
+圖文小落差（目視後接受，alt 依圖描述）：
+
+- 封面天空是偏橘的晚霞，彩度比 `winter-food-culture` 封面略高；前景沙鍋約占畫面兩成多。
+- 圖 2 湯裡的香菇是片、紅蘿蔔與竹筍是粗條，不是細絲；alt 只寫「香菇、紅蘿蔔與竹筍」。
+- 圖 3 湯鍋的水接近滿鍋，不是菜譜的半鍋；正文未提水量。
+- 圖 4 的肉羹條看起來略像小香腸。
