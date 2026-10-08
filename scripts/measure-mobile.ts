@@ -1,4 +1,5 @@
-// 量測首頁手機版版面：篩選列與第一列的位置、每列高度、一屏列數、摘要行數。
+// 量測首頁手機版版面：篩選列與第一列的位置、可見列數與總列數、每列高度、一屏列數、摘要行數。
+// 列數、列高與頁面高度只計顯示更多截斷後可見的列。
 // 先 `pnpm build`（正式內容），本腳本自己起 preview、量完即關。
 // 用法：pnpm measure:mobile [--width 390] [--height 844] [--shot 截圖.png] [--port 4621]
 import { spawn } from "node:child_process";
@@ -53,7 +54,11 @@ try {
   const result = await page.evaluate((screen) => {
     const top = (el: Element | null): number =>
       el ? Math.round(el.getBoundingClientRect().top + scrollY) : 0;
-    const rows = [...document.querySelectorAll("[data-recipe-row]")];
+    const allRows = [
+      ...document.querySelectorAll<HTMLElement>("[data-recipe-row]"),
+    ];
+    // 只量讀者看得到的列：顯示更多收起的列（hidden）不算。
+    const rows = allRows.filter((row) => !row.hidden);
     const heights = rows
       .map((row) => row.getBoundingClientRect().height)
       .sort((a, b) => a - b);
@@ -74,6 +79,7 @@ try {
       filterBarTop: top(document.querySelector('[role="group"]')),
       firstRowTop: firstRow,
       rows: rows.length,
+      totalRows: allRows.length,
       rowHeight: {
         min: Math.round(heights[0] ?? 0),
         median: Math.round(heights[Math.floor(heights.length / 2)] ?? 0),
