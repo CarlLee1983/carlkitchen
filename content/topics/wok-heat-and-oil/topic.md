@@ -2,6 +2,7 @@
 title: 熱鍋與起鍋油
 summary: 鍋要燒到多熱才下油、煎肉煎魚什麼時候翻面、油溫怎麼看、花生為什麼從冷油炸，以及爆香為什麼用油。整理開火到食材下鍋這一段的原理與判斷訊號。
 draft: false
+editorialLayout: true
 publishedAt: 2026-10-07
 hero:
   src: hero.webp
@@ -48,6 +49,8 @@ America's Test Kitchen 的做法是先把鍋燒夠熱，熱能幫忙打斷蛋白
 
 [香煎椒鹽雞腿排](/recipes/salt-pepper-chicken-thigh/)等雞皮變成金黃色、能離開鍋底才翻面，[菜脯蛋](/recipes/preserved-radish-omelette/)也是底面煎到微微金黃才翻。
 
+![鍋鏟托起雞腿排的一側，完整的金黃煎面露在上方，肉排與不鏽鋼鍋底之間留出空隙](./browned-surface-release.webp)
+
 ## 用筷子看油溫
 
 沒有溫度計時，可以把筷子插進油裡看冒泡，泡泡越多、冒得越急，油越熱。
@@ -70,6 +73,8 @@ America's Test Kitchen 的做法是先把鍋燒夠熱，熱能幫忙打斷蛋白
 
 [蒜香義大利麵](/recipes/garlic-spaghetti/)煎蒜片，同樣是冷鍋倒油、放入蒜片，再用小火慢慢煎到金黃。
 
+![帶紅色薄膜的花生浸在炒鍋裡的清澈油中，油面平靜，沒有氣泡或蒸氣](./peanuts-in-cold-oil.webp)
+
 ## 辛香料先用油爆香
 
 爆香是先把辛香料放進油裡加熱，再加其他食材或湯汁。許多香料的主要風味物質溶於油，不太溶於水，先用油加熱，能把更多風味帶進料理。
@@ -81,3 +86,5 @@ America's Test Kitchen 做過一組對照，把 50 g 辣椒片分別泡在 100 g
 做法是鍋燒熱、倒油，下辛香料炒到飄出香味再接下一步。本站菜譜用的訊號是蒜片邊緣微黃、聞得到蒜香，薑片則煸到邊緣微焦捲起。熱油淋在辣椒粉上做辣椒油時，油溫會改變香氣的組成。一份分析四川辣椒油的研究比較了 210、180、150°C 三種潑油溫度，以及傳統的 210、180、150°C 依序潑三次，210°C 潑油產生較多帶堅果、烘烤等氣味的香氣物質。家裡做辣椒油該用幾度，研究沒有直接建議，待補。
 
 [蒜炒空心菜](/recipes/garlic-water-spinach/)與[清炒高麗菜](/recipes/stir-fried-cabbage/)都先把蒜片爆香，[三杯雞](/recipes/three-cup-chicken/)用麻油小火煸薑片，[辣椒炒肉](/recipes/chili-pork/)先爆香蒜頭和豆豉，[清蒸魚](/recipes/steamed-fish/)則把燒熱的油淋在蔥薑絲上。這三樣辛香料的挑選與保存，見食材介紹的[蒜](/ingredients/garlic/)、[薑](/ingredients/ginger/)與[蔥](/ingredients/scallion/)。
+
+![左鍋蒜片中心仍呈象牙白、邊緣微黃，右鍋薑片的邊緣轉褐並略為捲起](./aromatic-edge-colors.webp)
