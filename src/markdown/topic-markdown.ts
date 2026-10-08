@@ -2,7 +2,7 @@ import { relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { HastNode, HastPluginEntry, HastVisitorContext } from "satteri";
 
-const BODY_IMAGE_SIZES = "(min-width: 43rem) 40rem, calc(100vw - 3rem)";
+const BODY_IMAGE_SIZES = "(min-width: 49rem) 46rem, calc(100vw - 3rem)";
 
 /** 以文字節點的原有順序包住首字；不複製段落、不插入朗讀用的替身。 */
 function markInitial(paragraph: HastNode, context: HastVisitorContext) {

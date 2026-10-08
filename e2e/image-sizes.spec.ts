@@ -8,6 +8,7 @@ const pages = [
   "/recipes/tomato-egg/",
   "/about/",
   "/topics/rice-basics/",
+  "/topics/summer-salads/",
   "/solar-terms/",
 ];
 const widths = [360, 390, 640, 651, 800, 1023, 1024, 1366];
@@ -19,7 +20,13 @@ for (const path of pages) {
     for (const width of widths) {
       await page.setViewportSize({ width, height: 900 });
       await page.goto(path);
-      const images = await page.locator("figure.illustration img").all();
+      // 正文 Markdown 圖不包在 figure 裡，也要檢查其實際顯示寬度。
+      if (path === "/topics/summer-salads/") {
+        await expect(page.locator(".topic .body img")).toHaveCount(4);
+      }
+      const images = await page
+        .locator("figure.illustration img, .topic .body img")
+        .all();
       expect(images.length).toBeGreaterThan(0);
       for (const image of images) {
         const { slot, rendered } = await sizesSlot(image);
