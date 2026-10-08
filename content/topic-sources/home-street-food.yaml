@@ -1,0 +1,119 @@
+sources:
+  - title: 教育部《臺灣台語常用詞辭典》「點心」
+    url: https://sutian.moe.edu.tw/zh-hant/su/12455/
+  - title: 教育部《臺灣台語常用詞辭典》「夜市」
+    url: https://sutian.moe.edu.tw/zh-hant/su/3773/
+  - title: 教育部《臺灣台語常用詞辭典》「擔仔」
+    url: https://sutian.moe.edu.tw/zh-hant/su/13826/
+  - title: 教育部《臺灣台語常用詞辭典》「擔仔麵」
+    url: https://sutian.moe.edu.tw/zh-hant/su/11659/
+  - title: 教育部《臺灣台語常用詞辭典》「摵仔麵」
+    url: https://sutian.moe.edu.tw/zh-hant/su/10541/
+  - title: 教育部《臺灣台語常用詞辭典》「米粉炒」
+    url: https://sutian.moe.edu.tw/zh-hant/su/2708/
+  - title: 教育部《臺灣台語常用詞辭典》「肉燥」
+    url: https://sutian.moe.edu.tw/zh-hant/su/28534/
+  - title: 教育部《臺灣台語常用詞辭典》「肉燥飯」
+    url: https://sutian.moe.edu.tw/zh-hant/su/28609/
+  - title: 教育部《臺灣台語常用詞辭典》「肉羹」
+    url: https://sutian.moe.edu.tw/zh-hant/su/2818/
+  - title: 教育部《臺灣台語常用詞辭典》「魚漿」
+    url: https://sutian.moe.edu.tw/zh-hant/su/27529/
+  - title: 教育部《臺灣台語常用詞辭典》「鹹酥雞」
+    url: https://sutian.moe.edu.tw/zh-hant/su/13069/
+  - title: 教育部《臺灣台語常用詞辭典》「蚵仔麵線」
+    url: https://sutian.moe.edu.tw/zh-hant/su/7823/
+  - title: 教育部《臺灣台語常用詞辭典》「蚵仔煎」
+    url: https://sutian.moe.edu.tw/zh-hant/su/7822/
+  - title: 交通部觀光署〈夜市之旅〉
+    url: https://www.taiwan.net.tw/m1.aspx?sNo=0001040
+  - title: 交通部觀光署〈六合觀光夜市〉
+    url: https://www.taiwan.net.tw/m1.aspx?id=2245&sno=0001016
+  - title: 交通部觀光署〈飲食特色〉
+    url: https://www.taiwan.net.tw/m1.aspx?sNo=0020553
+  - title: 國立臺灣歷史博物館臺南文史研究資料庫：連景初〈擔仔麵史話〉，《臺南文化》第 9 卷第 1 期（1969）
+    url: https://tainanstudy.nmth.gov.tw/article/detail/686/read
+  - title: 國立臺灣歷史博物館臺南文史研究資料庫：臺島生〈担仔麵〉，《臺南文化》第 2 卷第 4 期（1953）
+    url: https://tainanstudy.nmth.gov.tw/article/detail/110/read
+  - title: 國家文化記憶庫〈新竹米粉發展的歷史探由〉（新竹市文化局建檔）
+    url: https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=147076
+  - title: 國家文化記憶庫〈原岡山眷村欣欣菜場商販欣欣鴨肉羹〉（高雄市岡山眷村文化協會建檔）
+    url: https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=571935
+  - title: 農業部桃園區農業改良場〈料理的靈魂配角，帶你認識「九層塔」的秘密〉
+    url: https://www.tydares.gov.tw/ws.php?id=11007&print=Y
+  - title: 衛生福利部〈衛生單位持續把關油炸油衛生安全〉（2013-06-19）
+    url: https://www.mohw.gov.tw/cp-3213-23273-1.html
+  - title: 衛生福利部〈衛生署呼籲餐飲業者正確使用油炸油〉（2009-06-22）
+    url: https://www.mohw.gov.tw/cp-3162-27509-1.html
+  - title: 楊桃美食網「台式炒米粉(2)」
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-2789
+  - title: 楊桃美食網「肉燥麵」
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1325
+  - title: 楊桃美食網「肉羹湯(2)」
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-3457
+  - title: 楊桃美食網「鹽酥雞(1)」
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-341
+  - title: 楊桃美食網「蒜泥蚵仔」
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B02-0365
+sections:
+  - heading: 點心、擔仔與夜市
+    urls:
+      - https://sutian.moe.edu.tw/zh-hant/su/12455/
+      - https://sutian.moe.edu.tw/zh-hant/su/3773/
+      - https://sutian.moe.edu.tw/zh-hant/su/13826/
+      - https://sutian.moe.edu.tw/zh-hant/su/11659/
+      - https://www.taiwan.net.tw/m1.aspx?sNo=0001040
+      - https://www.taiwan.net.tw/m1.aspx?id=2245&sno=0001016
+      - https://tainanstudy.nmth.gov.tw/article/detail/686/read
+  - heading: 五道菜各自的特色
+    urls:
+      - https://www.taiwan.net.tw/m1.aspx?sNo=0001040
+      - https://sutian.moe.edu.tw/zh-hant/su/13069/
+  - heading: 炒米粉
+    urls:
+      - https://sutian.moe.edu.tw/zh-hant/su/2708/
+      - https://www.taiwan.net.tw/m1.aspx?sNo=0001040
+      - https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Object&id=147076
+  - heading: 肉燥麵
+    urls:
+      - https://sutian.moe.edu.tw/zh-hant/su/28534/
+      - https://sutian.moe.edu.tw/zh-hant/su/28609/
+      - https://sutian.moe.edu.tw/zh-hant/su/11659/
+      - https://sutian.moe.edu.tw/zh-hant/su/10541/
+      - https://tainanstudy.nmth.gov.tw/article/detail/110/read
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1325
+  - heading: 肉羹湯
+    urls:
+      - https://sutian.moe.edu.tw/zh-hant/su/2818/
+      - https://sutian.moe.edu.tw/zh-hant/su/27529/
+      - https://tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=571935
+  - heading: 鹽酥雞
+    urls:
+      - https://sutian.moe.edu.tw/zh-hant/su/13069/
+      - https://www.tydares.gov.tw/ws.php?id=11007&print=Y
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-341
+  - heading: 蒜泥蚵仔
+    urls:
+      - https://www.taiwan.net.tw/m1.aspx?sNo=0020553
+      - https://sutian.moe.edu.tw/zh-hant/su/7823/
+      - https://sutian.moe.edu.tw/zh-hant/su/7822/
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B02-0365
+  - heading: 家裡怎麼做
+    urls:
+      - https://tainanstudy.nmth.gov.tw/article/detail/110/read
+      - https://sutian.moe.edu.tw/zh-hant/su/10541/
+      - https://sutian.moe.edu.tw/zh-hant/su/2818/
+      - https://www.mohw.gov.tw/cp-3213-23273-1.html
+      - https://www.mohw.gov.tw/cp-3162-27509-1.html
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1325
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-3457
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-341
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-2789
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B02-0365
+  - heading: 怎麼選
+    urls:
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-2789
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1325
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-3457
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-341
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B02-0365

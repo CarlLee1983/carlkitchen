@@ -43,7 +43,7 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 
 ## 寫作與內容
 
-新增、修改菜譜或重製插畫依 `recipe-making` skill（`.claude/skills/recipe-making/`，含來源核准、Codex 生圖與轉檔腳本、送審清單）；菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。新增、修改食材條目文字依 `ingredient-writing` skill（`.claude/skills/ingredient-writing/`）。新增、修改專題依 `topic-writing` skill（`.claude/skills/topic-writing/`）：先請站主核准來源，再逐條查證，專題內文在 `content/topics/<識別值>/topic.md`，內部來源紀錄在 `content/topic-sources/<識別值>.yaml`；個人心得只由站主撰寫，食材、調味料、廚具與烹調動作一律用臺灣用詞。菜譜、食材條目與專題的文字送審前依 `de-ai-voice` skill（`.claude/skills/de-ai-voice/`）去 AI 味，只改腔調，不動事實與用量。菜譜 schema 見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
+新增、修改菜譜或重製插畫依 `recipe-making` skill（`.claude/skills/recipe-making/`，含來源核准、Codex 生圖與轉檔腳本、送審清單）；菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。新增、修改食材條目文字依 `ingredient-writing` skill（`.claude/skills/ingredient-writing/`）。選下一篇專題或站主提新題目時，先看選題庫 `.scratch/topic-backlog.md`（候選題目、可連菜譜、狀態），題目開工、發布或放棄時同步更新狀態。新增、修改專題依 `topic-writing` skill（`.claude/skills/topic-writing/`）：先請站主核准來源，再逐條查證，專題內文在 `content/topics/<識別值>/topic.md`，內部來源紀錄在 `content/topic-sources/<識別值>.yaml`；個人心得只由站主撰寫，食材、調味料、廚具與烹調動作一律用臺灣用詞。菜譜、食材條目與專題的文字送審前依 `de-ai-voice` skill（`.claude/skills/de-ai-voice/`）去 AI 味，只改腔調，不動事實與用量。菜譜 schema 見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
 
 圖片規格慣例：WebP、1536×1024、不超過 300 KB。schema 不檢查這些，由 `pnpm check:content` 強制（門檻第 4 項）。成品圖不畫餐具（`.scratch/recipe-mvp/issues/06-homepage-direction.md`〈圖片風格規格〉），`pnpm check:content` 以替代文字是否提到餐具把關。
 
