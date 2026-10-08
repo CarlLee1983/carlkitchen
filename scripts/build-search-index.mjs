@@ -4,7 +4,13 @@
 // 兩類頁面都以 data-pagefind-body 標記可搜尋範圍，專題列表頁沒有標記所以不進索引。
 
 import { execFileSync } from "node:child_process";
-import { existsSync, globSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  globSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { join } from "node:path";
 
 const SITE = "dist";
@@ -22,6 +28,25 @@ if (GLOBS.every((glob) => globSync(glob, { cwd: SITE }).length === 0)) {
   execFileSync("pagefind", ["--site", SITE, "--glob", `{${GLOBS.join(",")}}`], {
     stdio: "inherit",
   });
+
+  // Pagefind 預設輸出預製的搜尋 UI 套件（含舊版 ES5 相容 helper 如 classCallCheck）。
+  // 本站首頁直接以原生動態 import 使用 pagefind.js / pagefind-worker.js 與 wasm 核心 API，
+  // 不使用任何 Pagefind 預製 UI 產物。清理多餘檔案可減少部署體積並消除「避免提供舊版 JavaScript」警告。
+  const UNUSED_PAGEFIND_UI = [
+    "pagefind/pagefind-ui.js",
+    "pagefind/pagefind-ui.css",
+    "pagefind/pagefind-modular-ui.js",
+    "pagefind/pagefind-modular-ui.css",
+    "pagefind/pagefind-component-ui.js",
+    "pagefind/pagefind-component-ui.css",
+    "pagefind/pagefind-highlight.js",
+  ];
+  for (const file of UNUSED_PAGEFIND_UI) {
+    const filePath = join(SITE, file);
+    if (existsSync(filePath)) {
+      rmSync(filePath);
+    }
+  }
 }
 
 // Lighthouse LCP Request Discovery 優化：
