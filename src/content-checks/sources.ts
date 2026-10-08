@@ -53,3 +53,42 @@ export function checkSourceCoverage(input: {
     }));
   return [...missing, ...orphans];
 }
+
+/** 同一個楊桃食譜頁只能對應一張菜譜；共用的一般參考網址不在此限。 */
+export function checkYtowerRecipeSourceReuse(
+  records: readonly { id: string; file: string; urls: readonly string[] }[],
+): Issue[] {
+  const idsByUrl = new Map<string, string[]>();
+  for (const record of records) {
+    for (const rawUrl of record.urls) {
+      let url: URL;
+      try {
+        url = new URL(rawUrl);
+      } catch {
+        continue;
+      }
+      if (!/(^|\.)ytower\.com\.tw$/i.test(url.hostname)) continue;
+      url.hash = "";
+      const key = url.toString();
+      const ids = idsByUrl.get(key) ?? [];
+      ids.push(record.id);
+      idsByUrl.set(key, ids);
+    }
+  }
+
+  const issues: Issue[] = [];
+  for (const [url, ids] of idsByUrl) {
+    const uniqueIds = [...new Set(ids)];
+    if (uniqueIds.length < 2) continue;
+    for (const id of uniqueIds) {
+      const record = records.find((item) => item.id === id);
+      if (!record) continue;
+      issues.push({
+        recipe: id,
+        file: record.file,
+        message: `楊桃食譜來源與 ${uniqueIds.filter((other) => other !== id).join("、")} 重複（${url}）；請確認是否為重複菜譜。`,
+      });
+    }
+  }
+  return issues;
+}

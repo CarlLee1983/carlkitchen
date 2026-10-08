@@ -10,14 +10,15 @@
 
 ## 讀取來源
 
-- **楊桃美食網（ytower）是 Big5 編碼**，一般網頁擷取工具會讀錯，連菜名都可能錯。一律用 curl 抓原始 HTML 再轉碼：
+- **楊桃美食網（ytower）是 Big5 編碼**，一般網頁擷取工具會讀錯，連菜名都可能錯。用專用腳本抓取並轉碼到 scratchpad：
 
   ```sh
-  curl -sL -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/130 Safari/537.36' '<網址>' | iconv -f BIG5 -t UTF-8 -c
+  bash .claude/skills/recipe-making/scripts/fetch-ytower.sh '<網址>' .scratch/<批次名>/recipes/<識別值>.html
   ```
 
-  頁面內嵌的 JSON-LD（`recipeIngredient`、`HowToStep`）最乾淨。楊桃的頁面不標份數，只標出處書名或期別。
+  腳本只接受楊桃網域，HTTP 失敗或 Big5 解碼失敗時停止，不會保存錯誤頁或嘗試繞過限制。遇到 403 等拒絕回應，改用可公開讀取的核准來源，或將候選標記待核；不可用搜尋摘要補成已確認的材料或步驟。頁面內嵌的 JSON-LD（`recipeIngredient`、`HowToStep`）最乾淨。楊桃的頁面不標份數，只標出處書名或期別。
 
 - 其他站：curl 後去掉 script 與標籤，找材料與步驟段落。
 - 抓下的 HTML 放 scratchpad，不進儲存庫。
+- 寫候選前先列出目前菜譜識別值與菜名，比對識別值、菜名及核心食材；同一道菜不可只換名稱再次收錄。每批審查也要記錄完成這項比對。
 - 多個來源衝突時選一種做法，在 PR 說明取捨；沒採用的核准來源不寫進 `content/sources/`。
