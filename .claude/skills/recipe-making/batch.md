@@ -10,6 +10,7 @@
 
 每批 4–6 道，同一則訊息派出。子代理的 prompt 寫明：
 
+- 主代理明確給出**預期 worktree 絕對路徑與分支名稱**。代理開始讀寫前先回報 `pwd`、`git rev-parse --show-toplevel`、`git branch --show-current`；路徑或分支不符就先切到指定 worktree，不可用其他 checkout 的菜譜清單做去重。
 - 識別值、菜名、核准網址（或候選清單中那一節的位置）、要對照的範本菜譜（湯品就給一道湯）。
 - 讀 `recipe-making` 與 `recipe-writing` 兩個 skill 後照做步驟 3–5。
 - **邊界**：只建立 `content/recipes/<識別值>/` 與 `content/sources/<識別值>.yaml`；不提交、不推送，也不跑 `pnpm build`、`pnpm check:content`、`astro check`、e2e。多個代理同時建置會互相覆寫 `dist` 與 `.astro`。
@@ -20,5 +21,5 @@
 
 1. 主代理跑 SKILL.md 步驟 6 的驗證。
 2. 把整批的縮圖總表逐張看過；不一致的圖退回該子代理重製（SendMessage 給原代理，它還保有上下文）。
-3. 這批審查發現的共通問題補進下一批的派工說明。
+3. 核對菜名、識別值與核心食材是否和既有菜譜重複；同一楊桃食譜頁不可供兩個菜譜識別值共用。這批審查發現的共通問題補進下一批的派工說明。
 4. 一批一個 commit。全部完成後開一個 PR，送審清單彙整各子代理的回報。

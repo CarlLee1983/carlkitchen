@@ -63,6 +63,29 @@ describe("runContentChecks", () => {
     assert.deepEqual(await runContentChecks(s.options), []);
   });
 
+  it("重複使用同一楊桃食譜頁時指出兩張菜譜", async () => {
+    const s = scenario();
+    cpSync(join(s.root, "recipes/alpha"), join(s.root, "recipes/beta"), {
+      recursive: true,
+    });
+    s.write(
+      join(s.root, "sources/alpha.yaml"),
+      "urls:\n  - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-0001\n",
+    );
+    s.write(
+      join(s.root, "sources/beta.yaml"),
+      "urls:\n  - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-0001\n",
+    );
+    const issues = await runContentChecks(s.options);
+    const duplicateIssues = issues.filter((issue) =>
+      /楊桃食譜來源與/.test(issue.message),
+    );
+    assert.deepEqual(duplicateIssues.map((issue) => issue.recipe).sort(), [
+      "alpha",
+      "beta",
+    ]);
+  });
+
   it("YAML 無法解析的菜譜不會讓它的來源被多報成孤兒", async () => {
     const s = scenario();
     s.write(join(s.root, "recipes/alpha/recipe.yaml"), "title: [壞掉\n");

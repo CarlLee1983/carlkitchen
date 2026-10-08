@@ -17,7 +17,11 @@ import { checkLeaks } from "./leaks.ts";
 import { checkSolarTerms } from "./solar-terms.ts";
 import { checkTopics } from "./topics.ts";
 import { isDraft, parseRecipe, type Recipe } from "./recipes.ts";
-import { checkSourceCoverage, parseSourceRecord } from "./sources.ts";
+import {
+  checkSourceCoverage,
+  checkYtowerRecipeSourceReuse,
+  parseSourceRecord,
+} from "./sources.ts";
 import { checkLaunchThreshold } from "./threshold.ts";
 
 export interface ContentCheckOptions {
@@ -127,6 +131,7 @@ export async function runContentChecks(
   // 來源紀錄
   const sourceIds = listSourceIds(options.sourcesDir);
   const sourceUrls: string[] = [];
+  const validSourceRecords: { id: string; file: string; urls: string[] }[] = [];
   for (const id of sourceIds) {
     const file = join(options.sourcesDir, `${id}.yaml`);
     try {
@@ -135,6 +140,7 @@ export async function runContentChecks(
         readYaml(file),
       );
       sourceUrls.push(...urls);
+      validSourceRecords.push({ id, file, urls });
       issues.push(...sourceIssues);
     } catch (error) {
       issues.push(failure(file, (error as Error).message));
@@ -156,6 +162,7 @@ export async function runContentChecks(
       sourceIds,
     }),
   );
+  issues.push(...checkYtowerRecipeSourceReuse(validSourceRecords));
 
   // 食材條目只讀一次：食材檢查與專題的相關連結檢查共用
   const ingredients = options.ingredientsDir
