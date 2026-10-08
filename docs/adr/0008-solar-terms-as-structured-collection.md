@@ -10,4 +10,4 @@ status: accepted
 
 看到「把節氣總覽併成一篇專題以省掉專用檢查」的提議時，先讀本篇；那屬於重新決定，不是清理。站主於 2026-10-08 選定此作法。
 
-**Falsified if:** 節氣內容長成每個節氣各自一篇長文、需要專題的推薦檔期或相關專題呈現，此時應改為每節氣一篇專題並重新評估。
+**Falsified if:** 節氣內容長成每個節氣各自一篇長文、需要專題的推薦檔期或相關專題呈現，此時應改為每節氣一篇專題並重新評估。依賴的檔案：`src/content/solar-term-schema.ts`、`src/content/solar-term-sources.ts`、`src/content-checks/solar-terms.ts`、`src/pages/solar-terms/[...slug].astro`。
