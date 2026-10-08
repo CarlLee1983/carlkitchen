@@ -20,6 +20,8 @@ export default defineConfig({
   outDir: process.env.ASTRO_OUT_DIR ?? "dist",
   // 圖片一律輸出響應式 srcset／sizes；母檔 1536 寬，Astro 依斷點產生較小尺寸。
   image: { layout: "constrained" },
+  // CSS 一律內嵌：每頁樣式只有數 KB，外部檔換來的快取效益抵不過首屏多一個阻擋繪製的請求（PageSpeed render-blocking）。
+  build: { inlineStylesheets: "always" },
   markdown: {
     processor: satteri({
       hastPlugins: [
