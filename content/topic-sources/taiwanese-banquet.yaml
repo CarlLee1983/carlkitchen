@@ -1,0 +1,99 @@
+sources:
+  - title: 教育部《臺灣台語常用詞辭典》〈辦桌〉
+    url: https://sutian.moe.edu.tw/zh-hant/su/11971/
+  - title: 教育部《臺灣台語常用詞辭典》〈總舖師〉
+    url: https://sutian.moe.edu.tw/zh-hant/su/12281/
+  - title: 教育部《重編國語辭典修訂本》〈流水席〉
+    url: https://dict.revised.moe.edu.tw/dictView.jsp?ID=63449
+  - title: 高雄市政府新聞局《高雄畫刊》〈辦桌文化 正趣味〉（2010-05）
+    url: https://takao.kcg.gov.tw/article/2857
+  - title: 高雄市政府新聞局《高雄畫刊》〈總鋪師的藝術──訪問湯卿炉師傅〉（2017-06-07）
+    url: https://takao.kcg.gov.tw/article/2387
+  - title: 高雄市政府新聞局《高雄畫刊》〈我辦桌我驕傲 內門第三代總舖師創意無限〉（2019-04-08）
+    url: https://takao.kcg.gov.tw/article/59
+  - title: 外交部《台灣光華雜誌》〈宴會風光 來！呷辦桌！〉（2023-06）
+    url: https://www.taiwan-panorama.com/Articles/Details?Guid=76b6356f-4849-4a01-98a1-c17ca8c92c9d&CatId=10
+  - title: 外交部《台灣光華雜誌》〈湯湯水水話台菜〉（1995-11）
+    url: https://www.taiwan-panorama.com/zh/Articles/Details?Guid=976ad99c-0a8b-4056-ab2b-ee431c1d1ecc&langId=1&CatId=11
+  - title: 內政部移民署新住民數位資訊e網〈臺灣辦桌文化〉（2023-12-13）
+    url: https://nit.immigration.gov.tw/Multicultural/Detail/bac7f272-843e-4c2b-b8bd-7382c0213a1a
+  - title: 中央研究院數位文化中心《數位文化電子報》第 30 期〈臺灣獨特的宴席文化－辦桌〉（2015-12-15）
+    url: https://newsletter.ascdc.sinica.edu.tw/news/Content.php?lid=792&nid=7335
+  - title: 國立臺灣歷史博物館「臺灣女人」〈鄰里婦女「做水腳」〉
+    url: https://women.nmth.gov.tw/?p=20130
+  - title: 臺南市政府觀光旅遊局「臺南400」〈「臺南400‧流動的盛宴─來辦桌」系列報導18〉（2024-08-30）
+    url: https://tainan400.tainan.gov.tw/index.php?inter=news&did=133
+  - title: 楊桃美食網《快樂廚房雜誌》第 89 期〈清蒸魚(11)〉
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1842
+  - title: 楊桃美食網《快樂廚房雜誌》第 105 期〈肉羹湯(2)〉
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-3457
+  - title: 楊桃美食網〈紅豆湯(2)〉
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F05-0522
+sections:
+  - heading: 辦桌、流水席與總舖師
+    urls:
+      - https://sutian.moe.edu.tw/zh-hant/su/11971/
+      - https://newsletter.ascdc.sinica.edu.tw/news/Content.php?lid=792&nid=7335
+      - https://dict.revised.moe.edu.tw/dictView.jsp?ID=63449
+      - https://www.taiwan-panorama.com/Articles/Details?Guid=76b6356f-4849-4a01-98a1-c17ca8c92c9d&CatId=10
+      - https://sutian.moe.edu.tw/zh-hant/su/12281/
+      - https://takao.kcg.gov.tw/article/59
+  - heading: 搭棚、起灶，一整團人
+    urls:
+      - https://www.taiwan-panorama.com/zh/Articles/Details?Guid=976ad99c-0a8b-4056-ab2b-ee431c1d1ecc&langId=1&CatId=11
+      - https://nit.immigration.gov.tw/Multicultural/Detail/bac7f272-843e-4c2b-b8bd-7382c0213a1a
+      - https://takao.kcg.gov.tw/article/2857
+      - https://newsletter.ascdc.sinica.edu.tw/news/Content.php?lid=792&nid=7335
+      - https://women.nmth.gov.tw/?p=20130
+      - https://takao.kcg.gov.tw/article/2387
+  - heading: 一桌菜的出菜順序
+    urls:
+      - https://nit.immigration.gov.tw/Multicultural/Detail/bac7f272-843e-4c2b-b8bd-7382c0213a1a
+  - heading: 冷盤先上
+    urls:
+      - https://nit.immigration.gov.tw/Multicultural/Detail/bac7f272-843e-4c2b-b8bd-7382c0213a1a
+      - https://www.taiwan-panorama.com/Articles/Details?Guid=76b6356f-4849-4a01-98a1-c17ca8c92c9d&CatId=10
+      - https://takao.kcg.gov.tw/article/2387
+  - heading: 羹湯接在後面
+    urls:
+      - https://www.taiwan-panorama.com/Articles/Details?Guid=76b6356f-4849-4a01-98a1-c17ca8c92c9d&CatId=10
+      - https://takao.kcg.gov.tw/article/2387
+      - https://www.taiwan-panorama.com/zh/Articles/Details?Guid=976ad99c-0a8b-4056-ab2b-ee431c1d1ecc&langId=1&CatId=11
+  - heading: 道數與那一道魚
+    urls:
+      - https://www.taiwan-panorama.com/zh/Articles/Details?Guid=976ad99c-0a8b-4056-ab2b-ee431c1d1ecc&langId=1&CatId=11
+      - https://www.taiwan-panorama.com/Articles/Details?Guid=76b6356f-4849-4a01-98a1-c17ca8c92c9d&CatId=10
+      - https://newsletter.ascdc.sinica.edu.tw/news/Content.php?lid=792&nid=7335
+  - heading: 甜點與水果收尾
+    urls:
+      - https://nit.immigration.gov.tw/Multicultural/Detail/bac7f272-843e-4c2b-b8bd-7382c0213a1a
+      - https://takao.kcg.gov.tw/article/2387
+      - https://www.taiwan-panorama.com/zh/Articles/Details?Guid=976ad99c-0a8b-4056-ab2b-ee431c1d1ecc&langId=1&CatId=11
+      - https://newsletter.ascdc.sinica.edu.tw/news/Content.php?lid=792&nid=7335
+  - heading: 同一道菜，各地講究不同
+    urls:
+      - https://www.taiwan-panorama.com/zh/Articles/Details?Guid=976ad99c-0a8b-4056-ab2b-ee431c1d1ecc&langId=1&CatId=11
+      - https://newsletter.ascdc.sinica.edu.tw/news/Content.php?lid=792&nid=7335
+  - heading: 在家擺一桌：清蒸魚、肉羹湯和甜湯
+    urls:
+      - https://nit.immigration.gov.tw/Multicultural/Detail/bac7f272-843e-4c2b-b8bd-7382c0213a1a
+      - https://tainan400.tainan.gov.tw/index.php?inter=news&did=133
+      - https://www.taiwan-panorama.com/Articles/Details?Guid=76b6356f-4849-4a01-98a1-c17ca8c92c9d&CatId=10
+  - heading: 清蒸魚
+    urls:
+      - https://nit.immigration.gov.tw/Multicultural/Detail/bac7f272-843e-4c2b-b8bd-7382c0213a1a
+      - https://tainan400.tainan.gov.tw/index.php?inter=news&did=133
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1842
+  - heading: 肉羹湯
+    urls:
+      - https://takao.kcg.gov.tw/article/59
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-3457
+  - heading: 用一碗甜湯收尾
+    urls:
+      - https://nit.immigration.gov.tw/Multicultural/Detail/bac7f272-843e-4c2b-b8bd-7382c0213a1a
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F05-0522
+  - heading: 怎麼選
+    urls:
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1842
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-3457
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F05-0522
