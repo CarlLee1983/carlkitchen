@@ -9,7 +9,7 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `content/sources/<菜譜識別值>.yaml` — 內部來源紀錄：`urls` 列出至少一個核准來源網址。位於內容集合載入範圍（`content/recipes`）與 `public/` 之外，不被任何頁面或建置流程讀取，只由內容檢查指令讀取
 - `content/topics/<專題識別值>/topic.md` — 專題：Markdown 加 frontmatter（`title`、`summary`、`draft`、`publishedAt`、`hero`、`relatedRecipes`、`relatedIngredients`、`references`），封面圖放同資料夾。資料夾名稱即識別值與網址 `/topics/<識別值>/`，格式規則同菜譜；目前尚無正式專題，目錄以 `.gitkeep` 保留
 - `content/topic-sources/<專題識別值>.yaml` — 專題內部來源紀錄：`sources`（`title`、`url`）與段落對照 `sections`（`heading` 為內文 `##`／`###` 標題純文字，`urls` 須列在 `sources`）。位置與角色同 `content/sources/`，不進內容集合與公開輸出；選題參考放專題 frontmatter，不是核准來源
-- `src/data/solar-terms.json` — 首頁「這個時節」的二十四節氣交節時刻（中央氣象署開放資料 A-A0087-003，臺灣時間），插畫在 `src/assets/solar-terms/`。資料目前到 2027-12-22 冬至，最後一筆之後節氣列會自動隱藏；到期前從同一資料集補下一年
+- `src/data/solar-terms.json` — 首頁「這個時節」的二十四節氣交節時刻（中央氣象署開放資料 A-A0087-003，臺灣時間），插畫在 `src/assets/solar-terms/`。公告資料目前到 2027-12-22 冬至；之後由 `src/utils/solar-term-calc.ts` 在建置時依太陽視黃經推算，補到建置年後 5 年，頁面標示「依天文推算」。氣象署公告新年度後補進 JSON，推算值即被取代；單元測試會比對推算與公告，日期須相同、時刻差不超過 2 分鐘
 - `tests/` — 單元測試（Node 內建測試執行器）；`tests/fixtures/recipes/` 為測試用固定菜譜，含一份草稿
 - `e2e/` — Playwright 瀏覽器測試
 - `.scratch/` — 規格與票；`.claude/skills/` — 菜譜製作（`recipe-making`）、菜譜寫作（`recipe-writing`）、食材寫作（`ingredient-writing`）、專題寫作（`topic-writing`）與去 AI 味（`de-ai-voice`）skill

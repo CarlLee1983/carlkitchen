@@ -1,5 +1,6 @@
 ---
 import Illustration from "./Illustration.astro";
+import { inlineJson } from "../utils/inline-json";
 import type { TopicEntry } from "../utils/topic-entries";
 
 interface Props {
@@ -59,7 +60,7 @@ const candidates = topics.map((topic) => ({
       <script
         type="application/json"
         data-home-topic-candidates
-        set:html={JSON.stringify(candidates).replace(/</g, "\\u003c")}
+        set:html={inlineJson(candidates)}
       />
     </section>
   )
