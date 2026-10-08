@@ -132,6 +132,25 @@ test("草稿專題網址在正式建置回 404", async ({ page }) => {
   expect(response?.status()).toBe(404);
 });
 
+test("專題文章頁在桌面寬度水平置中且寬度適度放寬", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto("/topics/summer-salads/");
+  const article = page.locator("article.topic");
+  const main = page.getByRole("main");
+  const articleBox = (await article.boundingBox())!;
+  const mainBox = (await main.boundingBox())!;
+
+  // 驗證 article 在 main 容器內水平居中（左右間距對稱，誤差在 2px 內）
+  const leftMargin = articleBox.x - mainBox.x;
+  const rightMargin =
+    mainBox.x + mainBox.width - (articleBox.x + articleBox.width);
+  expect(Math.abs(leftMargin - rightMargin)).toBeLessThanOrEqual(2);
+
+  // 驗證寬度放寬至 46rem ~ 48rem（約 736px ~ 768px）
+  expect(articleBox.width).toBeGreaterThanOrEqual(736);
+  expect(articleBox.width).toBeLessThanOrEqual(768);
+});
+
 test("專題頁在手機寬度沒有水平捲動", async ({ page }) => {
   await expectNoHorizontalScroll(page, "/topics/");
   await expectNoHorizontalScroll(page, "/topics/summer-salads/");
