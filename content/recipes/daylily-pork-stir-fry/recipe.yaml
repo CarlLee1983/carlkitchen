@@ -10,7 +10,7 @@ timeMinutes: 20
 tags: [家常菜, 快炒]
 ingredients:
   - { name: 金針花, amount: { value: 300, unit: g } }
-  - { name: 瘦肉, amount: { value: 100, unit: g }, note: 切絲 }
+  - { name: 豬里肌肉, amount: { value: 100, unit: g }, note: 切絲 }
   - { name: 蒜末, amount: { value: 15, unit: g } }
   - { name: 辣椒片, amount: { value: 15, unit: g } }
   - {
@@ -34,7 +34,7 @@ ingredients:
   - { name: 水, amount: { value: 30, unit: ml }, note: 約 2 大匙, group: 調味 }
   - { name: 食用油, note: 適量，爆香用，來源未標用量, group: 調味 }
 steps:
-  - text: 金針花汆燙後瀝乾，瘦肉切絲備用。
+  - text: 金針花汆燙後瀝乾，豬里肌肉切絲備用。
   - text: 鍋中加入適量油，爆香蒜末和辣椒片。
-  - text: 加入瘦肉絲炒至變白，加入水、鹽、雞粉和米酒拌炒。
+  - text: 加入豬里肌肉絲炒至變白，加入水、鹽、雞粉和米酒拌炒。
   - text: 放入金針花拌炒均勻後起鍋。

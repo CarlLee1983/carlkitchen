@@ -9,7 +9,7 @@ protein: false
 timeMinutes: 50
 tags: [家常菜, 湯品]
 ingredients:
-  - { name: 排骨, amount: { value: 200, unit: g }, note: 切小塊 }
+  - { name: 豬小排, amount: { value: 200, unit: g }, note: 切小塊 }
   - { name: 苦瓜, amount: { value: 200, unit: g }, note: 去皮去籽切小塊 }
   - { name: 薑片, amount: { value: 10, unit: g } }
   - { name: 水, amount: { value: 700, unit: ml } }
@@ -22,7 +22,7 @@ ingredients:
     }
   - { name: 米酒, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
 steps:
-  - text: 排骨切小塊，放入滾水汆燙約 1 分鐘，撈起以冷水沖涼。
+  - text: 豬小排切小塊，放入滾水汆燙約 1 分鐘，撈起以冷水沖涼。
   - text: 苦瓜去皮去籽切小塊，放入滾水汆燙約 1 分鐘，撈起以冷水沖涼。
-  - text: 排骨、苦瓜、薑片和水放入湯鍋，以中火煮滾。
+  - text: 豬小排、苦瓜、薑片和水放入湯鍋，以中火煮滾。
   - text: 轉小火維持微滾約 30 分鐘，加入鹽、雞精粉和米酒調味。

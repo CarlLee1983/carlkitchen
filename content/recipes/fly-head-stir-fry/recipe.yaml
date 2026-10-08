@@ -10,7 +10,7 @@ timeMinutes: 25
 tags: [家常菜]
 ingredients:
   - { name: 韭菜花, amount: { value: 200, unit: g }, note: 切小段 }
-  - { name: 豬絞肉, amount: { value: 100, unit: g } }
+  - { name: 豬梅花絞肉, amount: { value: 100, unit: g } }
   - { name: 豆豉, amount: { value: 1, unit: 大匙 }, note: 泡冷水後瀝乾 }
   - { name: 皮蛋, amount: { value: 1, unit: 顆 }, note: 去殼切丁 }
   - { name: 大蒜, amount: { value: 2, unit: 粒 }, note: 切末 }
@@ -39,7 +39,7 @@ steps:
     image:
       src: ./step-1.webp
       alt: 砧板上放著韭菜花段、蒜末、辣椒片和皮蛋丁，旁邊有菜刀與一小碗豆豉
-  - text: 炒鍋加沙拉油燒熱，放入豬絞肉炒散，直到肉色轉白。
+  - text: 炒鍋加沙拉油燒熱，放入豬梅花絞肉炒散，直到肉色轉白。
     image:
       src: ./step-2.webp
       alt: 炒鍋中的豬絞肉炒散至變白，旁邊放著木鍋鏟

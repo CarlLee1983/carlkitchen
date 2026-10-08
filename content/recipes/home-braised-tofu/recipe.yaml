@@ -10,7 +10,7 @@ timeMinutes: 25
 tags: [家常菜]
 ingredients:
   - { name: 板豆腐, amount: { value: 300, unit: g }, note: 切約 1.5 公分厚片 }
-  - { name: 豬肉絲, amount: { value: 30, unit: g } }
+  - { name: 豬里肌肉絲, amount: { value: 30, unit: g } }
   - { name: 蔥絲, amount: { value: 10, unit: g } }
   - { name: 薑絲, amount: { value: 10, unit: g } }
   - { name: 紅辣椒絲, amount: { value: 5, unit: g } }
@@ -48,5 +48,5 @@ ingredients:
 steps:
   - text: 板豆腐切成約 1.5 公分厚片。鍋中加 15 ml 食用油，將板豆腐煎到兩面焦黃後取出。
   - text: 鍋中再加 15 ml 食用油，以小火炒香薑絲、蔥絲和紅辣椒絲。
-  - text: 加入豬肉絲炒散、炒熟，再加醬油、細砂糖、米酒和水炒勻。
+  - text: 加入豬里肌肉絲炒散、炒熟，再加醬油、細砂糖、米酒和水炒勻。
   - text: 放回板豆腐，以小火煮約 2 分鐘至湯汁略收，淋上香油。

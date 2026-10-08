@@ -10,7 +10,7 @@ timeMinutes: 25
 tags: [家常菜, 麵食]
 ingredients:
   - { name: 意麵, amount: { value: 170, unit: g } }
-  - { name: 豬絞肉, amount: { value: 130, unit: g } }
+  - { name: 豬梅花絞肉, amount: { value: 130, unit: g } }
   - { name: 紅蔥頭, amount: { value: 25, unit: g }, note: 切末 }
   - { name: 大蒜, amount: { value: 5, unit: g }, note: 切末 }
   - { name: 高湯, amount: { value: 100, unit: ml } }
@@ -44,7 +44,7 @@ steps:
     image:
       src: ./step-2.webp
       alt: 炒鍋中炒成金黃色的紅蔥末和蒜末，鍋底帶著油光，木鍋鏟靠在鍋緣
-  - text: 原鍋放入豬絞肉，炒散到肉色變白。
+  - text: 原鍋放入豬梅花絞肉，炒散到肉色變白。
     image:
       src: ./step-3.webp
       alt: 炒鍋中炒散成鬆散細粒、肉色轉為淡粉白的豬絞肉，鍋中沒有醬汁，木鍋鏟靠在鍋緣
