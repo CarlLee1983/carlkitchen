@@ -1,0 +1,61 @@
+title: 鳳梨蝦球
+summary: 蝦仁裹粉炸酥後，與鳳梨片拌入美乃滋檸檬醬汁。
+servings: 3
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [家常菜, 海鮮]
+ingredients:
+  - { name: 草蝦仁, amount: { value: 300, unit: g } }
+  - { name: 鳳梨片, amount: { value: 80, unit: g } }
+  - {
+      name: 鹽,
+      amount: { value: 0.83, unit: ml },
+      note: 約 1/6 茶匙，調味 A,
+      group: 調味,
+    }
+  - {
+      name: 蛋白,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，調味 A,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，調味 A,
+      group: 調味,
+    }
+  - {
+      name: 美乃滋,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙，調味 B,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 12, unit: g },
+      note: 約 1 大匙，調味 B,
+      group: 調味,
+    }
+  - {
+      name: 檸檬汁,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，調味 B,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 1, unit: 碗 },
+      note: 裹蝦仁用，調味 C,
+      group: 調味,
+    }
+  - { name: 炸油, note: 適量，來源未標用量, group: 調味 }
+steps:
+  - text: 蝦仁洗淨、瀝乾，在蝦背劃開約三分之一深度，加入調味 A 抓勻醃約 2 分鐘。
+  - text: 將美乃滋、細砂糖和檸檬汁調勻成醬汁。
+  - text: 油鍋加熱至約 180°C，蝦仁裹上調味 C 後放入油鍋炸約 2 分鐘至表面酥脆，撈起瀝油。
+  - text: 另起鍋放入蝦仁和鳳梨片，淋上醬汁拌勻。

@@ -1,0 +1,26 @@
+title: 紅燒茄子煲
+summary: 茄子先過油，再與蔥段和醬油膏放入砂鍋燜煮至湯汁收乾。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 30
+tags: [家常菜, 蔬食]
+ingredients:
+  - { name: 茄子, amount: { value: 2, unit: 條 }, note: 切段 }
+  - { name: 蔥, amount: { value: 3, unit: 支 }, note: 切段 }
+  - {
+      name: 醬油膏,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 水, note: 少許，來源未標用量, group: 調味 }
+  - { name: 食用油, note: 過油及爆香用，來源未標用量, group: 調味 }
+steps:
+  - text: 茄子切段後泡水，瀝乾備用。
+  - text: 茄子放入熱油中過油後撈起瀝油。
+  - text: 鍋中留少許油，放入蔥段爆香，再加入茄子。
+  - text: 加入醬油膏和水，移入砂鍋燜煮至湯汁收乾。

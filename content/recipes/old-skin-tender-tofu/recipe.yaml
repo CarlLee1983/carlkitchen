@@ -1,0 +1,52 @@
+title: 老皮嫩肉
+summary: 蛋豆腐炸至表面金黃，瀝油後淋上帶花椒香氣的蔥蒜醬汁。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [家常菜]
+ingredients:
+  - { name: 蛋豆腐, amount: { value: 1, unit: 盒 }, note: 切塊 }
+  - { name: 蔥花, amount: { value: 5, unit: g } }
+  - { name: 蒜末, amount: { value: 5, unit: g } }
+  - { name: 辣椒末, amount: { value: 5, unit: g } }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 涼開水,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 花椒粉, note: 少許, group: 調味 }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 將蛋豆腐切塊。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分開放著數塊切好的蛋豆腐，旁邊有一把菜刀
+  - text: 將蔥花、蒜末、辣椒末、醬油、涼開水、花椒粉和香油拌成醬汁。
+    image:
+      src: ./step-2.webp
+      alt: 素色瓷碗中的褐色醬汁，可見蔥花、蒜末和辣椒末
+  - text: 在鍋中備足炸油，燒至約 180°C，放入蛋豆腐炸到表面金黃香酥。
+    image:
+      src: ./step-3.webp
+      alt: 炸鍋熱油中有數塊蛋豆腐，表面已炸成金黃色
+  - text: 撈出蛋豆腐瀝油，盛盤後淋上醬汁。
+    image:
+      src: ./step-4.webp
+      alt: 素色瓷盤中的金黃蛋豆腐塊淋上褐色醬汁，可見蔥花、蒜末和辣椒末
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤盛著表面金黃的蛋豆腐塊，淋有帶蔥花、蒜末與辣椒末的醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盒蛋豆腐、分開擺放的蔥花、蒜末、辣椒末，以及小碟中的醬油、涼開水、花椒粉和香油

@@ -1,0 +1,44 @@
+title: 日式炒烏龍麵
+summary: 豬肉絲和蔬菜炒香後加入烏龍麵與和風調味料燜煮。
+servings: 1
+category: 主食
+draft: true
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [日式料理, 麵食]
+ingredients:
+  - { name: 烏龍麵, amount: { value: 150, unit: g } }
+  - { name: 青蔥, amount: { value: 20, unit: g }, note: 切段 }
+  - { name: 紅蘿蔔, amount: { value: 10, unit: g }, note: 切絲 }
+  - { name: 魚板, amount: { value: 30, unit: g }, note: 切小片 }
+  - { name: 竹筍, amount: { value: 10, unit: g }, note: 切絲 }
+  - { name: 生香菇, amount: { value: 10, unit: g }, note: 切片 }
+  - { name: 豬肉絲, amount: { value: 30, unit: g } }
+  - { name: 柴魚片, amount: { value: 10, unit: g } }
+  - {
+      name: 和風醬,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 黑胡椒粉,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙,
+      group: 調味,
+    }
+  - {
+      name: 糖,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 小匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 600, unit: ml }, group: 調味 }
+  - { name: 食用油, note: 少許，炒料用，來源未標用量, group: 調味 }
+steps:
+  - text: 青蔥切段；紅蘿蔔、竹筍切絲；魚板切小片，香菇切片。
+  - text: 鍋中加入少許油燒熱，放入豬肉絲與切好的蔬菜、魚板和香菇炒香。
+  - text: 加入烏龍麵、柴魚片、和風醬、黑胡椒粉、糖和水。
+  - text: 加蓋燜煮至麵條熟透。

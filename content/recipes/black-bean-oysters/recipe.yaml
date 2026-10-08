@@ -1,0 +1,58 @@
+title: 豆豉鮮蚵
+summary: 鮮蚵快速汆燙後，與豆豉、蒜末和辣椒拌煮，裹上微稠的醬汁。鮮蚵柔嫩，適合配飯。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - { name: 鮮蚵, amount: { value: 300, unit: g } }
+  - { name: 豆豉, amount: { value: 20, unit: g } }
+  - { name: 蒜末, amount: { value: 10, unit: g } }
+  - { name: 辣椒末, amount: { value: 10, unit: g } }
+  - { name: 蔥粒, amount: { value: 50, unit: g } }
+  - {
+      name: 食用油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙,
+      group: 調味,
+    }
+  - { name: 米酒, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 醬油膏,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 4, unit: g }, note: 約 1 茶匙, group: 調味 }
+  - { name: 水, amount: { value: 30, unit: ml }, note: 約 2 湯匙, group: 調味 }
+  - {
+      name: 太白粉水,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 鮮蚵洗淨瀝乾，放進滾水汆燙約 5 秒，撈起再次瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼瀝水籃裡放著剛汆燙撈起、表面帶水珠的鮮蚵
+  - text: 炒鍋燒熱，倒入食用油，轉小火炒香豆豉、蒜末、辣椒末和蔥粒，再放入鮮蚵。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋裡的鮮蚵與豆豉、蒜末、紅色辣椒末和綠色蔥粒混在一起
+  - text: 倒入米酒、醬油膏、糖和水，煮至醬汁沸騰。
+  - text: 加入太白粉水拌勻，讓醬汁稍微收稠，最後淋上香油即可。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中的鮮蚵裹著微稠的深褐色醬汁，間雜黑色豆豉、紅色辣椒末和綠色蔥粒
+hero:
+  src: ./hero.webp
+  alt: 素色陶瓷淺盤中盛著裹上深褐色醬汁的鮮蚵，散有黑色豆豉、紅色辣椒末和綠色蔥粒
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一碗鮮蚵、一小碟豆豉、各一小碟蒜末與辣椒末、一小碗蔥粒，以及分裝的食用油、米酒、醬油膏、糖、水、太白粉水和香油

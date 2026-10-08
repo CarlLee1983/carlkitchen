@@ -1,0 +1,32 @@
+title: 胡蘿蔔炒蛋
+summary: 胡蘿蔔絲與蒜炒軟後拌入蛋液，再以蔥絲炒至凝固。
+servings: 3
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 20
+tags: [家常菜, 蛋料理]
+ingredients:
+  - { name: 雞蛋, amount: { value: 5, unit: 顆 } }
+  - { name: 紅蘿蔔, amount: { value: 150, unit: g }, note: 切絲 }
+  - { name: 蔥絲, amount: { value: 15, unit: g } }
+  - { name: 蒜末, amount: { value: 5, unit: g } }
+  - {
+      name: 沙拉油,
+      amount: { value: 60, unit: ml },
+      note: 約 4 大匙，分兩次各用 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 紅蘿蔔切絲，雞蛋打散備用。
+  - text: 鍋中加入 30 ml 沙拉油，以小火炒紅蘿蔔絲和蒜末至軟後盛起。
+  - text: 將紅蘿蔔絲、蒜末和蔥絲拌入蛋液，加入鹽調味。
+  - text: 原鍋加入剩餘 30 ml 沙拉油，以小火翻炒蛋液至凝固。

@@ -1,0 +1,55 @@
+title: 五色蔬菜
+summary: 綠蘆筍、黑木耳、紅蘿蔔、黃甜椒和山藥汆燙後冰鎮，再拌入檸檬蒜香調味。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 20
+tags: [涼拌]
+ingredients:
+  - { name: 綠蘆筍, amount: { value: 70, unit: g } }
+  - { name: 黑木耳, amount: { value: 60, unit: g } }
+  - { name: 紅蘿蔔, amount: { value: 40, unit: g } }
+  - { name: 黃甜椒, amount: { value: 40, unit: g } }
+  - { name: 山藥, amount: { value: 80, unit: g } }
+  - {
+      name: 橄欖油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 1.5, unit: g },
+      note: 約 1/4 小匙,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 4, unit: g }, note: 約 1 小匙, group: 調味 }
+  - {
+      name: 檸檬汁,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙,
+      group: 調味,
+    }
+  - { name: 蒜末, group: 調味 }
+steps:
+  - text: 山藥與紅蘿蔔去皮、洗淨後切條；黑木耳洗淨切條，綠蘆筍洗淨切段，黃甜椒洗淨去籽切條。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分放切段的綠蘆筍，以及切條的黑木耳、紅蘿蔔、黃甜椒和山藥，旁邊放著菜刀
+  - text: 將切好的蔬菜放入滾水中汆燙至熟，撈起後泡入冰水。
+    image:
+      src: ./step-2.webp
+      alt: 素色瓷碗的冰水中浸著汆燙後的綠蘆筍、黑木耳、紅蘿蔔、黃甜椒和山藥
+  - text: 將橄欖油、鹽、糖、檸檬汁和蒜末拌勻，加入冰鎮後的蔬菜拌勻，盛盤。
+    image:
+      src: ./step-3.webp
+      alt: 素色瓷碗中，綠蘆筍、黑木耳、紅蘿蔔、黃甜椒和山藥拌著細碎蒜末
+hero:
+  src: ./hero.webp
+  alt: 素色陶瓷淺盤盛著綠蘆筍段、黑木耳條、紅蘿蔔條、黃甜椒條和山藥條
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 分裝的 70 g 綠蘆筍、60 g 黑木耳、40 g 紅蘿蔔、40 g 黃甜椒及 80 g 山藥，前方有橄欖油、鹽、糖、檸檬汁與蒜末

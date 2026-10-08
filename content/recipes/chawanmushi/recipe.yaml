@@ -1,0 +1,29 @@
+title: 日式茶碗蒸
+summary: 蛋液過篩後與蝦、雞肉、銀杏和菇類一同蒸熟。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+tags: [日式料理, 蛋料理]
+ingredients:
+  - { name: 水, amount: { value: 300, unit: ml } }
+  - { name: 柴魚素, amount: { value: 2, unit: g } }
+  - { name: 雞蛋, amount: { value: 2, unit: 顆 } }
+  - { name: 鹽, amount: { value: 2, unit: g }, group: 調味 }
+  - { name: 醬油, amount: { value: 3, unit: ml }, group: 調味 }
+  - { name: 味醂, amount: { value: 3, unit: ml }, group: 調味 }
+  - { name: 蝦, amount: { value: 2, unit: 隻 }, note: 去殼留尾 }
+  - { name: 雞肉, amount: { value: 2, unit: 小塊 } }
+  - { name: 銀杏, amount: { value: 4, unit: 粒 } }
+  - { name: 秀珍菇, amount: { value: 2, unit: 朵 } }
+  - { name: 山芹菜, amount: { value: 1, unit: 支 }, note: 切小段 }
+steps:
+  - text: 水煮滾後加入柴魚素，熄火放涼備用。蝦去泥腸、去頭和蝦殼，只保留尾部最後一節；雞肉、銀杏、秀珍菇和山芹菜洗淨備用。
+  - text: 雞蛋打散，加入鹽、醬油和味醂拌勻，再加入放涼的柴魚高湯。
+  - text: 蛋液以細網眼濾網過濾，撈除表面泡沫。
+  - text: 蝦、雞肉、銀杏和秀珍菇放入蒸碗，倒入蛋液至約七、八分滿並包上保鮮膜。
+  - text: 蒸鍋水煮滾後放入蒸碗，先大火蒸 3 分鐘；蛋液表面變白後將鍋蓋留縫，轉中小火蒸約 10 分鐘。
+  - text: 以竹籤確認蒸蛋熟度。山芹菜切小段汆燙後放在蒸蛋上。

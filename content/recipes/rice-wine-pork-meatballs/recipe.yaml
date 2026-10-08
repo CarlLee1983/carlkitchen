@@ -1,0 +1,65 @@
+title: 酒蒸肉丸
+summary: 豬絞肉拌入香菇、蔥薑與調味料捏丸蒸熟，再淋上勾芡醬汁。
+servings: 4
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+tags: [家常菜, 電鍋料理]
+ingredients:
+  - { name: 豬絞肉, amount: { value: 500, unit: g } }
+  - { name: 乾香菇, amount: { value: 3, unit: 朵 } }
+  - { name: 蔥, amount: { value: 1, unit: 支 }, note: 切末 }
+  - { name: 薑, amount: { value: 20, unit: g }, note: 切末 }
+  - { name: 紅蘿蔔, note: 適量，切薄圓片作墊底, group: 調味 }
+  - {
+      name: 太白粉水,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙，勾芡用,
+      group: 調味,
+    }
+  - {
+      name: 鰹魚醬露,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，調味 A,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，調味 A,
+      group: 調味,
+    }
+  - {
+      name: 香油,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙，調味 A,
+      group: 調味,
+    }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙，調味 A,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，調味 A,
+      group: 調味,
+    }
+  - {
+      name: 鰹魚醬露,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，調味 B,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 200, unit: ml }, note: 調味 B, group: 調味 }
+  - { name: 外鍋水, amount: { value: 1, unit: 杯 }, note: 電鍋外鍋用 }
+steps:
+  - text: 乾香菇泡軟後切末，蔥和薑切末；與豬絞肉、調味 A 拌勻並捏成肉丸。
+  - text: 紅蘿蔔切薄圓片，鋪在盤中，每片紅蘿蔔上放一顆肉丸。
+  - text: 盤子放入電鍋，外鍋加入 1 杯水，蒸約 20 分鐘。
+  - text: 調味 B 煮沸，以太白粉水勾芡後淋在肉丸上。

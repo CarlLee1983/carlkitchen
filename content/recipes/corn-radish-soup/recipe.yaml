@@ -1,0 +1,33 @@
+title: 玉米蘿蔔湯
+summary: 玉米段和白蘿蔔塊加水煮到沸騰，再以芹菜末、鹽和雞粉調味。
+servings: 3
+category: 湯
+draft: true
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [家常湯]
+ingredients:
+  - { name: 玉米, amount: { value: 300, unit: g }, note: 去鬚切小段 }
+  - { name: 白蘿蔔, amount: { value: 100, unit: g }, note: 去皮切小塊 }
+  - { name: 芹菜末, amount: { value: 10, unit: g } }
+  - { name: 水, amount: { value: 700, unit: ml } }
+  - { name: 鹽, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - { name: 雞粉, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 玉米去鬚後切小段，白蘿蔔去皮切小塊。
+  - text: 玉米、白蘿蔔和水放入湯鍋煮至沸騰。
+    image:
+      src: ./step-2.webp
+      alt: 湯鍋中的玉米段和白蘿蔔塊在清水中煮滾，尚未加入芹菜
+  - text: 加入芹菜末、鹽和雞粉拌勻即可。
+    image:
+      src: ./step-3.webp
+      alt: 玉米蘿蔔湯上撒有芹菜末，鍋旁放著兩只已倒空的調味小碟
+hero:
+  src: ./hero.webp
+  alt: 敞口湯鍋盛著清澈玉米蘿蔔湯，可見玉米段、白蘿蔔塊和芹菜末
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 玉米段、白蘿蔔塊和芹菜末分開擺放，旁邊有清水、鹽與雞粉

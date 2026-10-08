@@ -1,0 +1,72 @@
+title: 豆腐蝦仁
+summary: 豆腐片鋪上蔥薑蝦漿，用電鍋蒸熟，做成十塊可分食的配菜。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+tags: [家常菜]
+ingredients:
+  - { name: 蝦仁, amount: { value: 150, unit: g }, note: 去腸泥、洗淨後瀝乾 }
+  - {
+      name: 豆腐,
+      amount: { value: 1, unit: 塊 },
+      note: 切成十片約 1 公分厚的長方片,
+    }
+  - { name: 蔥花, amount: { value: 20, unit: g } }
+  - { name: 薑末, amount: { value: 10, unit: g } }
+  - {
+      name: 鹽,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 雞精粉,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 細糖,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙拌蝦漿；豆腐表面另薄撒，來源未列用量,
+      group: 調味,
+    }
+  - {
+      name: 香油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 將蝦仁去腸泥、洗淨瀝乾，拍成泥。拌入蔥花、薑末、鹽、雞精粉和細糖，再拌入太白粉與香油，放入冰箱備用。
+    image:
+      src: ./step-1.webp
+      alt: 素色瓷碗中的粉紅色蝦漿，拌有蔥花與薑末
+  - text: 將豆腐切成十片約 1 公分厚的長方片，平放盤中，在表面薄撒太白粉。
+    image:
+      src: ./step-2.webp
+      alt: 素色瓷盤上平放十片長方形豆腐，表面薄撒太白粉
+  - text: 將蝦漿分放在十片豆腐上，各自抹成小丘。
+    image:
+      src: ./step-3.webp
+      alt: 素色瓷盤中十片長方形豆腐上各有一丘粉紅色蝦漿，漿中可見蔥花
+  - text: 在電鍋外鍋倒入 1/2 杯水，放入蒸架和整盤豆腐，蓋上鍋蓋，按下開關蒸到跳起。
+    image:
+      src: ./step-4.webp
+      alt: 電鍋內的蒸架上放著一盤豆腐蝦仁，十塊豆腐上的蝦漿已蒸熟
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤中排列十塊豆腐蝦仁，長方豆腐片上有蒸熟的粉橘色蝦漿與蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一塊豆腐、蝦仁、蔥花、薑末，旁邊分裝著鹽、雞精粉、細糖、太白粉和香油

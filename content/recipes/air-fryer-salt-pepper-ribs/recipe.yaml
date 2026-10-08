@@ -1,0 +1,71 @@
+title: 氣炸椒鹽排骨
+summary: 排骨以蛋液、醬油和米酒醃過，裹上地瓜粉後用氣炸鍋烤熟，再拌入椒鹽、蒜末、辣椒末和蔥花。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 55
+tags: [家常菜]
+ingredients:
+  - { name: 排骨, amount: { value: 600, unit: g }, note: 切塊 }
+  - {
+      name: 雞蛋,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 醃料,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 醃料,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 醃料,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙拌入醃料,
+      group: 醃料,
+    }
+  - { name: 水, amount: { value: 15, unit: ml }, note: 約 1 大匙, group: 醃料 }
+  - { name: 地瓜粉, note: 裹粉用，來源未列用量, group: 調味 }
+  - { name: 蒜末, amount: { value: 15, unit: g }, group: 調味 }
+  - { name: 辣椒末, amount: { value: 10, unit: g }, group: 調味 }
+  - { name: 蔥花, amount: { value: 15, unit: g }, group: 調味 }
+  - {
+      name: 椒鹽粉,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 食用油, note: 少許刷表面, group: 調味 }
+steps:
+  - text: 將醬油、太白粉、蛋液、米酒和水攪勻，放入排骨抓拌並按摩至醬汁吸收。
+    image:
+      src: ./step-1.webp
+      alt: 玻璃碗中的生排骨均勻沾裹蛋液、醬油和太白粉醃料
+  - text: 將排骨放入保鮮盒，冷藏醃漬 30 分鐘；取出後逐塊裹上地瓜粉。
+    image:
+      src: ./step-2.webp
+      alt: 裹滿地瓜粉的排骨塊排在氣炸鍋烤盤上
+  - text: 將排骨放進氣炸鍋烤盤，表面刷少許油，以 200°C 氣炸 18 分鐘。
+    image:
+      src: ./step-3.webp
+      alt: 氣炸鍋籃中的帶骨排骨塊表面已氣炸成金黃色，尚未撒上蒜末、辣椒末和蔥花
+  - text: 時間到後撒上椒鹽粉、蒜末、辣椒末和蔥花，再以 200°C 氣炸 2 分鐘。
+    image:
+      src: ./step-4.webp
+      alt: 氣炸排骨上撒有椒鹽粉、蒜末、辣椒末和蔥花
+hero:
+  src: ./hero.webp
+  alt: 白色淺盤盛著外層金黃的椒鹽排骨，表面可見蒜末、辣椒末與蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 生帶骨排骨塊、蛋液、蒜末、辣椒末和蔥花，旁邊分裝醬油、米酒、太白粉、水、地瓜粉、椒鹽粉與少量食用油

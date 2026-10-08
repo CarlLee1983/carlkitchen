@@ -1,0 +1,31 @@
+title: 優格燉肉
+summary: 豬肉與馬鈴薯、甜椒和杏鮑菇加入原味優格燉煮。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 55
+tags: [家常菜, 燉煮]
+ingredients:
+  - { name: 豬後腿肉, amount: { value: 300, unit: g }, note: 切大塊 }
+  - { name: 馬鈴薯, amount: { value: 150, unit: g }, note: 切塊 }
+  - { name: 洋蔥, amount: { value: 30, unit: g }, note: 切塊 }
+  - { name: 杏鮑菇, amount: { value: 50, unit: g }, note: 切塊 }
+  - { name: 紅甜椒, amount: { value: 20, unit: g } }
+  - { name: 黃甜椒, amount: { value: 20, unit: g } }
+  - { name: 原味優格, amount: { value: 200, unit: ml } }
+  - { name: 水, amount: { value: 800, unit: ml } }
+  - { name: 食用油, note: 少許，炒洋蔥用, group: 調味 }
+  - {
+      name: 鹽,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 小匙,
+      group: 調味,
+    }
+steps:
+  - text: 豬後腿肉切大塊，放入滾水汆燙後瀝乾。
+  - text: 熱鍋加入少許油，炒香洋蔥，放入豬肉炒至表面上色。
+  - text: 加入馬鈴薯、紅甜椒、黃甜椒和杏鮑菇炒香，再加入水煮滾。
+  - text: 轉小火，拌入鹽和原味優格；鍋蓋留縫燉煮約 30 分鐘。

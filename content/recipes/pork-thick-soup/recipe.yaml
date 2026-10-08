@@ -1,0 +1,72 @@
+title: 肉羹湯
+summary: 雞骨與柴魚片煮出湯底，再加入肉羹、香菇、紅蘿蔔和筍絲，最後勾芡調味。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 65
+tags: [家常菜]
+ingredients:
+  - { name: 肉羹, amount: { value: 300, unit: g } }
+  - { name: 香菇, amount: { value: 3, unit: 朵 }, note: 泡軟後切絲，泡發水留用 }
+  - { name: 雞骨, amount: { value: 300, unit: g } }
+  - { name: 紅蘿蔔絲, amount: { value: 40, unit: g } }
+  - { name: 竹筍絲, amount: { value: 50, unit: g } }
+  - {
+      name: 水,
+      amount: { value: 1000, unit: ml },
+      note: 湯底用；泡香菇另備水，電鍋外鍋每次另加 1 杯水,
+    }
+  - { name: 柴魚片, note: 適量，熬湯後撈除, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 7.5, unit: ml },
+      note: 約 1/2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 雞粉,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - { name: 胡椒粉, note: 少許, group: 調味 }
+  - { name: 香油, note: 少許, group: 調味 }
+  - { name: 烏醋, note: 少許, group: 調味 }
+  - { name: 太白粉水, note: 勾芡用，來源未列用量與配比, group: 調味 }
+steps:
+  - text: 將香菇加水泡軟，撈起切絲，泡香菇的水留用。
+    image:
+      src: ./step-1.webp
+      alt: 泡軟的香菇切成細絲，香菇水留在旁邊的碗裡
+  - text: 洗淨雞骨，與 1000 ml 滾水放入電鍋內鍋；外鍋加 1 杯水，蒸到開關跳起，再燜 5 分鐘。
+    image:
+      src: ./step-2.webp
+      alt: 幾塊雞骨浸在電鍋內鍋的清水中，準備蒸煮
+  - text: 放入柴魚片浸泡 1 分鐘，撈除雞骨和柴魚片。
+    image:
+      src: ./step-3.webp
+      alt: 柴魚片正在電鍋內鍋的雞骨湯裡浸泡，雞骨仍在湯中
+  - text: 加入香菇絲、泡香菇的水、紅蘿蔔絲和竹筍絲；外鍋再加 1 杯水，蒸 15 分鐘。
+    image:
+      src: ./step-4.webp
+      alt: 雞骨湯裡加入香菇絲、紅蘿蔔絲與竹筍絲
+  - text: 放入肉羹，續煮到電鍋開關跳起。用太白粉水勾芡，再加入醬油、鹽、糖、雞粉、胡椒粉、香油和烏醋煮勻。
+    image:
+      src: ./step-5.webp
+      alt: 電鍋內鍋中的肉羹湯加入調味料與太白粉水勾芡
+hero:
+  src: ./hero.webp
+  alt: 敞口素色湯鍋盛著肉羹湯，湯裡可見肉羹、香菇絲、紅蘿蔔絲與竹筍絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 300 g 肉羹、300 g 雞骨、3 朵香菇、40 g 紅蘿蔔絲、50 g 竹筍絲和 1000 ml 湯底用水，另有柴魚片與分裝的醬油、鹽、糖、雞粉、胡椒粉、香油、烏醋和太白粉水

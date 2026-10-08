@@ -1,0 +1,44 @@
+title: 日式炸豆腐
+summary: 芙蓉豆腐依序沾玉米粉、蛋液和柴魚絲，炸酥後淋上醬汁。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [日式料理, 豆腐]
+ingredients:
+  - { name: 芙蓉豆腐, amount: { value: 2, unit: 塊 } }
+  - { name: 柴魚絲, amount: { value: 20, unit: g } }
+  - { name: 玉米粉, amount: { value: 30, unit: g } }
+  - { name: 雞蛋, amount: { value: 2, unit: 顆 } }
+  - {
+      name: 鰹魚醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醬汁用,
+      group: 調味,
+    }
+  - {
+      name: 味醂,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，醬汁用,
+      group: 調味,
+    }
+  - {
+      name: 高湯,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醬汁用,
+      group: 調味,
+    }
+  - {
+      name: 沙拉油,
+      amount: { value: 300, unit: ml },
+      note: 約 300 c.c.，炸油,
+      group: 調味,
+    }
+steps:
+  - text: 芙蓉豆腐切成 8 塊，雞蛋打散；鰹魚醬油、味醂和高湯調勻成醬汁。
+  - text: 豆腐依序沾上玉米粉、蛋液和柴魚絲。
+  - text: 沙拉油加熱至約 160°C，放入豆腐炸約 1 分鐘至表面酥脆，撈起瀝油。
+  - text: 炸豆腐裝碗，淋上調好的醬汁。

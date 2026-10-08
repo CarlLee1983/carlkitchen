@@ -1,0 +1,36 @@
+title: 山藥蔬菜湯
+summary: 山藥、胡蘿蔔和菇類先後入湯煮熟，以鹽、白胡椒和香油調味。
+servings: 4
+category: 湯
+draft: true
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 35
+tags: [家常湯]
+ingredients:
+  - { name: 山藥, amount: { value: 250, unit: g }, note: 去皮切滾刀塊 }
+  - { name: 胡蘿蔔, amount: { value: 50, unit: g }, note: 去皮切滾刀塊 }
+  - { name: 蒟蒻, amount: { value: 150, unit: g } }
+  - { name: 鴻喜菇, amount: { value: 100, unit: g }, note: 切去根部 }
+  - { name: 鮮香菇, amount: { value: 100, unit: g }, note: 去蒂 }
+  - { name: 薑絲, amount: { value: 10, unit: g } }
+  - { name: 蔥花, amount: { value: 10, unit: g } }
+  - { name: 高湯, amount: { value: 800, unit: ml } }
+  - { name: 鹽, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 白胡椒,
+      amount: { value: 0.83, unit: ml },
+      note: 約 1/6 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 香油,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 山藥、胡蘿蔔去皮切滾刀塊；鮮香菇去蒂，鴻喜菇切去根部。
+  - text: 高湯煮開後加入山藥、胡蘿蔔和薑絲。再次煮開後轉小火，煮約 20 分鐘。
+  - text: 加入蒟蒻、鮮香菇和鴻喜菇，再煮約 3 分鐘。加入鹽、白胡椒和香油調味。

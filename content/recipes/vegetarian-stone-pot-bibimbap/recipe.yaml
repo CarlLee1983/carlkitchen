@@ -1,0 +1,74 @@
+title: 素石鍋拌飯
+summary: 白飯上分別鋪上海帶芽、豆皮、黃豆芽、紅蘿蔔、菠菜與素泡菜，淋上醬汁後拌著吃。
+servings: 1
+category: 主食
+draft: true
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 35
+tags: [家常菜, 素食]
+hero:
+  src: ./hero.webp
+  alt: 石鍋中白飯周圍分別鋪著素泡菜、菠菜、黃豆芽、海帶芽、紅蘿蔔與豆皮
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 白飯、素泡菜、豆皮、海帶芽、黃豆芽、紅蘿蔔、菠菜與調味料分別盛放
+ingredients:
+  - { name: 素泡菜, amount: { value: 100, unit: g } }
+  - { name: 豆皮, amount: { value: 60, unit: g }, note: 切絲 }
+  - { name: 海帶芽, amount: { value: 60, unit: g }, note: 洗淨切小段 }
+  - { name: 黃豆芽, amount: { value: 120, unit: g } }
+  - { name: 紅蘿蔔, amount: { value: 100, unit: g }, note: 去皮切絲 }
+  - { name: 菠菜, amount: { value: 120, unit: g }, note: 汆燙後切段 }
+  - { name: 白飯, amount: { value: 1, unit: 碗 } }
+  - { name: 薑, amount: { value: 5, unit: g }, note: 切末 }
+  - { name: 白芝麻, note: 少許，材料與醬汁各用一次, group: 調味 }
+  - { name: 香油, note: 少許, group: 調味 }
+  - { name: 鹽, note: 少許，菠菜、黃豆芽與紅蘿蔔調味用, group: 調味 }
+  - { name: 糖, note: 少許，豆皮調味用, group: 調味 }
+  - {
+      name: 昆布醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油膏,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 味醂,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 水, note: 少許，調醬汁用, group: 調味 }
+  - { name: 食用油, note: 炒黃豆芽、紅蘿蔔與豆皮用，來源未標用量, group: 調味 }
+steps:
+  - text: 海帶芽洗淨切小段，黃豆芽洗淨，豆皮切絲，紅蘿蔔去皮切絲。
+    image:
+      src: ./step-1.webp
+      alt: 海帶芽、黃豆芽、豆皮絲與紅蘿蔔絲分別備料
+  - text: 菠菜放入加了少許鹽和油的滾水中汆燙，撈出切段。
+    image:
+      src: ./step-2.webp
+      alt: 菠菜放入加少許鹽與油的滾水中汆燙
+  - text: 海帶芽汆燙後撈起，拌入香油和白芝麻。
+    image:
+      src: ./step-3.webp
+      alt: 汆燙後的海帶芽拌入香油與白芝麻
+  - text: 炒鍋加油和薑末炒香，放入黃豆芽炒熟，以少許鹽調味後盛起；再炒紅蘿蔔絲並以鹽調味。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中翻炒紅蘿蔔絲，旁邊放著炒好的黃豆芽
+  - text: 豆皮絲炒熟後加入少許鹽、糖水，以及昆布醬油、醬油膏、味醂、少許水和白芝麻拌勻。
+    image:
+      src: ./step-5.webp
+      alt: 豆皮絲在鍋中與醬汁和白芝麻拌炒
+  - text: 白飯盛入碗中，分別放上素泡菜、海帶芽、黃豆芽、紅蘿蔔和豆皮，最後淋上醬汁。
+    image:
+      src: ./step-6.webp
+      alt: 白飯上分別鋪著素泡菜、菠菜、海帶芽、黃豆芽、紅蘿蔔與豆皮

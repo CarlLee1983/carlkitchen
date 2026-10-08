@@ -1,0 +1,69 @@
+title: 三杯透抽
+summary: 薑片和蒜仁先以胡麻油煎香，再放入透抽和醬料燜煮，起鍋前拌入九層塔與辣椒。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [家常菜]
+ingredients:
+  - { name: 透抽, amount: { value: 600, unit: g }, note: 清理後切圈 }
+  - { name: 蒜仁, amount: { value: 10, unit: 顆 } }
+  - { name: 薑片, amount: { value: 8, unit: 片 } }
+  - { name: 紅辣椒, amount: { value: 0.5, unit: 根 }, note: 切片 }
+  - { name: 九層塔, amount: { value: 1, unit: 把 }, note: 摘去老梗 }
+  - {
+      name: 胡麻油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油膏,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 糖,
+      amount: { value: 18, unit: g },
+      note: 約 1 又 1/2 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 透抽清理乾淨後切成圈狀；九層塔洗淨並摘去老梗，紅辣椒切片。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著透抽圈、九層塔葉和紅辣椒片，旁邊有菜刀
+  - text: 電鍋外鍋中放入胡麻油、薑片和蒜仁，按下開關加熱爆香。
+    image:
+      src: ./step-2.webp
+      alt: 電鍋外鍋中有胡麻油、薑片和蒜仁，正加熱至香氣釋出
+  - text: 等薑片和蒜仁略煎至黃色，再放進透抽圈，加入米酒、醬油膏、醬油和糖拌勻。
+    image:
+      src: ./step-3.webp
+      alt: 電鍋外鍋中的透抽圈與薑片、蒜仁、米酒及醬汁拌在一起
+  - text: 蓋上鍋蓋續煮約 10 分鐘，再打開鍋蓋放入九層塔和紅辣椒片拌勻。
+    image:
+      src: ./step-4.webp
+      alt: 鍋中透抽圈裹著醬汁，拌入九層塔葉和紅辣椒片
+hero:
+  src: ./hero.webp
+  alt: 白色陶盤中盛著三杯透抽圈，裹著深色醬汁並拌有薑片、蒜仁、九層塔和紅辣椒
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 透抽、蒜仁、薑片、紅辣椒、九層塔，以及分裝的胡麻油、米酒、醬油膏、醬油和糖
