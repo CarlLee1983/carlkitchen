@@ -1,5 +1,5 @@
 import { z } from "astro/zod";
-import { TOPIC_ID_PATTERN } from "./topic-schema.ts";
+import { CONTENT_ID_PATTERN } from "./content-id.ts";
 
 const nonEmpty = z.string().trim().min(1);
 
@@ -12,6 +12,6 @@ export function createSolarTermSchema() {
   return z.object({
     name: nonEmpty,
     description: nonEmpty,
-    seasonalIngredients: z.array(nonEmpty.regex(TOPIC_ID_PATTERN)),
+    seasonalIngredients: z.array(nonEmpty.regex(CONTENT_ID_PATTERN)),
   });
 }

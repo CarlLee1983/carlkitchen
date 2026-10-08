@@ -1,6 +1,6 @@
 ---
 import type { InferGetStaticPropsType } from "astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import Illustration from "../../components/Illustration.astro";
 import Base from "../../layouts/Base.astro";
 import { inlineJson } from "../../utils/inline-json";
@@ -40,10 +40,7 @@ export async function getStaticPaths() {
 }
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
-const { sections, ingredientsOfTerm } = Astro.props as {
-  sections: Props["sections"];
-  ingredientsOfTerm: Record<string, CollectionEntry<"ingredients">[]>;
-};
+const { sections, ingredientsOfTerm } = Astro.props;
 const schedule = buildSolarTermSchedule();
 ---
 

@@ -1,5 +1,6 @@
 import { join } from "node:path";
 import { existsSync } from "node:fs";
+import { CONTENT_ID_PATTERN } from "../content/content-id.ts";
 import { checkHeroAlt, checkImageFile, collectImageRefs } from "./images.ts";
 import { checkCopy } from "./copy.ts";
 import { checkIngredients, readIngredients } from "./ingredients.ts";
@@ -33,10 +34,28 @@ export interface ContentCheckOptions {
   launch: boolean;
 }
 
-/** 菜譜識別值同時是資料夾名稱與網址 slug：小寫英數與連字號。 */
-const RECIPE_ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-
 const failure = (file: string, message: string): Issue => ({ file, message });
+
+/** 內容目錄與來源紀錄目錄要成對設定；只給一個是設定錯誤，不能靜默略過該項檢查。 */
+function pairedDirectoryIssues(
+  label: string,
+  contentDir: string | undefined,
+  sourcesDir: string | undefined,
+  [contentOption, sourcesOption, contentEnv, sourcesEnv]: readonly [
+    string,
+    string,
+    string,
+    string,
+  ],
+): Issue[] {
+  if (Boolean(contentDir) === Boolean(sourcesDir)) return [];
+  return [
+    failure(
+      contentDir ?? sourcesDir!,
+      `${label}檢查設定不完整：${contentOption} 與 ${sourcesOption} 必須同時提供（檢查 ${contentEnv}、${sourcesEnv}）。`,
+    ),
+  ];
+}
 
 /** 組合所有檢查；回傳問題清單，空陣列代表通過。 */
 export async function runContentChecks(
@@ -56,7 +75,7 @@ export async function runContentChecks(
   for (const id of recipeIds) {
     const dir = join(options.recipesDir, id);
     const file = join(dir, "recipe.yaml");
-    if (!RECIPE_ID_PATTERN.test(id)) {
+    if (!CONTENT_ID_PATTERN.test(id)) {
       issues.push({
         recipe: id,
         file: dir,
@@ -145,14 +164,14 @@ export async function runContentChecks(
 
   // 專題：schema、封面圖、內部來源紀錄，以及相關連結只能指向已發布的菜譜與食材條目
   // topicsDir 與 topicSourcesDir 要成對設定；只給一個是設定錯誤，不能靜默略過專題檢查。
-  if (Boolean(options.topicsDir) !== Boolean(options.topicSourcesDir)) {
-    issues.push(
-      failure(
-        options.topicsDir ?? options.topicSourcesDir!,
-        "專題檢查設定不完整：topicsDir 與 topicSourcesDir 必須同時提供（檢查 TOPICS_DIR、TOPIC_SOURCES_DIR）。",
-      ),
-    );
-  }
+  issues.push(
+    ...pairedDirectoryIssues(
+      "專題",
+      options.topicsDir,
+      options.topicSourcesDir,
+      ["topicsDir", "topicSourcesDir", "TOPICS_DIR", "TOPIC_SOURCES_DIR"],
+    ),
+  );
   const topicCheck =
     options.topicsDir && options.topicSourcesDir
       ? await checkTopics({
@@ -170,14 +189,19 @@ export async function runContentChecks(
 
   // 節氣：24 筆齊全、schema、來源對照，以及當令食材只能指向已發布的食材條目
   // solarTermsDir 與 solarTermSourcesDir 要成對設定，理由同專題。
-  if (Boolean(options.solarTermsDir) !== Boolean(options.solarTermSourcesDir)) {
-    issues.push(
-      failure(
-        options.solarTermsDir ?? options.solarTermSourcesDir!,
-        "節氣檢查設定不完整：solarTermsDir 與 solarTermSourcesDir 必須同時提供（檢查 SOLAR_TERMS_DIR、SOLAR_TERM_SOURCES_DIR）。",
-      ),
-    );
-  }
+  issues.push(
+    ...pairedDirectoryIssues(
+      "節氣",
+      options.solarTermsDir,
+      options.solarTermSourcesDir,
+      [
+        "solarTermsDir",
+        "solarTermSourcesDir",
+        "SOLAR_TERMS_DIR",
+        "SOLAR_TERM_SOURCES_DIR",
+      ],
+    ),
+  );
   const solarTermCheck =
     options.solarTermsDir && options.solarTermSourcesDir
       ? checkSolarTerms({

@@ -276,10 +276,15 @@ describe("runContentChecks", () => {
       { recursive: true },
     );
     // 固定節氣的當令食材指向固定食材條目；這裡只測來源洩漏，清空當令食材
-    for (const id of readdirSync(solarTermsDir)) {
+    for (const file of readdirSync(solarTermsDir)) {
+      const path = join(solarTermsDir, file);
+      const text = readFileSync(path, "utf8");
       s.write(
-        join(solarTermsDir, id),
-        `name: ${id}\ndescription: 說明。\nseasonalIngredients: []\n`,
+        path,
+        text.replace(
+          /seasonalIngredients:[\s\S]*$/,
+          "seasonalIngredients: []\n",
+        ),
       );
     }
     const options = {

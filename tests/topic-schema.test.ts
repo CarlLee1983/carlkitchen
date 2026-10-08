@@ -1,10 +1,8 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { z } from "astro/zod";
-import {
-  createTopicSchema,
-  TOPIC_ID_PATTERN,
-} from "../src/content/topic-schema.ts";
+import { CONTENT_ID_PATTERN } from "../src/content/content-id.ts";
+import { createTopicSchema } from "../src/content/topic-schema.ts";
 
 const schema = createTopicSchema(z.string());
 const topic = {
@@ -86,10 +84,10 @@ describe("專題 schema", () => {
 
   it("識別值格式和菜譜相同：小寫英數字以連字號分隔", () => {
     for (const id of ["summer-salads", "a1", "topic2"]) {
-      assert.match(id, TOPIC_ID_PATTERN);
+      assert.match(id, CONTENT_ID_PATTERN);
     }
     for (const id of ["Summer", "a_b", "-a", "a-", "a--b", "專題", ""]) {
-      assert.doesNotMatch(id, TOPIC_ID_PATTERN);
+      assert.doesNotMatch(id, CONTENT_ID_PATTERN);
     }
   });
 

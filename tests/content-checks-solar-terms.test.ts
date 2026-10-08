@@ -32,7 +32,9 @@ ${ids.map((id) => `  - id: ${id}\n    urls:\n${urls.map((url) => `      - ${url}
 
 const allIds = Object.values(solarTermArt);
 const allTerms = () =>
-  Object.fromEntries(allIds.map((id) => [id, term(id, [])]));
+  Object.fromEntries(
+    Object.entries(solarTermArt).map(([name, id]) => [id, term(name, [])]),
+  );
 
 /** 節氣目錄與來源紀錄目錄：預設來源紀錄涵蓋傳入的所有節氣。 */
 function scenario(
@@ -114,6 +116,14 @@ describe("節氣檢查：齊全與 schema", () => {
     assert.ok(issues.every((issue) => issue.solarTerm === "lichun"));
     assert.ok(issues.some((issue) => issue.field === "description"));
     assert.match(issues[0]!.file!, /lichun\.yaml$/);
+  });
+
+  it("名稱與識別值不符時回報節氣與名稱欄位", () => {
+    const issues = run(scenario(full({ lichun: term("雨水", []) })));
+    assert.equal(issues.length, 1);
+    assert.equal(issues[0]!.solarTerm, "lichun");
+    assert.equal(issues[0]!.field, "name");
+    assert.match(issues[0]!.message, /立春/);
   });
 
   it("YAML 無法解析時回報，不中斷其他節氣", () => {

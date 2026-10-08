@@ -1,5 +1,6 @@
 import { join } from "node:path";
 import { z } from "astro/zod";
+import { CONTENT_ID_PATTERN } from "../content/content-id.ts";
 import { createIngredientSchema } from "../content/ingredient-schema.ts";
 import { parseIngredientSourceRecord } from "../content/ingredient-sources.ts";
 import { checkImageFile } from "./images.ts";
@@ -14,7 +15,7 @@ import type { Issue } from "./issue.ts";
 import type { BuildFile } from "./leaks.ts";
 
 const schema = createIngredientSchema(z.string());
-const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
 const sourceSection =
   /<section\b[^>]*data-ingredient-sources="([^"]+)"[^>]*>([\s\S]*?)<\/section>/g;
 const href = /\bhref="([^"]+)"/g;
@@ -35,7 +36,7 @@ export function readIngredients(dir: string): IngredientRead[] | null {
   return ids.map((id) => {
     const file = join(dir, id, "ingredient.yaml");
     const read: IngredientRead = { id, file, issues: [], isDraft: false };
-    if (!ID_PATTERN.test(id)) {
+    if (!CONTENT_ID_PATTERN.test(id)) {
       read.issues.push({
         ingredient: id,
         file,
