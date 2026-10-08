@@ -1,7 +1,7 @@
 title: 白胡椒粉
 summary: 白胡椒粉是研磨成粉的白胡椒，小磨坊建議它的純白胡椒粉用於湯品和台式小吃等料理。市售產品有純胡椒，也有加入其他原料的調和品；這篇以小磨坊兩款產品為例說明差別。
 category: seasoning
-draft: true
+draft: false
 selection: 看成分標示可分辨是否為純胡椒。小磨坊純白胡椒粉的成分只有白胡椒粒；同品牌的調和白胡椒粉中白胡椒占 50%，另加麩皮粉、麥芽糊精、玉米澱粉和辣椒。其他產品請核對實際包裝。
 preparation: 本篇來源沒有另外說明處理方式；加入時機與用量請依菜譜。
 storage: 小磨坊這兩款白胡椒粉都標示開封後密封、放冰箱冷藏，保存期限 24 個月。香港消委會則建議乾燥調味品裝在密封容器裡、放在陰涼處，不必冷藏。兩者說法不同，請依手上產品的包裝標示保存。
@@ -16,3 +16,6 @@ relatedRecipes:
   - steamed-fish
   - taiwanese-fried-rice-noodles
   - dry-fried-green-beans
+hero:
+  src: ./hero.webp
+  alt: 一只素色小碟，碟中盛著堆成小丘、米白偏灰的細粉的水彩插畫
