@@ -1,4 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
+import data from "../src/data/solar-terms.json" with { type: "json" };
+import { COMPUTED_YEARS_AHEAD } from "../src/utils/solar-term-calc";
 import { solarTermArt } from "../src/utils/solar-terms";
 
 const season = (page: Page) => page.getByRole("region", { name: "這個時節" });
@@ -15,6 +17,7 @@ test("「這個時節」先列本期專題，再列依讀者當下時間選出�
   await expect(term(page)).toContainText("寒露");
   await expect(term(page)).toContainText("10 月 8 日");
   await expect(term(page)).toContainText("14:29");
+  await expect(term(page)).toContainText("資料：中央氣象署");
   const topicBox = (await topic.boundingBox())!;
   const termBox = (await term(page).boundingBox())!;
   expect(termBox.y).toBeGreaterThanOrEqual(topicBox.y + topicBox.height);
@@ -33,8 +36,23 @@ test("節氣於交節時刻（臺灣時間）切換，不停在建置當下", as
   }
 });
 
-test("超出節氣資料範圍時只隱藏節氣列，專題照常顯示", async ({ page }) => {
-  await page.clock.setFixedTime(new Date("2028-03-01T12:00:00+08:00"));
+test("中央氣象署公告用完之後改用天文推算，並標示出處", async ({ page }) => {
+  // 公告最後一年的隔年 3 月 1 日，當前節氣是雨水（2 月 19 日前後交節）。
+  const afterOfficial = Number(data.terms.at(-1)!.date.slice(0, 4)) + 1;
+  await page.clock.setFixedTime(
+    new Date(`${afterOfficial}-03-01T12:00:00+08:00`),
+  );
+  await page.goto("/");
+  await expect(term(page).locator("strong")).toHaveText("雨水");
+  await expect(term(page)).toContainText("2 月");
+  await expect(term(page)).toContainText("依天文推算");
+  await expect(term(page)).not.toContainText("中央氣象署");
+});
+
+test("超出推算範圍時只隱藏節氣列，專題照常顯示", async ({ page }) => {
+  // 推算補到建置年後 COMPUTED_YEARS_AHEAD 年；建置與測試同一天執行。
+  const beyond = new Date().getFullYear() + COMPUTED_YEARS_AHEAD + 1;
+  await page.clock.setFixedTime(new Date(`${beyond}-03-01T12:00:00+08:00`));
   await page.goto("/");
   await expect(term(page)).toBeHidden();
   await expect(
