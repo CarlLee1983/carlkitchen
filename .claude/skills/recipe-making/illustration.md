@@ -20,7 +20,7 @@ node .claude/skills/recipe-making/scripts/img.mjs steps [步驟文字關鍵字]
 
 各類圖的提示詞寫法：
 
-1. **`hero` 成品圖**：參考圖附 `ingredients.webp`（新菜譜還沒有時不附）。描述結尾加 `No utensils: no chopsticks, no spoon, no fork, nothing beside the plate.`。
+1. **`hero` 成品圖**：先依 06〈構圖〉決定容器，湯畫敞口湯鍋；其他料理符合連鍋上桌或整鍋更能呈現特色的條件時才畫鍋，否則畫盤碗。提示詞寫明容器、完整成品與可見的主要食材；畫鍋時寫明它已離火、鍋中是可上桌的成品，並與步驟圖的鍋具一致。參考圖附 `ingredients.webp`（新菜譜還沒有時不附）。描述結尾加 `No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel.`。
 2. **`ingredients` 材料合照**：附 `hero.png`。逐項寫 `exactly N <品項與 note>`，結尾加 `Nothing else: no extra vegetables, no utensils, no other items.`。
 3. **`step-N` 步驟圖**：N 是 YAML 中的步驟序號。備料圖寫木砧板加菜刀、素色瓷碗，或汆燙後的不鏽鋼瀝水籃。參考圖附 `hero.png`，再附一張同菜譜已有的同類器具圖（砧板、碗或鍋），器具才會一致。
 

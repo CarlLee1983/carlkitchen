@@ -17,6 +17,8 @@ test.describe("手機版（390×844）", () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
   test("首屏依序看到搜尋、完整篩選列、大圖與第一道菜名", async ({ page }) => {
+    // 固定在節氣列會顯示的日期，首屏高度才把「這個時節」整區算進去。
+    await page.clock.setFixedTime(new Date("2026-10-10T12:00:00+08:00"));
     await page.goto("/");
     const search = page.getByRole("searchbox");
     const hero = page.getByRole("region", { name: "隨機看看一道菜" });
@@ -70,8 +72,8 @@ test.describe("手機版（390×844）", () => {
 });
 
 test.describe("篩選列折成兩行時", () => {
-  // 360 寬放不下 5 個選項，篩選列折行變高；視窗縮矮，固定菜譜才夠長可以捲。
-  test.use({ viewport: { width: 360, height: 300 } });
+  // 320 寬放不下 5 個選項，篩選列折行變高；視窗縮矮，固定菜譜才夠長可以捲。
+  test.use({ viewport: { width: 320, height: 300 } });
 
   test("切換篩選後第一列緊接在固定的篩選列下方，不被遮住", async ({ page }) => {
     await page.goto("/");
@@ -82,7 +84,7 @@ test.describe("篩選列折成兩行時", () => {
     expect(last.y, "前提：篩選列折成多行").toBeGreaterThan(first.y);
 
     const natural = await top(bar);
-    for (const name of ["蔬菜菜", "蛋白質菜", "湯"]) {
+    for (const name of ["蔬菜", "肉蛋料理", "湯"]) {
       await page.evaluate((y) => window.scrollTo(0, y + 120), natural);
       await expect
         .poll(async () => Math.round(await top(bar)), { message: "固定在頂端" })

@@ -1,0 +1,248 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Illustration from "../../components/Illustration.astro";
+import Base from "../../layouts/Base.astro";
+import {
+  formatPublishedDate,
+  getVisibleTopicEntries,
+  type TopicEntry,
+} from "../../utils/topic-entries";
+
+export async function getStaticPaths() {
+  const [topics, recipes, ingredients] = await Promise.all([
+    getVisibleTopicEntries(),
+    getCollection("recipes", ({ data }) => !data.draft),
+    getCollection("ingredients", ({ data }) => !data.draft),
+  ]);
+  const recipesById = new Map(recipes.map((recipe) => [recipe.id, recipe]));
+  const ingredientsById = new Map(
+    ingredients.map((ingredient) => [ingredient.id, ingredient]),
+  );
+  // 找不到的識別值（開發模式的草稿專題才可能發生）直接略過；已發布專題由 check:content 把關。
+  const pick = <T,>(ids: string[], byId: Map<string, T>) =>
+    ids.flatMap((id) => {
+      const entry = byId.get(id);
+      return entry ? [entry] : [];
+    });
+  return topics.map((topic) => ({
+    params: { id: topic.id },
+    props: {
+      topic,
+      relatedRecipes: pick(topic.data.relatedRecipes, recipesById),
+      relatedIngredients: pick(topic.data.relatedIngredients, ingredientsById),
+    },
+  }));
+}
+
+interface Props {
+  topic: TopicEntry;
+  relatedRecipes: CollectionEntry<"recipes">[];
+  relatedIngredients: CollectionEntry<"ingredients">[];
+}
+
+const { topic, relatedRecipes, relatedIngredients } = Astro.props;
+const { data } = topic;
+const { Content } = await render(topic);
+const published = formatPublishedDate(data.publishedAt);
+---
+
+<Base title={`${data.title}｜專題`} description={data.summary}>
+  <!--
+    Pagefind 索引範圍：比照菜譜頁，只標記標題（加權）、短介與內文；
+    封面替代文字由 Illustration 排除，相關連結區與選題參考區不標記。
+    篩選屬性 type:topic 讓搜尋結果分辨專題；菜譜頁沒有 type，kind 篩選因此不含專題。
+  -->
+  <article class:list={["topic", { editorial: data.editorialLayout }]}>
+    <span hidden data-pagefind-filter="type:topic"></span>
+    <p class="eyebrow">專題 / {data.title}</p>
+    {
+      data.hero && (
+        <Illustration
+          class="hero"
+          image={data.hero}
+          sizes="(min-width: 40rem) 40rem, calc(100vw - 3rem)"
+          priority
+        />
+      )
+    }
+    <header>
+      <h1 data-pagefind-body data-pagefind-weight="10">
+        {data.title}{data.draft && <span class="draft">（草稿）</span>}
+      </h1>
+      <p class="lead" data-pagefind-body>{data.summary}</p>
+      <time datetime={published.iso}>{published.label}</time>
+    </header>
+    <div class="body" data-pagefind-body>
+      <Content />
+    </div>
+    {
+      (relatedRecipes.length > 0 || relatedIngredients.length > 0) && (
+        <section class="related" aria-labelledby="related-title">
+          <h2 id="related-title">相關連結</h2>
+          {relatedRecipes.length > 0 && (
+            <>
+              <h3>相關菜譜</h3>
+              <ul data-topic-related="recipes">
+                {relatedRecipes.map((recipe) => (
+                  <li>
+                    <a href={`/recipes/${recipe.id}/`}>{recipe.data.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {relatedIngredients.length > 0 && (
+            <>
+              <h3>相關食材條目</h3>
+              <ul data-topic-related="ingredients">
+                {relatedIngredients.map((ingredient) => (
+                  <li>
+                    <a href={`/ingredients/${ingredient.id}/`}>
+                      {ingredient.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </section>
+      )
+    }
+    {
+      data.references.length > 0 && (
+        <section class="references" aria-labelledby="references-title">
+          <h2 id="references-title">選題參考</h2>
+          <ul>
+            {data.references.map((reference) => (
+              <li>
+                {reference.author}《{reference.title}》
+                <a
+                  href={reference.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  原文連結 <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  .topic {
+    max-width: 40rem;
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+  }
+  .eyebrow {
+    margin: 0 0 2rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    letter-spacing: 0.03em;
+  }
+  .draft {
+    font-size: 0.35em;
+    vertical-align: middle;
+    color: var(--ink-soft);
+  }
+  .lead {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+    line-height: 1.8;
+  }
+  time {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .topic :global(figure.hero) {
+    margin: 0 0 2rem;
+  }
+  .body {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+    overflow-wrap: anywhere;
+  }
+  .body :global(h2) {
+    margin-top: 3rem;
+    font-size: 1.4rem;
+  }
+  .body :global(h3) {
+    margin-top: 2rem;
+    font-size: 1.15rem;
+  }
+  /* 內文圖沿用 Markdown；Astro 輸出尺寸與 srcset，這裡維持完整 3:2 插畫。 */
+  .body :global(img) {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin-block: 1.75rem;
+  }
+  .editorial .body :global(p) {
+    margin-block: 1.25rem;
+  }
+  .editorial .body :global(h2) {
+    margin-block: 2.75rem 1rem;
+  }
+  .editorial .body :global(.topic-intro) {
+    /* 浮動首字留在自己的段落裡，短段落也不會侵入後面的標題或圖片。 */
+    display: flow-root;
+  }
+  @media (min-width: 651px) {
+    .editorial .body :global(.topic-opening) {
+      float: inline-start;
+    }
+    .editorial .body :global(.topic-initial) {
+      float: inline-start;
+      font-family: var(--font-serif);
+      font-size: 2.5em;
+      font-weight: 600;
+      /* 段落行高 1.8，浮動區固定佔兩行；用 em 隨字級與縮放一起變動。 */
+      line-height: calc(3.6 / 2.5);
+      margin-inline-end: 0.14em;
+    }
+  }
+  .related,
+  .references {
+    margin-top: 3rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+  }
+  .related h2,
+  .references h2 {
+    font-size: 1.4rem;
+  }
+  .related h3 {
+    margin: 1.5rem 0 0.25rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .related ul,
+  .references ul {
+    margin: 0;
+    padding-left: 1.4rem;
+  }
+  .related li,
+  .references li {
+    margin: 0.6rem 0;
+  }
+  .related a,
+  .references a {
+    text-underline-offset: 0.25em;
+  }
+  @media (max-width: 650px) {
+    .topic {
+      padding-top: 2rem;
+    }
+  }
+</style>

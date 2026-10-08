@@ -9,11 +9,17 @@ import {
 } from "../../utils/ingredient-entries";
 import { getVisibleRecipes } from "../../utils/recipes";
 import type { Recipe } from "../../utils/recipes";
+import {
+  getVisibleTopicEntries,
+  type TopicEntry,
+} from "../../utils/topic-entries";
+import { getRelatedTopics } from "../../utils/related-topics";
 
 export async function getStaticPaths() {
-  const [recipes, ingredients] = await Promise.all([
+  const [recipes, ingredients, topics] = await Promise.all([
     getVisibleRecipes(),
     getVisibleIngredientEntries(),
+    getVisibleTopicEntries(),
   ]);
   // 公開菜譜只連至已發布食材；草稿食材在開發模式仍可直訪預覽。
   const publishedIngredients = ingredients.filter((entry) => !entry.data.draft);
@@ -28,6 +34,7 @@ export async function getStaticPaths() {
             left.data.title.localeCompare(right.data.title, "zh-Hant") ||
             left.id.localeCompare(right.id),
         ),
+      relatedTopics: getRelatedTopics(recipe.id, topics),
     },
   }));
 }
@@ -35,19 +42,57 @@ export async function getStaticPaths() {
 interface Props {
   recipe: Recipe;
   relatedIngredients: IngredientEntry[];
+  relatedTopics: TopicEntry[];
 }
 const { data, id } = Astro.props.recipe;
-const { relatedIngredients } = Astro.props;
+const { relatedIngredients, relatedTopics } = Astro.props;
 const groups = groupIngredients(data.ingredients);
+const recipeJsonLd =
+  !data.draft &&
+  data.hero &&
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    name: data.title,
+    description: data.summary,
+    image: new URL(`/recipes/${id}/social.webp`, Astro.site).href,
+    recipeYield: `${data.servings} 人份`,
+    totalTime: `PT${data.timeMinutes}M`,
+    recipeIngredient: groups.flatMap((group) =>
+      group.items.map(
+        (ingredient) =>
+          `${ingredient.name} ${formatAmount(ingredient.amount)}${ingredient.note ? `（${ingredient.note}）` : ""}`,
+      ),
+    ),
+    recipeInstructions: data.steps.map((step) => ({
+      "@type": "HowToStep",
+      text: step.text,
+    })),
+  }).replace(/</g, "\\u003c");
 // 讀者看不到、但要能搜到的詞：受控標籤與別名。
 const searchTerms = [...data.tags, ...data.aliases];
 
-// sizes 對應下方 CSS：寬螢幕主欄與成品圖上限 44rem，手機單欄約等於視窗寬。
-const MAIN_SIZES = "(min-width: 64rem) 44rem, 100vw";
-const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
+// sizes 對應下方 CSS：手機單欄為視窗寬扣掉左右 1.5rem 頁面留白；成品圖上限 44rem，步驟圖再扣 2.5rem 編號縮排。
+const MAIN_SIZES = "(min-width: 47rem) 44rem, calc(100vw - 3rem)";
+const SIDE_SIZES = "(min-width: 64rem) 20rem, calc(100vw - 3rem)";
+const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
 ---
 
-<Base title={data.title}>
+<Base
+  title={data.title}
+  description={data.summary}
+  socialImage={data.hero && {
+    src: `/recipes/${id}/social.webp`,
+    alt: data.hero.alt,
+    width: 1200,
+    height: 630,
+  }}
+>
+  {
+    recipeJsonLd && (
+      <script type="application/ld+json" set:html={recipeJsonLd} />
+    )
+  }
   <!--
     Pagefind 索引範圍：整個站只要有 data-pagefind-body，沒有標記的頁面（首頁、關於頁等）就不進索引。
     這裡只標記可搜尋的欄位：菜名（加權）、摘要、材料名稱、受控標籤與別名；
@@ -153,7 +198,7 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
               <li>
                 <p>{step.text}</p>
                 {step.image && (
-                  <Illustration image={step.image} sizes={MAIN_SIZES} />
+                  <Illustration image={step.image} sizes={STEP_SIZES} />
                 )}
               </li>
             ))
@@ -189,10 +234,21 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
         </section>
       )
     }
-
-    <section class="disclaimer" aria-label="聲明">
-      <p>依公開資料由 AI 整理、站主審閱，未經試做</p>
-    </section>
+    {
+      relatedTopics.length > 0 && (
+        <section class="related-topics" aria-labelledby="related-topics-title">
+          <h2 id="related-topics-title">相關專題</h2>
+          <ul>
+            {relatedTopics.map((topic) => (
+              <li>
+                <a href={`/topics/${topic.id}/`}>{topic.data.title}</a>
+                <p>{topic.data.summary}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
   </article>
 </Base>
 
@@ -327,12 +383,14 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     border-bottom: 0;
   }
 
-  .ingredient-guide {
+  .ingredient-guide,
+  .related-topics {
     margin-top: 4rem;
     padding-top: 1rem;
     border-top: 1px solid var(--line);
   }
-  .ingredient-guide h2 {
+  .ingredient-guide h2,
+  .related-topics h2 {
     margin: 0 0 0.75rem;
     font-size: 1.25rem;
   }
@@ -351,16 +409,23 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
     min-height: 44px;
     text-underline-offset: 0.25em;
   }
-
-  .disclaimer {
-    margin-top: 4rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--line);
-    color: var(--ink-soft);
-    font-size: 0.85rem;
-  }
-  .disclaimer p {
+  .related-topics ul {
     margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .related-topics li {
+    margin-top: 0.75rem;
+  }
+  .related-topics a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-underline-offset: 0.25em;
+  }
+  .related-topics p {
+    margin: 0;
+    color: var(--ink-soft);
   }
 
   /* 寬螢幕：材料在左欄、捲動做法時保持可見（只 sticky，不設捲動區）；手機單欄 */
@@ -378,8 +443,8 @@ const SIDE_SIZES = "(min-width: 64rem) 20rem, 100vw";
 
   /* 列印：只留成品圖、材料與做法；步驟圖與材料合照不印，確保一張紙 */
   @media print {
-    .disclaimer,
     .ingredient-guide,
+    .related-topics,
     .favorite-actions,
     .ingredients :global(figure),
     .steps :global(figure) {

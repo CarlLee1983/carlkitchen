@@ -1,0 +1,63 @@
+title: 肉燥麵
+summary: 紅蔥頭與蒜末先炒成金黃，再和絞肉、醬油一起以高湯煮到略收汁，淋在煮好的意麵上。一碗乾拌麵就能當一餐。
+servings: 2
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [家常菜, 麵食]
+ingredients:
+  - { name: 意麵, amount: { value: 170, unit: g } }
+  - { name: 豬絞肉, amount: { value: 130, unit: g } }
+  - { name: 紅蔥頭, amount: { value: 25, unit: g }, note: 切末 }
+  - { name: 大蒜, amount: { value: 5, unit: g }, note: 切末 }
+  - { name: 高湯, amount: { value: 100, unit: ml } }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，炒紅蔥頭與蒜末用,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油膏,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙,
+      group: 調味,
+    }
+  - { name: 米酒, amount: { value: 5, unit: ml }, note: 約 1 小匙, group: 調味 }
+  - { name: 五香粉, note: 少許, group: 調味 }
+  - { name: 胡椒粉, note: 少許, group: 調味 }
+steps:
+  - text: 紅蔥頭和大蒜分別切成細末，各自放在一旁。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上並排兩小堆切成細末的粉紫色紅蔥頭和淡黃色大蒜，一把菜刀斜放在砧板上
+  - text: 炒鍋倒入食用油燒熱，放入紅蔥末和蒜末，小火炒到金黃色就盛出備用。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋中炒成金黃色的紅蔥末和蒜末，鍋底帶著油光，木鍋鏟靠在鍋緣
+  - text: 原鍋放入豬絞肉，炒散到肉色變白。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中炒散成鬆散細粒、肉色轉為淡粉白的豬絞肉，鍋中沒有醬汁，木鍋鏟靠在鍋緣
+  - text: 加入醬油、醬油膏、米酒、五香粉和胡椒粉炒香，放回炒好的紅蔥末和蒜末，拌炒一下。
+  - text: 倒入高湯，小火煮到入味、湯汁略收，肉燥就完成了。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋中深褐色的絞肉肉燥夾著金黃的紅蔥蒜末，周圍剩一點亮褐色湯汁，木鍋鏟靠在鍋緣
+  - text: 另取一鍋，水煮滾後放入意麵，依包裝標示的時間煮到熟，撈起盛入碗中。
+  - text: 把肉燥淋在意麵上就能上桌，吃的時候拌勻。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷碗中盛著金黃捲曲的意麵，上面堆著深褐色、夾著金黃紅蔥蒜末的絞肉肉燥，沒有配菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一束乾意麵、一碗豬絞肉、兩小碟分別裝紅蔥末與蒜末、一碗高湯，以及小瓶裝的食用油、醬油、米酒、小罐醬油膏，和兩小碟五香粉與胡椒粉

@@ -1,0 +1,28 @@
+sources:
+  - title: 農業部〈立冬（國曆11月7或8日）〉
+    url: https://www.moa.gov.tw/ws.php?id=2507791
+  - title: 教育部《臺灣台語常用詞辭典》〈補冬〉
+    url: https://sutian.moe.edu.tw/zh-hant/su/10008/
+  - title: 新北市政府農業局〈立冬食補選用國產肉品兼顧美味與安心〉
+    url: https://www.ntpc.gov.tw/ch/home.jsp?dataserno=6d3b35d3be910510cd635758c21b3fc0&id=e8ca970cde5c00e1
+  - title: 楊桃美食網《快樂廚房雜誌》第 123 期〈麻油雞(17)〉
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-2414
+  - title: 楊桃美食網《快樂廚房雜誌》第 93 期〈薑母鴨(8)〉
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A05-0167
+sections:
+  - heading: 補冬不只有一個日子
+    urls:
+      - https://www.moa.gov.tw/ws.php?id=2507791
+      - https://sutian.moe.edu.tw/zh-hant/su/10008/
+      - https://www.ntpc.gov.tw/ch/home.jsp?dataserno=6d3b35d3be910510cd635758c21b3fc0&id=e8ca970cde5c00e1
+  - heading: 麻油雞：薑片與雞肉在爐火上煮
+    urls:
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-2414
+  - heading: 薑母鴨：先汆燙，再交給電鍋
+    urls:
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A05-0167
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-2414
+  - heading: 今天要煮哪一鍋
+    urls:
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-2414
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A05-0167

@@ -5,6 +5,9 @@ export const IMAGE_WIDTH = 1536;
 export const IMAGE_HEIGHT = 1024;
 export const MAX_IMAGE_BYTES = 300 * 1024;
 
+/** 圖片所屬的內容：問題會帶上這個識別欄位（菜譜、食材條目或專題）。 */
+export type ImageOwner = Pick<Issue, "recipe" | "ingredient" | "topic">;
+
 export interface ImageRef {
   /** 圖片在菜譜中的欄位路徑。 */
   field: string;
@@ -39,11 +42,11 @@ export function collectImageRefs(recipe: Recipe): ImageRef[] {
 const UTENSIL_PATTERN = /筷|匙|叉|勺|調羹|餐刀/;
 
 /** 成品圖只畫盛裝的盤或碗（規格見 06 票〈圖片風格規格〉）；步驟圖的餐具可能是做法的一部分，不檢查。 */
-export function checkHeroAlt(id: string, ref: ImageRef): Issue[] {
+export function checkHeroAlt(owner: ImageOwner, ref: ImageRef): Issue[] {
   if (ref.field !== "hero" || !UTENSIL_PATTERN.test(ref.alt)) return [];
   return [
     {
-      recipe: id,
+      ...owner,
       field: ref.field,
       file: ref.src,
       message: "成品圖不畫餐具，替代文字卻提到餐具；重製圖片並改寫替代文字。",
@@ -53,12 +56,12 @@ export function checkHeroAlt(id: string, ref: ImageRef): Issue[] {
 
 /** `info` 為 null 表示檔案不存在。 */
 export function checkImageFile(
-  id: string,
+  owner: ImageOwner,
   ref: ImageRef,
   info: ImageFileInfo | null,
 ): Issue[] {
   const issue = (message: string): Issue => ({
-    recipe: id,
+    ...owner,
     field: ref.field,
     file: ref.src,
     message,

@@ -1,6 +1,6 @@
 # CarlKitchen
 
-由 AI 依公開資料整理、站主審閱的繁體中文菜譜網站。內容未經試做。網址：<https://carlkitchen.gravito.dev>
+依公開資料整理、站主審閱的繁體中文菜譜網站，菜譜僅供參考。網址：<https://carlkitchen.gravito.dev>
 
 技術：Astro 靜態輸出、TypeScript、pnpm、Playwright，部署於 Cloudflare Workers Static Assets。
 
@@ -38,6 +38,24 @@ content/recipes/tomato-egg/
 - 食材條目必填短介、選用、處理、保存與用途；已發布條目至少連到一篇相關菜譜，草稿可暫無。蔬菜另填臺灣主要產期與適用範圍；只有來源明確記載最佳賞味期時才填該欄位。酒精或過敏原有來源可核對時，選填 `notices.alcohol` 或 `notices.allergens`，頁面會以獨立區塊顯示。圖片可省略；有圖時必填替代文字，並遵守 WebP、1536×1024、不超過 300 KB。
 - `draft: true` 的菜譜與食材條目只在 `pnpm dev` 看得到，正式建置不輸出草稿頁。高麗菜、空心菜、青花菜、米酒、蔥、薑、蒜、蝦米與醬油已經站主逐篇審閱，可在正式建置開啟各自條目。秋葵、醬油膏與素蠔油的草稿文字也已審閱，仍須等有對應的已發布菜譜後再送審發布。
 - 測試與 e2e 使用 `tests/fixtures/recipes/` 和 `tests/fixtures/ingredients/`，與正式內容分開。`pnpm build && pnpm check:content` 檢查內容與輸出；食材條目不進入目前只收錄菜譜的站內搜尋索引。
+
+## 首頁專題推薦
+
+首頁一次顯示一篇「本期專題」，檔期設定寫在已發布專題的 `topic.md` frontmatter。常青備選加 `homeFallback: true`（全站最多一篇），目前指定〈備菜與預處理〉。推薦檔期使用下列欄位；順位數字越小越優先，不能與其他專題重複。
+
+```yaml
+homeRecommendation:
+  kind: recurring
+  start: "11-01"
+  end: "01-31"
+  priority: 2
+```
+
+`recurring` 每年重用月日，支援跨年且包含起訖日。特定年度的節慶改用 `kind: dated`，`start`、`end` 都填加引號的完整日期，例如 `"2026-11-01"`；結束日不得早於開始日。每篇先安排一個檔期，草稿不加入有效推薦。只在閏年存在的 2/29 可用完整日期安排。
+
+瀏覽器開啟首頁時依台北日期選題；沒有當期專題就顯示常青備選，兩者皆無則隱藏整區。未執行 JavaScript 時顯示常青備選；裝置時間錯誤可能選錯檔期，已開啟頁面不會在午夜立即換題。改 frontmatter 需經正常審閱與發布，已發布的檔期跨季切換不需重新部署。
+
+菜譜頁的「相關專題」由專題 `relatedRecipes` 自動反查，最多顯示三篇已發布文章，依發布日期由新到舊排序，不需在菜譜重複設定。回滾首頁推薦可移除 `homeRecommendation`／`homeFallback`，保留文章與網址；架構取捨見 [ADR 0006](docs/adr/0006-browser-topic-scheduling.md)。
 
 ## 部署與回滾
 

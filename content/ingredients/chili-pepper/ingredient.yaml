@@ -1,0 +1,26 @@
+title: 辣椒
+summary: 這篇談新鮮紅辣椒，整理挑選、處理、保存與用途；切法與份量請看相關菜譜。
+category: aromatic
+draft: false
+selection: 挑選外表有光澤、摸起來硬實的辣椒，避開乾枯或腐爛的。辣椒顏色與外形很多樣，一般果形越尖、果肉越薄的，辣味越重。
+preparation: 處理前先戴上塑膠手套，避免手被辣到；若手已被辣到，可以抹食用油或用熱水沖洗舒緩。
+storage: 一次用不完的辣椒裝進保鮮盒或保鮮袋冷凍。表面或蒂頭出現腐爛時，整根丟棄，不要再吃。食藥署整理的蔬果儲運資料將辣椒列為不耐低溫的蔬菜；家庭冷藏能放多久，核准來源沒有提供，宜留意外觀與硬度並儘早使用。
+uses: 辣椒可直接炒食、煮湯或當調味佐料，也常加工成辣椒醬、豆瓣醬等調味品。料理例子有麻婆豆腐與酸辣湯。
+season:
+  production:
+    - area: 嘉義、臺南、高雄、屏東、花蓮
+      months: 12 月至翌年 6 月盛產
+  scope: 以上依農業知識入口網〈越辣越吃香－辣椒〉所列產地與盛產期；同站的農漁生產地圖則把產期列為 1 至 12 月全年。盛產期不等於全部生產或市場供應期間，實際月份會隨品種、產地與年度變動。
+relatedRecipes:
+  - braised-pork-belly
+  - dry-fried-green-beans
+  - garlic-okra-tofu
+  - garlic-water-spinach
+  - scallion-beef
+  - smashed-cucumber
+  - steamed-fish
+  - stir-fried-bean-sprouts
+  - three-cup-chicken
+hero:
+  src: ./hero.webp
+  alt: 三根交疊的細長紅辣椒，表皮光亮、帶綠色果柄的水彩插畫

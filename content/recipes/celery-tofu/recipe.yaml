@@ -1,0 +1,44 @@
+title: 芹菜炒豆干
+summary: 芹菜先炒出香氣，再加蒜頭與豆干拌炒，最後用鹽、胡椒粉和辣椒調味。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 10
+tags: [家常菜]
+ingredients:
+  - {
+      name: 芹菜,
+      amount: { value: 200, unit: g },
+      note: 約 1 把，去葉、去根後切段,
+    }
+  - { name: 豆干, amount: { value: 330, unit: g }, note: 約 7 片，洗淨切片 }
+  - { name: 蒜頭, amount: { value: 2, unit: 瓣 }, note: 切末 }
+  - { name: 辣椒, amount: { value: 1, unit: 根 }, note: 斜切 }
+  - { name: 食用油, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 鹽, amount: { value: 2, unit: g }, group: 調味 }
+  - { name: 水, amount: { value: 50, unit: ml }, group: 調味 }
+  - { name: 胡椒粉, note: 少許, group: 調味 }
+steps:
+  - text: 洗淨豆干後切片。芹菜去掉葉子和根部，切成段；蒜頭切末，辣椒斜切。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分開放著豆干片、芹菜段、蒜末與斜切辣椒，旁邊是一把菜刀
+  - text: 開中火並倒入食用油，約 20 秒後放芹菜拌炒。聞到芹菜香氣時，加入蒜頭炒香。
+    image:
+      src: ./step-2.webp
+      alt: 深灰色炒鍋中盛著拌炒的芹菜段與細碎蒜末
+  - text: 加入豆干翻炒，稍微加熱後倒入鹽和水，拌到鹽均勻散開。
+  - text: 撒入胡椒粉，放辣椒稍作翻拌，調味拌勻即可盛出。
+    image:
+      src: ./step-4.webp
+      alt: 深灰色炒鍋中的豆干片、芹菜段與斜切紅辣椒已拌勻，表面帶著少量水分
+hero:
+  src: ./hero.webp
+  alt: 素色陶瓷盤裡盛著豆干片、芹菜段與斜切紅辣椒，混有細碎蒜末
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一把芹菜、七片豆干、兩瓣蒜頭、一根紅辣椒，以及分裝的食用油、鹽、水和胡椒粉
+tip: 想讓豆干切面微金黃，可先煸豆干，再接著炒芹菜。

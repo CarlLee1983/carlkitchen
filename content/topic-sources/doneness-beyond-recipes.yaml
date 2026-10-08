@@ -1,0 +1,56 @@
+sources:
+  - title: 行政院食品安全辦公室〈正確處理剩食 確保食物安全〉
+    url: https://www.ey.gov.tw/ofs/15881103EFD02C4/b337e321-0790-4a2e-a7bb-a6e9a9d8f8c7
+  - title: 衛福部食藥署〈食品中毒常見問與答〉
+    url: https://www.fda.gov.tw/TC/sitecontent.aspx?sid=2572
+  - title: 香港食物安全中心〈烹煮及翻熱〉
+    url: https://www.cfs.gov.hk/tc_chi/trade_zone/safe_kitchen/Cooking_and_reheating.html
+  - title: 加拿大衛生部〈Safe internal cooking temperatures chart〉
+    url: https://www.canada.ca/en/health-canada/services/general-food-safety-tips/safe-internal-cooking-temperatures-chart.html
+  - title: 美國食品藥物管理局〈Selecting and Serving Fresh and Frozen Seafood Safely〉
+    url: https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely
+  - title: 伊利諾大學推廣教育〈The Whys and Hows of Cooking Vegetables〉
+    url: https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf
+  - title: America's Test Kitchen〈Why You Should Salt Watery Vegetables Before Cooking〉
+    url: https://www.americastestkitchen.com/articles/4102-why-you-should-salt-watery-vegetables-before-cooking
+  - title: America's Test Kitchen〈Salting Meat〉
+    url: https://www.americastestkitchen.com/how_tos/5681-salting-meat
+  - title: America's Test Kitchen〈Beef Stir-Fry with Bok Choy and Green Beans〉
+    url: https://www.americastestkitchen.com/recipes/12293-beef-stir-fry-with-bok-choy-and-green-beans
+  - title: America's Test Kitchen〈What Is Velveting? Ask Paul〉
+    url: https://www.americastestkitchen.com/articles/6803-what-is-velveting-ask-paul
+  - title: America's Test Kitchen〈For a Clearer Stock, Simmer; Don't Boil〉
+    url: https://www.americastestkitchen.com/how_tos/9260-for-a-clearer-stock-simmer-dont-boil
+  - title: "The Woks of Life〈How to Make a Clear Broth: 2 Key Secrets!〉"
+    url: https://thewoksoflife.com/how-to-make-a-clear-broth/
+sections:
+  - heading: 肉類以中心溫度判斷
+    urls:
+      - https://www.fda.gov.tw/TC/sitecontent.aspx?sid=2572
+      - https://www.ey.gov.tw/ofs/15881103EFD02C4/b337e321-0790-4a2e-a7bb-a6e9a9d8f8c7
+      - https://www.canada.ca/en/health-canada/services/general-food-safety-tips/safe-internal-cooking-temperatures-chart.html
+      - https://www.cfs.gov.hk/tc_chi/trade_zone/safe_kitchen/Cooking_and_reheating.html
+  - heading: 魚與海鮮看肉質與外殼
+    urls:
+      - https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-fresh-and-frozen-seafood-safely
+  - heading: 蔬菜看顏色與軟硬
+    urls:
+      - https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf
+  - heading: 把家常菜歸成三套流程
+    urls:
+      - https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf
+      - https://www.americastestkitchen.com/recipes/12293-beef-stir-fry-with-bok-choy-and-green-beans
+      - https://thewoksoflife.com/how-to-make-a-clear-broth/
+  - heading: 素炒
+    urls:
+      - https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf
+      - https://www.americastestkitchen.com/articles/4102-why-you-should-salt-watery-vegetables-before-cooking
+  - heading: 肉炒
+    urls:
+      - https://www.americastestkitchen.com/how_tos/5681-salting-meat
+      - https://www.americastestkitchen.com/recipes/12293-beef-stir-fry-with-bok-choy-and-green-beans
+      - https://www.americastestkitchen.com/articles/6803-what-is-velveting-ask-paul
+  - heading: 清燉
+    urls:
+      - https://thewoksoflife.com/how-to-make-a-clear-broth/
+      - https://www.americastestkitchen.com/how_tos/9260-for-a-clearer-stock-simmer-dont-boil

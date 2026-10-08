@@ -1,0 +1,65 @@
+sources:
+  - title: "America's Test Kitchen〈Science: How to Slice Steak〉"
+    url: https://www.cooksillustrated.com/how_tos/9580-science-how-to-slice-steak
+  - title: "Chinese Cooking Demystified〈A Guide to 'Velveting'〉"
+    url: https://chinesecookingdemystified.substack.com/p/a-guide-to-velveting
+  - title: "America's Test Kitchen〈How to Prep Bok Choy for Stir-Fry〉"
+    url: https://www.americastestkitchen.com/how_tos/6654-how-to-prep-bok-choy-for-stir-fry
+  - title: "Omnivore's Cookbook〈Potato Stir Fry〉"
+    url: https://omnivorescookbook.com/potato-stir-fry/
+  - title: "America's Test Kitchen〈4 Steps for Cooking the Juiciest Steak〉"
+    url: https://www.americastestkitchen.com/articles/1918-4-steps-for-making-the-juiciest-steak
+  - title: "香港理工大學 Liu & Chow（2017）〈Fire Hazards of Introducing Water and Ice into Hot Oil in Open Kitchen〉"
+    url: https://research.polyu.edu.hk/en/publications/fire-hazards-of-introducing-water-and-ice-into-hot-oil-in-open-ki/
+  - title: "Rouxbe〈Velveting Mixtures for Stir-Fries〉"
+    url: https://rouxbe.com/tips-techniques/608-velveting-mixtures-for-stir-fries
+  - title: "America's Test Kitchen〈Should You Add Fruit to a Marinade?〉"
+    url: https://www.americastestkitchen.com/how_tos/11826-should-you-add-fruit-to-a-marinade
+  - title: "梅西大學 Zhu（2017）碩士論文〈Actinidin Treatment and Sous Vide Cooking〉"
+    url: https://mro.massey.ac.nz/bitstreams/5549de73-af2e-479e-94c4-b70b832d10dc/download
+  - title: "Food Science and Technology（2019）〈Kinetic study of the effect of kiwi fruit actinidin on various proteins of chicken meat〉"
+    url: https://www.scielo.br/j/cta/a/KgGvx6c5BDTFBmybSXnrPvs/?lang=en
+  - title: "America's Test Kitchen〈Hot or Cold Water for Stock?〉"
+    url: https://cooksillustrated.com/how_tos/6548-hot-or-cold-water-for-stock
+  - title: "印第安納大學公共媒體 A Moment of Science〈Seared Meat〉"
+    url: https://www.ipm.org/show/amomentofscience/2019-09-13/seared-meat
+  - title: "America's Test Kitchen〈Why and How to Blanch and Shock Vegetables〉"
+    url: https://www.americastestkitchen.com/how_tos/5506-why-and-how-to-blanch-and-shock-vegetables
+  - title: "America's Test Kitchen〈Best-Ever Blanched Vegetables〉"
+    url: https://www.americastestkitchen.com/cooksillustrated/how_tos/13338-best-ever-blanched-vegetables
+  - title: "伊利諾大學推廣教育〈The Whys and Hows of Cooking Vegetables〉"
+    url: https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf
+sections:
+  - heading: 肉片逆紋切
+    urls:
+      - https://www.cooksillustrated.com/how_tos/9580-science-how-to-slice-steak
+      - https://chinesecookingdemystified.substack.com/p/a-guide-to-velveting
+  - heading: 莖和葉分開下鍋
+    urls:
+      - https://www.americastestkitchen.com/how_tos/6654-how-to-prep-bok-choy-for-stir-fry
+  - heading: 馬鈴薯絲先泡水
+    urls:
+      - https://omnivorescookbook.com/potato-stir-fry/
+  - heading: 下鍋前把表面擦乾
+    urls:
+      - https://www.americastestkitchen.com/articles/1918-4-steps-for-making-the-juiciest-steak
+      - https://research.polyu.edu.hk/en/publications/fire-hazards-of-introducing-water-and-ice-into-hot-oil-in-open-ki/
+  - heading: 炒肉片先上漿
+    urls:
+      - https://chinesecookingdemystified.substack.com/p/a-guide-to-velveting
+      - https://rouxbe.com/tips-techniques/608-velveting-mixtures-for-stir-fries
+  - heading: 水果嫩肉要控制時間
+    urls:
+      - https://www.americastestkitchen.com/how_tos/11826-should-you-add-fruit-to-a-marinade
+      - https://mro.massey.ac.nz/bitstreams/5549de73-af2e-479e-94c4-b70b832d10dc/download
+      - https://www.scielo.br/j/cta/a/KgGvx6c5BDTFBmybSXnrPvs/?lang=en
+      - https://chinesecookingdemystified.substack.com/p/a-guide-to-velveting
+  - heading: 燉湯的肉從冷水起煮
+    urls:
+      - https://cooksillustrated.com/how_tos/6548-hot-or-cold-water-for-stock
+      - https://www.ipm.org/show/amomentofscience/2019-09-13/seared-meat
+  - heading: 蔬菜汆燙用滾水、時間要短
+    urls:
+      - https://www.americastestkitchen.com/how_tos/5506-why-and-how-to-blanch-and-shock-vegetables
+      - https://www.americastestkitchen.com/cooksillustrated/how_tos/13338-best-ever-blanched-vegetables
+      - https://extension.illinois.edu/sites/default/files/the_whys_and_hows_of_cooking_vegetables.pdf

@@ -8,8 +8,8 @@ export const KIND_PARAM = "kind";
 /** 篩選選項的固定順序與中文標籤。 */
 const KIND_OPTIONS: readonly { value: KindFilter; label: string }[] = [
   { value: "all", label: "全部" },
-  { value: "vegetable", label: "蔬菜菜" },
-  { value: "protein", label: "蛋白質菜" },
+  { value: "vegetable", label: "蔬菜" },
+  { value: "protein", label: "肉蛋料理" },
   { value: "staple", label: "主食" },
   { value: "soup", label: "湯" },
 ];
@@ -100,6 +100,11 @@ export function formatDateLabel(date: Date): string {
 /** 從 Pagefind 結果網址（`/recipes/<識別值>/`）取出菜譜識別值；不是菜譜頁回傳 null。 */
 export function recipeIdFromUrl(url: string): string | null {
   return url.match(/^\/recipes\/([^/]+)\/?$/)?.[1] ?? null;
+}
+
+/** 從 Pagefind 結果網址（`/topics/<識別值>/`）取出專題識別值；不是專題頁回傳 null。 */
+export function topicIdFromUrl(url: string): string | null {
+  return url.match(/^\/topics\/([^/]+)\/?$/)?.[1] ?? null;
 }
 
 const segmenter = new Intl.Segmenter("zh-Hant", { granularity: "word" });

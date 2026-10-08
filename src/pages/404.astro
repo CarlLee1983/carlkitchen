@@ -2,8 +2,279 @@
 import Base from "../layouts/Base.astro";
 ---
 
-<Base title="找不到頁面">
-  <h1>找不到頁面</h1>
-  <p>這個網址沒有對應的內容，可能是連結有誤，或菜譜已經下架。</p>
-  <p><a href="/">回首頁</a>，從菜譜清單找找看。</p>
+<Base
+  title="找不到頁面"
+  description="這個網址沒有對應的煮奔內容，請回首頁尋找菜譜。"
+  noindex
+>
+  <section class="not-found" aria-labelledby="not-found-title">
+    <div class="not-found-copy">
+      <p class="eyebrow">
+        PAGE NOT FOUND <span aria-hidden="true">·</span> 404
+      </p>
+      <h1 id="not-found-title">找不到頁面</h1>
+      <p class="subtitle">這一頁還沒上桌。</p>
+      <p class="message">
+        這個網址沒有對應的內容，可能是連結寫錯了，或菜譜已經下架。回到廚房，再挑一道喜歡的菜吧。
+      </p>
+      <nav class="actions" aria-label="接下來可以前往">
+        <a class="primary-action" href="/#recipes">
+          <span>看看菜譜</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="secondary-action" href="/">回首頁</a>
+      </nav>
+    </div>
+
+    <div class="not-found-art" aria-hidden="true">
+      <svg viewBox="0 0 460 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          class="orbit"
+          d="M57 235c-4-75 65-130 152-126 77 3 153 40 183 99 29 57 1 112-67 139-73 29-183 18-235-26"
+        ></path>
+        <path
+          class="trail"
+          d="M75 271c-24-10-34-28-25-43 8-13 26-14 35-4 9 11 1 25-11 24-9-1-11-10-5-14"
+        ></path>
+        <path class="spark" d="M383 60v25m-12-13h25M113 55v18m-9-9h18"></path>
+        <path class="spark small" d="M395 157v13m-7-7h14"></path>
+
+        <g class="recipe-card">
+          <path d="m139 66 131-16 27 219-132 16-26-219Z" fill="var(--paper)"
+          ></path>
+          <path d="m139 66 131-16 27 219-132 16-26-219Z"></path>
+          <path d="m270 50 27 219-132 16"></path>
+          <path d="m157 91 75-9m-71 27 95-12m-91 30 71-9"></path>
+          <path d="m168 154 59-7m-55 28 76-9"></path>
+          <path d="m176 206 57-7"></path>
+          <path d="M194 247c10-11 22-17 35-19"></path>
+          <text x="165" y="232" class="card-number">404</text>
+        </g>
+
+        <g class="bowl">
+          <path
+            d="M244 227c8 48 44 82 91 76 46-5 69-45 65-91l-156 15Z"
+            fill="var(--paper)"></path>
+          <path d="M244 227c8 48 44 82 91 76 46-5 69-45 65-91l-156 15Z"></path>
+          <path d="M247 225c12 18 51 28 88 24 31-3 52-13 64-27"></path>
+          <path d="M279 306c23 9 50 9 73 0"></path>
+          <path d="M281 210c7-13 18-19 31-17m15 12c9-14 21-18 34-14"></path>
+          <path d="M303 220c6-7 13-11 21-13"></path>
+          <circle cx="285" cy="220" r="4" fill="var(--ink-soft)" stroke="none"
+          ></circle>
+          <circle cx="365" cy="211" r="4" fill="var(--ink-soft)" stroke="none"
+          ></circle>
+        </g>
+        <path class="ground" d="M118 326c73 15 190 9 258-13"></path>
+      </svg>
+      <p class="art-caption">好像走錯了巷子</p>
+    </div>
+  </section>
 </Base>
+
+<style>
+  .not-found {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(18rem, 1.1fr);
+    align-items: center;
+    gap: clamp(2rem, 7vw, 6rem);
+    min-height: min(68vh, 42rem);
+    padding: 1rem 0 3rem;
+  }
+
+  .not-found-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 32rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 1.25rem;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+  }
+
+  .eyebrow span {
+    padding: 0 0.3em;
+    color: var(--line);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.7rem, 6vw, 4.6rem);
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+
+  .message {
+    max-width: 27rem;
+    margin: 1.5rem 0 0;
+    color: var(--ink-soft);
+    line-height: 2;
+    text-wrap: pretty;
+  }
+
+  .subtitle {
+    margin: 0.5rem 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    letter-spacing: 0.06em;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .primary-action {
+    gap: 1.5rem;
+    min-width: 10rem;
+    padding: 0 1.15rem;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+  }
+
+  .primary-action span:last-child {
+    font-size: 1.1rem;
+  }
+
+  .primary-action:hover {
+    background: var(--ink-soft);
+    transform: translateY(-2px);
+  }
+
+  .secondary-action {
+    text-decoration-color: var(--line);
+    text-underline-offset: 0.3em;
+  }
+
+  .secondary-action:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .actions a:active {
+    transform: translateY(1px);
+  }
+
+  .not-found-art {
+    position: relative;
+    width: 100%;
+    max-width: 34rem;
+    justify-self: end;
+  }
+
+  .not-found-art svg {
+    display: block;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .not-found-art svg > path,
+  .recipe-card path,
+  .bowl path {
+    stroke: var(--ink-soft);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .recipe-card > path:first-child,
+  .bowl > path:first-child {
+    stroke: var(--line);
+  }
+
+  .recipe-card path:not(:first-child):not(:nth-child(2)) {
+    stroke: var(--line);
+  }
+
+  .card-number {
+    fill: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    letter-spacing: 0.12em;
+  }
+
+  .orbit {
+    stroke: var(--line);
+    stroke-dasharray: 2 8;
+  }
+
+  .trail,
+  .spark {
+    stroke: var(--ink-soft);
+  }
+
+  .trail {
+    stroke-dasharray: 2 5;
+  }
+
+  .spark {
+    stroke-width: 1.2 !important;
+  }
+
+  .spark.small {
+    stroke: var(--line) !important;
+  }
+
+  .ground {
+    stroke: var(--line) !important;
+  }
+
+  .art-caption {
+    margin: -0.75rem 2rem 0 0;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    text-align: right;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 700px) {
+    .not-found {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      min-height: auto;
+      padding-top: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 11vw, 3.8rem);
+    }
+
+    .message {
+      margin-top: 1rem;
+    }
+
+    .actions {
+      margin-top: 1.5rem;
+    }
+
+    .not-found-art {
+      width: min(100%, 27rem);
+      justify-self: center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .actions a {
+      transition: none;
+    }
+  }
+</style>

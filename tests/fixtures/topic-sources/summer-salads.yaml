@@ -1,0 +1,16 @@
+sources:
+  - title: 測試核准來源甲
+    url: https://example.com/topic-approved-a
+  - title: 測試核准來源乙
+    url: https://example.com/topic-approved-b
+sections:
+  - heading: 涼拌小黃瓜
+    urls:
+      - https://example.com/topic-approved-a
+  - heading: 調味比例
+    urls:
+      - https://example.com/topic-approved-a
+      - https://example.com/topic-approved-b
+  - heading: 涼拌豆腐
+    urls:
+      - https://example.com/topic-approved-b

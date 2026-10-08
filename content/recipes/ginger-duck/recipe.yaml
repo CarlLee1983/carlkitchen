@@ -1,0 +1,42 @@
+title: 薑母鴨
+summary: 老薑先用麻油炒過，再與鴨肉、米酒和水放入電鍋燉煮。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: false
+vegetable: false
+protein: true
+timeMinutes: 85
+tags: [家常菜]
+ingredients:
+  - { name: 鴨肉, amount: { value: 900, unit: g } }
+  - { name: 老薑, amount: { value: 80, unit: g } }
+  - { name: 水, amount: { value: 1400, unit: ml }, note: 內鍋用 }
+  - { name: 水, amount: { value: 2, unit: 杯 }, note: 外鍋用，杯量依來源 }
+  - { name: 麻油, amount: { value: 45, unit: ml }, note: 3 大匙, group: 調味 }
+  - { name: 米酒, amount: { value: 200, unit: ml }, group: 調味 }
+  - { name: 鹽, amount: { value: 5, unit: ml }, note: 1 小匙, group: 調味 }
+steps:
+  - text: 洗淨鴨肉，放入滾水汆燙 3 分鐘，撈起備用。
+    image:
+      src: ./step-1.webp
+      alt: 汆燙後的鴨肉放在不鏽鋼瀝水籃中
+  - text: 洗淨老薑，拍扁備用。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上有拍扁的老薑，旁邊放著菜刀
+  - text: 鍋子燒熱後倒入麻油，放入老薑，用小火炒到微乾。
+    image:
+      src: ./step-3.webp
+      alt: 不鏽鋼鍋底的老薑已炒至微乾，周圍只有少量麻油
+  - text: 把鴨肉和炒過的老薑放進電鍋內鍋，加入內鍋用的水與米酒。
+    image:
+      src: ./step-4.webp
+      alt: 電鍋內鍋裝著鴨肉、拍扁的老薑和清澈的液體，旁邊放著取下的鍋蓋
+  - text: 外鍋加入 2 杯水。開關跳起後，加鹽調味，再燜 10 分鐘。
+hero:
+  src: ./hero.webp
+  alt: 薑母鴨的金褐色湯汁中有鴨肉與拍扁的老薑
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 生鴨肉、老薑、麻油、鹽，以及分別盛裝內鍋用水、米酒與外鍋用水的容器

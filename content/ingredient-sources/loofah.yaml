@@ -1,0 +1,13 @@
+sources:
+  # 106 至 110 年收穫量前五名（臺南、南投、屏東、高雄、嘉義）；產季圖卡標示盛產期 5 月至 9 月；臺南以北晚春夏季、高屏移往秋冬早春的定性說法。
+  - title: 農業部食農教育資訊整合平臺：絲瓜產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=96&type=AS03
+  # 與食農的南北產期定性說法相同、另列主要產地（屏東、南投、高雄、臺南、雲林），臺灣以圓筒絲瓜為主。只作 scope 對照，不採用其產地排名。
+  - title: 農業部農業知識入口網：絲瓜主題館
+    url: https://kmweb.moa.gov.tw/subject/subject.php?id=24748
+  # 「綠直粗重」挑選圖卡；未切開冷藏 3 至 5 天、去頭尾削皮切塊冷凍約 8 週（保存圖卡）。頁面出處為平臺編輯部整理。
+  - title: 農業部食農教育資訊整合平臺：絲瓜挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=96&type=AS06
+  # 食譜例子中的削皮刨絲煎餅、瓜囊海鮮巧達湯，延伸食譜列有絲瓜蛤仔；處理方式只從食譜步驟取得，沒有獨立段落。
+  - title: 農業部食農教育資訊整合平臺：絲瓜料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=96&type=AS07

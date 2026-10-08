@@ -5,6 +5,7 @@ import {
   expectNoHorizontalScroll,
   expectTouchTargets,
   tabTo,
+  WIDTHS,
 } from "./a11y-helpers";
 import { publishedFixtureRecipes } from "./fixture-recipes";
 
@@ -22,16 +23,15 @@ const recipes = publishedFixtureRecipes();
 const box = (page: Page) => page.getByRole("searchbox");
 
 test.describe("關於頁", () => {
-  test("說明來源、AI 製作與站主審閱流程，且不列任何外部連結", async ({
-    page,
-  }) => {
+  test("說明來源、插畫與站主審閱流程，且不列任何外部連結", async ({ page }) => {
     await page.goto("/about/");
     await expect(
       page.getByRole("heading", { level: 1, name: "關於這個網站" }),
     ).toBeVisible();
-    for (const text of ["公開資料", "AI", "插畫", "站主", "試做"]) {
+    for (const text of ["公開資料", "插畫", "站主", "僅供參考"]) {
       await expect(page.getByRole("main")).toContainText(text);
     }
+    await expect(page.getByRole("main")).not.toContainText(/AI|試做/);
     const hrefs = await page
       .getByRole("main")
       .getByRole("link")
@@ -129,13 +129,33 @@ test.describe("鍵盤", () => {
 });
 
 // 觸控目標 44×44：篩選切換與首頁互動元件在 homepage.spec.ts、配菜按鈕在 meal.spec.ts，
-// 這裡量頁首導覽連結（含關於），在五個寬度各量一次。
+// 這裡量頁首導覽連結（含關於）與手機版選單按鈕，在五個寬度各量一次。
 test("頁首導覽連結（含關於）在各寬度觸控目標至少 44×44", async ({ page }) => {
-  await page.goto("/about/");
-  await expectTouchTargets(
-    page,
-    page.getByRole("navigation", { name: "主選單" }).getByRole("link"),
-  );
+  for (const width of WIDTHS) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/about/");
+    const toggleBtn = page.getByRole("button", { name: "選單" });
+    if (await toggleBtn.isVisible()) {
+      const btnBox = await toggleBtn.boundingBox();
+      expect(btnBox!.width, `${width}px 選單按鈕寬`).toBeGreaterThanOrEqual(44);
+      expect(btnBox!.height, `${width}px 選單按鈕高`).toBeGreaterThanOrEqual(
+        44,
+      );
+      await toggleBtn.click();
+    }
+    const navLinks = await page
+      .getByRole("navigation", { name: "主選單" })
+      .getByRole("link")
+      .all();
+    expect(navLinks.length, `${width}px 找不到導覽連結`).toBeGreaterThan(0);
+    for (const link of navLinks) {
+      if (!(await link.isVisible())) continue;
+      const box = await link.boundingBox();
+      const name = await link.evaluate((el) => el.outerHTML.slice(0, 80));
+      expect(box!.width, `${width}px ${name} 寬`).toBeGreaterThanOrEqual(44);
+      expect(box!.height, `${width}px ${name} 高`).toBeGreaterThanOrEqual(44);
+    }
+  }
 });
 
 test.describe("配菜候選不足頁", () => {

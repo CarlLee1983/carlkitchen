@@ -55,7 +55,7 @@ export function normalizeText(text: string): string {
  * scheme、port、query、fragment 不參與。路徑為 `/` 時只剩主機，
  * 屬保守比對：來源指向某站首頁時，輸出出現該主機就視為外洩。
  */
-function sourceCore(url: string): string {
+export function sourceCore(url: string): string {
   const { hostname, pathname } = new URL(url);
   const host = hostname.replace(/^www\./i, "");
   return `${host}${decodePercent(pathname).replace(/\/+$/, "")}`.toLowerCase();
@@ -70,6 +70,7 @@ export function checkLeaks(input: {
   files: readonly BuildFile[];
   draftIds: readonly string[];
   draftIngredientIds?: readonly string[];
+  draftTopicIds?: readonly string[];
   sourceUrls: readonly string[];
 }): Issue[] {
   const draftPatterns = [
@@ -82,6 +83,11 @@ export function checkLeaks(input: {
       id,
       kind: "ingredient" as const,
       base: "ingredients",
+    })),
+    ...(input.draftTopicIds ?? []).map((id) => ({
+      id,
+      kind: "topic" as const,
+      base: "topics",
     })),
   ].map(({ id, kind, base }) => ({
     id,

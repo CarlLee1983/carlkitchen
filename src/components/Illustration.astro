@@ -8,11 +8,13 @@ interface Props {
   sizes: string;
   /** 要產生的寬度；縮圖只需要小尺寸時指定，避免瀏覽器下載整張大圖。 */
   widths?: number[];
+  /** 只需單一小尺寸時指定（取代 widths），不另產生原尺寸的退回檔。 */
+  width?: number;
   class?: string;
   /** 首屏圖設 true：取消延遲載入並提高載入優先序；每頁最多一張。 */
   priority?: boolean;
 }
-const { image, sizes, widths, class: className, priority } = Astro.props;
+const { image, sizes, widths, width, class: className, priority } = Astro.props;
 ---
 
 <!-- data-pagefind-ignore="all"：替代文字與圖片網址不被 Pagefind 當成可搜尋的 metadata -->
@@ -22,6 +24,7 @@ const { image, sizes, widths, class: className, priority } = Astro.props;
     alt={image.alt}
     sizes={sizes}
     widths={widths}
+    width={width}
     priority={priority}
   />
 </figure>

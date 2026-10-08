@@ -1,0 +1,19 @@
+sources:
+  # 青椒是尚未轉色的甜椒果實、椒味較重、較適合與其他食材快炒。
+  - title: 農業部食農教育資訊整合平臺：認識甜椒
+    url: https://fae.moa.gov.tw/map/food_item.php?id=82&type=AS01
+  # 南投（信義、仁愛，夏季）、雲林、嘉義；全年生產、12 月至翌年 5 月盛產。資料指甜椒整體。
+  - title: 農業部食農教育資訊整合平臺：甜椒產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=82&type=AS03
+  # 挑選圖卡（蒂頭短鮮綠、外皮光滑、皮薄肉厚、無傷）；冷藏圖卡（擦乾後包好冷藏 7–10 天）。資料指甜椒整體。
+  - title: 農業部食農教育資訊整合平臺：甜椒挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=82&type=AS06
+  # 蒂頭凹處加強沖洗、切半去蒂去籽後內部再洗。
+  - title: 農業部食農教育資訊整合平臺：甜椒料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=82&type=AS07
+  # 幼果期採收稱青椒、具特殊辛味，較適於炒食或炸成蔬菜天婦羅；甜椒產期 1–12 月。
+  - title: 農業部農業知識入口網：甜椒（農漁生產地圖）
+    url: https://kmweb.moa.gov.tw/theme_data.php?theme=production_map&id=41
+  # 青椒是開花 60–80 天前採收的幼果；挑選要點（果形端正、皮薄肉厚、蒂頭枯萎不新鮮）；蒂頭加強清洗。
+  - title: 農業兒童網：甜椒辣椒同家族 氣味口感差很大
+    url: https://kids.moa.gov.tw/theme_data.php?theme=kids_school&sub_theme=food&type=A01&id=51

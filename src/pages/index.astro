@@ -1,27 +1,38 @@
 ---
 import Base from "../layouts/Base.astro";
 import Illustration from "../components/Illustration.astro";
+import HomeSeason from "../components/HomeSeason.astro";
 import { recipeKinds, visibleKindOptions } from "../utils/home";
-import { SITE_NAME } from "../utils/site";
+import { SITE_NAME, SITE_TAGLINE } from "../utils/site";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
+import { getVisibleTopicEntries } from "../utils/topic-entries";
 
 const recipes = await getVisibleRecipes();
+const topics = await getVisibleTopicEntries();
 // 草稿（開發模式才會出現）可能沒有成品圖，不參與大圖。
 const heroRecipes = recipes.filter((recipe) => recipe.data.hero);
 
 // 解析到大圖區就同步挑圖並插入（腳本緊接在 template 之後），首次繪製前版面已定、不會位移。
-// 每次開啟隨機；template 內容不會載入，只有選中的那張下載。內容是 JS，不能含 TS 語法。
+// 每次開啟隨機；網址帶分類時從該類挑，免得腳本載入後再換圖。
+// template 內容不會載入，只有選中的那張下載。內容是 JS，不能含 TS 語法。
 const HERO_PICK_SCRIPT = `(() => {
   const section = document.currentScript?.parentElement;
-  const slots = section?.getElementsByTagName("template");
-  const pick = slots?.[Math.floor(Math.random() * slots.length)];
+  const slots = [...(section?.getElementsByTagName("template") ?? [])];
+  const kind = new URLSearchParams(location.search).get("kind");
+  const matching = slots.filter((slot) =>
+    slot.content.firstElementChild?.dataset.kinds?.split(" ").includes(kind),
+  );
+  const pool = matching.length > 0 ? matching : slots;
+  const pick = pool[Math.floor(Math.random() * pool.length)];
   if (section && pick) section.append(pick.content.cloneNode(true));
 })();`;
 
 const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 ---
 
-<Base>
+<Base
+  description="煮奔提供站主審閱的繁體中文家常菜譜，從菜名、材料或分類找到今天想煮的料理。"
+>
   <div
     class="home"
     data-intro
@@ -29,7 +40,10 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
   >
     <div class="intro-text">
       <p class="today" data-today></p>
-      <h1>{SITE_NAME}</h1>
+      <div class="masthead">
+        <h1>{SITE_NAME}</h1>
+        <p class="tagline">{SITE_TAGLINE}</p>
+      </div>
       <form class="search" role="search" data-search-form>
         <label for="search-input">搜尋菜譜</label>
         <input
@@ -48,6 +62,7 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
         />
       </form>
       <a class="meal-link" href="/meal/">配一桌四菜一湯</a>
+      <HomeSeason topics={topics} />
     </div>
 
     {
@@ -74,10 +89,13 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
           <p class="hero-label">隨機看看一道菜</p>
           {heroRecipes.map((recipe) => (
             <template data-hero-slot>
-              <a href={recipeHref(recipe)}>
+              <a
+                href={recipeHref(recipe)}
+                data-kinds={recipeKinds(recipe.data).join(" ")}
+              >
                 <Illustration
                   image={recipe.data.hero!}
-                  sizes="(min-width: 64rem) 36rem, 100vw"
+                  sizes="(min-width: 64rem) 36rem, calc(100vw - 3rem)"
                   priority
                 />
                 <p class="hero-title">{recipe.data.title}</p>
@@ -88,7 +106,7 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
             <a href={recipeHref(heroRecipes[0]!)}>
               <Illustration
                 image={heroRecipes[0]!.data.hero!}
-                sizes="(min-width: 64rem) 36rem, 100vw"
+                sizes="(min-width: 64rem) 36rem, calc(100vw - 3rem)"
                 priority
               />
               <p class="hero-title">{heroRecipes[0]!.data.title}</p>
@@ -142,6 +160,24 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
                   <span class="kind">{recipe.data.category}</span>
                 </li>
               ))}
+              {
+                // 專題只在有搜尋字詞且命中時由腳本顯示；沒有字詞或套用分類篩選時不出現。
+                topics.map((topic) => (
+                  <li
+                    class="row"
+                    data-topic-row
+                    data-topic-id={topic.id}
+                    hidden
+                  >
+                    <h3>
+                      <a href={`/topics/${topic.id}/`}>{topic.data.title}</a>
+                      {topic.data.draft && <span>（草稿）</span>}
+                    </h3>
+                    <p class="row-summary">{topic.data.summary}</p>
+                    <span class="kind">專題</span>
+                  </li>
+                ))
+              }
             </ul>
             <div class="empty" data-empty hidden>
               <p data-empty-message />
@@ -170,8 +206,28 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     font-size: 0.9rem;
     letter-spacing: 0.1em;
   }
-  .intro-text h1 {
+  /* 站名與標語組成直排題字：依直排由右往左的讀序，站名在右、標語在左。 */
+  .masthead {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1.25rem;
     margin: 0 0 2rem;
+  }
+  .masthead .tagline {
+    margin: 0.4em 0 0;
+    writing-mode: vertical-rl;
+    /* 一欄七字，在「飯」後換欄 */
+    inline-size: 8.1em;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    letter-spacing: 0.15em;
+  }
+  .intro-text h1 {
+    margin: 0;
     writing-mode: vertical-rl;
     font-size: 3rem;
     line-height: 1.1;
@@ -313,6 +369,9 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     align-items: start;
     padding: 1.25rem 0;
     border-top: 1px solid var(--line);
+    /* 首屏外的列延後排版與繪製，縮短首次算繪的長任務。預估高度只算內容區：手機列高 142px（pnpm measure:mobile）扣上下 padding 與上框線；算繪過後改記實際高度。 */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 101px;
   }
   .row[hidden] {
     display: none;
@@ -366,6 +425,8 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       grid-template-columns: 120px minmax(0, 1fr) auto;
       column-gap: 1.75rem;
       align-items: center;
+      /* 寬版列內容至少是縮圖高 80px（摘要一行時列高 121px）；摘要換行的列較高，捲到時才修正。 */
+      contain-intrinsic-size: auto 80px;
     }
     .row :global(.thumb) {
       grid-row: 1 / 3;
@@ -383,9 +444,15 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       padding-top: 1.5rem;
     }
     /* 直排大字在手機縮小，讓第一道菜仍落在第一屏內 */
-    .intro-text h1 {
+    .masthead {
+      gap: 0.75rem;
       margin-bottom: 1rem;
+    }
+    .intro-text h1 {
       font-size: 2rem;
+    }
+    .masthead .tagline {
+      font-size: 0.8rem;
     }
     .meal-link,
     .desktop-list-tools {
@@ -424,14 +491,19 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     }
   }
 
-  /* 搜尋或篩選時收起隨機大圖；桌機同時收起圖片欄。 */
-  .home[data-has-criteria] .hero-pick {
+  /* 有搜尋字詞時收起隨機大圖；窄螢幕大圖疊在清單上方，篩選時也收起，讓清單緊接篩選列。 */
+  .home[data-has-query] .hero-pick {
     display: none;
   }
+  @media (max-width: 63.99rem) {
+    .home[data-has-criteria] .hero-pick {
+      display: none;
+    }
+  }
 
-  /* 寬螢幕第一屏：左文右圖 */
+  /* 寬螢幕第一屏：左文右圖；篩選時大圖由腳本換成該類的菜，搜尋時收起圖片欄。 */
   @media (min-width: 64rem) {
-    .home[data-has-hero]:not([data-has-criteria]) {
+    .home[data-has-hero]:not([data-has-query]) {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 36rem;
       column-gap: 4rem;

@@ -66,3 +66,19 @@ for (const width of [1280, 768, 390]) {
     expect(box!.height).toBeGreaterThan(box!.width);
   });
 }
+
+// 標語與站名組成直排題字：標語同樣直排，且依直排由右往左的讀序排在站名左側。
+for (const width of [1280, 768, 390]) {
+  test(`${width}px 寬首頁標語直排在站名左側`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    const title = await page
+      .getByRole("heading", { level: 1, name: "煮奔" })
+      .boundingBox();
+    const tagline = page.locator(".home").getByText("陪你把今天的飯煮出來。");
+    await expect(tagline).toBeVisible();
+    const box = await tagline.boundingBox();
+    expect(box!.height).toBeGreaterThan(box!.width);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(title!.x);
+  });
+}

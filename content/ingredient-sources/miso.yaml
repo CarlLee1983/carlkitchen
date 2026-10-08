@@ -1,0 +1,13 @@
+sources:
+  # 成分黃豆、米、食鹽、水；含大豆；12 個月；煮湯、醃肉、燉鍋物。頁面沒有保存標示，只在盒裝設計介紹提到冰箱，不採用為保存依據。只代表該產品。
+  - title: 十全：原味味噌
+    url: https://shih-chuan.com.tw/zh/products/product/original-miso-500g
+  # 成分蓬萊米、黃豆、精鹽、食用酒精；含大豆；陰涼處、開封後冷藏；常溫久放變深為熟成現象；1 年；沾、煮湯、調味。只代表該產品。
+  - title: 工研：鄉味噌 500g
+    url: https://kongyen.com.tw/product/3152/
+  # 另含魚油粉；過敏原大豆及魚製品；開封後冷藏；1 年。只代表該產品。
+  - title: 工研：香醇味噌 500g
+    url: https://kongyen.com.tw/product/3310/
+  # 食譜中味噌入鍋慢慢抹至化開。單一食譜例子，產品頁未要求先化開。
+  - title: 十全：味噌烏龍麵食譜
+    url: https://shih-chuan.com.tw/zh/recipes/miso-udon-noodle-recipe

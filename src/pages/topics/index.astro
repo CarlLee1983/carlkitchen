@@ -1,0 +1,137 @@
+---
+import Illustration from "../../components/Illustration.astro";
+import Base from "../../layouts/Base.astro";
+import {
+  formatPublishedDate,
+  getVisibleTopicEntries,
+} from "../../utils/topic-entries";
+
+// 開發模式含草稿（getVisibleTopicEntries 已處理）；正式建置只有已發布專題。
+const entries = await getVisibleTopicEntries();
+---
+
+<Base title="專題" description="家常料理的主題文章，從一個主題讀到底。">
+  <div class="topic-list">
+    <header class="intro">
+      <p class="eyebrow">TOPICS</p>
+      <h1>專題</h1>
+      <p class="lead">從一個主題出發，把相關的做法與知識讀完整。</p>
+    </header>
+
+    {
+      entries.length === 0 ? (
+        <p class="empty">目前還沒有已發布的專題，請稍後再來看看。</p>
+      ) : (
+        <ul>
+          {entries.map((entry) => {
+            const published = formatPublishedDate(entry.data.publishedAt);
+            return (
+              <li class:list={{ "with-image": Boolean(entry.data.hero) }}>
+                {entry.data.hero && (
+                  <Illustration
+                    image={entry.data.hero}
+                    sizes="(max-width: 650px) 88px, 192px"
+                    widths={[88, 176, 192, 384]}
+                  />
+                )}
+                <div class="topic-copy">
+                  <a href={`/topics/${entry.id}/`}>
+                    {entry.data.title}
+                    {entry.data.draft && <span class="draft">（草稿）</span>}
+                  </a>
+                  <p>{entry.data.summary}</p>
+                  <time datetime={published.iso}>{published.label}</time>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )
+    }
+  </div>
+</Base>
+
+<style>
+  .topic-list {
+    max-width: 54rem;
+    padding: 1rem 0 3rem;
+  }
+  .intro {
+    margin-bottom: 3rem;
+  }
+  .eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+  .lead {
+    max-width: 36rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    list-style: none;
+  }
+  li {
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem 0;
+  }
+  li.with-image {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+  }
+  .topic-copy {
+    min-width: 0;
+  }
+  li :global(figure.illustration) {
+    margin: 0;
+  }
+  li a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-underline-offset: 0.25em;
+  }
+  li p {
+    margin: 0 0 0.5rem;
+    color: var(--ink-soft);
+    overflow-wrap: anywhere;
+  }
+  time {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+  .draft {
+    font-size: 0.6em;
+    color: var(--ink-soft);
+  }
+  .empty {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+  @media (max-width: 650px) {
+    .topic-list {
+      padding-top: 0;
+    }
+    .intro {
+      margin-bottom: 2rem;
+    }
+    li.with-image {
+      grid-template-columns: 5.5rem minmax(0, 1fr);
+      gap: 1rem;
+    }
+  }
+</style>

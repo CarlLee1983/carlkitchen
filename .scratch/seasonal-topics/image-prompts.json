@@ -1,0 +1,60 @@
+{
+  "tool": "built-in image_gen",
+  "transparentBackground": false,
+  "entries": [
+    {
+      "key": "sesameHeroResult",
+      "accepted": true,
+      "prompt": "Create ONE standalone landscape 3:2 image, 1536x1024. Asset: CarlKitchen Taiwanese sesame-oil chicken soup recipe HERO illustration. Warm hand-drawn illustration: loose fine ink linework, soft muted watercolor washes, slightly uneven lines, visible paper texture, calm minimal Japanese cookbook illustration. Plain warm off-white paper background close to #F7F6F3, generous blank space, no scene or tabletop. At 45-degree overhead view, one plain open stainless steel cooking pot with two short side handles, fully off heat, containing finished Taiwanese sesame-oil chicken soup: pale golden translucent broth, many chopped BONE-IN native chicken chunks with cooked pale skin, irregular sliced old ginger pieces floating visibly, faint oil droplets. All chicken is chopped bone-in pieces, never a whole chicken and no intact wings. No vegetables, no scallions, no red dates, no mushrooms, no herbs. Complete pot fully in frame occupies about 60% of canvas, slightly right of center, food clearly visible, subtle steam optional. This is a finished soup, no burner, no cooking action. No utensils: no chopsticks, no spoon, no fork, nothing beside vessel. No text, letters, numbers, labels, logos, watermark, human faces; no photorealism, no 3D, no glossy render.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-dac98bf9-cfa3-4988-8a5e-23e7fcab4dda.png"
+    },
+    {
+      "key": "sesameIngredients",
+      "accepted": false,
+      "prompt": "Use supplied image ONLY as a watercolor STYLE reference. Generate a NEW standalone overhead ingredients flat-lay for sesame-oil chicken soup, NOT a finished soup. Exactly SIX separated ingredient groups: ONE plain ceramic plate containing a pile of raw chopped BONE-IN native chicken chunks with pale pink flesh and skin (1350g concept, no whole chicken or intact wings); ONE group of raw old ginger slices with rough brown skin and pale yellow interiors (150g concept); ONE small plain unlabeled ceramic dish of dark amber sesame oil; ONE transparent plain unlabeled pitcher of clear water; ONE separate transparent plain unlabeled pitcher of clear rice wine; ONE small plain unlabeled dish containing white salt. Two clear-liquid pitchers must both be separately visible, no labels. No other ingredients. All six groups entirely visible, not overlapping. No utensils, no knife, no vegetables, no herbs. Warm loose fine ink linework with muted soft watercolor washes, uneven handmade lines, visible warm off-white paper close #F7F6F3, minimal Japanese cookbook illustration, generous blank space, landscape 3:2 1536x1024. No photorealism, no 3D, no text, letters, numbers, logos, watermarks, faces, tabletop, scenery or extra props.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-f0dc9da0-a608-42ba-8392-7292669438e6.png"
+    },
+    {
+      "key": "sesameStep1",
+      "accepted": true,
+      "prompt": "Use supplied image ONLY as a watercolor STYLE reference. Generate a NEW standalone preparation illustration after washing and slicing old ginger. Overhead view: ONE simple wooden chopping board with ONE compact pile of irregular freshly cut pale-yellow old ginger slices with brown skin edges, and ONE plain Chinese kitchen cleaver beside the pile. Only ginger slices, cutting board and cleaver, no whole ginger root, no chicken, no oil, no water vessels, no hands, no stove. Board entirely inside frame with blank margins. Warm loose fine ink linework with muted soft watercolor washes, uneven handmade lines, visible warm off-white paper close #F7F6F3, minimal Japanese cookbook illustration, generous blank space, landscape 3:2 1536x1024. No photorealism, no 3D, no text, letters, numbers, logos, watermarks, faces, tabletop, scenery or extra props.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-8ae47c85-2048-4710-8aaa-3da45f5acaf9.png"
+    },
+    {
+      "key": "sesameIngredientsV2",
+      "accepted": true,
+      "prompt": "Edit this ingredients flat-lay, preserving the same ink/watercolor style, composition, raw chicken plate, sesame-oil dish and salt dish. Make TWO targeted corrections: (1) replace ALL knobbly whole ginger roots with one separated pile of thin irregular old-ginger SLICES, pale yellow centers and brown skin edges, no remaining whole root. (2) make the TWO transparent clear-liquid pitchers IDENTICAL in vessel size AND fill level, each representing equal 500ml amounts; both must be visible and separated. Keep exactly six ingredient groups: raw chopped BONE-IN chicken on one plate, sliced ginger pile, sesame oil dish, water pitcher, rice wine pitcher, salt dish. No other objects, no utensils, no labels, no text. Landscape3:2 1536x1024, generous warm off-white paper margins.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-a76a48d2-67bb-4e08-8aea-c0168c7cdd25.png"
+    },
+    {
+      "key": "sesameStep2",
+      "accepted": false,
+      "prompt": "Use this image as STYLE AND POT reference, generate a NEW standalone sesame-oil chicken soup cooking-stage illustration. Same plain stainless steel open pot with TWO short side handles, shown 45deg overhead. At this stage the pot contains ONLY a thin layer of amber sesame oil and many thin irregular old ginger slices, pale yellow with brown skin edges, frying on low heat; the EDGES of some ginger slices curl slightly. No chicken, no broth, no water, no wine, no vegetables, no herbs, no utensils. Low-heat cooking is implied with very faint wisps, NO burner or kitchen scene. Whole vessel visible about60%canvas, blank margins. Warm loose fine ink linework, muted soft watercolor washes, uneven handmade lines, visible paper texture, minimal Japanese cookbook illustration, background close #F7F6F3. Landscape3:2 1536x1024. No photorealism,3D,text,letters,numbers,logos,watermarks or faces.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-92d646b7-274b-43fb-80a2-00cda83e8d0d.png"
+    },
+    {
+      "key": "sesameStep2V2",
+      "accepted": true,
+      "prompt": "Edit ONLY the cooking state of this ginger-frying illustration, keep same stainless steel two-short-handled pot, perspective, ink-watercolor style and paper. The pot must show ginger being DRY-FRIED in a SMALL amount of sesame oil, NOT soup and NOT deep frying: remove all deep golden liquid; bottom metal must be visibly exposed BETWEEN ginger slices; only a shiny amber oil COATING/puddles on the bottom, no liquid halfway up the pot walls. Old ginger slices in one layer, with slightly browned edges and slightly curled corners. No chicken, water, broth, vegetables, burner, utensil, text or props. Keep finished margins/paper and vessel identity. Landscape 3:2 1536x1024.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-034b5310-e755-4bee-8728-e63a4fbf418d.png"
+    },
+    {
+      "key": "sesameStep3",
+      "accepted": true,
+      "prompt": "Use the supplied image as STYLE and VESSEL reference only. New standalone cooking-stage watercolor: the SAME stainless steel pot with two short side handles at45deg overhead contains chopped bone-in native chicken pieces with skin whose OUTER SURFACES have just become OPAQUE PALE WHITE during stir-frying, plus sliced old ginger with slightly curled browned edges. NO BROTH: there is ONLY a thin amber coating of sesame oil on exposed pot bottom, NO water or wine has been added, no liquid up the pot walls. Chicken chunks piled loosely, a small inner piece may remain light pink but outside surfaces pale white; never fully browned roasting, never whole bird or intact wings. No herbs, vegetables, scallions, red dates, tools, burner or scene. Full pot with generous off-white paper margins. Loose fine ink linework, muted soft watercolor, paper texture, background#F7F6F3, landscape3:2 1536x1024. No text, letters, labels, logos, faces, photorealism or3D.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-2391cd38-db12-434d-9512-675326c9ad48.png"
+    },
+    {
+      "key": "sesameStep4",
+      "accepted": true,
+      "prompt": "Use supplied image as STYLE AND POT reference. Generate NEW standalone cooking-stage illustration: SAME plain stainless steel pot with two short side handles, at45degree overhead, containing chopped BONE-IN native chicken chunks with cooked pale opaque skin and old ginger SLICES floating in pale golden broth. Now water and rice wine HAVE been added: soup broth clearly around the chicken. Show a gentle low simmer with SMALL bubbles along edges and a little steam, NOT a vigorous rolling boil. No red dates, herbs, scallions, vegetables, utensils, burner or kitchen. Full pot inside frame, warm off-white generous empty paper margins. Loose fine ink, muted watercolor, paper texture, calm minimal Japanese cookbook illustration. Landscape3:2 1536x1024. No photorealism,3D,text,labels,logos,watermark or faces.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-42f823cd-08a8-471e-897e-c1c0a8dad328.png"
+    },
+    {
+      "key": "winterCover",
+      "accepted": true,
+      "prompt": "Use supplied picture ONLY as the watercolor visual style reference. Create a NEW standalone editorial cover for a Taiwanese autumn/winter food-culture article. Two distinct finished dishes side by side with ample blank warm paper around them: LEFT one plain stainless steel open soup pot with two short side handles, filled with golden sesame-oil CHICKEN soup with chopped BONE-IN pale chicken pieces and thin ginger SLICES; RIGHT a smaller simple cylindrical stainless steel RICE-COOKER INNER POT, no side handles, no electric cooker body, containing ginger DUCK soup with chopped BONE-IN duck pieces (darker muted gray-brown meat and tan skin) and roughly SMASHED old ginger chunks. Both are finished pots OFF HEAT, no burners or kitchen, from45degree overhead so food visible. Different vessels distinguish the dishes. No herbs, vegetables, dates, garnishes or extra ingredients, no utensils, no chopsticks, no spoons, no bottles or props. Loose fine ink linework, soft muted watercolor wash, uneven handmade lines, textured off-white paper near#F7F6F3, calm minimal cookbook style. Pots occupy about60% composition, no cropping. Landscape3:2 1536x1024. No text,letters,numbers,labels,logos,watermark,faces,photorealism,3D or glossy render.",
+      "generatedPath": "/Users/carl/.codex/generated_images/01a11940-36ba-7b73-9ba7-727f4b8a94fb/exec-c9d19fcc-7d7d-499e-aee0-fd30f2c5b229.png"
+    }
+  ]
+}

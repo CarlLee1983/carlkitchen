@@ -1,0 +1,57 @@
+{
+  "generator": "native image_gen__imagegen",
+  "transparentBackground": false,
+  "assets": [
+    {
+      "name": "hero",
+      "prompt": "Use case: illustration-story. Asset: CarlKitchen ginger duck recipe hero. Reference images are style/context only: /tmp/carlkitchen-seasonal-images/sesame-hero.png for watercolor food rendering; /tmp/carlkitchen-seasonal-images/winter-cover.png RIGHT-HAND SMALL PLAIN HANDLELESS CYLINDRICAL stainless rice-cooker inner pot for exact vessel shape. New image: Finished Taiwanese ginger duck: 900g duck depicted as skin-on bone-in duck pieces (visual inference), roughly smashed old ginger chunks, warm golden-brown sesame-oil and rice-wine broth, fine oil droplets. Whole completed dish in the SINGLE SMALL PLAIN HANDLELESS CYLINDRICAL stainless rice cooker inner pot, off heat, no electric cooker body, no stove. The pot is broad, low, unadorned, straight-sided, NOT a two-handled soup pot. 45-degree overhead, pot about 60% canvas, slightly offset with generous open space. Warm hand-drawn illustration, loose fine ink lines, soft pale watercolor washes, muted natural colors, visible paper texture, calm restrained Japanese cookbook look, off-white #F7F6F3 blank paper background, no tabletop. Landscape 3:2. No utensils: no chopsticks, spoon, fork, nothing beside vessel. No other food, no herbs, no vegetables. No text, letters, numbers, logos, watermark, faces.",
+      "nativeOutput": "/Users/carl/.codex/generated_images/01a11991-656d-7d00-9839-bc4fd6213c48/exec-c46038b1-5c3e-4ef4-915e-f8aad644e52d.png",
+      "selectedPng": "/tmp/carlkitchen-seasonal-images/ginger-duck/hero.png",
+      "webp": "content/recipes/ginger-duck/hero.webp",
+      "retryCount": 0
+    },
+    {
+      "name": "ingredients",
+      "prompt": "Use case: illustration-story. A 3:2 landscape warm fine-ink and soft-watercolor cookbook illustration on blank off-white paper. Top down arrangement of EXACT ingredients for ginger duck, spaced apart: one plain ceramic platter of raw skin-on duck pieces totaling 900g; one pile of whole unpeeled old ginger roots totaling 80g; one tiny bowl of dark amber sesame oil 45ml; one jug clear water 1400ml; a second distinguishable jug clear rice wine 200ml; a very small dish of salt 5ml; one further plain cup of clear water for the outer rice cooker pot, two source cups of unspecified ml. No extra ingredients. No labels/text/letters/numbers. No utensils or tabletop. Delicate loose ink line, muted earth colors, visible subtle paper grain, same visual style as CarlKitchen sesame-oil-chicken reference.",
+      "nativeOutput": "/Users/carl/.codex/generated_images/01a11991-656d-7d00-9839-bc4fd6213c48/exec-de1b570d-7441-43cf-a337-0f7a1c597e34.png",
+      "selectedPng": "/tmp/carlkitchen-seasonal-images/ginger-duck/ingredients-v1.png",
+      "webp": "content/recipes/ginger-duck/ingredients.webp",
+      "retryCount": 0,
+      "visualNote": "The generated image depicts the outer-pot water as two unmarked cups. The source gives two cups without a millilitre equivalent."
+    },
+    {
+      "name": "step-1",
+      "prompt": "Use case: illustration-story. CarlKitchen step one image: AFTER blanching, several duck pieces (skin-on, bones visible as visual convention) sitting drained in a plain stainless steel colander. No boiling water, no stove. Restrained loose fine ink line and light watercolor wash on textured blank off-white paper, landscape 3:2. No other ingredients, utensils, labels, letters, numbers, logos, watermark, faces.",
+      "nativeOutput": "/Users/carl/.codex/generated_images/01a11991-656d-7d00-9839-bc4fd6213c48/exec-0748a1ac-9131-4e9d-8885-69d2ebceaa16.png",
+      "selectedPng": "/tmp/carlkitchen-seasonal-images/ginger-duck/step-1.png",
+      "webp": "content/recipes/ginger-duck/step-1.webp",
+      "retryCount": 0
+    },
+    {
+      "name": "step-2",
+      "prompt": "Use case: illustration-story. CarlKitchen ginger duck step two completed prep state. Exactly the old ginger roots, washed then smashed FLAT into irregular thick crushed sections with skin on, lying on a simple warm brown wooden cutting board beside ONE plain kitchen cleaver. No neatly sliced rounds, no whole intact root. Horizontal 3:2 fine loose ink and pale muted watercolor on blank textured off-white paper; same calm style and consistent ginger form as hero. No duck or other ingredients, no tabletop. No writing, letters, numbers, labels, logos, watermark, faces.",
+      "nativeOutput": "/Users/carl/.codex/generated_images/01a11991-656d-7d00-9839-bc4fd6213c48/exec-ac4acb5a-742a-4f86-95ec-b9fba5efc1c8.png",
+      "selectedPng": "/tmp/carlkitchen-seasonal-images/ginger-duck/step-2.png",
+      "webp": "content/recipes/ginger-duck/step-2.webp",
+      "retryCount": 0
+    },
+    {
+      "name": "step-3",
+      "prompt": "Use case: illustration-story. CarlKitchen ginger duck step three completed cooking state. A simple unadorned plain stainless steel round pan, seen from above at 45 degrees, holds ONLY smashed flattened irregular skin-on old ginger sections in a THIN coat of dark sesame oil on the exposed METAL BOTTOM. Ginger has been sauteed over low heat until slightly dry, some toasted edges. The bottom is clearly visible BETWEEN ginger; absolutely NO BROTH, no water, no soup, no liquid rising up the walls, no duck yet. Gentle pale watercolor and fine loose ink on empty cream paper, same CarlKitchen style, 3:2 horizontal. No stove, text, letters, numbers, labels, logos, watermark, faces.",
+      "nativeOutput": "/Users/carl/.codex/generated_images/01a11991-656d-7d00-9839-bc4fd6213c48/exec-60e132ab-17bb-44a5-acdd-1a01ad86f64d.png",
+      "selectedPng": "/tmp/carlkitchen-seasonal-images/ginger-duck/step-3.png",
+      "webp": "content/recipes/ginger-duck/step-3.webp",
+      "retryCount": 0
+    },
+    {
+      "name": "step-4",
+      "prompt": "Use case: illustration-story. REGENERATE ONLY ginger duck step four cooking-preparation illustration for a Taiwanese TRADITIONAL STEAM ELECTRIC COOKER, before adding water to the outer chamber. Wide 3:2 landscape, 45-degree top view. A simple cylindrical unbranded warm off-white electric cooker BODY with a plain removable stainless steel DOMED LID resting separately beside it, fully detached: ABSOLUTELY NO HINGE, no attached lid, no clamshell or modern rice cooker. The cylindrical removable stainless INNER POT is visibly nested INSIDE an outer stainless metal bowl. Show a clear narrow ANNULAR GAP of dry empty outer-pot metal between inner-pot rim and cooker body; no water yet in that outer chamber. A tiny plain front lever is permissible, no panel. Inside inner pot: several pale blanched skin-on bone-in duck pieces, rough smashed old ginger root with torn FIBROUS EDGES, irregular flattened pieces, NO tidy ginger slices or coins, submerged partly in transparent clear water and rice wine. No simmering, steam, dark finished broth, oil slick, or garnish. This is the preparation state before starting cooker. Match the vessel in CarlKitchen ginger-duck hero: plain straight-sided stainless cylindrical inner pot; match muted fine loose ink-line and very soft translucent watercolor on textured off-white paper, calm cookbook illustration. Keep food and vessel central with generous blank paper background and no tabletop. No text, letters, numerals, labels, logos, watermark, utensils, hands, faces.",
+      "nativeOutput": "/Users/carl/.codex/generated_images/01a11991-656d-7d00-9839-bc4fd6213c48/exec-e793af9f-43b4-4c64-b49a-54c494ecc169.png",
+      "selectedPng": "/tmp/carlkitchen-seasonal-images/ginger-duck/step-4-v2.png",
+      "webp": "content/recipes/ginger-duck/step-4.webp",
+      "retryCount": 1,
+      "supersededPng": "/tmp/carlkitchen-seasonal-images/ginger-duck/step-4.png",
+      "visualNote": "Detached metal dome lid, dry outer-pot gap, smashed ginger with fibrous edges."
+    }
+  ]
+}

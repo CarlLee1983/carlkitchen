@@ -1,7 +1,8 @@
 import { join } from "node:path";
 import { existsSync } from "node:fs";
 import { checkHeroAlt, checkImageFile, collectImageRefs } from "./images.ts";
-import { checkIngredients } from "./ingredients.ts";
+import { checkCopy } from "./copy.ts";
+import { checkIngredients, readIngredients } from "./ingredients.ts";
 import {
   collectBuildFiles,
   listDirectories,
@@ -12,6 +13,7 @@ import {
 } from "./io.ts";
 import type { Issue } from "./issue.ts";
 import { checkLeaks } from "./leaks.ts";
+import { checkTopics } from "./topics.ts";
 import { isDraft, parseRecipe, type Recipe } from "./recipes.ts";
 import { checkSourceCoverage, parseSourceRecord } from "./sources.ts";
 import { checkLaunchThreshold } from "./threshold.ts";
@@ -21,6 +23,8 @@ export interface ContentCheckOptions {
   sourcesDir: string;
   ingredientsDir?: string;
   ingredientSourcesDir?: string;
+  topicsDir?: string;
+  topicSourcesDir?: string;
   distDir: string;
   /** 開啟候選池門檻檢查（部署前）。 */
   launch: boolean;
@@ -93,8 +97,8 @@ export async function runContentChecks(
     if (!data || isDraft(raw)) continue;
     for (const ref of collectImageRefs(data)) {
       const info = await readImageInfo(join(options.recipesDir, id, ref.src));
-      issues.push(...checkImageFile(id, ref, info));
-      issues.push(...checkHeroAlt(id, ref));
+      issues.push(...checkImageFile({ recipe: id }, ref, info));
+      issues.push(...checkHeroAlt({ recipe: id }, ref));
     }
   }
 
@@ -131,6 +135,36 @@ export async function runContentChecks(
     }),
   );
 
+  // 食材條目只讀一次：食材檢查與專題的相關連結檢查共用
+  const ingredients = options.ingredientsDir
+    ? readIngredients(options.ingredientsDir)
+    : null;
+
+  // 專題：schema、封面圖、內部來源紀錄，以及相關連結只能指向已發布的菜譜與食材條目
+  // topicsDir 與 topicSourcesDir 要成對設定；只給一個是設定錯誤，不能靜默略過專題檢查。
+  if (Boolean(options.topicsDir) !== Boolean(options.topicSourcesDir)) {
+    issues.push(
+      failure(
+        options.topicsDir ?? options.topicSourcesDir!,
+        "專題檢查設定不完整：topicsDir 與 topicSourcesDir 必須同時提供（檢查 TOPICS_DIR、TOPIC_SOURCES_DIR）。",
+      ),
+    );
+  }
+  const topicCheck =
+    options.topicsDir && options.topicSourcesDir
+      ? await checkTopics({
+          topicsDir: options.topicsDir,
+          topicSourcesDir: options.topicSourcesDir,
+          publicRecipeIds: recipes
+            .filter(({ raw, data }) => data && !isDraft(raw))
+            .map(({ id }) => id),
+          publicIngredientIds: (ingredients ?? [])
+            .filter(({ entry }) => entry && !entry.draft)
+            .map(({ id }) => id),
+        })
+      : { issues: [], draftIds: [], sourceUrls: [] };
+  issues.push(...topicCheck.issues);
+
   // 建置輸出洩漏
   if (existsSync(options.distDir)) {
     const files = collectBuildFiles(options.distDir);
@@ -138,6 +172,7 @@ export async function runContentChecks(
       options.ingredientsDir && options.ingredientSourcesDir
         ? await checkIngredients({
             ingredientsDir: options.ingredientsDir,
+            ingredients,
             ingredientSourcesDir: options.ingredientSourcesDir,
             publicRecipeIds: recipes
               .filter(({ raw, data }) => data && !isDraft(raw))
@@ -151,9 +186,15 @@ export async function runContentChecks(
         files: ingredientCheck.files,
         draftIds: recipes.filter(({ raw }) => isDraft(raw)).map(({ id }) => id),
         draftIngredientIds: ingredientCheck.draftIds,
-        sourceUrls: [...sourceUrls, ...ingredientCheck.sourceUrls],
+        draftTopicIds: topicCheck.draftIds,
+        sourceUrls: [
+          ...sourceUrls,
+          ...ingredientCheck.sourceUrls,
+          ...topicCheck.sourceUrls,
+        ],
       }),
     );
+    issues.push(...checkCopy(files));
   } else {
     issues.push(failure(options.distDir, "找不到建置輸出目錄，請先執行建置。"));
   }

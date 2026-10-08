@@ -9,6 +9,7 @@ import {
   parseKindParam,
   recipeIdFromUrl,
   recipeKinds,
+  topicIdFromUrl,
   visibleKindOptions,
 } from "../src/utils/home.ts";
 import type { RecipeCategory } from "../src/content/recipe-schema.ts";
@@ -82,7 +83,7 @@ describe("applyHomeState", () => {
 });
 
 describe("recipeKinds", () => {
-  it("非湯料理依標記回傳蔬菜菜、蛋白質菜或兩者", () => {
+  it("非湯料理依標記回傳蔬菜、肉蛋料理或兩者", () => {
     const base = { category: "非湯料理" as const };
     assert.deepEqual(
       recipeKinds({ ...base, vegetable: true, protein: false }),
@@ -134,7 +135,7 @@ describe("visibleKindOptions", () => {
     );
   });
 
-  it("有主食時出現主食選項，位置在蛋白質菜與湯之間", () => {
+  it("有主食時出現主食選項，位置在肉蛋料理與湯之間", () => {
     assert.deepEqual(
       visibleKindOptions([
         recipe("湯", false, false),
@@ -203,6 +204,15 @@ describe("recipeIdFromUrl", () => {
     assert.equal(recipeIdFromUrl("/recipes/tomato-egg"), "tomato-egg");
     assert.equal(recipeIdFromUrl("/meal/"), null);
     assert.equal(recipeIdFromUrl("/"), null);
+  });
+});
+
+describe("topicIdFromUrl", () => {
+  it("從 Pagefind 結果網址取出專題識別值，其他網址回傳 null", () => {
+    assert.equal(topicIdFromUrl("/topics/knife-skills/"), "knife-skills");
+    assert.equal(topicIdFromUrl("/topics/knife-skills"), "knife-skills");
+    assert.equal(topicIdFromUrl("/topics/"), null);
+    assert.equal(topicIdFromUrl("/recipes/tomato-egg/"), null);
   });
 });
 

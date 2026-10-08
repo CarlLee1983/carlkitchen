@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
+import { sizesSlot } from "./image-helpers";
 
 const url = "/recipes/tomato-egg/";
 
@@ -65,6 +66,27 @@ test("每張料理圖都有替代文字，且不加圖說", async ({ page }) => 
   }
 });
 
+test("相關專題列出引用這道菜的已發布文章與短介，不納入菜譜搜尋內容", async ({
+  page,
+}) => {
+  await page.goto(url);
+  const related = page.getByRole("region", { name: "相關專題" });
+  await expect(
+    related.getByRole("link", { name: "夏天的涼拌菜" }),
+  ).toHaveAttribute("href", "/topics/summer-salads/");
+  await expect(related).toContainText("三種十分鐘內完成的涼拌做法。");
+  await expect(related.getByRole("link")).toHaveCount(1);
+  await expect(related.locator("[data-pagefind-body]")).toHaveCount(0);
+
+  await page.goto("/recipes/egg-drop-soup/");
+  await expect(
+    page.getByRole("region", { name: "相關專題" }).getByRole("link"),
+  ).toHaveAttribute("href", "/topics/rice-basics/");
+
+  await page.goto("/recipes/fried-noodles/");
+  await expect(page.getByRole("region", { name: "相關專題" })).toHaveCount(0);
+});
+
 test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版面一致", async ({
   page,
 }) => {
@@ -75,10 +97,22 @@ test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版�
   await expect(hero).not.toHaveAttribute("loading", "lazy");
 });
 
-test("頁底有未試做聲明，且頁面沒有外部或來源連結", async ({ page }) => {
+for (const width of [390, 800, 1366]) {
+  test(`成品圖的 sizes 與實際顯示寬度一致（視窗 ${width}px），瀏覽器不會挑過大的圖`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto(url);
+    const hero = page.getByRole("article").getByRole("img").first();
+    const { slot, rendered } = await sizesSlot(hero);
+    expect(Math.abs(slot - rendered)).toBeLessThanOrEqual(1);
+  });
+}
+
+test("頁底有僅供參考聲明，且頁面沒有外部或來源連結", async ({ page }) => {
   await page.goto(url);
-  await expect(page.getByRole("region", { name: "聲明" })).toContainText(
-    "依公開資料由 AI 整理、站主審閱，未經試做",
+  await expect(page.getByRole("contentinfo")).toContainText(
+    "菜譜整理自公開資料、經站主審閱，份量與時間僅供參考",
   );
   const hrefs = await page
     .getByRole("link")
@@ -115,7 +149,7 @@ test("寬螢幕捲動做法時材料欄仍在視窗內；手機為單欄", async
   const stepsBox = await steps.boundingBox();
   expect(asideBox!.x + asideBox!.width).toBeLessThanOrEqual(stepsBox!.x + 1);
 
-  await page.getByRole("region", { name: "聲明" }).scrollIntoViewIfNeeded();
+  await page.getByRole("contentinfo").scrollIntoViewIfNeeded();
   expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
   await expect(aside).toBeInViewport();
 
@@ -146,7 +180,7 @@ test("列印媒體：隱藏導覽、聲明與步驟圖，保留材料、做法�
   await page.goto(url);
   await page.emulateMedia({ media: "print" });
   await expect(page.getByRole("navigation")).toBeHidden();
-  await expect(page.getByRole("region", { name: "聲明" })).toBeHidden();
+  await expect(page.getByRole("contentinfo")).toBeHidden();
   const article = page.getByRole("article");
   await expect(article.getByRole("figure").first()).toBeVisible();
   await expect(page.getByRole("complementary", { name: "材料" })).toBeVisible();

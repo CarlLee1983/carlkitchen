@@ -1,0 +1,10 @@
+sources:
+  # 全年生產、5 至 11 月盛產；111 至 113 年前五名產地與屏東集中鄉鎮；中部春夏作 5 至 10 月、南部秋作 9 月至翌年 4 月；高雄 2 號與麻芝茄的品種產期。
+  - title: 農業部食農教育資訊整合平臺：茄子產地與產期
+    url: https://fae.moa.gov.tw/map/food_item.php?id=111&type=AS03
+  # 果形、果皮、果底、手感的挑選要點與直彎說明；常溫 2 至 3 天、包覆冷藏 3 至 5 天、汆燙後冷藏 3 至 5 天（保存圖卡）。
+  - title: 農業部食農教育資訊整合平臺：茄子挑選保存
+    url: https://fae.moa.gov.tw/map/food_item.php?id=111&type=AS06
+  # 不必削皮、切開氧化變褐；油炸、水煮、爆炒三種減少變色的做法；涼拌與魚香茄子。
+  - title: 農業部食農教育資訊整合平臺：茄子料理加工
+    url: https://fae.moa.gov.tw/map/food_item.php?id=111&type=AS07
