@@ -78,7 +78,7 @@ describe("專題 Markdown 編排", () => {
     assert.equal(attrs.decoding, "async");
     assert.equal(attrs.fetchpriority, "auto");
     assert.equal(attrs.layout, "constrained");
-    assert.equal(attrs.sizes, "(min-width: 43rem) 40rem, calc(100vw - 3rem)");
+    assert.equal(attrs.sizes, "(min-width: 49rem) 46rem, calc(100vw - 3rem)");
     assert.equal(attrs["data-pagefind-ignore"], "all");
     assert.equal(attrs.priority, undefined);
     assert.doesNotMatch(html, /figcaption/);
