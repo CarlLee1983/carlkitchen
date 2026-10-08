@@ -13,6 +13,7 @@ import {
 } from "./io.ts";
 import type { Issue } from "./issue.ts";
 import { checkLeaks } from "./leaks.ts";
+import { checkSolarTerms } from "./solar-terms.ts";
 import { checkTopics } from "./topics.ts";
 import { isDraft, parseRecipe, type Recipe } from "./recipes.ts";
 import { checkSourceCoverage, parseSourceRecord } from "./sources.ts";
@@ -25,6 +26,7 @@ export interface ContentCheckOptions {
   ingredientSourcesDir?: string;
   topicsDir?: string;
   topicSourcesDir?: string;
+  solarTermsDir?: string;
   distDir: string;
   /** 開啟候選池門檻檢查（部署前）。 */
   launch: boolean;
@@ -164,6 +166,18 @@ export async function runContentChecks(
         })
       : { issues: [], draftIds: [], sourceUrls: [] };
   issues.push(...topicCheck.issues);
+
+  // 節氣：當令食材只能指向已發布的食材條目
+  if (options.solarTermsDir) {
+    issues.push(
+      ...checkSolarTerms({
+        solarTermsDir: options.solarTermsDir,
+        publicIngredientIds: (ingredients ?? [])
+          .filter(({ entry }) => entry && !entry.draft)
+          .map(({ id }) => id),
+      }),
+    );
+  }
 
   // 建置輸出洩漏
   if (existsSync(options.distDir)) {

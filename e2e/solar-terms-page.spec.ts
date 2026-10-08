@@ -139,3 +139,47 @@ test("站內搜尋索引收錄總覽頁，搜尋節氣名找得到", async ({ pa
     "/solar-terms/",
   );
 });
+
+// 當令食材：fixtures 中立春（番茄）與冬至（高麗菜、蒜頭）帶食材，其餘為空；
+// 草稿食材條目不在任何節氣裡。
+test("有當令食材的節氣顯示食材名稱並連到食材條目頁", async ({ page }) => {
+  await page.goto("/solar-terms/");
+  const dongzhi = page.locator("#dongzhi");
+  await expect(
+    dongzhi.getByRole("heading", { level: 4, name: "當令食材" }),
+  ).toBeVisible();
+  const links = dongzhi
+    .getByRole("list", { name: "當令食材" })
+    .getByRole("link");
+  await expect(links).toHaveText(["高麗菜", "蒜頭"]);
+  await expect(links.first()).toHaveAttribute("href", "/ingredients/cabbage/");
+  await expect(
+    page.locator("#lichun").getByRole("link", { name: "番茄" }),
+  ).toHaveAttribute("href", "/ingredients/tomato/");
+
+  await links.nth(1).click();
+  await expect(page).toHaveURL(/\/ingredients\/garlic\/$/);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("蒜頭");
+});
+
+test("沒有當令食材的節氣不出現清單標題或空清單", async ({ page }) => {
+  await page.goto("/solar-terms/");
+  const withIngredients = ["lichun", "dongzhi"];
+  for (const name of allTerms) {
+    const id = solarTermArt[name as keyof typeof solarTermArt];
+    if (withIngredients.includes(id)) continue;
+    const block = page.locator(`#${id}`);
+    await expect(block, `${name} 區塊`).toBeVisible();
+    await expect(block.getByRole("heading", { level: 4 })).toHaveCount(0);
+    await expect(block.getByRole("list")).toHaveCount(0);
+    await expect(block).not.toContainText("當令食材");
+  }
+  await expect(page.getByRole("heading", { name: "當令食材" })).toHaveCount(2);
+});
+
+test("頁面附產期僅供參考的提醒", async ({ page }) => {
+  await page.goto("/solar-terms/");
+  await expect(
+    page.getByRole("main").getByText("產期依地區與年度變動，僅供參考"),
+  ).toBeVisible();
+});

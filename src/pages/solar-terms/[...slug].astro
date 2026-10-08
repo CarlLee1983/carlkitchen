@@ -1,6 +1,6 @@
 ---
 import type { InferGetStaticPropsType } from "astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import Illustration from "../../components/Illustration.astro";
 import Base from "../../layouts/Base.astro";
 import { inlineJson } from "../../utils/inline-json";
@@ -11,14 +11,39 @@ import type { SolarTermName } from "../../utils/solar-terms";
 
 // 用 rest 參數才能在沒有節氣資料時一頁都不產生（空集合規則）；有資料時只輸出 /solar-terms/。
 export async function getStaticPaths() {
-  const sections = groupSolarTermsBySeason(await getCollection("solarTerms"));
+  const [terms, ingredients] = await Promise.all([
+    getCollection("solarTerms"),
+    getCollection("ingredients", ({ data }) => !data.draft),
+  ]);
+  const sections = groupSolarTermsBySeason(terms);
+  const ingredientsById = new Map(
+    ingredients.map((ingredient) => [ingredient.id, ingredient]),
+  );
+  // 找不到的識別值直接略過（同專題頁的相關食材）；指向不存在或未發布條目由 check:content 把關。
+  const ingredientsOfTerm = Object.fromEntries(
+    terms.map((term) => [
+      term.id,
+      term.data.seasonalIngredients.flatMap((id) => {
+        const entry = ingredientsById.get(id);
+        return entry ? [entry] : [];
+      }),
+    ]),
+  );
   return sections.length > 0
-    ? [{ params: { slug: undefined }, props: { sections } }]
+    ? [
+        {
+          params: { slug: undefined },
+          props: { sections, ingredientsOfTerm },
+        },
+      ]
     : [];
 }
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
-const { sections } = Astro.props;
+const { sections, ingredientsOfTerm } = Astro.props as {
+  sections: Props["sections"];
+  ingredientsOfTerm: Record<string, CollectionEntry<"ingredients">[]>;
+};
 const schedule = buildSolarTermSchedule();
 ---
 
@@ -31,13 +56,14 @@ const schedule = buildSolarTermSchedule();
       <p class="eyebrow">SOLAR TERMS</p>
       <h1>二十四節氣</h1>
       <p class="lead">從立春到大寒，依春夏秋冬看一年的時節變化。</p>
+      <p class="note">產期依地區與年度變動，僅供參考。</p>
     </header>
 
     {
       sections.map(({ season, terms }) => (
         <section aria-labelledby={`season-${season}`}>
           <h2 id={`season-${season}`}>{season}季</h2>
-          <ul>
+          <ul class="term-list">
             {terms.map((term) => (
               <li id={term.id}>
                 <Illustration
@@ -48,6 +74,23 @@ const schedule = buildSolarTermSchedule();
                 <div class="term-copy">
                   <h3>{term.data.name}</h3>
                   <p>{term.data.description}</p>
+                  {ingredientsOfTerm[term.id]!.length > 0 && (
+                    <>
+                      <h4 id={`${term.id}-ingredients`}>當令食材</h4>
+                      <ul
+                        class="ingredients"
+                        aria-labelledby={`${term.id}-ingredients`}
+                      >
+                        {ingredientsOfTerm[term.id]!.map((ingredient) => (
+                          <li>
+                            <a href={`/ingredients/${ingredient.id}/`}>
+                              {ingredient.data.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </div>
               </li>
             ))}
@@ -155,13 +198,13 @@ const schedule = buildSolarTermSchedule();
     margin: 0 0 1rem;
     font-size: 1.75rem;
   }
-  ul {
+  .term-list {
     margin: 0;
     padding: 0;
     border-top: 1px solid var(--line);
     list-style: none;
   }
-  li {
+  .term-list > li {
     display: grid;
     grid-template-columns: 12rem minmax(0, 1fr);
     align-items: start;
@@ -169,7 +212,7 @@ const schedule = buildSolarTermSchedule();
     border-bottom: 1px solid var(--line);
     padding: 1.25rem 0;
   }
-  li :global(figure.illustration) {
+  .term-list > li :global(figure.illustration) {
     margin: 0;
   }
   .term-copy {
@@ -180,6 +223,28 @@ const schedule = buildSolarTermSchedule();
     font-family: var(--font-serif);
     font-size: 1.5rem;
     line-height: 1.4;
+  }
+  .note {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  h4 {
+    margin: 1rem 0 0.25rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+  .ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .ingredients li {
+    display: block;
+    border: 0;
+    padding: 0;
   }
   .term-copy :global(p) {
     margin: 0;
@@ -195,7 +260,7 @@ const schedule = buildSolarTermSchedule();
     margin-left: 0.5em;
     font-size: 0.7rem;
   }
-  li[aria-current] {
+  .term-list > li[aria-current] {
     border-left: 4px solid var(--ink);
     padding-left: 1rem;
     background: color-mix(in srgb, var(--ink) 5%, transparent);
@@ -215,7 +280,7 @@ const schedule = buildSolarTermSchedule();
     .intro {
       margin-bottom: 2rem;
     }
-    li {
+    .term-list > li {
       grid-template-columns: 5.5rem minmax(0, 1fr);
       gap: 1rem;
     }

@@ -237,6 +237,25 @@ describe("runContentChecks", () => {
     assert.match(issues[0]!.file!, /recipes$/);
   });
 
+  it("節氣的當令食材指向不存在的食材條目時回報；空的節氣目錄通過", async () => {
+    const s = scenario();
+    const solarTermsDir = join(s.root, "solar-terms");
+    mkdirSync(solarTermsDir);
+    const options = {
+      ...s.options,
+      ingredientsDir: join(s.root, "ingredients"),
+      solarTermsDir,
+    };
+    assert.deepEqual(await runContentChecks(options), []);
+    s.write(
+      join(solarTermsDir, "lichun.yaml"),
+      "name: 立春\ndescription: 說明。\nseasonalIngredients: [no-such]\n",
+    );
+    const issues = await runContentChecks(options);
+    assert.equal(issues.length, 1);
+    assert.equal(issues[0]?.solarTerm, "lichun");
+  });
+
   it("門檻模式列出缺額，預設模式不檢查", async () => {
     const s = scenario();
     assert.deepEqual(await runContentChecks(s.options), []);
@@ -252,6 +271,8 @@ describe("check-content 指令", () => {
     const topicSourcesDir = join(s.root, "topic-sources");
     mkdirSync(topicsDir, { recursive: true });
     mkdirSync(topicSourcesDir, { recursive: true });
+    const solarTermsDir = join(s.root, "solar-terms");
+    mkdirSync(solarTermsDir, { recursive: true });
     return spawnSync(
       process.execPath,
       ["--experimental-strip-types", cli, "--dist", s.options.distDir, ...args],
@@ -265,6 +286,7 @@ describe("check-content 指令", () => {
           INGREDIENT_SOURCES_DIR: join(s.root, "ingredient-sources"),
           TOPICS_DIR: topicsDir,
           TOPIC_SOURCES_DIR: topicSourcesDir,
+          SOLAR_TERMS_DIR: solarTermsDir,
         },
       },
     );
