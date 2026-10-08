@@ -1,7 +1,7 @@
 title: 香菜
 summary: 香菜又稱芫荽，莖葉細嫩、氣味特殊，通常不煮過直接食用。這篇整理挑選、清洗、保存與用途。
 category: aromatic
-draft: true
+draft: false
 selection: 挑選葉片與莖部翠綠、沒有損傷或病蟲害，菜梗沒有斷裂的香菜。已經發黃或腐爛的香菜沒有香氣，不要食用。
 preparation: 香菜一般不先煮過，食用前要仔細清洗。切碎後，香菜的特殊氣味會較快散去。
 storage: 香菜容易枯黃腐爛。買回後整理好放進保鮮盒，倒入足量冷水蓋過根部，放冰箱冷藏，每 2 至 3 天換一次水，約可放 2 至 3 週；也可以分裝冷凍，要用時再解凍。
@@ -15,3 +15,6 @@ season:
 relatedRecipes:
   - corn-pork-rib-soup
   - radish-pork-rib-soup
+hero:
+  src: ./hero.webp
+  alt: 一小把以細繩綁起的香菜，葉片翠綠、邊緣鋸齒狀裂開，底端帶著淺色的根與細鬚根的水彩插畫
