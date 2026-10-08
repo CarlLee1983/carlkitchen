@@ -1,0 +1,42 @@
+title: 蘿蔔糕湯
+summary: 蘿蔔糕與菇類、青江菜放入高湯同煮，起鍋前滴入香油。
+servings: 2
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [湯品]
+ingredients:
+  - { name: 蘿蔔糕, amount: { value: 200, unit: g }, note: 切小塊 }
+  - { name: 泡發香菇絲, amount: { value: 30, unit: g } }
+  - { name: 豬里肌肉絲, amount: { value: 50, unit: g } }
+  - { name: 紅蘿蔔片, amount: { value: 20, unit: g } }
+  - { name: 杏鮑菇, amount: { value: 80, unit: g }, note: 切片 }
+  - { name: 青江菜, amount: { value: 4, unit: 顆 }, note: 切粗絲 }
+  - { name: 紅蔥頭末, amount: { value: 20, unit: g } }
+  - { name: 高湯, amount: { value: 600, unit: ml } }
+  - { name: 油, amount: { value: 1, unit: 大匙 }, group: 調味 }
+  - { name: 鹽, amount: { value: 0.5, unit: 茶匙 }, group: 調味 }
+  - { name: 白胡椒粉, group: 調味, note: 少許 }
+  - { name: 香油, group: 調味, note: 少許 }
+steps:
+  - text: 蘿蔔糕切小塊，青江菜切粗絲，杏鮑菇切片。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分別擺著蘿蔔糕小塊、青江菜粗絲和杏鮑菇片
+  - text: 熱鍋加入油，以小火炒香紅蔥頭末、泡發香菇絲和豬里肌肉絲。
+    image:
+      src: ./step-2.webp
+      alt: 素色湯鍋裡的紅蔥頭末、泡發香菇絲和豬里肌肉絲正在拌炒
+  - text: 倒入高湯，加入杏鮑菇和紅蘿蔔片，以鹽、白胡椒粉調味；最後放蘿蔔糕與青江菜，滾約 30 秒後關火，滴入香油。
+    image:
+      src: ./step-3.webp
+      alt: 素色湯鍋的高湯中有白色蘿蔔糕小塊、青江菜、菇類、紅蘿蔔片與豬里肌肉絲
+hero:
+  src: ./hero.webp
+  alt: 素色湯鍋裡有蘿蔔糕、青江菜、菇類、紅蘿蔔片和豬里肌肉絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 分開擺放的蘿蔔糕、香菇絲、豬里肌肉絲、紅蘿蔔片、杏鮑菇、四顆青江菜、紅蔥頭末、高湯和調味料

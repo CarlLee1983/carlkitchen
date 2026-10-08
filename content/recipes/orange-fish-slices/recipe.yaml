@@ -1,0 +1,62 @@
+title: 橙汁魚片
+summary: 酥炸鯛魚片回鍋裹上柳橙汁醬，搭配柳橙果肉與洋蔥。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [魚料理]
+ingredients:
+  - { name: 鯛魚片, amount: { value: 2, unit: 片 }, note: 切大片 }
+  - { name: 柳橙, amount: { value: 1, unit: 顆 }, note: 去皮取果肉 }
+  - { name: 洋蔥, amount: { value: 0.5, unit: 顆 }, note: 切絲 }
+  - { name: 紅辣椒, amount: { value: 1, unit: 根 }, note: 切片 }
+  - { name: 太白粉水, group: 調味, note: 適量，用於勾薄芡 }
+  - { name: 柳橙汁, amount: { value: 300, unit: ml }, group: 調味 }
+  - { name: 鹽, group: 調味, note: 少許，醃魚與醬汁分別使用 }
+  - { name: 黑胡椒粒, group: 調味, note: 少許 }
+  - { name: 砂糖, amount: { value: 1, unit: 小匙 }, group: 調味 }
+  - {
+      name: 香油,
+      amount: { value: 2, unit: 小匙 },
+      note: 醃魚與醬汁各 1 小匙,
+      group: 調味,
+    }
+  - { name: 米酒, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 白胡椒, group: 調味, note: 少許 }
+  - {
+      name: 沙拉油,
+      amount: { value: 5, unit: ml },
+      note: 爆香另需油炸用量，來源未列,
+      group: 調味,
+    }
+steps:
+  - text: 鯛魚片洗淨切大片，與米酒、1 小匙香油、少許鹽和白胡椒拌勻，醃約 10 分鐘。
+    image:
+      src: ./step-1.webp
+      alt: 白色瓷碗裡放著兩片浸有醃料的生鯛魚片，旁邊是木砧板與菜刀
+  - text: 柳橙去皮取果肉；洋蔥切絲，紅辣椒切片。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分別放著柳橙果肉、洋蔥絲和紅辣椒片，旁邊有一把菜刀
+  - text: 將鯛魚片放入 180°C 油鍋，炸到上色且表面酥脆，撈起瀝油。
+    image:
+      src: ./step-3.webp
+      alt: 深色炒鍋中兩片鯛魚片在油裡炸至金黃
+  - text: 炒鍋倒入 5 ml 沙拉油，以中火炒香洋蔥和紅辣椒。
+    image:
+      src: ./step-4.webp
+      alt: 深色炒鍋中翻炒著洋蔥絲與紅辣椒片
+  - text: 加入柳橙汁、少許鹽、黑胡椒粒、砂糖及剩餘香油煮開，再以太白粉水勾薄芡。
+  - text: 放回鯛魚片與柳橙果肉，稍微燴煮後起鍋。
+    image:
+      src: ./step-6.webp
+      alt: 深色炒鍋中放著裹有橙汁的魚片、柳橙果肉、洋蔥絲與紅辣椒片
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤裡盛著橙汁魚片，旁邊有柳橙果肉與洋蔥絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩片生鯛魚片、一顆柳橙、半顆洋蔥、一根紅辣椒，以及分裝的柳橙汁、太白粉水與各種調味料

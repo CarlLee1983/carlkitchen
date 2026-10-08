@@ -1,0 +1,50 @@
+title: 蚵仔煎
+summary: 蚵仔、小白菜與蛋煎在粉漿上，邊緣帶些酥脆、粉漿呈透明狀。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [台式小吃]
+ingredients:
+  - { name: 蚵仔, amount: { value: 100, unit: g } }
+  - { name: 地瓜粉, amount: { value: 100, unit: g } }
+  - { name: 太白粉, amount: { value: 50, unit: g } }
+  - { name: 水, amount: { value: 200, unit: ml } }
+  - { name: 青蔥, amount: { value: 1, unit: 支 }, note: 切蔥花 }
+  - { name: 雞蛋, amount: { value: 1, unit: 顆 }, note: 打成蛋液 }
+  - { name: 小白菜, amount: { value: 2, unit: 株 }, note: 切小段 }
+  - { name: 香菜, amount: { value: 2, unit: 株 } }
+  - { name: 鹽, amount: { value: 0.25, unit: 茶匙 }, group: 調味 }
+  - { name: 味精, amount: { value: 0.25, unit: 茶匙 }, group: 調味 }
+  - { name: 魚露, group: 調味, note: 數滴 }
+  - { name: 胡椒粉, group: 調味, note: 適量 }
+  - { name: 自製沾醬, group: 調味, note: 適量，來源另附做法 }
+  - { name: 沙拉油, group: 調味, note: 少許，煎製用 }
+steps:
+  - text: 蚵仔洗淨瀝乾；青蔥切蔥花，小白菜切小段，香菜洗淨摘好，雞蛋打散。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上有切段的小白菜、蔥花和香菜，旁邊兩個碗分別盛蚵仔與蛋液
+  - text: 地瓜粉與太白粉混合，加水攪勻，再拌入鹽、味精與蔥花，調成粉漿。
+    image:
+      src: ./step-2.webp
+      alt: 素色瓷碗裡的白色粉漿混有綠色蔥花
+  - text: 鍋熱到冒少許煙，加入少許沙拉油，油熱後倒入粉漿略煎，依序鋪上蚵仔、小白菜與蛋液。
+    image:
+      src: ./step-3.webp
+      alt: 平底鍋裡的粉漿上鋪有蚵仔、小白菜和還未全凝固的蛋液
+  - text: 蛋液煎到半熟時迅速翻面，繼續煎到粉漿呈透明狀、邊緣略酥脆後起鍋。
+    image:
+      src: ./step-4.webp
+      alt: 平底鍋裡的蚵仔煎粉漿呈透明狀，邊緣略呈金黃酥脆
+  - text: 撒上香菜與胡椒粉，滴幾滴魚露；自製沾醬依喜好添加。
+tip: 來源另附沾醬做法：水半碗、味噌 100 g、番茄醬 50 g、糖 2 茶匙、辣椒粉半茶匙，煮到濃稠。水的碗量未標示容量。
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤裡的蚵仔煎可見蚵仔、蛋和小白菜，表面淋有沾醬
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 分開擺放的蚵仔、地瓜粉、太白粉、水、雞蛋、青蔥、兩株小白菜、香菜及調味料

@@ -1,0 +1,45 @@
+title: 麻油松阪豬
+summary: 松阪豬肉與蒜苗同炒，再拌入汆燙過的玉米筍、紅蘿蔔和柳松菇。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [豬肉料理]
+ingredients:
+  - { name: 豬松阪肉, amount: { value: 250, unit: g }, note: 切片 }
+  - { name: 玉米筍, amount: { value: 40, unit: g }, note: 汆燙後切片 }
+  - { name: 柳松菇, amount: { value: 40, unit: g }, note: 去頭後汆燙 }
+  - { name: 紅蘿蔔, amount: { value: 30, unit: g }, note: 切片汆燙 }
+  - { name: 蒜片, amount: { value: 10, unit: g } }
+  - { name: 蒜苗, amount: { value: 50, unit: g }, note: 切段 }
+  - { name: 麻油, amount: { value: 30, unit: ml }, group: 調味 }
+  - { name: 蠔油, amount: { value: 1, unit: 小匙 }, group: 調味 }
+  - { name: 米酒, amount: { value: 30, unit: ml }, group: 調味 }
+  - { name: 鹽, amount: { value: 0.25, unit: 小匙 }, group: 調味 }
+  - { name: 糖, group: 調味, note: 少許 }
+steps:
+  - text: 豬松阪肉洗淨切片；玉米筍汆燙 1 分鐘後撈出切片，紅蘿蔔切片、柳松菇去頭，分別汆燙後撈出；蒜苗切段。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上的碗分別盛豬松阪肉片、蒜苗段、紅蘿蔔片、玉米筍片和柳松菇
+  - text: 鍋熱後倒入麻油，加入蒜片炒香。
+    image:
+      src: ./step-2.webp
+      alt: 素色鍋裡的麻油正將蒜片炒香
+  - text: 加入豬松阪肉，炒到變色後放入蒜苗，再加入蠔油和米酒拌炒。
+    image:
+      src: ./step-3.webp
+      alt: 素色鍋裡的豬松阪肉片已變色，與蒜苗段、蒜片一起拌炒
+  - text: 放入玉米筍、紅蘿蔔與柳松菇，加鹽和糖炒勻。
+    image:
+      src: ./step-4.webp
+      alt: 素色鍋裡的豬松阪肉片與玉米筍片、紅蘿蔔片、柳松菇和蒜苗炒勻
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤裡盛著麻油松阪豬，拌有玉米筍片、柳松菇、紅蘿蔔片與蒜苗
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 分開擺放的豬松阪肉、玉米筍、柳松菇、紅蘿蔔片、蒜片、蒜苗及調味料

@@ -1,0 +1,74 @@
+title: 麻辣牛肉豆腐煲
+summary: 牛肉片先炒到約八分熟，板豆腐與菇類用高湯燒煮後合盤。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [家常菜]
+ingredients:
+  - { name: 牛梅花肉片, amount: { value: 150, unit: g }, note: 燒烤用薄片 }
+  - { name: 板豆腐, amount: { value: 300, unit: g }, note: 切成骨牌形 }
+  - { name: 洋蔥, amount: { value: 80, unit: g }, note: 切絲 }
+  - { name: 香菇, amount: { value: 1, unit: 朵 }, note: 切片 }
+  - { name: 杏鮑菇, amount: { value: 50, unit: g }, note: 切片 }
+  - { name: 大蒜, amount: { value: 20, unit: g }, note: 切末 }
+  - { name: 青蔥, amount: { value: 2, unit: 支 }, note: 切蔥花 }
+  - { name: 香菜, amount: { value: 1, unit: 束 }, note: 切段 }
+  - { name: 高湯, amount: { value: 300, unit: ml } }
+  - {
+      name: 蠔油,
+      amount: { value: 20, unit: ml },
+      note: 醃肉用 15 ml、燒煮用 5 ml,
+      group: 調味,
+    }
+  - { name: 米酒, amount: { value: 5, unit: ml }, note: 醃肉用, group: 調味 }
+  - { name: 胡椒粉, note: 醃肉用少許, group: 調味 }
+  - {
+      name: 太白粉,
+      amount: { value: 5, unit: ml },
+      note: 醃肉用，約 1 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 香油,
+      amount: { value: 5, unit: ml },
+      note: 醃肉用約 1 茶匙；起鍋另用適量,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 麻辣醬,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃肉及炒香分用,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - { name: 太白粉水, note: 1 小碗，勾芡用, group: 調味 }
+  - { name: 食用油, note: 炒肉與配料用, group: 調味 }
+steps:
+  - text: 將牛梅花肉片與部分麻辣醬、15 ml 蠔油、米酒、胡椒粉、香油抓勻，再拌入太白粉。板豆腐切成骨牌形。
+    image:
+      src: ./step-1.webp
+      alt: 陶碗裡的生牛梅花肉片裹著醃料，砧板上放著切成骨牌形的板豆腐與菜刀
+  - text: 洋蔥切絲，香菇和杏鮑菇切片，大蒜切末，青蔥切蔥花，香菜切段。
+  - text: 熱鍋加入少許食用油，將牛梅花肉片快炒至約八分熟，盛起備用。
+    image:
+      src: ./step-3.webp
+      alt: 深色炒鍋中的薄牛肉片炒至表面上色，部分盛入白色陶碗
+  - text: 同鍋炒軟洋蔥、大蒜、香菇與杏鮑菇，再加入剩餘麻辣醬炒香。
+  - text: 高湯入鍋加熱到滾，板豆腐下鍋以小火續煮 10 分鐘。加入醬油、5 ml 蠔油和糖，以太白粉水勾芡。
+  - text: 把燒好的板豆腐盛入盤中，放上牛梅花肉片、青蔥與香菜，最後淋適量香油。
+hero:
+  src: ./hero.webp
+  alt: 白色陶盤裡有板豆腐塊、薄牛肉片、洋蔥和菇片，裹著紅褐色麻辣醬汁並撒上青蔥與香菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 生牛梅花肉片、板豆腐、洋蔥、香菇、杏鮑菇、大蒜、青蔥與香菜，旁邊分放各項調味料和高湯

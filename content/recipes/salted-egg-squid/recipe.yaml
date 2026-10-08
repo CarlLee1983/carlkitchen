@@ -1,0 +1,45 @@
+title: 金沙中卷
+summary: 中卷先以氣炸鍋炸熟，再拌入炒到起泡的鹹蛋黃與辛香料。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [海鮮料理]
+ingredients:
+  - { name: 中卷塊, amount: { value: 300, unit: g } }
+  - { name: 鹹蛋黃, amount: { value: 6, unit: 顆 }, note: 壓碎 }
+  - { name: 蔥花, amount: { value: 20, unit: g } }
+  - { name: 蒜末, amount: { value: 30, unit: g } }
+  - { name: 辣椒末, amount: { value: 10, unit: g } }
+  - { name: 蛋黃, amount: { value: 1.5, unit: 顆 }, group: 調味, note: 醃料 }
+  - { name: 吉士粉, amount: { value: 1, unit: 大匙 }, group: 調味, note: 醃料 }
+  - { name: 鹽, amount: { value: 0.25, unit: 茶匙 }, group: 調味, note: 醃料 }
+  - { name: 太白粉, amount: { value: 1, unit: 大匙 }, group: 調味 }
+  - { name: 沙拉油, amount: { value: 15, unit: ml }, group: 調味 }
+steps:
+  - text: 中卷塊與蛋黃、吉士粉、鹽拌勻，再加入太白粉拌勻。
+    image:
+      src: ./step-1.webp
+      alt: 素色瓷盤裡的生中卷塊沾著淡黃色的醃料與粉
+  - text: 將中卷塊放入氣炸鍋，以 200°C 氣炸 10 分鐘後取出。
+    image:
+      src: ./step-2.webp
+      alt: 打開的黑色氣炸鍋籃中放著表面微黃的中卷塊
+  - text: 將鹹蛋黃壓碎。
+    image:
+      src: ./step-3.webp
+      alt: 素色瓷碗裡盛著壓碎的金黃色鹹蛋黃碎末
+  - text: 鍋中倒入沙拉油，放鹹蛋黃慢炒到金黃起泡，再放蒜末和辣椒末炒香。
+  - text: 加入中卷塊和蔥花，快速拌炒到中卷塊均勻沾上鹹蛋黃。
+    image:
+      src: ./step-5.webp
+      alt: 深色炒鍋裡的中卷塊裹著金黃鹹蛋黃，混有蔥花與紅辣椒
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤裡的中卷塊裹著金黃色鹹蛋黃，拌有蔥花與紅辣椒
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 分開擺放的生中卷塊、六顆鹹蛋黃、蔥花、蒜末、辣椒末、蛋黃及調味料

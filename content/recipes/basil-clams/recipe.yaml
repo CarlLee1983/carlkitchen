@@ -1,0 +1,67 @@
+title: 塔香文蛤
+summary: 蛤蜊與薑、蒜、辣椒炒到開口，收乾一些湯汁後勾芡，再拌入九層塔。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 40
+ingredients:
+  - { name: 蛤蜊, amount: { value: 400, unit: g }, note: 泡水吐沙 }
+  - { name: 九層塔, amount: { value: 20, unit: g }, note: 去粗莖 }
+  - { name: 薑, amount: { value: 10, unit: g }, note: 切絲 }
+  - { name: 辣椒, amount: { value: 1, unit: 根 }, note: 切碎 }
+  - { name: 蒜仁, amount: { value: 10, unit: g }, note: 切碎 }
+  - {
+      name: 食用油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油膏,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 太白粉水,
+      amount: { value: 10, unit: ml },
+      note: 約 2 茶匙,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 蛤蜊泡水吐沙後洗淨。九層塔去粗莖，洗淨瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼瀝水籃裡盛著洗淨、殼仍閉合的蛤蜊，旁邊瓷碗放著九層塔葉
+  - text: 薑切絲，蒜仁和辣椒切碎。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分別放著薑絲、蒜碎和辣椒碎，下方有一把菜刀
+  - text: 鍋燒熱後倒入食用油，以小火炒香薑絲、蒜碎和辣椒碎。加入蛤蜊、醬油膏與米酒，炒勻。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋裡殼仍閉合的蛤蜊與薑絲、蒜碎和辣椒碎拌在醬汁中
+  - text: 煮滾後偶爾翻炒，待大部分蛤蜊開口，轉大火炒到湯汁略乾。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋中大部分蛤蜊已開口，與薑絲、蒜碎和辣椒碎裹著少量醬汁
+  - text: 倒入太白粉水拌勻勾芡，加入九層塔與香油，略炒幾下即可起鍋。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋中開口的蛤蜊拌著九層塔葉、薑絲和辣椒碎，表面沾著醬汁
+hero:
+  src: ./hero.webp
+  alt: 米白色淺瓷碗中盛著塔香文蛤，開口的蛤蜊間拌有九層塔葉、薑絲與辣椒碎
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一碗蛤蜊、一束九層塔、一小塊薑、一根辣椒與三瓣蒜仁，下方分裝食用油、醬油膏、米酒、太白粉水和香油
