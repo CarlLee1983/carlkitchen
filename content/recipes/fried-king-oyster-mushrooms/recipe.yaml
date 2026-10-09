@@ -1,0 +1,51 @@
+title: 酥炸杏鮑菇
+summary: 杏鮑菇切塊裹上粉漿，炸到表面金黃酥脆，再拌上椒鹽粉。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 20
+tags: [家常菜]
+ingredients:
+  - { name: 杏鮑菇, amount: { value: 300, unit: g }, note: 洗淨後切小塊 }
+  - {
+      name: 麵粉,
+      amount: { value: 0.5, unit: 杯 },
+      note: 炸粉用；來源未說明杯量,
+    }
+  - {
+      name: 玉米粉,
+      amount: { value: 0.5, unit: 杯 },
+      note: 炸粉用；來源未說明杯量,
+    }
+  - { name: 吉士粉, amount: { value: 15, unit: ml }, note: 約 1 大匙，炸粉用 }
+  - {
+      name: 泡打粉,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙，炸粉用,
+    }
+  - { name: 水, amount: { value: 140, unit: ml }, note: 調粉漿用 }
+  - {
+      name: 沙拉油,
+      amount: { value: 400, unit: ml },
+      note: 炸油，來源做法標示約 400 ml,
+    }
+  - {
+      name: 椒鹽粉,
+      amount: { value: 5, unit: ml },
+      group: 調味,
+      note: 約 1 茶匙,
+    }
+steps:
+  - text: 杏鮑菇洗淨，切成小塊。
+  - text: 將麵粉、玉米粉、吉士粉、泡打粉和水調成粉漿。
+  - text: 把沙拉油加熱至約 180°C。杏鮑菇沾滿粉漿，以中火炸約 3 分鐘，至外層金黃酥脆。
+  - text: 撈起杏鮑菇瀝油，撒上椒鹽粉拌勻。
+hero:
+  src: ./hero.webp
+  alt: 白色陶盤中盛著金黃酥脆的炸杏鮑菇塊，表面撒有椒鹽粉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 整朵杏鮑菇、麵粉、玉米粉、吉士粉、泡打粉、水、沙拉油和椒鹽粉分開擺放

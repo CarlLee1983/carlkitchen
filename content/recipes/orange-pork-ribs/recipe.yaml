@@ -1,0 +1,58 @@
+title: 橙汁排骨
+summary: 豬小排先醃後炸，再拌入柳橙汁醬，最後加入柳橙果肉。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 90
+tags: [家常菜]
+ingredients:
+  - { name: 豬小排, amount: { value: 500, unit: g } }
+  - { name: 柳橙, amount: { value: 1, unit: 顆 }, note: 取果肉與果皮 }
+  - {
+      name: 柳橙汁,
+      amount: { value: 230, unit: ml },
+      note: 醃料用 30 ml，醬汁用 200 ml,
+      group: 調味,
+    }
+  - {
+      name: 料理米酒,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙，醃料用,
+      group: 調味,
+    }
+  - {
+      name: 砂糖,
+      amount: { value: 6.25, unit: ml },
+      note: 約 1 又 1/4 小匙，醃料用 1/4 小匙、醬汁用 1 小匙,
+      group: 調味,
+    }
+  - { name: 鹽, group: 調味, note: 少許，醃料與醬汁各用一次 }
+  - { name: 柳橙皮, group: 調味, note: 少許，醃料與醬汁各用一次 }
+  - { name: 太白粉水, group: 調味, note: 少許，勾芡用 }
+  - { name: 食用油, group: 調味, note: 炸油，來源未列用量 }
+steps:
+  - text: 柳橙削皮取出果肉，部分果皮切成細絲。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分放柳橙果肉與細柳橙皮，旁邊有菜刀
+  - text: 豬小排洗淨瀝乾，加入 30 ml 柳橙汁、5 ml 料理米酒、少許鹽、1.25 ml 砂糖和少許柳橙皮，醃約 1 小時。
+    image:
+      src: ./step-2.webp
+      alt: 白色瓷碗中的豬小排浸在柳橙汁醃料裡，表面有細柳橙皮
+  - text: 將食用油加熱至約 160°C，放入豬小排炸至金黃色，撈起備用。
+    image:
+      src: ./step-3.webp
+      alt: 深色雙耳炒鍋中的豬小排炸至金黃色
+  - text: 將 200 ml 柳橙汁、少許鹽和 5 ml 砂糖煮滾，放入豬小排拌勻；以太白粉水勾芡，再加入柳橙果肉和柳橙皮拌勻。
+    image:
+      src: ./step-4.webp
+      alt: 深色雙耳炒鍋中的炸豬小排裹著橙色醬汁，拌有柳橙果肉與細柳橙皮
+hero:
+  src: ./hero.webp
+  alt: 白色素面陶盤中盛著裹橙汁醬的豬小排與柳橙果肉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 500 g 豬小排、一顆柳橙、230 ml 柳橙汁、5 ml 料理米酒、6.25 ml 砂糖、鹽、柳橙皮、太白粉水和炸油分開擺放

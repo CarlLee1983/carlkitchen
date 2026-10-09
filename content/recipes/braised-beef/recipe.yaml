@@ -1,0 +1,78 @@
+title: 紅燒牛腩
+summary: 牛腩與白蘿蔔、紅蘿蔔先拌炒，再用醬油與豆瓣醬燉煮。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 75
+tags: [家常菜]
+ingredients:
+  - { name: 牛腩, amount: { value: 600, unit: g }, note: 牛腩條，洗淨後切段 }
+  - { name: 白蘿蔔, amount: { value: 100, unit: g }, note: 切塊 }
+  - { name: 紅蘿蔔, amount: { value: 100, unit: g }, note: 切塊 }
+  - { name: 洋蔥, amount: { value: 100, unit: g } }
+  - { name: 薑片, amount: { value: 50, unit: g } }
+  - { name: 青蔥, amount: { value: 50, unit: g }, note: 切段 }
+  - { name: 蒜頭, amount: { value: 50, unit: g } }
+  - { name: 辣椒, amount: { value: 2, unit: 條 } }
+  - { name: 八角, amount: { value: 5, unit: 粒 } }
+  - { name: 水, amount: { value: 1000, unit: ml } }
+  - {
+      name: 番茄醬,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 甜麵醬,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 辣豆瓣醬,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 砂糖,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 料理米酒,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 食用油, group: 調味, note: 少許，爆香用 }
+steps:
+  - text: 牛腩洗淨切段，放入滾水汆燙去血水，撈起瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼瀝水籃中的牛腩段已汆燙並瀝去水分
+  - text: 加少許食用油熱鍋，放入薑片、青蔥、蒜頭、辣椒與八角炒香。加入牛腩、番茄醬、甜麵醬與辣豆瓣醬，拌炒至有香氣。
+    image:
+      src: ./step-2.webp
+      alt: 深色雙耳鍋中的牛腩拌著薑片、青蔥、蒜頭、辣椒、八角與醬料
+  - text: 加入醬油、砂糖、料理米酒、白蘿蔔、紅蘿蔔、洋蔥與水，拌勻後開大火煮滾。
+  - text: 蓋上鍋蓋，轉小火續燉約 40 分鐘。
+    image:
+      src: ./step-4.webp
+      alt: 深色雙耳鍋中的牛腩與白蘿蔔、紅蘿蔔浸在棕紅色湯汁裡
+hero:
+  src: ./hero.webp
+  alt: 素色陶碗中盛著紅燒牛腩、白蘿蔔、紅蘿蔔與棕紅色醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 600 g 牛腩、白蘿蔔塊、紅蘿蔔塊、洋蔥、薑片、青蔥段、蒜頭、兩條辣椒、五粒八角、水與分裝的調味料

@@ -1,0 +1,45 @@
+title: 鮮蝦粉絲煲
+summary: 白蝦先炸到外層酥脆，再與冬粉、黑胡椒醬汁放進砂鍋略煮。
+servings: 4
+category: 主食
+draft: true
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [中式料理]
+ingredients:
+  - { name: 白蝦, amount: { value: 15, unit: 隻 }, note: 去泥腸、開背 }
+  - { name: 冬粉, amount: { value: 2, unit: 把 }, note: 泡軟後剪短 }
+  - {
+      name: 蒜苗絲,
+      amount: { value: 30, unit: ml },
+      note: 來源列 2 大匙，但未交代加入時機,
+    }
+  - { name: 高湯, amount: { value: 200, unit: ml } }
+  - {
+      name: 黑胡椒肉片醬,
+      amount: { value: 45, unit: ml },
+      group: 調味,
+      note: 約 3 大匙,
+    }
+  - { name: 食用油, group: 調味, note: 炸白蝦用；來源未列用量 }
+steps:
+  - text: 白蝦去泥腸並開背。冬粉泡水至軟，剪短備用。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上排著去泥腸並開背的白蝦，旁邊有一碗泡軟的冬粉和菜刀
+  - text: 將食用油燒熱，放入白蝦炸到外層酥脆，撈起瀝油。
+    image:
+      src: ./step-2.webp
+      alt: 炸至金黃的白蝦放在金屬濾網中瀝油，旁邊是裝有炸油的炒鍋
+  - text: 在砂鍋中拌勻高湯與黑胡椒肉片醬，煮約 2 分鐘。加入冬粉和白蝦，蓋鍋略煮至冬粉入味。
+    image:
+      src: ./step-3.webp
+      alt: 深褐色砂鍋中有冬粉和白蝦，鍋蓋半掀著露出鍋內食物
+hero:
+  src: ./hero.webp
+  alt: 深褐色砂鍋盛著帶黑胡椒醬汁的冬粉與白蝦
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 15 隻白蝦、兩把冬粉、蒜苗絲、高湯、黑胡椒肉片醬和食用油分開擺放，旁邊有一只空砂鍋

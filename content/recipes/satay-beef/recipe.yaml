@@ -1,0 +1,110 @@
+title: 沙茶牛肉
+summary: 牛肉片先醃後快炒，再與油菜拌入沙茶醬汁。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 35
+tags: [家常菜]
+ingredients:
+  - {
+      name: 牛里肌肉,
+      amount: { value: 200, unit: g },
+      note: 切片；部位為依菜式補充,
+    }
+  - { name: 油菜, amount: { value: 200, unit: g }, note: 切小段，洗淨瀝乾 }
+  - { name: 蒜頭, amount: { value: 3, unit: 瓣 }, note: 切碎 }
+  - { name: 辣椒, amount: { value: 1, unit: 條 }, note: 切碎 }
+  - {
+      name: 沙茶醬,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙，醃料用 15 ml、炒醬用 30 ml,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃料用,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 10, unit: ml },
+      note: 約 2 小匙，醃料與炒醬各用 5 ml,
+      group: 調味,
+    }
+  - {
+      name: 雞蛋白,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃料用,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 0.83, unit: ml },
+      note: 約 1/6 小匙，炒醬用,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 小匙，炒醬用,
+      group: 調味,
+    }
+  - {
+      name: 料理米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，炒醬用,
+      group: 調味,
+    }
+  - {
+      name: 水,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，炒醬用,
+      group: 調味,
+    }
+  - {
+      name: 太白粉水,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙，炒醬用,
+      group: 調味,
+    }
+  - {
+      name: 香油,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙，起鍋前加入,
+      group: 調味,
+    }
+  - {
+      name: 食用油,
+      amount: { value: 45, unit: ml },
+      note: 牛肉快炒用 30 ml，爆香用 15 ml,
+      group: 調味,
+    }
+steps:
+  - text: 牛里肌肉切片，加入 15 ml 沙茶醬、太白粉、5 ml 醬油和雞蛋白抓勻，醃約 20 分鐘。
+    image:
+      src: ./step-1.webp
+      alt: 瓷碗中的牛里肌肉片裹著沙茶醬與醃料
+  - text: 油菜切小段、洗淨瀝乾；蒜頭與辣椒切碎。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分放切段的油菜、蒜末與辣椒末
+  - text: 熱鍋加入 30 ml 食用油，放入牛里肌肉片，大火快炒至表面轉白，盛出。
+    image:
+      src: ./step-3.webp
+      alt: 深色雙耳炒鍋中的牛里肌肉片表面已轉白
+  - text: 洗淨鍋子，加入 15 ml 食用油熱鍋，小火爆香蒜頭與辣椒。
+  - text: 加入 30 ml 沙茶醬、5 ml 醬油、鹽、細砂糖、料理米酒、水和太白粉水，炒勻。
+  - text: 牛里肌肉片回鍋，大火快炒 5 秒；加入油菜炒約半分鐘至熟，淋上香油。
+    image:
+      src: ./step-6.webp
+      alt: 深色雙耳炒鍋中的牛里肌肉片拌著油菜與沙茶醬汁
+hero:
+  src: ./hero.webp
+  alt: 素色陶盤中盛著拌有油菜與沙茶醬汁的牛肉片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 200 g 牛里肌肉、200 g 油菜、三瓣蒜頭、一條辣椒，以及分裝的沙茶醬、太白粉、醬油、雞蛋白、鹽、細砂糖、料理米酒、水、太白粉水、香油與食用油

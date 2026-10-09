@@ -1,0 +1,29 @@
+title: 法式洋蔥湯
+summary: 洋蔥慢炒至棕色後與牛高湯熬煮，盛入烤盅，再烤融麵包上的起司。
+servings: 4
+category: 湯
+draft: true
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 75
+tags: [西式料理]
+ingredients:
+  - { name: 洋蔥, amount: { value: 1200, unit: g }, note: 洗淨切絲 }
+  - { name: 奶油, amount: { value: 80, unit: g } }
+  - { name: 大蒜末, amount: { value: 15, unit: ml }, note: 約 1 大匙 }
+  - { name: 白葡萄酒, amount: { value: 120, unit: ml } }
+  - { name: 牛高湯, amount: { value: 800, unit: ml } }
+  - { name: 月桂葉, amount: { value: 1, unit: 片 }, note: 盛入烤盅前取出 }
+  - { name: 起司, amount: { value: 4, unit: 片 }, note: 來源稱「起士」 }
+  - { name: 法國麵包, amount: { value: 4, unit: 片 } }
+  - { name: 鹽, group: 調味, note: 適量 }
+  - { name: 胡椒粉, group: 調味, note: 適量 }
+steps:
+  - text: 洋蔥洗淨，全部切成絲。
+  - text: 以小火融化奶油，放入洋蔥和大蒜末慢慢炒軟，約 30 分鐘，至洋蔥呈棕色。
+  - text: 將炒好的洋蔥移入湯鍋，加入白葡萄酒、牛高湯和月桂葉。大火煮滾後轉小火再煮約 30 分鐘，以鹽和胡椒粉調味，取出月桂葉。
+  - text: 將湯分盛到烤盅，每盅放一片法國麵包和一片起司。送入烤箱以中溫烤至起司融化，食用時用湯匙將麵包與起司壓入湯中。
+hero:
+  src: ./hero.webp
+  alt: 米白色雙耳湯鍋盛著棕色洋蔥湯，湯面有四片覆著融化起司的法國麵包
