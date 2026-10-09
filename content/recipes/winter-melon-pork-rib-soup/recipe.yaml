@@ -14,7 +14,7 @@ ingredients:
       amount: { value: 1500, unit: g },
       note: 烹調前去皮、去籽、切塊,
     }
-  - { name: 豬小排, amount: { value: 600, unit: g } }
+  - { name: 排骨, amount: { value: 600, unit: g }, note: 建議用豬小排 }
   - { name: 薑片, amount: { value: 25, unit: g } }
   - { name: 米酒, amount: { value: 50, unit: ml } }
   - {
@@ -28,11 +28,11 @@ steps:
     image:
       src: ./step-1.webp
       alt: 木砧板上放著去皮去籽後的冬瓜塊，旁邊有削下的瓜皮、瓜籽與菜刀
-  - text: 煮滾一鍋水，放入豬小排，水再次煮滾後續汆燙約 30 秒，撈起用清水洗淨。
+  - text: 煮滾一鍋水，放入排骨，水再次煮滾後續汆燙約 30 秒，撈起用清水洗淨。
     image:
       src: ./step-2.webp
       alt: 不鏽鋼瀝水籃裡放著沖洗後的汆燙排骨塊，骨頭與灰白色肉面清楚可見
-  - text: 把冬瓜、豬小排、薑片、米酒和水放進電鍋內鍋；外鍋加 2 杯水，按下開關蒸煮至跳起。
+  - text: 把冬瓜、排骨、薑片、米酒和水放進電鍋內鍋；外鍋加 2 杯水，按下開關蒸煮至跳起。
     image:
       src: ./step-3.webp
       alt: 電鍋裡的雙耳內鍋裝著冬瓜塊、排骨、薑片與清澈湯水
