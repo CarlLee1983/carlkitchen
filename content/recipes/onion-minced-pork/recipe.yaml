@@ -9,7 +9,11 @@ protein: true
 timeMinutes: 10
 tags: [家常菜]
 ingredients:
-  - { name: 豬絞肉, amount: { value: 300, unit: g }, note: 選用低脂絞肉，建議用後腿絞肉 }
+  - {
+      name: 豬絞肉,
+      amount: { value: 300, unit: g },
+      note: 選用低脂絞肉，建議用後腿絞肉,
+    }
   - { name: 洋蔥, amount: { value: 170, unit: g }, note: 約半顆，切丁 }
   - { name: 食用油, note: 少許, group: 調味 }
   - {

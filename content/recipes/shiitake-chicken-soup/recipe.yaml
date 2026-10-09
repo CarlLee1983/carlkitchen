@@ -9,7 +9,11 @@ protein: false
 timeMinutes: 45
 tags: [家常菜]
 ingredients:
-  - { name: 雞肉, amount: { value: 600, unit: g }, note: 剁塊，建議用帶骨雞腿肉 }
+  - {
+      name: 雞肉,
+      amount: { value: 600, unit: g },
+      note: 剁塊，建議用帶骨雞腿肉,
+    }
   - { name: 乾香菇, amount: { value: 8, unit: 朵 }, note: 洗過即可，不泡水 }
   - { name: 薑片, amount: { value: 15, unit: g } }
   - { name: 米酒, amount: { value: 25, unit: g }, group: 調味 }
