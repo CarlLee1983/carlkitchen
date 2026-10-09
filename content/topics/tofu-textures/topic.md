@@ -1,7 +1,7 @@
 ---
 title: 豆腐的軟硬：嫩豆腐、板豆腐與金黃外皮怎麼選
 summary: 從豆腐的製程與成分看口感差異，再比較嫩豆腐燒醬汁、板豆腐煎上色、蛋豆腐油炸與油豆腐入菜的做法。
-draft: true
+draft: false
 editorialLayout: true
 publishedAt: 2026-10-09
 hero:
