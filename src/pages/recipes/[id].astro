@@ -151,9 +151,25 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
       <div class="recipe-actions">
         {
           hasPrintSheet && (
-            <button type="button" class="print-recipe">
-              列印
-            </button>
+            <>
+              <button type="button" class="print-recipe">
+                列印
+              </button>
+              <a href={`/prints/${id}.webp`} target="_blank" rel="noopener">
+                查看菜單圖片
+              </a>
+              <a
+                class="download-recipe-sheet"
+                href={`/prints/${id}.webp`}
+                download={`${id}.webp`}
+              >
+                下載圖片
+              </a>
+              <button type="button" class="share-recipe-sheet" hidden>
+                分享圖片
+              </button>
+              <span class="recipe-sheet-status" role="status" />
+            </>
           )
         }
         {
@@ -290,8 +306,10 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
 
 <script>
   import { initRecipeFavorite } from "../../scripts/favorites";
+  import { initRecipeSheet } from "../../scripts/recipe-sheet";
 
   initRecipeFavorite();
+  initRecipeSheet();
   document.querySelector(".print-recipe")?.addEventListener("click", () => {
     window.print();
   });
@@ -332,7 +350,9 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
     margin-top: 1rem;
   }
   .favorite-actions button,
-  .print-recipe {
+  .print-recipe,
+  .share-recipe-sheet,
+  .recipe-actions > a {
     min-width: 44px;
     min-height: 44px;
     padding: 0.35rem 1rem;
@@ -341,6 +361,27 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
     color: inherit;
     font: inherit;
     cursor: pointer;
+  }
+  .recipe-actions > a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .recipe-sheet-status {
+    flex-basis: 100%;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .recipe-sheet-status:empty {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .share-recipe-sheet:disabled {
+    opacity: 0.6;
+    cursor: wait;
   }
   .favorite-actions span {
     margin-left: 0.75rem;
@@ -681,8 +722,13 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
     }
     .print-sheet {
       display: block !important;
-      width: 210mm;
-      height: 297mm;
+      /* 不把圖片盒撐到整張 A4：手機列印的尺寸進位可能多排一張空白頁。
+         隨可列印寬度縮放，並在頁高邊界保留 1mm；不裁切圖片。 */
+      width: 100%;
+      max-width: 210mm;
+      height: auto;
+      max-height: min(296mm, calc(100vh - 1mm));
+      break-inside: avoid;
       margin: 0;
       object-fit: contain;
       object-position: center;
