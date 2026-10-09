@@ -1,36 +1,49 @@
 title: 麻油炒山蘇
-summary: 薑絲以胡麻油煸香，加入山蘇、枸杞、米酒和鹽快炒。
-servings: 3
+summary: 黑麻油和生薑先以小火炒香，再加入山蘇、豆豉快炒，最後拌入米酒、鹽和味精。
+servings: 6
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: true
 protein: false
 timeMinutes: 15
 tags: [家常菜, 蔬食]
 ingredients:
-  - { name: 山蘇, amount: { value: 300, unit: g }, note: 去硬梗洗淨瀝乾 }
-  - { name: 枸杞, amount: { value: 3, unit: g } }
-  - { name: 老薑, amount: { value: 20, unit: g }, note: 切絲 }
-  - {
-      name: 胡麻油,
-      amount: { value: 30, unit: ml },
-      note: 約 2 大匙,
-      group: 調味,
-    }
-  - {
-      name: 米酒,
-      amount: { value: 30, unit: ml },
-      note: 約 2 大匙,
-      group: 調味,
-    }
+  - { name: 山蘇, amount: { value: 500, unit: g } }
+  - { name: 生薑, amount: { value: 30, unit: g } }
+  - { name: 豆豉, amount: { value: 10, unit: g } }
+  - { name: 黑麻油, amount: { value: 30, unit: ml }, note: 2 大匙, group: 調味 }
+  - { name: 米酒, amount: { value: 15, unit: ml }, note: 1 大匙, group: 調味 }
   - {
       name: 鹽,
-      amount: { value: 2.5, unit: ml },
-      note: 約 1/2 茶匙,
+      amount: { value: 5, unit: ml },
+      note: 1 茶匙，以量匙量取,
+      group: 調味,
+    }
+  - {
+      name: 味精,
+      amount: { value: 5, unit: ml },
+      note: 1 茶匙，以量匙量取,
       group: 調味,
     }
 steps:
-  - text: 山蘇去除硬梗，洗淨瀝乾；老薑切絲，枸杞洗淨。
-  - text: 鍋中加入胡麻油，以小火煸香薑絲。
-  - text: 加入山蘇、枸杞、米酒和鹽，翻炒約 30 秒至山蘇變軟。
+  - text: 洗淨山蘇後切段，生薑削皮切絲。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分放一堆山蘇段和一小堆淡黃色生薑絲，右側擺著菜刀
+  - text: 把黑麻油、生薑放入炒鍋，以小火炒香。
+    image:
+      src: ./step-2.webp
+      alt: 灰色炒鍋中一小灘琥珀色黑麻油，裡面散著淡黃色生薑絲
+  - text: 轉大火，放入山蘇與豆豉，快炒到山蘇熟透。
+    image:
+      src: ./step-3.webp
+      alt: 灰色炒鍋裡的山蘇段拌著生薑絲和黑色豆豉，葉面帶著油光
+  - text: 倒入米酒，加入鹽、味精翻勻，起鍋盛盤。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤裡盛著山蘇段，綠葉間有淡黃色生薑絲和黑色豆豉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一束山蘇、一塊生薑，豆豉、鹽和味精各盛一碟，黑麻油與米酒各裝在一個玻璃容器中
+tip: 總時間含備料，推估 15 分鐘。
