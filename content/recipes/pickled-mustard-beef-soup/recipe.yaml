@@ -9,7 +9,11 @@ protein: false
 timeMinutes: 160
 tags: [家常菜]
 ingredients:
-  - { name: 牛肉, amount: { value: 300, unit: g }, note: 切成約 6 × 3 公分塊，建議用牛腱 }
+  - {
+      name: 牛肉,
+      amount: { value: 300, unit: g },
+      note: 切成約 6 × 3 公分塊，建議用牛腱,
+    }
   - { name: 酸菜心, amount: { value: 150, unit: g }, note: 沖洗後切片 }
   - { name: 老薑, amount: { value: 50, unit: g }, note: 去皮切片 }
   - { name: 青蔥, amount: { value: 2, unit: 根 }, note: 切段 }

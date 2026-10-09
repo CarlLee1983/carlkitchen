@@ -9,7 +9,11 @@ protein: true
 timeMinutes: 30
 tags: [家常菜]
 ingredients:
-  - { name: 牛肉片, amount: { value: 150, unit: g }, note: 燒烤用薄片，建議用牛梅花 }
+  - {
+      name: 牛肉片,
+      amount: { value: 150, unit: g },
+      note: 燒烤用薄片，建議用牛梅花,
+    }
   - { name: 板豆腐, amount: { value: 300, unit: g }, note: 切成骨牌形 }
   - { name: 洋蔥, amount: { value: 80, unit: g }, note: 切絲 }
   - { name: 香菇, amount: { value: 1, unit: 朵 }, note: 切片 }
