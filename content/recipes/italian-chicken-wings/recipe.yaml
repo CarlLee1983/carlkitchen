@@ -1,0 +1,32 @@
+title: 火烤義大利雞翅
+summary: 雞翅用義大利式香料、檸檬胡椒鹽和醬油醃過，先以小火烤熟，再用大火烤上色。
+servings: 1
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 40
+tags: [雞肉, 烤物]
+ingredients:
+  - { name: 雞翅, amount: { value: 2, unit: 支 } }
+  - { name: 橄欖油, amount: { value: 20, unit: ml }, group: 調味 }
+  - { name: 義大利式香料, note: 來源標示適量, group: 調味 }
+  - { name: 檸檬胡椒鹽, note: 來源標示適量, group: 調味 }
+  - { name: 醬油, note: 來源標示少許, group: 調味 }
+steps:
+  - text: 雞翅洗淨，用竹籤戳出小洞。兩面撒上義大利式香料與檸檬胡椒鹽，靜置約 15 分鐘；抹上醬油稍加按摩，再靜置約 5 分鐘。
+    image:
+      src: ./step-1.webp
+      alt: 素色碗裡兩支生雞翅覆著香料與醬油，碗旁放著一支竹籤
+  - text: 淋上橄欖油，放上烤網，以小火烤兩面約 7 分鐘，直到表面焦香、內部熟透。移到大火處再烤約 2 分鐘上色。
+    image:
+      src: ./step-2.webp
+      alt: 圓形烤網上兩支雞翅已烤出焦色，表面可見細碎香料
+tip: 使用烤箱時，可先預熱，再以 200°C 烤約 15 分鐘。
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤中放著兩支表面烤上色的雞翅，帶有細碎香料
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩支生雞翅、一瓶橄欖油，以及分別盛著義大利式香料、檸檬胡椒鹽和醬油的小碟
