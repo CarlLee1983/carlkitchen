@@ -1,0 +1,42 @@
+title: 金銀蛋莧菜
+summary: 莧菜與皮蛋、熟鹹蛋一起拌炒，最後拌回炒過的蒜仁。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 20
+tags: [蔬菜料理]
+ingredients:
+  - { name: 莧菜, amount: { value: 300, unit: g }, note: 去粗梗、切小段 }
+  - { name: 皮蛋, amount: { value: 1, unit: 顆 }, note: 去殼切粗丁 }
+  - { name: 熟鹹蛋, amount: { value: 1, unit: 顆 }, note: 去殼切粗丁 }
+  - { name: 蒜仁, amount: { value: 10, unit: g } }
+  - { name: 鹽, group: 調味, note: 少許 }
+  - { name: 味醂, amount: { value: 1, unit: 小匙 }, group: 調味 }
+  - { name: 米酒, amount: { value: 1, unit: 小匙 }, group: 調味 }
+  - { name: 油, group: 調味, note: 少許，炒製用 }
+steps:
+  - text: 莧菜去粗梗、洗淨瀝乾後切小段；皮蛋和熟鹹蛋去殼，分別切成粗丁。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上有切段的莧菜，旁邊兩碗分別盛皮蛋丁和熟鹹蛋丁
+  - text: 熱鍋倒入少許油，放入蒜仁炒到上色，先取出備用。
+    image:
+      src: ./step-2.webp
+      alt: 素色鍋中的蒜仁已炒到表面上色
+  - text: 放入皮蛋丁與熟鹹蛋丁炒香，加入莧菜炒勻，再以鹽、味醂和米酒調味。
+    image:
+      src: ./step-3.webp
+      alt: 素色鍋裡的皮蛋丁、熟鹹蛋丁與莧菜正在拌炒
+  - text: 把蒜仁放回鍋中炒勻。
+    image:
+      src: ./step-4.webp
+      alt: 素色鍋裡的莧菜、皮蛋丁和熟鹹蛋丁拌著上色的蒜仁
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤裡的莧菜拌著皮蛋丁、熟鹹蛋丁和上色的蒜仁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 分開擺放的莧菜、皮蛋、熟鹹蛋、蒜仁、鹽、味醂、米酒和油

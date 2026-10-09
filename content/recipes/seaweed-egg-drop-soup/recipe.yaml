@@ -1,0 +1,42 @@
+title: 紫菜蛋花湯
+summary: 蛋液倒入微滾的高湯成蛋花，再放入紫菜和蔥花。
+servings: 2
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [蛋料理]
+ingredients:
+  - { name: 雞蛋, amount: { value: 2, unit: 顆 }, note: 打散 }
+  - { name: 紫菜, amount: { value: 1, unit: 張 } }
+  - { name: 青蔥, amount: { value: 2, unit: 支 }, note: 切蔥花 }
+  - { name: 高湯, amount: { value: 500, unit: ml } }
+  - { name: 鹽, amount: { value: 0.25, unit: 茶匙 }, group: 調味 }
+  - { name: 雞粉, amount: { value: 1, unit: 茶匙 }, group: 調味 }
+  - { name: 胡椒粉, group: 調味, note: 少許 }
+  - { name: 香油, group: 調味, note: 少許 }
+steps:
+  - text: 雞蛋打散；青蔥切成蔥花。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上有青蔥花，旁邊素色碗盛著打散的蛋液
+  - text: 高湯煮滾後加入鹽和雞粉，轉小火維持微滾。
+    image:
+      src: ./step-2.webp
+      alt: 素色湯鍋裡的高湯正維持微滾
+  - text: 從高處緩緩倒入蛋液，等 3 秒再用鍋鏟推散熟蛋，形成蛋花。
+    image:
+      src: ./step-3.webp
+      alt: 素色湯鍋的高湯中已形成黃色蛋花
+  - text: 放入紫菜與蔥花，撒上胡椒粉並滴入少許香油。
+    image:
+      src: ./step-4.webp
+      alt: 素色湯鍋裡的蛋花湯加入了紫菜和蔥花
+hero:
+  src: ./hero.webp
+  alt: 素色湯鍋裡的清湯有蛋花、紫菜與蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 分開擺放的兩顆雞蛋、一張紫菜、兩支青蔥、高湯和調味料

@@ -1,0 +1,51 @@
+title: 日式炸豬排
+summary: 豬小里肌排拍鬆、醃過後依序裹麵粉、蛋液與麵包屑，以小火炸到金黃。
+servings: 6
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [家常菜]
+ingredients:
+  - {
+      name: 豬小里肌肉排,
+      amount: { value: 450, unit: g },
+      note: 約 6 片，每片約 75 g、厚約 1 公分,
+    }
+  - { name: 麵包屑, amount: { value: 100, unit: g } }
+  - { name: 麵粉, amount: { value: 30, unit: g } }
+  - { name: 雞蛋, amount: { value: 2, unit: 顆 }, note: 打成蛋液 }
+  - { name: 醬油, amount: { value: 30, unit: g }, group: 調味 }
+  - { name: 糖, amount: { value: 20, unit: g }, group: 調味 }
+  - { name: 味精, amount: { value: 2, unit: g }, group: 調味 }
+  - { name: 胡椒粉, amount: { value: 2, unit: g }, group: 調味 }
+  - { name: 番茄醬, amount: { value: 15, unit: g }, group: 調味 }
+  - { name: 米酒, amount: { value: 10, unit: g }, group: 調味 }
+  - { name: 香油, amount: { value: 10, unit: g }, group: 調味 }
+  - { name: 水, amount: { value: 50, unit: g }, group: 調味 }
+  - { name: 食用油, note: 炸油，來源未列用量, group: 調味 }
+steps:
+  - text: 在豬小里肌肉排兩面縱橫劃刀痕，或將肉排拍鬆。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上六片生豬小里肌肉排，表面劃有交錯刀痕，旁邊放著菜刀
+  - text: 混合醬油、糖、味精、胡椒粉、番茄醬、米酒、香油與水，放入豬小里肌肉排拌勻，使醃汁被肉吸收。
+    image:
+      src: ./step-2.webp
+      alt: 白色瓷碗裡有六片劃刀痕的生豬小里肌肉排，浸在褐色醃汁中
+  - text: 將豬小里肌肉排依序沾上麵粉、雞蛋打成的蛋液及麵包屑，稍微壓整。
+    image:
+      src: ./step-3.webp
+      alt: 白色瓷盤上六片生豬小里肌肉排都裹了麵包屑，盤旁分別放著麵粉、雞蛋液與麵包屑
+  - text: 將食用油加熱到 140 至 150°C，放入豬小里肌肉排，以小火炸到表面金黃。
+    image:
+      src: ./step-4.webp
+      alt: 深色油鍋裡有數片裹麵包屑的豬小里肌肉排，表面已呈金黃色，周圍的熱油冒著小泡
+hero:
+  src: ./hero.webp
+  alt: 米白色瓷盤中整齊放著六片外層呈金黃色的日式炸豬小里肌肉排
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 六片生豬小里肌肉排、兩顆雞蛋、麵粉和麵包屑，以及分裝的醬油、糖、味精、胡椒粉、番茄醬、米酒、香油、水與炸油

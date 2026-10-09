@@ -1,0 +1,52 @@
+title: 甜豆玉米筍
+summary: 玉米筍先加水燜煮，再與甜豆、紅甜椒拌炒成一盤蔬菜配菜。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - { name: 甜豆, amount: { value: 500, unit: g }, note: 去蒂頭與老絲 }
+  - { name: 玉米筍, amount: { value: 100, unit: g }, note: 斜切對半 }
+  - { name: 紅甜椒, amount: { value: 20, unit: g }, note: 切條 }
+  - { name: 水, amount: { value: 30, unit: ml }, note: 約 2 大匙, group: 調味 }
+  - {
+      name: 鹽,
+      amount: { value: 3, unit: g },
+      note: 約 1/2 茶匙，重量為估算,
+      group: 調味,
+    }
+  - {
+      name: 雞粉,
+      amount: { value: 1, unit: g },
+      note: 約 1/4 茶匙，重量為估算,
+      group: 調味,
+    }
+  - {
+      name: 食用油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+steps:
+  - text: 甜豆摘掉蒂頭與老絲，洗淨；玉米筍洗淨斜切對半；紅甜椒洗淨切條。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分放去蒂甜豆、斜切對半的玉米筍與紅甜椒絲，旁邊有菜刀
+  - text: 熱鍋倒入食用油，以小火加入玉米筍和水拌炒，加蓋燜約 3 分鐘。
+    image:
+      src: ./step-2.webp
+      alt: 深灰色平底鍋裡，斜切對半的玉米筍在少量水中燜煮
+  - text: 加入鹽、雞粉、紅甜椒和甜豆，拌炒約 2 分鐘。
+    image:
+      src: ./step-3.webp
+      alt: 深灰色平底鍋中拌炒好的甜豆、斜切玉米筍和少量紅甜椒絲
+hero:
+  src: ./hero.webp
+  alt: 白瓷盤盛著甜豆玉米筍，綠色甜豆間有斜切的玉米筍與紅甜椒絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一大堆甜豆、較少量的玉米筍與一片紅甜椒，旁邊分放水、鹽、雞粉和食用油

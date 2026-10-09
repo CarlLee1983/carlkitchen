@@ -1,0 +1,60 @@
+title: 照燒雞肉
+summary: 帶皮去骨雞腿肉煎上色，再用醬油、米酒與味醂調成的醬汁收煮。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [家常菜]
+ingredients:
+  - { name: 帶皮去骨雞腿肉, amount: { value: 1, unit: 片 } }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 味醂,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 砂糖,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 食用油, group: 調味 }
+steps:
+  - text: 將帶皮去骨雞腿肉洗淨，用叉子在雞皮上戳洞。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上的帶皮去骨雞腿肉，雞皮有叉子戳出的孔洞，旁邊放著叉子
+  - text: 將醬油、米酒、味醂與砂糖攪勻，調成照燒醬。
+    image:
+      src: ./step-2.webp
+      alt: 陶碗裡拌好的褐色照燒醬，周圍分放醬油、米酒、味醂與砂糖
+  - text: 在鍋中加入食用油，放入帶皮去骨雞腿肉，煎約 3 至 4 分鐘至兩面略呈金黃色。
+    image:
+      src: ./step-3.webp
+      alt: 平底鍋中煎上金黃色的帶皮去骨雞腿肉
+  - text: 倒入照燒醬，以小火續煮並翻動雞肉，待醬汁略收乾後盛起。放涼再切成適口大小。
+    image:
+      src: ./step-4.webp
+      alt: 平底鍋中的帶皮去骨雞腿肉裹著收濃的褐色照燒醬
+hero:
+  src: ./hero.webp
+  alt: 白色陶盤上擺著切片的照燒雞腿肉，表面裹著褐色醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一片帶皮去骨雞腿肉，旁邊分別放著醬油、米酒、味醂、砂糖與食用油

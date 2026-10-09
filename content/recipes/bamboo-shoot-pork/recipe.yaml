@@ -1,0 +1,66 @@
+title: 筍香炒肉絲
+summary: 五花肉絲先炒到轉白，再與熟竹筍、青椒及蠔油醬汁拌炒。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [家常菜]
+ingredients:
+  - { name: 熟竹筍, amount: { value: 150, unit: g }, note: 切片後切絲 }
+  - { name: 豬五花肉絲, amount: { value: 100, unit: g }, note: 由五花肉片切絲 }
+  - { name: 青椒, amount: { value: 1, unit: 顆 }, note: 去籽切絲 }
+  - { name: 鹽, note: 醃肉用，少許, group: 調味 }
+  - { name: 白胡椒粉, note: 醃肉用，少許, group: 調味 }
+  - { name: 蛋液, note: 醃肉用，少許, group: 調味 }
+  - { name: 太白粉, note: 醃肉用，少許, group: 調味 }
+  - {
+      name: 蠔油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 糖, amount: { value: 6, unit: g }, note: 約 1/2 大匙, group: 調味 }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 15, unit: ml }, note: 約 1 大匙, group: 調味 }
+  - { name: 食用油, note: 炒肉用，少許, group: 調味 }
+steps:
+  - text: 豬五花肉片切絲，加入鹽、白胡椒粉、蛋液和太白粉拌勻。
+    image:
+      src: ./step-1.webp
+      alt: 白瓷碗中的生豬五花肉絲，表面沾著蛋液與白色粉料
+  - text: 青椒去籽切絲；熟竹筍先切片，再切絲。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分放熟竹筍絲和青椒絲，旁邊有菜刀
+  - text: 拌勻蠔油、糖、米酒、醬油和水，調成醬汁。
+    image:
+      src: ./step-3.webp
+      alt: 白色小瓷碗中盛著混合好的深褐色醬汁
+  - text: 熱鍋加少許食用油，下豬五花肉絲炒到轉白，再加入熟竹筍絲拌炒。
+    image:
+      src: ./step-4.webp
+      alt: 深灰色平底鍋中，轉白的豬五花肉絲與熟竹筍絲一同拌炒
+  - text: 倒入醬汁，以大火拌炒，轉小火加入青椒絲，略炒至入味。
+    image:
+      src: ./step-5.webp
+      alt: 深灰色平底鍋中拌炒好的豬五花肉絲、熟竹筍絲與青椒絲
+hero:
+  src: ./hero.webp
+  alt: 白色陶盤中的筍香炒肉，豬五花肉絲與熟竹筍絲、青椒絲裹著醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 熟竹筍絲、豬五花肉絲與一顆青椒，旁邊分放鹽、白胡椒粉、蛋液、太白粉、蠔油、糖、米酒、醬油、水和食用油

@@ -1,0 +1,44 @@
+title: 絲瓜煎蛋
+summary: 絲瓜薄片和薑蒜拌進蛋液，以小火煎到定型，再翻面煎至上色。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - { name: 雞蛋, amount: { value: 2, unit: 顆 } }
+  - { name: 絲瓜, amount: { value: 200, unit: g }, note: 去皮切小片 }
+  - { name: 薑, amount: { value: 5, unit: g }, note: 切末 }
+  - { name: 大蒜, amount: { value: 5, unit: g }, note: 切末 }
+  - { name: 玉米粉, amount: { value: 5, unit: g } }
+  - {
+      name: 鹽,
+      amount: { value: 1.5, unit: g },
+      note: 約 1/4 小匙，重量為估算,
+      group: 調味,
+    }
+  - { name: 白胡椒粉, note: 少許, group: 調味 }
+  - { name: 香油, note: 少許, group: 調味 }
+  - { name: 食用油, note: 適量，煎蛋用, group: 調味 }
+steps:
+  - text: 絲瓜去皮切小片，加入薑、大蒜、玉米粉、鹽、白胡椒粉和香油抓勻。
+    image:
+      src: ./step-1.webp
+      alt: 白瓷碗中放著去皮絲瓜小片，拌著薑蒜末與白色粉料
+  - text: 雞蛋打散成蛋液，倒入絲瓜拌勻。
+    image:
+      src: ./step-2.webp
+      alt: 白瓷碗中的淡黃蛋液拌入淺綠絲瓜小片與薑蒜末
+  - text: 熱鍋倒入適量食用油，加入絲瓜蛋液，以小火煎至定型，翻面再煎到上色。
+    image:
+      src: ./step-3.webp
+      alt: 深灰色平底鍋中，絲瓜蛋煎成圓餅，表面有金黃色澤與淺綠絲瓜小片
+hero:
+  src: ./hero.webp
+  alt: 白色陶盤盛著圓形絲瓜煎蛋，金黃蛋面露出淺綠絲瓜小片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩顆雞蛋、去皮絲瓜、薑與蒜，旁邊分放玉米粉、鹽、白胡椒粉、香油和食用油

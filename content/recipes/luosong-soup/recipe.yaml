@@ -1,0 +1,45 @@
+title: 羅宋湯
+summary: 牛肋條與馬鈴薯、紅蘿蔔和番茄一同燉煮，湯裡有洋蔥與香草。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [家常菜]
+ingredients:
+  - { name: 牛肋條, amount: { value: 2, unit: 條 }, note: 切塊，去除多餘肥肉 }
+  - { name: 馬鈴薯, amount: { value: 2, unit: 顆 }, note: 切塊 }
+  - { name: 紅蘿蔔, amount: { value: 2, unit: 根 }, note: 切塊 }
+  - { name: 番茄, amount: { value: 4, unit: 顆 }, note: 切塊 }
+  - { name: 洋蔥, amount: { value: 1, unit: 顆 }, note: 切丁 }
+  - { name: 大蒜, amount: { value: 4, unit: 瓣 } }
+  - { name: 月桂葉, amount: { value: 2, unit: 片 } }
+  - {
+      name: 番茄醬,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - { name: 迷迭香, note: 適量；來源也可用義大利香料, group: 調味 }
+  - { name: 雞高湯, note: 燉煮用；來源未列用量, group: 調味 }
+  - { name: 鹽, note: 煎牛肉與起鍋調味用, group: 調味 }
+  - { name: 黑胡椒粉, note: 煎牛肉與起鍋調味用, group: 調味 }
+  - { name: 食用油, note: 煎牛肉用, group: 調味 }
+steps:
+  - text: 牛肋條切塊，去除多餘肥肉，以少許鹽和黑胡椒粉調味。
+  - text: 馬鈴薯、紅蘿蔔和番茄切塊，洋蔥切丁。
+  - text: 鍋中加食用油，放入牛肋條，煎至表面上色後翻面，盛起備用。
+  - text: 用鍋中餘油炒洋蔥至透明，加入馬鈴薯、紅蘿蔔和大蒜略炒，再加入番茄、番茄醬與迷迭香拌炒。
+  - text: 將牛肋條和蔬菜移入燉鍋，加入雞高湯與月桂葉，燉煮約 50 至 60 分鐘。
+    image:
+      src: ./step-5.webp
+      alt: 敞口湯鍋裡的無骨牛肋條塊、馬鈴薯、紅蘿蔔、番茄和洋蔥在紅色湯汁中燉煮
+  - text: 加入適量鹽與黑胡椒粉調味。
+hero:
+  src: ./hero.webp
+  alt: 敞口湯鍋裡有牛肋條塊、番茄、馬鈴薯、紅蘿蔔、洋蔥與月桂葉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩條無骨牛肋條、兩顆馬鈴薯、兩根紅蘿蔔、四顆番茄、洋蔥、蒜瓣、月桂葉、番茄醬、迷迭香、鹽、黑胡椒粉和雞高湯

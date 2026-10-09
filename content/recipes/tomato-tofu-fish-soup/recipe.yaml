@@ -1,0 +1,42 @@
+title: 番茄豆腐魚湯
+summary: 吳郭魚與番茄、板豆腐同煮，湯底用市售高湯。
+servings: 3
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [家常菜]
+ingredients:
+  - { name: 吳郭魚, amount: { value: 1, unit: 尾 }, note: 切段 }
+  - { name: 板豆腐, amount: { value: 2, unit: 塊 }, note: 切方塊 }
+  - { name: 番茄, amount: { value: 2, unit: 顆 }, note: 切塊 }
+  - { name: 蔥花, amount: { value: 15, unit: ml }, note: 約 1 大匙 }
+  - { name: 市售高湯, amount: { value: 800, unit: ml } }
+  - { name: 鹽, amount: { value: 5, unit: g }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 胡椒粉,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 將板豆腐切成方塊，吳郭魚洗淨切段後汆燙，番茄洗淨切塊。
+    image:
+      src: ./step-1.webp
+      alt: 汆燙後的吳郭魚段在瀝水籃中，砧板上放著切塊的板豆腐、番茄和菜刀
+  - text: 將市售高湯煮滾，放入吳郭魚煮約 5 分鐘。
+    image:
+      src: ./step-2.webp
+      alt: 敞口陶鍋中，吳郭魚段在清澈高湯裡煮滾
+  - text: 加入番茄與板豆腐，煮滾後再煮約 3 分鐘，以鹽、胡椒粉調味，撒上蔥花。
+    image:
+      src: ./step-3.webp
+      alt: 敞口陶鍋中的魚湯有吳郭魚段、板豆腐塊、番茄塊與蔥花
+hero:
+  src: ./hero.webp
+  alt: 敞口陶鍋中的魚湯可見吳郭魚段、板豆腐塊、番茄塊與蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一尾吳郭魚、兩塊板豆腐、兩顆番茄，另有蔥花、高湯、鹽和胡椒粉
