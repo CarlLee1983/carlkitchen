@@ -1,0 +1,47 @@
+title: 金沙杏鮑菇
+summary: 杏鮑菇裹上炒出泡沫的鹹蛋黃，再拌入鹹蛋白、青蔥與芝麻鹽。
+servings: 4
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [杏鮑菇, 鹹蛋, 蔬菜]
+ingredients:
+  - { name: 杏鮑菇, amount: { value: 4, unit: 大根 }, note: 切滾刀塊 }
+  - { name: 鹹蛋, amount: { value: 2, unit: 顆 }, note: 蛋白與蛋黃分開切碎 }
+  - { name: 青蔥, amount: { value: 2, unit: 根 }, note: 切段 }
+  - { name: 辣椒, amount: { value: 1, unit: 根 }, note: 斜切片 }
+  - {
+      name: 蒜頭,
+      amount: { value: 3, unit: 瓣 },
+      note: 切片；來源有列材料與備料，但未交代何時入鍋,
+    }
+  - { name: 橄欖油, amount: { value: 30, unit: ml }, group: 調味 }
+  - {
+      name: 芝麻鹽,
+      amount: { value: 1, unit: 匙 },
+      note: 來源未註明匙的規格,
+      group: 調味,
+    }
+steps:
+  - text: 杏鮑菇切滾刀塊，鹹蛋蛋黃與蛋白分開切碎。青蔥切段，辣椒斜切片，蒜頭切片。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分開放著杏鮑菇滾刀塊、切碎的鹹蛋蛋黃與蛋白、青蔥段、辣椒片和蒜頭片
+  - text: 鍋中加熱橄欖油，放入鹹蛋蛋黃，以中大火炒至起泡。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋裡的鹹蛋蛋黃碎在橄欖油中炒出黃色泡沫
+  - text: 加入杏鮑菇拌炒均勻，再放入鹹蛋蛋白拌炒。
+  - text: 加入青蔥和芝麻鹽拌勻，最後撒上辣椒片。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋裡的杏鮑菇裹著鹹蛋碎，拌有青蔥段並撒上紅辣椒片
+hero:
+  src: ./hero.webp
+  alt: 米白色淺陶盤盛著裹有金黃色鹹蛋碎的杏鮑菇滾刀塊，點綴青蔥段與紅辣椒片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 四大根杏鮑菇、兩顆鹹蛋、兩根青蔥、一根辣椒與三瓣蒜頭，旁邊分裝橄欖油與芝麻鹽

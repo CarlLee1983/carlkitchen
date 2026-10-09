@@ -1,0 +1,82 @@
+title: 沙茶羊肉
+summary: 羊肉片以沙茶醬醃過，再與空心菜、洋蔥和青蔥一起炒，最後加入辣椒。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 30
+tags: [羊肉, 快炒, 家常菜]
+ingredients:
+  - {
+      name: 羊肩肉片,
+      amount: { value: 200, unit: g },
+      note: 來源僅寫羊肉，部位與切片為依快炒做法補充,
+    }
+  - { name: 空心菜, amount: { value: 1, unit: 把 }, note: 切段 }
+  - { name: 洋蔥, amount: { value: 0.25, unit: 顆 }, note: 切絲 }
+  - { name: 青蔥, amount: { value: 2, unit: 支 }, note: 切段 }
+  - { name: 蒜頭, amount: { value: 3, unit: 瓣 }, note: 切末 }
+  - { name: 辣椒, amount: { value: 1, unit: 根 }, note: 切片 }
+  - {
+      name: 沙茶醬,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙，醃肉用 15 ml、快炒用 30 ml,
+      group: 調味,
+    }
+  - {
+      name: 蠔油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 7.5, unit: ml },
+      note: 約 1/2 大匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 食用油,
+      amount: { value: 7.5, unit: ml },
+      note: 約 1/2 大匙，醃肉用,
+      group: 調味,
+    }
+  - { name: 食用油, note: 來源未提供炒鍋用量, group: 調味 }
+  - { name: 蛋黃, amount: { value: 1, unit: 顆 }, note: 醃肉用, group: 調味 }
+  - { name: 白胡椒粉, amount: { value: 2, unit: g }, note: 醃肉用, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 7.5, unit: ml },
+      note: 約 1/2 大匙，醃肉用,
+      group: 調味,
+    }
+steps:
+  - text: 羊肩肉片加入 15 ml 沙茶醬、米酒、7.5 ml 食用油、蛋黃、白胡椒粉和醬油拌勻，醃 20 分鐘。
+    image:
+      src: ./step-1.webp
+      alt: 瓷碗裡的生羊肩肉片裹著沙茶醬與醃料
+  - text: 空心菜切段、洋蔥切絲、青蔥切段，蒜頭切末，辣椒切片。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分放切段的空心菜與青蔥、洋蔥絲、蒜末和辣椒片
+  - text: 炒鍋加入食用油，放入蒜末炒香，再加入空心菜。
+    image:
+      src: ./step-3.webp
+      alt: 深色單柄炒鍋裡的空心菜段正與蒜末拌炒，菜梗仍鮮綠
+  - text: 將空心菜撥到鍋邊，中央放入醃好的羊肩肉片，炒到肉色改變。
+    image:
+      src: ./step-4.webp
+      alt: 深色單柄炒鍋的空心菜被撥到鍋邊，中央的羊肩肉片正由粉紅轉為淺褐色
+  - text: 加入洋蔥、青蔥炒勻，再拌入 30 ml 沙茶醬和蠔油。
+  - text: 加入辣椒拌炒後起鍋。
+    image:
+      src: ./step-6.webp
+      alt: 深色單柄炒鍋裡的羊肩肉片、空心菜、洋蔥絲與青蔥段裹著沙茶醬汁，表面有紅辣椒片
+hero:
+  src: ./hero.webp
+  alt: 米白色陶盤中盛著沙茶羊肉片、空心菜段、洋蔥絲、青蔥段與紅辣椒片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一碗羊肩肉片、一把空心菜、四分之一顆洋蔥、兩支青蔥、三瓣蒜頭與一根辣椒，旁邊分裝沙茶醬、蠔油、米酒、兩份食用油、蛋黃、白胡椒粉及醬油

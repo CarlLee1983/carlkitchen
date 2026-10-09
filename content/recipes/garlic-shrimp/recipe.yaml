@@ -1,0 +1,67 @@
+title: 蒜蓉蝦
+summary: 蝦子鋪在雞蛋豆腐上，淋上蒜頭與蠔油調成的醬汁，用電鍋蒸熟後撒上蔥花。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [海鮮, 電鍋]
+ingredients:
+  - { name: 蝦子, amount: { value: 12, unit: 尾 }, note: 背部劃開取出腸泥 }
+  - { name: 雞蛋豆腐, amount: { value: 1, unit: 盒 } }
+  - { name: 蒜頭, amount: { value: 10, unit: 瓣 }, note: 切碎 }
+  - { name: 青蔥, note: 來源標示適量，切成蔥花, group: 調味 }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 蠔油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 水,
+      amount: { value: 15, unit: ml },
+      note: 醬汁用，約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 水,
+      amount: { value: 0.5, unit: 杯 },
+      note: 電鍋用，來源未標杯量,
+      group: 調味,
+    }
+  - { name: 香油, note: 來源標示適量，起鍋後淋上, group: 調味 }
+steps:
+  - text: 蝦子背部劃開，取出腸泥。蒜頭切碎，青蔥切成蔥花。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上排著十二尾背部已處理的生蝦，旁邊分放蒜末與蔥花
+  - text: 雞蛋豆腐切片鋪在盤中，再把蝦子排在豆腐上。
+    image:
+      src: ./step-2.webp
+      alt: 十二尾生蝦分別排在雞蛋豆腐切片上，放在米白色陶瓷盤中
+  - text: 將米酒、蠔油、醬汁用的水與蒜頭拌勻，淋在蝦子和雞蛋豆腐上。
+    image:
+      src: ./step-3.webp
+      alt: 十二尾生蝦與雞蛋豆腐上淋滿帶蒜末的淺褐色醬汁
+  - text: 盤子放入電鍋，另加半杯水，蒸至蝦子熟透。
+    image:
+      src: ./step-4.webp
+      alt: 電鍋內的陶瓷盤盛著十二尾已蒸熟轉橘紅的蝦、雞蛋豆腐與蒜末醬汁
+  - text: 起鍋後淋上香油，撒上青蔥。
+    image:
+      src: ./step-5.webp
+      alt: 十二尾熟蝦鋪在雞蛋豆腐上，表面有蒜末、蔥花與醬汁
+hero:
+  src: ./hero.webp
+  alt: 米白色陶瓷盤中，十二尾熟蝦各放在一片雞蛋豆腐上，蝦身有蒜末與蔥花，盤底帶淺褐色醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 十二尾生蝦、十瓣蒜頭、一塊雞蛋豆腐與青蔥，旁邊分別盛著米酒、蠔油、醬汁用水、電鍋用水及香油
