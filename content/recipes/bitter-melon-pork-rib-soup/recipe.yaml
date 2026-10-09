@@ -1,15 +1,15 @@
 title: 苦瓜排骨湯
-summary: 苦瓜與排骨先汆燙，再和薑片以小火煮至湯味融合。
+summary: 排骨和苦瓜分別汆燙沖涼，加薑片和水煮滾後，以小火保持微滾約 30 分鐘再調味。
 servings: 3
 category: 湯
-draft: true
-mealCandidate: false
+draft: false
+mealCandidate: true
 vegetable: false
 protein: false
 timeMinutes: 50
 tags: [家常菜, 湯品]
 ingredients:
-  - { name: 豬小排, amount: { value: 200, unit: g }, note: 切小塊 }
+  - { name: 排骨, amount: { value: 200, unit: g }, note: 切小塊 }
   - { name: 苦瓜, amount: { value: 200, unit: g }, note: 去皮去籽切小塊 }
   - { name: 薑片, amount: { value: 10, unit: g } }
   - { name: 水, amount: { value: 700, unit: ml } }
@@ -22,7 +22,22 @@ ingredients:
     }
   - { name: 米酒, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
 steps:
-  - text: 豬小排切小塊，放入滾水汆燙約 1 分鐘，撈起以冷水沖涼。
-  - text: 苦瓜去皮去籽切小塊，放入滾水汆燙約 1 分鐘，撈起以冷水沖涼。
-  - text: 豬小排、苦瓜、薑片和水放入湯鍋，以中火煮滾。
-  - text: 轉小火維持微滾約 30 分鐘，加入鹽、雞精粉和米酒調味。
+  - text: 排骨切成小塊，下滾水燙約 1 分鐘，取出用冷水沖涼。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼雙耳瀝水籃裡放著汆燙過的帶骨排骨小塊，表面轉成灰白色
+  - text: 苦瓜削皮、挖掉籽，切成小塊，一樣下滾水燙約 1 分鐘，取出用冷水沖涼。
+    image:
+      src: ./step-2.webp
+      alt: 同一只瀝水籃裡堆著汆燙過的苦瓜塊，去皮去籽後呈淡綠色，帶著水珠
+  - text: 燙過的排骨和苦瓜放進湯鍋，加薑片與水，開中火煮到滾。
+    image:
+      src: ./step-3.webp
+      alt: 不鏽鋼雙耳湯鍋裡的清水正滾著冒泡，鍋中有排骨塊、淡綠色苦瓜塊和幾片薑
+  - text: 改小火，讓湯面保持微微冒泡約 30 分鐘，再加鹽、雞精粉和米酒調味。
+hero:
+  src: ./hero.webp
+  alt: 敞口不鏽鋼雙耳湯鍋盛著苦瓜排骨湯，淡金色清湯裡有帶骨排骨塊、淡綠色苦瓜塊和幾片薑，冒著些許熱氣
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一小堆切成小塊的生排骨、縱切的半條苦瓜、五片薑、一碗清水，以及分裝在小碟和小瓶中的鹽、雞精粉和米酒

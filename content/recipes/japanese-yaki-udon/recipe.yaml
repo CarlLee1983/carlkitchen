@@ -15,7 +15,7 @@ ingredients:
   - { name: 魚板, amount: { value: 30, unit: g }, note: 切小片 }
   - { name: 竹筍, amount: { value: 10, unit: g }, note: 切絲 }
   - { name: 生香菇, amount: { value: 10, unit: g }, note: 切片 }
-  - { name: 豬里肌肉絲, amount: { value: 30, unit: g } }
+  - { name: 豬肉絲, amount: { value: 30, unit: g } }
   - { name: 柴魚片, amount: { value: 10, unit: g } }
   - {
       name: 和風醬,
@@ -38,7 +38,7 @@ ingredients:
   - { name: 水, amount: { value: 600, unit: ml }, group: 調味 }
   - { name: 食用油, note: 少許，炒料用，來源未標用量, group: 調味 }
 steps:
-  - text: 青蔥切段；紅蘿蔔、竹筍切絲；魚板切小片，香菇切片。
-  - text: 鍋中加入少許油燒熱，放入豬里肌肉絲與切好的蔬菜、魚板和香菇炒香。
-  - text: 加入烏龍麵、柴魚片、和風醬、黑胡椒粉、糖和水。
+  - text: 青蔥切成段，紅蘿蔔和竹筍切絲，魚板切成小片，生香菇切片；各樣材料切之前先洗淨。
+  - text: 鍋燒熱後放少許油，下豬肉絲和上一步切好的全部材料，炒出香氣。
+  - text: 接著放入烏龍麵，倒進和風醬、黑胡椒粉、糖和水。
   - text: 加蓋燜煮至麵條熟透。

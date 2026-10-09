@@ -2,14 +2,14 @@ title: 酒蒸肉丸
 summary: 豬絞肉拌入香菇、蔥薑與調味料捏丸蒸熟，再淋上勾芡醬汁。
 servings: 4
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
 timeMinutes: 35
 tags: [家常菜, 電鍋料理]
 ingredients:
-  - { name: 豬梅花絞肉, amount: { value: 500, unit: g } }
+  - { name: 豬絞肉, amount: { value: 500, unit: g }, note: 建議用梅花絞肉 }
   - { name: 乾香菇, amount: { value: 3, unit: 朵 } }
   - { name: 蔥, amount: { value: 1, unit: 支 }, note: 切末 }
   - { name: 薑, amount: { value: 20, unit: g }, note: 切末 }
@@ -59,7 +59,23 @@ ingredients:
   - { name: 水, amount: { value: 200, unit: ml }, note: 調味 B, group: 調味 }
   - { name: 外鍋水, amount: { value: 1, unit: 杯 }, note: 電鍋外鍋用 }
 steps:
-  - text: 乾香菇泡軟後切末，蔥和薑切末；與豬梅花絞肉、調味 A 拌勻並捏成肉丸。
-  - text: 紅蘿蔔切薄圓片，鋪在盤中，每片紅蘿蔔上放一顆肉丸。
-  - text: 盤子放入電鍋，外鍋加入 1 杯水，蒸約 20 分鐘。
-  - text: 調味 B 煮沸，以太白粉水勾芡後淋在肉丸上。
+  - text: 乾香菇泡軟，和蔥、薑一起剁成末，放進豬絞肉，加調味 A 攪拌均勻，再捏成一顆顆肉丸。
+    image:
+      src: ./step-1.webp
+      alt: 白瓷碗中裝著十二顆捏好的生豬肉丸，肉裡看得到香菇末與蔥末
+  - text: 紅蘿蔔切成薄圓片排在盤上，每片放一顆肉丸。
+    image:
+      src: ./step-2.webp
+      alt: 白色圓盤上排著十二片紅蘿蔔薄圓片，每片上放著一顆生豬肉丸
+  - text: 整盤放進電鍋，外鍋倒 1 杯水，蒸約 20 分鐘。
+    image:
+      src: ./step-3.webp
+      alt: 掀開鍋蓋的不鏽鋼電鍋裡放著一盤蒸熟的肉丸，每顆墊著紅蘿蔔片，盤底有些肉汁，冒著熱氣
+  - text: 調味 B 倒進小鍋煮滾，加太白粉水勾芡，淋到蒸好的肉丸上。
+tip: 絞肉瘦肉多時，香油能讓肉丸吃起來較滑嫩；絞肉本身肥肉多，香油可以少放或不放。
+hero:
+  src: ./hero.webp
+  alt: 白色圓盤上排著十二顆蒸熟的豬肉丸，肉丸夾著香菇末與蔥末，各自墊著一片紅蘿蔔，盤中淋著淡褐色的透亮芡汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤生豬絞肉、三朵乾香菇、一支青蔥、一塊薑和一根紅蘿蔔，以及一小瓶鰹魚醬露，小碟裝的米酒、香油、白胡椒粉、太白粉與太白粉水，一杯水和一小杯水

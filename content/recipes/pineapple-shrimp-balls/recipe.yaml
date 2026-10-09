@@ -2,7 +2,7 @@ title: 鳳梨蝦球
 summary: 蝦仁裹粉炸酥後，與鳳梨片拌入美乃滋檸檬醬汁。
 servings: 3
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
@@ -55,7 +55,22 @@ ingredients:
     }
   - { name: 炸油, note: 適量，來源未標用量, group: 調味 }
 steps:
-  - text: 蝦仁洗淨、瀝乾，在蝦背劃開約三分之一深度，加入調味 A 抓勻醃約 2 分鐘。
-  - text: 將美乃滋、細砂糖和檸檬汁調勻成醬汁。
-  - text: 油鍋加熱至約 180°C，蝦仁裹上調味 C 後放入油鍋炸約 2 分鐘至表面酥脆，撈起瀝油。
-  - text: 另起鍋放入蝦仁和鳳梨片，淋上醬汁拌勻。
+  - text: 蝦仁洗好後把水瀝乾，沿背部下刀切開約三分之一深，加入調味 A 抓勻，醃約 2 分鐘。
+    image:
+      src: ./step-1.webp
+      alt: 白瓷碗中盛著背部劃開的生蝦仁，表面裹著一層透亮的蛋白醃料
+  - text: 美乃滋、細砂糖和檸檬汁放進碗裡攪勻，做成醬汁。
+    image:
+      src: ./step-2.webp
+      alt: 白瓷碗中盛著攪拌均勻、質地滑順的淡乳黃色醬汁
+  - text: 炸油燒到約 180°C。蝦仁沾滿調味 C 的太白粉，下鍋炸約 2 分鐘，外皮酥脆就撈出瀝油。
+    image:
+      src: ./step-3.webp
+      alt: 不鏽鋼瀝油架上排著十多顆炸好的蝦球，外層是酥脆的金黃薄粉
+  - text: 另取一鍋，放進炸好的蝦仁和鳳梨片，倒入醬汁翻拌均勻。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤中盛著裹薄粉炸成金黃的蝦球，和淡黃色鳳梨塊拌在一起，表面淋著乳白色醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤生的去殼蝦仁、一盤鳳梨塊、一大碗太白粉，以及分裝在小碟中的鹽、蛋白、太白粉、美乃滋、細砂糖、檸檬汁，旁邊一小瓶炸油

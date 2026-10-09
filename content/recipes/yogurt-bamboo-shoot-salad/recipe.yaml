@@ -2,7 +2,7 @@ title: 優格沙拉筍
 summary: 綠竹筍煮熟切塊，拌入優格檸檬醬與蝦卵。
 servings: 3
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: true
 protein: false
@@ -37,7 +37,22 @@ ingredients:
     }
   - { name: 水, note: 適量，煮竹筍用，來源未列數量, group: 調味 }
 steps:
-  - text: 綠竹筍洗淨，放入鍋中加水至蓋過竹筍，煮至水滾後轉小火再煮約 20 分鐘。
-  - text: 取出竹筍剝殼、切小塊並裝盤。
-  - text: 將優格、檸檬汁、鹽和細砂糖拌勻成醬汁，再拌入蝦卵。
-  - text: 將優格蝦卵醬淋在竹筍上即可食用。
+  - text: 綠竹筍洗好放進鍋裡，倒水淹過筍身，大火煮滾後轉小火，續煮約 20 分鐘。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼雙耳鍋裡兩支帶殼的綠竹筍泡在冒著小氣泡的熱水中，鍋面飄著蒸氣
+  - text: 竹筍撈出後剝去外殼，切成小塊盛盤。
+    image:
+      src: ./step-2.webp
+      alt: 白色圓盤上堆著剝殼後切成小塊的淡黃色熟竹筍
+  - text: 優格加入檸檬汁、鹽和細砂糖攪勻做成醬汁，最後拌進蝦卵。
+    image:
+      src: ./step-3.webp
+      alt: 白瓷碗中盛著乳白色的優格醬，裡面拌著許多橘紅色的蝦卵
+  - text: 把優格蝦卵醬澆在竹筍塊上。
+hero:
+  src: ./hero.webp
+  alt: 白色圓盤上堆著切成小塊的熟竹筍，表面淋滿乳白色優格醬，點綴著許多橘紅色蝦卵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩支帶殼的綠竹筍，以及小碟裝的蝦卵、優格、檸檬汁、鹽和細砂糖，旁邊一杯水

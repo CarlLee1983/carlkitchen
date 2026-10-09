@@ -1,40 +1,62 @@
 title: 紅酒燉牛肉
-summary: 牛腩與馬鈴薯、紅蘿蔔加入紅酒和香料燉煮至軟熟。
-servings: 3
+summary: 牛肉和洋蔥、紅蘿蔔、蘑菇、西芹先炒過，再以番茄糊、紅酒與香草小火燉 50 分鐘，最後拌入奶油。
+servings: 4
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: true
 protein: true
-timeMinutes: 60
+timeMinutes: 80
 tags: [家常菜, 燉煮]
+hero:
+  {
+    src: ./hero.webp,
+    alt: 深灰色雙耳鑄鐵鍋裝著紅酒醬汁燉好的牛肉塊、紅蘿蔔、洋蔥、蘑菇和西芹段，上面放著月桂葉與百里香。,
+  }
+ingredientsPhoto:
+  {
+    src: ./ingredients.webp,
+    alt: 牛肉塊、一顆洋蔥、半根紅蘿蔔、十朵蘑菇、兩根切段西芹、兩根百里香、兩片月桂葉，以及番茄糊、紅酒、水、奶油、油、鹽、黑胡椒和砂糖分別擺放。,
+  }
 ingredients:
-  - { name: 牛腩, amount: { value: 300, unit: g }, note: 切小塊 }
-  - { name: 馬鈴薯, amount: { value: 2, unit: 顆 }, note: 去皮切滾刀塊 }
-  - { name: 紅蘿蔔, amount: { value: 0.5, unit: 條 }, note: 去皮切滾刀塊 }
-  - { name: 蒜頭, amount: { value: 3, unit: 顆 }, note: 切片 }
-  - { name: 綠花椰菜, amount: { value: 1, unit: 朵 } }
-  - { name: 水, amount: { value: 800, unit: ml } }
-  - { name: 紅酒, amount: { value: 250, unit: ml } }
+  - { name: 牛肉, amount: { value: 500, unit: g }, note: 切塊，建議用牛腩 }
+  - { name: 洋蔥, amount: { value: 1, unit: 顆 } }
+  - { name: 紅蘿蔔, amount: { value: 0.5, unit: 根 } }
+  - { name: 蘑菇, amount: { value: 10, unit: 朵 } }
+  - { name: 西芹, amount: { value: 2, unit: 根 }, note: 切段 }
+  - { name: 百里香, amount: { value: 2, unit: 根 } }
+  - { name: 月桂葉, amount: { value: 2, unit: 片 } }
+  - { name: 番茄糊, amount: { value: 30, unit: ml }, note: 約 2 大匙 }
+  - { name: 紅酒, amount: { value: 200, unit: ml } }
+  - { name: 水, amount: { value: 700, unit: ml } }
   - { name: 奶油, amount: { value: 20, unit: g } }
+  - { name: 食用油, note: 適量, group: 調味 }
+  - { name: 鹽, note: 少許, group: 調味 }
+  - { name: 黑胡椒, note: 少許, group: 調味 }
   - {
-      name: 沙拉油,
+      name: 砂糖,
       amount: { value: 15, unit: ml },
       note: 約 1 大匙,
       group: 調味,
     }
-  - { name: 鹽, note: 少許, group: 調味 }
-  - { name: 黑胡椒, note: 少許, group: 調味 }
-  - { name: 月桂葉, amount: { value: 3, unit: 片 }, group: 調味 }
-  - {
-      name: 迷迭香,
-      amount: { value: 5, unit: ml },
-      note: 約 1 小匙,
-      group: 調味,
-    }
 steps:
-  - text: 牛腩洗淨切小塊，放入滾水汆燙後瀝乾。
-  - text: 馬鈴薯和紅蘿蔔去皮切滾刀塊，蒜頭切片。
-  - text: 熱鍋加入沙拉油，以中火將牛腩煎至上色。
-  - text: 加入馬鈴薯、紅蘿蔔和蒜片炒香，倒入紅酒與水煮滾。
-  - text: 加入奶油、鹽、黑胡椒、月桂葉和迷迭香，蓋鍋以中小火燉煮約 25 分鐘。
+  - text: 鍋子燒熱後倒進食用油，放紅蘿蔔、洋蔥、蘑菇與西芹一起翻炒，炒出香味。
+    image:
+      {
+        src: ./step-1.webp,
+        alt: 鑄鐵鍋裡炒得油亮的紅蘿蔔塊、半透明洋蔥、蘑菇和西芹段，還沒有放肉。,
+      }
+  - text: 牛肉塊下鍋和蔬菜同炒，煎到肉的表面上色。
+    image:
+      {
+        src: ./step-2.webp,
+        alt: 鑄鐵鍋裡表面煎成褐色的牛肉塊和紅蘿蔔、洋蔥、蘑菇、西芹混在一起，鍋中沒有湯汁。,
+      }
+  - text: 放百里香、月桂葉和番茄糊續炒，炒到番茄糊散出香氣。
+  - text: 倒進紅酒和水，加鹽、黑胡椒與砂糖，蓋鍋用大火煮開，轉小火燉 50 分鐘。
+    image:
+      {
+        src: ./step-4.webp,
+        alt: 鍋蓋半掀的鑄鐵鍋裡，牛肉塊與蔬菜泡在冒著小泡的紅酒番茄醬汁中，浮著月桂葉和百里香。,
+      }
+  - text: 關火前放奶油，煮到奶油全部融化就可以盛出。
