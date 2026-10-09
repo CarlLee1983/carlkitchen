@@ -27,7 +27,7 @@ description: CarlKitchen 菜譜的製作流程：從來源核准、擷取、寫 
 4. **寫菜譜**：先用 `recipe-writing` skill 寫文字，再填 YAML。格式以既有菜譜為範本（例如 `content/recipes/tomato-egg/recipe.yaml`），規則以 `src/content/recipe-schema.ts` 為準。圖片未齊時填 `draft: true`。同時寫 `content/sources/<識別值>.yaml`。
 5. **繪製插畫**：照 [illustration.md](illustration.md) 依 06 票〈構圖〉產成品圖、材料合照與步驟圖，轉成 WebP 放進菜譜資料夾，YAML 補上 `src` 與 alt，改成 `draft: false`。完成條件：每張圖都過目視檢查，alt 描述的是圖中實際畫的內容。
 6. **驗證**：依序跑 `pnpm build && pnpm check:content`、`pnpm check`、`pnpm test`、`pnpm test:e2e`，全綠才提交。補一次 `pnpm check:content --launch` 確認候選池門檻仍達標（不阻擋 PR，但結果寫進 PR）。用 `node .claude/skills/recipe-making/scripts/img.mjs sheet content/recipes/<識別值> <scratchpad>/<識別值>.jpg` 產縮圖總表，Read 看過整組一致。
-7. **提交與送審**：以 `feat: add <菜名英文> recipe` 之類的 conventional commit 提交；準備好送審時推送分支、開 PR。PR 內文必須列出〈送審清單〉每一類的實際內容（沒有就寫「無」）。完成條件：PR 已開、CI 綠燈，回報站主 PR 網址。
+7. **提交與送審**：以 `feat: add <菜名英文> recipe` 之類的 conventional commit 提交；準備好送審時先推送工作分支，確認遠端分支與提交 SHA 正確，再開 PR。PR 內文必須列出〈送審清單〉每一類的實際內容（沒有就寫「無」）。完成條件：PR 已開、CI 綠燈，回報站主 PR 網址。
 
 ## 寫進 YAML 的界線
 
