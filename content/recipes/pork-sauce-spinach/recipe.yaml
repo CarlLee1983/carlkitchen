@@ -33,7 +33,7 @@ ingredients:
       group: 調味,
     }
 steps:
-  - text: 紅蔥頭切碎，菠菜洗淨後切小段。
+  - text: 把紅蔥頭切碎；菠菜洗乾淨，切成小段。
     image:
       src: ./step-1.webp
       alt: 切碎的紅蔥頭放在砧板上，旁邊是洗淨切段的菠菜

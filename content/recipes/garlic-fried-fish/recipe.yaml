@@ -2,7 +2,7 @@ title: 蒜味炸魚片
 summary: 鯛魚片與蒜片炸至金黃，淋上醬油膏、黑醋調成的醬汁。
 servings: 3
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
@@ -10,7 +10,7 @@ timeMinutes: 25
 tags: [家常菜, 魚料理]
 ingredients:
   - { name: 鯛魚片, amount: { value: 300, unit: g }, note: 切小片 }
-  - { name: 蒜頭, amount: { value: 5, unit: 顆 }, note: 切片 }
+  - { name: 蒜頭, amount: { value: 5, unit: 顆 }, note: 去皮切片 }
   - {
       name: 醬油膏,
       amount: { value: 30, unit: ml },
@@ -27,10 +27,26 @@ ingredients:
   - { name: 糖, amount: { value: 5, unit: ml }, note: 約 1 小匙, group: 調味 }
   - { name: 胡椒粉, note: 少許，魚片醃料, group: 調味 }
   - { name: 鹽, note: 少許，魚片醃料, group: 調味 }
-  - { name: 小黃瓜, note: 切片鋪盤底；來源材料表未列, group: 調味 }
-  - { name: 炸油, note: 適量，來源未標用量, group: 調味 }
+  - { name: 小黃瓜, note: 切片鋪盤底；來源材料表未列，份量未標, group: 調味 }
+  - { name: 炸油, note: 約半鍋, group: 調味 }
 steps:
-  - text: 蒜頭切片，鯛魚片切小片後撒上胡椒粉和鹽。
-  - text: 將醬油膏、黑醋、開水和糖混合成調味醬；小黃瓜切片鋪在盤底。
-  - text: 油鍋加熱，放入魚片和蒜片，以中油溫炸至金黃後撈起瀝油。
-  - text: 炸魚片和蒜片裝盤，淋上調味醬。
+  - text: 蒜頭剝皮後切片；鯛魚片分切成小片，撒少許胡椒粉和鹽。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上一堆撒了胡椒和鹽的生鯛魚薄片，旁邊一小堆蒜片和一把菜刀
+  - text: 醬油膏、黑醋、開水和糖拌勻成調味醬；小黃瓜切片，鋪在盤底。
+    image:
+      src: ./step-2.webp
+      alt: 白色圓瓷盤底鋪滿小黃瓜圓片，旁邊一小碗深褐色的調味醬
+  - text: 鍋裡倒油到約半鍋高，燒到中油溫，下魚片和蒜片炸到表面金黃，撈出擺在小黃瓜上。
+    image:
+      src: ./step-3.webp
+      alt: 不鏽鋼雙耳深鍋裡約半鍋熱油冒著細泡，鯛魚片和蒜片炸成淡金黃色
+  - text: 要吃之前再淋上調味醬。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤底鋪著小黃瓜片，上面堆著炸得金黃的鯛魚塊和蒜片，淋有深褐色醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盤切塊的生鯛魚片、五瓣去皮蒜頭、一條小黃瓜，以及分裝在小碟、小杯和小瓶中的醬油膏、黑醋、開水、糖、胡椒、鹽和食用油
+tip: 鯛魚片切小片時順著魚肉紋路下刀，不要垂直紋路切，下鍋後比較不會散開。

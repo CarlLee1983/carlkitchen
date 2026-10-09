@@ -17,7 +17,7 @@ ingredients:
   - { name: 米酒, amount: { value: 200, unit: ml }, group: 調味 }
   - { name: 鹽, amount: { value: 5, unit: ml }, note: 1 小匙, group: 調味 }
 steps:
-  - text: 洗淨鴨肉，放入滾水汆燙 3 分鐘，撈起備用。
+  - text: 洗淨鴨肉，下滾水燙 3 分鐘後撈出。
     image:
       src: ./step-1.webp
       alt: 汆燙後的鴨肉放在不鏽鋼瀝水籃中
@@ -33,7 +33,7 @@ steps:
     image:
       src: ./step-4.webp
       alt: 電鍋內鍋裝著鴨肉、拍扁的老薑和清澈的液體，旁邊放著取下的鍋蓋
-  - text: 外鍋加入 2 杯水。開關跳起後，加鹽調味，再燜 10 分鐘。
+  - text: 在外鍋倒 2 杯水，按下開關燉煮；跳起後放鹽調味，續燜 10 分鐘。
 hero:
   src: ./hero.webp
   alt: 薑母鴨的金褐色湯汁中有鴨肉與拍扁的老薑

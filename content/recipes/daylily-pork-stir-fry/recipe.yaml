@@ -1,8 +1,8 @@
 title: 金針花炒肉絲
-summary: 肉絲炒至變白後加入調味料，再與汆燙金針花拌炒。
+summary: 蒜末、辣椒片爆香後炒肉絲，調味後放入汆燙過的金針花，略炒就起鍋。
 servings: 3
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: true
 protein: true
@@ -10,7 +10,7 @@ timeMinutes: 20
 tags: [家常菜, 快炒]
 ingredients:
   - { name: 金針花, amount: { value: 300, unit: g } }
-  - { name: 豬里肌肉, amount: { value: 100, unit: g }, note: 切絲 }
+  - { name: 瘦肉, amount: { value: 100, unit: g }, note: 切絲 }
   - { name: 蒜末, amount: { value: 15, unit: g } }
   - { name: 辣椒片, amount: { value: 15, unit: g } }
   - {
@@ -34,7 +34,22 @@ ingredients:
   - { name: 水, amount: { value: 30, unit: ml }, note: 約 2 大匙, group: 調味 }
   - { name: 食用油, note: 適量，爆香用，來源未標用量, group: 調味 }
 steps:
-  - text: 金針花汆燙後瀝乾，豬里肌肉切絲備用。
-  - text: 鍋中加入適量油，爆香蒜末和辣椒片。
-  - text: 加入豬里肌肉絲炒至變白，加入水、鹽、雞粉和米酒拌炒。
-  - text: 放入金針花拌炒均勻後起鍋。
+  - text: 金針花洗乾淨，下滾水快速燙一下就撈出瀝乾；瘦肉洗淨後切絲。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼瀝水籃裡裝著汆燙過、橙黃帶綠尖的金針花，旁邊木砧板上整齊排著切好的生瘦肉絲和一把菜刀
+  - text: 鍋燒熱後倒入適量油，下蒜末和辣椒片炒香。
+    image:
+      src: ./step-2.webp
+      alt: 黑色炒鍋底部的熱油裡有淡金色的蒜末和紅辣椒片，冒著細小油泡與少許熱氣
+  - text: 肉絲下鍋炒到轉白，先倒水翻炒幾下，再放鹽、雞粉和米酒炒勻。
+    image:
+      src: ./step-3.webp
+      alt: 同一只炒鍋裡的肉絲已炒到轉白，和蒜末、紅辣椒片拌在一起，鍋底留有少許湯汁
+  - text: 最後放入金針花，稍微翻炒就盛出。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤盛著金針花炒肉絲，橙黃色的金針花混著肉絲、蒜末和紅辣椒片，帶著油亮的湯汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一堆新鮮金針花、一小堆生瘦肉絲、蒜末和紅辣椒片，以及分裝在小碟、小瓶與小杯中的鹽、雞粉、米酒、水和食用油
