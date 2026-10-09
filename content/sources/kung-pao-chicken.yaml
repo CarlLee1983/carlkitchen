@@ -1,3 +1,17 @@
 urls:
   - https://www.chinasichuanfood.com/kung-pao-chicken/
   - https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
+  - https://tw.lkk.com/zh-hk/foodservices/products/gold-label-dark-soy-sauce
+  - https://tw.lkk.com/zh-hk/products/premium-soy-sauce
+  - https://tw.lkk.com/zh-hk/products/salt-reduced-soy-sauce
+# 原配方 dark soy sauce（老抽）7.5 ml、light soy sauce（生抽）15 ml 不變。
+# 顯示名稱改為上色用深色醬油、調味用醬油，是用途導向的編輯標法，非統一臺灣分類。
+# 李錦記臺灣資料以港式醬油稱呼生抽；頭道醇鮮商品另有臺式風味調配，未指定用該商品替代。
+# light 指原配方的醬油種類，不代表減鹽；dark 未改成醬油膏或一般醬油。
+# 壺底油、蔭油與醬油露不視為 dark/light soy sauce 通用同義詞，本次未替換原料。
+# FDA 醬油問答 Q4 指出壺底油、生抽、老抽等為民間通俗名稱；不由名稱推定製程與用途。
+# 查核：https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f636832397088362466
+# 黑龍壺底油為黑豆壺底原汁調製、原色不加醬色，不能直接等同原配方的上色醬油。
+# 查核：https://www.olong.com.tw/tw/product/show.aspx?kind=1&num=80
+# 蔭油露亦有其調製配方，「露」不是 light/dark 分類。
+# 查核：https://www.olong.com.tw/tw/product/show.aspx?kind=1&num=63

@@ -70,17 +70,17 @@ ingredients:
       unit: ml
     note: 醃雞丁用 5 ml、醬汁用 10 ml；此處指玉米澱粉
     group: 調味
-  - name: 老抽
+  - name: 上色用深色醬油
     amount:
       value: 7.5
       unit: ml
-    note: 醬汁用
+    note: dark soy sauce，加入醬汁，主要用來上色
     group: 調味
-  - name: 淡色醬油
+  - name: 調味用醬油
     amount:
       value: 15
       unit: ml
-    note: 醬汁用
+    note: light soy sauce，加入醬汁調味；不是日式薄口醬油或減鹽醬油
     group: 調味
   - name: 黑醋
     amount:
@@ -109,7 +109,7 @@ steps:
     image:
       src: ./step-2.webp
       alt: 木砧板上分開放著蔥白小段、薑末、蒜末和菜刀
-  - text: 拌勻老抽、淡色醬油、黑醋、水、糖、10 ml 玉米粉、0.625 ml 鹽與少許白胡椒粉，備成醬汁。
+  - text: 拌勻上色用深色醬油、調味用醬油、黑醋、水、糖、10 ml 玉米粉、0.625 ml 鹽與少許白胡椒粉，備成醬汁。
     image:
       src: ./step-3.webp
       alt: 素色瓷碗裡是調勻的棕色醬汁
@@ -131,4 +131,4 @@ hero:
   alt: 素色瓷碗中的雞丁、白色蔥段、六根乾辣椒、花椒與烤花生裹著棕色醬汁
 ingredientsPhoto:
   src: ./ingredients.webp
-  alt: 生雞丁、烤花生、四小堆蔥白段、六根乾辣椒、薑末、蒜末，以及分裝的花椒、食用油、紹興酒、鹽、白胡椒粉、玉米粉、老抽、淡色醬油、黑醋、水和糖
+  alt: 生雞丁、烤花生、四小堆蔥白段、六根乾辣椒、薑末、蒜末，以及分裝的花椒、食用油、紹興酒、鹽、白胡椒粉、玉米粉、上色用深色醬油、調味用醬油、黑醋、水和糖
