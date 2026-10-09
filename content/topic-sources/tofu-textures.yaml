@@ -1,0 +1,43 @@
+sources:
+  - title: 農糧署｜豆腐控站出來，一張圖搞懂豆腐
+    url: https://fae.moa.gov.tw/theme_data.php?id=1794&sub_theme=knowledge&theme=topics
+  - title: Mrs P's Kitchen｜新手不敗家常菜－麻婆豆腐15分鐘
+    url: https://icook.tw/recipes/108069
+  - title: 龜甲萬、王安琪｜芝麻照燒醬豆腐
+    url: https://kikkoman.com.tw/recipe_detal_%E8%8A%9D%E9%BA%BB%E7%85%A7%E7%87%92%E9%86%AC%E8%B1%86%E8%85%90_1167
+  - title: 龜甲萬、邱寶郎｜老皮嫩肉（板豆腐版本）
+    url: https://www.kikkoman.com.tw/recipe_detal_%E8%80%81%E7%9A%AE%E5%AB%A9%E8%82%89_607
+  - title: 食品工業發展研究所 Eatender｜義美雞蛋豆腐
+    url: https://eatender.firdi.org.tw/award/detail?id=13732
+  - title: 龜甲萬、江麗珠｜鮮菇燒油豆腐
+    url: https://kikkoman.com.tw/recipe_detal_%E9%AE%AE%E8%8F%87%E7%87%92%E6%B2%B9%E8%B1%86%E8%85%90_1046
+  - title: 煮奔已發布內容｜麻婆豆腐（ef6b798 版本）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/ef6b7983bca59eea9d4b0c47f47033b72dfb5e92/content/recipes/mapo-tofu/recipe.yaml
+  - title: 煮奔已發布內容｜老皮嫩肉（ef6b798 版本）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/ef6b7983bca59eea9d4b0c47f47033b72dfb5e92/content/recipes/old-skin-tender-tofu/recipe.yaml
+  - title: 龜甲萬、王安琪｜關東煮
+    url: https://kikkoman.com.tw/recipe_detal_%E9%97%9C%E6%9D%B1%E7%85%AE_1134
+sections:
+  - heading: 板豆腐的紮實，和加壓脫水有關
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=1794&sub_theme=knowledge&theme=topics
+      - https://eatender.firdi.org.tw/award/detail?id=13732
+  - heading: 嫩豆腐下鍋後，保留完整的豆腐塊
+    urls:
+      - https://icook.tw/recipes/108069
+      - https://github.com/CarlLee1983/carlkitchen/blob/ef6b7983bca59eea9d4b0c47f47033b72dfb5e92/content/recipes/mapo-tofu/recipe.yaml
+  - heading: 板豆腐煎上色，先處理表面水分
+    urls:
+      - https://kikkoman.com.tw/recipe_detal_%E8%8A%9D%E9%BA%BB%E7%85%A7%E7%87%92%E9%86%AC%E8%B1%86%E8%85%90_1167
+      - https://www.kikkoman.com.tw/recipe_detal_%E8%80%81%E7%9A%AE%E5%AB%A9%E8%82%89_607
+      - https://github.com/CarlLee1983/carlkitchen/blob/ef6b7983bca59eea9d4b0c47f47033b72dfb5e92/content/recipes/mapo-tofu/recipe.yaml
+  - heading: 雞蛋豆腐的配方，要連同菜譜一起看
+    urls:
+      - https://eatender.firdi.org.tw/award/detail?id=13732
+      - https://www.kikkoman.com.tw/recipe_detal_%E8%80%81%E7%9A%AE%E5%AB%A9%E8%82%89_607
+      - https://github.com/CarlLee1983/carlkitchen/blob/ef6b7983bca59eea9d4b0c47f47033b72dfb5e92/content/recipes/old-skin-tender-tofu/recipe.yaml
+  - heading: 油豆腐已經炸過，接下來看怎麼入菜
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=1794&sub_theme=knowledge&theme=topics
+      - https://kikkoman.com.tw/recipe_detal_%E9%AE%AE%E8%8F%87%E7%87%92%E6%B2%B9%E8%B1%86%E8%85%90_1046
+      - https://kikkoman.com.tw/recipe_detal_%E9%97%9C%E6%9D%B1%E7%85%AE_1134
