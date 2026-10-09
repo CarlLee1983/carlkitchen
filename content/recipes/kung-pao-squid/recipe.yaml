@@ -1,0 +1,45 @@
+title: 宮保魷魚
+summary: 水發魷魚尾汆燙後，與蔥薑、宮保及酸甜醬汁快炒。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+ingredients:
+  - { name: 水發魷魚尾, amount: { value: 400, unit: g }, note: 切粗條 }
+  - { name: 宮保, amount: { value: 10, unit: g } }
+  - { name: 薑, amount: { value: 5, unit: g }, note: 切絲 }
+  - { name: 蔥, amount: { value: 2, unit: 根 }, note: 切段 }
+  - { name: 白醋, amount: { value: 5, unit: ml }, group: 調味 }
+  - { name: 醬油, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 糖, amount: { value: 1, unit: 茶匙 }, group: 調味 }
+  - { name: 米酒, amount: { value: 5, unit: ml }, group: 調味 }
+  - { name: 水, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 太白粉, amount: { value: 0.5, unit: 茶匙 }, group: 調味 }
+  - { name: 香油, amount: { value: 5, unit: ml }, group: 調味 }
+  - { name: 沙拉油, amount: { value: 30, unit: ml }, group: 調味 }
+steps:
+  - text: 水發魷魚尾切粗條，放入滾水汆燙約 10 秒，撈起瀝乾。薑切絲，蔥切段。
+    image:
+      src: ./step-1.webp
+      alt: 汆燙後的魷魚粗條放在瀝水籃，砧板上有切好的蔥段與薑絲
+  - text: 白醋、醬油、糖、米酒、水和太白粉拌勻，調成醬汁。
+    image:
+      src: ./step-2.webp
+      alt: 米白色小碗中盛著已拌勻的棕色醬汁，旁邊放著攪拌用湯匙
+  - text: 鍋中倒入沙拉油，以小火炒香蔥、薑和宮保。加入水發魷魚尾，轉大火快炒約 5 秒。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中有剛放入的魷魚粗條、蔥段、薑絲和宮保
+  - text: 邊炒邊淋入醬汁，翻炒均勻，最後淋上香油。
+    image:
+      src: ./step-4.webp
+      alt: 棕色醬汁從小碗淋進炒鍋中的魷魚粗條、蔥段、薑絲和宮保
+hero:
+  src: ./hero.webp
+  alt: 米白色圓盤盛著醬汁包覆的魷魚粗條、蔥段、薑絲與宮保
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 魷魚粗條、宮保、薑絲與兩根蔥分開放著，下方小碟盛著白醋、醬油、糖、米酒、水、太白粉、香油和沙拉油

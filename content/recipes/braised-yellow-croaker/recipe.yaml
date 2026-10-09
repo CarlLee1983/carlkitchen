@@ -1,0 +1,41 @@
+title: 紅燒黃魚
+summary: 黃魚與蒜仁先煎至金黃，再和香菇、紅蘿蔔及蔥薑一起燒至收汁。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+ingredients:
+  - { name: 黃魚, amount: { value: 1, unit: 尾 } }
+  - { name: 泡發香菇, amount: { value: 5, unit: 朵 } }
+  - { name: 紅蘿蔔片, amount: { value: 20, unit: g } }
+  - { name: 蒜仁, amount: { value: 60, unit: g } }
+  - { name: 蔥, amount: { value: 2, unit: 根 } }
+  - { name: 薑, amount: { value: 50, unit: g } }
+  - { name: 紅辣椒, amount: { value: 2, unit: 根 } }
+  - { name: 醬油, amount: { value: 30, unit: ml }, group: 調味 }
+  - { name: 細砂糖, amount: { value: 1, unit: 茶匙 }, group: 調味 }
+  - { name: 水, amount: { value: 250, unit: ml }, group: 調味 }
+  - { name: 油, amount: { value: 45, unit: ml }, group: 調味 }
+steps:
+  - text: 蔥洗淨切段，薑去皮切絲，紅辣椒去蒂去籽後切片，泡發香菇去蒂。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上整齊放著五朵去蒂香菇、蔥段、薑絲和紅辣椒片
+  - text: 鍋中倒入油，以中火燒至略熱。放入黃魚和蒜仁，轉小火煎至金黃，盛起瀝油。
+    image:
+      src: ./step-2.webp
+      alt: 一尾黃魚和多瓣蒜仁在淺炒鍋中煎至表面金黃
+  - text: 鍋中留少許油，炒香蔥、薑和紅辣椒。放回黃魚和蒜仁，加入紅蘿蔔片、泡發香菇、醬油、細砂糖與水。
+  - text: 以中火煮滾後轉小火，不時輕推魚身避免沾鍋，煮至湯汁收乾。
+    image:
+      src: ./step-4.webp
+      alt: 淺炒鍋中一尾黃魚與香菇、紅蘿蔔片、蒜仁、蔥薑和紅辣椒一起燒至醬汁收乾
+hero:
+  src: ./hero.webp
+  alt: 米白色橢圓盤中有一尾紅燒黃魚，周圍放著香菇、紅蘿蔔片、蒜仁、蔥段、薑絲與紅辣椒片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一尾黃魚、五朵泡發香菇、紅蘿蔔片、蒜仁、兩根蔥、一塊薑與兩根紅辣椒，前方小碟盛著醬油、細砂糖、水和油

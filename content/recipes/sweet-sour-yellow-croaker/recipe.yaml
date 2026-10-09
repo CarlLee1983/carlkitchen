@@ -1,0 +1,44 @@
+title: 糖醋黃魚
+summary: 兩尾黃魚煎熟後，淋上以番茄醬、水果醋調成的糖醋醬汁。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+ingredients:
+  - { name: 黃魚, amount: { value: 2, unit: 尾 } }
+  - { name: 洋蔥, amount: { value: 0.5, unit: 顆 } }
+  - { name: 蔥, amount: { value: 2, unit: 根 } }
+  - { name: 薑, amount: { value: 2, unit: 片 } }
+  - { name: 番茄醬, amount: { value: 45, unit: ml }, group: 調味 }
+  - { name: 糖, amount: { value: 1.5, unit: 大匙 }, group: 調味 }
+  - { name: 醬油, amount: { value: 22.5, unit: ml }, group: 調味 }
+  - { name: 水果醋, amount: { value: 45, unit: ml }, group: 調味 }
+  - { name: 水, amount: { value: 90, unit: ml }, group: 調味 }
+  - { name: 油, amount: { value: 30, unit: ml }, group: 調味 }
+steps:
+  - text: 洋蔥切塊，蔥切段。黃魚刮鱗，洗淨魚腹與魚頭，在魚背各劃兩刀，擦乾表面水分。
+    image:
+      src: ./step-1.webp
+      alt: 兩尾洗淨且背部劃刀的黃魚放在淺盤上，砧板上有切好的洋蔥、蔥段與薑片
+  - text: 番茄醬、糖、醬油、水果醋和水拌勻，調成糖醋醬汁。
+    image:
+      src: ./step-2.webp
+      alt: 米白色小碗盛著已拌勻的紅色糖醋醬汁，旁邊放著攪拌用湯匙
+  - text: 鍋中加油，放入薑以中小火略煎後取出。放入兩尾黃魚，彼此留空隙，蓋上鍋蓋，以中小火煎約 4 分鐘。
+    image:
+      src: ./step-3.webp
+      alt: 淺炒鍋中兩尾黃魚並排煎著，中間留有空隙
+  - text: 翻面續煎至熟，將黃魚盛起，鍋中留油。煎煮時間依魚的大小調整。
+  - text: 放入洋蔥、薑和蔥，以中小火拌炒。倒入糖醋醬汁，煮至略為濃稠後淋在黃魚上。
+    image:
+      src: ./step-5.webp
+      alt: 淺炒鍋中的洋蔥塊、薑片與蔥段正在紅色糖醋醬汁裡煮至略稠
+hero:
+  src: ./hero.webp
+  alt: 米白色橢圓盤中有兩尾完整黃魚，表面淋著紅色糖醋醬汁並散有洋蔥與蔥段
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩尾黃魚、半顆洋蔥、兩根蔥與兩片薑，前方小碟分裝番茄醬、糖、醬油、水果醋、水和油

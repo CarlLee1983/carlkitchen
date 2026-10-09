@@ -1,0 +1,79 @@
+title: 芋頭燒排骨
+summary: 排骨和芋頭分別炸過，再與蔥薑、調味料一起燒煮，收成濃稠醬汁。
+servings: 3
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+ingredients:
+  - {
+      name: 豬小排,
+      amount: { value: 300, unit: g },
+      note: 來源僅寫排骨，部位待審,
+    }
+  - { name: 芋頭, amount: { value: 230, unit: g } }
+  - { name: 蔥, amount: { value: 2, unit: 根 } }
+  - { name: 薑末, amount: { value: 10, unit: g } }
+  - { name: 辣椒, amount: { value: 1, unit: 根 } }
+  - {
+      name: 鹽,
+      amount: { value: 0.25, unit: 匙 },
+      note: 醃排骨用；來源寫 1/4 匙，匙的種類待核,
+      group: 調味,
+    }
+  - {
+      name: 雞精粉,
+      amount: { value: 0.25, unit: 匙 },
+      note: 醃排骨用；匙的種類待核,
+      group: 調味,
+    }
+  - {
+      name: 砂糖,
+      amount: { value: 0.5, unit: 匙 },
+      note: 醃排骨用；匙的種類待核,
+      group: 調味,
+    }
+  - {
+      name: 蘇打粉,
+      amount: { value: 0.125, unit: 匙 },
+      note: 醃排骨用；匙的種類待核,
+      group: 調味,
+    }
+  - { name: 蛋白, amount: { value: 15, unit: ml }, group: 調味 }
+  - {
+      name: 料酒,
+      amount: { value: 0.5, unit: 匙 },
+      note: 醃排骨用；匙的種類待核,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 15, unit: ml }, note: 醃排骨用, group: 調味 }
+  - {
+      name: 太白粉,
+      amount: { value: 3, unit: 大匙 },
+      note: 醃排骨用,
+      group: 調味,
+    }
+  - {
+      name: 沙拉油,
+      note: 炸芋頭與排骨用，來源油量寫「2 碗」並留有編輯註記，待核,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 0.1667, unit: 茶匙 },
+      note: 燒煮用，來源寫 1/6 茶匙,
+      group: 調味,
+    }
+  - { name: 奶水, amount: { value: 50, unit: ml }, group: 調味 }
+  - { name: 細砂糖, amount: { value: 1, unit: 茶匙 }, group: 調味 }
+  - { name: 水, amount: { value: 250, unit: ml }, note: 燒煮用, group: 調味 }
+  - { name: 太白粉水, amount: { value: 0.5, unit: 大匙 }, group: 調味 }
+  - { name: 香油, amount: { value: 5, unit: ml }, group: 調味 }
+steps:
+  - text: 豬小排洗淨瀝乾，與醃排骨用的鹽、雞精粉、砂糖、蘇打粉、蛋白、料酒、水及太白粉拌勻，醃約 5 分鐘。蔥切段，芋頭去皮切塊。
+  - text: 沙拉油加熱至約 150°C，轉小火炸芋頭約 1 分鐘，至表面稍硬後撈起瀝油。
+  - text: 油再次加熱至約 150°C，逐塊放入豬小排，以小火炸約 10 分鐘至表面酥脆，撈起瀝油。
+  - text: 倒出大部分沙拉油，鍋底留約 1 大匙。以小火炒香蔥、薑末和辣椒，放回豬小排，加入燒煮用的水，煮滾後轉小火。
+  - text: 煮約 2 分鐘後加入芋頭，續煮約 2 分鐘至湯汁略稠。加入燒煮用的鹽、奶水和細砂糖，煮滾後拌入太白粉水，淋上香油。

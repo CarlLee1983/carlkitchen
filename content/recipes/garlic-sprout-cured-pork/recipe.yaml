@@ -1,0 +1,38 @@
+title: 蒜苗炒臘肉
+summary: 廣東臘肉先蒸熟切片，再和蒜苗、辣椒一起快炒。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 20
+ingredients:
+  - { name: 廣東臘肉, amount: { value: 180, unit: g } }
+  - { name: 蒜苗, amount: { value: 200, unit: g } }
+  - { name: 辣椒, amount: { value: 1, unit: 根 } }
+  - { name: 蒜仁, amount: { value: 2, unit: 瓣 } }
+  - { name: 醬油, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 細砂糖, amount: { value: 0.5, unit: 茶匙 }, group: 調味 }
+  - { name: 料酒, amount: { value: 5, unit: ml }, group: 調味 }
+  - { name: 香油, amount: { value: 5, unit: ml }, group: 調味 }
+  - { name: 油, note: 來源寫少許，炒香用, group: 調味 }
+steps:
+  - text: 廣東臘肉蒸約 10 分鐘至熟，去皮切薄片。蒜苗切斜片，辣椒與蒜仁切碎。
+    image:
+      src: ./step-1.webp
+      alt: 蒸鍋旁的砧板上放著臘肉薄片、蒜苗斜片、辣椒碎與蒜仁碎
+  - text: 鍋中加少許油，以小火炒香蒜仁和辣椒。加入廣東臘肉，炒約 10 秒。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋裡的臘肉薄片與蒜仁碎、辣椒碎正在拌炒
+  - text: 加入蒜苗、醬油、細砂糖和料酒，轉大火快炒約 20 秒，起鍋前淋上香油。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋裡的廣東臘肉薄片、蒜苗斜片與紅辣椒碎拌炒均勻
+hero:
+  src: ./hero.webp
+  alt: 米白色圓盤盛著廣東臘肉薄片、蒜苗斜片與紅辣椒碎
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一塊廣東臘肉、蒜苗、一根紅辣椒與兩瓣蒜仁，前方小碟盛著醬油、糖、料酒、香油和油

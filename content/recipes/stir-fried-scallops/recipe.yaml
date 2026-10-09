@@ -1,0 +1,66 @@
+title: 生炒鮮干貝
+summary: 鮮干貝先汆燙，再和甜豆、紅蘿蔔快炒，最後以太白粉水勾薄芡。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [海鮮, 快炒]
+ingredients:
+  - { name: 鮮干貝, amount: { value: 160, unit: g } }
+  - { name: 甜豆, amount: { value: 70, unit: g } }
+  - { name: 紅蘿蔔, amount: { value: 15, unit: g } }
+  - { name: 青蔥, amount: { value: 1, unit: 支 } }
+  - { name: 薑, amount: { value: 10, unit: g } }
+  - { name: 辣椒, amount: { value: 1, unit: 支 } }
+  - {
+      name: 沙拉油,
+      amount: { value: 15, unit: ml },
+      note: 原做法標示 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 蠔油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 50, unit: ml }, group: 調味 }
+  - {
+      name: 太白粉水,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 紅蘿蔔切片，甜豆撕掉粗邊；青蔥切段，薑和辣椒切片。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上分開擺著紅蘿蔔片、去粗邊的甜豆、蔥段、薑片與辣椒片，旁邊有菜刀
+  - text: 鮮干貝放進滾水汆燙約 10 秒，撈起瀝乾。
+    image:
+      src: ./step-2.webp
+      alt: 不鏽鋼瀝水網裡盛著剛汆燙、正在滴水的鮮干貝
+  - text: 熱鍋加入沙拉油，以小火炒香青蔥、薑和辣椒。放入鮮干貝、甜豆、紅蘿蔔、蠔油、米酒和水，轉中火炒勻。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋裡的鮮干貝、甜豆、紅蘿蔔片、蔥段、薑片與辣椒片正在拌炒
+  - text: 再炒約 30 秒，加入太白粉水勾芡，淋上香油起鍋。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋裡的鮮干貝、甜豆、紅蘿蔔片、蔥段、薑片與辣椒片裹著薄芡
+hero:
+  src: ./hero.webp
+  alt: 素色瓷盤裡盛著鮮干貝、甜豆、紅蘿蔔片、蔥段、薑片與辣椒片，表面帶有薄芡
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 鮮干貝、甜豆、一小段紅蘿蔔、一支青蔥、一塊薑、一支辣椒與分裝的蠔油、米酒、水、太白粉水、香油和沙拉油
