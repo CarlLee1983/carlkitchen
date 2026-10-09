@@ -1,0 +1,46 @@
+title: 泰式打拋豬
+summary: 以事先備妥的豬肉燥與辣椒、九層塔快炒，再拌入泰式辣椒醬與檸檬汁。
+servings: 2
+category: 非湯料理
+draft: true
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - {
+      name: 豬肉燥,
+      amount: { value: 300, unit: g },
+      note: 來源未提供肉燥製法與豬肉部位，需事先備妥,
+    }
+  - { name: 九層塔葉, amount: { value: 30, unit: ml }, note: 約 2 大匙 }
+  - { name: 辣椒末, amount: { value: 5, unit: ml }, note: 約 1 小匙 }
+  - {
+      name: 泰式辣椒醬,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 檸檬汁,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 食用油, group: 調味, note: 少許 }
+steps:
+  - text: 加少許食用油入鍋，放入辣椒末與豬肉燥，炒出香味。
+    image:
+      src: ./step-1.webp
+      alt: 深色炒鍋裡的豬肉燥與辣椒末正在拌炒
+  - text: 加入九層塔葉、泰式辣椒醬與檸檬汁，開大火拌炒均勻。
+    image:
+      src: ./step-2.webp
+      alt: 深色炒鍋裡的豬肉燥拌入九層塔葉和醬汁
+hero:
+  src: ./hero.webp
+  alt: 素色陶盤上盛著拌有九層塔葉與辣椒末的豬肉燥
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 300 g 豬肉燥、30 ml 九層塔葉、5 ml 辣椒末、30 ml 泰式辣椒醬、15 ml 檸檬汁和少許食用油分開擺放

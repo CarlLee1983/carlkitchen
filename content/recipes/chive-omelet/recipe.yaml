@@ -1,0 +1,39 @@
+title: 韭菜烘蛋
+summary: 韭菜先炒到半熟，再加入雞蛋以中小火煎熟，翻面後續煎至熟。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 15
+tags: [家常菜]
+ingredients:
+  - { name: 韭菜, amount: { value: 140, unit: g }, note: 切小段 }
+  - { name: 雞蛋, amount: { value: 5, unit: 顆 } }
+  - { name: 食用油, group: 調味, note: 用量未提供 }
+  - {
+      name: 鹽,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 小匙,
+      group: 調味,
+    }
+steps:
+  - text: 韭菜洗淨後切成小段。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上切成小段的韭菜，旁邊放著菜刀
+  - text: 炒鍋加熱後倒入食用油，放入韭菜炒數分鐘至半熟。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋中的韭菜炒至半熟
+  - text: 加入雞蛋和鹽，以中小火煎數分鐘。翻面後再煎數分鐘，起鍋。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋中的韭菜烘蛋翻面後續煎
+hero:
+  src: ./hero.webp
+  alt: 白色陶瓷盤中盛著切成塊的韭菜烘蛋
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 140 g 韭菜、五顆雞蛋，以及分裝在小碟中的鹽和一小瓶食用油
