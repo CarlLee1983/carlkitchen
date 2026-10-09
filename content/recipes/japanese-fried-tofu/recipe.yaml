@@ -1,44 +1,80 @@
 title: 日式炸豆腐
-summary: 芙蓉豆腐依序沾玉米粉、蛋液和柴魚絲，炸酥後淋上醬汁。
-servings: 2
+summary: 豆腐裹粉炸至淺金黃，配昆布柴魚高湯，再加蘿蔔泥、薑泥和蔥花。
+servings: 3
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
-timeMinutes: 20
+timeMinutes: 30
 tags: [日式料理, 豆腐]
 ingredients:
-  - { name: 芙蓉豆腐, amount: { value: 2, unit: 塊 } }
-  - { name: 柴魚絲, amount: { value: 20, unit: g } }
-  - { name: 玉米粉, amount: { value: 30, unit: g } }
-  - { name: 雞蛋, amount: { value: 2, unit: 顆 } }
+  - { name: 嫩豆腐, amount: { value: 397, unit: g }, note: 約 14 盎司 }
   - {
-      name: 鰹魚醬油,
-      amount: { value: 15, unit: ml },
-      note: 約 1 大匙，醬汁用,
+      name: 馬鈴薯澱粉,
+      amount: { value: 59, unit: ml },
+      note: 約 1/4 美制量杯，以容量量取；可用玉米粉替代,
+    }
+  - { name: 昆布, amount: { value: 1, unit: 片 }, note: 約 2.5 × 8.9 cm }
+  - {
+      name: 柴魚片,
+      amount: { value: 237, unit: ml },
+      note: 約 1 美制量杯，以容量量取,
+    }
+  - { name: 白蘿蔔, amount: { value: 1, unit: 段 }, note: 約長 5.1 cm，磨成泥 }
+  - { name: 青蔥, amount: { value: 1, unit: 段 }, note: 切成蔥花 }
+  - { name: 薑, note: 少許，磨成泥, group: 調味 }
+  - { name: 七味粉, note: 適量, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
       group: 調味,
     }
   - {
       name: 味醂,
-      amount: { value: 5, unit: ml },
-      note: 約 1 茶匙，醬汁用,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
       group: 調味,
     }
   - {
-      name: 高湯,
-      amount: { value: 15, unit: ml },
-      note: 約 1 大匙，醬汁用,
+      name: 水,
+      amount: { value: 237, unit: ml },
+      note: 約 1 美制量杯,
       group: 調味,
     }
   - {
-      name: 沙拉油,
-      amount: { value: 300, unit: ml },
-      note: 約 300 c.c.，炸油,
+      name: 食用油,
+      amount: { value: 946, unit: ml },
+      note: 約 4 美制量杯，油炸用,
       group: 調味,
     }
 steps:
-  - text: 芙蓉豆腐切成 8 塊，雞蛋打散；鰹魚醬油、味醂和高湯調勻成醬汁。
-  - text: 豆腐依序沾上玉米粉、蛋液和柴魚絲。
-  - text: 沙拉油加熱至約 160°C，放入豆腐炸約 1 分鐘至表面酥脆，撈起瀝油。
-  - text: 炸豆腐裝碗，淋上調好的醬汁。
+  - text: 用廚房紙包住嫩豆腐，瀝水 15 分鐘。等待時將白蘿蔔、薑磨成泥，青蔥切成蔥花，並煮高湯。
+    image:
+      src: ./step-1.webp
+      alt: 紙巾包住一塊嫩豆腐，旁邊三只白碗分別裝蘿蔔泥、薑泥和蔥花
+  - text: 將水和昆布加熱至鍋邊冒泡，放入柴魚片，小火煮 15 秒後濾出高湯。
+    image:
+      src: ./step-2.webp
+      alt: 白碗裝著濾清的淡黃色高湯，旁邊濾網中留有昆布和柴魚片
+  - text: 加熱味醂，再倒入高湯和醬油，一起煮滾備用。
+    image:
+      src: ./step-3.webp
+      alt: 灰色小湯鍋內的淡褐色醬汁冒著氣泡和蒸氣
+  - text: 將瀝水後的嫩豆腐分成六塊，每塊表面裹上馬鈴薯澱粉。
+    image:
+      src: ./step-4.webp
+      alt: 木砧板上排著六塊裹上白色澱粉的嫩豆腐，旁邊放著菜刀
+  - text: 將食用油加熱至約 177°C，放入豆腐炸到淺金黃色，撈起後吸除多餘油分。
+    image:
+      src: ./step-5.webp
+      alt: 深灰色雙耳炸鍋中有六塊淺金黃色豆腐，周圍的油冒著小泡
+  - text: 將炸豆腐裝碗，放上白蘿蔔泥、薑泥和蔥花，倒入煮好的醬汁，撒上七味粉。
+hero:
+  src: ./hero.webp
+  alt: 白色淺碗裡有六塊炸豆腐和淡褐色湯汁，豆腐上點綴蘿蔔泥、薑泥、蔥花與七味粉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一塊嫩豆腐、一片昆布、一段白蘿蔔、一段青蔥、少許薑，以及分裝的馬鈴薯澱粉、柴魚片、七味粉、醬油、味醂、水和食用油
+tip: 杯量依美制量杯換算，馬鈴薯澱粉和柴魚片的 ml 表示容量。
