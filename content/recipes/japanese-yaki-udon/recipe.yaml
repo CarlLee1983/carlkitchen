@@ -1,12 +1,12 @@
 title: 日式炒烏龍麵
-summary: 豬肉絲和蔬菜炒香後加入烏龍麵與和風調味料燜煮。
+summary: 先用柴魚片煮一鍋湯頭，豬肉絲和蔬菜炒香後，加入烏龍麵、和風調味料與湯頭燜煮。
 servings: 1
 category: 主食
-draft: true
+draft: false
 mealCandidate: false
 vegetable: false
 protein: false
-timeMinutes: 25
+timeMinutes: 30
 tags: [日式料理, 麵食]
 ingredients:
   - { name: 烏龍麵, amount: { value: 150, unit: g } }
@@ -15,8 +15,8 @@ ingredients:
   - { name: 魚板, amount: { value: 30, unit: g }, note: 切小片 }
   - { name: 竹筍, amount: { value: 10, unit: g }, note: 切絲 }
   - { name: 生香菇, amount: { value: 10, unit: g }, note: 切片 }
-  - { name: 豬肉絲, amount: { value: 30, unit: g } }
-  - { name: 柴魚片, amount: { value: 10, unit: g } }
+  - { name: 豬肉絲, amount: { value: 30, unit: g }, note: 建議用里肌肉 }
+  - { name: 柴魚片, amount: { value: 10, unit: g }, note: 煮湯頭用，撈除 }
   - {
       name: 和風醬,
       amount: { value: 30, unit: ml },
@@ -35,10 +35,34 @@ ingredients:
       note: 約 1/2 小匙,
       group: 調味,
     }
-  - { name: 水, amount: { value: 600, unit: ml }, group: 調味 }
+  - {
+      name: 水,
+      amount: { value: 600, unit: ml },
+      note: 煮柴魚湯頭用,
+      group: 調味,
+    }
   - { name: 食用油, note: 少許，炒料用，來源未標用量, group: 調味 }
 steps:
   - text: 青蔥切成段，紅蘿蔔和竹筍切絲，魚板切成小片，生香菇切片；各樣材料切之前先洗淨。
-  - text: 鍋燒熱後放少許油，下豬肉絲和上一步切好的全部材料，炒出香氣。
-  - text: 接著放入烏龍麵，倒進和風醬、黑胡椒粉、糖和水。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上分堆放著切段的青蔥、紅蘿蔔絲、竹筍絲、帶粉紅邊的魚板片和生香菇片，砧板邊放著一把菜刀
+  - text: 水煮滾後放入柴魚片，煮出湯頭，再把柴魚片撈除，湯頭留著備用。
+    image:
+      src: ./step-2.webp
+      alt: 不鏽鋼單柄鍋裡是清澈的淡金黃色柴魚湯頭，冒著熱氣，湯面沒有柴魚片；旁邊的細網濾勺裡裝著撈出的柴魚片
+  - text: 鍋燒熱後放少許油，下豬肉絲和第一步切好的全部材料，炒出香氣。
+    image:
+      src: ./step-3.webp
+      alt: 木柄黑色平底鍋裡炒熟的肉絲，混著青蔥段、紅蘿蔔絲、竹筍絲、魚板片和香菇片，微微冒著熱氣
+  - text: 接著放入烏龍麵，加和風醬、黑胡椒粉、糖，再倒進柴魚湯頭。
+    image:
+      src: ./step-4.webp
+      alt: 同一只平底鍋裡放進了白色烏龍麵，麵條泡在淡褐色的湯汁中，周圍是肉絲、魚板片、香菇片、紅蘿蔔絲、竹筍絲與青蔥段，撒著黑胡椒
   - text: 加蓋燜煮至麵條熟透。
+hero:
+  src: ./hero.webp
+  alt: 米白色淺碗盛著日式炒烏龍麵，粗白麵條沾著淡褐色醬汁，碗底留有少許湯汁，拌著肉絲、紅蘿蔔絲、竹筍條、香菇片、帶粉紅邊的魚板片和青蔥段，撒有黑胡椒
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 平鋪的一份白色烏龍麵、一小堆生豬肉絲、香菇片、紅蘿蔔絲、魚板片、竹筍絲、青蔥段，一小碟柴魚片，以及一瓶和風醬、一小碟黑胡椒粉、一小碟糖、一壺水和一瓶食用油
