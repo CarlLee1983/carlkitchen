@@ -6,12 +6,14 @@ set -u
 out=$1; name=$2; scene=$3; ref=${4:-}; ref2=${5:-}
 here=${0:A:h}
 style=$(<${STYLE_FILE:-$here/../style.txt})
+mkdir -p "$out" || exit 1
+out=${out:A}
 refargs=(); refnote=""
 if [[ -n $ref ]]; then
   refargs=(-i "$ref"); [[ -n $ref2 ]] && refargs+=("$ref2")
   refnote="The attached image is the style reference: match the style, line weight, colors, background and the same cookware of the reference image. "
 fi
-mkdir -p "$out" && cd "$out" && rm -f "./$name.png" && perl -e 'alarm shift; exec @ARGV' 300 \
+cd "$out" && rm -f "./$name.png" && perl -e 'alarm shift; exec @ARGV' 300 \
   codex exec --skip-git-repo-check -C "$out" -s workspace-write \
   "Use your image generation tool to create exactly one image and save it as ./$name.png in the current directory, then reply with only the absolute path. ${refnote}Prompt: $style
 
