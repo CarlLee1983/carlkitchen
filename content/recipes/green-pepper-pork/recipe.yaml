@@ -1,0 +1,73 @@
+title: 青椒炒肉絲
+summary: 豬肉絲先煎到一面上色，再與青椒、紅椒和香菇素蠔油炒勻。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: true
+timeMinutes: 15
+tags: [豬肉, 青椒, 家常菜]
+ingredients:
+  - {
+      name: 豬里肌肉絲,
+      amount: { value: 330, unit: g },
+      note: 來源僅寫豬肉絲，部位為補充,
+    }
+  - { name: 青椒, amount: { value: 2, unit: 顆 }, note: 切絲 }
+  - { name: 紅椒, amount: { value: 1, unit: 顆 }, note: 切絲 }
+  - { name: 蒜頭, amount: { value: 2, unit: 瓣 }, note: 切末 }
+  - { name: 食用油, note: 來源未提供用量，炒香蒜末用, group: 調味 }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 湯匙，醃肉用,
+      group: 調味,
+    }
+  - { name: 白胡椒粉, note: 來源標示少許，醃肉用, group: 調味 }
+  - { name: 太白粉, note: 來源標示適量，醃肉用, group: 調味 }
+  - {
+      name: 香菇素蠔油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 湯匙,
+      group: 調味,
+    }
+  - { name: 黑胡椒粉, note: 來源標示適量, group: 調味 }
+  - {
+      name: 高湯粉,
+      amount: { value: 0.25, unit: 茶匙 },
+      note: 來源品項為烹大師,
+      group: 調味,
+    }
+  - { name: 鹽, amount: { value: 0.25, unit: 茶匙 }, group: 調味 }
+steps:
+  - text: 豬里肌肉絲加入米酒、白胡椒粉、醬油與太白粉，抓拌均勻。
+    image:
+      src: ./step-1.webp
+      alt: 白色瓷碗裡的豬里肌肉絲拌著醬油、米酒、白胡椒粉與太白粉
+  - text: 蒜頭切末，青椒和紅椒切絲。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分開擺著蒜末、兩顆青椒切成的絲和一顆紅椒切成的絲
+  - text: 鍋中倒入食用油，油熱後放入蒜末炒香。
+  - text: 放入豬里肌肉絲，先煎到一面焦香上色，再翻炒至九分熟。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋裡的豬里肌肉絲一面已煎成淺褐色，與蒜末一起翻炒
+  - text: 加入青椒、紅椒、香菇素蠔油、黑胡椒粉、高湯粉與鹽，拌炒到食材熟透。
+    image:
+      src: ./step-5.webp
+      alt: 炒鍋裡的豬里肌肉絲、青椒絲與紅椒絲裹著棕色醬汁
+  - text: 將青椒炒肉絲盛起。
+hero:
+  src: ./hero.webp
+  alt: 米白色淺陶盤裡的豬里肌肉絲與青椒絲、紅椒絲拌著棕色醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 330 克豬里肌肉絲、兩顆青椒、一顆紅椒與兩瓣蒜頭，旁邊分裝食用油、米酒、醬油、白胡椒粉、太白粉、香菇素蠔油、黑胡椒粉、高湯粉和鹽

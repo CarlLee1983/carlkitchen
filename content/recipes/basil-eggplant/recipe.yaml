@@ -1,0 +1,40 @@
+title: 塔香茄子
+summary: 茄子先與蒜頭燜軟，再加入九層塔與醬油膏收汁。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [茄子, 九層塔, 蔬食]
+ingredients:
+  - { name: 茄子, amount: { value: 2, unit: 根 }, note: 切片 }
+  - { name: 九層塔, amount: { value: 1, unit: 小把 } }
+  - {
+      name: 蒜頭,
+      amount: { value: 3, unit: 瓣 },
+      note: 來源標示 3 至 4 瓣，取下限並切細,
+    }
+  - { name: 食用油, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 醬油膏, note: 來源標示少許, group: 調味 }
+  - { name: 水, note: 來源標示少許, group: 調味 }
+steps:
+  - text: 茄子切片，蒜頭切細。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上有兩根茄子切成的片與切細的蒜頭
+  - text: 鍋中加熱食用油，放入蒜頭與茄子拌炒，蓋上鍋蓋燜至茄子稍軟。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋裡的茄子片與蒜末拌炒後變軟，鍋蓋放在旁邊
+  - text: 加入醬油膏、九層塔與少許水，拌勻後蓋上鍋蓋，燜至湯汁減少再起鍋。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋裡的茄子片拌著醬油膏與九層塔，鍋底只剩少量醬汁
+hero:
+  src: ./hero.webp
+  alt: 米白色淺陶盤盛著裹上醬油膏的茄子片，九層塔葉散在其間
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 兩根茄子、一小把九層塔與三瓣蒜頭，旁邊分裝食用油、醬油膏與水

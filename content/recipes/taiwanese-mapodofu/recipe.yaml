@@ -1,0 +1,48 @@
+title: 台式家常麻婆豆腐
+summary: 嫩豆腐和絞肉以微辣豆瓣醬調味，最後勾薄芡並撒上蔥花。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [豆腐, 豬肉, 家常菜]
+ingredients:
+  - { name: 嫩豆腐, amount: { value: 1, unit: 盒 } }
+  - {
+      name: 豬絞肉,
+      amount: { value: 100, unit: g },
+      note: 來源僅寫絞肉，畜種與部位為推估,
+    }
+  - { name: 蒜頭, amount: { value: 3, unit: 瓣 }, note: 切末 }
+  - { name: 青蔥, amount: { value: 2, unit: 根 }, note: 分切蔥白與蔥綠 }
+  - { name: 食用油, note: 來源未提供用量，炒香用, group: 調味 }
+  - { name: 微辣豆瓣醬, amount: { value: 1.5, unit: 小匙 }, group: 調味 }
+  - { name: 醬油, amount: { value: 10, unit: ml }, group: 調味 }
+  - { name: 米酒, amount: { value: 1, unit: 小匙 }, group: 調味 }
+  - { name: 開水, amount: { value: 150, unit: ml }, group: 調味 }
+  - { name: 太白粉水, note: 來源標示一小碟，用於勾薄芡, group: 調味 }
+  - { name: 胡椒粉, note: 來源標示適量, group: 調味 }
+steps:
+  - text: 嫩豆腐切成小塊。蒜頭切末，青蔥分切蔥白與蔥綠。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上切好的嫩豆腐塊、蒜末與分開的青蔥白和蔥綠
+  - text: 鍋中倒入食用油，放入蒜末和蔥白炒香。
+  - text: 加入豬絞肉拌炒，過程中淋入米酒。
+  - text: 豬絞肉炒熟後，加入醬油和微辣豆瓣醬拌炒均勻。
+    image:
+      src: ./step-4.webp
+      alt: 炒鍋裡的豬絞肉與蒜末、青蔥白拌著紅褐色豆瓣醬
+  - text: 放入嫩豆腐和開水，煨煮至入味。
+  - text: 加入太白粉水勾薄芡，撒上胡椒粉和青蔥綠後起鍋。
+    image:
+      src: ./step-6.webp
+      alt: 炒鍋裡的嫩豆腐與豬絞肉裹著薄芡，表面撒有青蔥綠
+hero:
+  src: ./hero.webp
+  alt: 米白色淺陶盤盛著嫩豆腐與豬絞肉，表面覆著紅褐色醬汁和青蔥綠
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 一盒嫩豆腐、100 克豬絞肉、三瓣蒜頭、兩根青蔥，旁邊分裝食用油、微辣豆瓣醬、醬油、米酒、開水、太白粉水與胡椒粉
