@@ -2,7 +2,7 @@ title: 海鮮義大利麵
 summary: 海鮮炒到蛤蜊開口先取出，奶油番茄醬汁加蔬菜絲與高湯煮滾，再和義大利麵、海鮮拌炒。
 servings: 2
 category: 主食
-draft: true
+draft: false
 mealCandidate: false
 vegetable: false
 protein: false
@@ -19,7 +19,6 @@ ingredients:
   - { name: 番茄, amount: { value: 1, unit: 個 } }
   - { name: 紅蘿蔔, note: 少許, group: 調味 }
   - { name: 月桂葉, amount: { value: 1, unit: 片 }, group: 調味 }
-  - { name: 九層塔, note: 少許, group: 調味 }
   - { name: 高湯, amount: { value: 300, unit: ml } }
   - { name: 橄欖油, note: 少許, group: 調味 }
   - {
@@ -50,11 +49,29 @@ ingredients:
       group: 調味,
     }
   - { name: 奶油, note: 適量，來源未標數量, group: 調味 }
-  - { name: 蒜末, note: 少許，來源步驟提及但材料表未列, group: 調味 }
+  - { name: 蒜末, note: 少許，來源未標用量, group: 調味 }
 steps:
   - text: 義大利直麵放進滾水，煮約 8 分鐘後撈出。
+    image:
+      src: ./step-1.webp
+      alt: 不鏽鋼瀝水籃裡裝著剛煮好撈出的義大利直麵，冒著熱氣
   - text: 中卷洗淨切成圈，蝦仁去腸泥；青椒、紅椒、紅蘿蔔和洋蔥切絲，番茄切小丁。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分堆放著生中卷圈、去腸泥的生蝦仁、青椒絲、紅椒絲、紅蘿蔔絲、洋蔥絲和番茄丁，砧板旁放著一把菜刀
   - text: 鍋裡倒橄欖油，放入中卷、蝦仁和蛤蜊拌炒，蛤蜊開口後淋入白酒，盛出備用。
+    image:
+      src: ./step-3.webp
+      alt: 木柄黑色平底鍋裡有炒熟的中卷圈、轉紅的蝦仁和開口的蛤蜊，鍋底帶少許油與白酒湯汁，冒著熱氣
   - text: 另起一鍋融化奶油，先把蒜末和洋蔥絲炒香，加番茄丁、月桂葉稍炒，再拌入番茄醬與番茄糊。
   - text: 放入青椒、紅椒和紅蘿蔔絲炒勻，倒進高湯煮滾。
+    image:
+      src: ./step-5.webp
+      alt: 同一只平底鍋裡的番茄醬汁正冒泡滾起，裡面有青椒絲、紅椒絲、洋蔥絲、番茄丁和一片月桂葉
   - text: 加入義大利直麵、俄力岡和義大利香料，再把海鮮放回鍋中，以鹽、糖調味，拌炒均勻。
+hero:
+  src: ./hero.webp
+  alt: 米白色淺盤盛著海鮮義大利麵，麵條裹著橘紅色番茄醬汁，上面有中卷圈、蝦仁和開口的蛤蜊，夾雜青椒絲、紅椒絲、洋蔥絲與番茄丁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 平鋪的一把義大利直麵、一尾中卷、一小堆生蝦仁、約八顆蛤蜊、半個青椒、半個紅椒、半顆洋蔥、一顆番茄、一小段紅蘿蔔、一片月桂葉，以及小碟裝的蒜末、番茄醬、番茄糊、俄力岡、義大利香料、鹽、糖、奶油，一碗高湯、一瓶橄欖油和一杯白酒
