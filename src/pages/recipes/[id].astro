@@ -149,11 +149,13 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
         <span>{data.category}</span>
       </p>
       <div class="recipe-actions">
-        {hasPrintSheet && (
-          <button type="button" class="print-recipe">
-            列印
-          </button>
-        )}
+        {
+          hasPrintSheet && (
+            <button type="button" class="print-recipe">
+              列印
+            </button>
+          )
+        }
         {
           !data.draft && (
             <div class="favorite-actions">
