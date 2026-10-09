@@ -174,10 +174,13 @@ test("頁首連結觸控目標至少 44×44", async ({ page }) => {
   }
 });
 
-test("列印媒體：隱藏導覽、聲明與步驟圖，保留材料、做法與成品圖，且一頁印完", async ({
+test("沒有列印圖的菜譜不顯示列印；列印媒體仍隱藏導覽與步驟圖，且一頁印完", async ({
   page,
 }) => {
-  await page.goto(url);
+  // 番茄炒蛋已有正式列印圖，這則改看沒有圖的固定菜譜。
+  await page.goto("/recipes/garlic-greens/");
+  await expect(page.getByRole("button", { name: "列印" })).toHaveCount(0);
+
   await page.emulateMedia({ media: "print" });
   await expect(page.getByRole("navigation")).toBeHidden();
   await expect(page.getByRole("contentinfo")).toBeHidden();
