@@ -1,88 +1,134 @@
 title: 宮保雞丁
-summary: 雞腿肉先炸熟，再與宮保、蔥和蒜快炒，拌入酸甜兌汁、花生米和香油。
+summary: 雞丁裹上酸甜醬汁，拌入乾辣椒、花椒與烤花生，蔥白分兩次下鍋。
 servings: 2
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
-timeMinutes: 30
-tags: [家常菜]
-hero:
-  {
-    src: ./hero.webp,
-    alt: 白色陶盤盛著雞腿丁、蔥段、宮保與花生米，裹著棕色醬汁。,
-  }
+timeMinutes: 20
+tags:
+  - 家常菜
 ingredients:
-  - { name: 雞腿肉, amount: { value: 400, unit: g } }
-  - { name: 蒜末, amount: { value: 5, unit: g } }
-  - { name: 蔥, amount: { value: 40, unit: g }, note: 切小段 }
-  - { name: 宮保, amount: { value: 5, unit: g } }
-  - { name: 花生米, amount: { value: 30, unit: ml }, note: 約 2 大匙 }
-  - { name: 雞蛋, amount: { value: 15, unit: ml }, note: 約 1 大匙，醃料用 }
-  - {
-      name: 食用油,
-      amount: { value: 530, unit: ml },
-      note: 醃料後拌入 15 ml、炸雞約 500 ml、快炒 15 ml,
-      group: 調味,
-    }
-  - {
-      name: 醬油,
-      amount: { value: 15, unit: ml },
-      note: 約 1 大匙，醃料用,
-      group: 調味,
-    }
-  - {
-      name: 太白粉,
-      amount: { value: 15, unit: ml },
-      note: 約 1 大匙，醃料用,
-      group: 調味,
-    }
-  - {
-      name: 米酒,
-      amount: { value: 5, unit: ml },
-      note: 約 1 茶匙，醃料用,
-      group: 調味,
-    }
-  - {
-      name: 白醋,
-      amount: { value: 10, unit: ml },
-      note: 約 2 茶匙，兌汁用,
-      group: 調味,
-    }
-  - {
-      name: 醬油,
-      amount: { value: 22.5, unit: ml },
-      note: 約 1.5 大匙，兌汁用,
-      group: 調味,
-    }
-  - {
-      name: 水,
-      amount: { value: 15, unit: ml },
-      note: 約 1 大匙，兌汁用,
-      group: 調味,
-    }
-  - {
-      name: 細糖,
-      amount: { value: 10, unit: ml },
-      note: 約 2 茶匙，兌汁用,
-      group: 調味,
-    }
-  - {
-      name: 太白粉,
-      amount: { value: 2.5, unit: ml },
-      note: 約 1/2 茶匙，兌汁用,
-      group: 調味,
-    }
-  - {
-      name: 香油,
-      amount: { value: 15, unit: ml },
-      note: 約 1 大匙,
-      group: 調味,
-    }
+  - name: 去骨雞腿肉
+    amount:
+      value: 250
+      unit: g
+    note: 去皮，切成一口大小的丁
+  - name: 烤花生
+    amount:
+      value: 0.5
+      unit: 杯
+    note: 使用現成烤花生，沿用來源杯量
+  - name: 青蔥
+    amount:
+      value: 4
+      unit: 支
+    note: 只用蔥白，切約 1 公分小段
+  - name: 乾辣椒
+    amount:
+      value: 6
+      unit: 根
+    note: 來源用 6 至 8 根，依辣度調整
+  - name: 薑
+    amount:
+      value: 1
+      unit: 塊
+    note: 約拇指大小，切末
+  - name: 蒜頭
+    amount:
+      value: 3
+      unit: 瓣
+    note: 切末
+  - name: 花椒
+    amount:
+      value: 5
+      unit: ml
+    note: 約 1 茶匙，使用整粒花椒
+    group: 調味
+  - name: 食用油
+    amount:
+      value: 55
+      unit: ml
+    note: 醃雞丁用 10 ml、炒雞丁用 30 ml、炒香料用 15 ml
+    group: 調味
+  - name: 紹興酒
+    amount:
+      value: 15
+      unit: ml
+    note: 醃雞丁用
+    group: 調味
+  - name: 鹽
+    note: 醃雞丁用少許；醬汁另用 0.625 ml，約 1/8 茶匙
+    group: 調味
+  - name: 白胡椒粉
+    note: 醃雞丁、醬汁各用少許
+    group: 調味
+  - name: 玉米粉
+    amount:
+      value: 15
+      unit: ml
+    note: 醃雞丁用 5 ml、醬汁用 10 ml；此處指玉米澱粉
+    group: 調味
+  - name: 老抽
+    amount:
+      value: 7.5
+      unit: ml
+    note: 醬汁用
+    group: 調味
+  - name: 淡色醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 醬汁用
+    group: 調味
+  - name: 黑醋
+    amount:
+      value: 22.5
+      unit: ml
+    note: 醬汁用
+    group: 調味
+  - name: 水
+    amount:
+      value: 30
+      unit: ml
+    note: 醬汁用
+    group: 調味
+  - name: 糖
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙，醬汁用
+    group: 調味
 steps:
-  - text: 將雞腿肉表面交叉剁出約 0.5 公分深的刀痕，再切成小塊。加入醃料用的醬油、太白粉、米酒和雞蛋抓勻，醃 1 分鐘後拌入 15 ml 食用油。
-  - text: 將蔥切成小段。把白醋、兌汁用的醬油、水、細糖和太白粉調勻。
-  - text: 將約 500 ml 食用油加熱到約 150°C，放入雞腿肉，以中火拌開並炸約 2 分鐘至熟，撈起瀝油。
-  - text: 洗淨鍋子，加入 15 ml 食用油，以小火炒香宮保、蔥和蒜末。放入雞腿肉，轉大火快炒 10 秒。
-  - text: 邊炒邊淋入兌汁，炒勻後加入花生米與香油，再拌勻。
+  - text: 將去骨雞腿肉去皮切丁，拌入紹興酒、少許鹽與白胡椒粉、5 ml 玉米粉，再拌入 10 ml 食用油。
+    image:
+      src: ./step-1.webp
+      alt: 素色瓷碗中是拌好醃料的粉紅色生雞丁
+  - text: 將青蔥的蔥白切成約 1 公分小段；薑、蒜頭切末。
+    image:
+      src: ./step-2.webp
+      alt: 木砧板上分開放著蔥白小段、薑末、蒜末和菜刀
+  - text: 拌勻老抽、淡色醬油、黑醋、水、糖、10 ml 玉米粉、0.625 ml 鹽與少許白胡椒粉，備成醬汁。
+    image:
+      src: ./step-3.webp
+      alt: 素色瓷碗裡是調勻的棕色醬汁
+  - text: 取 30 ml 食用油，先加部分入鍋燒熱，加入其餘冷油，再加熱至溫熱。下雞丁，等 3 至 5 秒，再輕炒至表面開始變色。
+    image:
+      src: ./step-4.webp
+      alt: 木柄炒鍋中的雞丁局部轉白，鍋中只有雞丁與食用油
+  - text: 先將雞丁盛出，再加入 15 ml 食用油，以小火炒香花椒和乾辣椒。放入薑、蒜頭與一半蔥白，再炒 10 秒。
+    image:
+      src: ./step-5.webp
+      alt: 同一只炒鍋中是六根乾辣椒、花椒、薑蒜末與部分蔥白段
+  - text: 放回雞丁拌炒，將醬汁重新攪勻後倒入。炒到醬汁裹住雞丁，加入其餘蔥白和烤花生，拌炒 3 秒。
+    image:
+      src: ./step-6.webp
+      alt: 同一只炒鍋中，雞丁、蔥白段、乾辣椒、花椒與烤花生裹著棕色醬汁
+  - text: 用食物溫度計量雞肉中心，確認至少達到 74°C 再盛出上桌；未達時繼續加熱。
+hero:
+  src: ./hero.webp
+  alt: 素色瓷碗中的雞丁、白色蔥段、六根乾辣椒、花椒與烤花生裹著棕色醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 生雞丁、烤花生、四小堆蔥白段、六根乾辣椒、薑末、蒜末，以及分裝的花椒、食用油、紹興酒、鹽、白胡椒粉、玉米粉、老抽、淡色醬油、黑醋、水和糖

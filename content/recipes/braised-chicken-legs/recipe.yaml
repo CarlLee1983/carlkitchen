@@ -1,31 +1,71 @@
 title: 滷雞腿
-summary: 蔥薑爆香後煮出滷汁，再放入雞腿以小火煮熟並燜入味。
-servings: 4
+summary: 雞腿以米酒、醬油和砂糖滷煮，加入八角與花椒，熄火後再燜 10 分鐘。
+servings: 5
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
-timeMinutes: 50
-tags: [家常菜, 滷味]
+timeMinutes: 45
+tags:
+  - 家常菜
+  - 滷味
 ingredients:
-  - { name: 雞腿, amount: { value: 4, unit: 支 } }
-  - { name: 蔥段, amount: { value: 30, unit: g } }
-  - { name: 薑片, amount: { value: 20, unit: g } }
-  - { name: 市售滷包, amount: { value: 1, unit: 包 } }
-  - {
-      name: 沙拉油,
-      amount: { value: 30, unit: ml },
-      note: 約 2 大匙，來源步驟有列，材料表未列,
-      group: 調味,
-    }
-  - { name: 水, amount: { value: 700, unit: ml } }
-  - { name: 米酒, amount: { value: 50, unit: ml } }
-  - { name: 醬油, amount: { value: 200, unit: ml } }
-  - { name: 糖, amount: { value: 30, unit: g } }
+  - name: 雞腿
+    amount:
+      value: 5
+      unit: 支
+    note: 帶骨棒棒腿
+  - name: 水
+    amount:
+      value: 1000
+      unit: ml
+  - name: 米酒
+    amount:
+      value: 300
+      unit: ml
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 300
+      unit: ml
+    group: 調味
+  - name: 砂糖
+    amount:
+      value: 200
+      unit: g
+    group: 調味
+  - name: 八角
+    amount:
+      value: 1
+      unit: 朵
+    group: 調味
+  - name: 花椒
+    note: 少許
+    group: 調味
 steps:
-  - text: 雞腿洗淨、瀝乾。
-  - text: 熱鍋加入沙拉油，放入蔥段和薑片爆香至微焦，再移入湯鍋。
-  - text: 加入滷包、水、米酒、醬油和糖煮滾，小火煮約 5 分鐘至香氣散出。
-  - text: 放入雞腿煮開，轉小火保持微滾，開蓋煮約 5 分鐘。
-  - text: 蓋上鍋蓋後關火，燜約 20 分鐘再取出雞腿。
+  - text: 沖一下八角與花椒，備好滷汁用的香料。
+    image:
+      src: ./step-1.webp
+      alt: 素色瓷碗裡放著一朵帶水滴的八角和少許花椒
+  - text: 在鍋中依序放入水、醬油、砂糖與米酒，加入八角、花椒，加熱至滷汁滾起。
+    image:
+      src: ./step-2.webp
+      alt: 淺色雙耳鍋裡的褐色滷汁冒著氣泡，可見一朵八角和少許花椒
+  - text: 放入雞腿，保持大火。鍋內重新沸騰後，計時煮 10 分鐘。
+    image:
+      src: ./step-3.webp
+      alt: 同一只雙耳鍋裡有五支雞腿，雞腿周圍的滷汁翻滾冒泡
+  - text: 把火力降至中小火，讓雞腿再滷 10 分鐘。
+  - text: 關掉爐火，讓雞腿留在鍋中燜 10 分鐘。
+    image:
+      src: ./step-5.webp
+      alt: 同一只雙耳鍋中放著五支褐色雞腿，滷汁表面平靜，八角和花椒留在鍋裡
+  - text: 用食物溫度計量雞肉中心，確認至少達到 74°C 再盛出上桌；未達時繼續加熱。
+hero:
+  src: ./hero.webp
+  alt: 素色橢圓瓷盤裡盛著五支褐色滷雞腿，盤底有滷汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 五支生雞腿、一壺水，以及分裝的米酒、醬油、砂糖、一朵八角和少許花椒
+tip: 這份配方用了 300 ml 米酒，來源提醒食用後不要開車或騎機車。
