@@ -229,16 +229,27 @@ figure.illustration img {
   height: auto;
 }
 
+@page {
+  size: A4;
+  margin: 0;
+}
+
 @media print {
   body {
-    background: #fff;
-    font-size: 11pt;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 10.5pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   .site-header,
-  .site-footer {
+  .site-footer,
+  astro-dev-toolbar {
     display: none;
   }
   main {
+    max-width: none;
     padding: 0;
   }
 }
