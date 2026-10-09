@@ -1,7 +1,7 @@
 title: 素蠔油
 summary: 素蠔油是複合調味醬；本篇以萬家香大吟釀香菇素蠔油的產品頁為例，其他品牌配方須個別核對。
 category: seasoning
-draft: true
+draft: false
 selection: 萬家香這款香菇素蠔油的原料表列有大豆片、小麥與香菇粉，未列牡蠣；選購其他產品時請核對其原料與素食標示。
 preparation: 按菜譜與產品味道酌量加入；不同複合醬料的原料、濃稠度與調味強度不能互推。
 storage: 萬家香這款香菇素蠔油標示開瓶後須冷藏；其他產品請依各自包裝標示保存。
@@ -9,7 +9,8 @@ uses: 萬家香將這款產品列為可用於沾、炒、滷、拌、烤的調�
 notices:
   allergens:
     - 萬家香這款香菇素蠔油的原料表列有大豆與小麥；過敏者請核對實際包裝的原料及過敏原標示。
-relatedRecipes: []
+relatedRecipes:
+  - braised-pork-meatballs
 hero:
   src: ./hero.webp
   alt: 無標示玻璃瓶與素色小碟中的濃稠深褐色素蠔油水彩插畫
