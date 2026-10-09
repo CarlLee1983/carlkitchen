@@ -9,7 +9,7 @@ protein: true
 timeMinutes: 15
 tags: [家常菜]
 ingredients:
-  - { name: 牛里肌肉, amount: { value: 180, unit: g }, note: 切片 }
+  - { name: 牛肉, amount: { value: 180, unit: g }, note: 切片，建議用牛里肌 }
   - { name: 青蔥, amount: { value: 150, unit: g }, note: 切段 }
   - { name: 薑絲, amount: { value: 10, unit: g } }
   - { name: 辣椒絲, amount: { value: 5, unit: g } }
@@ -51,15 +51,15 @@ ingredients:
     }
   - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
 steps:
-  - text: 牛里肌肉切成片；青蔥切段，備好薑絲和辣椒絲。
+  - text: 牛肉切成片；青蔥切段，備好薑絲和辣椒絲。
     image:
       src: ./step-1.webp
       alt: 木砧板上分成四堆的材料：生牛肉片、切段的青蔥、薑絲和紅辣椒絲，砧板右側放著一把菜刀
-  - text: 牛里肌肉片加入醃肉用的醬油、水、太白粉和蛋白抓勻，醃 5 分鐘，再拌入 15 ml 食用油。
+  - text: 牛肉片加入醃肉用的醬油、水、太白粉和蛋白抓勻，醃 5 分鐘，再拌入 15 ml 食用油。
     image:
       src: ./step-2.webp
       alt: 白色瓷碗中的生牛肉片裹著一層帶光澤的淺褐色醃料，碗底有少許醬汁
-  - text: 炒鍋燒熱，倒入約 30 ml 食用油，牛里肌肉片下鍋用大火快炒，表面一變白就撈起。
+  - text: 炒鍋燒熱，倒入約 30 ml 食用油，牛肉片下鍋用大火快炒，表面一變白就撈起。
     image:
       src: ./step-3.webp
       alt: 炒鍋中一片片表面剛變成淺灰褐色的牛肉片，鍋底一層薄油，還沒有蔥和醬汁，鍋裡放著一支木鍋鏟
@@ -67,7 +67,7 @@ steps:
     image:
       src: ./step-4.webp
       alt: 炒鍋中炒軟的綠色蔥段、薑絲和紅色辣椒絲，鍋底有少許深色醬汁，還沒有牛肉，鍋裡放著一支木鍋鏟
-  - text: 倒回牛里肌肉片，轉大火快炒 10 秒，淋入太白粉水炒勻勾芡，灑上香油就起鍋。
+  - text: 倒回牛肉片，轉大火快炒 10 秒，淋入太白粉水炒勻勾芡，灑上香油就起鍋。
     image:
       src: ./step-5.webp
       alt: 炒鍋中牛肉片與蔥段、薑絲、辣椒絲拌在一起，裹著一層有光澤的褐色薄芡，鍋裡放著一支木鍋鏟
@@ -77,4 +77,4 @@ hero:
 ingredientsPhoto:
   src: ./ingredients.webp
   alt: 一塊生牛肉、一小把青蔥、一小碟薑絲、一小碟辣椒絲，以及分裝在小瓶、小杯與小碟中的醬油、水、太白粉、蛋白、太白粉水、香油和食用油
-tip: 牛里肌肉片容易炒老，第一次下鍋只要表面變白就撈起，回鍋後也只快炒 10 秒。
+tip: 牛肉片容易炒老，第一次下鍋只要表面變白就撈起，回鍋後也只快炒 10 秒。

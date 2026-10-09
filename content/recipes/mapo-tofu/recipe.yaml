@@ -10,7 +10,7 @@ timeMinutes: 15
 tags: [家常菜]
 ingredients:
   - { name: 嫩豆腐, amount: { value: 1, unit: 盒 } }
-  - { name: 豬梅花絞肉, amount: { value: 100, unit: g } }
+  - { name: 豬絞肉, amount: { value: 100, unit: g }, note: 建議用梅花絞肉 }
   - { name: 青蔥, amount: { value: 2, unit: 支 }, note: 切成蔥花 }
   - { name: 蒜末, amount: { value: 15, unit: g } }
   - { name: 薑末, amount: { value: 10, unit: g } }
@@ -38,7 +38,7 @@ steps:
       src: ./step-1.webp
       alt: 木砧板上左側是瀝乾後切成小丁的白色嫩豆腐，中間是一小堆切成圈的青蔥蔥花，砧板右側放著一把菜刀
   - text: 炒鍋燒熱後倒入食用油，轉小火放入蒜末和薑末，炒到飄出香味。
-  - text: 加入豬梅花絞肉，轉中火翻炒約 3 分鐘，炒到絞肉完全變色、散成小粒。
+  - text: 加入豬絞肉，轉中火翻炒約 3 分鐘，炒到絞肉完全變色、散成小粒。
     image:
       src: ./step-3.webp
       alt: 炒鍋中炒熟散開、呈淺褐色的豬絞肉粒，夾雜少許蒜末和薑末，鍋底只有一層薄油，還沒有醬汁，鍋裡放著一支木鍋鏟

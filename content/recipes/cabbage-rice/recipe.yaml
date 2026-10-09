@@ -20,7 +20,7 @@ ingredients:
       amount: { value: 0.5, unit: 個 },
       note: 大小不同會影響份量，洗淨後用手剝成片,
     }
-  - { name: 豬里肌肉絲, amount: { value: 150, unit: g } }
+  - { name: 豬肉絲, amount: { value: 150, unit: g }, note: 建議用里肌肉 }
   - { name: 香菇, amount: { value: 8, unit: 朵 }, note: 泡軟後去蒂、切絲 }
   - {
       name: 蝦米,
@@ -55,7 +55,7 @@ steps:
     image:
       src: ./step-2.webp
       alt: 兩只米白色瓷碗分別盛著洗淨的白米和剝成片的高麗菜
-  - text: 以中火熱鍋，倒入食用油，先後放入香菇、蝦米和豬里肌肉絲翻炒。
+  - text: 以中火熱鍋，倒入食用油，先後放入香菇、蝦米和豬肉絲翻炒。
     image:
       src: ./step-3.webp
       alt: 灰色炒鍋內拌炒香菇絲、蝦米與肉絲
