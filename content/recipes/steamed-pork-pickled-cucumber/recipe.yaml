@@ -10,7 +10,7 @@ timeMinutes: 30
 tags: [家常菜]
 aliases: [花瓜蒸肉]
 ingredients:
-  - { name: 豬梅花絞肉, amount: { value: 300, unit: g } }
+  - { name: 豬絞肉, amount: { value: 300, unit: g }, note: 建議用梅花絞肉 }
   - {
       name: 罐頭花瓜,
       amount: { value: 120, unit: ml },
@@ -45,7 +45,7 @@ steps:
     image:
       src: ./step-1.webp
       alt: 木砧板上分開放著三堆備好的材料：褐色的花瓜細丁、綠色的蔥花和白色的蒜末，砧板右側放著一把菜刀
-  - text: 豬梅花絞肉放進大碗，加入鹽、醬油、糖和香油，拌到調味料均勻融入絞肉。
+  - text: 豬絞肉放進大碗，加入鹽、醬油、糖和香油，拌到調味料均勻融入絞肉。
     image:
       src: ./step-2.webp
       alt: 白瓷深碗中的生豬絞肉淋上帶光澤的淺褐色調味料，拌得均勻濕潤，碗中還沒有花瓜、蔥花和蒜末

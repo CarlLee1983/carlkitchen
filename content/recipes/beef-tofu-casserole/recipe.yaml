@@ -9,7 +9,11 @@ protein: true
 timeMinutes: 30
 tags: [家常菜]
 ingredients:
-  - { name: 牛梅花肉片, amount: { value: 150, unit: g }, note: 燒烤用薄片 }
+  - {
+      name: 牛肉片,
+      amount: { value: 150, unit: g },
+      note: 燒烤用薄片，建議用牛梅花,
+    }
   - { name: 板豆腐, amount: { value: 300, unit: g }, note: 切成骨牌形 }
   - { name: 洋蔥, amount: { value: 80, unit: g }, note: 切絲 }
   - { name: 香菇, amount: { value: 1, unit: 朵 }, note: 切片 }
@@ -54,21 +58,21 @@ ingredients:
   - { name: 太白粉水, note: 1 小碗，勾芡用, group: 調味 }
   - { name: 食用油, note: 炒肉與配料用, group: 調味 }
 steps:
-  - text: 將牛梅花肉片與部分麻辣醬、15 ml 蠔油、米酒、胡椒粉、香油抓勻，再拌入太白粉。板豆腐切成骨牌形。
+  - text: 將牛肉片與部分麻辣醬、15 ml 蠔油、米酒、胡椒粉、香油抓勻，再拌入太白粉。板豆腐切成骨牌形。
     image:
       src: ./step-1.webp
-      alt: 陶碗裡的生牛梅花肉片裹著醃料，砧板上放著切成骨牌形的板豆腐與菜刀
+      alt: 陶碗裡的生牛肉片裹著醃料，砧板上放著切成骨牌形的板豆腐與菜刀
   - text: 洋蔥切絲，香菇和杏鮑菇切片，大蒜切末，青蔥切蔥花，香菜切段。
-  - text: 熱鍋加入少許食用油，將牛梅花肉片快炒至約八分熟，盛起備用。
+  - text: 熱鍋加入少許食用油，將牛肉片快炒至約八分熟，盛起備用。
     image:
       src: ./step-3.webp
       alt: 深色炒鍋中的薄牛肉片炒至表面上色，部分盛入白色陶碗
   - text: 同鍋炒軟洋蔥、大蒜、香菇與杏鮑菇，再加入剩餘麻辣醬炒香。
   - text: 高湯入鍋加熱到滾，板豆腐下鍋以小火續煮 10 分鐘。加入醬油、5 ml 蠔油和糖，以太白粉水勾芡。
-  - text: 把燒好的板豆腐盛入盤中，放上牛梅花肉片、青蔥與香菜，最後淋適量香油。
+  - text: 把燒好的板豆腐盛入盤中，放上牛肉片、青蔥與香菜，最後淋適量香油。
 hero:
   src: ./hero.webp
   alt: 白色陶盤裡有板豆腐塊、薄牛肉片、洋蔥和菇片，裹著紅褐色麻辣醬汁並撒上青蔥與香菜
 ingredientsPhoto:
   src: ./ingredients.webp
-  alt: 生牛梅花肉片、板豆腐、洋蔥、香菇、杏鮑菇、大蒜、青蔥與香菜，旁邊分放各項調味料和高湯
+  alt: 生牛肉片、板豆腐、洋蔥、香菇、杏鮑菇、大蒜、青蔥與香菜，旁邊分放各項調味料和高湯

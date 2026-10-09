@@ -9,7 +9,7 @@ protein: true
 timeMinutes: 55
 tags: [家常菜]
 ingredients:
-  - { name: 豬小排, amount: { value: 600, unit: g }, note: 切塊 }
+  - { name: 排骨, amount: { value: 600, unit: g }, note: 切塊，建議用豬小排 }
   - {
       name: 雞蛋,
       amount: { value: 30, unit: ml },
@@ -47,15 +47,15 @@ ingredients:
     }
   - { name: 食用油, note: 少許刷表面, group: 調味 }
 steps:
-  - text: 將醬油、太白粉、蛋液、米酒和水攪勻，放入豬小排抓拌並按摩至醬汁吸收。
+  - text: 將醬油、太白粉、蛋液、米酒和水攪勻，放入排骨抓拌並按摩至醬汁吸收。
     image:
       src: ./step-1.webp
       alt: 玻璃碗中的生排骨均勻沾裹蛋液、醬油和太白粉醃料
-  - text: 將豬小排放入保鮮盒，冷藏醃漬 30 分鐘；取出後逐塊裹上地瓜粉。
+  - text: 將排骨放入保鮮盒，冷藏醃漬 30 分鐘；取出後逐塊裹上地瓜粉。
     image:
       src: ./step-2.webp
       alt: 裹滿地瓜粉的排骨塊排在氣炸鍋烤盤上
-  - text: 將豬小排放進氣炸鍋烤盤，表面刷少許油，以 200°C 氣炸 18 分鐘。
+  - text: 將排骨放進氣炸鍋烤盤，表面刷少許油，以 200°C 氣炸 18 分鐘。
     image:
       src: ./step-3.webp
       alt: 氣炸鍋籃中的帶骨排骨塊表面已氣炸成金黃色，尚未撒上蒜末、辣椒末和蔥花
