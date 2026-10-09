@@ -11,6 +11,7 @@ tags: [家常菜, 魚料理]
 ingredients:
   - { name: 鯛魚片, amount: { value: 300, unit: g }, note: 切小片 }
   - { name: 蒜頭, amount: { value: 5, unit: 顆 }, note: 去皮切片 }
+  - { name: 小黃瓜, amount: { value: 1, unit: 條 }, note: 切片鋪盤底 }
   - {
       name: 醬油膏,
       amount: { value: 30, unit: ml },
@@ -27,7 +28,6 @@ ingredients:
   - { name: 糖, amount: { value: 5, unit: ml }, note: 約 1 小匙, group: 調味 }
   - { name: 胡椒粉, note: 少許，魚片醃料, group: 調味 }
   - { name: 鹽, note: 少許，魚片醃料, group: 調味 }
-  - { name: 小黃瓜, note: 切片鋪盤底；來源材料表未列，份量未標, group: 調味 }
   - { name: 炸油, note: 約半鍋, group: 調味 }
 steps:
   - text: 蒜頭剝皮後切片；鯛魚片分切成小片，撒少許胡椒粉和鹽。
