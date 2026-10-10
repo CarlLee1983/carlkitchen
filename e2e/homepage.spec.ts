@@ -490,7 +490,8 @@ test("互動元件在各寬度觸控目標至少 44×44", async ({ page }) => {
 test("鍵盤 Tab 可走到清單第一列菜名，焦點外框可見", async ({ page }) => {
   await page.goto("/");
   const firstLink = rows(page).first().getByRole("link");
-  for (let i = 0; i < 20; i++) {
+  // 寬版的隨機推薦在清單之前（固定菜譜 5 張卡片），Tab 停點比原本多。
+  for (let i = 0; i < 30; i++) {
     if (await firstLink.evaluate((el) => el === document.activeElement)) break;
     await page.keyboard.press("Tab");
   }
