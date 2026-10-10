@@ -1,0 +1,50 @@
+title: 醬燒豬腳
+summary: 豬腳剁塊汆燙去除血水，與蔥段、薑片、蒜頭和八角爆香煸炒，加入米酒、醬油與冰糖慢燉至皮軟肉爛、膠質濃稠。色澤紅亮、鹹甜濃郁。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 70
+tags: [家常菜, 豬肉, 燉肉]
+aliases: [紅燒豬腳, 醬汁豬腳]
+ingredients:
+  - { name: 豬腳, amount: { value: 900, unit: g }, note: 剁成塊狀，汆燙洗淨 }
+  - { name: 蔥段, amount: { value: 2, unit: 根 }, note: 約 30 g, group: 調味 }
+  - { name: 薑片, amount: { value: 40, unit: g }, group: 調味 }
+  - { name: 蒜頭, amount: { value: 30, unit: g }, note: 剝皮整粒, group: 調味 }
+  - { name: 八角, amount: { value: 2, unit: 粒 }, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙,
+      group: 調味,
+    }
+  - { name: 鹽, amount: { value: 15, unit: g }, note: 約 1 大匙, group: 調味 }
+  - { name: 冰糖, amount: { value: 15, unit: g }, note: 約 1 大匙, group: 調味 }
+  - {
+      name: 米酒,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 2000, unit: ml }, note: 慢燉高湯用 }
+steps:
+  - text: 豬腳剁成塊狀洗淨，放入滾水中汆燙約 5 分鐘去除血水與雜質，撈起以冷水沖洗瀝乾備用。
+    image:
+      src: ./step-1.webp
+      alt: 滾水鍋中汆燙著剁塊的豬腳，撈起瀝乾置於容器中
+  - text: 熱鍋倒入適量油，放入蔥段、薑片、蒜頭與八角以小火爆香至表面微金黃色。
+    image:
+      src: ./step-2.webp
+      alt: 熱鍋油中翻炒爆香著青蔥段、老薑片、蒜頭與整粒八角，色澤微黃
+  - text: 放入汆燙好的豬腳大火翻炒上色，淋入米酒、醬油與冰糖拌炒均勻，炒至糖粒融化、外皮均勻裹上醬色。
+  - text: 鍋中注入水與鹽，大火煮滾後轉小火蓋上鍋蓋慢燉約 60 分鐘至肉質軟爛，最後開大火收濃湯汁至黏稠油亮，即可盛盤上桌。
+hero:
+  src: ./hero.webp
+  alt: 深圓白盤中堆疊整齊的紅褐色醬燒豬腳，外皮晶瑩油亮膠質豐厚，醬汁濃郁裹附
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊排著剁塊豬腳、青蔥段、老薑片、去皮蒜頭與八角，前方小碟裝著醬油、冰糖、米酒與鹽
+tip: 豬腳汆燙後以冷水洗淨能去除腥味並使外皮緊實；先下冰糖與醬油炒出焦糖醬香再加水慢燉，燒出的豬腳色澤紅潤透亮且醬汁更加濃醇。

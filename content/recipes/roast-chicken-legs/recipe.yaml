@@ -1,0 +1,69 @@
+title: 香烤雞腿
+summary: 大雞腿洗淨劃刀，以醬油、糖、米酒與肉桂粉醃漬入味，抹上胡椒鹽送入烤箱高溫烘烤至外皮金黃酥脆、肉質軟嫩多汁，出爐刷上香油增色提香。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 55
+tags: [烤箱料理, 雞肉, 便當菜, 家常菜]
+aliases: [烤雞腿, 五香烤雞腿]
+ingredients:
+  - name: 雞腿
+    amount:
+      value: 3
+      unit: 支
+    note: 全雞腿洗淨拭乾
+  - name: 醬油
+    amount:
+      value: 200
+      unit: ml
+    group: 調味
+  - name: 糖
+    amount:
+      value: 5
+      unit: g
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 5
+      unit: ml
+    group: 調味
+  - name: 肉桂粉
+    amount:
+      value: 10
+      unit: g
+    note: 香料提味
+    group: 調味
+  - name: 胡椒鹽
+    amount:
+      value: 10
+      unit: g
+    note: 外皮抹粉
+    group: 調味
+  - name: 香油
+    amount:
+      value: 10
+      unit: ml
+    note: 出爐刷香
+    group: 調味
+steps:
+  - text: 將醬油、糖、米酒與肉桂粉倒入大碗中攪拌均勻，調製成香濃醃料。
+    image:
+      src: ./step-1.webp
+      alt: 將醬油、糖、米酒與肉桂粉倒入大碗中攪拌均勻，調製成香濃醃料。
+  - text: 雞腿洗淨拭乾水分，在肉質較厚處劃上兩刀，放入醃料中充分抓勻，靜置醃漬 20 分鐘。
+    image:
+      src: ./step-2.webp
+      alt: 雞腿洗淨拭乾水分，在肉質較厚處劃上兩刀，放入醃料中充分抓勻，靜置醃漬 20 分鐘。
+  - text: 從醃料中取出雞腿瀝乾表面醬汁，於雞腿外皮均勻抹上一層薄薄的胡椒鹽。
+  - text: 烤箱預熱至 200 度，將雞腿皮面朝上擺入烤盤，送入烤箱以 200 度烘烤 30 分鐘至表面金黃焦香、骨肉熟透。
+  - text: 將烤好的雞腿取出，外皮趁熱均勻刷上香油提亮增香，即可盛盤上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的香烤雞腿
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 雞腿肉厚處劃兩刀可使醃料快速滲入內部且受熱更均勻；出爐刷上一層香油能鎖住表皮水分並讓烤雞腿更加油亮焦香。

@@ -1,0 +1,89 @@
+title: 螃蟹粉絲煲
+summary: 鮮美花蟹開殼斬塊大火煸炒出海味，注入高湯與金黃蛋液蟹膏烹煮，倒入泡軟冬粉慢火燜煨，粉絲吸飽螃蟹極鮮湯汁與蒜香，撒上蔥花與香油，鮮香濃郁。
+servings: 4
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 35
+tags: [海鮮, 砂鍋料理, 冬粉, 秋蟹]
+aliases: [紅蟳粉絲煲, 砂鍋螃蟹粉絲]
+ingredients:
+  - name: 花蟹
+    amount:
+      value: 2
+      unit: 隻
+    note: 約 800 g，洗淨剁塊
+  - name: 冬粉
+    amount:
+      value: 3
+      unit: 把
+    note: 溫水泡軟剪短
+  - name: 雞蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 與蟹膏拌勻
+    group: 調味
+  - name: 薑末
+    amount:
+      value: 15
+      unit: g
+    group: 調味
+  - name: 蒜末
+    amount:
+      value: 20
+      unit: g
+    group: 調味
+  - name: 蔥花
+    amount:
+      value: 20
+      unit: g
+    group: 調味
+  - name: 水
+    amount:
+      value: 500
+      unit: ml
+    note: 高湯用水
+  - name: 高湯塊
+    amount:
+      value: 1
+      unit: 塊
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 香油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 胡椒粉
+    amount:
+      value: 2
+      unit: g
+    note: 約半茶匙
+    group: 調味
+steps:
+  - text: 冬粉以溫水泡軟剪成小段；花蟹開殼洗淨剪除腮部，蟹螯拍裂，蟹身對切剁塊；將蟹膏刮出與打散的雞蛋拌勻備用。
+    image:
+      src: ./step-1.webp
+      alt: 冬粉以溫水泡軟剪成小段；花蟹開殼洗淨剪除腮部，蟹螯拍裂，蟹身對切剁塊；將蟹膏刮出與打散的雞蛋拌勻備用
+  - text: 炒鍋中注入水、高湯塊與醬油煮滾，放入冬粉煮約 2 分鐘撈起放入砂鍋中蓋上鍋蓋燜透，鍋中剩餘高湯盛起備用。
+  - text: 起油鍋爆香蒜末與薑末，放入花蟹大火翻炒至甲殼變紅釋放香氣，倒入預留的高湯煮滾。
+    image:
+      src: ./step-3.webp
+      alt: 起油鍋爆香蒜末與薑末，放入花蟹大火翻炒至甲殼變紅釋放香氣，倒入預留的高湯煮滾。
+  - text: 將拌好的雞蛋蟹膏液淋入鍋中炒勻，撒上青蔥蔥花，將煮熟的螃蟹與濃郁湯汁均勻鋪在砂鍋冬粉上，淋上香油與胡椒粉拌勻即可上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的螃蟹粉絲煲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 冬粉先在調味高湯中汆燙燜透能均勻吸味且保持 Q 彈；炒蟹時將蟹膏融入蛋液再下鍋，能讓湯汁更顯金黃濃稠、鮮味倍增。
