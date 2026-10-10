@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 
 // 這支規格跑在 show-more 專案：預設的固定菜譜以小批量（HOME_BATCH_SIZE）建置，
 // 讓按鈕文字在固定菜譜下至少更新幾次。批量與總數都從頁面讀，不寫死。
@@ -246,28 +246,72 @@ async function scrollToBottom(page: Page) {
   return y;
 }
 
-/** 回到首頁後捲動位置要落在離開前的位置附近（等瀏覽器與腳本還原完成）。 */
-const expectScrollRestored = (page: Page, before: number) =>
-  expect
-    .poll(async () => Math.abs((await scrollY(page)) - before), {
-      message: "捲動位置要還原",
-    })
-    .toBeLessThanOrEqual(SCROLL_TOLERANCE);
+/**
+ * click 可能先捲動連結以避開固定篩選列，不能拿 click 前的位置當成離開位置。
+ * 測試自行在 pagehide 量測，不以產品保存在 history.state 的數值作為預期值。
+ */
+async function clickAndReadDeparture(page: Page, link: Locator) {
+  const key = "e2e:show-more-departure-scroll";
+  const beforeUrl = page.url();
+  await page.evaluate((key) => {
+    sessionStorage.removeItem(key);
+    window.addEventListener(
+      "pagehide",
+      () => sessionStorage.setItem(key, String(window.scrollY)),
+      { once: true },
+    );
+  }, key);
+  await link.click();
+  await expect(page).not.toHaveURL(beforeUrl);
+  const saved = await page.evaluate((key) => {
+    const value = sessionStorage.getItem(key);
+    sessionStorage.removeItem(key);
+    return value;
+  }, key);
+  expect(saved, "測試須量到首頁實際離開時的捲動位置").not.toBeNull();
+  const departure = Number(saved);
+  expect(departure, "實際離開首頁時也必須捲動過").toBeGreaterThan(0);
+  return departure;
+}
+
+/** 回到首頁後要還原實際離開位置；原本捲到底的位置只用來診斷。 */
+async function expectScrollRestored(
+  page: Page,
+  departure: number,
+  beforeClick: number,
+) {
+  try {
+    await expect
+      .poll(async () => Math.abs((await scrollY(page)) - departure), {
+        message: "捲動位置要還原",
+      })
+      .toBeLessThanOrEqual(SCROLL_TOLERANCE);
+  } catch (error) {
+    const returned = await page.evaluate(() => ({
+      scrollY: window.scrollY,
+      historyState: history.state,
+    }));
+    console.error("捲動還原量測", { beforeClick, departure, returned });
+    throw error;
+  }
+}
 
 test("展開後點進菜譜再上一頁，維持展開數量與捲動位置", async ({ page }) => {
   await useSmallViewport(page);
   await page.goto("/");
   const { batch, total, shown } = await expandTwice(page);
-  const before = await scrollToBottom(page);
-  await rows(page)
-    .nth(shown - 1)
-    .getByRole("link")
-    .click();
+  const beforeClick = await scrollToBottom(page);
+  const departure = await clickAndReadDeparture(
+    page,
+    rows(page)
+      .nth(shown - 1)
+      .getByRole("link"),
+  );
   await expect(page).toHaveURL(/\/recipes\//);
   await page.goBack();
   await expect(rows(page)).toHaveCount(shown);
   await expectMoreButton(page, batch, total - shown);
-  await expectScrollRestored(page, before);
+  await expectScrollRestored(page, departure, beforeClick);
 });
 
 test("搜尋結果展開後點進頁面再上一頁，維持展開數量與捲動位置（非同步還原路徑）", async ({
@@ -280,16 +324,18 @@ test("搜尋結果展開後點進頁面再上一頁，維持展開數量與捲�
   const total = await readResultTotal(page);
   expect(total).toBeGreaterThan(batch);
   await expandAll(page);
-  const before = await scrollToBottom(page);
-  await rows(page)
-    .nth(total - 1)
-    .getByRole("link")
-    .click();
+  const beforeClick = await scrollToBottom(page);
+  const departure = await clickAndReadDeparture(
+    page,
+    rows(page)
+      .nth(total - 1)
+      .getByRole("link"),
+  );
   await expect(page).not.toHaveURL(/\/\?q=/);
   await page.goBack();
   await expect(page).toHaveURL(/q=/);
   await expect(rows(page)).toHaveCount(total);
-  await expectScrollRestored(page, before);
+  await expectScrollRestored(page, departure, beforeClick);
 });
 
 test("展開、換篩選、點進菜譜再上一頁，回到第一批", async ({ page }) => {
