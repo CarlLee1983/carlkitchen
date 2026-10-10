@@ -1,0 +1,110 @@
+title: 糖醋魚片
+summary: 鮮嫩鯛魚肉切片醃漬裹粉炸至外酥內嫩，鍋中翻炒洋蔥、青椒與黑木耳絲，加入蕃茄醬、白醋與砂糖調和的經典糖醋醬汁煮滾勾薄芡，投入炸魚片大火裹勻醬汁，酸甜濃郁、鮮脆開胃。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [糖醋, 海鮮, 家常菜, 便當菜]
+aliases: [糖醋鯛魚片, 茄汁魚片]
+ingredients:
+  - name: 鯛魚肉
+    amount:
+      value: 250
+      unit: g
+    note: 去刺斜切厚片
+  - name: 洋蔥
+    amount:
+      value: 80
+      unit: g
+    note: 約半顆切絲
+  - name: 青椒
+    amount:
+      value: 60
+      unit: g
+    note: 約半顆切絲
+  - name: 木耳
+    amount:
+      value: 30
+      unit: g
+    note: 泡發切絲
+  - name: 雞蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 抓醃用
+    group: 醃料
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 約 1/4 小匙
+    group: 醃料
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 約 1/4 小匙
+    group: 醃料
+  - name: 米酒
+    amount:
+      value: 5
+      unit: ml
+    note: 約 1 小匙
+    group: 醃料
+  - name: 太白粉
+    amount:
+      value: 60
+      unit: g
+    note: 沾裹炸粉與勾芡
+    group: 調味
+  - name: 蕃茄醬
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 糖醋汁
+  - name: 白醋
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 糖醋汁
+  - name: 糖
+    amount:
+      value: 35
+      unit: g
+    note: 約 2.5 大匙
+    group: 糖醋汁
+  - name: 水
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 糖醋汁
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 出鍋提亮
+    group: 調味
+steps:
+  - text: 鯛魚肉洗淨斜切厚片，加入鹽、白胡椒粉、米酒與打散的雞蛋充分抓勻醃漬 2 分鐘；洋蔥、青椒與木耳洗淨切絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 鯛魚肉洗淨斜切厚片，加入鹽、白胡椒粉、米酒與打散的雞蛋充分抓勻醃漬 2 分鐘；洋蔥、青椒與木耳洗淨切
+  - text: 將醃好的鯛魚肉均勻沾裹太白粉；油鍋燒熱至 150 度，放入魚片炸至外表金黃酥脆撈起瀝油。
+    image:
+      src: ./step-2.webp
+      alt: 將醃好的鯛魚肉均勻沾裹太白粉；油鍋燒熱至 150 度，放入魚片炸至外表金黃酥脆撈起瀝油。
+  - text: 熱鍋倒入少許油，放入洋蔥、青椒與木耳中火略微翻炒，加入蕃茄醬、白醋、糖與水煮滾，以太白粉水勾薄芡。
+  - text: 倒入炸好的鯛魚肉快速翻炒裹滿酸甜醬汁，最後淋上香油提亮即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的糖醋魚片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 魚片以全蛋抓醃能保持魚肉滑嫩，裹太白粉炸至金黃可鎖住鮮味；糖醋醬汁先在鍋中燒至濃稠勾芡再下魚片快炒，能保持外皮酥脆不回軟。

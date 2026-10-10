@@ -1,0 +1,93 @@
+title: 魚香茄子
+summary: 紫亮茄子切段過油定色瀝乾，熱鍋爆香薑、蒜頭、蔥與辣椒細末，加入豬絞肉煸炒出香氣，淋入米酒、醬油與糖煨煮入味，勾薄芡並淋上香油，鹹甜微辣、茄肉軟嫩多汁。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 20
+tags: [川菜, 熱炒, 家常菜, 茄子]
+aliases: [魚香茄子煲, 醬燒茄子]
+ingredients:
+  - name: 茄子
+    amount:
+      value: 500
+      unit: g
+    note: 洗淨切段拭乾
+  - name: 豬絞肉
+    amount:
+      value: 100
+      unit: g
+  - name: 薑
+    amount:
+      value: 30
+      unit: g
+    note: 切細末
+    group: 調味
+  - name: 蔥
+    amount:
+      value: 30
+      unit: g
+    note: 切細蔥花
+    group: 調味
+  - name: 蒜頭
+    amount:
+      value: 30
+      unit: g
+    note: 切細末
+    group: 調味
+  - name: 辣椒
+    amount:
+      value: 30
+      unit: g
+    note: 切細末
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+  - name: 香油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 太白粉
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙調水勾芡
+    group: 調味
+steps:
+  - text: 茄子洗淨切成長段並以紙巾擦乾水分；熱油鍋將茄子段炸至熟透且表皮保持鮮豔紫亮，撈起瀝乾油分備用。
+    image:
+      src: ./step-1.webp
+      alt: 茄子洗淨切成長段並以紙巾擦乾水分；熱油鍋將茄子段炸至熟透且表皮保持鮮豔紫亮，撈起瀝乾油分備用。
+  - text: 將薑、蔥、蒜頭與辣椒分別切成細末備用。
+  - text: 熱鍋倒入適量油，放入薑末、蒜頭末、辣椒末與蔥花小火爆香，加入豬絞肉炒散至肉色轉白熟透。
+    image:
+      src: ./step-3.webp
+      alt: 熱鍋倒入適量油，放入薑末、蒜頭末、辣椒末與蔥花小火爆香，加入豬絞肉炒散至肉色轉白熟透。
+  - text: 淋入米酒、醬油、糖及少許清水煮滾，放入炸好的茄子段慢火煨煮約 1 分鐘入味，調入太白粉水勾薄芡，起鍋前淋入香油即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的魚香茄子
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 茄子切段後下鍋高溫快炸能鎖住花青素保持紫亮外皮；魚香醬汁酸甜鹹香適中，先將絞肉炒香再加入茄子慢煨，茄肉吸飽肉汁滑嫩入味。
