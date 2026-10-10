@@ -2,7 +2,7 @@ title: 法式洋蔥湯
 summary: 洋蔥慢炒至棕色後與牛高湯熬煮，盛入烤盅，再烤融麵包上的起司。
 servings: 4
 category: 湯
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: false
@@ -21,9 +21,24 @@ ingredients:
   - { name: 胡椒粉, group: 調味, note: 適量 }
 steps:
   - text: 洋蔥洗淨，全部切成絲。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上堆著切成細絲的黃洋蔥，旁邊放著一把廚師刀
   - text: 以小火融化奶油，放入洋蔥和大蒜末慢慢炒軟，約 30 分鐘，至洋蔥呈棕色。
+    image:
+      src: ./step-2.webp
+      alt: 不銹鋼平底深鍋裡以奶油小火慢慢炒至深棕色焦糖化的洋蔥絲
   - text: 將炒好的洋蔥移入湯鍋，加入白葡萄酒、牛高湯和月桂葉。大火煮滾後轉小火再煮約 30 分鐘，以鹽和胡椒粉調味，取出月桂葉。
+    image:
+      src: ./step-3.webp
+      alt: 陶瓷雙耳湯鍋中焦糖洋蔥與牛高湯、白酒及一片月桂葉正在微滾燉煮
   - text: 將湯分盛到烤盅，每盅放一片法國麵包和一片起司。送入烤箱以中溫烤至起司融化，食用時用湯匙將麵包與起司壓入湯中。
+    image:
+      src: ./step-4.webp
+      alt: 烤盅裡盛著焦糖洋蔥湯，上面覆蓋著鋪有融化金黃起司的法國麵包片
 hero:
   src: ./hero.webp
   alt: 米白色雙耳湯鍋盛著棕色洋蔥湯，湯面有四片覆著融化起司的法國麵包
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 1200 g 洋蔥、80 g 奶油、大蒜末、白葡萄酒、牛高湯、月桂葉、起司片、法國麵包與鹽黑胡椒分開擺放
