@@ -2,6 +2,8 @@ title: 蒜炒空心菜
 summary: 蒜片、薑末和辣椒爆香後，先炒菜梗再下菜葉，大火快炒到翠綠就起鍋。菜梗脆、葉片軟，是常見的家常炒青菜。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 500 g 空心菜分梗葉大火快炒，蒜、薑、辣椒與雞粉僅作調味。
 draft: false
 mealCandidate: true
 vegetable: true

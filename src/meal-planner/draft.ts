@@ -114,7 +114,7 @@ export function draftProgress(
   const needs = [
     missing && `還缺 ${missing} 道非湯料理`,
     !draft.soup && "還缺 1 道湯",
-    !chosen.some((item) => item.vegetable) && "還缺蔬菜",
+    !chosen.some((item) => item.vegetable) && "還缺一道以蔬菜為主角的料理",
     !chosen.some((item) => item.protein) && "還缺肉蛋料理",
     !balanced &&
       chosen.some((item) => item.vegetable) &&

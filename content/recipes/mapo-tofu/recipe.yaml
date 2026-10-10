@@ -2,6 +2,8 @@ title: 麻婆豆腐
 summary: 絞肉炒熟後加辣豆瓣醬與醬汁煮滾，放入嫩豆腐再勾芡。豆腐軟嫩、醬汁微辣帶花椒香，適合配飯。
 servings: 2
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 整盒嫩豆腐切丁由辣豆瓣肉末醬包覆，100 g 豬絞肉炒散後融入調味醬汁。
 draft: false
 mealCandidate: true
 vegetable: false

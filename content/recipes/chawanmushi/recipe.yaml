@@ -2,6 +2,8 @@ title: 日式茶碗蒸
 summary: 柴魚高湯調入蛋液後過濾，倒進放好蝦、雞肉、銀杏和秀珍菇的蒸碗，先大火再轉中小火蒸熟。
 servings: 2
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 兩顆雞蛋與高湯調成細滑蒸蛋，兩隻蝦、兩小塊雞肉及少量菇類分置碗底作配料。
 draft: false
 mealCandidate: true
 vegetable: false

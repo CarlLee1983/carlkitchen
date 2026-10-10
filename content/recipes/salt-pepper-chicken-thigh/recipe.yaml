@@ -2,6 +2,8 @@ title: 香煎椒鹽雞腿排
 summary: 雞腿排用米酒、鹽和黑胡椒粉醃漬，靠雞皮煎出的油煎熟，表皮金黃酥脆。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 去骨雞腿排 500 g 醃漬後以雞皮油煎熟，沒有其他並列主料。
 draft: false
 mealCandidate: true
 vegetable: false

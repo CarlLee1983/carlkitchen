@@ -39,6 +39,12 @@ content/recipes/tomato-egg/
 - `draft: true` 的菜譜與食材條目只在 `pnpm dev` 看得到，正式建置不輸出草稿頁。高麗菜、空心菜、青花菜、米酒、蔥、薑、蒜、蝦米與醬油已經站主逐篇審閱，可在正式建置開啟各自條目。秋葵、醬油膏與素蠔油的草稿文字也已審閱，仍須等有對應的已發布菜譜後再送審發布。
 - 測試與 e2e 使用 `tests/fixtures/recipes/` 和 `tests/fixtures/ingredients/`，與正式內容分開。`pnpm build && pnpm check:content` 檢查內容與輸出；食材條目不進入目前只收錄菜譜的站內搜尋索引。
 
+## 菜譜分類與配餐
+
+首頁依料理主角篩選：蔬菜、肉類、海鮮、蛋豆、主食、湯；沒有已發布菜譜的選項不顯示。非湯料理用 `dishKinds` 記錄主角，真正雙主角會出現在兩個篩選；主食與湯沿用 `category`。`vegetable`／`protein` 僅用於配餐，每套須另有一道蔬菜為主的菜，不能只靠沙茶羊肉或番茄炒蛋抵充。作者規則與案例見 [分類指南](docs/recipe-classification.md)，架構理由見 [ADR 0010](docs/adr/0010-browse-kinds-and-meal-roles.md)。
+
+舊 `kind=protein` 連結會回到全部；改用 `meat`、`seafood` 或 `egg-bean`。其他既有篩選值與菜譜網址不變。
+
 ## 首頁專題推薦
 
 首頁一次顯示一篇「本期專題」，檔期設定寫在已發布專題的 `topic.md` frontmatter。常青備選加 `homeFallback: true`（全站最多一篇），目前指定〈備菜與預處理〉。推薦檔期使用下列欄位；順位數字越小越優先，不能與其他專題重複。

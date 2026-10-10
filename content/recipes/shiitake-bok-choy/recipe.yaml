@@ -2,6 +2,8 @@ title: 香菇炒青江菜
 summary: 鮮香菇與青江菜一起拌炒，以醬油膏調味。加少量水煮到菜葉軟化，是一道帶蒜香的家常配菜。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 青江菜 250 g 與八朵鮮香菇直接炒成配菜，大蒜與醬油膏只是調味。
 draft: false
 mealCandidate: true
 vegetable: true

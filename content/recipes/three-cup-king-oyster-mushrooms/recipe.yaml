@@ -2,6 +2,8 @@ title: 三杯杏鮑菇
 summary: 杏鮑菇先炸到略帶金黃，再與薑、蒜仁、紅辣椒和醬汁炒至收乾，最後拌入九層塔。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 杏鮑菇 500 g 切大塊炸過再收三杯醬汁，薑蒜與九層塔只作辛香調味。
 draft: false
 mealCandidate: true
 vegetable: true

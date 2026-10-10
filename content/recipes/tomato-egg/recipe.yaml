@@ -2,9 +2,11 @@ title: 番茄炒蛋
 summary: 蛋先炒到半凝固盛起，番茄加糖和水燜出湯汁後再拌回炒蛋。蛋軟嫩、湯汁偏多，適合配飯。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 番茄 300 g 切塊燜出汁，四顆雞蛋另炒後回鍋，番茄塊與炒蛋共同構成成品。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 tags: [家常菜]

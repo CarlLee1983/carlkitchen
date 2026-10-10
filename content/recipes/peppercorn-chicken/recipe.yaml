@@ -2,6 +2,8 @@ title: 椒麻雞
 summary: 雞腿肉以平底鍋煎至表皮金黃酥脆，切塊排在高麗菜絲上，淋上融合蒜末、辣椒、蔥花與白醋的醬汁，並撒上花椒粉增添麻香。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 去骨雞腿煎酥切塊後淋椒麻醬，高麗菜絲 70 g 明確用作盤底襯菜。
 draft: false
 mealCandidate: true
 vegetable: false

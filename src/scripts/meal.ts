@@ -275,7 +275,7 @@ export function initMeal() {
     const item = kinds.get(id);
     if (!item) return "";
     if (item.soup) return "湯";
-    return [item.vegetable && "蔬菜", item.protein && "蛋白質"]
+    return [item.vegetable && "蔬菜為主", item.protein && "肉、海鮮或蛋豆為主"]
       .filter(Boolean)
       .join("／");
   }

@@ -2,6 +2,8 @@ title: 香煎豆腐
 summary: 豆腐兩面煎到金黃，淋上簡單醬汁。
 servings: 2
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 測試審核紀錄meal-tofu；豆腐是主角，配桌只作蛋白質菜。
 draft: false
 timeMinutes: 15
 mealCandidate: true

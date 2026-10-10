@@ -2,6 +2,8 @@ title: 紅燒獅子頭
 summary: 豬後腿絞肉混入板豆腐與荸薺，做成四顆肉丸，與大白菜同燜。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 200 g 豬絞肉拌入捏碎豆腐及荸薺製成四顆肉丸，白菜在最後加入陪燜。
 draft: false
 mealCandidate: true
 vegetable: false

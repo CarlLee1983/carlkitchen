@@ -2,6 +2,8 @@ title: 紅燒黃魚
 summary: 黃魚與蒜仁先煎至金黃，再和香菇、紅蘿蔔及蔥薑一起燒至收汁。
 servings: 2
 category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 整尾黃魚先煎後紅燒收汁，香菇、紅蘿蔔片與辛香料作陪燒配料。
 draft: false
 mealCandidate: true
 vegetable: false

@@ -69,7 +69,10 @@ describe("collectImageRefs", () => {
       summary: "s",
       servings: 1,
       category: "非湯料理",
-      vegetable: true,
+      dishKinds: ["egg-bean"],
+      classificationReason: "蛋為主角，配桌作蛋白質菜。",
+      vegetable: false,
+      protein: true,
       draft: false,
       timeMinutes: 5,
       ingredients: [

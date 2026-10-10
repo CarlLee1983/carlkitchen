@@ -83,7 +83,20 @@ function pickDishes(
   previous: ReadonlySet<string>,
 ): Pick {
   if (free.length < need) {
-    return { failure: "候選池的非湯菜不足，無法組成完整且不重複的套餐。" };
+    return {
+      failure: `候選池的非湯菜不足：尚需 ${need} 道，可用候選只有 ${free.length} 道，無法組成完整且不重複的套餐。`,
+    };
+  }
+  const available = [...locked, ...free];
+  if (!available.some((item) => item.vegetable)) {
+    return {
+      failure: "候選池缺少以蔬菜為主角的料理；含蔬菜的混合菜不能補足這個菜位。",
+    };
+  }
+  if (!available.some((item) => item.protein)) {
+    return {
+      failure: "候選池缺少另一道肉蛋料理（肉、海鮮或蛋豆），無法組成均衡套餐。",
+    };
   }
   const fresh = free.filter((item) => !previous.has(item.id));
   const stale = free.filter((item) => previous.has(item.id));

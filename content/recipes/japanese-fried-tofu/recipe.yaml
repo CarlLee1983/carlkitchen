@@ -2,6 +2,8 @@ title: 日式炸豆腐
 summary: 豆腐裹粉炸至淺金黃，配昆布柴魚高湯，再加蘿蔔泥、薑泥和蔥花。
 servings: 3
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 397 g 嫩豆腐切成 6 塊裹粉炸熟，蘿蔔泥及昆布柴魚高湯只作佐料與淋醬。
 draft: false
 mealCandidate: true
 vegetable: false

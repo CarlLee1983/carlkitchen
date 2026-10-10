@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import type { Candidate, Plan } from "../src/meal-planner/index.ts";
+import {
+  candidatesFromRecipes,
+  type Candidate,
+  type Plan,
+} from "../src/meal-planner/index.ts";
 import { decodeSharedMeal, encodeSharedMeal } from "../src/utils/meal-share.ts";
 
 const dish = (id: string, vegetable: boolean, protein: boolean): Candidate => ({
@@ -28,6 +32,34 @@ const plan: Plan = {
 };
 
 describe("分享菜單編碼", () => {
+  it("混合菜分類不能讓舊連結跳過獨立蔬菜主角的規則", () => {
+    const mixedRecipe = {
+      id: "tomato-egg",
+      data: {
+        category: "非湯料理" as const,
+        draft: false,
+        mealCandidate: true,
+        vegetable: false,
+        protein: true,
+        dishKinds: ["vegetable", "egg-bean"],
+      },
+    };
+    const mixedPool = [...pool, ...candidatesFromRecipes([mixedRecipe])];
+    for (const value of [
+      "v1.4.beef,tomato-egg,tofu,fish.soup",
+      "v1.5.beef,tomato-egg,tofu,fish,chicken.soup",
+    ]) {
+      const result = decodeSharedMeal(value, mixedPool);
+      assert.equal(result.ok, false);
+      if (!result.ok)
+        assert.match(result.reason, /以蔬菜為主.*另一道.*肉、海鮮或蛋豆/);
+    }
+    assert.equal(
+      decodeSharedMeal("v1.4.cabbage,tomato-egg,tofu,fish.soup", mixedPool).ok,
+      true,
+    );
+  });
+
   it("四菜與五菜保留順序，收件菜單不含鎖定與原種子", () => {
     for (const current of [
       plan,

@@ -2,6 +2,8 @@ title: 清蒸魚
 summary: 整尾鱸魚大火蒸熟，鋪上蔥、薑、辣椒絲淋熱油，再澆蠔油醬汁。魚肉細嫩、醬汁鹹甜，適合配飯。
 servings: 4
 category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 整尾鱸魚蒸熟後淋熱油與蠔油醬，蔥薑辣椒只作去腥和提香。
 draft: false
 mealCandidate: true
 vegetable: false

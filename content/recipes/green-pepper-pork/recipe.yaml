@@ -2,9 +2,11 @@ title: 青椒炒肉絲
 summary: 豬肉絲先煎到一面上色，再與青椒、紅椒和香菇素蠔油炒勻。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 330 g 豬肉絲與 2 顆青椒、1 顆紅椒切絲同炒，肉絲與椒絲共同構成成品。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 tags: [豬肉, 青椒, 家常菜]

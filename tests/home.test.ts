@@ -13,14 +13,23 @@ import {
   readSavedScroll,
   recipeIdFromUrl,
   recipeKinds,
+  recipeKindLabels,
   showMore,
   topicIdFromUrl,
   truncateRows,
   visibleKindOptions,
 } from "../src/utils/home.ts";
-import type { RecipeCategory } from "../src/content/recipe-schema.ts";
+import type { DishKind, RecipeCategory } from "../src/content/recipe-schema.ts";
 
-const ALL_OPTIONS = ["all", "vegetable", "protein", "staple", "soup"] as const;
+const ALL_OPTIONS = [
+  "all",
+  "vegetable",
+  "meat",
+  "seafood",
+  "egg-bean",
+  "staple",
+  "soup",
+] as const;
 
 describe("parseKindParam", () => {
   it("認得每個篩選值，其餘（含缺少、舊的 non-soup）一律視為全部", () => {
@@ -30,6 +39,7 @@ describe("parseKindParam", () => {
     assert.equal(parseKindParam(null, ALL_OPTIONS), "all");
     assert.equal(parseKindParam("nonsense", ALL_OPTIONS), "all");
     assert.equal(parseKindParam("non-soup", ALL_OPTIONS), "all");
+    assert.equal(parseKindParam("protein", ALL_OPTIONS), "all");
   });
 
   it("目前被隱藏的選項視為全部", () => {
@@ -62,7 +72,7 @@ describe("parseHomeState", () => {
 
   it("kind 是被隱藏的選項時視為全部", () => {
     assert.equal(
-      parseHomeState(new URLSearchParams("kind=soup"), ["all", "protein"]).kind,
+      parseHomeState(new URLSearchParams("kind=soup"), ["all", "meat"]).kind,
       "all",
     );
   });
@@ -71,8 +81,8 @@ describe("parseHomeState", () => {
 describe("applyHomeState", () => {
   it("寫入 kind 與 q 並保留其他參數，不改動輸入", () => {
     const input = new URLSearchParams("foo=1");
-    const result = applyHomeState(input, { q: "雞", kind: "protein" });
-    assert.equal(result.get("kind"), "protein");
+    const result = applyHomeState(input, { q: "雞", kind: "meat" });
+    assert.equal(result.get("kind"), "meat");
     assert.equal(result.get("q"), "雞");
     assert.equal(result.get("foo"), "1");
     assert.equal(input.has("kind"), false);
@@ -89,84 +99,99 @@ describe("applyHomeState", () => {
 });
 
 describe("recipeKinds", () => {
-  it("非湯料理依標記回傳蔬菜、肉蛋料理或兩者", () => {
-    const base = { category: "非湯料理" as const };
-    assert.deepEqual(
-      recipeKinds({ ...base, vegetable: true, protein: false }),
-      ["vegetable"],
-    );
-    assert.deepEqual(
-      recipeKinds({ ...base, vegetable: false, protein: true }),
-      ["protein"],
-    );
-    assert.deepEqual(recipeKinds({ ...base, vegetable: true, protein: true }), [
+  it("瀏覽依料理主角分類，不把配桌角色當分類", () => {
+    const mixed = {
+      category: "非湯料理" as const,
+      dishKinds: ["vegetable", "egg-bean"] as DishKind[],
+      vegetable: false,
+      protein: true,
+    };
+    assert.deepEqual(recipeKinds(mixed), ["vegetable", "egg-bean"]);
+    for (const dishKind of [
       "vegetable",
-      "protein",
+      "meat",
+      "seafood",
+      "egg-bean",
+    ] as const) {
+      assert.deepEqual(
+        recipeKinds({ category: "非湯料理", dishKinds: [dishKind] }),
+        [dishKind],
+      );
+    }
+  });
+
+  it("主食回傳 staple、湯回傳 soup", () => {
+    assert.deepEqual(recipeKinds({ category: "主食", dishKinds: [] }), [
+      "staple",
     ]);
+    assert.deepEqual(recipeKinds({ category: "湯", dishKinds: [] }), ["soup"]);
   });
+});
 
-  it("主食回傳 staple，不管標記", () => {
+describe("recipeKindLabels", () => {
+  it("所有標籤與篩選一致，雙主角各自顯示", () => {
     assert.deepEqual(
-      recipeKinds({ category: "主食", vegetable: false, protein: false }),
-      ["staple"],
+      recipeKindLabels({
+        category: "非湯料理",
+        dishKinds: ["vegetable", "meat", "seafood", "egg-bean"],
+      }),
+      ["蔬菜", "肉類", "海鮮", "蛋豆"],
     );
-  });
-
-  it("湯回傳 soup", () => {
-    assert.deepEqual(
-      recipeKinds({ category: "湯", vegetable: false, protein: false }),
-      ["soup"],
-    );
+    assert.deepEqual(recipeKindLabels({ category: "主食", dishKinds: [] }), [
+      "主食",
+    ]);
+    assert.deepEqual(recipeKindLabels({ category: "湯", dishKinds: [] }), [
+      "湯",
+    ]);
   });
 });
 
 describe("visibleKindOptions", () => {
-  const recipe = (
-    category: RecipeCategory,
-    vegetable: boolean,
-    protein: boolean,
-  ) => ({
+  const recipe = (category: RecipeCategory, dishKinds: DishKind[]) => ({
     category,
-    vegetable,
-    protein,
+    dishKinds,
   });
 
   it("固定順序，只留至少有一道菜的選項，全部一律顯示", () => {
     assert.deepEqual(
       visibleKindOptions([
-        recipe("湯", false, false),
-        recipe("非湯料理", true, true),
+        recipe("湯", []),
+        recipe("非湯料理", ["egg-bean", "vegetable"]),
       ]).map((option) => option.value),
-      ["all", "vegetable", "protein", "soup"],
+      ["all", "vegetable", "egg-bean", "soup"],
     );
   });
 
-  it("有主食時出現主食選項，位置在肉蛋料理與湯之間", () => {
+  it("七個選項各有菜時，標籤與順序固定", () => {
     assert.deepEqual(
       visibleKindOptions([
-        recipe("湯", false, false),
-        recipe("主食", false, false),
-        recipe("非湯料理", true, true),
-      ]).map((option) => option.value),
-      ["all", "vegetable", "protein", "staple", "soup"],
-    );
-    assert.equal(
-      visibleKindOptions([recipe("主食", false, false)])[1]?.label,
-      "主食",
+        recipe("湯", []),
+        recipe("主食", []),
+        recipe("非湯料理", ["egg-bean", "seafood", "meat", "vegetable"]),
+      ]),
+      [
+        { value: "all", label: "全部" },
+        { value: "vegetable", label: "蔬菜" },
+        { value: "meat", label: "肉類" },
+        { value: "seafood", label: "海鮮" },
+        { value: "egg-bean", label: "蛋豆" },
+        { value: "staple", label: "主食" },
+        { value: "soup", label: "湯" },
+      ],
     );
   });
 
   it("沒有主食時不顯示主食選項", () => {
     const values = visibleKindOptions([
-      recipe("非湯料理", true, true),
-      recipe("湯", false, false),
+      recipe("非湯料理", ["vegetable"]),
+      recipe("湯", []),
     ]).map((option) => option.value);
     assert.equal(values.includes("staple"), false);
   });
 
   it("沒有菜的選項不顯示", () => {
     assert.deepEqual(
-      visibleKindOptions([recipe("非湯料理", true, false)]).map(
+      visibleKindOptions([recipe("非湯料理", ["vegetable"])]).map(
         (option) => option.value,
       ),
       ["all", "vegetable"],
@@ -182,9 +207,7 @@ describe("visibleKindOptions", () => {
 
   it("選項附中文標籤", () => {
     assert.deepEqual(
-      visibleKindOptions([recipe("湯", false, false)]).map(
-        (option) => option.label,
-      ),
+      visibleKindOptions([recipe("湯", [])]).map((option) => option.label),
       ["全部", "湯"],
     );
   });

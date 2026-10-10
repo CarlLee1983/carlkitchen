@@ -2,6 +2,8 @@ title: 清蒸魚
 summary: 魚身劃刀，大火蒸熟後淋上熱油與醬油。
 servings: 2
 category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 測試審核紀錄meal-fish；魚是主角，配桌只作蛋白質菜。
 draft: false
 timeMinutes: 30
 mealCandidate: true

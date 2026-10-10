@@ -2,6 +2,8 @@ title: 芋頭燒排骨
 summary: 排骨和芋頭分別炸過，再與蔥薑、調味料一起燒煮，收成濃稠醬汁。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 豬小排 300 g 與芋頭 230 g 各自炸過再共同燒煮，排骨塊與芋頭塊並列為成品主料。
 draft: false
 mealCandidate: true
 vegetable: false

@@ -2,6 +2,8 @@ title: 紅燒牛腩
 summary: 牛腩與白蘿蔔、紅蘿蔔先拌炒，再用醬油與豆瓣醬燉煮。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 600 g 牛腩先爆香再燉煮，紅白蘿蔔與洋蔥各 100 g 為陪燉配料。
 draft: false
 mealCandidate: true
 vegetable: false

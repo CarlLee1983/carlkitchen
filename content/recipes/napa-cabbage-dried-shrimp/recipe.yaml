@@ -2,6 +2,8 @@ title: 開陽白菜
 summary: 大白菜先燙過，再和泡軟的蝦米、香菇一起煮，最後勾芡淋香油。白菜軟嫩、湯汁滑順，適合配飯。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 500 g 大白菜汆燙後以 30 g 蝦米及 30 g 乾香菇爆香煨煮，蝦米僅提供鮮味。
 draft: false
 mealCandidate: true
 vegetable: true

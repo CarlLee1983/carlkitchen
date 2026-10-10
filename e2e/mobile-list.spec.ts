@@ -117,7 +117,7 @@ test.describe("手機版（390×844）", () => {
 });
 
 test.describe("篩選列折成兩行時", () => {
-  // 320 寬放不下 5 個選項，篩選列折行變高；視窗縮矮，固定菜譜才夠長可以捲。
+  // 320 寬放不下 7 個選項，篩選列折行變高；視窗縮矮，固定菜譜才夠長可以捲。
   test.use({ viewport: { width: 320, height: 300 } });
 
   test("切換篩選後第一列緊接在固定的篩選列下方，不被遮住", async ({ page }) => {
@@ -129,7 +129,7 @@ test.describe("篩選列折成兩行時", () => {
     expect(last.y, "前提：篩選列折成多行").toBeGreaterThan(first.y);
 
     const natural = await top(bar);
-    for (const name of ["蔬菜", "肉蛋料理", "湯"]) {
+    for (const name of ["蔬菜", "肉類", "海鮮", "蛋豆", "湯"]) {
       await page.evaluate((y) => window.scrollTo(0, y + 120), natural);
       await expect
         .poll(async () => Math.round(await top(bar)), { message: "固定在頂端" })

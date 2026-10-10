@@ -2,6 +2,8 @@ title: 酒蒸肉丸
 summary: 豬絞肉拌入香菇、蔥薑與調味料捏丸蒸熟，再淋上勾芡醬汁。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 豬絞肉 500 g 捏成肉丸蒸熟，香菇、蔥薑剁末混入肉餡，紅蘿蔔只作墊底。
 draft: false
 mealCandidate: true
 vegetable: false

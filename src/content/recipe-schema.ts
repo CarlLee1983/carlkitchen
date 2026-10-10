@@ -4,6 +4,10 @@ export const RECIPE_CATEGORIES = ["非湯料理", "主食", "湯"] as const;
 
 export type RecipeCategory = (typeof RECIPE_CATEGORIES)[number];
 
+/** 非湯料理的主要食材類別；與配桌角色 vegetable / protein 分開。 */
+export const DISH_KINDS = ["vegetable", "meat", "seafood", "egg-bean"] as const;
+export type DishKind = (typeof DISH_KINDS)[number];
+
 /** 沒有用量（「適量」）的材料只允許出現在這個分組。 */
 export const SEASONING_GROUP = "調味";
 
@@ -57,6 +61,13 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
       summary: nonEmpty,
       servings: z.number().int().positive(),
       category: z.enum(RECIPE_CATEGORIES),
+      dishKinds: z
+        .array(z.enum(DISH_KINDS))
+        .refine((kinds) => new Set(kinds).size === kinds.length, {
+          message: "料理主角不得重複。",
+        }),
+      // 僅供逐篇審核，不輸出到頁面或搜尋索引。
+      classificationReason: nonEmpty,
       draft: z.boolean(),
       ingredients: z.array(ingredientSchema).min(1),
       steps: z.array(stepSchema).min(1),
@@ -73,31 +84,77 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
       tip: nonEmpty.optional(),
     })
     .superRefine((recipe, context) => {
-      // 性質標記只屬於非湯料理，且非湯料理至少要有一個；主食不參與配一桌；草稿同樣適用
+      // 配桌角色只屬於非湯料理；主食不參與配一桌，草稿同樣適用。
       switch (recipe.category) {
         case "湯":
+          if (recipe.dishKinds.length > 0) {
+            context.addIssue({
+              code: "custom",
+              path: ["dishKinds"],
+              message: "湯的料理主角必須為空陣列。",
+            });
+          }
           for (const field of ["vegetable", "protein"] as const) {
             if (recipe[field]) {
               context.addIssue({
                 code: "custom",
                 path: [field],
-                message: "湯不可標記蔬菜或肉蛋料理。",
+                message: "湯不可標記蔬菜或蛋白質角色。",
               });
             }
           }
           break;
         case "非湯料理":
+          if (recipe.dishKinds.length === 0) {
+            context.addIssue({
+              code: "custom",
+              path: ["dishKinds"],
+              message: "非湯料理至少需要一個料理主角。",
+            });
+          }
+          if (
+            recipe.vegetable &&
+            (recipe.protein ||
+              recipe.dishKinds.length !== 1 ||
+              recipe.dishKinds[0] !== "vegetable")
+          ) {
+            context.addIssue({
+              code: "custom",
+              path: ["vegetable"],
+              message: "蔬菜角色只能是單一蔬菜主角，且不可兼任蛋白質角色。",
+            });
+          }
+          if (
+            recipe.protein &&
+            !recipe.dishKinds.some(
+              (kind) =>
+                kind === "meat" || kind === "seafood" || kind === "egg-bean",
+            )
+          ) {
+            context.addIssue({
+              code: "custom",
+              path: ["protein"],
+              message: "蛋白質角色必須有肉類、海鮮或蛋豆主角。",
+            });
+          }
           if (!recipe.vegetable && !recipe.protein) {
             for (const field of ["vegetable", "protein"] as const) {
               context.addIssue({
                 code: "custom",
                 path: [field],
-                message: "非湯料理的蔬菜與肉蛋料理至少要有一個為真。",
+                message: "非湯料理的蔬菜與蛋白質角色至少要有一個為真。",
               });
             }
           }
           break;
         case "主食":
+          if (recipe.dishKinds.length > 0) {
+            context.addIssue({
+              code: "custom",
+              path: ["dishKinds"],
+              message: "主食的料理主角必須為空陣列。",
+            });
+          }
           for (const field of [
             "vegetable",
             "protein",
@@ -110,7 +167,7 @@ export function createRecipeSchema<Image extends z.ZodType>(image: Image) {
                 message:
                   field === "mealCandidate"
                     ? "主食不可為配菜候選。"
-                    : "主食不可標記蔬菜或肉蛋料理。",
+                    : "主食不可標記蔬菜或蛋白質角色。",
               });
             }
           }

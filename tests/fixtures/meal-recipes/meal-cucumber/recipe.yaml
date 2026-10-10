@@ -2,6 +2,8 @@ title: 涼拌小黃瓜
 summary: 小黃瓜拍裂後拌醬汁，冰過更爽口。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 測試審核紀錄meal-cucumber；小黃瓜是主角，可作一格蔬菜。
 draft: false
 timeMinutes: 40
 mealCandidate: false

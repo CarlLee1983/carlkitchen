@@ -2,6 +2,8 @@ title: 家常蒸蛋
 summary: 雞蛋加水蒸成滑嫩蛋羹，起鍋後淋上醬油與麻油，味道清淡，適合配飯。
 servings: 4
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 三顆雞蛋加水蒸成完整蛋羹，醬油與麻油只在起鍋後調味。
 draft: false
 mealCandidate: true
 vegetable: false

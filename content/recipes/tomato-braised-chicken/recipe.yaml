@@ -2,9 +2,11 @@ title: 番茄燒雞肉
 summary: 雞腿塊與番茄、洋蔥同煮，番茄醬、糖和水形成燒煮醬汁。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 雞腿塊 500 g 先炒後燒煮，番茄 200 g 與番茄醬、水共同形成燒雞醬汁。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 35
 tags: [家常菜]

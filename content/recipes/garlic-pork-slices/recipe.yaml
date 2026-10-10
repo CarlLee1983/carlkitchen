@@ -2,6 +2,8 @@ title: 蒜泥白肉
 summary: 五花肉與薑片、蔥段同煮，切片後淋上帶烏醋的蒜泥醬。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 600 g 五花肉煮熟切片排盤淋蒜泥醬，薑片與蔥段只用於煮肉去腥。
 draft: false
 mealCandidate: true
 vegetable: false

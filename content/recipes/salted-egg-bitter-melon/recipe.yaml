@@ -2,6 +2,8 @@ title: 鹹蛋苦瓜
 summary: 苦瓜薄片先汆燙，再與切碎的熟鹹蛋快炒。苦瓜帶淡淡鹹香，適合當配飯的家常菜。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 整條苦瓜切片汆燙後拌炒，一顆熟鹹蛋切碎用來裹味提鹹香。
 draft: false
 mealCandidate: true
 vegetable: true

@@ -2,6 +2,8 @@ title: 味噌蒸雞
 summary: 雞腿塊拌入味噌醬汁，與香菇、辣椒和蔥段一起蒸熟。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 1 支雞腿剁塊拌味噌醬蒸熟，50 g 泡發香菇與蔥薑辣椒用來陪襯增香。
 draft: false
 mealCandidate: true
 vegetable: false

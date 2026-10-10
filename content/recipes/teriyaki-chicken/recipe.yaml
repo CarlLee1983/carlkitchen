@@ -2,6 +2,8 @@ title: 照燒雞肉
 summary: 帶皮去骨雞腿肉煎上色，再用醬油、米酒與味醂調成的醬汁收煮。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 帶皮去骨雞腿肉整片煎熟並收照燒醬汁，沒有其他並列主料。
 draft: false
 mealCandidate: true
 vegetable: false

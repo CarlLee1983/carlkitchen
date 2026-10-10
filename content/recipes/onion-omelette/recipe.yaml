@@ -2,9 +2,11 @@ title: 洋蔥炒蛋
 summary: 先炒好雞蛋，再將洋蔥炒軟，兩者拌在一起，帶有黑胡椒味。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 半顆洋蔥切粗絲炒軟，與另炒的三顆雞蛋拌合，洋蔥絲和蛋塊共同構成成品。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 tags: [家常菜]

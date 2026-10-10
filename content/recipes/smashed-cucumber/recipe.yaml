@@ -2,6 +2,8 @@ title: 涼拌小黃瓜
 summary: 小黃瓜拍裂切段，先用鹽醃出水分再濾乾，最後拌入蒜末、辣椒和糖醋香油。免開火，適合當配飯小菜。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 小黃瓜 400 g 拍裂醃漬成涼拌小菜，蒜末、辣椒與糖醋香油都是調味。
 draft: false
 mealCandidate: true
 vegetable: true

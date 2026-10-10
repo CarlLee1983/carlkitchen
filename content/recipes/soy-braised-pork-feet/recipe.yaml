@@ -2,6 +2,8 @@ title: 醬燒豬腳
 summary: 豬腳剁塊汆燙去除血水，與蔥段、薑片、蒜頭和八角爆香煸炒，加入米酒、醬油與冰糖慢燉至皮軟肉爛、膠質濃稠。色澤紅亮、鹹甜濃郁。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 豬腳 900 g 汆燙後慢燉收汁，蔥薑蒜與八角只作爆香調味。
 draft: false
 mealCandidate: true
 vegetable: false

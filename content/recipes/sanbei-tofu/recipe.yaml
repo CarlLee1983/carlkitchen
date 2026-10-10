@@ -2,6 +2,8 @@ title: 三杯豆腐
 summary: 扎實板豆腐切塊油炸至表面金黃焦脆，以黑麻油煸香薑片與整粒蒜頭，放入炸豆腐塊與辣椒片，淋入醬油、醬油膏、糖與米酒大火收汁裹滿濃醬，起鍋撒入鮮綠九層塔翻炒，外酥內嫩、醬香撲鼻。
 servings: 4
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 板豆腐約 400 g 切厚塊炸酥再收三杯醬汁，九層塔、薑蒜只作辛香調味。
 draft: false
 mealCandidate: true
 vegetable: false

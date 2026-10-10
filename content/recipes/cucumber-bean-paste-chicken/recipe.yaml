@@ -2,6 +2,8 @@ title: 小黃瓜醬爆雞丁
 summary: 雞胸肉切丁醃過後快炒，再和甜麵醬、小黃瓜、辣椒拌炒。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 雞胸肉切丁醃漬後單獨快炒再裹甜麵醬，小黃瓜丁在最後拌入增加口感。
 draft: false
 mealCandidate: true
 vegetable: false

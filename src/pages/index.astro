@@ -2,7 +2,12 @@
 import Base from "../layouts/Base.astro";
 import Illustration from "../components/Illustration.astro";
 import HomeSeason from "../components/HomeSeason.astro";
-import { parseBatchSize, recipeKinds, visibleKindOptions } from "../utils/home";
+import {
+  parseBatchSize,
+  recipeKinds,
+  recipeKindLabels,
+  visibleKindOptions,
+} from "../utils/home";
 import { SITE_NAME, SITE_TAGLINE } from "../utils/site";
 import { getVisibleRecipes, recipeHref } from "../utils/recipes";
 import { getVisibleTopicEntries } from "../utils/topic-entries";
@@ -175,7 +180,9 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
                     {recipe.data.draft && <span>（草稿）</span>}
                   </h3>
                   <p class="row-summary">{recipe.data.summary}</p>
-                  <span class="kind">{recipe.data.category}</span>
+                  <span class="kind">
+                    {recipeKindLabels(recipe.data).join("・")}
+                  </span>
                 </li>
               ))}
               {
@@ -505,7 +512,8 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       position: sticky;
       top: 0;
       z-index: 1;
-      margin: 0.75rem 0;
+      /* 七類篩選折行後，縮小上下留白，保留首屏第一列與 44px 觸控目標。 */
+      margin: 0.5rem 0;
       background: var(--paper);
       border-bottom: 1px solid var(--line);
     }

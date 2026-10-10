@@ -2,9 +2,11 @@ title: 韭菜烘蛋
 summary: 韭菜先炒到半熟，再加入雞蛋以中小火煎熟，翻面後續煎至熟。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 140 g 韭菜先炒至半熟，再加入五顆雞蛋煎成厚蛋，實質菜段與雞蛋共同構成成品。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 tags: [家常菜]

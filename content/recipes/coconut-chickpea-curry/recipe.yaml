@@ -2,9 +2,11 @@ title: 椰奶鷹嘴豆咖哩
 summary: 鷹嘴豆和紅甜椒以椰奶、番茄燉煮，最後拌入嫩菠菜、香菜和萊姆汁。
 servings: 4
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 兩罐瀝乾鷹嘴豆以椰奶番茄咖哩燉煮，洋蔥、甜椒與少量菠菜作醬底及配料。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 30
 tags: [咖哩]

@@ -2,6 +2,8 @@ title: 味噌烤鮭魚
 summary: 帶皮鮭魚先以味噌、清酒與味醂冷藏醃漬，再擦去多餘醬料烤熟，做成鹹甜的魚料理。
 servings: 2
 category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 340 g 帶皮鮭魚醃漬後刮去多餘醬料烘烤，24 g 味噌只用作醃醬。
 draft: false
 mealCandidate: true
 vegetable: false

@@ -2,6 +2,8 @@ title: 酥炸杏鮑菇
 summary: 杏鮑菇切塊裹上粉漿，炸到表面金黃酥脆，再拌上椒鹽粉。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 300 g 杏鮑菇切塊裹漿油炸後撒椒鹽，粉漿僅構成外衣。
 draft: false
 mealCandidate: true
 vegetable: true

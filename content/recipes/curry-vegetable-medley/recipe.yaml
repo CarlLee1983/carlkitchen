@@ -2,6 +2,8 @@ title: 咖哩蔬什錦
 summary: 馬鈴薯、紅蘿蔔與洋蔥用咖哩粉和雞高湯煮軟，最後加入青花椰菜。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 馬鈴薯、紅蘿蔔、青花椰菜與洋蔥切塊煮成咖哩蔬菜，雞高湯只作湯底。
 draft: false
 mealCandidate: true
 vegetable: true

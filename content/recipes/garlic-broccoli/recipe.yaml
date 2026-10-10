@@ -2,6 +2,8 @@ title: 蒜炒花椰菜
 summary: 白、綠花椰菜先汆燙，再和紅蘿蔔片一起下鍋，與煸到金黃的蒜片快炒。口感清脆、帶蒜香，是簡單的家常炒青菜。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 白、綠花椰菜各 100 g 與 30 g 紅蘿蔔汆燙快炒，蒜片只用來爆香。
 draft: false
 mealCandidate: true
 vegetable: true

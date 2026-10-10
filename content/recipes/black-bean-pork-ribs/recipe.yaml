@@ -2,6 +2,8 @@ title: 豆豉排骨
 summary: 豬腩排浸去血水後拌入豆豉與調味料，放進電鍋蒸熟。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 600 g 豬腩排拌入豆豉、蒜末與醃料後蒸熟，排骨為成品主體。
 draft: false
 mealCandidate: true
 vegetable: false

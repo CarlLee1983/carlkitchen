@@ -2,9 +2,11 @@ title: 馬鈴薯燉肉
 summary: 豬肉、馬鈴薯和紅蘿蔔加入醬油調味，以電鍋燉到入味。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 豬肉 300 g 與馬鈴薯 200 g、紅蘿蔔 80 g 都切塊同燉，肉塊與根莖塊並列為可分食主料。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 60
 tags: [家常菜, 電鍋料理]

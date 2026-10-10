@@ -2,6 +2,8 @@ title: 魚香茄子
 summary: 紫亮茄子切段過油定色瀝乾，熱鍋爆香薑、蒜頭、蔥與辣椒細末，加入豬絞肉煸炒出香氣，淋入米酒、醬油與糖煨煮入味，勾薄芡並淋上香油，鹹甜微辣、茄肉軟嫩多汁。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 500 g 茄子段先炸熟再煨入味，100 g 炒散豬絞肉構成附著茄子的魚香醬汁。
 draft: false
 mealCandidate: true
 vegetable: true

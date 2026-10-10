@@ -30,7 +30,7 @@ test("菜譜頁顯示基本資訊、成品圖、材料兩組與合照、編號�
   await expect(page.getByText("蛋先炒到半熟盛起")).toBeVisible();
   await expect(page.getByText("2 人份")).toBeVisible();
   await expect(page.getByText("15 分鐘")).toBeVisible();
-  await expect(page.getByText("非湯料理", { exact: true })).toBeVisible();
+  await expect(page.getByText("蔬菜・蛋豆", { exact: true })).toBeVisible();
 
   await expect(
     page.getByRole("article").getByRole("figure").first().getByRole("img"),

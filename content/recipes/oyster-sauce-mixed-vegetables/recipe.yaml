@@ -2,6 +2,8 @@ title: 蠔油什錦炒鮮蔬
 summary: 香菇、青花菜、紅蘿蔔和玉米筍先下鍋，再加蠔油等調味料炒勻。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 香菇、青花菜、紅蘿蔔和玉米筍直接炒成蔬菜配菜，蠔油與雞粉只負責調味。
 draft: false
 mealCandidate: true
 vegetable: true

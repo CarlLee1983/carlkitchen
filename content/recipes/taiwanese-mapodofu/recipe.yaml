@@ -2,6 +2,8 @@ title: 台式家常麻婆豆腐
 summary: 嫩豆腐和絞肉以微辣豆瓣醬調味，最後勾薄芡並撒上蔥花。
 servings: 4
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 一盒嫩豆腐切塊煨煮是成品本體，豬絞肉 100 g 炒入豆瓣醬形成豆腐的肉末醬汁。
 draft: false
 mealCandidate: true
 vegetable: false

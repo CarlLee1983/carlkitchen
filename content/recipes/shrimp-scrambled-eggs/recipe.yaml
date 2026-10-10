@@ -2,6 +2,8 @@ title: 蝦仁炒蛋
 summary: 蝦仁先汆燙，再拌入加了香油與蔥花的蛋液，快速翻炒成鬆軟蛋塊。
 servings: 4
 category: 非湯料理
+dishKinds: [seafood, egg-bean]
+classificationReason: 蝦仁 340 g 拌入八顆雞蛋炒成鬆軟蛋塊，蝦仁與炒蛋共同構成成品。
 draft: false
 mealCandidate: true
 vegetable: false

@@ -2,9 +2,11 @@ title: 日式咖哩雞
 summary: 雞胸肉搭配洋蔥、紅蘿蔔與馬鈴薯，加咖哩塊和咖哩粉煮成濃稠醬汁。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 雞胸肉與紅蘿蔔、馬鈴薯都切丁，根莖先煮熟再與雞丁合燴，肉丁與根莖丁共同構成咖哩本體。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 30
 tags: [雞肉, 咖哩, 馬鈴薯]

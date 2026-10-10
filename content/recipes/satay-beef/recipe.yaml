@@ -2,9 +2,11 @@ title: 沙茶牛肉
 summary: 牛肉片先醃後快炒，再與油菜拌入沙茶醬汁。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 牛肉片先以沙茶醬醃製並獨立快炒，再回鍋裹醬，油菜最後加入搭配肉片。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 35
 tags: [家常菜]

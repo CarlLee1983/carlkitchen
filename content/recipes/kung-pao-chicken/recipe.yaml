@@ -2,6 +2,8 @@ title: 宮保雞丁
 summary: 雞丁裹上酸甜醬汁，拌入乾辣椒、花椒與烤花生，蔥白分兩次下鍋。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 250 g 雞腿丁先醃炒再裹宮保醬，烤花生起鍋前拌入提供香脆口感。
 draft: false
 mealCandidate: true
 vegetable: false

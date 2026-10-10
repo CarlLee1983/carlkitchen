@@ -2,6 +2,8 @@ title: 筍香炒肉絲
 summary: 五花肉絲先炒到轉白，再與熟竹筍、青椒及蠔油醬汁拌炒。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 150 g 熟竹筍、整顆青椒與 100 g 五花肉均切絲拌炒，蔬菜絲與肉絲共同構成菜餚。
 draft: false
 mealCandidate: true
 vegetable: false

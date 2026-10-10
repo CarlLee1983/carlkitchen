@@ -2,9 +2,11 @@ title: 蒼蠅頭
 summary: 韭菜花、豬絞肉與豆豉快炒，再加入皮蛋拌出鹹香下飯的家常菜。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 200 g 韭菜花與 100 g 豬絞肉直接炒成主要固形料，皮蛋和豆豉則補充鹹香。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 25
 tags: [家常菜]

@@ -2,9 +2,11 @@ title: 蒜蓉秋葵豆腐
 summary: 秋葵燙熟放涼，搭配嫩豆腐與蒜蓉醬，口感滑嫩帶脆。適合當作涼拌配菜。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 1 盒嫩豆腐整塊盛盤搭配 10 條完整汆燙秋葵，兩者共同承接蒜蓉醬並保留各自口感。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 25
 tags: [涼拌菜]

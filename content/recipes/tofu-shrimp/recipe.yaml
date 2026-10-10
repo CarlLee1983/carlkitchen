@@ -2,6 +2,8 @@ title: 豆腐蝦仁
 summary: 豆腐片鋪上蔥薑蝦漿，用電鍋蒸熟，做成十塊可分食的配菜。
 servings: 2
 category: 非湯料理
+dishKinds: [seafood, egg-bean]
+classificationReason: 蝦仁 150 g 做成蝦漿鋪在十片豆腐上蒸熟，每塊成品都有完整豆腐片與蝦漿兩層主料。
 draft: false
 mealCandidate: true
 vegetable: false

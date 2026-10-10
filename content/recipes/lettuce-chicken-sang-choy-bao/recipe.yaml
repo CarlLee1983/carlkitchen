@@ -2,6 +2,8 @@ title: 生菜雞鬆
 summary: 雞肉、荸薺與蔬菜炒成雞鬆，拌入炸脆的油條，以生菜葉包著吃。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 100 g 雞肉與芹菜、荸薺、紅蘿蔔合計 90 g 炒成餡，再以 6 片完整生菜葉包食。
 draft: false
 mealCandidate: true
 vegetable: false

@@ -2,6 +2,8 @@ title: 紅燒茄子煲
 summary: 茄子先過油，再與蔥段和醬油膏放入砂鍋燜煮至湯汁收乾。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 兩條茄子切段過油後入砂鍋燜至收汁，蔥段與醬油膏用於增香調味。
 draft: false
 mealCandidate: true
 vegetable: true

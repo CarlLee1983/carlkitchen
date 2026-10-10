@@ -2,6 +2,8 @@ title: 咖哩牛肉
 summary: 牛臀肉先與蘋果、月桂葉燉煮，再和炒香的蔬菜、咖哩粉合鍋慢燉。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 400 g 牛肉塊長時間燉煮，切碎的洋蔥、番茄、紅蘿蔔等煮成咖哩醬底。
 draft: false
 mealCandidate: true
 vegetable: false

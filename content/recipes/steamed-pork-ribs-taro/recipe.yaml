@@ -2,6 +2,8 @@ title: 粉蒸排骨
 summary: 小排骨洗淨以辣豆瓣醬、醬油、酒、糖醃漬入味，均勻沾裹特製蒸肉粉，以清香荷葉襯底鋪上香甜地瓜塊與排骨，入蒸籠大火蒸透 40 分鐘。肉質軟嫩多汁、米粉軟糯吸汁，地瓜甘甜綿密，荷葉清香四溢。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 小排骨 600 g 裹粉鋪在地瓜厚塊 250 g 上共同蒸熟，排骨與吸汁綿密的地瓜同為可分食主料。
 draft: false
 mealCandidate: true
 vegetable: false

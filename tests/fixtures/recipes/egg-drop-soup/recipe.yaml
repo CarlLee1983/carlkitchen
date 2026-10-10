@@ -2,6 +2,8 @@ title: 蛋花湯
 summary: 水滾後淋入蛋液，輕推成蛋花，鹽調味，幾分鐘就能上桌的清爽湯品。
 servings: 2
 category: 湯
+dishKinds: []
+classificationReason: 測試審核紀錄egg-drop-soup；湯品不標非湯主角或配桌角色。
 draft: false
 mealCandidate: true
 tags: [快手]

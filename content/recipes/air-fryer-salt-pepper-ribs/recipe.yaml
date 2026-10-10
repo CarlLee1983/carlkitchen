@@ -2,6 +2,8 @@ title: 氣炸椒鹽排骨
 summary: 排骨以蛋液、醬油和米酒醃過，裹上地瓜粉後用氣炸鍋烤熟，再拌入椒鹽、蒜末、辣椒末和蔥花。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 600 g 排骨醃漬裹粉後氣炸成主體，少量蛋液僅用於醃料與黏粉。
 draft: false
 mealCandidate: true
 vegetable: false

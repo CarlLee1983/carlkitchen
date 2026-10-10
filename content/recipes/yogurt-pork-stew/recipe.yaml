@@ -2,9 +2,11 @@ title: 優格燉肉
 summary: 豬肉與馬鈴薯、甜椒和杏鮑菇加入原味優格燉煮。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 豬後腿肉 300 g 與馬鈴薯 150 g、杏鮑菇和甜椒切塊同燉，肉塊與蔬菜塊並列為燉菜本體。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 55
 tags: [家常菜, 燉煮]

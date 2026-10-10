@@ -2,6 +2,8 @@ title: 黑胡椒牛柳
 summary: 牛肉條先醃漬，再與洋蔥、蒜頭、彩椒和黑胡椒醬汁快炒。
 servings: 3
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 400 g 牛肉條醃漬過油後收汁，少量洋蔥和彩椒作爆香與配色配料。
 draft: false
 mealCandidate: true
 vegetable: false

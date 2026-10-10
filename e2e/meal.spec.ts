@@ -53,6 +53,27 @@ const sharedFour =
 const sharedFive =
   "v1.5.meal-beef,meal-cabbage,meal-chicken,meal-fish,meal-tofu.meal-radish-soup";
 
+test("四菜與五菜的卡片標示組餐角色，說明獨立的蔬菜菜位", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  for (const shared of [sharedFour, sharedFive]) {
+    await page.goto(`/meal/?menu=${shared}`);
+    await expect(
+      page.getByText(
+        "每桌包含肉、海鮮或蛋豆料理，另外搭配一道以蔬菜為主的菜。",
+        { exact: false },
+      ),
+    ).toBeVisible();
+    await expect(
+      itemOf(page, vegetableDish.title).getByText(/・蔬菜為主$/),
+    ).toBeVisible();
+    await expect(items(page).getByText(/・蔬菜為主$/)).toHaveCount(1);
+    await expect(items(page).getByText(/・肉、海鮮或蛋豆為主$/)).toHaveCount(
+      shared === sharedFour ? 3 : 4,
+    );
+    await expectNoOverflowNow(page, "組餐角色手機版");
+  }
+});
+
 test("完成自選後複製連結，另一個全新瀏覽器可依原順序查看菜譜並繼續編輯", async ({
   page,
   browser,
@@ -764,7 +785,7 @@ test("完整菜單的唯一蔬菜只列平衡替換，草稿仍可暫選肉蛋�
   await expect(
     items(page).nth(vegetableIndex).getByRole("link", { name: "青椒牛肉" }),
   ).toBeVisible();
-  await expect(status(page)).toContainText("還缺蔬菜");
+  await expect(status(page)).toContainText("還缺一道以蔬菜為主角的料理");
 });
 
 test("湯位只列湯；手機上可用鍵盤抵達指定欄位並保留焦點", async ({ page }) => {

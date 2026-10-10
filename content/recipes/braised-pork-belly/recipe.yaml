@@ -2,6 +2,8 @@ title: 台式滷肉
 summary: 五花肉和辛香料炒香後，連同水煮蛋、油豆腐用醬油與滷包小火滷約 50 分鐘。肉質軟嫩、滷汁鹹甜，適合配白飯。
 servings: 6
 category: 非湯料理
+dishKinds: [meat, egg-bean]
+classificationReason: 1200 g 五花肉厚片與六顆完整水煮蛋、300 g 油豆腐一同滷製，肉與蛋豆均為可獨立夾取的主體。
 draft: false
 mealCandidate: true
 vegetable: false

@@ -2,6 +2,8 @@ title: 蒜蓉蝦
 summary: 蝦子鋪在雞蛋豆腐上，淋上蒜頭與蠔油調成的醬汁，用電鍋蒸熟後撒上蔥花。
 servings: 4
 category: 非湯料理
+dishKinds: [seafood, egg-bean]
+classificationReason: 12 尾蝦與 1 盒切片雞蛋豆腐上下排盤共同蒸熟，兩者都吸附蒜蓉蠔油醬作為成品本體。
 draft: false
 mealCandidate: true
 vegetable: false
