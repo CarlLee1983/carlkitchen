@@ -1,0 +1,86 @@
+title: 泰式涼拌青木瓜
+summary: 新鮮未熟青木瓜刨去外皮刨成極細脆絲，泡冰水冰鎮爽脆，加入鮮紅番茄片、洋蔥絲、泡軟蝦米碎，倒入新鮮檸檬汁、魚露、辣椒碎與椰糖調製的泰式酸辣醬汁充分拌勻，表面撒上熟花生碎與新鮮香菜，酸辣甘甜、極致清脆爽口。
+servings: 2
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以新鮮青木瓜刨絲為唯一蔬菜主角，調入泰式檸檬魚露酸辣醬汁，屬於純蔬菜涼拌料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [涼拌, 泰式料理, 青木瓜, 開胃菜, 蔬菜]
+aliases: [泰式青木瓜沙拉, 涼拌青木瓜絲]
+ingredients:
+  - name: 青木瓜
+    amount:
+      value: 200
+      unit: g
+    note: 去皮去籽刨細絲泡冰水
+  - name: 牛番茄
+    amount:
+      value: 50
+      unit: g
+    note: 切薄片或小角塊
+  - name: 洋蔥
+    amount:
+      value: 30
+      unit: g
+    note: 切細絲泡冰水退辛
+  - name: 乾蝦米
+    amount:
+      value: 15
+      unit: g
+    note: 溫水泡軟拍鬆
+  - name: 熟花生
+    amount:
+      value: 20
+      unit: g
+    note: 略壓碎成粗花生粒
+  - name: 香菜
+    amount:
+      value: 10
+      unit: g
+    note: 切碎飾頂
+  - name: 檸檬汁
+    amount:
+      value: 25
+      unit: ml
+    note: 鮮榨檸檬汁
+    group: 調味
+  - name: 魚露
+    amount:
+      value: 20
+      unit: ml
+    note: 純釀魚露
+    group: 調味
+  - name: 糖
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切細碎末
+    group: 調味
+steps:
+  - text: 青木瓜刨皮對剖去籽，用刨絲器刨成均勻細絲，浸入冰開水中冷鎮 10 分鐘撈起徹底瀝乾水分；蝦米泡溫水軟化後用刀背拍鬆；洋蔥切細絲、番茄切小塊；花生壓碎備用。
+    image:
+      src: ./step-1.webp
+      alt: 青木瓜刨皮對剖去籽，用刨絲器刨成均勻細絲，浸入冰開水中冷鎮 10 分鐘撈起徹底瀝乾水分；蝦米泡溫水軟
+  - text: 大碗中倒入檸檬汁、魚露、糖與紅辣椒末充分攪拌至糖完全融化成泰式酸辣醬汁。
+  - text: 將瀝乾水分的青木瓜絲、洋蔥絲、番茄塊與蝦米碎放入大碗中，倒入酸辣醬汁，用手套輕輕抓拌按壓使醬汁充分滲透入木瓜絲纖維中入味。
+    image:
+      src: ./step-3.webp
+      alt: 將瀝乾水分的青木瓜絲、洋蔥絲、番茄塊與蝦米碎放入大碗中，倒入酸辣醬汁，用手套輕輕抓拌按壓使醬汁充分滲
+  - text: 盛入盤中，表面撒上大量香脆熟花生碎與新鮮香菜末，即可享用冰涼脆爽的泰式風味。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的泰式涼拌青木瓜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 青木瓜刨絲後務必浸泡冰開水 10 分鐘再徹底瀝乾，木瓜絲會變得極致脆口彈嫩；調拌時輕輕按壓抓揉，讓酸辣鹹甜醬汁能迅速被纖維吸收。

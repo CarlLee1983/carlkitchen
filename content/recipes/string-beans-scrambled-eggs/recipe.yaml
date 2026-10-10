@@ -1,0 +1,70 @@
+title: 四季豆炒蛋
+summary: 清脆四季豆去老筋切成精巧小丁，豬絞肉小火煸炒至微焦出油香，新鮮雞蛋打散調入少許鹽與白胡椒粉，熱油鍋倒入四季豆丁與絞肉大火快炒斷生，淋入蛋液以大火快速翻炒至蛋花金黃鬆散、四季豆翠綠脆甜，甘香爽口。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 以四季豆丁為蔬菜主角，搭配雞蛋與絞肉炒製成鬆散蛋料理，屬於蔬菜與蛋豆類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 炒蛋, 四季豆, 快炒]
+aliases: [四季豆丁炒蛋, 豆角炒蛋]
+ingredients:
+  - name: 四季豆
+    amount:
+      value: 200
+      unit: g
+    note: 去頭尾老筋切小丁約 0.5 公分
+  - name: 雞蛋
+    amount:
+      value: 3
+      unit: 顆
+    note: 打散成蛋液
+  - name: 豬絞肉
+    amount:
+      value: 50
+      unit: g
+    note: 細絞肉增香
+  - name: 蒜頭
+    amount:
+      value: 10
+      unit: g
+    note: 切細蒜末
+  - name: 米酒
+    amount:
+      value: 10
+      unit: ml
+    note: 炒肉去腥
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+steps:
+  - text: 四季豆洗淨撕除兩側粗纖維，切成約半公分均勻小丁；大蒜切碎末；雞蛋打入大碗中加少許鹽與白胡椒粉攪拌均勻備用。
+    image:
+      src: ./step-1.webp
+      alt: 四季豆洗淨撕除兩側粗纖維，切成約半公分均勻小丁；大蒜切碎末；雞蛋打入大碗中加少許鹽與白胡椒粉攪拌均勻
+  - text: 熱鍋倒入適量油，放入豬絞肉與蒜末小火煸炒至絞肉變白散開釋放油香，嗆入米酒炒勻。
+  - text: 加入四季豆丁大火翻炒約 1 分鐘至四季豆轉為油亮深綠斷生微軟。
+    image:
+      src: ./step-3.webp
+      alt: 加入四季豆丁大火翻炒約 1 分鐘至四季豆轉為油亮深綠斷生微軟。
+  - text: 均勻淋入打散的蛋液，轉大火快速用鍋鏟推動翻炒，使蛋液包裹四季豆丁受熱凝固成金黃鬆散小塊狀，調入剩餘鹽炒勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的四季豆炒蛋
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 四季豆務必切成細巧小丁，易熟且能與鬆散的蛋花完美融合；大火快炒四季豆至斷生再淋蛋液，蛋香濃郁且四季豆清脆不夾生。

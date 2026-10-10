@@ -1,0 +1,75 @@
+title: 奶油香烤鮭魚菲力
+summary: 厚切新鮮大西洋鮭魚菲力雙面均勻抹上海鹽、黑胡椒粒與米酒醃漬，鋁箔紙上鋪上鮮甜洋蔥絲、鴻禧菇與蒜片，放上鮭魚菲力並抹上香濃天然發酵奶油包裹密封，入烤箱高溫烘烤至魚肉熟透溢出甘甜魚脂，撒上香草末，肉質鮮嫩多汁、奶香撲鼻。
+servings: 2
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以厚切鮭魚菲力抹奶油烘烤為唯一海鮮主角，佐以洋蔥、鮮菇，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [西式料理, 烤箱料理, 鮭魚, 奶油, 海鮮]
+aliases: [紙包烤鮭魚, 奶油烤鮭魚排]
+ingredients:
+  - name: 鮭魚菲力
+    amount:
+      value: 250
+      unit: g
+    note: 厚切新鮮鮭魚切片
+  - name: 洋蔥
+    amount:
+      value: 50
+      unit: g
+    note: 切細絲鋪底
+  - name: 鴻禧菇
+    amount:
+      value: 40
+      unit: g
+    note: 切去蒂頭撕散
+  - name: 蒜頭
+    amount:
+      value: 10
+      unit: g
+    note: 切薄片
+  - name: 無鹽奶油
+    amount:
+      value: 20
+      unit: g
+    note: 天然發酵奶油
+  - name: 米酒
+    amount:
+      value: 10
+      unit: ml
+    note: 或白酒醃魚
+    group: 調味
+  - name: 黑胡椒粒
+    amount:
+      value: 2
+      unit: g
+    note: 粗粒黑胡椒
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 均勻抹雙面
+    group: 調味
+steps:
+  - text: 鮭魚菲力雙面均勻抹上鹽、黑胡椒粒與米酒醃漬 10 分鐘拭乾水分；洋蔥切細絲；鴻禧菇撕成小撮；大蒜切薄片備用。
+    image:
+      src: ./step-1.webp
+      alt: 鮭魚菲力雙面均勻抹上鹽、黑胡椒粒與米酒醃漬 10 分鐘拭乾水分；洋蔥切細絲；鴻禧菇撕成小撮；大蒜切薄
+  - text: 取一張大烘焙紙或鋁箔紙，底層鋪上洋蔥絲與鴻禧菇、蒜片，擺上醃好的鮭魚菲力，頂部放上奶油塊，四周向上折緊密封成包狀。
+    image:
+      src: ./step-2.webp
+      alt: 取一張大烘焙紙或鋁箔紙，底層鋪上洋蔥絲與鴻禧菇、蒜片，擺上醃好的鮭魚菲力，頂部放上奶油塊，四周向上折
+  - text: 烤箱預熱至 220°C，將紙包鮭魚放入烤盤烘烤約 14 至 15 分鐘至魚肉熟透、油脂溢出香氣四溢。
+  - text: 取出小心撕開紙包，表面撒上少許新鮮黑胡椒粒與綠色香草末，即可端盤趁熱享用多汁細嫩的魚肉。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的奶油香烤鮭魚菲力
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 用紙包或鋁箔紙包裹烘烤能牢牢鎖住鮭魚體內的天然水分與健康魚油，烘烤後魚肉宛如舒肥般柔嫩爆汁，底層洋蔥亦能吸飽甘甜魚脂。

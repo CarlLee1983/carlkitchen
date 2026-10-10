@@ -1,0 +1,74 @@
+title: 甘甜剝皮辣椒雞湯
+summary: 土雞切塊滾水汆燙洗淨，放入湯鍋注入清水、老薑片與蔥段慢火細燉，倒入甘醇花蓮剝皮辣椒湯汁一同燜煮，起鍋前投入完整翠綠剝皮辣椒滾煮數分鐘，湯頭甘醇微辣透出自然果甜、雞肉軟嫩多汁、暖身開胃。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 湯品不設料理主角與配餐角色，以剝皮辣椒與甘甜醬汁同土雞塊慢燉成花蓮代表性家常湯品。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 40
+tags: [雞湯, 剝皮辣椒, 花蓮名產, 暖身湯品]
+aliases: [剝皮辣椒雞湯, 花蓮剝皮辣椒燉雞湯]
+ingredients:
+  - name: 土雞肉
+    amount:
+      value: 500
+      unit: g
+    note: 剁小塊洗淨汆燙
+  - name: 剝皮辣椒
+    amount:
+      value: 8
+      unit: 條
+    note: 完整罐裝剝皮辣椒
+  - name: 剝皮辣椒汁
+    amount:
+      value: 120
+      unit: ml
+    note: 罐內甘醇醃醬汁
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 切薑片
+  - name: 青蔥
+    amount:
+      value: 15
+      unit: g
+    note: 切長蔥段
+  - name: 水
+    amount:
+      value: 1000
+      unit: ml
+    note: 燉湯高湯底
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 少許調整鹹度
+    group: 調味
+steps:
+  - text: 土雞肉剁成適口大小，放入滾水中加蔥段、薑片汆燙 2 分鐘去除血水浮沫，撈起用清水沖淨瀝乾備用。
+    image:
+      src: ./step-1.webp
+      alt: 土雞肉剁成適口大小，放入滾水中加蔥段、薑片汆燙 2 分鐘去除血水浮沫，撈起用清水沖淨瀝乾備用。
+  - text: 取湯鍋注入 1000 ml 清水煮滾，倒入剝皮辣椒罐頭的醃湯汁、汆燙好的雞肉塊、薑片與米酒。
+  - text: 大火煮沸後撈除表面少許浮沫，轉中小火蓋上鍋蓋燜燉約 25 分鐘至雞肉軟嫩、湯頭吸收甘甜香氣。
+    image:
+      src: ./step-3.webp
+      alt: 大火煮沸後撈除表面少許浮沫，轉中小火蓋上鍋蓋燜燉約 25 分鐘至雞肉軟嫩、湯頭吸收甘甜香氣。
+  - text: 開蓋放入 8 條完整的剝皮辣椒，繼續小火煮約 3 至 5 分鐘讓辣香融合，嚐味後依個人喜好加入少許鹽微調，即可盛鍋趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的甘甜剝皮辣椒雞湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 剝皮辣椒的精華在於罐內的醃甘醬汁，先下醬汁慢燉雞肉能使甜味充分滲入肉質；完整的辣椒在起鍋前 5 分鐘再下，能保留辣椒軟脆口感而不致煮爛碎化。

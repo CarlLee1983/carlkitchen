@@ -1,0 +1,81 @@
+title: 翡翠豆腐肉丸湯
+summary: 板豆腐壓碎瀝乾水分，拌入菠菜碎、胡蘿蔔細末、吻仔魚與調味豬絞肉充分摔打起膠捏成圓潤翡翠肉丸，入油鍋微炸定型，放入清澈高湯中溫火煮滾，豆腐肉丸軟嫩細緻、菠菜清甜甘爽、湯鮮味美。
+servings: 3
+category: 湯
+dishKinds: []
+classificationReason: 湯品不設料理主角與配餐角色，以豆腐、菠菜碎捏製翡翠豆腐丸搭配清高湯煮成家常鮮美湯品。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [家常湯品, 丸子湯, 豆腐, 翡翠丸子]
+aliases: [翡翠豆腐丸湯, 翡翠丸子湯]
+ingredients:
+  - name: 板豆腐
+    amount:
+      value: 300
+      unit: g
+    note: 壓成細泥擠去水分
+  - name: 菠菜
+    amount:
+      value: 80
+      unit: g
+    note: 汆燙擠乾切極細碎
+  - name: 豬絞肉
+    amount:
+      value: 100
+      unit: g
+    note: 細絞肉增加黏性
+  - name: 胡蘿蔔
+    amount:
+      value: 30
+      unit: g
+    note: 切細末配色
+  - name: 高湯
+    amount:
+      value: 800
+      unit: ml
+    note: 大骨或清雞高湯
+  - name: 太白粉
+    amount:
+      value: 15
+      unit: g
+    note: 捏丸定型
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 4
+      unit: g
+    note: 約 1 茶匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許起鍋提香
+    group: 調味
+steps:
+  - text: 板豆腐用紙巾包覆壓出多餘水分後捏碎成細泥；菠菜入滾水汆燙 20 秒撈起泡涼水擠乾切細末；胡蘿蔔切極細碎備用。
+    image:
+      src: ./step-1.webp
+      alt: 板豆腐用紙巾包覆壓出多餘水分後捏碎成細泥；菠菜入滾水汆燙 20 秒撈起泡涼水擠乾切細末；胡蘿蔔切極細
+  - text: 大碗中放入豆腐泥、豬絞肉、菠菜末、胡蘿蔔末，加入太白粉、少許鹽與白胡椒粉，用手順同方向用力攪拌摔打至產生黏性，捏成約 6 至 8 顆均勻小圓丸子。
+    image:
+      src: ./step-2.webp
+      alt: 大碗中放入豆腐泥、豬絞肉、菠菜末、胡蘿蔔末，加入太白粉、少許鹽與白胡椒粉，用手順同方向用力攪拌摔打至
+  - text: 熱平底鍋加少許油，將翡翠豆腐丸輕輕滾煎定型表面微黃後撈起備用。
+  - text: 取湯鍋倒入 800 ml 高湯大火煮滾，放入煎好的翡翠豆腐丸轉中火煮約 3 至 4 分鐘至丸子浮起熟透，調入鹽、白胡椒粉與香油即可盛入大湯碗趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的翡翠豆腐肉丸湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 豆腐泥務必事先用紙巾吸乾水分，捏丸時才不易軟散；菠菜快速汆燙擠乾水分再切細碎，能保持丸子色澤清翠如翡翠般明亮悅目。
