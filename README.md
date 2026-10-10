@@ -8,7 +8,7 @@
 
 ## 開發
 
-需要 Node.js 22.13 以上與 pnpm。
+需要 Node.js 22.13 以上與 pnpm。圖片轉檔與單元測試另需 WebP 工具 `cwebp` 與 `dwebp`（macOS：`brew install webp`；Debian／Ubuntu：`sudo apt-get install webp`），操作與量測見 [WebP 轉檔](docs/webp-conversion.md)。
 
 ```sh
 pnpm install
