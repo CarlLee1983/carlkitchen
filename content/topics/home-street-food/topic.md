@@ -75,7 +75,7 @@ references: []
 
 攤子的油炸用油有公開記錄。2013 年食品藥物管理局（今食品藥物管理署）說明，餐飲業油炸油的稽查對象涵蓋夜市攤販、路邊攤、小吃店等 10 種業態；2009 年衛生署也呼籲餐飲業者正確使用油炸油，劣化到一定程度就整鍋換新。兩份都是針對營業者的規範。
 
-本站的五份菜譜改用家裡的鍋具。麵攤在一鍋熱湯裡煮麵，[肉燥麵](/recipes/minced-pork-noodles/)則分成炒鍋煮肉燥、另一鍋水煮麵；肉羹本身是先用肉漿做好的食品，[肉羹湯](/recipes/pork-thick-soup/)直接用現成肉羹，湯底交給電鍋。[台式炒米粉](/recipes/taiwanese-fried-rice-noodles/)的乾米粉先燙再燜軟，才下炒鍋拌炒。另外兩道要顧溫度，[鹽酥雞](/recipes/salt-crispy-chicken/)用約 150°C 的油炸；[蒜泥蚵仔](/recipes/garlic-oysters/)讓水溫維持在約 85～90°C 煮蚵仔。
+本站的五份菜譜改用家裡的鍋具。麵攤在一鍋熱湯裡煮麵，[肉燥麵](/recipes/minced-pork-noodles/)則分成炒鍋煮肉燥、另一鍋水煮麵；肉羹本身是先用肉漿做好的食品，[肉羹湯](/recipes/pork-thick-soup/)直接用現成肉羹，湯底交給電鍋。[台式炒米粉](/recipes/taiwanese-fried-rice-noodles/)的乾米粉先燙再燜軟，才下炒鍋拌炒。另外兩道要顧溫度，[鹽酥雞](/recipes/salt-crispy-chicken/)用約 150°C 的油炸；[蒜泥蚵仔](/recipes/garlic-oysters/)則把水溫控制在 85～90°C 左右來煮蚵仔。
 
 ![家用器材分開擺放：電鍋旁一盤肉羹、果汁機旁一盤生雞胸肉丁、炒鍋裡的生絞肉、湯鍋旁一束乾米粉，以及一小鍋熱水旁的一碗鮮蚵](./home-equipment-five-dishes.webp)
 

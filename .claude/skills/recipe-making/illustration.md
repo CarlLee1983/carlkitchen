@@ -30,7 +30,7 @@ node .claude/skills/recipe-making/scripts/img.mjs steps [步驟文字關鍵字]
 .claude/skills/recipe-making/scripts/gen.sh <scratchpad>/recipes/<識別值> <檔名> "<英文構圖描述>" [參考圖1] [參考圖2]
 ```
 
-PNG 原圖與預覽圖只放 scratchpad。Bash 工具 timeout 設 330000、前景執行；腳本本身 300 秒逾時。逾時或沒產檔就重試一次，仍失敗就停下回報實際輸出。互不相依的圖最多同時開兩個呼叫。參考圖可以是 PNG 或 WebP。
+PNG 原圖與預覽圖只放 scratchpad。Bash 工具 timeout 設 330000、前景執行；腳本本身 300 秒逾時。逾時或沒產檔就重試一次，仍失敗就停下回報實際輸出。gen.sh 自己會排隊（全機最多同時兩個，額滿印「等待生圖名額…」），Bash timeout 仍設 330000，排隊等待超過時工具會轉背景。參考圖可以是 PNG 或 WebP。
 
 ## 目視檢查
 

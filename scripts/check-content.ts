@@ -2,7 +2,7 @@
 // 內容根目錄由 RECIPES_DIR 決定（同內容集合），來源紀錄目錄由 SOURCES_DIR 決定，專題目錄由 TOPICS_DIR、專題來源紀錄由 TOPIC_SOURCES_DIR 決定。
 // 節氣目錄由 SOLAR_TERMS_DIR 決定（預設 content/solar-terms），節氣來源紀錄由 SOLAR_TERM_SOURCES_DIR 決定（預設 content/solar-term-sources）。
 import { parseArgs } from "node:util";
-import { formatIssue } from "../src/content-checks/issue.ts";
+import { formatIssue, type Issue } from "../src/content-checks/issue.ts";
 import { runContentChecks } from "../src/content-checks/run.ts";
 
 const { values } = parseArgs({
@@ -12,6 +12,7 @@ const { values } = parseArgs({
   },
 });
 
+const warnings: Issue[] = [];
 const issues = await runContentChecks({
   recipesDir: process.env.RECIPES_DIR || "content/recipes",
   sourcesDir: process.env.SOURCES_DIR || "content/sources",
@@ -25,7 +26,14 @@ const issues = await runContentChecks({
     process.env.SOLAR_TERM_SOURCES_DIR || "content/solar-term-sources",
   distDir: values.dist,
   launch: values.launch,
+  onWarning: (warning) => warnings.push(warning),
 });
+
+// 警告只提示人工確認，不影響結束碼。
+if (warnings.length > 0) {
+  console.warn(`內容檢查警告，共 ${warnings.length} 項（不影響結果）：`);
+  for (const warning of warnings) console.warn(`- ${formatIssue(warning)}`);
+}
 
 if (issues.length === 0) {
   console.log(`內容檢查通過${values.launch ? "（含候選池門檻）" : ""}。`);
