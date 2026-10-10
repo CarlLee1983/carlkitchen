@@ -1,0 +1,58 @@
+title: 竹筍排骨湯
+summary: 鮮嫩綠竹筍滾刀切塊，豬小排滾水汆燙洗淨，放入湯鍋注入清水與薑片慢火細燉，竹筍清脆爽口、排骨酥軟甘甜、湯頭清澈醇美。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 湯品不設料理主角與配餐角色，以豬排骨與綠竹筍塊慢燉成家常清甜湯品。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [家常湯品, 竹筍, 排骨湯, 慢燉]
+aliases: [鮮筍排骨湯, 清燉竹筍排骨湯]
+ingredients:
+  - name: 豬排骨
+    amount:
+      value: 250
+      unit: g
+    note: 剁小塊洗淨
+  - name: 竹筍
+    amount:
+      value: 150
+      unit: g
+    note: 去殼切滾刀塊
+  - name: 薑片
+    amount:
+      value: 10
+      unit: g
+    note: 約 3 片切薄片
+  - name: 水
+    amount:
+      value: 1000
+      unit: ml
+    note: 高湯底
+  - name: 鹽
+    amount:
+      value: 4
+      unit: g
+    note: 約 1 茶匙調整鹹度
+    group: 調味
+steps:
+  - text: 綠竹筍剝除外殼修去粗纖維，切成適口滾刀塊；豬小排以滾水汆燙去血水後沖洗乾淨備用。
+    image:
+      src: ./step-1.webp
+      alt: 綠竹筍剝除外殼修去粗纖維，切成適口滾刀塊；豬小排以滾水汆燙去血水後沖洗乾淨備用。
+  - text: 取湯鍋注入 1000 ml 清水，放入處理好的排骨與竹筍塊，大火煮滾後撈去表面浮沫。
+  - text: 轉中小火蓋上鍋蓋燜燉約 30 分鐘至排骨肉質軟嫩、竹筍甘甜透熟，開蓋加入薑片與鹽調味拌勻即可盛鍋。
+    image:
+      src: ./step-3.webp
+      alt: 轉中小火蓋上鍋蓋燜燉約 30 分鐘至排骨肉質軟嫩、竹筍甘甜透熟，開蓋加入薑片與鹽調味拌勻即可盛鍋。
+  - text: 盛入大湯碗中趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的竹筍排骨湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 竹筍冷水下鍋煮能自然釋放甜味並減緩苦味；排骨汆燙徹底並洗淨骨渣，燉出來的湯色才能清澈明亮、鮮爽不油膩。

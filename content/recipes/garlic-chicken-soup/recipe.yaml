@@ -1,0 +1,59 @@
+title: 蒜頭雞湯
+summary: 整顆大蒜仁入鍋小火炸至金黃蒜香濃郁，土雞切塊滾水汆燙去血水，與金黃蒜仁、米酒同入湯鍋溫火細燉，蒜香濃醇溫潤、雞肉滑嫩多汁、湯頭甘甜回甘。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 湯品不設料理主角與配餐角色，以整顆大蒜炸香後與土雞慢燉成家常滋補燉湯。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [雞湯, 蒜頭, 家常湯品, 溫補]
+aliases: [大蒜雞湯, 黃金蒜頭燉雞湯]
+ingredients:
+  - name: 土雞肉
+    amount:
+      value: 400
+      unit: g
+    note: 剁小塊洗淨
+  - name: 大蒜仁
+    amount:
+      value: 80
+      unit: g
+    note: 整顆去皮蒜頭
+  - name: 水
+    amount:
+      value: 1000
+      unit: ml
+    note: 高湯底
+  - name: 米酒
+    amount:
+      value: 40
+      unit: ml
+    note: 約 3 大匙去腥增香
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙
+    group: 調味
+steps:
+  - text: 大蒜去皮剝成完整蒜仁；土雞剁塊入滾水汆燙 2 分鐘去除血水雜質，撈起沖淨瀝乾備用。
+    image:
+      src: ./step-1.webp
+      alt: 大蒜去皮剝成完整蒜仁；土雞剁塊入滾水汆燙 2 分鐘去除血水雜質，撈起沖淨瀝乾備用。
+  - text: 熱鍋倒入適量油，放入半數大蒜仁以小火炸至表面金黃焦香後撈起瀝油（另一半保留生蒜同燉提香）。
+    image:
+      src: ./step-2.webp
+      alt: 熱鍋倒入適量油，放入半數大蒜仁以小火炸至表面金黃焦香後撈起瀝油（另一半保留生蒜同燉提香）。
+  - text: 取湯鍋放入汆燙好的雞肉塊、炸蒜仁、生蒜仁，注入 1000 ml 水與米酒大火煮滾，撈除表面浮沫。
+  - text: 轉小火加蓋慢燉約 35 分鐘至蒜仁軟綿透甘、雞肉軟嫩，開蓋加入鹽調味攪勻即可盛鍋趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒜頭雞湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 將一半大蒜仁用油小火炸至金黃，另一半保持生蒜一同入鍋慢燉，炸蒜帶來濃醇撲鼻香氣、生蒜釋放清甜滋味，雙重蒜香融合使湯頭層次豐富迷人。
