@@ -38,8 +38,20 @@ PNG 原圖與預覽圖只放 scratchpad。Bash 工具 timeout 設 330000、前�
 
 ## 轉檔
 
+需要系統 WebP 工具（`cwebp` 與 `dwebp`）：macOS 用 `brew install webp`，Debian／Ubuntu 用 `sudo apt-get install webp`。轉檔工具不會自動安裝或改用其他編碼器。
+
 ```sh
 node .claude/skills/recipe-making/scripts/img.mjs webp <scratchpad>/recipes/<識別值>/<檔名>.png content/recipes/<識別值>/<檔名>.webp
 ```
 
-輸出 1536×1024、不超過 300 KB 的 WebP，這是 `pnpm check:content` 檢查的規格。
+整組圖片已逐張目視通過時，可用一個命令轉檔：
+
+```sh
+node .claude/skills/recipe-making/scripts/img.mjs webp-batch <scratchpad>/recipes/<識別值> content/recipes/<識別值>
+```
+
+批次只處理來源資料夾第一層的 PNG，按檔名排序、循序轉成同名 WebP。來源資料夾應只放這次要採用的原圖；預覽 JPEG 不會被處理。沒有 PNG 時回報錯誤。
+
+標準尺寸直接用 cwebp；其他尺寸先用 Sharp 置中裁切、縮放一次。品質從 80 開始，每次降 5，最低 30；確認輸出為 1536×1024、大小不超過 300 KiB（307200 bytes），並由 dwebp 完整解碼驗證後才替換目的檔。失敗時保留該張既有目的檔並清除暫存檔；批次在第一張失敗處停止，先前成功的檔案保留。修正失敗原因後可重新執行整批。
+
+完成條件：命令成功，每張成品目視確認裁切與畫質，並通過 `pnpm check:content`。資源量測與採用理由見 [轉檔量測紀錄](../../../docs/webp-conversion.md)。

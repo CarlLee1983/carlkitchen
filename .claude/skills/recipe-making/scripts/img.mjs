@@ -1,17 +1,30 @@
 // 插畫轉檔工具，sharp 取自專案依賴。
 //   node img.mjs preview <png>                 產生 <png 同名>.preview.jpg（寬 768）供目視檢查
 //   node img.mjs webp <png> <out.webp>         轉成 1536×1024、不超過 300 KB 的 WebP
+//   node img.mjs webp-batch <來源資料夾> <輸出資料夾>  依檔名順序轉換最上層 PNG；失敗時保留先前完成的檔案
 //   node img.mjs sheet <菜譜資料夾> <out.jpg>  把該菜譜全部 WebP 排成一張縮圖總表
 //   node img.mjs steps [關鍵字]                列出每道菜各步驟有沒有圖（■ 有、□ 缺）；給關鍵字只列文字含該字的步驟
 // 菜譜目錄取 RECIPES_DIR，預設 content/recipes。
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { execFile } from "node:child_process";
+import {
+  mkdirSync,
+  mkdtempSync,
+  readdirSync,
+  readFileSync,
+  renameSync,
+  rmSync,
+  statSync,
+} from "node:fs";
+import { devNull } from "node:os";
+import { basename, dirname, join, resolve } from "node:path";
+import { promisify } from "node:util";
 import sharp from "sharp";
 import { parse } from "yaml";
 
 const WIDTH = 1536;
 const HEIGHT = 1024;
 const MAX_BYTES = 300 * 1024;
+const execFileAsync = promisify(execFile);
 
 const [mode, src, out] = process.argv.slice(2);
 
@@ -25,18 +38,85 @@ async function preview(png) {
 }
 
 async function toWebp(png, target) {
-  for (let quality = 80; quality >= 30; quality -= 5) {
-    const buffer = await sharp(png)
-      .resize(WIDTH, HEIGHT, { fit: "cover" })
-      .webp({ quality })
-      .toBuffer();
-    if (buffer.length <= MAX_BYTES) {
-      writeFileSync(target, buffer);
-      console.log(`${target}: q=${quality} ${buffer.length} bytes`);
-      return;
+  sharp.cache(false);
+  const tempDir = mkdtempSync(join(dirname(target), `.${basename(target)}.`));
+  try {
+    const meta = await sharp(png).metadata();
+    let input = resolve(png);
+    if (meta.width !== WIDTH || meta.height !== HEIGHT) {
+      input = resolve(tempDir, "input.png");
+      await sharp(png)
+        .resize(WIDTH, HEIGHT, { fit: "cover" })
+        .png()
+        .toFile(input);
     }
+    const output = resolve(tempDir, "output.webp");
+    for (let quality = 80; quality >= 30; quality -= 5) {
+      try {
+        await execFileAsync("cwebp", [
+          "-q",
+          String(quality),
+          "-m",
+          "4",
+          "-mt",
+          input,
+          "-o",
+          output,
+        ]);
+      } catch (error) {
+        if (error.code === "ENOENT") {
+          throw new Error(
+            "找不到 cwebp；請安裝：brew install webp 或 apt-get install webp",
+          );
+        }
+        throw error;
+      }
+      const bytes = statSync(output).size;
+      if (bytes <= MAX_BYTES) {
+        const result = await sharp(output).metadata();
+        if (
+          result.format !== "webp" ||
+          result.width !== WIDTH ||
+          result.height !== HEIGHT
+        ) {
+          throw new Error(`${png} 產生的 WebP 格式或尺寸不正確`);
+        }
+        try {
+          await execFileAsync("dwebp", [output, "-ppm", "-o", devNull]);
+        } catch (error) {
+          if (error.code === "ENOENT") {
+            throw new Error(
+              "找不到 dwebp；請安裝：brew install webp 或 apt-get install webp",
+            );
+          }
+          throw error;
+        }
+        renameSync(output, target);
+        console.log(`${target}: q=${quality} ${bytes} bytes`);
+        return;
+      }
+    }
+    throw new Error(`${png} 壓到品質 30 仍超過 300 KB`);
+  } catch (error) {
+    throw new Error(`${png}: ${error.message}`, { cause: error });
+  } finally {
+    rmSync(tempDir, { recursive: true, force: true });
   }
-  throw new Error(`${png} 壓到品質 30 仍超過 300 KB`);
+}
+
+async function toWebpBatch(sourceDir, outputDir) {
+  const files = readdirSync(sourceDir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && /\.png$/i.test(entry.name))
+    .map((entry) => entry.name)
+    .sort();
+  if (files.length === 0) throw new Error(`${sourceDir} 沒有 PNG 檔案`);
+  mkdirSync(outputDir, { recursive: true });
+  for (const file of files) {
+    await toWebp(
+      join(sourceDir, file),
+      join(outputDir, file.replace(/\.png$/i, ".webp")),
+    );
+  }
 }
 
 async function sheet(dir, target) {
@@ -104,18 +184,20 @@ function order(file) {
 const modes = {
   preview: () => preview(src),
   webp: () => toWebp(src, out),
+  "webp-batch": () => toWebpBatch(src, out),
   sheet: () => sheet(src, out),
   steps: () => steps(src),
 };
 const needs = {
   preview: [src],
   webp: [src, out],
+  "webp-batch": [src, out],
   sheet: [src, out],
   steps: [],
 };
 if (!modes[mode] || needs[mode].some((arg) => !arg)) {
   console.error(
-    "用法：node img.mjs preview <png> | webp <png> <out.webp> | sheet <菜譜資料夾> <out.jpg> | steps [關鍵字]",
+    "用法：node img.mjs preview <png> | webp <png> <out.webp> | webp-batch <來源資料夾> <輸出資料夾> | sheet <菜譜資料夾> <out.jpg> | steps [關鍵字]",
   );
   process.exit(1);
 }
