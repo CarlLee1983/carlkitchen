@@ -1,0 +1,70 @@
+title: 豬血湯
+summary: 滑嫩豬血經汆燙去腥後入豬骨高湯慢煮，搭配脆爽酸菜、清甜韭菜與香氣四溢的油蔥酥及沙茶醬，湯鮮味濃，是經典台式傳統小吃。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [台灣小吃, 湯品, 家常菜]
+aliases: [台式豬血湯]
+ingredients:
+  - { name: 豬血, amount: { value: 600, unit: g }, note: 切成適口厚塊 }
+  - { name: 韭菜, amount: { value: 40, unit: g }, note: 去頭尾洗淨切段 }
+  - { name: 酸菜, amount: { value: 50, unit: g }, note: 漂洗擠乾切細絲 }
+  - {
+      name: 高湯,
+      amount: { value: 700, unit: ml },
+      note: 豬骨高湯為佳,
+      group: 調味,
+    }
+  - {
+      name: 油蔥酥,
+      amount: { value: 15, unit: g },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 沙茶醬,
+      amount: { value: 10, unit: g },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+  - { name: 鹽, amount: { value: 2, unit: g }, note: 約 1/4 茶匙, group: 調味 }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 1, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 冰糖,
+      amount: { value: 3, unit: g },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 10, unit: ml },
+      note: 約 2 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 豬血洗淨後切成約一口大小的厚塊。另備一鍋水煮至微滾，放入豬血塊以微火汆燙約 2 分鐘去除雜質與血腥味，撈出後立即浸泡在冷水中備用，保持滑嫩緊實口感。
+    image:
+      src: ./step-1.webp
+      alt: 鍋中微滾的熱水裡汆燙著切塊豬血，一旁放著浸泡汆燙後豬血的冷水碗
+  - text: 韭菜摘除老葉並洗淨切成約 3 公分小段；酸菜充分漂洗以去除多餘鹹味與雜質，擠乾多餘水分後切成細絲備用。
+  - text: 湯鍋注入高湯煮至大滾，放入瀝乾的豬血塊。再度沸騰後轉中小火，加入鹽、冰糖、米酒與白胡椒粉，慢煮約 5 分鐘讓豬血吸收高湯風味。
+    image:
+      src: ./step-3.webp
+      alt: 湯鍋中高湯滾沸，滑嫩豬血塊在湯中慢煮，調味料正均勻拌入湯底
+  - text: 放入切好的酸菜絲與韭菜段，隨後加入油蔥酥與沙茶醬提香，繼續滾煮約 30 秒至韭菜轉為鮮綠色即可關火盛出。
+hero:
+  src: ./hero.webp
+  alt: 質樸陶碗盛裝著熱氣蒸騰的豬血湯，湯頭清潤，浮著深色軟嫩的豬血塊、翠綠韭菜段、酸菜絲與金黃油蔥酥
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上陳列著切塊豬血、一把翠綠韭菜、酸菜絲、一碗金黃油蔥酥、一小碟沙茶醬與一壺高湯
+tip: 汆燙豬血時切忌大滾，維持水面微滾輕泡即可，以免豬血內部起孔洞影響細嫩度。起鍋前點綴少許白胡椒粉與油蔥酥，香氣更加醇厚。

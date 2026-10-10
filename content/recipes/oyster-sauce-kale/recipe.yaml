@@ -1,0 +1,49 @@
+title: 蠔油芥蘭
+summary: 芥蘭菜修整後放入加了油與糖的滾水中快速汆燙，翠綠爽脆的菜梗整齊排盤，淋上濃郁鹹甜的蠔油即可上桌。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 10
+tags: [中式料理, 家常菜]
+ingredients:
+  - { name: 芥蘭菜, amount: { value: 600, unit: g }, note: 頭尾切齊修整 }
+  - { name: 水, amount: { value: 600, unit: ml }, group: 調味 }
+  - {
+      name: 食用油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，汆燙用,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 30, unit: g },
+      note: 約 2 大匙，汆燙用,
+      group: 調味,
+    }
+  - {
+      name: 蠔油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，淋醬用,
+      group: 調味,
+    }
+steps:
+  - text: 芥蘭菜洗淨，將粗硬根部修除，整株切齊頭尾長度備用。
+  - text: 鍋中注入 600 ml 水大火煮滾，加入食用油與細砂糖攪勻。
+    image:
+      src: ./step-2.webp
+      alt: 不鏽鋼雙耳鍋中沸水翻滾，加入食用油與糖後將翠綠芥蘭菜浸入快速汆燙
+  - text: 放入芥蘭菜翻動汆燙，待水再次大滾約 10 秒後迅速撈起瀝乾水分，整齊排入長盤中。
+  - text: 將蠔油均勻澆淋在排好的翠綠芥蘭菜中央表面即可上桌享用。
+    image:
+      src: ./step-4.webp
+      alt: 白色長盤中排好的汆燙芥蘭菜，表面淋上濃稠滑順的深色蠔油
+hero:
+  src: ./hero.webp
+  alt: 白色長方形陶瓷盤中整齊排列著碧綠油亮的汆燙芥蘭菜，菜梗中央淋上一道深色光澤的鹹香蠔油
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊放著修整好的新鮮翠綠芥蘭菜，旁邊擺放裝有蠔油、細砂糖、食用油的三只陶碟與一壺清水
+tip: 汆燙水中加入食用油與細砂糖，能有效鎖住葉綠素使芥蘭保持碧綠油亮，並中和菜梗天然的微苦味。

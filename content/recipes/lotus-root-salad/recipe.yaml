@@ -1,0 +1,60 @@
+title: 涼拌蓮藕
+summary: 蓮藕切薄片汆燙後泡冰水冰鎮，維持清脆爽朗口感，佐以蒜碎、嫩薑末、蔥花與辣椒，以白醋、砂糖、醬油與香油調勻浸拌。酸甜開胃、爽脆多汁。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [開胃菜, 家常菜, 涼拌菜]
+aliases: [醋溜蓮藕, 涼拌藕片]
+ingredients:
+  - { name: 蓮藕, amount: { value: 300, unit: g }, note: 削皮後切成薄片 }
+  - {
+      name: 蒜仁,
+      amount: { value: 20, unit: g },
+      note: 約 4 瓣，切碎末,
+      group: 調味,
+    }
+  - { name: 嫩薑, amount: { value: 10, unit: g }, note: 切碎末, group: 調味 }
+  - {
+      name: 蔥,
+      amount: { value: 20, unit: g },
+      note: 約 2 根，切成蔥花,
+      group: 調味,
+    }
+  - {
+      name: 紅辣椒,
+      amount: { value: 10, unit: g },
+      note: 約 1 根，去籽切碎末,
+      group: 調味,
+    }
+  - {
+      name: 白醋,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙，調醬用,
+      group: 調味,
+    }
+  - { name: 砂糖, amount: { value: 10, unit: g }, note: 約 2 茶匙, group: 調味 }
+  - { name: 醬油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - { name: 鹽, amount: { value: 2, unit: g }, note: 約 1/4 茶匙, group: 調味 }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+steps:
+  - text: 蓮藕洗淨削去外皮，切成約 0.2 公分薄片，立即浸泡於加了少許白醋的冷水中，防止藕片氧化褐變；青蔥切成蔥花，嫩薑與蒜仁切細末，紅辣椒去籽切碎備用。
+  - text: 煮滾一鍋水並滴入少許白醋，放入蓮藕片汆燙約 1.5 至 2 分鐘，撈起立刻浸入冰塊水中冰鎮降溫，徹底冷卻後撈出瀝乾水分。
+    image:
+      src: ./step-2.webp
+      alt: 滾水鍋中汆燙著藕片，旁邊玻璃碗裡盛著冰塊水與撈起冰鎮的藕片
+  - text: 取一小碗，放入白醋、砂糖、醬油、鹽與香油，徹底攪拌至砂糖與鹽粒完全溶解，調和成酸甜醬汁。
+  - text: 將瀝乾的蓮藕片置於調理盆中，加入蒜末、嫩薑末、蔥花與辣椒碎，淋上調好的醬汁充分翻拌均勻，冷藏醃漬半小時以上更加爽脆入味。
+    image:
+      src: ./step-4.webp
+      alt: 瓷碗中冰鎮瀝乾的藕片與蒜碎、薑末、蔥花、辣椒碎充分拌勻，表面裹著光亮調味汁
+hero:
+  src: ./hero.webp
+  alt: 白色淺瓷盤中整齊交疊的清脆蓮藕薄片，綴以蒜碎、嫩薑末、蔥花與紅辣椒碎，裹著清亮酸甜醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上擺放著新鮮蓮藕段、切好的藕片、去皮蒜瓣、嫩薑、青蔥與紅辣椒，前方小碟裝著白醋、醬油、砂糖與香油
+tip: 蓮藕切片後立刻泡入醋水能隔絕空氣防黑；汆燙時間切勿超過 2 分鐘並迅速冰鎮，才能鎖住蓮藕特有的爽脆口感。
