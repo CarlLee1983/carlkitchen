@@ -1,0 +1,75 @@
+title: 蒜香奶油大蝦
+summary: 草蝦剪鬚挑除腸泥開背，熱平底鍋融化香濃發酵奶油，放入大蝦與米酒加蓋微燜至蝦殼通紅酥香，投入大量蒜末、黑胡椒粒與辣椒末大火快翻，奶油香濃融化、蝦肉彈牙鮮甜。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以草蝦開背慢煎奶油蒜香為唯一海鮮主角，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 大蝦, 奶油, 蒜香, 海鮮]
+aliases: [奶油蒜蓉蝦, 蒜味奶油煎蝦]
+ingredients:
+  - name: 大草蝦
+    amount:
+      value: 300
+      unit: g
+    note: 約 8-10 隻剪鬚開背挑腸泥
+  - name: 無鹽奶油
+    amount:
+      value: 30
+      unit: g
+    note: 天然發酵奶油
+  - name: 大蒜
+    amount:
+      value: 30
+      unit: g
+    note: 切細蒜碎
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切細末配色
+  - name: 青蔥
+    amount:
+      value: 15
+      unit: g
+    note: 切蔥花
+  - name: 米酒
+    amount:
+      value: 20
+      unit: ml
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 黑胡椒粒
+    amount:
+      value: 3
+      unit: g
+    note: 粗粒現磨黑胡椒
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 少許調味
+    group: 調味
+steps:
+  - text: 大草蝦剪去長鬚蝦腳，由背部劃開一刀挑除腸泥擦乾水分；大蒜切碎末、紅辣椒切碎、青蔥切花備用。
+    image:
+      src: ./step-1.webp
+      alt: 大草蝦剪去長鬚蝦腳，由背部劃開一刀挑除腸泥擦乾水分；大蒜切碎末、紅辣椒切碎、青蔥切花備用。
+  - text: 平底鍋加熱融化一半奶油，放入大草蝦鋪平，淋入米酒蓋上鍋蓋中火燜煎約 2 分鐘至蝦身轉為鮮紅。
+    image:
+      src: ./step-2.webp
+      alt: 平底鍋加熱融化一半奶油，放入大草蝦鋪平，淋入米酒蓋上鍋蓋中火燜煎約 2 分鐘至蝦身轉為鮮紅。
+  - text: 開蓋翻面，加入剩餘奶油、大量蒜碎、紅辣椒末、黑胡椒粒與少許鹽，轉中大火快速翻炒 1 分鐘讓蒜香充分滲入蝦肉。
+  - text: 起鍋前撒入青蔥花翻炒數秒，即可盛盤趁熱享用濃郁奶蒜鮮味。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒜香奶油大蝦
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 草蝦背部切開能使熱度更快進入蝦肉且能緊緊鎖住蒜味奶油醬汁；奶油分兩次下鍋，先煎出蝦殼焦香，後放蒜末與奶油，蒜粒金黃而不焦黑。

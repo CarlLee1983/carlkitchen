@@ -1,0 +1,81 @@
+title: 鹹魚蒸肉餅
+summary: 鹹魚小火煎炸至金黃酥香切細碎，豬絞肉拌入鹹魚末、薑末與少許水攪打至出膠產生黏性，抹平鋪在淺盤中大火清蒸 10 分鐘至肉餅鮮嫩透熟，撒上蔥花，鹹香獨特、肉汁豐沛滑嫩。
+servings: 3
+category: 非湯料理
+dishKinds: [meat, seafood]
+classificationReason: 以豬絞肉捏製肉餅搭配鹹魚碎清蒸為主角，肉類與海鮮雙主角並陳，屬於肉類與海鮮料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [粵菜, 家常菜, 蒸肉餅, 鹹魚]
+aliases: [廣式鹹魚蒸肉餅, 經典鹹魚蒸肉餅]
+ingredients:
+  - name: 豬絞肉
+    amount:
+      value: 300
+      unit: g
+    note: 三肥七瘦豬絞肉
+  - name: 鹹魚
+    amount:
+      value: 30
+      unit: g
+    note: 梅香鹹魚或鹹魚乾煎香切碎
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 切細薑末去腥
+  - name: 青蔥
+    amount:
+      value: 15
+      unit: g
+    note: 切蔥花飾頂
+  - name: 太白粉
+    amount:
+      value: 10
+      unit: g
+    note: 鎖住肉汁
+  - name: 蠔油
+    amount:
+      value: 10
+      unit: ml
+    note: 約 1 茶匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙提鮮
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+  - name: 水
+    amount:
+      value: 50
+      unit: ml
+    note: 分次打入絞肉
+    group: 調味
+steps:
+  - text: 鹹魚洗淨拭乾，入熱油鍋以小火煎炸至金黃酥香放涼切成細碎末；生薑切細末；青蔥切花備用。
+    image:
+      src: ./step-1.webp
+      alt: 鹹魚洗淨拭乾，入熱油鍋以小火煎炸至金黃酥香放涼切成細碎末；生薑切細末；青蔥切花備用。
+  - text: 豬絞肉加入鹹魚碎末、薑末、蠔油、糖與白胡椒粉，分次加入水分順同方向用力攪打至水分被肉吸收出膠黏稠，最後拌入太白粉抓勻。
+  - text: 將調好的肉餡平鋪在微有深度的蒸盤內，表面用手抹平並用手指壓出淺坑以利受熱均勻。
+    image:
+      src: ./step-3.webp
+      alt: 將調好的肉餡平鋪在微有深度的蒸盤內，表面用手抹平並用手指壓出淺坑以利受熱均勻。
+  - text: 放入水大滾的蒸鍋中，蓋緊鍋蓋以大火蒸約 10 分鐘至肉餅熟透溢出甘甜肉汁，撒上青蔥花即可出鍋趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的鹹魚蒸肉餅
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 肉餡拌好後分次打入冷水攪至出膠，蒸出來的肉餅才會鮮嫩多汁不乾柴硬塊；鹹魚本身鹽分高，無需額外加鹽，少許糖能柔和鹹度激發甘鮮。

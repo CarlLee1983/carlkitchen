@@ -1,0 +1,65 @@
+title: 古早味麻油麵線
+summary: 手工白麵線滾水煮熟三點水至滑順筋道，撈起瀝乾放入大碗，老薑片以黑麻油小火煸香，加入少許純米酒、溫熱高湯與鹽調勻成金黃香醇麻油醬汁，趁熱澆淋在麵線上拌勻，麻油香氣撲鼻、滑潤溫補。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以手工麵線拌入老薑黑麻油與米酒為傳統溫潤主食餐點。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [麵食, 麻油, 麵線, 古早味, 主食]
+aliases: [麻油麵線, 薑香麻油麵線]
+ingredients:
+  - name: 白麵線
+    amount:
+      value: 150
+      unit: g
+    note: 傳統手工白麵線
+  - name: 老薑
+    amount:
+      value: 20
+      unit: g
+    note: 切薄薄薑片
+  - name: 黑麻油
+    amount:
+      value: 20
+      unit: ml
+    note: 純正黑麻油
+    group: 調味
+  - name: 高湯
+    amount:
+      value: 50
+      unit: ml
+    note: 溫熱雞高湯或大骨湯
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 少許提香
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 酌量調整
+    group: 調味
+steps:
+  - text: 老薑洗淨切薄片；小鍋倒入黑麻油，放入薑片以小火慢慢煸炒至薑片邊緣微捲金黃散發濃郁薑麻油香氣，加入米酒與高湯拌勻保溫備用。
+    image:
+      src: ./step-1.webp
+      alt: 老薑洗淨切薄片；小鍋倒入黑麻油，放入薑片以小火慢慢煸炒至薑片邊緣微捲金黃散發濃郁薑麻油香氣，加入米酒
+  - text: 深鍋注入大量水大火煮滾，放入白麵線煮沸，水滾時淋入少許冷水，重複兩次至麵線熟透無白心撈起瀝乾放入大碗中。
+    image:
+      src: ./step-2.webp
+      alt: 深鍋注入大量水大火煮滾，放入白麵線煮沸，水滾時淋入少許冷水，重複兩次至麵線熟透無白心撈起瀝乾放入大碗
+  - text: 將煮好的熱麻油薑汁均勻淋在滾燙麵線上，用筷子快速挑散拌勻讓每根麵條吸附油潤金黃麻油，盛入碗中即可趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的古早味麻油麵線
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 麵線本身帶有少許鹽分，下鍋煮熟後一定要瀝乾水分再拌麻油；麻油不可大火乾燒以免產生焦苦味，以小火慢煸老薑出香才是溫潤甘甜的關鍵。

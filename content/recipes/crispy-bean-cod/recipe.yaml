@@ -1,0 +1,76 @@
+title: 豆酥鱈魚
+summary: 厚切鱈魚抹少許鹽與米酒清蒸熟透，保留鮮甜原汁，取小鍋以溫油將特製豆酥、蒜末與蔥花小火慢炒至酥脆金黃、香氣四溢，調入少許醬油與糖，趁熱均勻淋在白嫩鱈魚排上，酥脆鹹香與細嫩魚肉完美交融。
+servings: 2
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以整片厚切鱈魚清蒸為唯一海鮮主角，淋上炒酥豆酥，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [川菜, 家常菜, 鱈魚, 豆酥, 海鮮]
+aliases: [香酥豆酥鱈魚, 經典豆酥鱈魚]
+ingredients:
+  - name: 厚切鱈魚
+    amount:
+      value: 1
+      unit: 片
+    note: 約 300 g 扁鱈或大比目魚
+  - name: 豆酥
+    amount:
+      value: 30
+      unit: g
+    note: 黃豆酥顆粒
+  - name: 青蔥
+    amount:
+      value: 15
+      unit: g
+    note: 切細蔥花
+  - name: 蒜頭
+    amount:
+      value: 15
+      unit: g
+    note: 切細蒜末
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 醃魚去腥
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 10
+      unit: ml
+    note: 炒豆酥調色
+    group: 調味
+  - name: 糖
+    amount:
+      value: 3
+      unit: g
+    note: 少許中和鹹味
+    group: 調味
+  - name: 沙拉油
+    amount:
+      value: 20
+      unit: ml
+    note: 炒酥豆酥用
+    group: 調味
+steps:
+  - text: 鱈魚洗淨用廚房紙巾徹底擦乾水分，雙面抹上米酒與少許鹽，放上耐熱蒸盤備用；青蔥切蔥花、大蒜切末備用。
+    image:
+      src: ./step-1.webp
+      alt: 鱈魚洗淨用廚房紙巾徹底擦乾水分，雙面抹上米酒與少許鹽，放上耐熱蒸盤備用；青蔥切蔥花、大蒜切末備用。
+  - text: 蒸鍋水煮沸，放入鱈魚大火蒸約 10 至 12 分鐘至魚肉熟透，取出倒出多餘蒸魚水分備用。
+  - text: 另起一小鍋倒入沙拉油燒微溫，放入蒜末、蔥花與豆酥，以極小火慢慢煸炒約 2 分鐘至豆酥冒細泡、轉金黃酥脆，加入醬油與糖快速拌勻關火。
+    image:
+      src: ./step-3.webp
+      alt: 另起一小鍋倒入沙拉油燒微溫，放入蒜末、蔥花與豆酥，以極小火慢慢煸炒約 2 分鐘至豆酥冒細泡、轉金黃酥
+  - text: 將炒得滾燙酥脆的豆酥醬汁均勻淋在清蒸鱈魚表面，撒上少許新鮮蔥花點綴即可上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的豆酥鱈魚
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 炒豆酥火候務必保持最小火，油溫不可太高，持續用鍋鏟推動炒至豆酥由淺黃轉為金黃酥香即關火，餘溫會繼續上色，若火大易發苦焦黑。

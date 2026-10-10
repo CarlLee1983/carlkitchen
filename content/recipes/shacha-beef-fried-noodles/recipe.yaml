@@ -1,0 +1,86 @@
+title: 沙茶牛肉炒麵
+summary: 牛肉片抓醃滑嫩，油麵沸水微燙去除鹼味，熱鍋爆香蒜末，牛肉片大火滑炒定型，加入油麵、香菇片、胡蘿蔔絲與油菜，調入經典台灣沙茶醬、醬油大火快炒收濃，鑊氣奔騰、醬香濃郁。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以油麵搭配醃牛肉片、油菜與沙茶醬大火快炒為獨立飽足主餐。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [麵食, 炒麵, 沙茶, 牛肉, 主食]
+aliases: [沙茶炒麵, 台式沙茶牛肉炒麵]
+ingredients:
+  - name: 油麵
+    amount:
+      value: 300
+      unit: g
+    note: 黃油麵
+  - name: 牛肉片
+    amount:
+      value: 120
+      unit: g
+    note: 牛里肌薄片抓醃
+  - name: 油菜
+    amount:
+      value: 60
+      unit: g
+    note: 洗淨切段
+  - name: 鮮香菇
+    amount:
+      value: 2
+      unit: 朵
+    note: 切薄片
+  - name: 胡蘿蔔
+    amount:
+      value: 20
+      unit: g
+    note: 切細片
+  - name: 蒜頭
+    amount:
+      value: 10
+      unit: g
+    note: 切蒜碎
+  - name: 沙茶醬
+    amount:
+      value: 25
+      unit: g
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙提鮮
+    group: 調味
+  - name: 水
+    amount:
+      value: 60
+      unit: ml
+    note: 煨麵湯水
+    group: 調味
+steps:
+  - text: 牛肉片加少許醬油、米酒與太白粉抓勻醃漬 10 分鐘；油麵入溫熱水洗散瀝乾；油菜切段、香菇切片、胡蘿蔔切絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 牛肉片加少許醬油、米酒與太白粉抓勻醃漬 10 分鐘；油麵入溫熱水洗散瀝乾；油菜切段、香菇切片、胡蘿蔔
+  - text: 熱鍋倒入適量油，放入蒜碎爆香，加入牛肉片大火滑炒至八分熟表面變白即先盛出。
+  - text: 原鍋補少許油，放入香菇片、胡蘿蔔絲炒香，加入沙茶醬炒出濃香紅油，倒入油麵與少許水燜煮 1 分鐘讓麵條吸味。
+    image:
+      src: ./step-3.webp
+      alt: 原鍋補少許油，放入香菇片、胡蘿蔔絲炒香，加入沙茶醬炒出濃香紅油，倒入油麵與少許水燜煮 1 分鐘讓麵條
+  - text: 倒回滑好的牛肉片與油菜段，調入醬油與少許糖大火翻炒收濃湯汁，菜葉翠綠斷生即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的沙茶牛肉炒麵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 牛肉片高溫快速滑炒至八分熟就先盛出，等麵條吸收沙茶濃汁後再倒回大火快速拌勻，牛肉才能保持軟嫩滑順、完全不柴。

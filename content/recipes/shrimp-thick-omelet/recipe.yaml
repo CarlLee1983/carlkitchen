@@ -1,0 +1,70 @@
+title: 滑蛋鮮蝦仁
+summary: 草蝦仁去腸泥汆燙保脆嫩，雞蛋加入少許水與太白粉水打散成柔嫩蛋液，熱油鍋下蝦仁微翻，緩緩淋入蛋液以小火快速由外向內推炒至半凝固嫩黃金亮，撒上蔥花，蛋香滑嫩、蝦仁脆彈鮮甜。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood, egg-bean]
+classificationReason: 以鮮蝦仁與嫩滑雞蛋共同炒製為主角，海鮮與蛋豆類並重，屬於海鮮與蛋豆類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [粵菜, 家常菜, 滑蛋, 蝦仁, 海鮮]
+aliases: [滑蛋蝦仁, 鮮蝦滑蛋]
+ingredients:
+  - name: 草蝦仁
+    amount:
+      value: 150
+      unit: g
+    note: 挑除腸泥吸乾水分
+  - name: 雞蛋
+    amount:
+      value: 4
+      unit: 顆
+    note: 打散成均勻蛋液
+  - name: 青蔥
+    amount:
+      value: 20
+      unit: g
+    note: 切細蔥花
+  - name: 太白粉
+    amount:
+      value: 10
+      unit: g
+    note: 調水太白粉水加入蛋液保嫩
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提鮮
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 蛋液提香
+    group: 調味
+steps:
+  - text: 蝦仁洗淨挑除腸泥拭乾，加少許鹽抓勻入滾水微燙 15 秒撈起瀝乾；雞蛋打入大碗，加入太白粉水、少許鹽與香油攪拌均勻備用。
+    image:
+      src: ./step-1.webp
+      alt: 蝦仁洗淨挑除腸泥拭乾，加少許鹽抓勻入滾水微燙 15 秒撈起瀝乾；雞蛋打入大碗，加入太白粉水、少許鹽與
+  - text: 熱鍋倒入稍多油燒至溫熱，放入燙過的蝦仁大火翻炒數秒均勻散開。
+  - text: 轉中小火淋入攪拌好的蛋液，待底層微凝固時，用鍋鏟由外緣向鍋中心輕輕推炒翻動，使蛋液層層堆疊成滑嫩凝乳狀。
+    image:
+      src: ./step-3.webp
+      alt: 轉中小火淋入攪拌好的蛋液，待底層微凝固時，用鍋鏟由外緣向鍋中心輕輕推炒翻動，使蛋液層層堆疊成滑嫩凝乳
+  - text: 在蛋液達到八分凝固、表面仍帶有水潤光澤時立即關火，撒上青蔥花快速翻拌盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的滑蛋鮮蝦仁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蛋液中加入少許太白粉水能大幅增加蛋液延展性並延緩老化；炒蛋時火候切忌過大，油溫溫熱時下蛋液並用推炒手法，一見半凝固即刻離火，蛋質才會如絲綢般軟嫩滑溜。
