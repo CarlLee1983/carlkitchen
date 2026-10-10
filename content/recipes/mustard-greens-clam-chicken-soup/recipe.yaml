@@ -1,0 +1,69 @@
+title: 芥菜蛤蜊雞湯
+summary: 長年芥菜剝開汆燙退苦，土雞塊滾水汆燙洗淨，放入湯鍋注入清水、老薑片與米酒溫火細燉，起鍋前投入新鮮蛤蜊煮至開殼，芥菜清苦回甘、土雞肉質鮮嫩、蛤蜊海味鮮美交織，清潤甘甜。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 湯品不設料理主角與配餐角色，以長年芥菜、土雞肉與蛤蜊慢燉成清鮮回甘的經典家常湯品。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [雞湯, 芥菜, 蛤蜊, 年菜湯品]
+aliases: [長年菜雞湯, 芥菜雞湯]
+ingredients:
+  - name: 土雞肉
+    amount:
+      value: 400
+      unit: g
+    note: 剁塊汆燙
+  - name: 芥菜
+    amount:
+      value: 250
+      unit: g
+    note: 芥菜仁洗淨切大塊
+  - name: 蛤蜊
+    amount:
+      value: 150
+      unit: g
+    note: 吐沙洗淨提鮮
+  - name: 生薑
+    amount:
+      value: 20
+      unit: g
+    note: 去皮切薑片
+  - name: 水
+    amount:
+      value: 1000
+      unit: ml
+    note: 燉湯高湯底
+  - name: 米酒
+    amount:
+      value: 20
+      unit: ml
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 蛤蜊已有鹹度斟酌微調
+    group: 調味
+steps:
+  - text: 芥菜仁一片片剝開洗淨切大塊，入滾水中汆燙 30 秒撈起泡冷水去除苦澀味；土雞肉剁塊入沸水汆燙 2 分鐘洗淨瀝乾；蛤蜊吐沙洗淨備用。
+    image:
+      src: ./step-1.webp
+      alt: 芥菜仁一片片剝開洗淨切大塊，入滾水中汆燙 30 秒撈起泡冷水去除苦澀味；土雞肉剁塊入沸水汆燙 2 分
+  - text: 取湯鍋注入 1000 ml 水煮滾，放入雞肉塊、薑片與米酒，大火煮沸後撈去浮沫。
+  - text: 轉小火蓋上鍋蓋慢燉約 25 分鐘至雞肉軟嫩，開蓋放入處理好的芥菜塊續煮 8 分鐘至芥菜翠綠透熟。
+    image:
+      src: ./step-3.webp
+      alt: 轉小火蓋上鍋蓋慢燉約 25 分鐘至雞肉軟嫩，開蓋放入處理好的芥菜塊續煮 8 分鐘至芥菜翠綠透熟。
+  - text: 最後轉中大火加入蛤蜊煮約 1 至 2 分鐘至全數開殼，加入少許鹽調味即可熄火盛入大湯碗趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的芥菜蛤蜊雞湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 芥菜先以滾水快速汆燙再泡冷水，能有效去除過度苦澀味並保持翡翠般的鮮綠色澤；蛤蜊最後下鍋開殼即關火，湯頭最鮮美且蛤肉飽滿爆汁。

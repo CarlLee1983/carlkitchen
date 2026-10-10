@@ -1,0 +1,86 @@
+title: 韓式泡菜炒牛肉
+summary: 牛肉切條抓醃滑嫩，韓式白菜泡菜切塊，熱油鍋爆香蒜片、青蔥與辣椒，大火滑炒牛肉條至變色，加入泡菜、黃豆芽與芹菜大火快翻，調入韓式辣醬與米酒收汁，酸辣甘甜、鑊氣十足。
+servings: 3
+category: 非湯料理
+dishKinds: [meat, vegetable]
+classificationReason: 以牛肉條為肉類主角，搭配韓式泡菜與豆芽菜大火快炒，屬於肉類與蔬菜並陳料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [韓式料理, 熱炒, 牛肉, 泡菜]
+aliases: [泡菜炒牛肉, 韓風泡菜炒牛肉]
+ingredients:
+  - name: 牛肉
+    amount:
+      value: 300
+      unit: g
+    note: 牛里肌切條狀
+  - name: 韓式泡菜
+    amount:
+      value: 150
+      unit: g
+    note: 切粗段含泡菜汁
+  - name: 黃豆芽
+    amount:
+      value: 50
+      unit: g
+    note: 洗淨瀝乾
+  - name: 芹菜
+    amount:
+      value: 30
+      unit: g
+    note: 切段
+  - name: 蒜頭
+    amount:
+      value: 10
+      unit: g
+    note: 切蒜片
+  - name: 青蔥
+    amount:
+      value: 20
+      unit: g
+    note: 切蔥段
+  - name: 韓式辣椒醬
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許提香
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+steps:
+  - text: 牛肉切均勻條狀，加少許米酒、醬油與太白粉抓醃 10 分鐘；泡菜切粗塊；芹菜切段、蒜頭切片、青蔥切段備用。
+    image:
+      src: ./step-1.webp
+      alt: 牛肉切均勻條狀，加少許米酒、醬油與太白粉抓醃 10 分鐘；泡菜切粗塊；芹菜切段、蒜頭切片、青蔥切段備
+  - text: 熱鍋倒入適量油，放入蒜片、蔥段爆香，倒入牛肉條大火滑炒至表面變白約八分熟先盛出。
+  - text: 原鍋放入泡菜塊、黃豆芽與芹菜段大火翻炒 1 分鐘出香氣，加入韓式辣椒醬與米酒炒勻。
+    image:
+      src: ./step-3.webp
+      alt: 原鍋放入泡菜塊、黃豆芽與芹菜段大火翻炒 1 分鐘出香氣，加入韓式辣椒醬與米酒炒勻。
+  - text: 倒回牛肉條大火快炒均勻包裹醬汁，淋上香油快速拌炒數秒即可盛盤趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的韓式泡菜炒牛肉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 牛肉條大火快速過油滑炒至八分熟即先起鍋，等泡菜與蔬菜翻炒釋放酸香後再回鍋結合，牛肉質地才能保持鮮嫩爆汁完全不老韌。

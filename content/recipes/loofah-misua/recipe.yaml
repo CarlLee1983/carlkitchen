@@ -1,0 +1,68 @@
+title: 鮮甜絲瓜麵線
+summary: 新鮮絲瓜去皮切厚片，熱油小火煸香嫩薑絲，放入絲瓜大火翻炒燜煮出清甜原汁，注入高湯煮滾，加入白麵線與洗淨吻仔魚同煮至麵線軟熟入味，調入少許鹽，湯鮮甘甜、絲瓜翠綠軟滑、麵線滑順。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以絲瓜燜煮鮮甜湯汁搭配白麵線與吻仔魚為經典台式麵食主餐。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [麵食, 絲瓜, 麵線, 主食, 家常菜]
+aliases: [絲瓜麵線, 清甜絲瓜麵線]
+ingredients:
+  - name: 白麵線
+    amount:
+      value: 150
+      unit: g
+    note: 傳統白麵線
+  - name: 絲瓜
+    amount:
+      value: 1
+      unit: 條
+    note: 約 350 g 去皮切厚片
+  - name: 吻仔魚
+    amount:
+      value: 30
+      unit: g
+    note: 洗淨瀝乾提鮮
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 洗淨切嫩薑絲
+  - name: 高湯
+    amount:
+      value: 600
+      unit: ml
+    note: 清雞高湯或水
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 少許調味
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋滴入提香
+    group: 調味
+steps:
+  - text: 絲瓜刨除粗外皮洗淨切成約 1 公分厚片；生薑切細薑絲；吻仔魚輕輕洗淨瀝乾；白麵線過滾水微燙 30 秒撈起泡冷水瀝乾備用。
+    image:
+      src: ./step-1.webp
+      alt: 絲瓜刨除粗外皮洗淨切成約 1 公分厚片；生薑切細薑絲；吻仔魚輕輕洗淨瀝乾；白麵線過滾水微燙 30 秒
+  - text: 熱鍋倒入少許油，放入薑絲小火煸炒至出香，加入絲瓜厚片翻炒數下，蓋上鍋蓋小火燜煮 2 分鐘讓絲瓜出水變軟。
+    image:
+      src: ./step-2.webp
+      alt: 熱鍋倒入少許油，放入薑絲小火煸炒至出香，加入絲瓜厚片翻炒數下，蓋上鍋蓋小火燜煮 2 分鐘讓絲瓜出水變
+  - text: 注入高湯煮滾，放入處理好的白麵線與吻仔魚拌煮約 1 至 2 分鐘至麵線充分吸收絲瓜甘甜湯汁，調入少許鹽與香油即可熄火盛碗享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的鮮甜絲瓜麵線
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 絲瓜下鍋先加蓋燜炒逼出其自身甘甜水分，再加熱高湯，湯底格外鮮甜無比；麵線先快速過水微燙能去除多餘澱粉與鹽分，煮入湯中清爽不混濁。

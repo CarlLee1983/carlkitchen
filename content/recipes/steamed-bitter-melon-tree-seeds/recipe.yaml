@@ -1,0 +1,70 @@
+title: 破布子蒸苦瓜
+summary: 白苦瓜去籽刮淨切厚圈或長段滾水汆燙去澀，整齊排入蒸盤，淋上甘醇破布子粒、醃漬醬汁、醬油、少許糖與高湯，大火清蒸至苦瓜軟糯透熟吸飽鹹甘醬汁，出鍋撒上蔥花辣椒末，甘醇微苦、生津開胃。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以白苦瓜清蒸甘甜破布子為唯一蔬菜主角，屬於純蔬菜清蒸料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 25
+tags: [家常菜, 蒸菜, 苦瓜, 破布子]
+aliases: [樹子蒸苦瓜, 甘草破布子蒸苦瓜]
+ingredients:
+  - name: 白苦瓜
+    amount:
+      value: 1
+      unit: 條
+    note: 約 350 g 切厚圓圈或長條
+  - name: 破布子
+    amount:
+      value: 30
+      unit: g
+    note: 連同醃汁約 2 大匙
+  - name: 青蔥
+    amount:
+      value: 10
+      unit: g
+    note: 切細蔥花
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切細碎末飾頂
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許提亮
+    group: 調味
+steps:
+  - text: 白苦瓜洗淨切成約 2 公分厚圓環，用湯匙徹底刮除內側白色軟膜去苦，入滾水中微汆燙 1 分鐘撈起泡冷水瀝乾，排入蒸盤中。
+    image:
+      src: ./step-1.webp
+      alt: 白苦瓜洗淨切成約 2 公分厚圓環，用徹底刮除內側白色軟膜去苦，入滾水中微汆燙 1 分鐘撈起泡冷水
+  - text: 破布子連同醃汁加入醬油、糖與少許水調勻，均勻澆淋在苦瓜圈表面與內槽中。
+  - text: 放入水大滾的蒸鍋中，蓋上鍋蓋以大火清蒸約 18 至 20 分鐘至苦瓜熟軟呈半透明微黃色澤。
+    image:
+      src: ./step-3.webp
+      alt: 放入水大滾的蒸鍋中，蓋上鍋蓋以大火清蒸約 18 至 20 分鐘至苦瓜熟軟呈半透明微黃色澤。
+  - text: 出鍋撒上細蔥花與紅辣椒末，滴上少許香油即可端盤享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的破布子蒸苦瓜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 苦瓜先以沸水微燙 1 分鐘能大幅降低生澀苦感；破布子本身的甘草甜味在蒸煮過程中會慢慢滲透進入苦瓜纖維，苦中帶甘、餘韻悠長。

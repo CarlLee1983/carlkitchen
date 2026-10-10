@@ -1,0 +1,71 @@
+title: 蔥燒嫩豆腐
+summary: 嫩豆腐切厚片入熱鍋以中小火煎至兩面金黃微酥，加入大量鮮嫩青蔥段、紅辣椒段與甘醇醬油、糖與清水燜煮煨燒至醬汁收濃入味，豆腐內裡軟嫩滑口、外皮吸飽鹹甜濃香蔥汁，色澤金黃誘人。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 以板豆腐切片煎黃後與青蔥紅燒煨煮為唯一蛋豆類主角，屬於蛋豆類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [家常菜, 豆腐, 蔥燒, 蛋豆類]
+aliases: [蔥燒豆腐, 紅燒蔥燒板豆腐]
+ingredients:
+  - name: 板豆腐
+    amount:
+      value: 1
+      unit: 塊
+    note: 約 350 g 切厚片約 1 公分
+  - name: 青蔥
+    amount:
+      value: 3
+      unit: 支
+    note: 洗淨切 4 公分長蔥段
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切斜段配色
+  - name: 醬油
+    amount:
+      value: 20
+      unit: ml
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+  - name: 水
+    amount:
+      value: 100
+      unit: ml
+    note: 煨煮高湯
+    group: 調味
+steps:
+  - text: 豆腐用紙巾吸乾水分切成約 1 公分厚片；青蔥切成長段、紅辣椒切斜段備用。
+    image:
+      src: ./step-1.webp
+      alt: 豆腐用紙巾吸乾水分切成約 1 公分厚片；青蔥切成長段、紅辣椒切斜段備用。
+  - text: 熱平底鍋倒入適量油，放入豆腐片以中小火煎約 3 分鐘至底面金黃微硬，翻面續煎至雙面均呈漂亮金黃色澤。
+    image:
+      src: ./step-2.webp
+      alt: 熱平底鍋倒入適量油，放入豆腐片以中小火煎約 3 分鐘至底面金黃微硬，翻面續煎至雙面均呈漂亮金黃色澤。
+  - text: 將豆腐推至一側，在鍋空處放入蔥段與辣椒段爆炒出焦香蔥味，倒入醬油、糖、白胡椒粉與水大火煮滾。
+  - text: 蓋上鍋蓋轉小火煨燒約 3 至 4 分鐘至豆腐充分吸飽醬汁、湯汁微收濃，開蓋大火收汁翻勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蔥燒嫩豆腐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 豆腐下鍋後切忌心急頻繁翻動，待底層煎結成一層金黃硬皮再翻面，能維持豆腐完整方正不碎裂；蔥白先下鍋爆出焦蔥油香再下蔥綠，蔥香濃郁層次分明。
