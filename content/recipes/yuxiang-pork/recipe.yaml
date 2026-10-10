@@ -1,5 +1,5 @@
 title: 魚香肉絲
-summary: 豬里肌肉絲先用醬油、米酒與蛋白拌勻，下鍋炒後再和辣豆瓣醬、黑木耳拌炒。
+summary: 里肌肉絲拌入蛋白與太白粉後先炒，再回鍋與辣豆瓣醬、黑木耳合炒。
 servings: 4
 category: 非湯料理
 draft: false
@@ -9,14 +9,14 @@ protein: true
 timeMinutes: 45
 tags: [豬肉, 快炒]
 ingredients:
-  - { name: 豬里肌肉絲, amount: { value: 300, unit: g } }
+  - { name: 里肌肉絲, amount: { value: 300, unit: g } }
   - { name: 黑木耳, amount: { value: 3, unit: 片 } }
   - { name: 蒜頭, amount: { value: 2, unit: 瓣 } }
-  - { name: 青蔥, amount: { value: 2, unit: 支 } }
+  - { name: 青蔥, amount: { value: 2, unit: 支 }, note: 分兩次加入，末次用蔥花 }
   - {
       name: 醬油,
       amount: { value: 35, unit: ml },
-      note: 醃肉與炒醬分用,
+      note: 醃肉與炒醬共用此總量，兩次的分配比例未載明,
       group: 調味,
     }
   - { name: 米酒, amount: { value: 20, unit: ml }, group: 調味 }
@@ -24,28 +24,29 @@ ingredients:
   - { name: 太白粉, amount: { value: 10, unit: g }, group: 調味 }
   - { name: 辣豆瓣醬, amount: { value: 30, unit: g }, group: 調味 }
   - { name: 糖, amount: { value: 2, unit: g }, group: 調味 }
-  - { name: 食用油, note: 來源未標用量, group: 調味 }
+  - { name: 食用油, note: 用量未載明, group: 調味 }
 steps:
-  - text: 豬里肌肉絲加入部分醬油、米酒與蛋白拌勻，再加太白粉拌勻。
+  - text: 拌入部分醬油、米酒和蛋白，讓里肌肉絲沾勻醃料，再混入太白粉拌勻。
     image:
       src: ./step-1.webp
-      alt: 白色瓷碗裡的生豬里肌肉絲沾著醬液與太白粉，碗邊放著一雙攪拌用筷子
-  - text: 鍋中下食用油，放入豬里肌肉絲炒到約七分熟，先盛起。
+      alt: 白色瓷碗內的里肌肉絲均勻裹著淡褐色醃料，筷子斜放在碗內
+  - text: 在鍋中加入食用油，將里肌肉絲炒至七分熟後盛出。
     image:
       src: ./step-2.webp
-      alt: 鋼製炒鍋裡的豬里肌肉絲外層變色，部分仍帶粉紅色
-  - text: 原鍋再下食用油，加入蒜頭和一半的青蔥炒香，放辣豆瓣醬拌炒。
+      alt: 素色瓷碗裡盛著里肌肉絲，多處呈白色，部分仍呈粉紅色
+  - text: 在原鍋加食用油，先炒香蒜頭與一半青蔥，再加入辣豆瓣醬翻炒。
     image:
       src: ./step-3.webp
-      alt: 鋼製炒鍋中兩瓣蒜頭、青蔥與紅色辣豆瓣醬正在拌炒
-  - text: 倒入剩餘醬油、糖與黑木耳炒勻，再放回豬里肌肉絲拌炒。
+      alt: 金屬平底鍋內有兩瓣蒜頭、斜切的青蔥與紅色辣豆瓣醬，木鍋鏟放在醬中
+  - text: 將黑木耳、糖及剩餘醬油下鍋拌炒，放回里肌肉絲，讓肉絲與醬料混勻。
     image:
       src: ./step-4.webp
-      alt: 鋼製炒鍋裡的豬里肌肉絲、三片黑木耳、蒜頭與蔥段拌著紅色醬汁
-  - text: 撒上剩餘青蔥，略炒後起鍋。
+      alt: 金屬平底鍋中的里肌肉絲裹著紅色醬料，另有三片黑木耳、兩瓣蒜頭與斜切的青蔥
+  - text: 撒入剩餘青蔥的蔥花，略翻炒後起鍋。
+tip: 肉絲回鍋後的熟度判斷與加熱時間未載明。
 hero:
   src: ./hero.webp
-  alt: 素色瓷盤裡盛著拌有紅色醬汁的豬里肌肉絲、黑木耳與蔥段
+  alt: 素色瓷盤上的里肌肉絲裹著紅色醬料，混有黑木耳、蒜頭、斜切的青蔥與蔥花
 ingredientsPhoto:
   src: ./ingredients.webp
-  alt: 一盤豬里肌肉絲、三片黑木耳、兩瓣蒜頭、兩支青蔥，以及分裝的醬油、米酒、蛋白、太白粉、辣豆瓣醬、糖與食用油
+  alt: 一盤里肌肉絲、三片黑木耳、兩瓣蒜頭、兩支青蔥，旁邊分放醬油、米酒、蛋白、太白粉、辣豆瓣醬、糖與一瓶食用油
