@@ -2,6 +2,7 @@
 import RecipeActionIcon from "../../components/RecipeActionIcon.astro";
 import Base from "../../layouts/Base.astro";
 import Illustration from "../../components/Illustration.astro";
+import RecipeCard from "../../components/RecipeCard.astro";
 import { formatAmount, groupIngredients } from "../../utils/ingredients";
 import { recipeKinds, recipeKindLabels } from "../../utils/home";
 import {
@@ -15,6 +16,7 @@ import {
   type TopicEntry,
 } from "../../utils/topic-entries";
 import { getRelatedTopics } from "../../utils/related-topics";
+import { relatedRecipeIds } from "../../utils/related-recipes";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { SITE_NAME } from "../../utils/site";
@@ -27,6 +29,13 @@ export async function getStaticPaths() {
   ]);
   // 公開菜譜只連至已發布食材；草稿食材在開發模式仍可直訪預覽。
   const publishedIngredients = ingredients.filter((entry) => !entry.data.draft);
+  // 不用 filterDrafts(recipes, DEV)：開發模式的可見菜譜含草稿，但相關菜譜也必須永遠排除草稿，
+  // 所以這裡無條件只留已發布的；草稿頁自己沒有相關菜譜。
+  const published = recipes.filter((recipe) => !recipe.data.draft);
+  const related = relatedRecipeIds(
+    published.map(({ id, data }) => ({ id, ...data })),
+  );
+  const publishedById = new Map(published.map((recipe) => [recipe.id, recipe]));
   return recipes.map((recipe) => ({
     params: { id: recipe.id },
     props: {
@@ -39,6 +48,9 @@ export async function getStaticPaths() {
             left.id.localeCompare(right.id),
         ),
       relatedTopics: getRelatedTopics(recipe.id, topics),
+      relatedRecipes: (related.get(recipe.id) ?? []).map((id) =>
+        publishedById.get(id)!,
+      ),
     },
   }));
 }
@@ -47,9 +59,10 @@ interface Props {
   recipe: Recipe;
   relatedIngredients: IngredientEntry[];
   relatedTopics: TopicEntry[];
+  relatedRecipes: Recipe[];
 }
 const { data, id } = Astro.props.recipe;
-const { relatedIngredients, relatedTopics } = Astro.props;
+const { relatedIngredients, relatedTopics, relatedRecipes } = Astro.props;
 const groups = groupIngredients(data.ingredients);
 const hasPrintSheet = existsSync(
   join(process.cwd(), "public", "prints", `${id}.webp`),
@@ -86,6 +99,9 @@ const searchTerms = [...data.tags, ...data.aliases];
 // sizes 對應下方 CSS：手機單欄為視窗寬扣掉左右 1.5rem 頁面留白；成品圖上限 44rem，步驟圖再扣 2.5rem 編號縮排。
 const MAIN_SIZES = "(min-width: 47rem) 44rem, calc(100vw - 3rem)";
 const SIDE_SIZES = "(min-width: 64rem) 20rem, calc(100vw - 3rem)";
+// 相關菜譜卡片：手機兩欄、寬螢幕四欄，欄距 1rem；頁面內容寬上限 72rem 扣左右留白 3rem。
+const RELATED_SIZES =
+  "(min-width: 72rem) 16.5rem, (min-width: 40rem) calc((100vw - 6rem) / 4), calc((100vw - 4rem) / 2)";
 const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
 ---
 
@@ -337,6 +353,24 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
         </section>
       )
     }
+    {
+      relatedRecipes.length > 0 && (
+        <section
+          class="related-recipes"
+          aria-labelledby="related-recipes-title"
+          data-pagefind-ignore
+        >
+          <h2 id="related-recipes-title">也可以試試</h2>
+          <ul>
+            {relatedRecipes.map((related) => (
+              <li>
+                <RecipeCard recipe={related} sizes={RELATED_SIZES} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
     <p class="print-foot">{SITE_NAME}</p>
   </article>
 </Base>
@@ -550,13 +584,15 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
   }
 
   .ingredient-guide,
-  .related-topics {
+  .related-topics,
+  .related-recipes {
     margin-top: 4rem;
     padding-top: 1rem;
     border-top: 1px solid var(--line);
   }
   .ingredient-guide h2,
-  .related-topics h2 {
+  .related-topics h2,
+  .related-recipes h2 {
     margin: 0 0 0.75rem;
     font-size: 1.25rem;
   }
@@ -592,6 +628,19 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
   .related-topics p {
     margin: 0;
     color: var(--ink-soft);
+  }
+  .related-recipes ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  @media (min-width: 40rem) {
+    .related-recipes ul {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 
   /* 寬螢幕：材料在左欄、捲動做法時保持可見（只 sticky，不設捲動區）；手機單欄 */
@@ -632,6 +681,7 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
     }
     .ingredient-guide,
     .related-topics,
+    .related-recipes,
     .recipe-actions,
     .ingredients :global(figure),
     .steps :global(figure) {
@@ -793,6 +843,7 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
     .has-print-sheet .recipe-body,
     .has-print-sheet .ingredient-guide,
     .has-print-sheet .related-topics,
+    .has-print-sheet .related-recipes,
     .has-print-sheet .print-foot {
       display: none !important;
     }

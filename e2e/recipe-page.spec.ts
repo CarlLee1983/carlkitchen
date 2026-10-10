@@ -53,14 +53,20 @@ test("菜譜頁顯示基本資訊、成品圖、材料兩組與合照、編號�
 
 test("每張料理圖都有替代文字，且不加圖說", async ({ page }) => {
   await page.goto(url);
+  // 頁底「也可以試試」是別道菜的卡片，不算本頁的料理圖；它在文件順序的最後，
+  // 所以前 imageCount 張就是本頁的圖。
   const article = page.getByRole("article");
+  const cards = await page
+    .getByRole("region", { name: "也可以試試" })
+    .getByRole("img")
+    .count();
   const images = article.getByRole("img");
-  await expect(images).toHaveCount(imageCount);
+  await expect(images).toHaveCount(imageCount + cards);
   for (let i = 0; i < imageCount; i++) {
     await expect(images.nth(i)).toHaveAttribute("alt", /.+/);
   }
   const figures = article.getByRole("figure");
-  await expect(figures).toHaveCount(imageCount);
+  await expect(figures).toHaveCount(imageCount + cards);
   for (let i = 0; i < imageCount; i++) {
     await expect(figures.nth(i)).not.toContainText("AI 繪製插畫");
   }
@@ -85,6 +91,66 @@ test("相關專題列出引用這道菜的已發布文章與短介，不納入�
 
   await page.goto("/recipes/fried-noodles/");
   await expect(page.getByRole("region", { name: "相關專題" })).toHaveCount(0);
+});
+
+test("也可以試試列出相關菜譜：在相關專題之後、不含本頁與草稿、卡片連結可點", async ({
+  page,
+}) => {
+  await page.goto(url);
+  const related = page.getByRole("region", { name: "也可以試試" });
+  await expect(related).toBeVisible();
+  // 同為蔬菜主角的青椒牛肉、蒜香青菜，加上同樣用雞蛋的蛋花湯；草稿範例是湯，但不得出現。
+  const hrefs = await related
+    .getByRole("link")
+    .evaluateAll((links) => links.map((a) => a.getAttribute("href")));
+  expect([...hrefs].sort()).toEqual([
+    "/recipes/beef-peppers/",
+    "/recipes/egg-drop-soup/",
+    "/recipes/garlic-greens/",
+  ]);
+  await expect(related.getByRole("link", { name: "蛋花湯" })).toBeVisible();
+  await expect(related.getByRole("img")).toHaveCount(hrefs.length);
+  await expect(related.getByRole("img").first()).toHaveAttribute(
+    "loading",
+    "lazy",
+  );
+  for (const img of await related.getByRole("img").all()) {
+    await expect(img).toHaveAttribute("alt", /.+/);
+  }
+  for (const [href, name] of [
+    ["/recipes/beef-peppers/", "青椒牛肉"],
+    ["/recipes/egg-drop-soup/", "蛋花湯"],
+    ["/recipes/garlic-greens/", "蒜香青菜"],
+  ]) {
+    // 連結的可及名稱只有菜名，不含成品圖替代文字
+    await expect(related.locator(`a[href="${href}"]`)).toHaveAccessibleName(
+      name!,
+    );
+  }
+
+  const topics = await page
+    .getByRole("region", { name: "相關專題" })
+    .boundingBox();
+  const box = await related.boundingBox();
+  expect(box!.y).toBeGreaterThan(topics!.y);
+
+  await related.getByRole("link", { name: "蛋花湯" }).click();
+  await expect(page).toHaveURL("/recipes/egg-drop-soup/");
+  await expect(
+    page.getByRole("heading", { level: 1, name: "蛋花湯" }),
+  ).toBeVisible();
+});
+
+test("沒有任何相關菜譜時不輸出區塊；湯的相關菜譜不含草稿", async ({ page }) => {
+  await page.goto("/recipes/steamed-fish/");
+  await expect(page.getByRole("region", { name: "也可以試試" })).toHaveCount(0);
+
+  await page.goto("/recipes/egg-drop-soup/");
+  const links = page
+    .getByRole("region", { name: "也可以試試" })
+    .getByRole("link");
+  await expect(links).toHaveCount(1);
+  await expect(links).toHaveAttribute("href", "/recipes/tomato-egg/");
 });
 
 test("圖片輸出響應式 WebP srcset；成品圖優先載入、sizes 與版面一致", async ({
