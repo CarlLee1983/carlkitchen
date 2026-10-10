@@ -88,3 +88,33 @@ for (const reason of ["unsupported", "rejected", "fetch-failed"]) {
     await expect(page.getByRole("link", { name: "下載圖片" })).toBeVisible();
   });
 }
+
+for (const width of [320, 390, 1280]) {
+  test(`圖示操作保留名稱、提示與觸控面積（${width}px）`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto("/recipes/tomato-egg/");
+    for (const name of [
+      "列印",
+      "查看菜單圖片",
+      "下載圖片",
+      "分享圖片",
+      "收藏這道菜",
+    ]) {
+      const action = page.getByRole(
+        name.includes("查看") || name.includes("下載") ? "link" : "button",
+        { name, exact: true },
+      );
+      await expect(action).toBeVisible();
+      await expect(action).toHaveAttribute("title", name);
+      expect(await action.innerText()).toBe("");
+      await expect(action.locator("svg")).toBeVisible();
+      const box = await action.boundingBox();
+      expect(box!.width).toBeGreaterThanOrEqual(44);
+      expect(box!.height).toBeGreaterThanOrEqual(44);
+      expect(box!.x).toBeGreaterThanOrEqual(0);
+      expect(box!.x + box!.width).toBeLessThanOrEqual(width);
+    }
+    await page.getByRole("button", { name: "列印", exact: true }).focus();
+    await expect(page.getByText("列印", { exact: true })).toBeVisible();
+  });
+}
