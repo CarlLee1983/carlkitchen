@@ -1,0 +1,69 @@
+title: 鳳梨苦瓜雞湯
+summary: 白苦瓜去籽刮除白膜切大厚塊，土雞腿肉剁塊滾水汆燙去血水，與甘甜蔭鳳梨醬汁、薑片與米酒入砂鍋慢火細燉，苦瓜甘甜軟綿、雞肉滑嫩多汁、湯頭鹹甘回甘不澀口。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 湯品不設料理主角與配餐角色，以醃製蔭鳳梨、苦瓜與土雞腿燉煮成傳統甘醇滋補湯品。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 50
+tags: [雞湯, 苦瓜, 鳳梨, 傳統湯品]
+aliases: [苦瓜鳳梨雞, 古早味鳳梨苦瓜雞湯]
+ingredients:
+  - name: 土雞腿
+    amount:
+      value: 2
+      unit: 隻
+    note: 約 400 g 剁大塊洗淨
+  - name: 白苦瓜
+    amount:
+      value: 1
+      unit: 條
+    note: 去籽切大厚塊約 300 g
+  - name: 蔭鳳梨
+    amount:
+      value: 80
+      unit: g
+    note: 含醬汁醃漬鳳梨
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 切 6 片薑片
+  - name: 水
+    amount:
+      value: 1200
+      unit: ml
+    note: 燉湯高湯底
+  - name: 米酒
+    amount:
+      value: 20
+      unit: ml
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 依鹹度酌量調整
+    group: 調味
+steps:
+  - text: 白苦瓜洗淨對剖，用湯匙徹底刮除內側白色軟膜去苦味，切成約 3 公分大滾刀厚塊；土雞腿肉剁塊入滾水汆燙 2 分鐘撈起沖淨瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 白苦瓜洗淨對剖，用徹底刮除內側白色軟膜去苦味，切成約 3 公分大滾刀厚塊；土雞腿肉剁塊入滾水汆燙
+  - text: 取湯鍋或砂鍋注入 1200 ml 水煮滾，放入汆燙好的雞肉塊、薑片與米酒，大火煮沸後撈除表面浮沫。
+  - text: 加入切好的白苦瓜塊與蔭鳳梨（連同醃醬汁），轉小火蓋上鍋蓋慢火燉煮約 35 至 40 分鐘至苦瓜熟透透光、雞肉軟嫩。
+    image:
+      src: ./step-3.webp
+      alt: 加入切好的白苦瓜塊與蔭鳳梨（連同醃醬汁），轉小火蓋上鍋蓋慢火燉煮約 35 至 40 分鐘至苦瓜熟透透
+  - text: 開蓋嚐湯頭鹹甜度，酌量加入少許鹽調味即可關火盛鍋趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的鳳梨苦瓜雞湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 苦瓜內側白色的海綿狀白膜務必用鐵湯匙徹底刮除乾淨，此為苦味的主要來源；蔭鳳梨本身已有鹹甜發酵甘味，加鹽前務必先嚐湯底再微調。

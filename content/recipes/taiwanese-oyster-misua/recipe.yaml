@@ -1,0 +1,90 @@
+title: 大腸蚵仔麵線
+summary: 柴魚高湯煮滾下紅麵線微煨，調入紅蔥酥與醬油，以太白粉水勾出經典滑順琉璃芡，加入肥美鮮蚵與滷透軟嫩大腸段，起鍋前淋入香醇烏醋與香菜，鹹香濃郁、滑潤順口。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以紅麵線搭配柴魚高湯、鮮蚵與滷大腸為經典傳統主食小吃。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 35
+tags: [小吃, 麵線, 大腸蚵仔, 主食]
+aliases: [蚵仔麵線, 大腸麵線]
+ingredients:
+  - name: 紅麵線
+    amount:
+      value: 120
+      unit: g
+    note: 乾紅麵線切小段
+  - name: 鮮蚵
+    amount:
+      value: 150
+      unit: g
+    note: 洗淨裹地瓜粉汆燙
+  - name: 滷大腸
+    amount:
+      value: 150
+      unit: g
+    note: 熟滷大腸切小段
+  - name: 高湯
+    amount:
+      value: 1200
+      unit: ml
+    note: 柴魚高湯底
+  - name: 柴魚片
+    amount:
+      value: 10
+      unit: g
+    note: 高湯提鮮
+  - name: 油蔥酥
+    amount:
+      value: 15
+      unit: g
+    note: 古早味香氣靈魂
+  - name: 香菜
+    amount:
+      value: 10
+      unit: g
+    note: 洗淨切段飾頂
+  - name: 地瓜粉
+    amount:
+      value: 30
+      unit: g
+    note: 裹蚵仔用
+  - name: 太白粉
+    amount:
+      value: 30
+      unit: g
+    note: 調水勾芡琉璃芡
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 20
+      unit: ml
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 烏醋
+    amount:
+      value: 15
+      unit: ml
+    note: 起鍋淋入提酸
+    group: 調味
+steps:
+  - text: 鮮蚵輕柔洗淨瀝乾，均勻裹上一層地瓜粉，投入滾水中汆燙約 20 秒至表面定型即撈起泡涼水備用；熟大腸切約 1.5 公分小段；紅麵線切短段泡水洗淨鹽分瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 鮮蚵輕柔洗淨瀝乾，均勻裹上一層地瓜粉，投入滾水中汆燙約 20 秒至表面定型即撈起泡涼水備用；熟大腸切
+  - text: 取湯鍋注入高湯與柴魚片煮滾，放入紅麵線煮沸，加入油蔥酥、醬油、糖轉小火慢煮約 5 分鐘至麵線軟熟入味。
+  - text: 將太白粉水邊倒邊用湯勺朝同方向畫圈攪拌，勾出滑順不結塊的濃郁琉璃芡汁。
+    image:
+      src: ./step-3.webp
+      alt: 將太白粉水邊倒邊用湯勺朝同方向畫圈攪拌，勾出滑順不結塊的濃郁琉璃芡汁。
+  - text: 加入汆燙好的蚵仔與滷大腸段稍微拌煮加熱即可關火盛碗，淋入烏醋、撒上白胡椒粉與香菜即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的大腸蚵仔麵線
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 鮮蚵裹上一層地瓜粉再汆燙，能緊緊鎖住水分不縮水且口感滑溜；勾芡時務必轉中小火慢慢倒粉水邊攪動，芡汁均勻透亮，放涼後也不易反水化開。

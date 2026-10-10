@@ -1,0 +1,75 @@
+title: 蒜泥蒸茄子
+summary: 新鮮紫茄切長段蒸熟保持鮮豔亮麗紫色，冰鎮後瀝乾排盤，淋上以現磨蒜泥、薑末、醬油膏、烏醋、香油與紅辣椒末調製的濃香蒜蓉辣醬，茄肉軟綿如酪、蒜辣開胃酸爽。
+servings: 2
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以新鮮紫茄蒸熟為唯一蔬菜主角，佐以蒜泥醬汁，屬於純蔬菜涼拌料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [涼拌, 家常菜, 茄子, 蒜泥]
+aliases: [蒜泥茄子, 涼拌蒜泥蒸茄子]
+ingredients:
+  - name: 茄子
+    amount:
+      value: 2
+      unit: 條
+    note: 約 250 g 洗淨切長段
+  - name: 蒜頭
+    amount:
+      value: 15
+      unit: g
+    note: 現壓蒜泥末
+  - name: 生薑
+    amount:
+      value: 5
+      unit: g
+    note: 切細薑末
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切細碎末
+  - name: 醬油膏
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 烏醋
+    amount:
+      value: 5
+      unit: ml
+    note: 約 1 茶匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許提香
+    group: 調味
+steps:
+  - text: 茄子洗淨去蒂頭，縱切成兩半後再切成約 6 公分長段；大蒜壓成蒜泥，與薑末、紅辣椒碎、醬油膏、烏醋、糖、香油調勻成濃香蒜蓉醬備用。
+    image:
+      src: ./step-1.webp
+      alt: 茄子洗淨去蒂頭，縱切成兩半後再切成約 6 公分長段；大蒜壓成蒜泥，與薑末、紅辣椒碎、醬油膏、烏醋、糖
+  - text: 蒸鍋加水大火煮滾，放入茄子段皮朝下鋪排，大火蒸約 6 至 8 分鐘至茄肉軟透，取出放入冰開水中迅速冰鎮降溫以維持亮麗紫皮。
+    image:
+      src: ./step-2.webp
+      alt: 蒸鍋加水大火煮滾，放入茄子段皮朝下鋪排，大火蒸約 6 至 8 分鐘至茄肉軟透，取出放入冰開水中迅速冰
+  - text: 將冰鎮後的茄子取出輕輕瀝乾多餘水分，整齊排入長盤中，均勻淋上調製好的蒜泥醬汁即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒜泥蒸茄子
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蒸茄子時務必水大滾後再放入，皮朝下大火快蒸，起鍋後迅速冰水冰鎮，就能阻止花青素氧化變黑，保持晶瑩鮮艷的誘人紫色。

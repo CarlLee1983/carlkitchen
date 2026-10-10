@@ -1,0 +1,87 @@
+title: 香菇紅燒豆腐
+summary: 乾香菇泡發切厚塊油炸激發濃郁蕈菇香，板豆腐切厚片煎炸至表面金黃起泡，加入辣豆瓣醬、蒜片、薑片與米酒細火紅燒收汁，豆腐吸飽醇厚湯汁，醬香濃郁、軟嫩下飯。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 以板豆腐油炸後紅燒為唯一蛋豆類主角，佐以乾香菇提香，屬於蛋豆類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [家常菜, 豆腐, 香菇, 紅燒]
+aliases: [香菇燒豆腐, 紅燒香菇豆腐煲]
+ingredients:
+  - name: 板豆腐
+    amount:
+      value: 200
+      unit: g
+    note: 切厚片約 1 公分
+  - name: 乾香菇
+    amount:
+      value: 60
+      unit: g
+    note: 溫水泡軟切半
+  - name: 蒜苗
+    amount:
+      value: 60
+      unit: g
+    note: 斜切蒜苗段
+  - name: 薑片
+    amount:
+      value: 15
+      unit: g
+    note: 切薄片
+  - name: 蒜頭
+    amount:
+      value: 10
+      unit: g
+    note: 切蒜片
+  - name: 辣豆瓣醬
+    amount:
+      value: 20
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 水
+    amount:
+      value: 100
+      unit: ml
+    note: 紅燒煨煮高湯
+    group: 調味
+steps:
+  - text: 乾香菇泡水軟化擠乾切半；板豆腐切成 1 公分厚片拭乾水分；蒜苗斜切段、薑蒜切片備用。
+    image:
+      src: ./step-1.webp
+      alt: 乾香菇泡水軟化擠乾切半；板豆腐切成 1 公分厚片拭乾水分；蒜苗斜切段、薑蒜切片備用。
+  - text: 熱鍋倒入適量油，放入豆腐片煎炸至兩面金黃微硬撈出瀝油；再將香菇下鍋過油炒香盛起。
+    image:
+      src: ./step-2.webp
+      alt: 熱鍋倒入適量油，放入豆腐片煎炸至兩面金黃微硬撈出瀝油；再將香菇下鍋過油炒香盛起。
+  - text: 原鍋留少許底油，爆香薑片、蒜片，加入辣豆瓣醬炒出紅油香氣，倒入炸香菇、炸豆腐、醬油、糖、米酒與水煮滾。
+  - text: 轉小火煨煮約 5 分鐘至豆腐充分吸飽醬汁，投入蒜苗段翻炒斷生，淋上少許香油即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的香菇紅燒豆腐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 豆腐入鍋前用紙巾充分吸乾表面水分，煎炸時不易油爆且外皮能迅速形成微脆金黃外殼，煨煮時能像海綿般吸飽濃郁香菇醬汁。

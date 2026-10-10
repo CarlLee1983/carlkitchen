@@ -1,0 +1,59 @@
+title: 酥炸中卷圈
+summary: 新鮮中卷洗淨去內膜切成圓圈，以米酒、白胡椒粉抓醃去腥，沾裹調味脆炸粉漿與乾麵粉，入高溫油鍋炸至表皮金黃酥脆爽口、肉質鮮甜Q彈，撒上椒鹽粉，金黃誘人、香氣撲鼻。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以新鮮中卷切圈裹粉高溫酥炸為唯一海鮮主角，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [炸物, 海鮮, 中卷, 熱炒小吃]
+aliases: [炸花枝圈, 香酥中卷圈]
+ingredients:
+  - name: 中卷
+    amount:
+      value: 1
+      unit: 隻
+    note: 約 300 g 切圈狀約 1 公分寬
+  - name: 低筋麵粉
+    amount:
+      value: 50
+      unit: g
+    note: 裹乾粉定型
+  - name: 地瓜粉
+    amount:
+      value: 50
+      unit: g
+    note: 調脆漿酥脆外殼
+  - name: 胡椒鹽
+    amount:
+      value: 5
+      unit: g
+    note: 炸好撒勻調味
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 抓醃去腥
+    group: 調味
+steps:
+  - text: 中卷洗淨撕去外皮紅膜去除內臟，橫切成約 1 公分寬的圓圈狀，加入米酒與少許胡椒鹽抓勻醃漬 5 分鐘擦乾水分。
+    image:
+      src: ./step-1.webp
+      alt: 中卷洗淨撕去外皮紅膜去除內臟，橫切成約 1 公分寬的圓圈狀，加入米酒與少許胡椒鹽抓勻醃漬 5 分鐘擦
+  - text: 地瓜粉加少許水調成濃稠脆漿，將中卷圈先沾裹粉漿，再薄薄沾上一層乾麵粉輕輕抖落多餘餘粉。
+  - text: 起油鍋燒熱至約 180°C，將中卷圈逐一放入油鍋中，以中大火油炸約 2 分鐘至外皮呈金黃硬挺酥脆，撈起瀝乾油分。
+    image:
+      src: ./step-3.webp
+      alt: 起油鍋燒熱至約 180°C，將中卷圈逐一放入油鍋中，以中大火油炸約 2 分鐘至外皮呈金黃硬挺酥脆，撈
+  - text: 盛入鋪有吸油紙的平盤，趁熱均勻撒上特調胡椒鹽粉即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的酥炸中卷圈
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 中卷下鍋前務必用廚房紙巾吸乾表面水分再裹粉，高溫 180°C 快炸 2 分鐘內即撈出，不可久炸以避免魷魚肉質變硬橡皮化失去鮮甜水分。
