@@ -1,0 +1,85 @@
+title: 五香排骨酥
+summary: 排骨以五香粉、蒜泥與調味料抓醃入味，拌入麵粉與地瓜粉裹勻返潮後下鍋油炸。外皮金黃酥脆、肉質多汁帶骨香。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 45
+tags: [家常菜]
+aliases: [排骨酥]
+ingredients:
+  - { name: 排骨, amount: { value: 600, unit: g }, note: 切塊，建議用豬小排 }
+  - { name: 麵粉, amount: { value: 20, unit: g }, note: 裹漿用，可選中筋麵粉 }
+  - {
+      name: 地瓜粉,
+      amount: { value: 100, unit: g },
+      note: 裹粉用，建議選粗粒地瓜粉,
+    }
+  - { name: 蒜泥, amount: { value: 30, unit: g }, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 1.5, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - { name: 細糖, amount: { value: 12, unit: g }, note: 約 1 大匙, group: 調味 }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 60, unit: ml }, note: 約 4 大匙, group: 調味 }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 五香粉,
+      amount: { value: 2.5, unit: ml },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 甘草粉,
+      amount: { value: 1.25, unit: ml },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 香油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 食用油, note: 炸油，來源未列用量, group: 調味 }
+steps:
+  - text: 排骨洗淨並瀝乾水分，放入碗中加入蒜泥、醬油、細糖、米酒、水、鹽、白胡椒粉、五香粉、甘草粉與香油抓勻按摩約 5 分鐘，醃漬 30 分鐘後拌入麵粉抓勻成濃稠薄漿。
+    image:
+      src: ./step-1.webp
+      alt: 白色瓷碗中抓醃入味的生排骨塊，表面均勻裹著五香蒜泥醬汁與薄麵糊
+  - text: 準備平盤倒入地瓜粉。
+  - text: 夾取醃好的排骨逐塊沾裹地瓜粉，均勻沾滿後輕輕壓實。
+  - text: 輕抖掉表面多餘粉粒，整齊排在托盤上。
+  - text: 靜置約 1 分鐘，等待排骨表面的地瓜粉返潮變深。
+    image:
+      src: ./step-5.webp
+      alt: 不鏽鋼托盤上整齊排著沾裹粗粒地瓜粉的排骨塊，靜置等待表面粉粒返潮
+  - text: 將油加熱至 180°C，下入排骨用中火炸約 5 分鐘，見外皮轉為金黃香脆即可撈起瀝油盛盤。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤盛著堆疊整齊的金黃排骨酥，外皮酥脆帶有細微香料點綴
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 生排骨塊、地瓜粉、蒜泥與分裝在小碟中的醬油、米酒、五香粉、細糖、鹽和香油整齊擺放
+tip: 地瓜粉沾勻後務必靜置返潮再下鍋油炸，粉皮不易脫落，炸出來更酥脆。

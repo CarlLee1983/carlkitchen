@@ -1,0 +1,68 @@
+title: XO 醬炒雙鮮
+summary: 蝦仁與刻花透抽快速汆燙，與青花菜、紅甜椒一同以 XO 醬大火翻炒，勾薄芡並淋香油。海味鮮甜彈牙、醬香濃郁微辣。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [家常菜]
+aliases: []
+ingredients:
+  - { name: 蝦仁, amount: { value: 200, unit: g }, note: 去腸泥 }
+  - { name: 透抽, amount: { value: 200, unit: g }, note: 洗淨刻花切塊 }
+  - { name: 綠花椰菜, amount: { value: 50, unit: g }, note: 切小朵 }
+  - { name: 紅甜椒, amount: { value: 0.5, unit: 顆 }, note: 約半顆，切菱形片 }
+  - { name: 洋蔥, amount: { value: 0.5, unit: 顆 }, note: 約半顆，切菱形片 }
+  - { name: 薑, amount: { value: 10, unit: g }, note: 切片 }
+  - { name: 蒜仁, amount: { value: 3, unit: 顆 }, note: 切片 }
+  - { name: 紅辣椒, amount: { value: 1, unit: 根 }, note: 切片 }
+  - {
+      name: XO 醬,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 75, unit: ml }, note: 約 5 大匙, group: 調味 }
+  - { name: 鹽, note: 少許, group: 調味 }
+  - { name: 白胡椒粉, note: 少許, group: 調味 }
+  - {
+      name: 細砂糖,
+      amount: { value: 5, unit: g },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 太白粉水, note: 勾薄芡用，來源未列用量, group: 調味 }
+  - {
+      name: 沙拉油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙爆香用,
+      group: 調味,
+    }
+steps:
+  - text: 蝦仁挑去腸泥洗淨；透抽洗淨在內面劃菱形十字花刀後切成小塊；綠花椰菜切成小朵，入滾水汆燙後撈起瀝乾。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著劃好菱形花刀的透抽塊與生蝦仁，旁邊瀝水篩盛著汆燙好的翠綠花椰菜
+  - text: 薑、蒜仁與紅辣椒洗淨後切成薄片；紅甜椒與洋蔥洗淨切成菱形片備用。
+  - text: 煮滾一鍋水，放入透抽塊與蝦仁快速汆燙約 10 秒，表面微捲即撈起瀝乾多餘水分。
+  - text: 炒鍋中倒入沙拉油燒熱，下薑片、蒜片、紅辣椒片與洋蔥片以中火爆香，加入蝦仁、透抽、綠花椰菜、紅甜椒與 XO 醬、水、米酒、細砂糖、鹽及白胡椒粉大火翻炒均勻。
+    image:
+      src: ./step-4.webp
+      alt: 鐵炒鍋在大火上翻炒著蝦仁、透抽花、花椰菜與紅甜椒，均勻裹上琥珀色 XO 醬汁
+  - text: 淋入太白粉水勾薄芡，起鍋前滴入香油翻勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷大盤盛著色澤油亮的蝦仁、刻花透抽、綠花椰菜與紅甜椒，均勻裹著琥珀色 XO 醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上擺著生蝦仁、刻花透抽、綠花椰菜、紅甜椒片、洋蔥片、蒜片、薑片與紅辣椒片，下方分裝 XO 醬、米酒、太白粉水與香油
+tip: 透抽與蝦仁入鍋前先短暫汆燙瀝乾，可去除多餘水分，大火快炒時鑊氣更足且不易出水稀釋醬汁。

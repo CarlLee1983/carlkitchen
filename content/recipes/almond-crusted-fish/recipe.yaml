@@ -1,0 +1,55 @@
+title: 杏仁煎魚片
+summary: 鯛魚片切塊裹上杏仁粉與蛋液調成的麵糊，再沾滿薄脆杏仁片，入鍋香煎至兩面金黃酥脆，魚肉細嫩香氣四溢。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [中式料理, 家常菜]
+ingredients:
+  - { name: 鯛魚片, amount: { value: 2, unit: 片 }, note: 切塊 }
+  - { name: 杏仁片, amount: { value: 100, unit: g } }
+  - { name: 雞蛋, amount: { value: 1, unit: 顆 }, note: 打成蛋液 }
+  - {
+      name: 杏仁粉,
+      amount: { value: 20, unit: g },
+      note: 約 2 大匙，調麵糊用,
+      group: 調味,
+    }
+  - {
+      name: 食用油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，香煎用,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 1, unit: g },
+      note: 約 1/4 小匙，調麵糊用,
+      group: 調味,
+    }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 1, unit: g },
+      note: 約 1/4 小匙，調麵糊用,
+      group: 調味,
+    }
+steps:
+  - text: 雞蛋打入碗中攪打均勻，加入杏仁粉、鹽與白胡椒粉充分拌勻調成濃稠杏仁蛋糊。
+    image:
+      src: ./step-1.webp
+      alt: 陶瓷碗中以打散的蛋液混合杏仁粉、鹽與白胡椒粉，調製成濃稠滑順的杏仁蛋糊
+  - text: 鯛魚片切成適口塊狀，先均勻沾裹調好的杏仁蛋糊，再放入盤中讓魚片表面緊密裹上一層杏仁薄片。
+    image:
+      src: ./step-2.webp
+      alt: 木盤上放著沾裹杏仁蛋糊的鯛魚片，以手輕輕按壓讓表面均勻黏裹一層杏仁薄片
+  - text: 平底鍋倒入食用油以中小火燒熱，放入裹好杏仁片的魚塊，慢煎約 2 分鐘至兩面呈現金黃酥脆後起鍋盛盤。
+hero:
+  src: ./hero.webp
+  alt: 米色圓形陶瓷盤中整齊排列著香煎鯛魚片，金黃酥脆的表皮鑲嵌著薄脆杏仁片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 淺色木質檯面上擺放著切塊的生鯛魚片、一碗杏仁片、一碗杏仁粉、一顆雞蛋，以及分裝鹽、白胡椒粉與食用油的小碟
+tip: 煎魚時火力不宜過大，保持中小火慢煎能避免表面的杏仁片過早焦黑，並使魚肉均勻熟透。

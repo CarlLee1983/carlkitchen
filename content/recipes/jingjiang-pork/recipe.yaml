@@ -1,0 +1,83 @@
+title: 京醬肉絲
+summary: 豬肉絲醃過後快速過油，再與蒜末、甜麵醬汁大火快炒至醬汁濃稠。盛在爽脆小黃瓜絲上並點綴蔥絲，鹹甜濃郁、口感清爽。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [家常菜]
+aliases: []
+ingredients:
+  - { name: 豬後腿肉絲, amount: { value: 200, unit: g } }
+  - { name: 小黃瓜, amount: { value: 1, unit: 條 }, note: 約 1 條，切粗絲 }
+  - { name: 青蔥, amount: { value: 3, unit: 支 }, note: 切細絲 }
+  - { name: 蒜末, amount: { value: 5, unit: g }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 甜麵醬,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 糖,
+      amount: { value: 2.5, unit: g },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 1.5, unit: g },
+      note: 約 1/4 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 水,
+      amount: { value: 45, unit: ml },
+      note: 約 3 大匙，調味汁用,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 5, unit: ml },
+      note: 約 1 茶匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙炒肉用；過油另備適量,
+      group: 調味,
+    }
+steps:
+  - text: 醬油、米酒與太白粉拌勻，放入豬後腿肉絲抓勻醃約 15 分鐘；青蔥切細絲，小黃瓜切粗絲後泡冷水使其爽脆，撈起瀝乾水分備用。
+  - text: 碗中放入甜麵醬、糖、鹽與水，攪拌均勻調成甜麵醬汁。
+  - text: 炒鍋中倒入足量食用油燒熱，放入醃好的肉絲快速過油撥散，待肉絲表面變白轉熟立刻撈出瀝油。
+    image:
+      src: ./step-3.webp
+      alt: 鐵炒鍋中肉絲快速過油並撥散，肉絲外層轉為泛白熟色
+  - text: 鍋中燒熱約 2 大匙食用油，下蒜末與肉絲大火翻炒，倒入調好的甜麵醬汁快炒均勻，讓肉絲均勻裹上濃稠醬汁。
+    image:
+      src: ./step-4.webp
+      alt: 鐵炒鍋中肉絲與蒜末拌炒，均勻裹上濃稠光亮的深色甜麵醬汁
+  - text: 盤底平鋪小黃瓜絲，盛上炒好的京醬肉絲，頂端撒上蔥絲即完成。
+hero:
+  src: ./hero.webp
+  alt: 白色圓瓷盤底鋪滿清脆的小黃瓜絲，上方堆疊裹滿深色光亮醬汁的京醬肉絲，頂端點綴細蔥絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上擺著生豬肉絲、一條小黃瓜、三支青蔥、蒜末，以及分裝甜麵醬、糖、鹽和水的小碟
+tip: 小黃瓜切絲後泡冰水可增加清脆口感，肉絲過油時油溫不宜過高，剛好變白即撈起，肉質才會軟嫩。

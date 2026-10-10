@@ -1,0 +1,50 @@
+title: 薑絲塔香炒透抽
+summary: 新鮮透抽切片後與細嫩薑絲大火爆炒，淋入醬油、米酒與糖快速翻炒，起鍋前拌入九層塔葉提香，滋味鮮甜爽脆。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [中式料理, 熱炒, 家常菜]
+ingredients:
+  - { name: 透抽, amount: { value: 2, unit: 尾 }, note: 洗淨去內臟及外皮，切片 }
+  - { name: 嫩薑, amount: { value: 20, unit: g }, note: 切絲 }
+  - { name: 九層塔, amount: { value: 10, unit: g }, note: 取葉片 }
+  - { name: 食用油, amount: { value: 25, unit: ml }, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 5, unit: g },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 10, unit: ml },
+      note: 約 2 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 透抽洗淨後撕除外層薄膜並清除內臟，橫切成適口片狀；嫩薑洗淨切成細絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上以料理刀將洗淨的透抽切成圈狀薄片，旁邊備有一堆切好的細嫩薑絲
+  - text: 炒鍋倒入食用油以大火燒熱，放入嫩薑絲爆出香氣，接著下透抽片快速翻炒至透抽肉色轉白且微蜷曲。
+  - text: 淋入醬油、米酒與細砂糖大火翻炒入味，起鍋前投入九層塔葉快速翻勻，香氣散發即可盛盤。
+    image:
+      src: ./step-3.webp
+      alt: 圓底炒鍋中冒出熱氣，透抽圈與嫩薑絲、九層塔葉在大火中快速翻炒
+hero:
+  src: ./hero.webp
+  alt: 白色橢圓陶瓷淺盤中盛裝著大火快炒的透抽片，捲曲的透抽裹著醬汁，伴隨金黃細嫩薑絲與翠綠九層塔葉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上擺放兩尾完整洗淨的生透抽、一堆細嫩薑絲與一小把新鮮九層塔，旁邊有裝著醬油、米酒、細砂糖與食用油的小陶碟
+tip: 透抽肉質易老，全程以大火快炒、見肉色泛白微捲即可下調味料並迅速起鍋，能保持最佳脆嫩口感。

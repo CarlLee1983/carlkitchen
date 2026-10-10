@@ -1,0 +1,60 @@
+title: 椒麻雞
+summary: 雞腿肉以平底鍋煎至表皮金黃酥脆，切塊排在高麗菜絲上，淋上融合蒜末、辣椒、蔥花與白醋的醬汁，並撒上花椒粉增添麻香。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [南洋料理, 家常菜]
+ingredients:
+  - { name: 雞腿肉, amount: { value: 1, unit: 隻 }, note: 去骨帶皮，約 250 g }
+  - { name: 高麗菜, amount: { value: 70, unit: g }, note: 切絲 }
+  - { name: 青蔥, amount: { value: 20, unit: g }, note: 切蔥花 }
+  - { name: 蒜頭, amount: { value: 5, unit: g }, note: 切碎成蒜末 }
+  - { name: 辣椒, amount: { value: 3, unit: g }, note: 切碎成末 }
+  - { name: 香菜, amount: { value: 2, unit: g }, note: 切碎成末 }
+  - {
+      name: 食用油,
+      amount: { value: 15, unit: ml },
+      note: 煎雞肉用,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醬汁用,
+      group: 調味,
+    }
+  - {
+      name: 白醋,
+      amount: { value: 10, unit: ml },
+      note: 約 2 茶匙，醬汁用,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 15, unit: g },
+      note: 約 1 大匙，醬汁用,
+      group: 調味,
+    }
+  - { name: 花椒粉, group: 調味, note: 少許，起鍋撒上 }
+steps:
+  - text: 雞腿肉洗淨擦乾，在肉質厚實的內側以刀刃交叉劃出淺紋切斷筋絡；高麗菜洗淨切細絲後充分瀝乾，平鋪在盤底作為襯底。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上放著內側劃出交叉刀紋斷筋的生雞腿肉，旁邊擺有一堆切好的細高麗菜絲
+  - text: 鍋中倒入食用油以中火燒熱，將雞腿肉雞皮朝下放入平底鍋中香煎，待雞皮煎到金黃焦脆後翻面，煎至兩面全熟且酥脆後起鍋切塊。
+    image:
+      src: ./step-2.webp
+      alt: 不鏽鋼平底鍋在爐火上加熱，雞腿肉皮朝下在油中以中火香煎，外皮逐漸轉為金黃酥脆
+  - text: 將蔥花、蒜頭切成的蒜末、辣椒末與香菜末放入小碗，加入醬油、白醋與細砂糖攪拌均勻調成椒麻醬汁。
+  - text: 將切塊的酥脆雞腿排整齊鋪排在高麗菜絲上方，均勻淋上調好的醬汁，最後在表面均勻撒上花椒粉即可上桌。
+hero:
+  src: ./hero.webp
+  alt: 白色橢圓陶瓷盤上鋪著細高麗菜絲，擺放切成條狀的金黃酥脆香煎雞腿排，淋上滿是蒜末、蔥花、辣椒與香菜的椒麻醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木質檯面上整齊陳列生雞腿排、高麗菜絲、蔥花、蒜末、辣椒碎與香菜，以及分別盛裝醬油、白醋、細砂糖與花椒粉的陶瓷小碗
+tip: 雞肉入鍋時先將雞皮朝下煎出油脂，能讓外皮更乾爽酥脆。

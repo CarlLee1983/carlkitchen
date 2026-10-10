@@ -1,0 +1,97 @@
+title: 宮保蝦仁
+summary: 蝦仁開背去腸泥後抓醃汆燙，搭配乾辣椒、蒜片、蔥片與薑片大火快炒，裹上酸甜微辣的濃郁醬汁，口感彈牙鮮香。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [中式料理, 熱炒, 家常菜]
+ingredients:
+  - { name: 蝦仁, amount: { value: 200, unit: g }, note: 開背去腸泥 }
+  - { name: 乾辣椒, amount: { value: 5, unit: 段 } }
+  - { name: 青蔥, amount: { value: 1, unit: 支 }, note: 切片 }
+  - { name: 蒜頭, amount: { value: 2, unit: 瓣 }, note: 切片 }
+  - { name: 薑, amount: { value: 2, unit: 片 } }
+  - { name: 蛋白, amount: { value: 0.5, unit: 顆 }, note: 醃蝦用 }
+  - {
+      name: 食用油,
+      amount: { value: 15, unit: ml },
+      note: 汆燙與熱炒用,
+      group: 調味,
+    }
+  - {
+      name: 玉米粉,
+      amount: { value: 5, unit: g },
+      note: 約 1 小匙，醃蝦用,
+      group: 調味,
+    }
+  - {
+      name: 太白粉,
+      amount: { value: 5, unit: g },
+      note: 約 1 小匙，炒醬勾芡用,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃蝦用,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 5, unit: g },
+      note: 約 1 小匙，醃蝦用,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙，調味用,
+      group: 調味,
+    }
+  - {
+      name: 烏醋,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，調味用,
+      group: 調味,
+    }
+  - {
+      name: 白醋,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，調味用,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 5, unit: g },
+      note: 約 1 小匙，調味用,
+      group: 調味,
+    }
+  - {
+      name: 番茄醬,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙，調味用,
+      group: 調味,
+    }
+  - { name: 香油, group: 調味, note: 少許，醃蝦與起鍋增香用 }
+steps:
+  - text: 蝦仁洗淨瀝乾水分，在蝦背劃一刀剔除腸泥；青蔥、蒜頭與薑片分別洗淨後切成薄片。
+  - text: 取一只碗放入蝦仁，加入蛋白、鹽、玉米粉、米酒與少許香油，用手充分抓勻醃漬入味。
+    image:
+      src: ./step-2.webp
+      alt: 圓形陶瓷碗中盛裝著開背生蝦仁，均勻裹上蛋白、玉米粉與調味料的薄漿
+  - text: 湯鍋注水大火煮滾並滴入少許食用油，放入醃好的蝦仁快速汆燙，燙至蝦身蜷曲轉為粉紅即可撈出瀝乾。
+    image:
+      src: ./step-3.webp
+      alt: 滾水中燙至變紅蜷曲的蝦仁以金屬濾網撈起瀝水
+  - text: 熱鍋倒入食用油以大火燒熱，放入乾辣椒段爆炒出香氣，隨後下蔥片、蒜片、薑片與汆燙好的蝦仁迅速翻炒。
+  - text: 加入醬油、烏醋、白醋、細砂糖、番茄醬、太白粉與少許香油，快速翻炒均勻裹上醬汁後即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 白色圓形陶瓷平盤中盛放著紅潤油亮的宮保蝦仁，與紅乾辣椒段、斜切蔥段及蒜片一同翻炒包裹醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊擺放著開背生蝦仁、乾辣椒段、斜切蔥片、蒜片與薑片，前排六只小白碟分裝蛋白、太白粉、醬油、烏醋、白醋與番茄醬
+tip: 汆燙蝦仁時在滾水中滴入幾滴油，能讓燙好的蝦仁表面更加光亮滑潤。
