@@ -201,3 +201,15 @@ test("沒有列印圖的菜譜不顯示列印；列印媒體仍隱藏導覽與�
   const pages = pdf.toString("latin1").match(/\/Type\s*\/Page(?!s)/g) ?? [];
   expect(pages.length).toBe(1);
 });
+
+for (const width of [390, 1280]) {
+  test(`菜譜主圖在內容區置中（${width}px）`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/recipes/tomato-egg/");
+    const article = await page.getByRole("article").boundingBox();
+    const hero = await page.locator(".hero img").boundingBox();
+    expect(
+      Math.abs(hero!.x + hero!.width / 2 - (article!.x + article!.width / 2)),
+    ).toBeLessThanOrEqual(1);
+  });
+}
