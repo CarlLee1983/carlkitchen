@@ -1,0 +1,65 @@
+title: 蒲燒鰻魚炊飯
+summary: 洗淨白米加入蒲燒醬汁與柴魚粉入電鍋炊煮，米粒吸飽柴魚甘醇與蒲燒醬香，拌鬆後鋪上金黃紅潤、肥嫩油亮的蒲燒鰻魚片續燜透，搭配酸甜爽脆的醃黃蘿蔔，道地日式美味一鍋完成。
+servings: 2
+category: 主食
+draft: true
+mealCandidate: false
+vegetable: false
+protein: false
+# 總時間為編輯推估：操作 5 + 泡米 15 + 瀝乾 30 + 煮飯假設 35 + 續燜 15 = 100 分鐘。
+# 煮飯 35 分鐘不是來源提供或實測，依電子鍋機型而異；來源全文仍待核。
+timeMinutes: 100
+tags: [日式料理, 電鍋料理, 鰻魚, 炊飯]
+aliases: [蒲燒鰻魚飯, 日式鰻魚飯]
+ingredients:
+  - name: 白米
+    amount:
+      value: 2
+      unit: 杯
+    note: 約 300 g，洗淨浸泡瀝乾
+  - name: 水
+    amount:
+      value: 1.8
+      unit: 杯
+    note: 炊飯水分
+  - name: 蒲燒鰻魚
+    amount:
+      value: 0.5
+      unit: 尾
+    note: 約 120 g，切厚片段狀
+  - name: 醃黃蘿蔔
+    amount:
+      value: 10
+      unit: g
+    note: 切片搭襯解膩
+    group: 配菜
+  - name: 蒲燒鰻魚醬汁
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 柴魚粉
+    amount:
+      value: 2
+      unit: g
+    note: 約 2 公克提鮮
+    group: 調味
+steps:
+  - text: 白米洗淨後以清水浸泡 15 分鐘，撈起瀝乾水分靜置 30 分鐘備用；蒲燒鰻魚切成約 3 公分寬的厚片塊狀。
+    image:
+      src: ./step-1.webp
+      alt: 白米洗淨後以清水浸泡 15 分鐘，撈起瀝乾水分靜置 30 分鐘備用；蒲燒鰻魚切成約 3 公分寬的厚片
+  - text: 將瀝乾白米與水放入電子鍋內鍋中，加入蒲燒鰻魚醬汁與柴魚粉攪拌均勻，按下煮飯鍵煮至熟透。
+  - text: 開蓋用飯匙由底向上翻鬆米飯拌勻，表面整齊鋪上切段的蒲燒鰻魚片，蓋上鍋蓋續燜 10 至 15 分鐘讓鰻魚油香滲入米粒。
+    image:
+      src: ./step-3.webp
+      alt: 開蓋用飯匙由底向上翻鬆米飯拌勻，表面整齊鋪上切段的蒲燒鰻魚片，蓋上鍋蓋續燜 10 至 15 分鐘讓鰻
+  - text: 將吸飽鰻魚香氣的炊飯與鰻魚片盛入碗中，旁邊擺上切片的醃黃蘿蔔搭配解膩即可品嚐。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒲燒鰻魚炊飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 白米洗淨浸泡瀝乾後再煮能使米粒完整吸收柴魚醬汁、粒粒分明飽滿；蒲燒鰻魚於炊飯煮好後鋪上燜蒸，既能溫熱軟嫩又不會因過度受熱碎裂。

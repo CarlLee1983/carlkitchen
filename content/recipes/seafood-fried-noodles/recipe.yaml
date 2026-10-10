@@ -1,0 +1,58 @@
+title: 海鮮炒麵
+summary: 油麵吸飽鮮美海鮮高湯與醬香，搭配彈牙草蝦、鮮甜中卷與蛤蜊，伴隨脆甜高麗菜與蔬菜絲大火翻炒，鑊氣十足的台式經典熱炒麵食。
+servings: 2
+category: 主食
+draft: true
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [台式, 海鮮, 麵食, 熱炒]
+aliases: [台式海鮮炒麵, 什錦海鮮炒麵]
+ingredients:
+  - { name: 油麵, amount: { value: 500, unit: g } }
+  - { name: 草蝦, amount: { value: 8, unit: 隻 }, note: 去殼開背去腸泥 }
+  - { name: 蛤蜊, amount: { value: 20, unit: 顆 }, note: 吐沙洗淨 }
+  - { name: 中卷, amount: { value: 1, unit: 尾 }, note: 洗淨切圈 }
+  - { name: 乾香菇, amount: { value: 3, unit: 朵 }, note: 溫水泡軟切絲 }
+  - { name: 紅蘿蔔, amount: { value: 50, unit: g }, note: 切細絲 }
+  - { name: 洋蔥, amount: { value: 0.25, unit: 顆 }, note: 約 50 克，切絲 }
+  - { name: 蔥, amount: { value: 1, unit: 根 }, note: 切段 }
+  - { name: 高麗菜, amount: { value: 0.25, unit: 顆 }, note: 約 150 克，切片 }
+  - { name: 鹽, amount: { value: 1, unit: g }, note: 約 1/4 茶匙, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 水,
+      amount: { value: 100, unit: ml },
+      note: 可用泡香菇水替代,
+      group: 調味,
+    }
+steps:
+  - text: 乾香菇先以溫水泡軟後切絲，香菇水保留；中卷洗淨去內臟後切成圓圈狀；草蝦去頭剝殼並開背挑出腸泥；蛤蜊泡鹽水吐沙洗淨；洋蔥與紅蘿蔔去皮切成細絲；高麗菜洗淨切片；蔥洗淨切段備用。
+    image:
+      src: ./step-1.webp
+      alt: 備料砧板上陳列著切圈中卷、剝殼開背草蝦、洗淨蛤蜊、香菇絲、洋蔥絲、紅蘿蔔絲與切片高麗菜
+  - text: 熱鍋倒入 1 大匙油，先下蔥段、洋蔥絲與乾香菇絲以中火炒出香氣，接著加入紅蘿蔔絲與高麗菜片翻炒至蔬菜微軟。
+  - text: 放入處理好的草蝦、中卷圈與蛤蜊，淋入米酒大火快炒均勻，讓海鮮表面受熱變色。
+  - text: 鍋中倒入醬油、鹽與水煮至沸騰，隨即放入油麵，轉大火快速翻炒，讓油麵充分吸收海鮮湯汁與鹹香醬香，炒至醬汁微收乾且油麵油亮入味即可起鍋盛盤。
+    image:
+      src: ./step-4.webp
+      alt: 鐵鍋大火翻炒油麵，熱氣翻騰中油麵融合草蝦、中卷圈、蛤蜊與高麗菜吸收鹹香醬汁
+hero:
+  src: ./hero.webp
+  alt: 白色橢圓深盤盛裝熱氣蒸騰的台式海鮮炒麵，油黃油麵油亮滑順，鋪滿鮮紅草蝦仁、中卷圈、蛤蜊與翠綠高麗菜絲、紅蘿蔔絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊陳列著黃色油麵、草蝦、蛤蜊、中卷、乾香菇、洋蔥絲、紅蘿蔔絲、蔥段與高麗菜
+tip: 蛤蜊與海鮮受熱會釋出天然鮮美湯汁，倒入油麵後維持大火快炒煨煮，麵條才能裹勻鮮甜鑊氣且不軟爛。

@@ -1,0 +1,57 @@
+title: 鮭魚炊飯
+summary: 將新鮮鮭魚切塊調味，與鴻禧菇、蒜瓣及洗淨白米一同放入電鍋，淋入醬油、味醂與米酒炊煮。魚肉鮮甜與蕈菇香氣完整滲入米飯，出鍋前拌入青蔥，清香營養。
+servings: 4
+category: 主食
+draft: true
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [日式料理, 電鍋料理, 炊飯, 鮭魚]
+aliases: [日式鮭魚飯, 鮭魚野菇炊飯]
+ingredients:
+  - { name: 白米, amount: { value: 3, unit: 杯 }, note: 約 450 g，洗淨瀝乾 }
+  - { name: 鮭魚, amount: { value: 400, unit: g }, note: 去骨切適口塊狀 }
+  - {
+      name: 鴻禧菇,
+      amount: { value: 200, unit: g },
+      note: 約 2 包，切除根部剝散,
+    }
+  - { name: 青蔥, amount: { value: 2, unit: 支 }, note: 切蔥花, group: 調味 }
+  - { name: 蒜瓣, amount: { value: 1, unit: 瓣 }, note: 拍碎, group: 調味 }
+  - { name: 鹽, amount: { value: 2, unit: g }, note: 抹魚用, group: 調味 }
+  - { name: 黑胡椒, amount: { value: 1, unit: g }, note: 抹魚用, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 味醂,
+      amount: { value: 8, unit: ml },
+      note: 約 0.5 大匙,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 3, unit: 杯 }, note: 炊飯用水 }
+steps:
+  - text: 白米洗淨瀝乾；鮭魚表面均勻抹上鹽與黑胡椒醃漬，切成適口方塊；鴻禧菇切除底部並用手剝散；青蔥洗淨切成細蔥花備用。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上擺著切成方塊並抹上鹽與黑胡椒的鮭魚、剝散的鴻禧菇、洗淨白米與青蔥細花
+  - text: 電鍋內鍋放入白米，注入水，表面依序鋪上鴻禧菇、鮭魚塊與拍碎的蒜瓣，再淋入調勻的醬油、味醂與米酒。
+  - text: 電鍋外鍋加入 1.5 杯水，蓋上鍋蓋蒸煮至開關跳起，續燜 20 分鐘讓米芯透熟並吸飽鮭魚鮮味。
+  - text: 開蓋取出蒜瓣，趁熱倒入青蔥蔥花，用飯匙由底向上翻拌均勻，讓米飯鬆軟且青蔥香氣釋放即可盛碗。
+hero:
+  src: ./hero.webp
+  alt: 日式素雅圓陶碗中盛裝熱氣蒸騰的鮭魚炊飯，粉嫩細緻的鮭魚碎肉與鴻禧菇絲散落在晶亮飽滿的米粒間，點綴細綠青蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上陳列著厚實粉嫩的生鮮鮭魚排、盛於陶碗的白米、兩簇新鮮鴻禧菇、翠綠青蔥與蒜瓣，前方小碟盛裝醬油、味醂、米酒、鹽與黑胡椒
+tip: 鴻禧菇不需碰水清洗，切除根部用手剝成小撮即可入鍋，菇香更濃郁；炊飯跳起後務必續燜 20 分鐘，米粒口感才會外層彈牙、內裡熟透多汁。

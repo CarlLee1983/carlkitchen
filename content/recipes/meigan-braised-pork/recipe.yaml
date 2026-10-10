@@ -1,0 +1,54 @@
+title: 梅干扣肉
+summary: 五花肉切厚片乾煎逼出油脂，與老薑片、乾辣椒、八角炒香，再結合反覆洗淨的梅干菜，加入醬油、紹興酒與冰糖燉蒸至軟爛。肥而不膩、鹹甜醇香。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 60
+tags: [客家菜, 家常菜, 豬肉]
+aliases: [梅菜扣肉, 客家梅干扣肉]
+ingredients:
+  - { name: 五花肉, amount: { value: 300, unit: g }, note: 切成約 1 公分厚片 }
+  - {
+      name: 梅干菜,
+      amount: { value: 1, unit: 束 },
+      note: 約 100 g，泡水洗淨切小段,
+    }
+  - { name: 老薑片, amount: { value: 3, unit: 片 }, group: 調味 }
+  - { name: 蔥, amount: { value: 2, unit: 根 }, note: 切長段, group: 調味 }
+  - { name: 乾辣椒, amount: { value: 2, unit: 根 }, group: 調味 }
+  - { name: 八角, amount: { value: 1, unit: 粒 }, group: 調味 }
+  - {
+      name: 醬油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 紹興酒,
+      amount: { value: 60, unit: ml },
+      note: 約 4 大匙，分次醃肉與燒煮,
+      group: 調味,
+    }
+  - { name: 冰糖, amount: { value: 15, unit: g }, note: 約 1 大匙, group: 調味 }
+  - { name: 水, amount: { value: 350, unit: ml }, note: 燒煮湯汁用 }
+steps:
+  - text: 梅干菜整束撥開泡水，換水多次徹底洗淨細沙後切成小段；五花肉切成約 1 公分厚片，加入 1 大匙紹興酒抓勻醃漬 5 分鐘。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上五花肉切成厚片並以紹興酒抓醃，旁置洗淨切段的梅干菜
+  - text: 熱鍋不放油，放入醃好的五花肉以中火慢煎，將兩面煎至金黃微焦並煸出多餘豬油。
+  - text: 利用鍋內煸出的天然豬油，放入老薑片、乾辣椒與八角以小火炒出辛香，再下梅干菜拌炒，接著淋入剩餘紹興酒、醬油與冰糖炒勻至糖粒溶解融和。
+    image:
+      src: ./step-3.webp
+      alt: 鍋中金黃五花肉煸出的油脂裡炒香老薑片、乾辣椒與八角，香氣撲鼻
+  - text: 鍋中放入蔥並注入水，煮滾後續滾 5 分鐘，隨後整鍋食材連同湯汁移入電鍋內鍋，外鍋加 2 杯半水蒸煮約 40 分鐘至肉質軟爛入味，起鍋盛盤即可。
+hero:
+  src: ./hero.webp
+  alt: 典雅白色圓盤上整齊鋪排著油亮紅褐的五花肉片，底部襯著吸飽肉汁的深色梅干菜，油潤光亮香氣四溢
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊擺放著新鮮五花肉條、整束梅干菜、老薑片、蔥、乾辣椒與八角，前方小碟盛裝醬油、紹興酒與冰糖
+tip: 梅干菜易夾帶細沙，務必反覆清洗直至盆底無砂粒；五花肉先煎至兩面金黃梅納反應充分，蒸出來的扣肉才更香且不油膩。

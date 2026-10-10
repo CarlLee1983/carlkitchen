@@ -1,0 +1,63 @@
+title: 虱目魚肚湯
+summary: 新鮮去刺虱目魚肚入沸水清煮，加入米酒去腥與鹽巴提鮮，魚油清甜脂香四溢，起鍋撒上細薑絲與翠綠蔥絲，湯頭清澈鮮美，經典台南古早風味。
+servings: 2
+category: 湯
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [台式料理, 魚湯, 台南小吃, 快煮湯]
+aliases: [薑絲虱目魚肚湯, 清燉虱目魚湯]
+ingredients:
+  - name: 虱目魚肚
+    amount:
+      value: 1
+      unit: 片
+    note: 約 180 g，無刺洗淨拭乾
+  - name: 薑絲
+    amount:
+      value: 15
+      unit: g
+    note: 老薑切極細絲
+    group: 調味
+  - name: 蔥絲
+    amount:
+      value: 10
+      unit: g
+    note: 青蔥切絲泡水微捲
+    group: 調味
+  - name: 水
+    amount:
+      value: 600
+      unit: ml
+    note: 煮湯用清水
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 5
+      unit: ml
+    note: 約 1 茶匙去腥提鮮
+    group: 調味
+steps:
+  - text: 虱目魚肚洗淨並以廚房紙巾擦乾水分；老薑切成細薑絲，青蔥切成細蔥絲泡入冷水備用。
+    image:
+      src: ./step-1.webp
+      alt: 虱目魚肚洗淨並以廚房紙巾擦乾水分；老薑切成細薑絲，青蔥切成細蔥絲泡入冷水備用。
+  - text: 取湯鍋倒入水大火煮至沸騰，將虱目魚肚輕輕滑入滾水中，煮約 3 至 4 分鐘至魚肉熟透變白。
+  - text: 加入鹽與米酒調勻煮沸立即熄火，將魚肚與清澈湯汁盛入深碗中，頂端放上細薑絲與蔥絲即可趁熱享用。
+    image:
+      src: ./step-3.webp
+      alt: 加入鹽與米酒調勻煮沸立即熄火，將魚肚與清澈湯汁盛入深碗中，頂端放上細薑絲與蔥絲即可趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的虱目魚肚湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 虱目魚肚肉質細嫩，滾水下鍋後以中小火煮 3 分鐘即可，切勿久滾以保持滑潤魚脂；薑絲於起鍋前或盛碗時加入，清爽辛香最能襯托魚肚甘甜。
