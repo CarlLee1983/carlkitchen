@@ -1,0 +1,70 @@
+title: 蔥油餅
+summary: 中筋麵粉以溫水燙麵揉成光滑麵糰鬆弛，擀開均勻抹上豬油、青蔥蔥花、紅蔥酥與白芝麻捲成螺旋麵糰，入熱鍋煎至雙面金黃酥脆、內層絲縷分明，蔥香濃烈、外脆內 Q。
+servings: 3
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [麵食, 經典小吃, 煎餅, 台式小吃]
+aliases: [手撕蔥油餅, 傳統蔥油餅]
+ingredients:
+  - name: 中筋麵粉
+    amount:
+      value: 300
+      unit: g
+    note: 約 3 杯
+  - name: 溫水
+    amount:
+      value: 180
+      unit: ml
+    note: 約 70度溫水燙麵
+  - name: 蔥花
+    amount:
+      value: 60
+      unit: g
+    note: 青蔥洗淨切細花
+    group: 內餡
+  - name: 紅蔥酥
+    amount:
+      value: 10
+      unit: g
+    note: 約 1 茶匙增香
+    group: 內餡
+  - name: 白芝麻
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙
+    group: 內餡
+  - name: 豬油
+    amount:
+      value: 45
+      unit: g
+    note: 抹油起酥
+    group: 內餡
+  - name: 鹽
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙
+    group: 內餡
+steps:
+  - text: 將中筋麵粉放入盆中，緩緩注入溫水攪拌成雪花狀，揉成光滑麵糰後蓋上保鮮膜，靜置鬆弛 15 分鐘。
+    image:
+      src: ./step-1.webp
+      alt: 將中筋麵粉放入盆中，緩緩注入溫水攪拌成雪花狀，揉成光滑麵糰後蓋上保鮮膜，靜置鬆弛 15 分鐘。
+  - text: 將蔥花、紅蔥酥、白芝麻、豬油與鹽混合拌勻成香濃蔥油內餡，分成三等份備用。
+  - text: 將鬆弛好的麵糰分成三份擀成大圓薄片，均勻抹上蔥油內餡後捲成圓柱長條，再由一端向內盤捲成螺旋餅狀，蓋保鮮膜鬆弛 10 分鐘後擀平成圓餅。
+    image:
+      src: ./step-3.webp
+      alt: 將鬆弛好的麵糰分成三份擀成大圓薄片，均勻抹上蔥油內餡後捲成圓柱長條，再由一端向內盤捲成螺旋餅狀，蓋保
+  - text: 平底鍋中火燒熱倒入適量油，放入蔥油餅皮慢煎至兩面金黃酥脆，用鍋鏟由四周往中心拍擠出層次即可出鍋。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蔥油餅
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 以 70 度溫水燙麵能破壞部分麵筋，使煎出的蔥油餅外皮焦脆而內部軟 Q；抹上豬油捲起能形成天然油酥層次，拍打後絲縷分明。

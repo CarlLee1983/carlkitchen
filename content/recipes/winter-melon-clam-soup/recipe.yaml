@@ -1,0 +1,69 @@
+title: 冬瓜蛤蜊湯
+summary: 清甜冬瓜去皮切塊，與高湯同煮至晶透軟綿，加入吐沙鮮活蛤蜊與薑片煮至開殼釋放滿滿鮮味，調入鹽、米酒與香油，湯頭清甜鮮美、消暑利濕。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [瓜類, 海鮮, 家常湯品, 消暑料理]
+aliases: [冬瓜蛤蜊鮮湯, 清燉冬瓜蛤蜊]
+ingredients:
+  - name: 冬瓜
+    amount:
+      value: 600
+      unit: g
+    note: 去皮去籽切大塊
+  - name: 蛤蜊
+    amount:
+      value: 400
+      unit: g
+    note: 吐沙洗淨
+  - name: 薑
+    amount:
+      value: 30
+      unit: g
+    note: 老薑切薄片
+    group: 調味
+  - name: 高湯
+    amount:
+      value: 1200
+      unit: ml
+    note: 約 6 量米杯高湯
+  - name: 鹽
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+  - name: 香油
+    amount:
+      value: 8
+      unit: ml
+    note: 約半大匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+steps:
+  - text: 蛤蜊泡水靜置吐沙約 2 小時後洗淨；冬瓜去皮去籽切成適口大厚塊；老薑洗淨切成薄片備用。
+    image:
+      src: ./step-1.webp
+      alt: 蛤蜊泡水靜置吐沙約 2 小時後洗淨；冬瓜去皮去籽切成適口大厚塊；老薑洗淨切成薄片備用。
+  - text: 湯鍋中倒入高湯煮沸，放入冬瓜塊轉中小火煮約 10 分鐘至冬瓜呈現半透明微軟狀態。
+  - text: 轉大火加入蛤蜊與薑片，煮至蛤蜊外殼完全張開釋放鮮甜海味。
+    image:
+      src: ./step-3.webp
+      alt: 轉大火加入蛤蜊與薑片，煮至蛤蜊外殼完全張開釋放鮮甜海味。
+  - text: 加入鹽與香油調味，起鍋前沿鍋邊淋入米酒去腥提鮮，熄火盛碗即可上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的冬瓜蛤蜊湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 冬瓜先入鍋煮至半透明軟化再下蛤蜊，能避免蛤蜊因過度受熱而肉質縮水乾柴；起鍋前加米酒能瞬間激發蛤蜊的鮮甜甘美。

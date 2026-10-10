@@ -1,0 +1,57 @@
+title: 黑胡椒豬排
+summary: 里肌肉排拍鬆斷筋醃漬入味，以奶油煎至雙面焦香金黃，加入洋蔥絲、青椒絲與濃郁黑胡椒醬翻炒收汁，肉排軟嫩多汁帶有奶油濃香與黑胡椒辛香，餐廳鐵板風味輕鬆重現。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [排餐, 便當菜, 熱炒, 豬肉]
+aliases: [鐵板黑胡椒豬排, 黑椒洋蔥豬排]
+ingredients:
+  - name: 里肌肉排
+    amount:
+      value: 2
+      unit: 片
+    note: 約 250 g，洗淨拍鬆斷筋
+  - name: 洋蔥
+    amount:
+      value: 80
+      unit: g
+    note: 去皮切絲
+  - name: 青椒
+    amount:
+      value: 50
+      unit: g
+    note: 去籽切條
+  - name: 黑胡椒醬
+    amount:
+      value: 60
+      unit: g
+    note: 約 4 大匙
+    group: 調味
+  - name: 奶油
+    amount:
+      value: 30
+      unit: g
+    note: 煎肉提香
+    group: 調味
+steps:
+  - text: 里肌肉排洗淨擦乾水分，以肉槌或刀背拍打鬆散肉質並切斷周邊筋膜備用；洋蔥與青椒切成均勻條狀。
+    image:
+      src: ./step-1.webp
+      alt: 里肌肉排洗淨擦乾水分，以肉槌或刀背拍打鬆散肉質並切斷周邊筋膜備用；洋蔥與青椒切成均勻條狀。
+  - text: 取平底鍋開中火燒熱，放入奶油均勻融化塗抹於鍋面。
+  - text: 放入里肌肉排以中大火煎約 3 分鐘至單面金黃上色，翻面續煎至雙面焦香封住肉汁。
+    image:
+      src: ./step-3.webp
+      alt: 放入里肌肉排以中大火煎約 3 分鐘至單面金黃上色，翻面續煎至雙面焦香封住肉汁。
+  - text: 鍋中加入洋蔥絲、青椒絲與黑胡椒醬，快速翻炒拌勻並蓋鍋燜煮約 1 分鐘讓肉排吸飽黑胡椒濃醬即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的黑胡椒豬排
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 肉排煎前用刀背拍打並切斷邊緣筋膜，受熱時肉質才不會蜷縮捲起；奶油高溫融化後下鍋煎肉，能帶來濃郁滑順的焦化奶油香氣。

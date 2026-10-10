@@ -1,0 +1,89 @@
+title: 三杯中卷
+summary: 中卷切圈大火汆燙定型，黑麻油煸透老薑片與整粒金黃蒜仁，投入中卷圈、紅辣椒與醬油膏、米酒、白砂糖慢火收汁，起鍋淋上烏醋與鮮綠九層塔大火翻勻，鹹香濃烈、鮮脆彈牙。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [台式熱炒, 三杯, 海鮮, 經典下飯菜]
+aliases: [三杯透抽, 熱炒三杯中卷]
+ingredients:
+  - name: 中卷
+    amount:
+      value: 2
+      unit: 尾
+    note: 約 350 g，洗淨切圈
+  - name: 蒜仁
+    amount:
+      value: 5
+      unit: 瓣
+    note: 整粒去皮
+    group: 調味
+  - name: 薑
+    amount:
+      value: 20
+      unit: g
+    note: 切片煸炒
+    group: 調味
+  - name: 辣椒
+    amount:
+      value: 1
+      unit: 條
+    note: 切斜片
+    group: 調味
+  - name: 九層塔
+    amount:
+      value: 20
+      unit: g
+    note: 洗淨摘葉
+    group: 調味
+  - name: 胡麻油
+    amount:
+      value: 45
+      unit: ml
+    note: 約 3 大匙黑麻油
+    group: 調味
+  - name: 醬油膏
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 白砂糖
+    amount:
+      value: 8
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 烏醋
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙起鍋嗆香
+    group: 調味
+steps:
+  - text: 中卷洗淨去除內臟軟骨，切成約 1.5 公分寬的圈狀；老薑切片；辣椒切斜片；九層塔洗淨摘葉備用。
+    image:
+      src: ./step-1.webp
+      alt: 中卷洗淨去除內臟軟骨，切成約 1.5 公分寬的圈狀；老薑切片；辣椒切斜片；九層塔洗淨摘葉備用。
+  - text: 熱炒鍋倒入胡麻油，以小火將蒜仁煎至金黃微焦，再放入薑片煸炒至邊緣捲曲飄香。
+  - text: 轉大火放入中卷圈、辣椒片，淋入醬油膏、白砂糖與米酒，大火翻炒慢燒至濃稠醬汁緊緊裹附中卷表面。
+    image:
+      src: ./step-3.webp
+      alt: 轉大火放入中卷圈、辣椒片，淋入醬油膏、白砂糖與米酒，大火翻炒慢燒至濃稠醬汁緊緊裹附中卷表面。
+  - text: 起鍋前沿鍋邊淋入烏醋嗆香，撒入九層塔葉大火翻拌兩下即可熄火盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的三杯中卷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 以小火耐心將黑麻油與薑片、蒜仁煸至焦香是三杯料理的靈魂；中卷容易出水，大火快炒收乾醬汁並在起鍋前淋入烏醋與九層塔，能瞬間激發層次香氣。

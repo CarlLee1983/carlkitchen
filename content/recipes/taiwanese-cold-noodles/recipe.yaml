@@ -1,0 +1,107 @@
+title: 麻醬涼麵
+summary: 冰鎮彈牙油麵鋪排小黃瓜絲、火腿絲、熟香菇絲與金黃蛋皮絲，淋上以芝麻醬、花生粉、醬油、烏醋、蒜泥與辣油調和的香濃特調麻醬汁，拌勻後濃醇芝麻香直撲鼻息，消暑開胃。
+servings: 2
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [小吃, 涼麵, 夏日料理, 台式麵食]
+aliases: [台式涼麵, 蒜香麻醬涼麵]
+ingredients:
+  - name: 油麵
+    amount:
+      value: 300
+      unit: g
+    note: 熟油麵煮熟冰鎮瀝乾
+  - name: 小黃瓜絲
+    amount:
+      value: 50
+      unit: g
+    note: 約半杯刨細絲
+    group: 配菜
+  - name: 火腿絲
+    amount:
+      value: 40
+      unit: g
+    note: 切細絲
+    group: 配菜
+  - name: 熟香菇絲
+    amount:
+      value: 30
+      unit: g
+    note: 煮熟切細絲
+    group: 配菜
+  - name: 蛋皮絲
+    amount:
+      value: 20
+      unit: g
+    note: 煎蛋皮切絲
+    group: 配菜
+  - name: 芝麻醬
+    amount:
+      value: 75
+      unit: g
+    note: 約 5 大匙
+    group: 麻醬汁
+  - name: 醬油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 麻醬汁
+  - name: 糖
+    amount:
+      value: 30
+      unit: g
+    note: 約 2 大匙
+    group: 麻醬汁
+  - name: 烏醋
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 麻醬汁
+  - name: 花生粉
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙增香
+    group: 麻醬汁
+  - name: 辣椒
+    amount:
+      value: 3
+      unit: g
+    note: 切末或辣油
+    group: 麻醬汁
+  - name: 蒜泥
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙
+    group: 麻醬汁
+  - name: 高湯
+    amount:
+      value: 90
+      unit: ml
+    note: 約 6 大匙調開麻醬
+    group: 麻醬汁
+steps:
+  - text: 油麵入滾水汆燙後快速撈起泡入冰水冰鎮，瀝乾水分後盛入深盤中備用。
+    image:
+      src: ./step-1.webp
+      alt: 油麵入滾水汆燙後快速撈起泡入冰水冰鎮，瀝乾水分後盛入深盤中備用。
+  - text: 在油麵上方整齊排上小黃瓜絲、火腿絲、熟香菇絲與蛋皮絲。
+    image:
+      src: ./step-2.webp
+      alt: 在油麵上方整齊排上小黃瓜絲、火腿絲、熟香菇絲與蛋皮絲。
+  - text: 取碗將芝麻醬、花生粉、蒜泥、醬油、糖、烏醋、辣椒末與高湯充分調和均勻成滑順麻醬汁。
+  - text: 食用時將特調麻醬汁均勻淋在麵條與配料上，充分攪拌均勻即可品嚐。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的麻醬涼麵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 芝麻醬質地濃稠，需以高湯或冷開水分次慢慢攪拌化開，醬汁才會順滑細緻；加入少許花生粉能讓麻醬香氣更加厚實甘甜。

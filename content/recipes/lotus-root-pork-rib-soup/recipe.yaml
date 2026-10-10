@@ -1,0 +1,69 @@
+title: 蓮藕排骨湯
+summary: 鮮嫩豬肋排汆燙洗淨，與甘甜乾魷魚絲及老薑片入鍋慢火燉煮 40 分鐘釋放醇厚高湯，加入脆甜蓮藕片續煮 20 分鐘，調入鹽巴與米酒，湯頭甘醇清潤、排骨軟爛脫骨。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [煲湯, 排骨湯, 養生湯品, 家常湯品]
+aliases: [蓮藕燉排骨, 蓮藕魷魚排骨湯]
+ingredients:
+  - name: 蓮藕
+    amount:
+      value: 300
+      unit: g
+    note: 去皮切約 0.5 公分片狀
+  - name: 豬肋排
+    amount:
+      value: 400
+      unit: g
+    note: 剁塊汆燙洗淨
+  - name: 乾魷魚
+    amount:
+      value: 20
+      unit: g
+    note: 剪絲提鮮甘甜
+    group: 調味
+  - name: 薑
+    amount:
+      value: 15
+      unit: g
+    note: 切片去腥
+    group: 調味
+  - name: 水
+    amount:
+      value: 2000
+      unit: ml
+    note: 燉湯清水
+  - name: 鹽
+    amount:
+      value: 5
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+steps:
+  - text: 蓮藕洗淨去皮切成約 0.5 公分厚的圓片；乾魷魚剪成細絲；老薑切片；豬肋排剁塊放入滾水中汆燙洗淨血水備用。
+    image:
+      src: ./step-1.webp
+      alt: 蓮藕洗淨去皮切成約 0.5 公分厚的圓片；乾魷魚剪成細絲；老薑切片；豬肋排剁塊放入滾水中汆燙洗淨血水
+  - text: 取湯鍋倒入水，放入汆燙好的豬肋排、乾魷魚絲與薑片，以大火煮沸後蓋上鍋蓋，轉小火慢燉 40 分鐘。
+  - text: 掀蓋加入切好的蓮藕片，以小火續煮 20 分鐘至蓮藕熟軟透味、湯汁呈現淡淡粉褐精華。
+    image:
+      src: ./step-3.webp
+      alt: 掀蓋加入切好的蓮藕片，以小火續煮 20 分鐘至蓮藕熟軟透味、湯汁呈現淡淡粉褐精華。
+  - text: 起鍋前加入鹽與米酒調味拌勻，即可熄火盛入大湯碗中趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蓮藕排骨湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 加入少許乾魷魚絲是港式與客家煲湯的秘訣，能大幅提升高湯甘醇厚度；蓮藕燉煮後湯色自然微帶淡紅，口感鬆綿清脆相宜。
