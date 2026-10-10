@@ -1,0 +1,67 @@
+title: 酸菜豬肚湯
+summary: 豬肚與青蔥、薑片及米酒燜煮軟嫩後切成薄片，與洗淨切片的酸菜和細薑絲同入高湯滾煮。湯鮮味醇、酸香開胃，肚片軟嫩彈牙。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [湯品, 家常菜, 傳統小吃]
+aliases: [酸菜肚片湯, 豬肚酸菜湯]
+ingredients:
+  - {
+      name: 豬肚,
+      amount: { value: 300, unit: g },
+      note: 約半個，洗淨預煮後切片,
+    }
+  - { name: 酸菜, amount: { value: 150, unit: g }, note: 約 2 片，沖洗後切薄片 }
+  - {
+      name: 薑絲,
+      amount: { value: 50, unit: g },
+      note: 去皮切成細絲,
+      group: 調味,
+    }
+  - {
+      name: 青蔥,
+      amount: { value: 15, unit: g },
+      note: 約 1 支，切段煮豬肚用,
+      group: 調味,
+    }
+  - {
+      name: 薑片,
+      amount: { value: 10, unit: g },
+      note: 約 2 片，煮豬肚去腥用,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，煮豬肚去腥用,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 2000, unit: ml }, note: 煮湯底用 }
+  - {
+      name: 鹽,
+      amount: { value: 2, unit: g },
+      note: 約 1/4 茶匙，起鍋前依口味調整,
+      group: 調味,
+    }
+steps:
+  - text: 豬肚徹底洗淨後放入沸水鍋中，加入青蔥段、薑片與米酒，以中小火燜煮約 40 分鐘至能輕易穿透，撈出放涼後斜切成適口薄片。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上煮至軟嫩的豬肚正以菜刀斜切成適口長片，旁置青蔥與薑片
+  - text: 酸菜一片片以清水仔細沖洗乾淨、洗去多餘鹽分，瀝乾後順著紋理斜切成薄片；生薑去皮切成細薑絲備用。
+  - text: 湯鍋內注入 2000 毫升清水，放入切好的酸菜片與薑絲，以中火煮至水滾，釋出酸菜甘香微酸的滋味。
+  - text: 鍋中加入切好的豬肚片，轉中小火同煮約 10 分鐘讓肚片充分吸收酸菜香氣，起鍋前嘗味道加入少許鹽微調即可。
+    image:
+      src: ./step-4.webp
+      alt: 沸騰的白瓷湯鍋中翻滾著豬肚薄片、酸菜片與細薑絲，蒸氣騰騰香氣四溢
+hero:
+  src: ./hero.webp
+  alt: 白瓷雙耳湯鍋盛著熱氣騰騰的澄澈清湯，漂浮著軟嫩豬肚片、金黃酸菜片與細薑絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊擺放著處理乾淨的生豬肚、整片酸菜心、細薑絲、蔥段與薑片，前方小碟裝著米酒與鹽
+tip: 豬肚煮軟後逆紋斜切薄片更易嚼；酸菜烹煮前務必先以清水逐片沖洗去除過重鹽漬，煮出的湯頭才會酸香回甘而不鹹澀。

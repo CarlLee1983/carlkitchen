@@ -1,0 +1,68 @@
+title: 涼拌木耳
+summary: 新鮮黑木耳汆燙後泡冰水冰鎮，搭配嫩薑絲、辣椒與蒜末，以醬油膏、白醋和香油調汁拌勻。口感脆嫩彈牙、酸甜開胃。
+servings: 2
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [開胃菜, 家常菜]
+aliases: [涼拌黑木耳, 醋溜雲耳]
+ingredients:
+  - {
+      name: 新鮮黑木耳,
+      amount: { value: 200, unit: g },
+      note: 沖洗後手撕成適口小塊,
+    }
+  - { name: 嫩薑, amount: { value: 10, unit: g }, note: 切細絲 }
+  - { name: 辣椒, amount: { value: 1, unit: 支 }, note: 切細絲 }
+  - {
+      name: 蒜仁,
+      amount: { value: 10, unit: g },
+      note: 約 2 瓣，切碎末,
+      group: 調味,
+    }
+  - {
+      name: 醬油膏,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙,
+      group: 調味,
+    }
+  - {
+      name: 砂糖,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 白醋,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
+  - {
+      name: 熟白芝麻,
+      amount: { value: 5, unit: g },
+      note: 約 1 茶匙，提香用,
+      group: 調味,
+    }
+steps:
+  - text: 新鮮黑木耳洗淨後以手撕成適口小塊；嫩薑洗淨切成細絲，辣椒去籽切細絲，蒜仁拍碎切成蒜末備用。
+  - text: 煮滾一鍋水，放入黑木耳汆燙約 1 分鐘，撈起立即泡入冰水中冰鎮 5 分鐘，瀝乾多餘水分。
+    image:
+      src: ./step-2.webp
+      alt: 滾水鍋中汆燙著黑木耳塊，旁邊瓷碗裡冰塊水冰鎮著黑木耳
+  - text: 保鮮盒中倒入醬油膏、白醋、砂糖與香油，攪拌至糖粒完全溶解融化成酸甜醬汁。
+  - text: 將冰鎮瀝乾的黑木耳、薑絲、辣椒絲與蒜末加入醬汁中翻拌均勻，撒上熟白芝麻，冷藏醃漬更入味。
+    image:
+      src: ./step-4.webp
+      alt: 白色瓷碗中黑木耳塊與薑絲、辣椒絲、蒜碎充分拌勻，表面裹著光亮醬汁
+hero:
+  src: ./hero.webp
+  alt: 白色淺瓷碗盛著黑亮脆嫩的黑木耳，拌著金黃薑絲、紅辣椒絲與白芝麻
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊擺放著新鮮黑木耳、生薑、薑絲、整根紅辣椒與蒜末，前方小碟分裝白醋、醬油膏、砂糖與白芝麻
+tip: 黑木耳汆燙後立刻泡冰水能鎖住脆度，拌好後放冰箱冷藏醃漬 1 小時或隔夜，滋味更加酸甜爽脆。

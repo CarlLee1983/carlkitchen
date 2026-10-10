@@ -1,0 +1,46 @@
+title: 清燉蘿蔔牛肉湯
+summary: 牛腱切大塊汆燙去腥，與白蘿蔔、紅蘿蔔及薑片一同入鍋，以微火慢燉三小時至牛肉軟嫩多汁、蘿蔔甘甜透亮。湯色清澄、風味醇厚溫潤。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 190
+tags: [湯品, 家常菜, 牛肉]
+aliases: [清燉牛肉湯, 蘿蔔燉牛肉]
+ingredients:
+  - { name: 牛腱, amount: { value: 500, unit: g }, note: 約 1 個，切成大塊 }
+  - { name: 白蘿蔔, amount: { value: 300, unit: g }, note: 去皮切成滾刀小塊 }
+  - { name: 紅蘿蔔, amount: { value: 100, unit: g }, note: 去皮切成滾刀小塊 }
+  - { name: 水, amount: { value: 1200, unit: ml }, note: 慢燉高湯用 }
+  - {
+      name: 薑片,
+      amount: { value: 15, unit: g },
+      note: 約 5 片，去腥提味,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 3, unit: g },
+      note: 約 1/2 茶匙，起鍋前調味,
+      group: 調味,
+    }
+steps:
+  - text: 牛腱順著肉紋切成適口大塊，放入滾水中汆燙去除血水與雜質，撈起以冷水沖洗乾淨；生薑去皮切片備用。
+    image:
+      src: ./step-1.webp
+      alt: 滾水鍋中汆燙著大塊牛腱與薑片，浮沫撇去後牛腱撈起以清水沖洗瀝乾
+  - text: 白蘿蔔與紅蘿蔔削去外皮，切成滾刀小塊，放入滾水中快速汆燙約 1 分鐘去除生澀味，撈起瀝乾。
+  - text: 取深湯鍋放入汆燙好的牛腱塊、雙色蘿蔔塊與薑片，注入清水大火煮滾，撇去表面微量浮沫後轉微火，蓋上鍋蓋慢燉 3 小時至牛肉軟嫩、蘿蔔透甜。
+    image:
+      src: ./step-3.webp
+      alt: 厚底湯鍋中牛腱塊與薑片在清澈湯汁中以微火慢燉，微開的鍋蓋邊飄出裊裊熱氣
+  - text: 燉煮完成後掀蓋，加入鹽調勻試味，確認鹹淡適中即可熄火，趁熱盛入湯碗享用。
+hero:
+  src: ./hero.webp
+  alt: 陶土雙耳湯鍋盛著澄澈清爽的牛肉清湯，燉煮軟爛的牛腱肉塊、晶透白蘿蔔塊與橘紅胡蘿蔔塊交錯浮沉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊擺放著切大塊的鮮牛腱、去皮白蘿蔔、紅蘿蔔、切片生薑，前方小碟裝著鹽與水
+tip: 牛肉與雙色蘿蔔先經沸水汆燙去除血水與生苦味，是維持湯頭清澈不濁的關鍵；燉煮時保持微火慢煨，能讓牛腱筋絡徹底軟化入味。

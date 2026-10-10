@@ -1,0 +1,77 @@
+title: 樹子炒山蘇
+summary: 鮮嫩翠綠的山蘇去除硬梗切段，入滾水快燙保持翠綠爽脆，再與小魚乾、薑片和紅辣椒爆香，拌入甘甜樹子與樹子汁快炒。鹹甘脆口、山野風味濃郁。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [熱炒, 家常菜, 蔬菜]
+aliases: [破布子炒山蘇, 樹子山蘇]
+ingredients:
+  - {
+      name: 山蘇,
+      amount: { value: 200, unit: g },
+      note: 折去老梗與粗葉脈，洗淨切段,
+    }
+  - {
+      name: 樹子,
+      amount: { value: 30, unit: g },
+      note: 約 2 大匙，含樹子顆粒,
+      group: 調味,
+    }
+  - {
+      name: 樹子汁,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，醃樹子的鹹甘湯汁,
+      group: 調味,
+    }
+  - {
+      name: 小魚乾,
+      amount: { value: 10, unit: g },
+      note: 約 1 大匙，略沖水瀝乾,
+      group: 調味,
+    }
+  - {
+      name: 薑,
+      amount: { value: 10, unit: g },
+      note: 約 4 片，切薄片,
+      group: 調味,
+    }
+  - {
+      name: 紅辣椒,
+      amount: { value: 10, unit: g },
+      note: 約 1 根，切斜片,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 2, unit: g },
+      note: 約 1/4 茶匙，汆燙與調味用,
+      group: 調味,
+    }
+  - {
+      name: 沙拉油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，熱炒與汆燙用,
+      group: 調味,
+    }
+steps:
+  - text: 山蘇挑去基部老梗，折成適口長段洗淨；小魚乾略沖冷水去塵並瀝乾；薑切薄片，紅辣椒去籽切斜片備用。
+  - text: 煮滾一鍋水，加入少許鹽與數滴沙拉油，放入山蘇快速汆燙約 20 秒至顏色轉為深翠綠，隨即撈出瀝乾備用。
+    image:
+      src: ./step-2.webp
+      alt: 滾水中快速汆燙著鮮綠山蘇葉，撈起時葉片油亮翠綠
+  - text: 熱鍋倒入沙拉油，以小火依序下薑片、辣椒片與小魚乾煸炒出香氣，接著加入樹子顆粒與樹子汁煮滾。
+    image:
+      src: ./step-3.webp
+      alt: 熱鍋中薑片、紅辣椒片與小魚乾在油中爆炒散發香氣，隨後加入樹子與湯汁
+  - text: 轉大火倒入瀝乾的山蘇大火快速翻炒，讓葉片均勻裹上鹹甘醬汁，約 15 至 20 秒鍋氣充足即可熄火起鍋。
+hero:
+  src: ./hero.webp
+  alt: 白瓷橢圓盤盛著油亮翠綠的山蘇，點綴著金黃樹子、小魚乾、薑片與紅辣椒片，裹著清亮鹹甘醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊排著修整好的翠綠山蘇葉、小碗裝的樹子與醬汁、乾燥小魚乾、切片生薑與紅辣椒，旁邊小碟裝著鹽與油
+tip: 山蘇下鍋前先以加了油鹽的滾水快速汆燙過，能去除草澀味並鎖住鮮綠，後續熱炒時大火快翻數秒即可起鍋，保持爽脆不軟爛。

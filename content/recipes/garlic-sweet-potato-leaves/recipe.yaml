@@ -1,0 +1,57 @@
+title: 蒜香地瓜葉
+summary: 鮮嫩地瓜葉入滾水快速汆燙起鍋，淋上以蒜末、蠔油與米酒慢火煨煮的濃醇蒜香醬汁，口感爽嫩細緻。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 10
+tags: [中式料理, 家常菜]
+ingredients:
+  - { name: 地瓜葉, amount: { value: 300, unit: g }, note: 挑去粗老葉梗 }
+  - { name: 蒜頭, amount: { value: 30, unit: g }, note: 去皮切碎成蒜末 }
+  - {
+      name: 食用油,
+      amount: { value: 10, unit: ml },
+      note: 汆燙與炒香蒜末用,
+      group: 調味,
+    }
+  - {
+      name: 蠔油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，醬汁用,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醬汁用,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 5, unit: g },
+      note: 約 1 小匙，醬汁用,
+      group: 調味,
+    }
+  - { name: 水, amount: { value: 15, unit: ml }, note: 調製醬汁用, group: 調味 }
+  - { name: 太白粉水, group: 調味, note: 少許，勾薄芡用 }
+steps:
+  - text: 地瓜葉摘除粗硬根莖與老葉，以清水洗淨瀝乾；蒜頭剝皮後切成細碎蒜末備用。
+  - text: 雪平鍋加水約六分滿大火燒沸，滴入少許食用油，放入地瓜葉快速汆燙至葉片軟化碧綠，撈起徹底瀝乾水分盛入盤中。
+    image:
+      src: ./step-2.webp
+      alt: 不鏽鋼單柄鍋中沸水翻騰，地瓜葉入鍋快速汆燙至葉片軟化且色澤翠綠
+  - text: 另起小鍋倒入少許食用油加熱，下蒜末以小火煸炒出香氣，接著加入蠔油、米酒、細砂糖與水煨煮，淋入少許太白粉水煮至醬汁略呈濃稠。
+    image:
+      src: ./step-3.webp
+      alt: 陶製小鍋中蒜末與蠔油、米酒一同加熱煨煮，滾出細緻小泡，香氣四溢
+  - text: 將煮好的熱蒜香醬汁淋在盤中汆燙好的地瓜葉上，輕輕拌勻即可上桌食用。
+hero:
+  src: ./hero.webp
+  alt: 白色圓形陶瓷淺碗中盛裝著翠綠油亮的汆燙地瓜葉，淋上帶有金黃蒜末的濃郁蒜香蠔油醬汁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上擺放新鮮翠綠的地瓜葉與去皮蒜瓣，旁邊有裝著蠔油、米酒、細砂糖、清水與食用油的陶碟
+tip: 汆燙地瓜葉時加入少許油能保持葉片翠綠不變黑，汆燙時間不宜過久，葉片變軟即可撈出以維持嫩脆口感。

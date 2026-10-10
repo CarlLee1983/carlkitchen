@@ -1,0 +1,58 @@
+title: 泰式酸辣海鮮湯
+summary: 以高湯融合香茅、檸檬葉與南薑等南洋辛香料，熬出酸香微辣的清亮湯底，再燙熟鮮蝦、蛤蜊與花枝等海味。酸辣鮮爽、開胃解膩。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [泰式, 海鮮, 湯品]
+aliases: [冬蔭功, 冬陰功, 泰式海鮮湯]
+ingredients:
+  - { name: 草蝦, amount: { value: 4, unit: 隻 }, note: 約 120 克，剪鬚去腸泥 }
+  - { name: 蛤蜊, amount: { value: 4, unit: 顆 }, note: 約 80 克，吐沙洗淨 }
+  - { name: 花枝, amount: { value: 225, unit: g }, note: 內側劃斜格紋後切厚片 }
+  - { name: 蟹腿肉, amount: { value: 150, unit: g } }
+  - { name: 新鮮草菇, amount: { value: 75, unit: g }, note: 洗淨對切 }
+  - { name: 小番茄, amount: { value: 4, unit: 顆 }, note: 對半切開 }
+  - { name: 香茅, amount: { value: 75, unit: g }, note: 斜切段並以刀背拍扁 }
+  - { name: 檸檬葉, amount: { value: 5, unit: 片 }, note: 撕碎去中脈 }
+  - { name: 南薑, amount: { value: 20, unit: g }, note: 切薄片 }
+  - { name: 紅蔥頭, amount: { value: 20, unit: g }, note: 剝膜切厚片 }
+  - { name: 朝天椒, amount: { value: 2, unit: 根 }, note: 去蒂輕拍裂 }
+  - { name: 香菜, amount: { value: 10, unit: g }, note: 洗淨切小段 }
+  - { name: 高湯, amount: { value: 600, unit: ml }, group: 調味 }
+  - { name: 魚露, amount: { value: 50, unit: ml }, group: 調味 }
+  - {
+      name: 泰式酸辣醬,
+      amount: { value: 30, unit: ml },
+      note: 即冬蔭功醬,
+      group: 調味,
+    }
+  - { name: 砂糖, amount: { value: 10, unit: g }, group: 調味 }
+  - {
+      name: 檸檬汁,
+      amount: { value: 40, unit: ml },
+      note: 起鍋前加入,
+      group: 調味,
+    }
+steps:
+  - text: 草蝦洗淨剪除長鬚並挑除腸泥；蛤蜊泡水吐沙；花枝洗淨在內側劃菱格紋後切塊；香茅切長段後以刀背拍裂；檸檬葉撕開去除中央粗葉脈；南薑切薄片；紅蔥頭剝皮切片；朝天椒去蒂拍破；小番茄對半切開備用。
+  - text: 湯鍋注入高湯，放入拍扁的香茅段、檸檬葉、南薑片、紅蔥頭與朝天椒，並調入泰式酸辣醬、魚露及砂糖。開大火煮滾後轉微火，蓋上鍋蓋熬煮 5 分鐘，讓辛香料底蘊充分釋放至湯中。
+    image:
+      src: ./step-2.webp
+      alt: 陶鍋中橘紅高湯微沸，漂浮著香茅段、檸檬葉、南薑片與紅蔥頭，熱氣蒸騰
+  - text: 開蓋放入新鮮草菇與小番茄，保持中小火續煮約 2 分鐘，至草菇熟透吸附湯汁。
+  - text: 轉大火讓湯汁重新大滾，放入處理好的草蝦、蛤蜊、花枝片與蟹腿肉。續煮約 1 至 2 分鐘，見草蝦轉紅、蛤蜊殼開口、花枝肉捲起熟透時立即熄火。
+    image:
+      src: ./step-4.webp
+      alt: 陶鍋沸湯中草蝦轉紅、蛤蜊殼開、透抽熟成捲起，融合小番茄與草菇滾煮
+  - text: 關火後淋入新鮮檸檬汁，撒上香菜段輕輕拌勻即可上桌。檸檬汁務必在熄火後加入，香氣才清香撲鼻且不帶苦味。
+hero:
+  src: ./hero.webp
+  alt: 質樸陶鍋盛裝著橘紅清亮的泰式酸辣海鮮湯，表面浮著鮮紅大草蝦、開殼文蛤、刻花透抽與對切小番茄，點綴翠綠香菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 檯面上陳列著鮮蝦、蛤蜊、花枝、蟹肉、香茅、檸檬葉、南薑、草菇、小番茄、朝天椒、香菜與調味用的魚露、檸檬汁與酸辣醬
+tip: 海鮮入鍋後切忌久煮，蛤蜊剛開殼、蝦肉轉紅即需熄火，肉質才最鮮甜彈牙。檸檬汁若高溫久滾易產生澀味，起鍋後加入最能保持鮮酸。
