@@ -1,0 +1,50 @@
+sources:
+  - title: 國史館臺灣文獻館〈民俗文物小常識：尾牙宴〉
+    url: https://www.th.gov.tw/Epaper_Content/237/7762/
+  - title: 國立傳統藝術中心《傳藝online》〈只要背好這幾個　過年你最受歡迎！〉
+    url: https://magazine.ncfta.gov.tw/News_Content2.aspx?n=1952&s=82542
+  - title: 國家文化記憶庫〈黃金田繪《過年圍爐合家歡》〉
+    url: https://tcmb.culture.tw/zh-tw/detail?id=11000019358&indexCode=MOCCOLLECTIONS
+  - title: 農業部食農教育平臺、水產試驗所〈年年慶有餘〉
+    url: https://fae.moa.gov.tw/theme_data.php?id=2793&sub_theme=recipe&theme=topics
+  - title: 客家委員會客家文化發展中心〈長年菜〉
+    url: https://thcdc.hakka.gov.tw/12271/149637/52313/52377/144475/
+  - title: 客家委員會客家雲〈來吃客家菜來聽客家事〉
+    url: https://cloud.hakka.gov.tw/Details?p=1748&pid=156305
+  - title: 衛生福利部〈年菜復熱要當心，蛇年團圓享安心！〉
+    url: https://www.mohw.gov.tw/cp-16-81337-1.html
+  - title: 楊桃美食網〈清蒸魚(11)〉
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1842
+  - title: 楊桃美食網〈清蒸鱸魚〉
+    url: https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-205
+sections:
+  - heading: 尾牙是犒賞，桌上是潤餅和刈包
+    urls:
+      - https://www.th.gov.tw/Epaper_Content/237/7762/
+  - heading: 圍爐是除夕的年夜飯
+    urls:
+      - https://magazine.ncfta.gov.tw/News_Content2.aspx?n=1952&s=82542
+      - https://tcmb.culture.tw/zh-tw/detail?id=11000019358&indexCode=MOCCOLLECTIONS
+  - heading: 魚、全雞和長年菜
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=2793&sub_theme=recipe&theme=topics
+      - https://magazine.ncfta.gov.tw/News_Content2.aspx?n=1952&s=82542
+      - https://thcdc.hakka.gov.tw/12271/149637/52313/52377/144475/
+  - heading: 魚留到除夕之後
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=2793&sub_theme=recipe&theme=topics
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1842
+      - https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-205
+  - heading: 全雞與食雞起家
+    urls:
+      - https://magazine.ncfta.gov.tw/News_Content2.aspx?n=1952&s=82542
+      - https://tcmb.culture.tw/zh-tw/detail?id=11000019358&indexCode=MOCCOLLECTIONS
+  - heading: 長年菜不切斷
+    urls:
+      - https://thcdc.hakka.gov.tw/12271/149637/52313/52377/144475/
+      - https://magazine.ncfta.gov.tw/News_Content2.aspx?n=1952&s=82542
+  - heading: 蒸魚和可以再熱的炆菜
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=2793&sub_theme=recipe&theme=topics
+      - https://cloud.hakka.gov.tw/Details?p=1748&pid=156305
+      - https://www.mohw.gov.tw/cp-16-81337-1.html
