@@ -2,11 +2,13 @@ title: 蒲燒鰻魚炊飯
 summary: 洗淨白米加入蒲燒醬汁與柴魚粉入電鍋炊煮，米粒吸飽柴魚甘醇與蒲燒醬香，拌鬆後鋪上金黃紅潤、肥嫩油亮的蒲燒鰻魚片續燜透，搭配酸甜爽脆的醃黃蘿蔔，道地日式美味一鍋完成。
 servings: 2
 category: 主食
-draft: false
+draft: true
 mealCandidate: false
 vegetable: false
 protein: false
-timeMinutes: 45
+# 總時間為編輯推估：操作 5 + 泡米 15 + 瀝乾 30 + 煮飯假設 35 + 續燜 15 = 100 分鐘。
+# 煮飯 35 分鐘不是來源提供或實測，依電子鍋機型而異；來源全文仍待核。
+timeMinutes: 100
 tags: [日式料理, 電鍋料理, 鰻魚, 炊飯]
 aliases: [蒲燒鰻魚飯, 日式鰻魚飯]
 ingredients:
