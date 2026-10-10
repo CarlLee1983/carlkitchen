@@ -169,7 +169,20 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
           data-random-picks
           hidden
         >
-          <h2 id="random-picks-title">今天煮什麼</h2>
+          <div class="picks-head">
+            <h2 id="random-picks-title">今天煮什麼</h2>
+            {/* 候選超過一批時由腳本顯示；放在標題旁，手機版橫向捲動時也看得到，不用捲到列尾。 */}
+            <button
+              type="button"
+              class="picks-shuffle"
+              data-picks-shuffle
+              hidden
+            >
+              換一批
+            </button>
+          </div>
+          {/* 換批後的簡短提示：只念一句，不重念整批卡片；不用 role=status，全頁唯一的 status 是搜尋筆數。 */}
+          <p class="visually-hidden" aria-live="polite" data-picks-status />
           <ul class="picks-list" data-picks-list>
             {Array.from({ length: PICK_BATCH_SIZE }, () => (
               <li class="pick-placeholder" aria-hidden="true">
@@ -395,9 +408,40 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       );
     }
   }
+  /* 標題列固定至少 44px（按鈕的觸控高度），按鈕顯示與否都不改變區塊高度。 */
+  .picks-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 44px;
+    margin-bottom: 0.5rem;
+  }
   .random-picks h2 {
-    margin: 0 0 0.75rem;
+    margin: 0;
     font-size: 1.25rem;
+  }
+  .picks-shuffle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 1.25rem;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  .picks-shuffle[hidden] {
+    display: none;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .picks-list {
     display: grid;
@@ -621,7 +665,6 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
       margin-top: 1.5rem;
     }
     .random-picks h2 {
-      margin-bottom: 0.5rem;
       font-size: 1rem;
     }
     .picks-list {

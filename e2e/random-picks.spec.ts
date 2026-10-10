@@ -1,5 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 import { fixtureKindLabels, publishedFixtureRecipes } from "./fixture-recipes";
+import { pickTitle, routePicks } from "./random-picks-helpers";
 
 const recipes = publishedFixtureRecipes();
 const idOf = (href: string) => href.replace(/^\/recipes\/|\/$/g, "");
@@ -346,4 +347,157 @@ test("寬版資料到之前先預留位置，資料填入前後清單位置不�
   await expect(pending).toHaveCount(0);
   const after = (await rows(page).first().boundingBox())!.y;
   expect(Math.abs(after - before)).toBeLessThanOrEqual(1);
+});
+
+const shuffle = (page: Page) => page.locator("[data-picks-shuffle]");
+const titles = (page: Page) =>
+  cards(page).locator(".recipe-card-title").allTextContents();
+const overlap = (a: string[], b: string[]) => a.filter((x) => b.includes(x));
+
+test("固定菜譜候選不超過一批，沒有換一批按鈕", async ({ page }) => {
+  await page.goto("/");
+  await expect(cards(page).first()).toBeVisible();
+  await expect(shuffle(page)).toBeHidden();
+  await expect(page.getByRole("button", { name: "換一批" })).toHaveCount(0);
+});
+
+test("12 道候選：換一批整批換新、兩批不交集，抽完一輪後重新開始", async ({
+  page,
+}) => {
+  await routePicks(page, 12);
+  await page.goto("/");
+  await expect(cards(page)).toHaveCount(6);
+  const button = page.getByRole("button", { name: "換一批" });
+  await expect(button).toBeVisible();
+  const first = await titles(page);
+  await button.click();
+  await expect.poll(() => titles(page)).not.toEqual(first);
+  const second = await titles(page);
+  expect(second).toHaveLength(6);
+  expect(overlap(first, second)).toEqual([]);
+  expect(new Set([...first, ...second]).size).toBe(12);
+  // 12 道都出現過了，下一批開始新的一輪：仍是 6 道不重複
+  await button.click();
+  await expect
+    .poll(async () => (await titles(page)).join())
+    .not.toBe(second.join());
+  const third = await titles(page);
+  expect(third).toHaveLength(6);
+  expect(new Set(third).size).toBe(6);
+});
+
+test("8 道候選：沒出現過的不足一批時先全出，再從新一輪補滿且同批不重複", async ({
+  page,
+}) => {
+  await routePicks(page, 8);
+  await page.goto("/");
+  await expect(cards(page)).toHaveCount(6);
+  const first = await titles(page);
+  await page.getByRole("button", { name: "換一批" }).click();
+  await expect
+    .poll(async () => (await titles(page)).join())
+    .not.toBe(first.join());
+  const second = await titles(page);
+  expect(second).toHaveLength(6);
+  expect(new Set(second).size).toBe(6);
+  // 沒出現過的 2 道一定在第二批；其餘 4 道從上一批補
+  const unseen = Array.from({ length: 8 }, (_, i) => pickTitle(i)).filter(
+    (title) => !first.includes(title),
+  );
+  expect(unseen).toHaveLength(2);
+  for (const title of unseen) expect(second).toContain(title);
+  expect(overlap(first, second)).toHaveLength(4);
+});
+
+test("切換料理主角重置這一輪，並依新類別決定要不要顯示按鈕", async ({
+  page,
+}) => {
+  // 7 道：前 4 道海鮮、後 3 道肉類；亂數固定 0，抽批順序可預期
+  await page.addInitScript(() => {
+    Math.random = () => 0;
+  });
+  await routePicks(page, 7, (i) => (i < 4 ? "seafood" : "meat"));
+  await page.goto("/");
+  await expect(cards(page)).toHaveCount(6);
+  await expect(shuffle(page)).toBeVisible();
+  const all = Array.from({ length: 7 }, (_, i) => pickTitle(i));
+  expect(await titles(page)).toEqual(all.slice(0, 6));
+  // 換一批：沒出現過的 06 先出，再從頭補 5 道
+  await shuffle(page).click();
+  await expect
+    .poll(() => titles(page))
+    .toEqual([pickTitle(6), ...all.slice(0, 5)]);
+
+  // 只剩 4 道海鮮：不超過一批，沒有按鈕
+  await page.getByRole("button", { name: "海鮮" }).click();
+  await expect(cards(page)).toHaveCount(4);
+  await expect(shuffle(page)).toBeHidden();
+
+  // 回全部：這一輪已重置，第一批又是前 6 道（沒重置的話會先出 05）
+  await page.getByRole("button", { name: "全部" }).click();
+  await expect.poll(() => titles(page)).toEqual(all.slice(0, 6));
+  await expect(shuffle(page)).toBeVisible();
+});
+
+test("有搜尋字時整個區塊連同按鈕隱藏，清除後回來", async ({ page }) => {
+  await routePicks(page, 12);
+  await page.goto("/");
+  await expect(shuffle(page)).toBeVisible();
+  await page.getByRole("searchbox").fill(recipes[0]!.title);
+  await expect(page.getByRole("status")).toContainText("符合");
+  await expect(picks(page)).toBeHidden();
+  await expect(shuffle(page)).toBeHidden();
+  await page.getByRole("searchbox").fill("");
+  await expect(page.getByRole("status")).toContainText("共");
+  await expect(shuffle(page)).toBeVisible();
+  await expect(cards(page)).toHaveCount(6);
+});
+
+test("換批後以不搶焦點的簡短提示告知報讀，焦點留在按鈕，版面不位移", async ({
+  page,
+}) => {
+  await routePicks(page, 12);
+  await page.goto("/");
+  const button = page.getByRole("button", { name: "換一批" });
+  await expect(button).toBeVisible();
+  const status = page.locator("[data-picks-status]");
+  await expect(status).toHaveAttribute("aria-live", "polite");
+  await expect(status).toHaveText("");
+  // 全頁只有搜尋筆數是 role=status，推薦的提示用 aria-live 不另開 status
+  await expect(page.getByRole("status")).toHaveCount(1);
+  const firstRow = page
+    .getByRole("region", { name: "菜譜清單" })
+    .getByRole("listitem")
+    .first();
+  // 以文件座標比較（focus 會捲動視窗，視窗座標會變）
+  const docY = async () =>
+    (await firstRow.boundingBox())!.y +
+    (await page.evaluate(() => window.scrollY));
+  const before = await docY();
+  await button.focus();
+  await page.keyboard.press("Enter");
+  await expect(status).toHaveText("已換一批");
+  await expect(button).toBeFocused();
+  expect(Math.abs((await docY()) - before)).toBeLessThanOrEqual(1);
+});
+
+test.describe("手機（390 寬）換一批", () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test("換批後橫向捲動回到最左邊，按鈕可觸控", async ({ page }) => {
+    await routePicks(page, 12);
+    await page.goto("/");
+    const button = page.getByRole("button", { name: "換一批" });
+    await expect(button).toBeVisible();
+    const box = (await button.boundingBox())!;
+    expect(box.height).toBeGreaterThanOrEqual(44);
+    expect(box.width).toBeGreaterThanOrEqual(44);
+    const scroller = page.locator("[data-picks-list]");
+    await scroller.evaluate((el) => {
+      el.scrollLeft = 300;
+    });
+    expect(await scroller.evaluate((el) => el.scrollLeft)).toBeGreaterThan(0);
+    await button.click();
+    await expect.poll(() => scroller.evaluate((el) => el.scrollLeft)).toBe(0);
+  });
 });

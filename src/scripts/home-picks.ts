@@ -1,9 +1,16 @@
 import type { HomeState, KindFilter } from "../utils/home";
 import type { PickData, PickItem } from "../utils/random-picks-data";
-import { PICK_MOBILE_QUERY, pickBatch } from "../utils/random-picks";
+import {
+  PICK_BATCH_SIZE,
+  PICK_MOBILE_QUERY,
+  pickBatch,
+} from "../utils/random-picks";
 
 /** 候選資料的靜態檔，建置時由 src/pages/random-picks.json.ts 輸出。 */
 const PICKS_URL = "/random-picks.json";
+/** 換批後的播報文字與延遲（毫秒）。8 道候選時連續兩批會重複，所以不寫張數。 */
+const ANNOUNCE_TEXT = "已換一批";
+const ANNOUNCE_DELAY_MS = 100;
 
 /** 隨機推薦與首頁狀態的接線；`update` 在每次篩選或搜尋狀態套用時呼叫。 */
 export interface RandomPicks {
@@ -106,11 +113,22 @@ export function initRandomPicks(): RandomPicks {
     api.update(latest);
   }
 
-  function draw(kind: KindFilter) {
+  const shuffleButton = section.querySelector<HTMLButtonElement>(
+    "[data-picks-shuffle]",
+  );
+  const announce = section.querySelector("[data-picks-status]");
+  let announceTimer: ReturnType<typeof setTimeout> | undefined;
+  /** 這一輪已出現過的識別值，只存在記憶體；換篩選時重置。 */
+  let seen: ReadonlySet<string> = new Set();
+  let candidateIds: string[] = [];
+  let itemsById = new Map<string, PickItem>();
+
+  /** 依篩選重算候選（排除當次大圖那道），並重置這一輪。 */
+  function selectCandidates(kind: KindFilter) {
     const heroId = document.querySelector<HTMLElement>(
       ".hero-pick a[data-recipe-id]",
     )?.dataset.recipeId;
-    const itemsById = new Map(
+    itemsById = new Map(
       data!.items
         .filter(
           (item) =>
@@ -118,7 +136,15 @@ export function initRandomPicks(): RandomPicks {
         )
         .map((item) => [item.id, item]),
     );
-    const batch = pickBatch([...itemsById.keys()], new Set(), Math.random);
+    candidateIds = [...itemsById.keys()];
+    seen = new Set();
+    drawnKind = kind;
+  }
+
+  /** 抽下一批並換上畫面；候選超過一批才顯示「換一批」。 */
+  function drawBatch() {
+    const batch = pickBatch(candidateIds, seen, Math.random);
+    seen = batch.seen;
     list!.replaceChildren(
       ...batch.picks.map((id) => {
         const item = document.createElement("li");
@@ -126,8 +152,24 @@ export function initRandomPicks(): RandomPicks {
         return item;
       }),
     );
-    drawnKind = kind;
+    // 手機版是橫向捲動，換批後回到最左邊
+    list!.scrollLeft = 0;
+    if (shuffleButton)
+      shuffleButton.hidden = candidateIds.length <= PICK_BATCH_SIZE;
   }
+
+  shuffleButton?.addEventListener("click", () => {
+    drawBatch();
+    // 按鈕沒被移除，焦點留在原處；以 aria-live 念一句簡短的更新，不重念整批卡片。
+    // 先清空，隔 100ms 再寫入：連按時報讀器才不會把兩次異動合併而不播報。
+    if (announce) {
+      announce.textContent = "";
+      clearTimeout(announceTimer);
+      announceTimer = setTimeout(() => {
+        announce.textContent = ANNOUNCE_TEXT;
+      }, ANNOUNCE_DELAY_MS);
+    }
+  });
 
   function maybeLoad() {
     if (pageLoaded && !requested && latest.q === "") void load();
@@ -154,7 +196,10 @@ export function initRandomPicks(): RandomPicks {
         maybeLoad(); // 資料到之前沿用目前的外觀（桌機是預留的佔位）
         return;
       }
-      if (drawnKind !== state.kind) draw(state.kind);
+      if (drawnKind !== state.kind) {
+        selectCandidates(state.kind);
+        drawBatch();
+      }
       if (list.childElementCount === 0) collapse();
       else section.hidden = false;
     },

@@ -8,6 +8,7 @@ import {
   WIDTHS,
 } from "./a11y-helpers";
 import { publishedFixtureRecipes } from "./fixture-recipes";
+import { routePicks } from "./random-picks-helpers";
 
 // 預設站台的頁面；配菜頁在 meal 站台，見 meal.spec.ts 的「無障礙」。
 // 404 用一個不存在的網址，確認 preview 真的回 404 狀態碼與這個頁面。
@@ -70,6 +71,17 @@ test.describe("axe（WCAG 2.2 AA）", () => {
       await expectNoAxeViolations(page, name);
     });
   }
+
+  test("首頁隨機推薦有「換一批」按鈕時，換批前後零違規", async ({ page }) => {
+    await routePicks(page, 12);
+    await page.goto("/");
+    const button = page.getByRole("button", { name: "換一批" });
+    await expect(button).toBeVisible();
+    await expectNoAxeViolations(page, "首頁換一批（換批前）");
+    await button.click();
+    await expect(page.locator("[data-picks-status]")).toHaveText("已換一批");
+    await expectNoAxeViolations(page, "首頁換一批（換批後）");
+  });
 
   test("首頁搜尋中零違規", async ({ page }) => {
     await page.goto("/");
