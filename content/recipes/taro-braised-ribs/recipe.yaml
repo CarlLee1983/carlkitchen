@@ -2,7 +2,7 @@ title: 芋頭燒排骨
 summary: 排骨和芋頭分別炸過，再與蔥薑、調味料一起燒煮，收成濃稠醬汁。
 servings: 3
 category: 非湯料理
-draft: true
+draft: false
 mealCandidate: true
 vegetable: false
 protein: true
@@ -73,7 +73,28 @@ ingredients:
   - { name: 香油, amount: { value: 5, unit: ml }, group: 調味 }
 steps:
   - text: 豬小排洗淨瀝乾，與醃排骨用的鹽、雞精粉、砂糖、蘇打粉、蛋白、料酒、水及太白粉拌勻，醃約 5 分鐘。蔥切段，芋頭去皮切塊。
+    image:
+      src: ./step-1.webp
+      alt: 瓷碗中醃著小塊豬小排，旁邊木砧板上放著切塊芋頭、蔥段與菜刀
   - text: 沙拉油加熱至約 150°C，轉小火炸芋頭約 1 分鐘，至表面稍硬後撈起瀝油。
+    image:
+      src: ./step-2.webp
+      alt: 深色炒鍋裡以熱油炸芋頭塊，並以不銹鋼濾杓撈起瀝油
   - text: 油再次加熱至約 150°C，逐塊放入豬小排，以小火炸約 10 分鐘至表面酥脆，撈起瀝油。
+    image:
+      src: ./step-3.webp
+      alt: 深色炒鍋裡以熱油將帶骨豬小排炸至金黃酥脆，並以不銹鋼濾杓撈起瀝油
   - text: 倒出大部分沙拉油，鍋底留約 1 大匙。以小火炒香蔥、薑末和辣椒，放回豬小排，加入燒煮用的水，煮滾後轉小火。
+    image:
+      src: ./step-4.webp
+      alt: 深色炒鍋裡炒香蔥段、薑末與辣椒片，放入炸排骨並加水微滾燉煮
   - text: 煮約 2 分鐘後加入芋頭，續煮約 2 分鐘至湯汁略稠。加入燒煮用的鹽、奶水和細砂糖，煮滾後拌入太白粉水，淋上香油。
+    image:
+      src: ./step-5.webp
+      alt: 深色炒鍋裡的炸芋頭與排骨在濃稠醬汁中一起燒煮收汁
+hero:
+  src: ./hero.webp
+  alt: 淺色陶碗中盛著與芋頭塊一起燒煮收汁的帶骨豬小排，點綴著蔥段與紅辣椒片
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 300 g 豬小排、230 g 芋頭塊、蔥、薑末、紅辣椒、調味料與炸油分開整齊擺放
