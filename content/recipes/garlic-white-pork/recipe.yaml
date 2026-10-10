@@ -1,0 +1,71 @@
+title: 蒜泥白肉
+summary: 帶皮五花肉入冷水鍋慢火煮透封汁，撈起切成薄如紙片的肉片整齊鋪排，淋上以鮮磨蒜泥、醬油膏、甜辣醬、香油與砂糖調和的濃郁蒜香醬汁，肉質軟嫩肥而不膩、醬香濃烈爽口，宴客家常名盤。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [涼拌, 豬肉, 川菜, 家常菜]
+aliases: [蒜泥白肉片, 台式蒜泥白肉]
+ingredients:
+  - name: 五花肉片
+    amount:
+      value: 400
+      unit: g
+    note: 帶皮五花肉整塊煮熟切薄片
+  - name: 蒜末
+    amount:
+      value: 25
+      unit: g
+    note: 約 1.5 大匙細蒜泥
+    group: 蒜泥醬
+  - name: 醬油膏
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 蒜泥醬
+  - name: 甜辣醬
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙增添層次
+    group: 蒜泥醬
+  - name: 香油
+    amount:
+      value: 8
+      unit: ml
+    note: 約半大匙
+    group: 蒜泥醬
+  - name: 糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 小匙
+    group: 蒜泥醬
+  - name: 冷開水
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙調開醬汁
+    group: 蒜泥醬
+steps:
+  - text: 帶皮五花肉洗淨，放入湯鍋中加入足量冷水（需完全淹過肉塊）。
+    image:
+      src: ./step-1.webp
+      alt: 帶皮五花肉洗淨，放入湯鍋中加入足量冷水（需完全淹過肉塊）。
+  - text: 大火煮沸後轉中火慢煮約 10 分鐘，以竹籤戳入厚肉中心無血水滲出即可撈起，泡入冰水微涼後切成極薄肉片整齊排盤。
+    image:
+      src: ./step-2.webp
+      alt: 大火煮沸後轉中火慢煮約 10 分鐘，以竹籤戳入厚肉中心無血水滲出即可撈起，泡入冰水微涼後切成極薄肉片
+  - text: 取小碗放入蒜末、醬油膏、甜辣醬、香油、糖與冷開水充分攪拌均勻成特調蒜泥沾醬。
+  - text: 將調好的蒜泥醬汁均勻淋在排好的五花肉片上即可上桌享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒜泥白肉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 五花肉必須冷水下鍋煮，受熱均勻肉汁才不會瞬間緊縮乾硬；煮熟後趁微溫或冰鎮後順紋切極薄片，口感最為軟嫩爽脆、肥腴不膩。

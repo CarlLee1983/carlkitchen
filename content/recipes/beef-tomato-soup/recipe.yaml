@@ -1,0 +1,100 @@
+title: 番茄燉牛肉湯
+summary: 牛腩洗淨沖燙去血水，與洋蔥片、薑片、蔥段、番茄塊與辣豆瓣醬、米酒入電鍋燉出底蘊，再加入白蘿蔔、紅蘿蔔塊與其餘番茄及滷包慢燉至牛腩軟嫩化口，湯頭酸甜甘醇、肉香濃郁。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [牛肉湯, 番茄, 電鍋料理, 暖心煲湯]
+aliases: [紅燒番茄牛肉湯, 番茄牛腩湯]
+ingredients:
+  - name: 牛腩
+    amount:
+      value: 350
+      unit: g
+    note: 洗淨切塊滾水燙過
+  - name: 白蘿蔔
+    amount:
+      value: 150
+      unit: g
+    note: 去皮切塊
+  - name: 紅蘿蔔
+    amount:
+      value: 100
+      unit: g
+    note: 去皮切滾刀塊
+  - name: 番茄
+    amount:
+      value: 200
+      unit: g
+    note: 去蒂切塊
+  - name: 洋蔥片
+    amount:
+      value: 50
+      unit: g
+    group: 調味
+  - name: 薑片
+    amount:
+      value: 10
+      unit: g
+    group: 調味
+  - name: 蔥段
+    amount:
+      value: 10
+      unit: g
+    group: 調味
+  - name: 水
+    amount:
+      value: 1300
+      unit: ml
+    note: 燉湯清水
+  - name: 辣豆瓣醬
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙炒香
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 8
+      unit: g
+    note: 約半大匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+steps:
+  - text: 牛腩洗淨切塊以滾水燙過洗淨；白蘿蔔與紅蘿蔔去皮切塊；番茄洗淨去蒂切塊；洋蔥切片備用。
+    image:
+      src: ./step-1.webp
+      alt: 牛腩洗淨切塊以滾水燙過洗淨；白蘿蔔與紅蘿蔔去皮切塊；番茄洗淨去蒂切塊；洋蔥切片備用。
+  - text: 電鍋內鍋倒入少許油，放入洋蔥片、薑片與蔥段，加入牛腩塊、半量番茄塊、辣豆瓣醬與米酒拌勻，外鍋加 1 杯水蒸煮至開關跳起燜 10 分鐘。
+  - text: 內鍋加入白蘿蔔塊、紅蘿蔔塊、剩餘番茄塊、醬油、糖、鹽與水，外鍋加 1.5 杯水續蒸至開關跳起燜 15 分鐘至牛腩軟爛酥香即可盛碗。
+    image:
+      src: ./step-3.webp
+      alt: 內鍋加入白蘿蔔塊、紅蘿蔔塊、剩餘番茄塊、醬油、糖、鹽與水，外鍋加 1.5 杯水續蒸至開關跳起燜 15
+  - text: 將燉好的番茄牛肉湯盛入大碗中，撒上少許蔥花增添清香即可趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的番茄燉牛肉湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 番茄分兩次入鍋燉煮：第一次同牛腩豆瓣同炒同燜能奠定酸甜底蘊；第二次與雙蘿蔔同煮能保留番茄鮮潤果肉與層次風味。

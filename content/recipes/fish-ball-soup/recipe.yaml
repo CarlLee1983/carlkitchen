@@ -1,0 +1,63 @@
+title: 虱目魚丸湯
+summary: 彈牙虱目魚丸入清甜高湯慢火滾煮至飽滿浮起，調入鹽巴、白胡椒粉與少許香油提鮮，出鍋前撒上清脆芹菜末，湯頭甘醇爽口、魚丸鮮香彈脆，台式街頭麵攤經典滋味。
+servings: 2
+category: 湯
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 10
+tags: [台式小吃, 魚丸湯, 快煮湯, 家常湯品]
+aliases: [芹菜魚丸湯, 古早味魚丸湯]
+ingredients:
+  - name: 魚丸
+    amount:
+      value: 150
+      unit: g
+    note: 約 8 顆虱目魚丸
+  - name: 芹菜
+    amount:
+      value: 2
+      unit: 根
+    note: 去葉切細末
+    group: 調味
+  - name: 高湯
+    amount:
+      value: 600
+      unit: ml
+    note: 大骨或雞高湯
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 約 1/4 茶匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許白胡椒
+    group: 調味
+  - name: 香油
+    amount:
+      value: 3
+      unit: ml
+    note: 少許滴香
+    group: 調味
+steps:
+  - text: 魚丸洗淨表面；芹菜摘除老葉洗淨，切成細碎小粒備用。
+    image:
+      src: ./step-1.webp
+      alt: 魚丸洗淨表面；芹菜摘除老葉洗淨，切成細碎小粒備用。
+  - text: 湯鍋中倒入高湯大火燒開，放入魚丸轉中火煮約 5 分鐘至魚丸熟透膨脹浮起。
+    image:
+      src: ./step-2.webp
+      alt: 湯鍋中倒入高湯大火燒開，放入魚丸轉中火煮約 5 分鐘至魚丸熟透膨脹浮起。
+  - text: 依序加入鹽、白胡椒粉與香油調勻，熄火盛碗並撒上芹菜粒即可趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的虱目魚丸湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 魚丸浮起後再煮 1 至 2 分鐘即可熄火，避免久煮失卻彈性；芹菜末在起鍋後直接灑入熱湯，能最大程度保留爽脆口感與清香。

@@ -1,0 +1,89 @@
+title: 三杯豆腐
+summary: 扎實板豆腐切塊油炸至表面金黃焦脆，以黑麻油煸香薑片與整粒蒜頭，放入炸豆腐塊與辣椒片，淋入醬油、醬油膏、糖與米酒大火收汁裹滿濃醬，起鍋撒入鮮綠九層塔翻炒，外酥內嫩、醬香撲鼻。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [三杯, 豆腐, 熱炒, 家常菜]
+aliases: [熱炒三杯豆腐, 黑麻油三杯板豆腐]
+ingredients:
+  - name: 板豆腐
+    amount:
+      value: 4
+      unit: 塊
+    note: 約 400 g 切厚塊拭乾
+  - name: 九層塔
+    amount:
+      value: 20
+      unit: g
+    note: 摘取嫩葉洗淨拭乾
+    group: 調味
+  - name: 麻油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙黑麻油
+    group: 調味
+  - name: 薑片
+    amount:
+      value: 20
+      unit: g
+    note: 老薑切片
+    group: 調味
+  - name: 蒜頭
+    amount:
+      value: 30
+      unit: g
+    note: 約 10 顆去皮整粒
+    group: 調味
+  - name: 辣椒片
+    amount:
+      value: 15
+      unit: g
+    note: 紅辣椒切斜片
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 醬油膏
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙增稠甘甜
+    group: 調味
+  - name: 糖
+    amount:
+      value: 8
+      unit: g
+    note: 約半大匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+steps:
+  - text: 板豆腐洗淨切成均勻厚方塊，以廚房紙巾擦乾表面水分；九層塔洗淨瀝乾備用。
+    image:
+      src: ./step-1.webp
+      alt: 板豆腐洗淨切成均勻厚方塊，以廚房紙巾擦乾表面水分；九層塔洗淨瀝乾備用。
+  - text: 熱油鍋至 180 度，放入板豆腐塊炸至外皮金黃酥脆硬挺，撈起瀝乾油分。
+    image:
+      src: ./step-2.webp
+      alt: 熱油鍋至 180 度，放入板豆腐塊炸至外皮金黃酥脆硬挺，撈起瀝乾油分。
+  - text: 原鍋擦淨倒入麻油，放入薑片與蒜頭以小火煸香至表面微焦黃捲曲，再放入辣椒片翻炒。
+  - text: 放入炸好的板豆腐塊，加入醬油、醬油膏、糖與米酒，大火收汁翻炒至醬汁濃稠緊裹豆腐，最後放入九層塔炒至飄香即可起鍋盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的三杯豆腐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 板豆腐切塊後擦乾水分再炸，外皮才會形成酥脆金黃外殼且鎖住豆香；以小火將黑麻油、老薑片與整粒蒜頭煸出焦香，是三杯風味的靈魂所在。

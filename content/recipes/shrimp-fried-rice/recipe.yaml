@@ -1,0 +1,96 @@
+title: 蝦仁炒飯
+summary: 鮮脆蝦仁抓醃過水保持彈牙，熱鍋炒香金黃雞蛋，加入蒜末、洋蔥末與粒粒分明隔夜白飯大火快翻，倒入蝦仁與蔥末，撒入鹽、胡椒粉與醬油鑊氣嗆香，金黃油亮、鮮香四溢。
+servings: 2
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [炒飯, 經典小吃, 海鮮, 蛋炒飯]
+aliases: [經典蝦仁炒飯, 台式蝦仁蛋炒飯]
+ingredients:
+  - name: 蝦仁
+    amount:
+      value: 150
+      unit: g
+    note: 挑除腸泥抓醃
+  - name: 蛋
+    amount:
+      value: 2
+      unit: 顆
+    note: 打散成蛋液
+  - name: 白飯
+    amount:
+      value: 2
+      unit: 碗
+    note: 約 350 g 冷飯或隔夜飯
+  - name: 蒜末
+    amount:
+      value: 10
+      unit: g
+    group: 調味
+  - name: 洋蔥末
+    amount:
+      value: 30
+      unit: g
+    group: 調味
+  - name: 蔥末
+    amount:
+      value: 20
+      unit: g
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 5
+      unit: ml
+    note: 醃蝦去腥
+    group: 醃料
+  - name: 太白粉
+    amount:
+      value: 3
+      unit: g
+    note: 醃蝦保嫩
+    group: 醃料
+  - name: 鹽
+    amount:
+      value: 4
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許白胡椒粉
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 8
+      unit: ml
+    note: 約半大匙鍋邊嗆香
+    group: 調味
+  - name: 糖
+    amount:
+      value: 2
+      unit: g
+    note: 少許提鮮
+    group: 調味
+steps:
+  - text: 蝦仁洗淨挑除腸泥，加入米酒與太白粉抓勻醃漬 10 分鐘，放入滾水中微燙 10 秒即刻撈起瀝乾備用。
+    image:
+      src: ./step-1.webp
+      alt: 蝦仁洗淨挑除腸泥，加入米酒與太白粉抓勻醃漬 10 分鐘，放入滾水中微燙 10 秒即刻撈起瀝乾備用。
+  - text: 熱鍋倒入適量油，倒入打散的蛋液快速攪炒至半凝固散發蛋香，盛出備用。
+  - text: 原鍋補少許油爆香蒜末與洋蔥末，倒入白飯以鍋鏟壓散，大火翻炒至米粒分明跳動。
+    image:
+      src: ./step-3.webp
+      alt: 原鍋補少許油爆香蒜末與洋蔥末，倒入白飯以鍋鏟壓散，大火翻炒至米粒分明跳動。
+  - text: 放入燙過的蝦仁、炒蛋與蔥末，加入鹽、胡椒粉、糖調味，沿鍋邊淋入醬油大火快翻數秒，均勻入味即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蝦仁炒飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蝦仁先抓少許太白粉微燙過水，能確保炒入飯中時依然飽滿脆嫩不縮水；米飯建議使用冷藏隔夜飯，下鍋前先抓鬆能輕鬆炒出粒粒分明。

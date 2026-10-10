@@ -1,0 +1,76 @@
+title: 麻油雞湯
+summary: 鮮嫩土雞剁塊洗淨，黑麻油以溫小火將老薑片煸至邊緣微焦捲曲飄香，倒入雞塊大火翻炒至皮緊封汁，注入米酒與清水慢火燉煮 30 分鐘至雞肉軟嫩脫骨、湯頭金黃甘醇，起鍋前淋入黑麻油提香，冬令溫補極品。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [麻油雞, 冬令進補, 台式古早味, 養生湯品]
+aliases: [台式麻油雞, 古早味麻油雞湯]
+ingredients:
+  - name: 土雞
+    amount:
+      value: 800
+      unit: g
+    note: 半隻剁塊洗淨
+  - name: 老薑
+    amount:
+      value: 60
+      unit: g
+    note: 老薑切薄片
+    group: 調味
+  - name: 麻油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙起鍋爆香
+    group: 調味
+  - name: 黑麻油
+    amount:
+      value: 25
+      unit: ml
+    note: 約 5 茶匙出鍋提味
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 300
+      unit: ml
+    note: 傳統甘醇酒香
+    group: 調味
+  - name: 水
+    amount:
+      value: 800
+      unit: ml
+    note: 燉湯清水
+  - name: 鹽
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 小匙
+    group: 調味
+  - name: 白砂糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 小匙甘甜提鮮
+    group: 調味
+steps:
+  - text: 土雞剁成均勻塊狀洗淨擦乾水分；老薑洗淨切成薄片備用。
+    image:
+      src: ./step-1.webp
+      alt: 土雞剁成均勻塊狀洗淨擦乾水分；老薑洗淨切成薄片備用。
+  - text: 取湯鍋倒入麻油以中小火慢慢爆香老薑片，煸炒至薑片邊緣微乾捲曲並散發濃烈薑香。
+    image:
+      src: ./step-2.webp
+      alt: 取湯鍋倒入麻油以中小火慢慢爆香老薑片，煸炒至薑片邊緣微乾捲曲並散發濃烈薑香。
+  - text: 放入土雞塊轉大火翻炒約 2 分鐘，炒至雞皮微焦、表面緊縮鎖住肉汁。
+  - text: 倒入米酒煮沸蒸發酒精，加入水、鹽與白砂糖煮滾，轉小火蓋上鍋蓋慢燉 30 分鐘至雞肉軟嫩入味，起鍋前淋入黑麻油即可盛碗。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的麻油雞湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 煸炒老薑片務必使用溫小火，避免黑麻油過熱焦苦；米酒煮滾後再加水慢燉，能讓酒精充分揮發僅保留米釀甘甜，湯頭溫潤不嗆喉。
