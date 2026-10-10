@@ -3,6 +3,11 @@ import Base from "../layouts/Base.astro";
 import Illustration from "../components/Illustration.astro";
 import HomeSeason from "../components/HomeSeason.astro";
 import {
+  PICK_BATCH_SIZE,
+  PICK_MOBILE_CARD_WIDTH,
+  PICK_MOBILE_QUERY,
+} from "../utils/random-picks";
+import {
   parseBatchSize,
   recipeKinds,
   recipeKindLabels,
@@ -30,6 +35,17 @@ const HERO_PICK_SCRIPT = `(() => {
   const pool = matching.length > 0 ? matching : slots;
   const pick = pool[Math.floor(Math.random() * pool.length)];
   if (section && pick) section.append(pick.content.cloneNode(true));
+})();`;
+
+// 桌機（手機斷點之外）且網址沒有搜尋字時，解析到區塊就先開啟並預留高度，資料到了再填入，避免清單被推下。
+// 內容是 JS，不能含 TS 語法。
+const PICKS_RESERVE_SCRIPT = `(() => {
+  const section = document.currentScript?.parentElement;
+  if (!section || matchMedia(${JSON.stringify(PICK_MOBILE_QUERY)}).matches) return;
+  if (new URLSearchParams(location.search).get("q")) return;
+  section.hidden = false;
+  section.dataset.pending = "";
+  section.setAttribute("aria-hidden", "true");
 })();`;
 
 // 每批顯示列數：建置時決定、寫進按鈕的 data-batch 供腳本讀取；唯一定義處是 parseBatchSize。
@@ -108,6 +124,7 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
             <template data-hero-slot>
               <a
                 href={recipeHref(recipe)}
+                data-recipe-id={recipe.id}
                 data-kinds={recipeKinds(recipe.data).join(" ")}
               >
                 <p class="hero-label" aria-hidden="true">
@@ -136,6 +153,31 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
             </a>
           </noscript>
           <script is:inline set:html={HERO_PICK_SCRIPT} />
+        </section>
+      )
+    }
+    {
+      // 漸進增強：初始隱藏，沒有 JavaScript 時不顯示。候選資料不在 HTML：頁面載入後由腳本抓
+      // /random-picks.json，抽中的才組成卡片（未抽中的圖片不下載）。桌機在清單之前，手機（< 40rem）由腳本搬到清單之後。
+      // 桌機為了資料到之前清單不位移，內嵌小腳本在解析到這裡時就開啟區塊並以一批數量的佔位框預留高度（data-pending）；
+      // 手機版在清單之後、不影響首屏，等資料到了才顯示。
+      heroRecipes.length > 0 && (
+        <section
+          class="random-picks"
+          aria-labelledby="random-picks-title"
+          style={`--pick-card-width: ${PICK_MOBILE_CARD_WIDTH}; --pick-count: ${PICK_BATCH_SIZE}`}
+          data-random-picks
+          hidden
+        >
+          <h2 id="random-picks-title">今天煮什麼</h2>
+          <ul class="picks-list" data-picks-list>
+            {Array.from({ length: PICK_BATCH_SIZE }, () => (
+              <li class="pick-placeholder" aria-hidden="true">
+                <span />
+              </li>
+            ))}
+          </ul>
+          <script is:inline set:html={PICKS_RESERVE_SCRIPT} />
         </section>
       )
     }
@@ -335,6 +377,59 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     font-size: 1.1rem;
   }
 
+  .random-picks {
+    margin-top: 2rem;
+  }
+  .random-picks[hidden] {
+    display: none;
+  }
+  /* 寬版整列高度由寬度算出（不看內容）：圖 3:2 加 4.95rem 的文字區，佔位與實際卡片因此逐像素同高，資料填入不位移。 */
+  @media (min-width: 40rem) {
+    .random-picks {
+      container-type: inline-size;
+    }
+    .picks-list {
+      height: calc(
+        (100cqw - (var(--pick-count) - 1) * 1rem) / var(--pick-count) * 2 / 3 +
+          4.95rem
+      );
+    }
+  }
+  .random-picks h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+  }
+  .picks-list {
+    display: grid;
+    grid-template-columns: repeat(var(--pick-count), minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* 標題固定占兩行高（超出截成兩行），佔位與實際卡片等高。 */
+  .picks-list :global(.recipe-card-title) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    min-height: 3rem;
+    overflow: hidden;
+  }
+  /* 佔位：與卡片同高（3:2 的圖加 0.5rem 與兩行標題 3rem，再加標籤列 0.25rem 與 1.2rem），資料填入前後清單不位移；標題與佔位框看不見。 */
+  .random-picks[data-pending] h2 {
+    visibility: hidden;
+  }
+  .pick-placeholder span {
+    display: block;
+    aspect-ratio: 3 / 2;
+    margin-bottom: calc(3.5rem + 1.45rem);
+  }
+  /* 有搜尋字詞時腳本會直接收起區塊；這裡保險，避免輸入瞬間殘留。 */
+  .home[data-has-query] .random-picks {
+    display: none;
+  }
+
   .recipe-list {
     margin-top: 4rem;
     scroll-margin-top: 1rem;
@@ -520,6 +615,25 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     .hero-pick {
       margin-top: 0;
     }
+    /* 一列橫向捲動，卡片固定寬、對齊捲動停點；標題縮小，整塊高度約一張卡片。 */
+    /* 手機版區塊在清單（含顯示更多按鈕）之後，由腳本搬過去。 */
+    .random-picks {
+      margin-top: 1.5rem;
+    }
+    .random-picks h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    .picks-list {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+    }
+    .picks-list > :global(li) {
+      flex: 0 0 var(--pick-card-width);
+      scroll-snap-align: start;
+    }
     /* 圖左、文字右：右欄上方小字標籤、下方菜名；整塊仍是同一個連結 */
     .hero-pick a {
       display: grid;
@@ -595,6 +709,7 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     .hero-pick {
       margin-top: 0;
     }
+    .random-picks,
     .recipe-list {
       grid-column: 1 / -1;
     }

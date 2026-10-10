@@ -1,37 +1,32 @@
 ---
 import Illustration from "./Illustration.astro";
+import { CARD_IMAGE_WIDTHS } from "../utils/recipe-card";
 import { recipeHref, type Recipe } from "../utils/recipes";
 
 interface Props {
   recipe: Recipe;
   /** 卡片中圖的實際顯示寬度，由放卡片的版面決定。 */
   sizes: string;
+  /** 料理主角標籤（選用）；有給才顯示，菜譜頁的相關菜譜不傳。 */
+  labels?: string[];
 }
-const { recipe, sizes } = Astro.props;
+const { recipe, sizes, labels } = Astro.props;
 const { title, hero } = recipe.data;
+// 標記要與 src/scripts/home-picks.ts 的 buildCard 同步（首頁隨機推薦由腳本組卡片）；樣式在 src/styles/global.css。
 // 連結的可及名稱只要菜名，不先唸成品圖的替代文字。
 const titleId = `recipe-card-title-${recipe.id}`;
 ---
 
 <a class="recipe-card" href={recipeHref(recipe)} aria-labelledby={titleId}>
-  {hero && <Illustration image={hero} sizes={sizes} widths={[320, 480, 640]} />}
+  {
+    hero && (
+      <Illustration image={hero} sizes={sizes} widths={CARD_IMAGE_WIDTHS} />
+    )
+  }
   <span class="recipe-card-title" id={titleId}>{title}</span>
+  {
+    labels && labels.length > 0 && (
+      <span class="recipe-card-kind">{labels.join("・")}</span>
+    )
+  }
 </a>
-
-<style>
-  .recipe-card {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-  .recipe-card-title {
-    display: block;
-    margin-top: 0.5rem;
-    font-family: var(--font-serif);
-    line-height: 1.5;
-    text-underline-offset: 0.25em;
-  }
-  .recipe-card:hover .recipe-card-title {
-    text-decoration: underline;
-  }
-</style>

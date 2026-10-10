@@ -15,6 +15,7 @@ import {
   type HomeState,
   type KindFilter,
 } from "../utils/home";
+import { initRandomPicks } from "./home-picks";
 
 /** 建置後由 `pagefind --site dist` 產生；開發模式沒有這份索引。 */
 const PAGEFIND_URL = "/pagefind/pagefind.js";
@@ -95,6 +96,7 @@ export function initHome() {
     document.querySelector<HTMLButtonElement>("[data-show-more]");
   const batchSize = Number(showMoreButton?.dataset.batch);
   const heroPick = document.querySelector<HTMLElement>(".hero-pick");
+  const randomPicks = initRandomPicks();
 
   /**
    * 篩選時大圖仍顯示（寬螢幕），而目前這道不屬於該類，就從該類隨機換一道。
@@ -223,6 +225,7 @@ export function initHome() {
     );
     intro?.toggleAttribute("data-has-query", state.q !== "");
     matchHero(state.kind);
+    randomPicks.update(state); // 在大圖定案之後，才知道要排除哪一道
     if (input && normalizeQuery(input.value) !== state.q) {
       input.value = state.q;
     }
@@ -377,6 +380,7 @@ export function initHome() {
   if (initial.q !== "" || initial.kind !== "all") {
     void render(initial).then(restoreScroll);
   } else {
+    randomPicks.update(initial);
     applyTruncation(rows);
     restoreScroll();
   }

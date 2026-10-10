@@ -229,6 +229,37 @@ figure.illustration img {
   height: auto;
 }
 
+/* 菜譜卡片：RecipeCard.astro 輸出，首頁隨機推薦的卡片由 src/scripts/home-picks.ts 組出（沒有元件的範圍屬性），
+   所以樣式放全域。標記（class、aria-labelledby、圖片屬性）改動時兩處要同步；e2e/random-picks.spec.ts 比對關鍵屬性。 */
+.recipe-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.recipe-card-title {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-serif);
+  line-height: 1.5;
+  text-underline-offset: 0.25em;
+}
+/* 料理主角標籤：樣式同首頁清單列的 .kind；固定單行高，推薦區塊的佔位框才算得準。 */
+.recipe-card-kind {
+  display: block;
+  height: 1.2rem;
+  margin-top: 0.25rem;
+  overflow: hidden;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recipe-card:hover .recipe-card-title {
+  text-decoration: underline;
+}
+
 @page {
   size: A4;
   margin: 0;
