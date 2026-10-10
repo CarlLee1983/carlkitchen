@@ -32,7 +32,7 @@ export function parseKindParam(
   return visible.find((kind) => kind === value) ?? "all";
 }
 
-interface KindSource {
+export interface KindSource {
   category: RecipeCategory;
   dishKinds: readonly DishKind[];
 }

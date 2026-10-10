@@ -526,3 +526,12 @@ test("分類審核理由不被搜尋，舊 protein 網址與搜尋仍一致", as
   );
   await expect(page).not.toHaveURL(/kind=/);
 });
+
+test("別頁底部的相關菜譜列了這道菜，也不會讓別頁命中", async ({ page }) => {
+  // 番茄炒蛋頁底的「也可以試試」列了蛋花湯；搜尋蛋花湯只應命中蛋花湯自己。
+  const soup = recipes.find((recipe) => recipe.title === "蛋花湯")!;
+  await page.goto("/");
+  await search(page, soup.title);
+  await expect(rowOf(page, soup)).toBeVisible();
+  expect(await titles(page)).toEqual([soup.title]);
+});
