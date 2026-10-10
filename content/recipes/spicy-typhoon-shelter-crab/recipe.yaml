@@ -1,0 +1,75 @@
+title: 避風塘炒蟹
+summary: 螃蟹切塊拍薄脆漿粉高溫酥炸至外殼紅亮酥脆、肉質鮮甜多汁，熱鍋以少許油爆香乾辣椒段與蔥段，倒入大量金黃香脆蒜酥、豆豉碎與炸螃蟹大火快速翻炒，蒜香撲鼻、微辣酥脆、經典港式海鮮名菜。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以螃蟹裹薄粉油炸後與金黃蒜酥大火翻炒為唯一海鮮主角，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [港式名菜, 海鮮, 螃蟹, 避風塘, 熱炒]
+aliases: [港式避風塘炒蟹, 避風塘螃蟹]
+ingredients:
+  - name: 螃蟹
+    amount:
+      value: 2
+      unit: 隻
+    note: 約 450 g 洗淨切塊吸乾水分
+  - name: 蒜酥
+    amount:
+      value: 100
+      unit: g
+    note: 金黃酥香炸蒜粒
+  - name: 乾辣椒
+    amount:
+      value: 5
+      unit: g
+    note: 剪小段
+  - name: 青蔥
+    amount:
+      value: 20
+      unit: g
+    note: 切青蔥段
+  - name: 地瓜粉
+    amount:
+      value: 40
+      unit: g
+    note: 拍裹蟹肉切面
+  - name: 豆豉
+    amount:
+      value: 10
+      unit: g
+    note: 黑豆豉粗剁碎
+    group: 調味
+  - name: 胡椒鹽
+    amount:
+      value: 3
+      unit: g
+    note: 少許撒勻調味
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 醃蟹去腥
+    group: 調味
+steps:
+  - text: 螃蟹刷洗乾淨去除鰓肺，斬成適口塊狀，蟹肉切口均勻沾裹上一層薄地瓜粉；青蔥切段、乾辣椒剪小段備用。
+    image:
+      src: ./step-1.webp
+      alt: 螃蟹刷洗乾淨去除鰓肺，斬成適口塊狀，蟹肉切口均勻沾裹上一層薄地瓜粉；青蔥切段、乾辣椒剪小段備用。
+  - text: 起油鍋燒熱至約 180°C，放入沾粉螃蟹塊大火炸約 3 分鐘至外殼鮮紅硬挺酥脆，撈起充分瀝乾油分。
+    image:
+      src: ./step-2.webp
+      alt: 起油鍋燒熱至約 180°C，放入沾粉螃蟹塊大火炸約 3 分鐘至外殼鮮紅硬挺酥脆，撈起充分瀝乾油分。
+  - text: 另取炒鍋留少許底油，放入蔥段、乾辣椒段與黑豆豉碎小火煸炒出濃郁香氣。
+  - text: 倒入炸酥的螃蟹塊與大量金黃蒜酥，撒上胡椒鹽，轉大火快速翻拋翻炒均勻，使蒜酥緊緊裹附在蟹殼表面即可熄火盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的避風塘炒蟹
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 螃蟹切口沾上地瓜粉能緊緊鎖住鮮美蟹汁不流失；蒜酥本身已是熟香金黃，下鍋後只需大火快速與炸蟹翻拋混合即可，不可久炒以防蒜酥焦苦變黑。

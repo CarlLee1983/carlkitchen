@@ -1,0 +1,74 @@
+title: 地瓜雞肉燉飯
+summary: 去骨雞腿肉切塊煎至表面金黃焦香逼出雞油，洋蔥丁與西芹丁小火炒香，倒入生白米翻炒至米粒吸收油脂香氣，加入黃金地瓜塊與香醇雞高湯溫火細細燉煮至米飯熟透濃稠、地瓜粉糯甘甜，雞肉滑嫩彈牙、甘香濃郁。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以白米、地瓜與雞腿肉慢火燉煮為一鍋到底的飽足西式米食主餐。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 35
+tags: [燉飯, 主食, 地瓜, 雞肉, 西式料理]
+aliases: [黃金地瓜雞肉燉飯, 地瓜燉飯]
+ingredients:
+  - name: 白米
+    amount:
+      value: 200
+      unit: g
+    note: 洗淨泡水 15 分鐘瀝乾
+  - name: 去骨雞腿肉
+    amount:
+      value: 250
+      unit: g
+    note: 切適口丁塊
+  - name: 黃地瓜
+    amount:
+      value: 150
+      unit: g
+    note: 去皮切約 1.5 公分小丁塊
+  - name: 洋蔥
+    amount:
+      value: 40
+      unit: g
+    note: 切細碎丁
+  - name: 西芹
+    amount:
+      value: 30
+      unit: g
+    note: 切細小丁
+  - name: 雞高湯
+    amount:
+      value: 600
+      unit: ml
+    note: 溫熱雞高湯分次注入
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 黑胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+steps:
+  - text: 白米洗淨泡水 15 分鐘瀝乾；去骨雞腿肉切塊加少許鹽抹勻；黃地瓜去皮切 1.5 公分丁塊；洋蔥與西芹切細丁備用。
+    image:
+      src: ./step-1.webp
+      alt: 白米洗淨泡水 15 分鐘瀝乾；去骨雞腿肉切塊加少許鹽抹勻；黃地瓜去皮切 1.5 公分丁塊；洋蔥與西芹
+  - text: 平底深鍋倒入少許油燒熱，放入雞腿肉塊皮朝下煎至表皮金黃出油，盛出切丁備用。
+  - text: 原鍋利用雞油炒香洋蔥丁與西芹丁，倒入生白米翻炒約 2 分鐘至米粒邊緣呈半透明吸收油脂。
+    image:
+      src: ./step-3.webp
+      alt: 原鍋利用雞油炒香洋蔥丁與西芹丁，倒入生白米翻炒約 2 分鐘至米粒邊緣呈半透明吸收油脂。
+  - text: 加入地瓜丁與煎香的雞肉丁，分次注入溫熱雞高湯，蓋上鍋蓋以小火慢燉約 15 分鐘至米粒吸收高湯飽滿膨脹、地瓜鬆軟，調入鹽與黑胡椒粉拌勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的地瓜雞肉燉飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 生米先在鍋中用雞油翻炒至表面微透再加高湯燉煮，米粒能緊實有彈性且充分吸收肉香精華；地瓜切適度小丁，與白米同時熟透，鬆軟甜糯不糊爛。

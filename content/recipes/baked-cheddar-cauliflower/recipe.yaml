@@ -1,0 +1,80 @@
+title: 起司焗烤白花椰菜
+summary: 白花椰菜與綠花椰菜切小朵汆燙瀝乾，鋪入焗烤瓷盤，淋上以奶油、洋蔥碎、麵粉、鮮奶油與溫水慢煮而成的香濃白醬，表面撒滿雙色起司絲，入烤箱高溫烘烤至起司融化金黃焦香、牽絲濃郁，蔬菜清甜爽口、奶香濃醇誘人。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以白花椰菜與綠花椰菜汆燙後裹白醬起司焗烤為唯一蔬菜主角，屬於純蔬菜西式焗烤料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 25
+tags: [西式料理, 焗烤, 花椰菜, 起司, 蔬菜]
+aliases: [焗烤花椰菜, 起司白醬焗花椰菜]
+ingredients:
+  - name: 白花椰菜
+    amount:
+      value: 150
+      unit: g
+    note: 切小朵洗淨
+  - name: 青花菜
+    amount:
+      value: 100
+      unit: g
+    note: 綠花椰菜切小朵配色
+  - name: 焗烤起司絲
+    amount:
+      value: 100
+      unit: g
+    note: 雙色馬茲瑞拉起司絲
+  - name: 鮮奶油
+    amount:
+      value: 100
+      unit: ml
+    note: 動物性鮮奶油
+  - name: 無鹽奶油
+    amount:
+      value: 20
+      unit: g
+    note: 炒白醬用
+  - name: 洋蔥
+    amount:
+      value: 30
+      unit: g
+    note: 切細碎末
+  - name: 低筋麵粉
+    amount:
+      value: 15
+      unit: g
+    note: 炒糊勾芡白醬
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 白醬調味
+    group: 調味
+  - name: 黑胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+steps:
+  - text: 白花椰菜與青花菜切成均勻適口小朵，入滾水加少許鹽汆燙 1 分鐘撈起瀝乾水分，整齊排入耐熱焗烤瓷盤中備用。
+    image:
+      src: ./step-1.webp
+      alt: 白花椰菜與青花菜切成均勻適口小朵，入滾水加少許鹽汆燙 1 分鐘撈起瀝乾水分，整齊排入耐熱焗烤瓷盤中備
+  - text: 小鍋融化無鹽奶油，加入洋蔥碎小火炒香，倒入麵粉小火翻炒均勻成麵糊，分次慢慢注入鮮奶油與水攪拌均勻煮開成滑順濃郁白醬，調入鹽與黑胡椒粉。
+    image:
+      src: ./step-2.webp
+      alt: 小鍋融化無鹽奶油，加入洋蔥碎小火炒香，倒入麵粉小火翻炒均勻成麵糊，分次慢慢注入鮮奶油與水攪拌均勻煮開
+  - text: 將煮好的香濃白醬均勻淋在雙色花椰菜表面，均勻鋪滿一層厚厚起司絲。
+  - text: 移入預熱至 200°C 烤箱烘烤約 8 至 10 分鐘，至表面起司完全融化、呈現漂亮金黃焦香斑紋即可取出趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的起司焗烤白花椰菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 花椰菜汆燙後務必用廚房紙巾或濾籃徹底瀝乾水分再排盤，否則烤製時蔬菜出水會稀釋白醬；白醬炒麵粉時火候保持最小火，分次加鮮奶油可避免結塊。

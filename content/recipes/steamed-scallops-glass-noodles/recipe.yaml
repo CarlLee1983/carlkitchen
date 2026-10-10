@@ -1,0 +1,81 @@
+title: 蒜蓉粉絲蒸扇貝
+summary: 帶殼新鮮大扇貝洗淨去腸泥，冬粉泡軟吸飽鮮甜高湯鋪在貝殼底層，放上飽滿厚實扇貝肉，淋上現剁蒜末與料理米酒，入蒸鍋大火清蒸 5 分鐘至貝肉彈牙鮮嫩，鋪上蔥花澆淋滾燙熱油激發香氣，淋上蒸魚豉油，冬粉吸飽扇貝鮮美精華，蒜香撲鼻。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以帶殼鮮扇貝清蒸為唯一海鮮主角，佐以冬粉與蒜蓉醬，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [海鮮, 宴席菜, 扇貝, 蒜蓉蒸, 冬粉]
+aliases: [蒜蓉蒸扇貝, 粉絲蒸扇貝]
+ingredients:
+  - name: 大扇貝
+    amount:
+      value: 6
+      unit: 顆
+    note: 帶半殼新鮮扇貝洗淨
+  - name: 冬粉
+    amount:
+      value: 1
+      unit: 把
+    note: 約 40 g 泡溫水軟化剪段
+  - name: 大蒜
+    amount:
+      value: 30
+      unit: g
+    note: 切細蒜末
+  - name: 青蔥
+    amount:
+      value: 20
+      unit: g
+    note: 切細蔥花
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 切薑末
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙去腥
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 20
+      unit: ml
+    note: 約 1.5 大匙蒸魚豉油
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許提亮
+    group: 調味
+  - name: 沙拉油
+    amount:
+      value: 30
+      unit: ml
+    note: 熱油淋蔥激香
+    group: 調味
+steps:
+  - text: 扇貝洗淨去除內臟砂囊，輕輕刮下貝肉保留底殼洗淨；冬粉泡冷水 15 分鐘至軟剪短段；大蒜切碎末、青蔥切蔥花、生薑切末備用。
+    image:
+      src: ./step-1.webp
+      alt: 扇貝洗淨去除內臟砂囊，輕輕刮下貝肉保留底殼洗淨；冬粉泡冷水 15 分鐘至軟剪短段；大蒜切碎末、青蔥切
+  - text: 在每隻扇貝殼底鋪上一撮泡軟冬粉，放上厚實扇貝肉，均勻鋪上蒜末與少許薑末，淋上米酒，排入蒸盤。
+    image:
+      src: ./step-2.webp
+      alt: 在每隻扇貝殼底鋪上一撮泡軟冬粉，放上厚實扇貝肉，均勻鋪上蒜末與少許薑末，淋上米酒，排入蒸盤。
+  - text: 蒸鍋水大滾後放入蒸盤，蓋上鍋蓋以大火清蒸約 5 分鐘至扇貝剛好熟透彈牙，取出蒸盤鋪上大量青蔥花。
+  - text: 另起小鍋將沙拉油加熱至高溫，均勻澆淋在蔥花蒜蓉上滋滋激發出香氣，最後在每個扇貝邊緣淋上蒸魚醬油即可盛盤趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒜蓉粉絲蒸扇貝
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 扇貝極易蒸老，水大滾後入鍋大火蒸 5 分鐘即可，貝肉肉質最為飽滿鮮甜；冬粉會吸收扇貝滴落的全部鮮美汁液，鮮濃無比。
