@@ -451,13 +451,13 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     padding: 0;
     list-style: none;
   }
-  /* 標題固定占兩行高（超出截成兩行），佔位與實際卡片等高。 */
+  /* 標題最多兩行（超出截成兩行），不固定最小高度，標籤緊接在菜名之後。
+     整段文字區（菜名兩行加標籤）的高度由 .picks-list 的固定高度保證，多出的空白留在卡片最底下。 */
   .picks-list :global(.recipe-card-title) {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     line-clamp: 2;
-    min-height: 3rem;
     overflow: hidden;
   }
   /* 佔位：與卡片同高（3:2 的圖加 0.5rem 與兩行標題 3rem，再加標籤列 0.25rem 與 1.2rem），資料填入前後清單不位移；標題與佔位框看不見。 */
