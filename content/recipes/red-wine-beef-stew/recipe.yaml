@@ -2,9 +2,11 @@ title: 紅酒燉牛肉
 summary: 牛肉和洋蔥、紅蘿蔔、蘑菇、西芹先炒過，再以番茄糊、紅酒與香草小火燉 50 分鐘，最後拌入奶油。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 牛肉塊 500 g 與十朵蘑菇、紅蘿蔔及西芹段先同炒再燉煮，肉塊與完整蔬菜共同構成燉菜。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 80
 tags: [家常菜, 燉煮]

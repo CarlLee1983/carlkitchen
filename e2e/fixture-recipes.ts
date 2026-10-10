@@ -1,7 +1,10 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { z } from "astro/zod";
 import { parse } from "yaml";
-import { createRecipeSchema } from "../src/content/recipe-schema";
+import {
+  createRecipeSchema,
+  type DishKind,
+} from "../src/content/recipe-schema";
 
 const ROOT = "tests/fixtures/recipes";
 
@@ -11,6 +14,8 @@ export interface FixtureRecipe {
   summary: string;
   heroAlt: string;
   category: "非湯料理" | "主食" | "湯";
+  dishKinds: DishKind[];
+  classificationReason: string;
   vegetable: boolean;
   protein: boolean;
   /** 材料名稱，依 YAML 順序；第一項即「第一項材料」。 */
@@ -32,6 +37,8 @@ function toFixture(id: string, raw: RawRecipe): FixtureRecipe {
     summary: raw.summary,
     heroAlt: raw.hero?.alt ?? "",
     category: raw.category,
+    dishKinds: raw.dishKinds,
+    classificationReason: raw.classificationReason,
     vegetable: raw.vegetable,
     protein: raw.protein,
     ingredientNames: raw.ingredients.map((ingredient) => ingredient.name),
@@ -45,6 +52,7 @@ function toFixture(id: string, raw: RawRecipe): FixtureRecipe {
         ingredient.image?.alt,
       ]),
       raw.tip,
+      raw.classificationReason,
       raw.hero?.alt,
       raw.ingredientsPhoto?.alt,
     ].filter((text): text is string => Boolean(text)),
@@ -79,4 +87,26 @@ export function draftFixtureRecipes(): FixtureRecipe[] {
     .filter(({ draft }) => draft)
     .map(({ recipe }) => recipe)
     .sort(byTitle);
+}
+
+/** 由fixture欄位獨立推導預期顯示文字，不共用待測的正式分類函式。 */
+export function fixtureKindLabels(recipe: FixtureRecipe): string[] {
+  switch (recipe.category) {
+    case "主食":
+      return ["主食"];
+    case "湯":
+      return ["湯"];
+    case "非湯料理":
+      return recipe.dishKinds.map(
+        (kind) =>
+          ({
+            vegetable: "蔬菜",
+            meat: "肉類",
+            seafood: "海鮮",
+            "egg-bean": "蛋豆",
+          })[kind],
+      );
+    default:
+      return recipe.category satisfies never;
+  }
 }

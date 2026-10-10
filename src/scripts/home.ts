@@ -62,7 +62,7 @@ function loadPagefind(): Promise<Pagefind> {
 }
 
 /**
- * 首頁互動：日期、搜尋、性質篩選與網址同步。
+ * 首頁互動：日期、搜尋、料理分類篩選與網址同步。
  * 狀態是 `{ q, kind }`，唯一來源是網址。
  * 沒有字詞時完全不載入 Pagefind，清單依建置時的菜名排序；有字詞時依 Pagefind 結果
  * 的相關度重排，篩選值以 Pagefind 篩選屬性套用。

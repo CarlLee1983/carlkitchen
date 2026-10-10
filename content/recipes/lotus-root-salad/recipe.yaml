@@ -2,6 +2,8 @@ title: 涼拌蓮藕
 summary: 蓮藕切薄片汆燙後泡冰水冰鎮，維持清脆爽朗口感，佐以蒜碎、嫩薑末、蔥花與辣椒，以白醋、砂糖、醬油與香油調勻浸拌。酸甜開胃、爽脆多汁。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 300 g 蓮藕薄片汆燙冰鎮後拌酸甜醬汁，蔥薑蒜與辣椒僅作調味。
 draft: false
 mealCandidate: true
 vegetable: true

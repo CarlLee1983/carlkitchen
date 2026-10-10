@@ -2,6 +2,8 @@ title: 糖醋燒茄
 summary: 茄子先加水燜軟，再與番茄、青椒拌炒，裹上收濃的糖醋醬汁。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 茄子 250 g、番茄 150 g 與青椒 100 g 分別炒燜後合拌糖醋汁，三種蔬菜構成成品。
 draft: false
 mealCandidate: true
 vegetable: true

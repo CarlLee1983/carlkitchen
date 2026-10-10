@@ -2,9 +2,11 @@ title: 蒜苗炒臘肉
 summary: 廣東臘肉先蒸熟切片，再和蒜苗、辣椒一起快炒。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 180 g 臘肉切片與 200 g 蒜苗斜片大火快炒，兩者都是保留形體的主要菜料。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 20
 ingredients:

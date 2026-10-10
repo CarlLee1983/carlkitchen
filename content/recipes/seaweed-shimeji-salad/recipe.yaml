@@ -2,6 +2,8 @@ title: 海帶芽拌雪白菇
 summary: 雪白菇和海帶芽汆燙後，趁熱拌入薑絲、辣椒絲與醬汁，作為家常配菜。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 雪白菇 120 g 與海帶芽汆燙後拌成配菜，鰹魚醬油只作調味。
 draft: false
 mealCandidate: true
 vegetable: true

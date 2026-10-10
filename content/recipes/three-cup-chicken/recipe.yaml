@@ -2,6 +2,8 @@ title: 三杯雞
 summary: 雞肉塊先汆燙，用麻油煸香薑片和大蒜後下鍋快炒，再以米酒、醬油、冰糖燜煮收汁，起鍋前拌入九層塔。醬汁濃稠、香氣重，適合配飯。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 帶骨雞腿肉 400 g 汆燙後燜煮收汁，薑蒜辣椒和九層塔都是三杯調味料。
 draft: false
 mealCandidate: true
 vegetable: false

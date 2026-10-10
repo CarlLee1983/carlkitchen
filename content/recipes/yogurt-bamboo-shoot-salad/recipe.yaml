@@ -2,6 +2,8 @@ title: 優格沙拉筍
 summary: 綠竹筍煮熟切塊，拌入優格檸檬醬與蝦卵。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 兩支綠竹筍煮熟切塊是沙拉主體，一大匙蝦卵混入優格檸檬醬作淋醬。
 draft: false
 mealCandidate: true
 vegetable: true

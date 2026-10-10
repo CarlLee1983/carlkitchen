@@ -2,9 +2,11 @@ title: 醋溜魚片
 summary: 鯛魚小片先過油，再和洋蔥、蔥段及薑片一起燒煮，勾芡後加白醋。
 servings: 2
 category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 鯛魚肉 180 g 切片過油後燒熟，洋蔥絲與蔥薑加入醋溜醬汁搭配魚片。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 tags: [家常菜]

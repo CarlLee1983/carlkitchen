@@ -2,6 +2,8 @@ title: 咖哩雞
 summary: 去骨雞腿肉塊以紅蔥末與蒜末煸炒後，加入咖哩粉與可可粉細火燉煮入味，最後拌入三色蔬菜增色，湯汁濃郁醇厚。
 servings: 3
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 300 g 雞腿肉塊以咖哩燉煮 20 分鐘，100 g 三色蔬菜在最後加入作配料。
 draft: false
 mealCandidate: true
 vegetable: false

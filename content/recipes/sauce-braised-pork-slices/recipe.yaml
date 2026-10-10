@@ -2,6 +2,8 @@ title: 醬爆肉片
 summary: 豬肉片抓醃過油至表面微焦香，熱鍋爆香青蔥段、薑片與辣椒，投入青椒大火快炒，淋入醬油、糖與米酒調成的兌汁極速翻炒收汁，起鍋前淋上香油，香氣濃烈下飯。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 豬肉片先抓醃過油，再回鍋裹醬收汁，青椒塊與蔥薑辣椒搭配肉片同炒。
 draft: false
 mealCandidate: true
 vegetable: false

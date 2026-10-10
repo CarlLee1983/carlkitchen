@@ -2,6 +2,8 @@ title: 蚵仔煎
 summary: 蚵仔、小白菜與蛋煎在粉漿上，邊緣帶些酥脆、粉漿呈透明狀。
 servings: 2
 category: 非湯料理
+dishKinds: [seafood, egg-bean]
+classificationReason: 蚵仔 100 g 與雞蛋蛋液分層鋪在粉漿上，蛋半熟後整片翻煎，蚵仔與凝固蛋層共同構成成品。
 draft: false
 mealCandidate: true
 vegetable: false

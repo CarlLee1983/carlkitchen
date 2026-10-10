@@ -2,6 +2,8 @@ title: 蒜炒高麗菜
 summary: 高麗菜大火快炒，蒜末提香，保留脆度。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 測試審核紀錄meal-cabbage；高麗菜是主角，大蒜提香，可作一格蔬菜。
 draft: false
 timeMinutes: 10
 mealCandidate: true

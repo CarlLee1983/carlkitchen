@@ -2,6 +2,8 @@ title: 日式炸豬排
 summary: 豬小里肌排拍鬆、醃過後依序裹麵粉、蛋液與麵包屑，以小火炸到金黃。
 servings: 6
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 450 g 豬小里肌排逐片裹麵粉、蛋液及麵包屑油炸，肉排為食用本體。
 draft: false
 mealCandidate: true
 vegetable: false

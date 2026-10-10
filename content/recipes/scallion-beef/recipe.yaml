@@ -2,6 +2,8 @@ title: 蔥爆牛肉
 summary: 牛肉片醃過後先大火快炒到表面變白盛起，再和爆香的蔥段、薑絲、辣椒絲回鍋快炒，勾薄芡收尾。蔥香明顯，適合配飯。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 牛肉片先醃炒再回鍋，青蔥與薑辣椒先爆香形成蔥香醬汁，主角仍是牛肉片。
 draft: false
 mealCandidate: true
 vegetable: false

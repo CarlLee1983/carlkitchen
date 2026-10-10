@@ -1,13 +1,21 @@
 import { expect, test, type Page } from "@playwright/test";
 import { expectFocusRing, expectTouchTargets } from "./a11y-helpers";
-import { publishedFixtureRecipes } from "./fixture-recipes";
+import { fixtureKindLabels, publishedFixtureRecipes } from "./fixture-recipes";
 import { sizesSlot } from "./image-helpers";
 
 const recipes = publishedFixtureRecipes();
 const soups = recipes.filter((recipe) => recipe.category === "湯");
 const staples = recipes.filter((recipe) => recipe.category === "主食");
-const vegetables = recipes.filter((recipe) => recipe.vegetable);
-const proteins = recipes.filter((recipe) => recipe.protein);
+const vegetables = recipes.filter((recipe) =>
+  recipe.dishKinds.includes("vegetable"),
+);
+const eggBeans = recipes.filter((recipe) =>
+  recipe.dishKinds.includes("egg-bean"),
+);
+const meats = recipes.filter((recipe) => recipe.dishKinds.includes("meat"));
+const seafood = recipes.filter((recipe) =>
+  recipe.dishKinds.includes("seafood"),
+);
 
 const list = (page: Page) => page.getByRole("region", { name: "菜譜清單" });
 const rows = (page: Page) => list(page).getByRole("listitem");
@@ -41,7 +49,9 @@ test("清單依菜名排序，每列有縮圖、菜名、摘要與分類標籤�
       row.getByRole("heading", { name: recipe.title }),
     ).toBeVisible();
     await expect(row.getByText(recipe.summary)).toBeVisible();
-    await expect(row.getByText(recipe.category, { exact: true })).toBeVisible();
+    await expect(
+      row.getByText(fixtureKindLabels(recipe).join("・"), { exact: true }),
+    ).toBeVisible();
     await expect(row.getByRole("img")).toBeVisible();
     await expect(row.getByRole("link", { name: recipe.title })).toHaveAttribute(
       "href",
@@ -51,13 +61,13 @@ test("清單依菜名排序，每列有縮圖、菜名、摘要與分類標籤�
   await expect(page.getByText("草稿範例")).toHaveCount(0);
 });
 
-test("篩選列依序為全部、蔬菜、肉蛋料理、主食、湯，沒有非湯料理選項（固定菜譜有主食）", async ({
+test("篩選列依序為全部、蔬菜、肉類、海鮮、蛋豆、主食、湯，沒有非湯料理選項（固定菜譜有主食）", async ({
   page,
 }) => {
   await page.goto("/");
   await expect(
     page.getByRole("group", { name: "篩選" }).getByRole("button"),
-  ).toHaveText(["全部", "蔬菜", "肉蛋料理", "主食", "湯"]);
+  ).toHaveText(["全部", "蔬菜", "肉類", "海鮮", "蛋豆", "主食", "湯"]);
 });
 
 test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移除參數", async ({
@@ -79,9 +89,9 @@ test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移�
   await expect(count(page)).toContainText(String(vegetables.length));
   await expect(page).toHaveURL(/[?&]kind=vegetable(&|$)/);
 
-  await page.getByRole("button", { name: "肉蛋料理" }).click();
-  await expect(rows(page)).toHaveCount(proteins.length);
-  await expect(page).toHaveURL(/[?&]kind=protein(&|$)/);
+  await page.getByRole("button", { name: "蛋豆" }).click();
+  await expect(rows(page)).toHaveCount(eggBeans.length);
+  await expect(page).toHaveURL(/[?&]kind=egg-bean(&|$)/);
 
   await page.getByRole("button", { name: "主食" }).click();
   await expect(rows(page)).toHaveCount(staples.length);
@@ -98,10 +108,10 @@ test("篩選即時更新清單、顯示筆數並寫進網址；選回全部移�
   await expect(page).not.toHaveURL(/kind=/);
 });
 
-test("主食不出現在蔬菜、肉蛋料理與湯之下，菜譜頁標示主食", async ({ page }) => {
+test("主食不出現在四種非湯分類與湯之下，菜譜頁標示主食", async ({ page }) => {
   expect(staples.length).toBeGreaterThan(0);
   await page.goto("/");
-  for (const name of ["蔬菜", "肉蛋料理", "湯"]) {
+  for (const name of ["蔬菜", "肉類", "海鮮", "蛋豆", "湯"]) {
     await page.getByRole("button", { name, exact: true }).click();
     for (const staple of staples) {
       await expect(rows(page).filter({ hasText: staple.title })).toHaveCount(0);
@@ -111,13 +121,17 @@ test("主食不出現在蔬菜、肉蛋料理與湯之下，菜譜頁標示主�
   await expect(page.getByText("主食", { exact: true })).toBeVisible();
 });
 
-test("兩種性質都有的菜同時出現在蔬菜與肉蛋料理之下", async ({ page }) => {
-  const both = recipes.filter((recipe) => recipe.vegetable && recipe.protein);
+test("真正雙主角的菜同時出現在蔬菜與蛋豆之下", async ({ page }) => {
+  const both = recipes.filter(
+    (recipe) =>
+      recipe.dishKinds.includes("vegetable") &&
+      recipe.dishKinds.includes("egg-bean"),
+  );
   expect(both.length).toBeGreaterThan(0);
   await page.goto("/");
   const filters = [
     { name: "蔬菜", kind: "vegetable", expected: vegetables },
-    { name: "肉蛋料理", kind: "protein", expected: proteins },
+    { name: "蛋豆", kind: "egg-bean", expected: eggBeans },
   ];
   for (const { name, kind, expected } of filters) {
     await page.getByRole("button", { name }).click();
@@ -148,7 +162,12 @@ test("開啟帶 kind 參數的網址會還原篩選與按鈕狀態；重新整�
 });
 
 test("無法辨識的 kind 與舊的 category 參數視為全部", async ({ page }) => {
-  for (const query of ["kind=nonsense", "category=soup", "kind=non-soup"]) {
+  for (const query of [
+    "kind=nonsense",
+    "category=soup",
+    "kind=non-soup",
+    "kind=protein",
+  ]) {
     await page.goto(`/?${query}`);
     await expect(rows(page)).toHaveCount(recipes.length);
     await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
@@ -214,6 +233,10 @@ test("寬螢幕分類篩選時保留左文右圖，大圖換成該類的菜", as
 
   for (const [name, members] of [
     ["湯", soups],
+    ["肉類", meats],
+    ["海鮮", seafood],
+    ["蛋豆", eggBeans],
+    ["蔬菜", vegetables],
     ["主食", staples],
   ] as const) {
     await page.getByRole("button", { name, exact: true }).click();
@@ -483,4 +506,59 @@ test("鍵盤可用 Enter 切換篩選", async ({ page }) => {
   await page.keyboard.press("Enter");
   await expect(rows(page)).toHaveCount(soups.length);
   await expectFocusRing(button);
+});
+
+for (const width of [320, 360, 390, 430]) {
+  test(`七類篩選在 ${width}px 手機寬度無溢出且每個目標可觸控`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/");
+    const filters = page.getByRole("group", { name: "篩選" });
+    const buttons = filters.getByRole("button");
+    await expect(buttons).toHaveText([
+      "全部",
+      "蔬菜",
+      "肉類",
+      "海鮮",
+      "蛋豆",
+      "主食",
+      "湯",
+    ]);
+    for (const button of await buttons.all()) {
+      const rect = (await button.boundingBox())!;
+      expect(rect.x).toBeGreaterThanOrEqual(0);
+      expect(rect.x + rect.width).toBeLessThanOrEqual(width);
+      expect(rect.width).toBeGreaterThanOrEqual(44);
+      expect(rect.height).toBeGreaterThanOrEqual(44);
+      await button.click();
+      await expect(button).toHaveAttribute("aria-pressed", "true");
+    }
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+    ).toBeLessThanOrEqual(width);
+  });
+}
+
+test("每道菜的菜譜頁分類與清單一致，審核理由不進公開 HTML", async ({
+  page,
+}) => {
+  for (const recipe of recipes) {
+    const response = await page.goto(`/recipes/${recipe.id}/`);
+    await expect(page.locator(".recipe-meta")).toContainText(
+      fixtureKindLabels(recipe).join("・"),
+    );
+    expect(await response!.text()).not.toContain(recipe.classificationReason);
+  }
+});
+
+test("舊 protein 網址退回全部並正規化，不暗中改成肉類", async ({ page }) => {
+  await page.goto("/?kind=protein&foo=keep");
+  await expect(rows(page)).toHaveCount(recipes.length);
+  await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page).not.toHaveURL(/kind=/);
+  await expect(page).toHaveURL(/foo=keep/);
 });

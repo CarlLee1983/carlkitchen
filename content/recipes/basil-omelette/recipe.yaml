@@ -2,9 +2,11 @@ title: 九層塔煎蛋
 summary: 九層塔切碎後拌入蛋液，以平底鍋煎成兩面金黃的厚蛋餅。
 servings: 2
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 三顆雞蛋拌入切碎九層塔後整片煎熟，蛋餅為成品主體而九層塔提供香氣。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 tags: [家常菜]

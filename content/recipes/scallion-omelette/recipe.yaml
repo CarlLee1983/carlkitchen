@@ -2,6 +2,8 @@ title: 蔥花蛋
 summary: 蛋液拌入蔥花與調味料，煎到兩面金黃。
 servings: 2
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 兩顆雞蛋打散煎成蛋餅，一支蔥切花混入蛋液提香。
 draft: false
 mealCandidate: true
 vegetable: false

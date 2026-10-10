@@ -2,6 +2,8 @@ title: 糖醋魚片
 summary: 鮮嫩鯛魚肉切片醃漬裹粉炸至外酥內嫩，鍋中翻炒洋蔥、青椒與黑木耳絲，加入蕃茄醬、白醋與砂糖調和的經典糖醋醬汁煮滾勾薄芡，投入炸魚片大火裹勻醬汁，酸甜濃郁、鮮脆開胃。
 servings: 4
 category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 鯛魚肉 250 g 醃後裹粉炸酥，洋蔥、青椒與木耳煮入糖醋芡汁搭配魚片。
 draft: false
 mealCandidate: true
 vegetable: false

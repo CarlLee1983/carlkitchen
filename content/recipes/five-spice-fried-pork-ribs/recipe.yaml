@@ -2,6 +2,8 @@ title: 五香排骨酥
 summary: 排骨以五香粉、蒜泥與調味料抓醃入味，拌入麵粉與地瓜粉裹勻返潮後下鍋油炸。外皮金黃酥脆、肉質多汁帶骨香。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 600 g 排骨逐塊醃漬裹粉油炸成酥肉，蒜泥與五香粉僅為醃料。
 draft: false
 mealCandidate: true
 vegetable: false

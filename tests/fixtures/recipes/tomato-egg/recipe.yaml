@@ -2,11 +2,13 @@ title: 番茄炒蛋
 summary: 蛋先炒到半熟盛起，再把番茄炒出汁，最後合在一起。蛋保持柔軟，番茄帶點湯汁，適合配飯。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 測試審核紀錄tomato-egg；番茄與蛋同為主角，配桌只作蛋白質菜。
 draft: false
 mealCandidate: true
 tags: [家常菜]
 aliases: [蕃茄炒蛋]
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 ingredients:

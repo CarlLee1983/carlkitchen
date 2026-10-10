@@ -2,6 +2,8 @@ title: 蒜味炸魚片
 summary: 鯛魚片與蒜片炸至金黃，淋上醬油膏、黑醋調成的醬汁。
 servings: 3
 category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 300 g 鯛魚片炸熟後淋醬，蒜片增香且小黃瓜切片僅鋪盤底。
 draft: false
 mealCandidate: true
 vegetable: false

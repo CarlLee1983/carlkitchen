@@ -1,5 +1,7 @@
 # 02: 性質篩選（蔬菜菜／蛋白質菜）
 
+> 歷史實作票：瀏覽與配餐共用兩個布林的設計已由 [ADR 0010](../../../docs/adr/0010-browse-kinds-and-meal-roles.md) 取代。現行瀏覽讀 `dishKinds`，配餐才讀 `vegetable`／`protein`；請依 [分類指南](../../../docs/recipe-classification.md) 開發新內容。
+
 **What to build:** 讀者在首頁清單可以用「全部｜蔬菜菜｜蛋白質菜｜湯」單選篩選。兩種性質都有的菜（例如番茄炒蛋）同時出現在蔬菜菜和蛋白質菜之下。篩選狀態以網址參數 `kind` 保存，可以和搜尋並用；沒有任何已發布菜色的選項不顯示。站主若把非湯料理寫成沒有任何標記，或讓湯帶了標記，建置會失敗。規格見 [01-browsing-spec](01-browsing-spec.md)〈篩選模型〉〈搜尋整合〉〈菜譜分類與 schema〉。
 
 **Blocked by:** None (can start immediately)

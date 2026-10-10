@@ -2,6 +2,8 @@ title: 乾煸四季豆
 summary: 四季豆先用較多的油煎到表皮起皺，再和絞肉、蒜末、辣椒一起拌炒調味。四季豆保有脆度，適合配飯或當便當菜。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 300 g 整根四季豆先煎至起皺，再裹上 100 g 炒散絞肉與辛香調味，四季豆為主體。
 draft: false
 mealCandidate: true
 vegetable: true

@@ -2,6 +2,8 @@ title: 薑母鴨
 summary: 老薑先用麻油炒過，再與鴨肉、米酒和水放入電鍋燉煮。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 900 g 鴨肉與 80 g 老薑及米酒燉煮，鴨肉為主要食材，沿用現行非湯料理類別。
 draft: false
 mealCandidate: false
 vegetable: false

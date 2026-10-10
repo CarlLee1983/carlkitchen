@@ -2,6 +2,8 @@ title: 蒜香青菜
 summary: 大火快炒青菜，加入蒜末提香，保持翠綠與脆度。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 測試審核紀錄garlic-greens；青菜是主角，大蒜只提香，可作一格蔬菜。
 draft: false
 mealCandidate: true
 vegetable: true

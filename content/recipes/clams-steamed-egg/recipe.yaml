@@ -2,6 +2,8 @@ title: 蛤蜊蒸蛋
 summary: 新鮮蛤蜊吐沙洗淨，雞蛋與水、鹽、糖充分打勻過濾去泡，蛋液注入深盤擺入肥美蛤蜊，入蒸鍋中小火蒸製。蛋面宛如布丁般平滑細緻，蛤蜊鮮甜原汁完全融入嫩蛋之中。
 servings: 3
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 三顆雞蛋加水過濾後蒸成整盤嫩蛋，六顆蛤蜊排入蛋液中提供海鮮配料與鮮味。
 draft: false
 mealCandidate: true
 vegetable: false

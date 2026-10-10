@@ -66,7 +66,7 @@ export function decodeSharedMeal(
   if (!isCompletePlan(pool, plan))
     return {
       ok: false,
-      reason: "菜單缺少由不同菜色組成的蔬菜與肉蛋料理搭配。",
+      reason: "菜單需要一道以蔬菜為主的料理，以及另一道肉、海鮮或蛋豆料理。",
     };
   return { ok: true, plan };
 }

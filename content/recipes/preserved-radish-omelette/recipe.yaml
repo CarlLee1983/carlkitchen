@@ -2,6 +2,8 @@ title: 菜脯蛋
 summary: 菜脯先乾炒收乾水分，再拌進加了蔥花的蛋液，煎成一整片兩面金黃的厚蛋。帶菜脯鹹香，適合配飯。
 servings: 2
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 三顆雞蛋煎成厚蛋，菜脯 50 g 切碎拌入蛋液提供鹹香與口感。
 draft: false
 mealCandidate: true
 vegetable: false

@@ -2,9 +2,11 @@ title: 金針花炒肉絲
 summary: 蒜末、辣椒片爆香後炒肉絲，調味後放入汆燙過的金針花，略炒就起鍋。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 300 g 金針花汆燙後與 100 g 保留條狀的瘦肉絲合炒，花菜與肉絲共同食用。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 20
 tags: [家常菜, 快炒]

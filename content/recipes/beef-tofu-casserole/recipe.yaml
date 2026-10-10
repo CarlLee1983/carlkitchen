@@ -2,6 +2,8 @@ title: 麻辣牛肉豆腐煲
 summary: 牛肉片先炒到約八分熟，板豆腐與菇類用高湯燒煮後合盤。
 servings: 2
 category: 非湯料理
+dishKinds: [meat, egg-bean]
+classificationReason: 300 g 板豆腐燒煮後盛盤並鋪上 150 g 炒牛肉片，豆腐塊與牛肉片為並列主角。
 draft: false
 mealCandidate: true
 vegetable: false

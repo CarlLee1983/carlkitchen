@@ -2,9 +2,11 @@ title: 絲瓜蛤蜊
 summary: 蛤蜊先汆燙，再和絲瓜小火煮到開口，最後勾薄芡、淋香油。絲瓜軟嫩、湯汁帶鮮味，適合配飯。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, seafood]
+classificationReason: 1 條絲瓜切塊與 200 g 蛤蜊同煮至開殼，保留絲瓜塊和完整蛤蜊並勾薄芡盛盤。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 40
 tags: [家常菜]

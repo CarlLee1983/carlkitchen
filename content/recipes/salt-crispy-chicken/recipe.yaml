@@ -2,6 +2,8 @@ title: 鹽酥雞
 summary: 雞胸肉醃過後裹地瓜粉炸到金黃，起鍋前放入九層塔，最後撒胡椒鹽與辣椒粉。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 雞胸肉醃後裹粉炸成塊，九層塔在起鍋前短炸提香，成品主角是雞肉。
 draft: false
 mealCandidate: false
 vegetable: false

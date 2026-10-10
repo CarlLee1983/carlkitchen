@@ -2,6 +2,8 @@ title: 橙汁排骨
 summary: 豬小排先醃後炸，再拌入柳橙汁醬，最後加入柳橙果肉。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 豬小排 500 g 醃後油炸再裹醬，柳橙汁、果肉和果皮提供酸甜風味。
 draft: false
 mealCandidate: true
 vegetable: false

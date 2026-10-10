@@ -53,7 +53,8 @@ describe("第四批菜譜的來源、家用單位與做法", () => {
       value: 330,
       unit: "g",
     });
-    assert.equal(data.vegetable, true);
+    assert.deepEqual(data.dishKinds, ["vegetable", "egg-bean"]);
+    assert.equal(data.vegetable, false); // 雙主角仍需另外搭配蔬菜為主的一道
     assert.equal(data.protein, true);
   });
   it("櫛瓜保留核准的根數、不加油與厚度差", () => {

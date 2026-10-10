@@ -2,9 +2,11 @@ title: 胡蘿蔔炒蛋
 summary: 蛋裹在炒軟的胡蘿蔔粗絲上，拌入蒜香，做法只需五樣材料。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 370 g 胡蘿蔔絲先炒軟再與三顆雞蛋炒至凝固，胡蘿蔔與炒蛋共同構成菜餚。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 tags:

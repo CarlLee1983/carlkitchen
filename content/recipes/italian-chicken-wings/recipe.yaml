@@ -2,6 +2,8 @@ title: 火烤義大利雞翅
 summary: 雞翅用義大利式香料、檸檬胡椒鹽和醬油醃過，先以小火烤熟，再用大火烤上色。
 servings: 1
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 2 支雞翅經香料醃漬後直接火烤成主菜，橄欖油與香料只作調味。
 draft: false
 mealCandidate: true
 vegetable: false

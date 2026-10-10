@@ -23,7 +23,7 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `pnpm dev` — 開發伺服器（顯示草稿）
 - `pnpm build` / `pnpm preview` — 正式建置（排除草稿，建置後以 Pagefind 建立含菜譜頁與專題頁的搜尋索引）與預覽。建置固定帶 `--force`，在 `RECIPES_DIR` 切換時清除 Astro 內容層快取，不可拿掉
 - `pnpm check` — 格式檢查、`astro check`、建置
-- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。另對已發布菜譜印出不影響結束碼的警告：材料表有、步驟沒用到的材料（規則見 `src/content-checks/unused-ingredients.ts`）。節氣：目錄有資料時 24 個識別值須齊全且無未知檔名、每筆通過 schema、當令食材只指向已發布食材條目、每個節氣的說明在來源紀錄有對照且網址列於 `sources`，核准來源網址不得出現在輸出（空目錄通過）。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄，`SOLAR_TERMS_DIR` 可改節氣目錄（預設 `content/solar-terms`），`SOLAR_TERM_SOURCES_DIR` 可改節氣來源紀錄目錄（預設 `content/solar-term-sources`）
+- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3，且具備不同的蔬菜主角與肉、海鮮或蛋豆角色），供部署前使用，PR 不開。另對已發布菜譜印出不影響結束碼的警告：材料表有、步驟沒用到的材料（規則見 `src/content-checks/unused-ingredients.ts`）。節氣：目錄有資料時 24 個識別值須齊全且無未知檔名、每筆通過 schema、當令食材只指向已發布食材條目、每個節氣的說明在來源紀錄有對照且網址列於 `sources`，核准來源網址不得出現在輸出（空目錄通過）。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄，`SOLAR_TERMS_DIR` 可改節氣目錄（預設 `content/solar-terms`），`SOLAR_TERM_SOURCES_DIR` 可改節氣來源紀錄目錄（預設 `content/solar-term-sources`）
 - `pnpm test` — 單元測試
 - `pnpm test:e2e` — 以固定菜譜建置三份站台後依序跑三輪 Playwright（chromium）：預設站台（`dist`）、配菜站台（`dist-meal`，只跑 `meal.spec.ts`）、顯示更多站台（`dist-show-more`，每批 1 道、含搜尋索引，只跑 `show-more.spec.ts`）；port 以 `E2E_PORT_BASE` 起算，三份站台依序占 +0／+1／+2；沒設定時自動從 4321 起找三個連續的空 port，平行跑需各用一個 worktree。機器負載高時個別測試可能逾時，重跑一次確認
 - `pnpm check:overlap <識別值…>` — 照抄檢查：菜譜自動抓 `content/sources/` 的每個網址比對，專題比對它連到的菜譜；去掉空白標點後有 12 字以上相同片段即失敗（ADR 0009）。需要網路
@@ -47,6 +47,10 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 新增、修改菜譜或重製插畫依 `recipe-making` skill（`.claude/skills/recipe-making/`，含來源核准、Codex 生圖與轉檔腳本、送審清單）；菜譜文字依 `recipe-writing` skill（`.claude/skills/recipe-writing/`）。新增、修改食材條目文字依 `ingredient-writing` skill（`.claude/skills/ingredient-writing/`）。選下一篇專題或站主提新題目時，先看選題庫 `.scratch/topic-backlog.md`（候選題目、可連菜譜、狀態），題目開工、發布或放棄時同步更新狀態。新增、修改專題依 `topic-writing` skill（`.claude/skills/topic-writing/`）：先請站主核准來源，再逐條查證，專題內文在 `content/topics/<識別值>/topic.md`，內部來源紀錄在 `content/topic-sources/<識別值>.yaml`；個人心得只由站主撰寫，食材、調味料、廚具與烹調動作一律用臺灣用詞。菜譜、食材條目與專題的文字送審前依 `de-ai-voice` skill（`.claude/skills/de-ai-voice/`）去 AI 味，只改腔調，不動事實與用量。菜譜 schema 見 `src/content/recipe-schema.ts`：每張圖都是 `{ src, alt }`，alt 必填；已發布菜譜須有成品圖（`hero`）、材料合照（`ingredientsPhoto`）與至少一張步驟圖。
 
 圖片規格慣例：WebP、1536×1024、不超過 300 KB。schema 不檢查這些，由 `pnpm check:content` 強制（門檻第 4 項）。成品圖不畫餐具（`.scratch/recipe-mvp/issues/06-homepage-direction.md`〈圖片風格規格〉），`pnpm check:content` 以替代文字是否提到餐具把關。
+
+## 菜譜分類與配餐
+
+分類以 `GLOSSARY.md`、`docs/recipe-classification.md`、ADR 0010 與 schema 為準；舊原型票的共用旗標描述只作歷史參考。每篇菜譜（包含草稿）明寫 `dishKinds` 與 `classificationReason`。瀏覽依料理主角，`vegetable`／`protein` 只作配餐角色，不能互相反推。四菜／五菜套餐須另外有一道蔬菜為主的菜；番茄炒蛋等雙主角不抵充蔬菜位。分類變更不代表核准來源、解封草稿、改候選資格或改湯政策。分類專案須列出逐篇理由、真實資料回歸及未更動配方／來源的驗證。
 
 ## 程式與測試
 

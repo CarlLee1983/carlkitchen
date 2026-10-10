@@ -2,6 +2,8 @@ title: 清炒豆芽
 summary: 豆芽菜先短暫汆燙，再與韭菜、辣椒和大蒜拌炒。用米酒與胡椒調味，是一道清脆的家常配菜。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 豆芽菜 300 g 汆燙後與少量韭菜快炒，成品以豆芽菜為主。
 draft: false
 mealCandidate: true
 vegetable: true

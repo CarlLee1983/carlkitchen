@@ -3,7 +3,7 @@ import RecipeActionIcon from "../../components/RecipeActionIcon.astro";
 import Base from "../../layouts/Base.astro";
 import Illustration from "../../components/Illustration.astro";
 import { formatAmount, groupIngredients } from "../../utils/ingredients";
-import { recipeKinds } from "../../utils/home";
+import { recipeKinds, recipeKindLabels } from "../../utils/home";
 import {
   getVisibleIngredientEntries,
   type IngredientEntry,
@@ -108,7 +108,7 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
     Pagefind 索引範圍：整個站只要有 data-pagefind-body，沒有標記的頁面（首頁、關於頁等）就不進索引。
     這裡只標記可搜尋的欄位：菜名（加權）、摘要、材料名稱、受控標籤與別名；
     步驟、小提醒不標記；材料行內的用量與備註要明確 ignore（Pagefind 會把行內相鄰文字一起收進去）；圖片替代文字由 Illustration 的 data-pagefind-ignore="all" 排除。
-    性質以篩選屬性 kind 提供，值與首頁網址的 kind 參數相同；每個值各用一個元素輸出，一道菜可帶多個值。
+    料理主角以篩選屬性 kind 提供，值與首頁網址的 kind 參數相同；每個值各用一個元素輸出，一道菜可帶多個值。
   -->
   <article
     class:list={[
@@ -147,7 +147,7 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
       <p class="recipe-meta">
         <span>{data.servings} 人份</span>
         <span>{data.timeMinutes} 分鐘</span>
-        <span>{data.category}</span>
+        <span>{recipeKindLabels(data).join("・")}</span>
       </p>
       <div class="recipe-actions">
         {

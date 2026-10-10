@@ -2,9 +2,11 @@ title: 金銀蛋莧菜
 summary: 莧菜與皮蛋、熟鹹蛋一起拌炒，最後拌回炒過的蒜仁。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 300 g 莧菜與各一整顆的皮蛋、鹹蛋粗丁共同拌炒，菜葉與實體蛋丁構成雙主角。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 20
 tags: [蔬菜料理]

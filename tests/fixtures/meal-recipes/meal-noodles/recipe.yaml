@@ -2,6 +2,8 @@ title: 台式炒麵
 summary: 油麵與高麗菜絲大火拌炒，單吃就是一餐。
 servings: 2
 category: 主食
+dishKinds: []
+classificationReason: 測試審核紀錄meal-noodles；麵為整餐主食，不標非湯主角或配桌角色。
 draft: false
 timeMinutes: 15
 mealCandidate: false

@@ -120,7 +120,7 @@ const normalPool: Candidate[] = [
   veg("mushroom"),
   veg("cauliflower"),
   veg("eggplant"),
-  both("tomato-egg"),
+  pro("tomato-egg"),
   pro("tofu"),
   pro("fish"),
   pro("chicken"),
@@ -193,6 +193,7 @@ describe("candidatesFromRecipes", () => {
       mealCandidate: boolean;
       vegetable: boolean;
       protein: boolean;
+      dishKinds: ("vegetable" | "meat" | "seafood" | "egg-bean")[];
     }>,
   ) => ({
     id,
@@ -202,6 +203,7 @@ describe("candidatesFromRecipes", () => {
       mealCandidate: true,
       vegetable: false,
       protein: false,
+      dishKinds: [],
       ...data,
     },
   });
@@ -221,6 +223,80 @@ describe("candidatesFromRecipes", () => {
       { id: "c", soup: true, vegetable: false, protein: false },
     ]);
   });
+
+  it("瀏覽類型不覆蓋組餐角色：蔬菜與蛋豆混合菜只算肉蛋料理", () => {
+    const candidates = candidatesFromRecipes([
+      recipe("tomato-egg", {
+        dishKinds: ["vegetable", "egg-bean"],
+        vegetable: false,
+        protein: true,
+      }),
+      recipe("pork-sauce-spinach", {
+        dishKinds: ["vegetable"],
+        vegetable: true,
+        protein: false,
+      }),
+      recipe("draft-vegetable", {
+        draft: true,
+        dishKinds: ["vegetable"],
+        vegetable: true,
+      }),
+      recipe("staple", {
+        category: "主食",
+        dishKinds: ["vegetable"],
+        vegetable: true,
+      }),
+    ]);
+    assert.deepEqual(candidates, [
+      { id: "tomato-egg", soup: false, vegetable: false, protein: true },
+      {
+        id: "pork-sauce-spinach",
+        soup: false,
+        vegetable: true,
+        protein: false,
+      },
+    ]);
+  });
+
+  for (const mode of [4, 5] as const) {
+    it(`${mode} 菜一湯不能用混合菜取代蔬菜主角`, () => {
+      const pool = candidatesFromRecipes([
+        recipe("tomato-egg", {
+          dishKinds: ["vegetable", "egg-bean"],
+          protein: true,
+        }),
+        ...Array.from({ length: 4 }, (_, i) =>
+          recipe(`protein-${i}`, { dishKinds: ["meat"], protein: true }),
+        ),
+        recipe("soup", { category: "湯" }),
+      ]);
+      const result = fail(applyAction(pool, createPlan(1, mode), reroll));
+      assert.match(result.reason, /缺少.*蔬菜.*主角/);
+      assert.deepEqual(result.plan, createPlan(1, mode));
+
+      const balancedPool = [...pool, veg("spinach")];
+      for (let seed = 0; seed < 20; seed++) {
+        const plan = ok(
+          applyAction(balancedPool, createPlan(seed, mode), reroll),
+        ).plan;
+        assertValid(balancedPool, plan);
+        assert.ok(plan.dishes.some(({ id }) => id === "spinach"));
+      }
+
+      let draft = createDraft(1, mode);
+      for (const [target, id] of [
+        ...pool.slice(0, mode).map(({ id }, target) => [target, id] as const),
+        ["soup", "soup"] as const,
+      ]) {
+        const chosen = applyDraftChoice(pool, draft, target, id);
+        assert.equal(chosen.ok, true);
+        if (chosen.ok) draft = chosen.draft;
+      }
+      const progress = draftProgress(pool, draft);
+      assert.equal(progress.complete, false);
+      assert.match(progress.message, /還缺.*蔬菜.*主角/);
+    });
+  }
 });
 
 describe("指定菜色", () => {
@@ -435,6 +511,7 @@ describe("候選不足與無法平衡", () => {
     const result = fail(applyAction(pool, plan, reroll));
     assert.deepEqual(result.plan, createPlan(5));
     assert.match(result.reason, /非湯菜不足/);
+    assert.match(result.reason, /尚需 4 道.*只有 3 道/);
   });
 
   it("沒有湯時回無解", () => {
@@ -446,7 +523,7 @@ describe("候選不足與無法平衡", () => {
   it("沒有肉蛋料理時無法平衡，回無解", () => {
     const pool = [veg("a"), veg("b"), veg("c"), veg("d"), veg("e"), soup("s")];
     const result = fail(applyAction(pool, createPlan(5), reroll));
-    assert.match(result.reason, /缺少蔬菜或另一道肉蛋料理/);
+    assert.match(result.reason, /缺少另一道肉蛋料理/);
     assert.doesNotMatch(result.reason, /鎖定/);
   });
 

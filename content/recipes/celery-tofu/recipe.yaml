@@ -2,9 +2,11 @@ title: 芹菜炒豆干
 summary: 芹菜先炒出香氣，再加蒜頭與豆干拌炒，最後用鹽、胡椒粉和辣椒調味。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 200 g 芹菜段與 330 g 豆干片一起翻炒，芹菜和豆干均保留形體並占實質份量。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 10
 tags: [家常菜]

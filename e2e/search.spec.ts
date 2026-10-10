@@ -2,6 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 import {
   draftFixtureRecipes,
   publishedFixtureRecipes,
+  fixtureKindLabels,
   type FixtureRecipe,
 } from "./fixture-recipes";
 
@@ -189,14 +190,8 @@ test("草稿不出現在搜尋結果", async ({ page }) => {
 test("篩選在有字詞時只回該篩選下的菜", async ({ page }) => {
   await page.goto("/");
   for (const recipe of recipes) {
-    const own =
-      recipe.category !== "非湯料理"
-        ? [recipe.category]
-        : [
-            ...(recipe.vegetable ? ["蔬菜"] : []),
-            ...(recipe.protein ? ["肉蛋料理"] : []),
-          ];
-    const others = ["湯", "蔬菜", "肉蛋料理", "主食"].filter(
+    const own = fixtureKindLabels(recipe);
+    const others = ["湯", "蔬菜", "肉類", "海鮮", "蛋豆", "主食"].filter(
       (name) => !own.includes(name),
     );
 
@@ -228,12 +223,16 @@ test("篩選在無字詞時依菜名排序，且網址 kind 值與按鈕對應",
 });
 
 test("篩選與搜尋並用：結果是兩者的交集", async ({ page }) => {
-  const both = recipes.find((recipe) => recipe.vegetable && recipe.protein)!;
+  const both = recipes.find(
+    (recipe) =>
+      recipe.dishKinds.includes("vegetable") &&
+      recipe.dishKinds.includes("egg-bean"),
+  )!;
   await page.goto("/");
-  await page.getByRole("button", { name: "肉蛋料理" }).click();
+  await page.getByRole("button", { name: "蛋豆" }).click();
   await search(page, both.title);
   await expect(rowOf(page, both)).toBeVisible();
-  await expect(page).toHaveURL(/kind=protein/);
+  await expect(page).toHaveURL(/kind=egg-bean/);
   await expect(page).toHaveURL(/q=/);
   await expect(status(page)).toContainText("符合");
 
@@ -487,7 +486,7 @@ test("套用菜譜分類篩選時搜尋結果不含專題", async ({ page }) => 
   await page.goto("/");
   await search(page, "磨刀石");
   await expect(knifeRow(page)).toBeVisible();
-  for (const name of ["湯", "蔬菜", "肉蛋料理", "主食"]) {
+  for (const name of ["湯", "蔬菜", "肉類", "海鮮", "蛋豆", "主食"]) {
     await page.getByRole("button", { name, exact: true }).click();
     await expect(rows(page), name).toHaveCount(0);
     await expect(emptyMessage(page)).toBeVisible();
@@ -512,4 +511,18 @@ test("草稿專題不在索引，正式建置也沒有草稿頁", async ({ page 
   }
   const response = await page.goto("/topics/draft-topic/");
   expect(response?.status()).toBe(404);
+});
+
+test("分類審核理由不被搜尋，舊 protein 網址與搜尋仍一致", async ({ page }) => {
+  await page.goto("/");
+  await search(page, "測試審核紀錄");
+  await expect(rows(page)).toHaveCount(0);
+  const recipe = recipes.find((item) => item.dishKinds.includes("seafood"))!;
+  await page.goto(`/?kind=protein&q=${encodeURIComponent(recipe.title)}`);
+  await expect(rowOf(page, recipe)).toBeVisible();
+  await expect(page.getByRole("button", { name: "全部" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page).not.toHaveURL(/kind=/);
 });

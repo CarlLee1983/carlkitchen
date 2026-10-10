@@ -2,6 +2,8 @@ title: 麻油炒山蘇
 summary: 黑麻油和生薑先以小火炒香，再加入山蘇、豆豉快炒，最後拌入米酒、鹽和味精。
 servings: 6
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 山蘇 500 g 切段快炒，生薑與豆豉 10 g 只用來爆香和調味。
 draft: false
 mealCandidate: true
 vegetable: true

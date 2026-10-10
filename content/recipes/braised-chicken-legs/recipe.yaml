@@ -2,6 +2,8 @@ title: 滷雞腿
 summary: 雞腿以米酒、醬油和砂糖滷煮，加入八角與花椒，熄火後再燜 10 分鐘。
 servings: 5
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 五支帶骨雞腿在醬油香料滷汁中煮熟燜透，雞腿是唯一實體主菜。
 draft: false
 mealCandidate: true
 vegetable: false

@@ -2,6 +2,8 @@ title: 客家小炒
 summary: 五花肉與豆干炒出香氣，再拌入魷魚、蝦米及蒜苗、青蔥、芹菜。醬香濃郁，適合配飯。
 servings: 4
 category: 非湯料理
+dishKinds: [meat, seafood, egg-bean]
+classificationReason: 五花肉與豆干各 300 g，搭配 1 尾泡發切條乾魷魚共同炒製，三種條狀主料並列成菜。
 draft: false
 mealCandidate: true
 vegetable: false

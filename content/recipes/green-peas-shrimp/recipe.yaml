@@ -2,6 +2,8 @@ title: 青豆蝦仁
 summary: 鮮蝦去殼後蝦頭煉出濃郁蝦汁，蝦仁略炒盛起，青豆以蝦汁煨煮至軟甜後與蝦仁、蔥綠拌炒。清爽鮮脆、蝦香四溢。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable, seafood]
+classificationReason: 300 g 整蝦取仁與 150 g 青豆各自炒煮後合拌，青豆吸收蝦汁且蝦仁保留為主要食用料。
 draft: false
 mealCandidate: true
 vegetable: false

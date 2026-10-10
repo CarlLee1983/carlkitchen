@@ -2,6 +2,8 @@ title: 甜豆玉米筍
 summary: 玉米筍先加水燜煮，再與甜豆、紅甜椒拌炒成一盤蔬菜配菜。
 servings: 4
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 甜豆 500 g、玉米筍 100 g 與紅甜椒炒成蔬菜配菜，甜豆以嫩豆莢食用。
 draft: false
 mealCandidate: true
 vegetable: true

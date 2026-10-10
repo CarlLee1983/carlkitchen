@@ -1,17 +1,27 @@
-import type { RecipeCategory } from "../content/recipe-schema";
+import type { DishKind, RecipeCategory } from "../content/recipe-schema";
 
 /** 篩選值：網址參數 `kind` 的值，也是 Pagefind 篩選屬性 `kind` 的值。 */
-export type KindFilter = "all" | "vegetable" | "protein" | "staple" | "soup";
+export type KindFilter = "all" | DishKind | "staple" | "soup";
 
 export const KIND_PARAM = "kind";
+
+/** 篩選與菜譜標籤共用相同文字，避免名稱不一致。 */
+const KIND_LABELS: Record<Exclude<KindFilter, "all">, string> = {
+  vegetable: "蔬菜",
+  meat: "肉類",
+  seafood: "海鮮",
+  "egg-bean": "蛋豆",
+  staple: "主食",
+  soup: "湯",
+};
 
 /** 篩選選項的固定順序與中文標籤。 */
 const KIND_OPTIONS: readonly { value: KindFilter; label: string }[] = [
   { value: "all", label: "全部" },
-  { value: "vegetable", label: "蔬菜" },
-  { value: "protein", label: "肉蛋料理" },
-  { value: "staple", label: "主食" },
-  { value: "soup", label: "湯" },
+  ...Object.entries(KIND_LABELS).map(([value, label]) => ({
+    value: value as Exclude<KindFilter, "all">,
+    label,
+  })),
 ];
 
 /** 缺少、無法辨識或不在目前顯示的選項（`visible`）中的值一律視為全部。 */
@@ -24,11 +34,10 @@ export function parseKindParam(
 
 interface KindSource {
   category: RecipeCategory;
-  vegetable: boolean;
-  protein: boolean;
+  dishKinds: readonly DishKind[];
 }
 
-/** 菜譜屬於哪些篩選值（不含 all）；兩種性質都有的非湯料理同時屬於兩個。 */
+/** 菜譜屬於哪些篩選值（不含 all）；雙主角同時屬於各類，配桌角色不參與。 */
 export function recipeKinds(recipe: KindSource): Exclude<KindFilter, "all">[] {
   switch (recipe.category) {
     case "湯":
@@ -36,14 +45,16 @@ export function recipeKinds(recipe: KindSource): Exclude<KindFilter, "all">[] {
     case "主食":
       return ["staple"];
     case "非湯料理":
-      return [
-        ...(recipe.vegetable ? (["vegetable"] as const) : []),
-        ...(recipe.protein ? (["protein"] as const) : []),
-      ];
+      return [...recipe.dishKinds];
     default:
       // 分類列舉新增值時，這裡會在型別檢查時報錯，提醒補上對應的篩選值
       return recipe.category satisfies never;
   }
+}
+
+/** 清單與菜譜頁呈現的主角標籤。 */
+export function recipeKindLabels(recipe: KindSource): string[] {
+  return recipeKinds(recipe).map((kind) => KIND_LABELS[kind]);
 }
 
 /** 已發布菜譜要顯示的篩選選項：固定順序，只留至少有一道菜的，全部一律顯示。 */

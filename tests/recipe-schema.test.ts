@@ -11,6 +11,8 @@ const publishedRecipe = () => ({
   summary: "蛋先炒到半熟盛起，再把番茄炒出汁，最後合在一起。",
   servings: 2,
   category: "非湯料理",
+  dishKinds: ["vegetable"],
+  classificationReason: "蔬菜為主角，作為一格蔬菜菜。",
   vegetable: true,
   draft: false,
   timeMinutes: 15,
@@ -37,6 +39,8 @@ const draftRecipe = () => ({
   summary: "還沒寫完。",
   servings: 1,
   category: "湯",
+  dishKinds: [],
+  classificationReason: "湯品不設定非湯主角與角色。",
   draft: true,
   timeMinutes: 10,
   ingredients: [{ name: "水", amount: { value: 500, unit: "ml" } }],
@@ -60,23 +64,94 @@ describe("recipe schema", () => {
     assert.equal(result.protein, false);
   });
 
-  it("非湯料理至少要是蔬菜或肉蛋料理之一", () => {
-    for (const marks of [{ vegetable: true }, { protein: true }]) {
-      const { vegetable: _v, ...base } = publishedRecipe();
-      assert.equal(schema.safeParse({ ...base, ...marks }).success, true);
+  it("非湯料理必填主角且不得重複或出現未知分類", () => {
+    const { dishKinds: _kinds, ...withoutKinds } = publishedRecipe();
+    failsAt(withoutKinds, "dishKinds");
+    for (const dishKinds of [[], ["dessert"], ["vegetable", "vegetable"]]) {
+      failsAt({ ...publishedRecipe(), dishKinds }, "dishKinds");
     }
+  });
+
+  it("每篇必填非空的分類理由，草稿也不例外", () => {
+    for (const recipe of [publishedRecipe(), draftRecipe()]) {
+      const { classificationReason: _reason, ...withoutReason } = recipe;
+      failsAt(withoutReason, "classificationReason");
+      for (const classificationReason of ["", "  "]) {
+        failsAt({ ...recipe, classificationReason }, "classificationReason");
+      }
+    }
+  });
+
+  it("蔬菜角色只接受單一蔬菜主角，不能兼蛋白質角色", () => {
+    assert.equal(schema.safeParse(publishedRecipe()).success, true);
+    failsAt({ ...publishedRecipe(), protein: true }, "vegetable");
+    failsAt(
+      {
+        ...publishedRecipe(),
+        dishKinds: ["vegetable", "egg-bean"],
+        protein: true,
+      },
+      "vegetable",
+    );
+    failsAt({ ...publishedRecipe(), dishKinds: ["meat"] }, "vegetable");
+  });
+
+  it("蛋白質角色必須有肉類、海鮮或蛋豆主角，容許真正雙主角", () => {
+    failsAt(
+      { ...publishedRecipe(), vegetable: false, protein: true },
+      "protein",
+    );
+    for (const kind of ["meat", "seafood", "egg-bean"]) {
+      for (const dishKinds of [[kind], ["vegetable", kind]]) {
+        assert.equal(
+          schema.safeParse({
+            ...publishedRecipe(),
+            dishKinds,
+            vegetable: false,
+            protein: true,
+          }).success,
+          true,
+        );
+      }
+    }
+  });
+
+  it("三種主角可並存，不以兩類為上限", () => {
     assert.equal(
-      schema.safeParse({ ...publishedRecipe(), vegetable: true, protein: true })
-        .success,
+      schema.safeParse({
+        ...publishedRecipe(),
+        dishKinds: ["meat", "seafood", "egg-bean"],
+        vegetable: false,
+        protein: true,
+      }).success,
       true,
     );
+  });
+
+  it("非湯料理至少有一個配桌角色", () => {
     const neither = { ...publishedRecipe(), vegetable: false, protein: false };
     failsAt(neither, "vegetable");
     failsAt(neither, "protein");
   });
 
-  it("湯的蔬菜與肉蛋料理標記都必須為假", () => {
-    const asSoup = { ...publishedRecipe(), category: "湯" };
+  it("主食與湯必須明確使用空主角陣列", () => {
+    for (const category of ["主食", "湯"]) {
+      const recipe = {
+        ...publishedRecipe(),
+        category,
+        vegetable: false,
+        protein: false,
+        dishKinds: [],
+      };
+      assert.equal(schema.safeParse(recipe).success, true);
+      failsAt({ ...recipe, dishKinds: ["vegetable"] }, "dishKinds");
+      const { dishKinds: _kinds, ...withoutKinds } = recipe;
+      failsAt(withoutKinds, "dishKinds");
+    }
+  });
+
+  it("湯的蔬菜與蛋白質角色都必須為假", () => {
+    const asSoup = { ...publishedRecipe(), category: "湯", dishKinds: [] };
     failsAt({ ...asSoup, vegetable: true, protein: false }, "vegetable");
     failsAt({ ...asSoup, vegetable: false, protein: true }, "protein");
     assert.equal(
@@ -85,10 +160,11 @@ describe("recipe schema", () => {
     );
   });
 
-  it("分類可以是主食；主食不可標蔬菜或肉蛋料理，也不可為配菜候選", () => {
+  it("分類可以是主食；主食不可標蔬菜或蛋白質角色，也不可為配菜候選", () => {
     const staple = {
       ...publishedRecipe(),
       category: "主食",
+      dishKinds: [],
       vegetable: false,
       protein: false,
       mealCandidate: false,
@@ -123,6 +199,7 @@ describe("recipe schema", () => {
       schema.safeParse({
         ...draftRecipe(),
         category: "非湯料理",
+        dishKinds: ["egg-bean"],
         protein: true,
       }).success,
       true,

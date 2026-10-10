@@ -2,9 +2,11 @@ title: 雙蛋燴青花菜
 summary: 青花菜汆燙後，淋上皮蛋與熟鹹蛋煮成的芡汁。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 130 g 青花菜汆燙盛盤，淋上各一整顆皮蛋與鹹蛋保留蛋丁的燴汁，青花菜與雙蛋共同食用。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 20
 tags: [家常菜]

@@ -2,6 +2,8 @@ title: 蒜泥白肉
 summary: 帶皮五花肉入冷水鍋慢火煮透封汁，撈起切成薄如紙片的肉片整齊鋪排，淋上以鮮磨蒜泥、醬油膏、甜辣醬、香油與砂糖調和的濃郁蒜香醬汁，肉質軟嫩肥而不膩、醬香濃烈爽口，宴客家常名盤。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 400 g 五花肉整塊煮熟後切薄片排盤，蒜末及甜辣醬等調成淋醬。
 draft: false
 mealCandidate: true
 vegetable: false

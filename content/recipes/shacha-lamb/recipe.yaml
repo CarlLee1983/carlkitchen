@@ -2,9 +2,11 @@ title: 沙茶羊肉
 summary: 羊肉片以沙茶醬醃過，再與空心菜、洋蔥和青蔥一起炒，最後加入辣椒。
 servings: 3
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 羊肩肉片先以沙茶醬醃製再快炒，空心菜、洋蔥與青蔥是搭配羊肉的炒料。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 30
 tags: [羊肉, 快炒, 家常菜]

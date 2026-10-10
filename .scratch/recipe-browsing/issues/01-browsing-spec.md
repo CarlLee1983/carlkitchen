@@ -1,5 +1,7 @@
 # 菜譜瀏覽規格：主食分類、性質篩選與手機版清單
 
+> 歷史規格更新：本票的三種上桌分類仍由 ADR 0002 保留；五選項篩選、瀏覽與配餐共用 `vegetable`／`protein`、卡片僅顯示非湯料理等描述已由 [ADR 0010](../../../docs/adr/0010-browse-kinds-and-meal-roles.md) 取代。現行規則見 [分類指南](../../../docs/recipe-classification.md)。
+
 Type: spec
 Status: open
 Label: ready-for-agent

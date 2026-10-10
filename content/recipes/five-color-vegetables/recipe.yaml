@@ -2,6 +2,8 @@ title: 五色蔬菜
 summary: 綠蘆筍、黑木耳、紅蘿蔔、黃甜椒和山藥汆燙後冰鎮，再拌入檸檬蒜香調味。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 蘆筍、木耳、紅蘿蔔、黃甜椒與山藥共 290 g 汆燙冰鎮後拌調味，成品完全由蔬菜食材構成。
 draft: false
 mealCandidate: true
 vegetable: true

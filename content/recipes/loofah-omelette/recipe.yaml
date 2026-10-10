@@ -2,9 +2,11 @@ title: 絲瓜煎蛋
 summary: 絲瓜薄片和薑蒜拌進蛋液，以小火煎到定型，再翻面煎至上色。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 200 g 絲瓜片拌入 2 顆雞蛋煎成整體，絲瓜口感與凝固蛋體共同構成成品。
 draft: false
 mealCandidate: true
-vegetable: true
+vegetable: false
 protein: true
 timeMinutes: 15
 tags: [家常菜]

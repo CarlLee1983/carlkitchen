@@ -2,6 +2,8 @@ title: 蔥油雞
 summary: 去骨雞腿先冷藏醃漬再蒸熟，淋上以青蔥、蒜末和薑末煮成的蔥油。
 servings: 4
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 兩支去骨雞腿整支蒸熟，青蔥、薑蒜末煮成淋在雞腿上的蔥油。
 draft: false
 mealCandidate: true
 vegetable: false

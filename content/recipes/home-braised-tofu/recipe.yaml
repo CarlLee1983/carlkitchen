@@ -2,6 +2,8 @@ title: 家常燒豆腐
 summary: 板豆腐煎至兩面焦黃，再和豬肉絲、薑蔥及醬汁燒到湯汁略收。
 servings: 2
 category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 300 g 板豆腐先煎成厚片再燒入味，30 g 豬肉絲只為醬汁添肉香。
 draft: false
 mealCandidate: true
 vegetable: false

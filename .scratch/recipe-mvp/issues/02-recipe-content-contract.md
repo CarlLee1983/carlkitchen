@@ -1,5 +1,7 @@
 # 菜譜、菜色與圖片的內容契約
 
+> 歷史規格：分類與配餐標記已由 [ADR 0002](../../../docs/adr/0002-staple-as-category.md) 及 [ADR 0010](../../../docs/adr/0010-browse-kinds-and-meal-roles.md) 更新。兩分類、義大利麵作非湯料理、雙標記皆可無，以及瀏覽與配餐共用標記的描述不再適用；現行規則以 [分類指南](../../../docs/recipe-classification.md)、GLOSSARY 與 schema 為準。本文其餘來源、發布及操作歷史保留。
+
 Type: grilling
 Status: resolved
 Assignee: Carl

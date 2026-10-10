@@ -1,0 +1,25 @@
+title: 青椒牛肉
+summary: 牛肉片快炒後與青椒合炒，肉嫩椒脆。
+servings: 2
+category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 測試審核紀錄beef-peppers；青椒與牛肉同為主角，配桌只作蛋白質菜。
+draft: false
+timeMinutes: 15
+mealCandidate: false
+vegetable: false
+protein: true
+ingredients:
+  - { name: 主料, amount: { value: 200, unit: g } }
+  - { name: 鹽, group: 調味 }
+steps:
+  - text: 備好材料，依序處理後烹煮至熟。
+    image:
+      src: ./step-1.webp
+      alt: 青椒牛肉的備料步驟
+hero:
+  src: ./hero.webp
+  alt: 青椒牛肉的成品
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 青椒牛肉的材料合照

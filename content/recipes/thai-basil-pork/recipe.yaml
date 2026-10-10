@@ -2,6 +2,8 @@ title: 泰式打拋豬
 summary: 以事先備妥的豬肉燥與辣椒、九層塔快炒，再拌入泰式辣椒醬與檸檬汁。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 豬肉燥 300 g 與辣椒快炒，九層塔、辣椒醬和檸檬汁提供香氣與調味。
 draft: false
 mealCandidate: true
 vegetable: false

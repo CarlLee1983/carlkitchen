@@ -2,6 +2,8 @@ title: 豆豉鮮蚵
 summary: 鮮蚵快速汆燙後，與豆豉、蒜末和辣椒拌煮，裹上微稠的醬汁。鮮蚵柔嫩，適合配飯。
 servings: 2
 category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 300 g 鮮蚵汆燙後裹豆豉醬汁，豆豉與蔥蒜辣椒皆用於爆香調味。
 draft: false
 mealCandidate: true
 vegetable: false

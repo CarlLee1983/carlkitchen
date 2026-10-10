@@ -2,6 +2,8 @@ title: 塔香茄子
 summary: 茄子先與蒜頭燜軟，再加入九層塔與醬油膏收汁。
 servings: 3
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 兩根茄子切片燜軟收汁，九層塔、蒜頭與醬油膏用來調味。
 draft: false
 mealCandidate: true
 vegetable: true

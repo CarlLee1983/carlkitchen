@@ -2,6 +2,8 @@ title: 香煎雞腿
 summary: 雞腿肉皮面先煎，煎出油脂與香氣。
 servings: 2
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 測試審核紀錄meal-chicken；雞肉是主角，配桌只作蛋白質菜。
 draft: false
 timeMinutes: 25
 mealCandidate: true

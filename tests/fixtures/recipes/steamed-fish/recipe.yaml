@@ -1,0 +1,25 @@
+title: 清蒸魚
+summary: 魚身劃刀，大火蒸熟後淋上熱油與醬油。
+servings: 2
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 測試審核紀錄steamed-fish；魚是主角，配桌只作蛋白質菜。
+draft: false
+timeMinutes: 30
+mealCandidate: false
+vegetable: false
+protein: true
+ingredients:
+  - { name: 主料, amount: { value: 200, unit: g } }
+  - { name: 鹽, group: 調味 }
+steps:
+  - text: 備好材料，依序處理後烹煮至熟。
+    image:
+      src: ./step-1.webp
+      alt: 清蒸魚的備料步驟
+hero:
+  src: ./hero.webp
+  alt: 清蒸魚的成品
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 清蒸魚的材料合照

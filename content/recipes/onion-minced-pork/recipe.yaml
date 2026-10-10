@@ -2,6 +2,8 @@ title: 洋蔥炒豬絞肉
 summary: 洋蔥丁炒至金黃，再與豬絞肉拌炒收汁。以醬油和醬油膏調味，適合配飯或拌麵。
 servings: 3
 category: 非湯料理
+dishKinds: [meat]
+classificationReason: 豬絞肉 300 g 炒散收成拌飯肉燥，洋蔥丁先炒金黃用來增加肉燥的甜味。
 draft: false
 mealCandidate: true
 vegetable: false

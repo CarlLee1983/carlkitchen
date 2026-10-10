@@ -2,7 +2,10 @@ title: 範例菜
 summary: 檢查指令用的固定菜譜。
 servings: 2
 category: 非湯料理
-vegetable: true
+dishKinds: [egg-bean]
+classificationReason: 測試審核紀錄alpha；蛋為主角，配桌作蛋白質菜。
+vegetable: false
+protein: true
 draft: false
 timeMinutes: 10
 ingredients:

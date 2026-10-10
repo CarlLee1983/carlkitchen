@@ -16,6 +16,7 @@ export interface RecipeLike {
 /**
  * 把公開菜譜轉成配菜候選池：只留已發布、標為配菜候選且分類為非湯料理或湯者，保持輸入順序。
  * 主食一律排除（候選池層的防線，不依賴 schema 已擋下主食的 `mealCandidate`）。
+ * `vegetable`、`protein` 是組餐角色；瀏覽用的 `dishKinds` 不參與轉換或推算。
  */
 export function candidatesFromRecipes(
   recipes: readonly RecipeLike[],

@@ -2,6 +2,8 @@ title: 涼拌木耳
 summary: 新鮮黑木耳汆燙後泡冰水冰鎮，搭配嫩薑絲、辣椒與蒜末，以醬油膏、白醋和香油調汁拌勻。口感脆嫩彈牙、酸甜開胃。
 servings: 2
 category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 新鮮黑木耳 200 g 汆燙冰鎮後拌醬，薑絲、辣椒與蒜末只作涼拌調味。
 draft: false
 mealCandidate: true
 vegetable: true

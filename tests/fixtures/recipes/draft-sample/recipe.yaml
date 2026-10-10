@@ -2,6 +2,8 @@ title: 草稿範例
 summary: 只用來驗證草稿在正式建置中被排除的菜譜，沒有圖片。
 servings: 1
 category: 湯
+dishKinds: []
+classificationReason: 測試審核紀錄draft-sample；湯品不標非湯主角或配桌角色。
 draft: true
 timeMinutes: 10
 ingredients:
