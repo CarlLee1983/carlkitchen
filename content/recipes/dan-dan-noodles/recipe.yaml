@@ -1,0 +1,87 @@
+title: 四川擔擔麵
+summary: 手工細麵條滾水煮至筋道彈牙，小白菜輕燙翠綠，碗底調入香濃芝麻醬、鎮江香醋、紅油辣椒與花椒粉，淋上細麵拌勻，撒上花生碎與蔥花，麻辣鮮香、濃醇開胃。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以煮麵條拌入芝麻醬、辣油與花生蔥花為獨立主餐。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [麵食, 川味, 經典小吃, 主食]
+aliases: [正宗擔擔麵, 川味擔擔麵]
+ingredients:
+  - name: 細麵條
+    amount:
+      value: 120
+      unit: g
+    note: 生細麵
+  - name: 小白菜
+    amount:
+      value: 50
+      unit: g
+    note: 洗淨切段
+  - name: 青蔥
+    amount:
+      value: 15
+      unit: g
+    note: 切細蔥花
+  - name: 花生碎
+    amount:
+      value: 20
+      unit: g
+    note: 炒熟熟花生碎
+  - name: 芝麻醬
+    amount:
+      value: 20
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+  - name: 鎮江醋
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 辣椒油
+    amount:
+      value: 15
+      unit: ml
+    note: 川味紅油
+    group: 調味
+  - name: 花椒粉
+    amount:
+      value: 2
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙提鮮
+    group: 調味
+steps:
+  - text: 芝麻醬倒入大碗中，加入少許溫水慢慢化開調成滑順糊狀，再加入鎮江醋、醬油、辣椒油、花椒粉與糖充分調勻成擔擔麵底醬。
+    image:
+      src: ./step-1.webp
+      alt: 芝麻醬倒入大碗中，加入少許溫水慢慢化開調成滑順糊狀，再加入鎮江醋、醬油、辣椒油、花椒粉與糖充分調勻成
+  - text: 煮一鍋滾水，放入細麵條以中小火煮約 1 分半鐘至熟透帶有咬勁，撈出瀝乾水分放入麵碗中。
+    image:
+      src: ./step-2.webp
+      alt: 煮一鍋滾水，放入細麵條以中小火煮約 1 分半鐘至熟透帶有咬勁，撈出瀝乾水分放入麵碗中。
+  - text: 同鍋滾水放入小白菜汆燙 20 秒撈起鋪在麵條上，澆入擔擔麵底醬，撒上大量花生碎與青蔥花即可上桌拌勻享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的四川擔擔麵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 芝麻醬一定要先用少許溫開水慢慢順同一個方向『洩開』至細滑無顆粒，再調入醋與醬油，醬汁才會順滑不結塊、完美包覆每根麵條。

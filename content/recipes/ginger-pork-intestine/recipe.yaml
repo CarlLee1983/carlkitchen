@@ -1,0 +1,82 @@
+title: 薑絲炒大腸
+summary: 豬大腸搓洗淨切段微汆燙，搭配酸筍絲與大量嫩薑絲大火爆炒，加入白醋、米酒與少許糖快炒收汁，酸勁俐落、大腸軟Q彈牙、開胃下飯。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以豬大腸為主要肉類主角，搭配大量嫩薑絲與酸筍絲快炒，屬於經典肉類客家名菜。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [客家菜, 熱炒, 家常菜, 大腸]
+aliases: [客家薑絲大腸, 酸筍薑絲炒大腸]
+ingredients:
+  - name: 豬大腸
+    amount:
+      value: 500
+      unit: g
+    note: 洗淨切段約 3 公分
+  - name: 酸筍絲
+    amount:
+      value: 150
+      unit: g
+    note: 泡水稍退鹹酸洗淨
+  - name: 生薑
+    amount:
+      value: 50
+      unit: g
+    note: 切大量細薑絲
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切細絲配色
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半小匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 8
+      unit: g
+    note: 約半大匙中和酸度
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 白醋
+    amount:
+      value: 20
+      unit: ml
+    note: 酸香來源
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許提亮
+    group: 調味
+steps:
+  - text: 豬大腸加鹽與麵粉徹底搓洗乾淨，切成約 3 公分段狀，入滾水汆燙 2 分鐘撈起瀝乾；生薑切細絲、辣椒切絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 豬大腸加鹽與麵粉徹底搓洗乾淨，切成約 3 公分段狀，入滾水汆燙 2 分鐘撈起瀝乾；生薑切細絲、辣椒切
+  - text: 熱鍋倒入適量油，放入薑絲與辣椒絲爆炒出薑辣香氣，加入酸筍絲翻炒片刻。
+  - text: 倒入大腸段大火快炒約 2 分鐘，加入鹽、糖、米酒炒勻，最後沿鍋邊淋入白醋大火嗆出酸香，滴入少許香油即可盛盤。
+    image:
+      src: ./step-3.webp
+      alt: 倒入大腸段大火快炒約 2 分鐘，加入鹽、糖、米酒炒勻，最後沿鍋邊淋入白醋大火嗆出酸香，滴入少許香油即
+  - text: 起鍋盛入深盤中趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的薑絲炒大腸
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 大腸需事先徹底搓洗去除多餘油脂與異味；白醋一定要在起鍋前由鍋邊淋入快速翻炒，利用高溫鑊氣激發出酸香而不至刺鼻。

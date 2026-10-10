@@ -1,0 +1,75 @@
+title: 金沙南瓜
+summary: 新鮮南瓜切厚片裹薄粉微煎熟透，熟鹹蛋黃細剁碎後入鍋炒至金黃起泡，再放入南瓜片與薑末快速翻炒包裹均勻，鹹甜粉糯、香氣四溢。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable, egg-bean]
+classificationReason: 以新鮮南瓜切片煎熟為蔬菜主角，裹上細炒起泡的鹹蛋黃金沙，屬於蔬菜與蛋豆類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [金沙, 南瓜, 熱炒, 鹹蛋]
+aliases: [鹹蛋炒南瓜, 金沙南瓜條]
+ingredients:
+  - name: 南瓜
+    amount:
+      value: 350
+      unit: g
+    note: 去籽切厚片
+  - name: 熟鹹蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 蛋黃與蛋白分別切碎
+  - name: 絞肉
+    amount:
+      value: 50
+      unit: g
+    note: 細豬絞肉增添香氣
+  - name: 薑末
+    amount:
+      value: 5
+      unit: g
+    note: 去腥提香
+  - name: 蔥花
+    amount:
+      value: 10
+      unit: g
+    note: 起鍋裝飾
+  - name: 低筋麵粉
+    amount:
+      value: 20
+      unit: g
+    note: 裹南瓜表面
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 1
+      unit: g
+    note: 少許調整鹹度
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提香
+    group: 調味
+steps:
+  - text: 南瓜洗淨去籽切成約半公分厚片，表面拍上薄薄一層低筋麵粉備用；鹹蛋黃與蛋白分別切碎。
+    image:
+      src: ./step-1.webp
+      alt: 南瓜洗淨去籽切成約半公分厚片，表面拍上薄薄一層低筋麵粉備用；鹹蛋黃與蛋白分別切碎。
+  - text: 熱鍋倒入適量油，放入裹粉南瓜片煎至兩面金黃微軟後撈起瀝乾油分。
+  - text: 原鍋留少許底油，放入鹹蛋黃碎以小火慢炒至起細白泡泡（金沙狀），加入絞肉與薑末炒散炒香。
+    image:
+      src: ./step-3.webp
+      alt: 原鍋留少許底油，放入鹹蛋黃碎以小火慢炒至起細白泡泡（金沙狀），加入絞肉與薑末炒散炒香。
+  - text: 倒入煎好的南瓜片輕輕翻拌裹勻金沙，撒入少許白胡椒粉與蔥花拌勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的金沙南瓜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 南瓜切片厚薄要一致，煎熟後質地鬆軟再裹金沙；炒鹹蛋黃時火候切忌過大，用小火慢壓炒至油亮起泡，金沙才能均勻吸附在南瓜上。

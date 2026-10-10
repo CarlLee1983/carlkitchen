@@ -1,0 +1,59 @@
+title: 涼拌胡麻菠菜
+summary: 鮮嫩菠菜整株汆燙後迅速冰鎮擠乾水分，切段整齊排盤，淋上香濃白芝麻醬汁、香油與白芝麻粒，口感爽脆清甜、芝麻香濃醇郁。
+servings: 2
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以新鮮菠菜汆燙冰鎮為唯一蔬菜主角，無任何肉類或海鮮，屬於純蔬菜料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [涼拌, 家常菜, 菠菜, 胡麻醬]
+aliases: [胡麻菠菜, 日式胡麻涼拌菠菜]
+ingredients:
+  - name: 菠菜
+    amount:
+      value: 300
+      unit: g
+    note: 挑除老葉洗淨
+  - name: 白芝麻
+    amount:
+      value: 5
+      unit: g
+    note: 熟白芝麻粒
+  - name: 醬油膏
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 水
+    amount:
+      value: 30
+      unit: ml
+    note: 稀釋醬汁
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許提香
+    group: 調味
+steps:
+  - text: 菠菜洗淨根部泥沙切整齊；煮一鍋滾水，將菠菜放入汆燙約 30 秒至顏色轉為深綠即撈起。
+    image:
+      src: ./step-1.webp
+      alt: 菠菜洗淨根部泥沙切整齊；煮一鍋滾水，將菠菜放入汆燙約 30 秒至顏色轉為深綠即撈起。
+  - text: 將汆燙好的菠菜立刻浸入冷開水中冷卻，撈起輕輕擠乾水分，切成約 4 公分長段整齊排入盤中。
+    image:
+      src: ./step-2.webp
+      alt: 將汆燙好的菠菜立刻浸入冷開水中冷卻，撈起輕輕擠乾水分，切成約 4 公分長段整齊排入盤中。
+  - text: 醬油膏加入水與香油調勻成胡麻淋醬，均勻澆淋在菠菜上，表面撒上熟白芝麻粒即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的涼拌胡麻菠菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 菠菜汆燙時間不宜超過 40 秒，燙好後立即浸入冰開水降溫，能緊緊鎖住翠綠葉綠素與爽脆口感；水分務必充分捏乾才不使醬汁變淡。

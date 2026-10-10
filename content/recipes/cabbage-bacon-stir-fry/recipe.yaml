@@ -1,0 +1,64 @@
+title: 培根炒高麗菜
+summary: 培根切片先入鍋煸炒逼出油脂與煙燻肉香，搭配清甜高麗菜大火快炒，嗆入米酒、蒜片與白胡椒粉，菜葉爽脆多汁且帶鹹香煙燻風味。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable, meat]
+classificationReason: 以高麗菜為主要蔬菜主角，搭配培根切片煸炒肉香，屬於蔬菜與肉類並陳的料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 高麗菜, 培根, 快炒]
+aliases: [培根高麗菜, 煙燻培根炒高麗菜]
+ingredients:
+  - name: 高麗菜
+    amount:
+      value: 600
+      unit: g
+    note: 洗淨手撕或切片
+  - name: 培根
+    amount:
+      value: 3
+      unit: 片
+    note: 切小片約 60 g
+  - name: 蒜頭
+    amount:
+      value: 10
+      unit: g
+    note: 去皮切蒜片
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 約 1/4 小匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+steps:
+  - text: 高麗菜洗淨撕成片狀瀝乾；培根切小片；蒜頭去皮切片備用。
+    image:
+      src: ./step-1.webp
+      alt: 高麗菜洗淨撕成片狀瀝乾；培根切小片；蒜頭去皮切片備用。
+  - text: 熱鍋倒入少許油，放入蒜片與培根小火煸炒至出油微焦散發煙燻香氣。
+    image:
+      src: ./step-2.webp
+      alt: 熱鍋倒入少許油，放入蒜片與培根小火煸炒至出油微焦散發煙燻香氣。
+  - text: 轉大火倒入高麗菜翻炒至略呈半透明，嗆入米酒、加入鹽與白胡椒粉快速炒勻至脆嫩即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的培根炒高麗菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 培根先以中小火慢慢煸出油脂，利用培根天然鹹香與油脂大火炒高麗菜，高麗菜會格外甘甜油亮且不易出水軟爛。

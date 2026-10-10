@@ -1,0 +1,76 @@
+title: 九層塔炒海瓜子
+summary: 海瓜子吐沙洗淨，熱鍋爆香蒜末與紅辣椒片，大火翻炒海瓜子並加入醬油膏與烏醋燜出海鮮甘味，起鍋前投入大把九層塔快炒翻勻，醬香撲鼻、肉嫩多汁。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以新鮮海瓜子大火快炒為唯一海鮮主角，搭配九層塔、蒜末提香，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [熱炒, 海鮮, 家常菜, 九層塔]
+aliases: [塔香炒海瓜子, 熱炒海瓜子]
+ingredients:
+  - name: 海瓜子
+    amount:
+      value: 300
+      unit: g
+    note: 充分吐沙洗淨
+  - name: 九層塔
+    amount:
+      value: 50
+      unit: g
+    note: 摘取嫩葉洗淨
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切斜片
+  - name: 蒜頭
+    amount:
+      value: 15
+      unit: g
+    note: 切蒜碎
+  - name: 醬油膏
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 烏醋
+    amount:
+      value: 5
+      unit: ml
+    note: 約 1 茶匙提香
+    group: 調味
+  - name: 糖
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 水
+    amount:
+      value: 50
+      unit: ml
+    note: 約小半碗
+    group: 調味
+steps:
+  - text: 海瓜子浸鹽水吐沙洗淨；九層塔摘取嫩葉洗淨瀝乾；紅辣椒切片、蒜頭切碎備用。
+    image:
+      src: ./step-1.webp
+      alt: 海瓜子浸鹽水吐沙洗淨；九層塔摘取嫩葉洗淨瀝乾；紅辣椒切片、蒜頭切碎備用。
+  - text: 熱鍋倒入少許油，放入蒜碎與辣椒片中火爆炒出香氣。
+  - text: 倒入海瓜子大火翻炒數下，加入水、醬油膏、烏醋與糖，蓋上鍋蓋大火燜煮約 1 至 2 分鐘至海瓜子全數開殼。
+    image:
+      src: ./step-3.webp
+      alt: 倒入海瓜子大火翻炒數下，加入水、醬油膏、烏醋與糖，蓋上鍋蓋大火燜煮約 1 至 2 分鐘至海瓜子全數開
+  - text: 開蓋投入大量九層塔嫩葉，快速翻炒數秒讓塔香融入醬汁中即可熄火盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的九層塔炒海瓜子
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 海瓜子易熟，下鍋燜至剛好蚌殼全開時就要立刻下九層塔翻炒，肉質才能維持肥嫩飽滿、鮮嫩多汁而不縮水回縮。

@@ -1,0 +1,74 @@
+title: 咖哩炸豬排
+summary: 厚切大里肌豬排拍鬆醃入味，沾裹低筋麵粉、香濃咖哩粉、蛋液與麵包粉，溫油酥炸至表面金黃焦脆、肉汁飽滿豐腴，佐以清爽高麗菜絲，香脆誘人。
+servings: 2
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以厚切里肌豬排裹粉酥炸為唯一肉類主角，屬於肉類主菜。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [炸物, 日式家常, 豬排, 咖哩]
+aliases: [黃金咖哩豬排, 日式咖哩炸豬排]
+ingredients:
+  - name: 大里肌肉
+    amount:
+      value: 200
+      unit: g
+    note: 厚切豬里肌排約 2 片
+  - name: 雞蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 打散成蛋液
+  - name: 低筋麵粉
+    amount:
+      value: 50
+      unit: g
+    note: 裹粉用
+  - name: 咖哩粉
+    amount:
+      value: 5
+      unit: g
+    note: 混合麵粉提香
+  - name: 麵包粉
+    amount:
+      value: 60
+      unit: g
+    note: 外層酥脆裹粉
+  - name: 高麗菜
+    amount:
+      value: 80
+      unit: g
+    note: 切極細絲泡冰水佐餐
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 醃肉雙面抹勻
+    group: 調味
+  - name: 黑胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 醃肉提香
+    group: 調味
+steps:
+  - text: 大里肌肉洗淨擦乾，用肉槌輕輕拍鬆邊緣劃斷筋膜，雙面抹上鹽與黑胡椒粉醃漬 10 分鐘；低筋麵粉與咖哩粉混合均勻備用。
+    image:
+      src: ./step-1.webp
+      alt: 大里肌肉洗淨擦乾，用肉槌輕輕拍鬆邊緣劃斷筋膜，雙面抹上鹽與黑胡椒粉醃漬 10 分鐘；低筋麵粉與咖哩粉
+  - text: 醃好的豬排依序均勻沾裹咖哩麵粉、蛋液，最後裹滿麵包粉輕輕壓實。
+  - text: 油鍋加熱至約 170°C，放入豬排慢炸約 3 分鐘至肉塊浮起，轉大火至 180°C 逼油 30 秒至表皮金黃酥脆即可撈起瀝油切厚條。
+    image:
+      src: ./step-3.webp
+      alt: 油鍋加熱至約 170°C，放入豬排慢炸約 3 分鐘至肉塊浮起，轉大火至 180°C 逼油 30 秒至
+  - text: 盛盤排上切段酥脆豬排，旁邊附上冰鎮瀝乾的清脆高麗菜絲即可上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的咖哩炸豬排
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 炸豬排前將肉邊白色筋膜用刀切斷幾刀，炸時才不會受熱捲曲變形；先以中溫油炸熟內裡，起鍋前升溫逼出多餘油脂，外皮才會維持持久乾爽酥脆。
