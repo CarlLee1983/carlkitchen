@@ -1,0 +1,59 @@
+title: 青蔥牛肉捲餅
+summary: 手工烙烤荷葉麵餅抹上香濃甜麵醬，鋪上滷透軟嫩切薄片的五香牛腱肉與整支新鮮鮮脆青蔥段，緊密捲成長筒狀切斜塊，餅皮酥香有嚼勁、牛腱鹹香濃郁、青蔥爽脆多汁辛香。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以烙麵餅捲入滷牛腱薄片與青蔥為北方經典飽足麵食點心。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 30
+tags: [麵食, 牛肉捲餅, 經典小吃, 主食]
+aliases: [大餅捲牛肉, 蔥油牛肉捲餅]
+ingredients:
+  - name: 荷葉餅
+    amount:
+      value: 2
+      unit: 張
+    note: 或家常烙單餅
+  - name: 滷牛腱
+    amount:
+      value: 150
+      unit: g
+    note: 五香滷牛腱切薄片
+  - name: 青蔥
+    amount:
+      value: 3
+      unit: 根
+    note: 洗淨切去頭尾整段
+  - name: 甜麵醬
+    amount:
+      value: 25
+      unit: g
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 刷餅面提香
+    group: 調味
+steps:
+  - text: 滷牛腱肉逆紋切成均勻薄片；青蔥洗淨切除根部與老葉擦乾水分；甜麵醬調入少許香油調勻備用。
+    image:
+      src: ./step-1.webp
+      alt: 滷牛腱肉逆紋切成均勻薄片；青蔥洗淨切除根部與老葉擦乾水分；甜麵醬調入少許香油調勻備用。
+  - text: 平底鍋不放油微溫，放入荷葉餅雙面烙烘約 30 秒至餅皮溫熱柔軟散發麥香取起鋪平。
+    image:
+      src: ./step-2.webp
+      alt: 平底鍋不放油微溫，放入荷葉餅雙面烙烘約 30 秒至餅皮溫熱柔軟散發麥香取起鋪平。
+  - text: 在餅皮表面均勻刷上一層甜麵醬，中間整齊鋪排滷牛腱肉薄片，放上青蔥段，緊緊向內捲成長筒狀。
+  - text: 用刀將牛肉捲餅斜切成均勻厚段，剖面朝上整齊排盤即可上桌趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的青蔥牛肉捲餅
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 牛腱肉務必冷藏放涼後再逆紋薄切，肉片平整不易碎散；捲餅時雙手均勻施力緊密捲起，切段時刀鋒要鋒利一刀切下，切面整齊漂亮不鬆散。

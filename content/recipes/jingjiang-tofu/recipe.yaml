@@ -1,0 +1,82 @@
+title: 京醬豆腐
+summary: 板豆腐切厚三角塊入油鍋微炸定型形成金黃酥皮，熱鍋爆香青蔥段、薑片與胡蘿蔔片，加入甜麵醬、醬油與糖慢火煨煮入味，豆腐吸飽鹹甜濃稠醬汁，淋上香油，豆香濃郁、醬汁醇厚下飯。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 以板豆腐切塊炸黃煨醬為唯一蛋豆類主角，屬於蛋豆類家常料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [家常菜, 豆腐, 京醬, 蛋豆類]
+aliases: [醬燒豆腐, 京醬板豆腐]
+ingredients:
+  - name: 板豆腐
+    amount:
+      value: 2
+      unit: 塊
+    note: 約 400 g 斜角切三角厚塊
+  - name: 青蔥
+    amount:
+      value: 20
+      unit: g
+    note: 切青蔥段
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 切薑片
+  - name: 胡蘿蔔
+    amount:
+      value: 20
+      unit: g
+    note: 切薄花片配色
+  - name: 甜麵醬
+    amount:
+      value: 20
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙
+    group: 調味
+  - name: 太白粉
+    amount:
+      value: 5
+      unit: g
+    note: 調水勾芡
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋提亮
+    group: 調味
+steps:
+  - text: 板豆腐洗淨瀝乾，斜對角切成厚三角形塊狀；青蔥切段、生薑切片、胡蘿蔔切薄片備用。
+    image:
+      src: ./step-1.webp
+      alt: 板豆腐洗淨瀝乾，斜對角切成厚三角形塊狀；青蔥切段、生薑切片、胡蘿蔔切薄片備用。
+  - text: 熱鍋倒入適量油燒至約 160°C，放入三角豆腐塊以中火煎炸至外表微金黃定型後撈起瀝油。
+    image:
+      src: ./step-2.webp
+      alt: 熱鍋倒入適量油燒至約 160°C，放入三角豆腐塊以中火煎炸至外表微金黃定型後撈起瀝油。
+  - text: 原鍋留少許底油，爆香蔥段、薑片與胡蘿蔔片，加入甜麵醬炒香出醬味，注入醬油、糖與約 150 ml 水煮滾。
+  - text: 放入炸好的豆腐塊轉小火燒煮約 3 分鐘至湯汁微收濃入味，淋入太白粉水勾薄芡，起鍋前滴入香油拌勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的京醬豆腐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 豆腐切三角形受熱更均勻且擺盤美觀；甜麵醬先入油中小火炒出濃醇醬香味再加水煨豆腐，醬汁醇厚油亮且無生麵粉澀味。

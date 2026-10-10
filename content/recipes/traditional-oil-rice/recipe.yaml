@@ -1,0 +1,97 @@
+title: 傳統古早味油飯
+summary: 長糯米浸泡蒸至米心透亮，熱油爆香紅蔥頭與金黃蝦米，加入乾香菇絲、發泡魷魚條與醃豬肉絲大火炒香，淋入醬油、五香粉、白胡椒粉與米酒調味，拌入晶瑩糯米飯炒勻回蒸，油亮粒粒分明、香氣撲鼻。
+servings: 4
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以長糯米拌炒香菇肉絲與蝦米紅蔥酥為經典傳統米食主餐。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [主食, 油飯, 傳統米食, 古早味]
+aliases: [傳統油飯, 台式古早味油飯]
+ingredients:
+  - name: 長糯米
+    amount:
+      value: 400
+      unit: g
+    note: 泡水 2 小時後瀝乾
+  - name: 豬梅花肉
+    amount:
+      value: 150
+      unit: g
+    note: 切細肉絲
+  - name: 乾香菇
+    amount:
+      value: 8
+      unit: 朵
+    note: 泡軟切細絲
+  - name: 乾蝦米
+    amount:
+      value: 25
+      unit: g
+    note: 洗淨瀝乾
+  - name: 紅蔥頭
+    amount:
+      value: 6
+      unit: 顆
+    note: 去皮切薄片
+  - name: 乾魷魚
+    amount:
+      value: 50
+      unit: g
+    note: 泡發切細條
+  - name: 香菜
+    amount:
+      value: 10
+      unit: g
+    note: 洗淨切段飾頂
+  - name: 醬油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 五香粉
+    amount:
+      value: 2
+      unit: g
+    note: 少許提香
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 2
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 10
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+steps:
+  - text: 長糯米浸泡冷水 2 小時瀝乾，入蒸籠大火蒸約 15 分鐘至米心熟透呈透明狀；香菇、蝦米、魷魚泡軟切絲；紅蔥頭切薄片；豬肉絲抓少許醬油備用。
+    image:
+      src: ./step-1.webp
+      alt: 長糯米浸泡冷水 2 小時瀝乾，入蒸籠大火蒸約 15 分鐘至米心熟透呈透明狀；香菇、蝦米、魷魚泡軟切絲
+  - text: 熱鍋倒入適量油，放入紅蔥頭薄片與蝦米以中小火煸炒至金黃酥香散發濃烈蔥香。
+  - text: 加入香菇絲、魷魚絲與豬肉絲翻炒至熟，調入醬油、糖、米酒、五香粉與白胡椒粉炒出濃郁醬香。
+    image:
+      src: ./step-3.webp
+      alt: 加入香菇絲、魷魚絲與豬肉絲翻炒至熟，調入醬油、糖、米酒、五香粉與白胡椒粉炒出濃郁醬香。
+  - text: 轉小火倒入蒸好的糯米飯快速翻拌均勻，讓米粒均勻吸附醬汁呈琥珀油亮色，重新入蒸籠回蒸 5 分鐘，出籠撒上香菜即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的傳統古早味油飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 糯米先蒸熟再與炒香的料汁翻拌，能確保米粒粒粒分明Q彈而不軟爛；紅蔥頭一定要以中小火慢慢煸至微金黃，不可焦黑，蔥油香氣才會醇厚甘甜。
