@@ -1,0 +1,64 @@
+title: 咖哩雞
+summary: 去骨雞腿肉塊以紅蔥末與蒜末煸炒後，加入咖哩粉與可可粉細火燉煮入味，最後拌入三色蔬菜增色，湯汁濃郁醇厚。
+servings: 3
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+tags: [中式料理, 家常菜]
+ingredients:
+  - { name: 去骨雞腿肉, amount: { value: 300, unit: g }, note: 切小塊 }
+  - { name: 冷凍三色蔬菜, amount: { value: 100, unit: g } }
+  - { name: 紅蔥頭, amount: { value: 20, unit: g }, note: 切碎成紅蔥末 }
+  - { name: 蒜頭, amount: { value: 10, unit: g }, note: 切碎成蒜末 }
+  - { name: 水, amount: { value: 400, unit: ml }, group: 調味 }
+  - {
+      name: 食用油,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，爆香與炒肉用,
+      group: 調味,
+    }
+  - {
+      name: 咖哩粉,
+      amount: { value: 10, unit: g },
+      note: 約 1 大匙,
+      group: 調味,
+    }
+  - {
+      name: 鹽,
+      amount: { value: 2.5, unit: g },
+      note: 約 1/2 茶匙,
+      group: 調味,
+    }
+  - {
+      name: 可可粉,
+      amount: { value: 6, unit: g },
+      note: 約 2 茶匙，增添醬汁色澤與醇度,
+      group: 調味,
+    }
+  - {
+      name: 細砂糖,
+      amount: { value: 5, unit: g },
+      note: 約 1 茶匙,
+      group: 調味,
+    }
+steps:
+  - text: 將去骨雞腿肉切成適口小塊，紅蔥頭與蒜頭分別切成細碎末狀備用。
+    image:
+      src: ./step-1.webp
+      alt: 木砧板上整齊放著切成適口小塊的去骨雞腿肉，旁邊擺有兩只盛裝紅蔥末與蒜末的陶碟
+  - text: 鍋中倒入食用油以小火加熱，放入紅蔥末與蒜末煸炒出香氣，轉大火加入雞腿肉塊快速翻炒，炒到肉塊表面轉白。
+    image:
+      src: ./step-2.webp
+      alt: 平底鍋中以紅蔥末與蒜末爆香，加入去骨雞腿肉塊翻炒至肉色轉白，熱氣蒸騰
+  - text: 倒入咖哩粉翻炒均勻出香，接著注入水並加入可可粉，以大火煮滾後轉成微小火，蓋上鍋蓋慢火燉煮約 20 分鐘。
+  - text: 揭蓋加入冷凍三色蔬菜、鹽與細砂糖拌勻，繼續加熱煮到湯汁略微收濃即可盛盤上桌。
+hero:
+  src: ./hero.webp
+  alt: 米色陶瓷深盤中盛裝著濃郁金黃的咖哩雞，雞腿肉塊搭配紅蘿蔔塊、青豆仁與玉米粒煨煮入味
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 米白陶碗中分裝去骨雞腿肉塊與三色蔬菜，前方六只小碟分別盛著紅蔥末、蒜末、咖哩粉、可可粉、細砂糖與鹽
+tip: 加入少許純可可粉能加深咖哩色澤並讓風味層次更為溫潤深邃。

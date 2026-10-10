@@ -1,0 +1,73 @@
+title: 照燒豬肉丼飯
+summary: 以照燒醬汁煨煮豬肉片與洋蔥，淋入蛋液燜成滑嫩半熟蛋，盛在爽脆高麗菜絲與熱白飯上。
+servings: 1
+category: 主食
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [日式料理, 家常菜]
+ingredients:
+  - { name: 豬肉片, amount: { value: 150, unit: g }, note: 建議用梅花肉 }
+  - { name: 洋蔥, amount: { value: 100, unit: g }, note: 切絲 }
+  - { name: 高麗菜, amount: { value: 50, unit: g }, note: 切絲 }
+  - { name: 青蔥, amount: { value: 20, unit: g }, note: 切段 }
+  - { name: 雞蛋, amount: { value: 1, unit: 顆 }, note: 打成蛋液 }
+  - { name: 白飯, amount: { value: 1, unit: 碗 } }
+  - { name: 水, amount: { value: 200, unit: ml }, group: 調味 }
+  - {
+      name: 食用油,
+      amount: { value: 5, unit: ml },
+      note: 約 1 小匙,
+      group: 調味,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 味醂,
+      amount: { value: 30, unit: ml },
+      note: 約 2 大匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 米酒,
+      amount: { value: 15, unit: ml },
+      note: 約 1 大匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 白胡椒粉,
+      amount: { value: 1, unit: g },
+      note: 約 1/4 小匙，醃肉用,
+      group: 調味,
+    }
+  - {
+      name: 薑汁,
+      amount: { value: 1, unit: ml },
+      note: 約 1/4 小匙，醃肉用,
+      group: 調味,
+    }
+steps:
+  - text: 豬肉片加入醬油、味醂、米酒、白胡椒粉與薑汁抓勻，靜置醃漬 10 分鐘入味。
+  - text: 高麗菜切絲後泡入冰水冰鎮，撈起瀝乾水分鋪於盛好的白飯上；雞蛋打散成蛋液備用。
+  - text: 平底鍋倒入食用油加熱，先下洋蔥絲與青蔥段以中小火炒香，再放入醃好的豬肉片與水煮至滾沸。
+    image:
+      src: ./step-3.webp
+      alt: 平底鍋放在爐火上，豬肉片與洋蔥絲在冒泡滾沸的照燒湯汁中煨煮
+  - text: 轉小火，均勻淋入打散的蛋液，蓋上鍋蓋燜煮 2 分鐘讓蛋液呈現半凝固滑嫩狀。
+    image:
+      src: ./step-4.webp
+      alt: 白色小碗中的金黃蛋液緩緩淋在平底鍋裡的豬肉片上，蛋液受熱逐漸半凝固
+  - text: 揭蓋將照燒豬肉與滑蛋連同鍋中醬汁一起起鍋，盛倒在鋪了高麗菜絲的白飯上即可。
+hero:
+  src: ./hero.webp
+  alt: 藍花陶瓷碗盛著白飯與高麗菜絲，鋪上照燒豬肉片、洋蔥與滑嫩半熟蛋，頂部點綴翠綠蔥花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 木砧板上整齊擺放著豬肉片、洋蔥絲、高麗菜絲、蔥花、一顆雞蛋、一碗白飯，以及盛裝醬油與味醂的陶瓷小碟
+tip: 淋入蛋液前確認鍋中湯汁略蓋過肉片，可防止蛋液加熱後口感過乾。
