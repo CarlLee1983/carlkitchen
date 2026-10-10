@@ -1,0 +1,84 @@
+title: 泰式檸檬鱸魚
+summary: 新鮮整尾鱸魚兩面劃斜刀抹少許鹽，鋪上薑絲、蔥絲與洋蔥絲入鍋大火清蒸熟透，淋上鮮榨檸檬汁、純魚露、蒜末、辣椒碎與糖調製的經典酸辣醬汁，撒上香菜，酸辣鮮甜、肉質細嫩無比。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以新鮮整尾鱸魚清蒸為唯一海鮮主角，淋上泰式檸檬酸辣醬汁，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [泰式料理, 蒸魚, 海鮮, 酸辣]
+aliases: [泰式蒸檸檬魚, 清蒸檸檬魚]
+ingredients:
+  - name: 加州鱸魚
+    amount:
+      value: 1
+      unit: 尾
+    note: 約 500 g 去鱗內臟洗淨
+  - name: 檸檬
+    amount:
+      value: 2
+      unit: 顆
+    note: 鮮榨檸檬汁約 30 ml，留數片切片裝飾
+  - name: 蒜頭
+    amount:
+      value: 15
+      unit: g
+    note: 切細碎末
+  - name: 紅辣椒
+    amount:
+      value: 15
+      unit: g
+    note: 切細辣椒碎
+  - name: 青蔥
+    amount:
+      value: 10
+      unit: g
+    note: 切細蔥絲
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 切細薑絲
+  - name: 洋蔥
+    amount:
+      value: 25
+      unit: g
+    note: 切細洋蔥絲
+  - name: 香菜
+    amount:
+      value: 10
+      unit: g
+    note: 洗淨切段飾頂
+  - name: 魚露
+    amount:
+      value: 20
+      unit: ml
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+steps:
+  - text: 鱸魚清洗乾淨拭乾，魚身雙面各劃斜切 3 刀；檸檬榨汁；蒜頭、紅辣椒切碎末，加入魚露、檸檬汁與糖調勻成泰式酸辣醬汁備用。
+    image:
+      src: ./step-1.webp
+      alt: 鱸魚清洗乾淨拭乾，魚身雙面各劃斜切 3 刀；檸檬榨汁；蒜頭、紅辣椒切碎末，加入魚露、檸檬汁與糖調勻成
+  - text: 取蒸魚長盤鋪上薑絲、蔥絲，放上鱸魚，魚身鋪上洋蔥絲，淋上一半調好的酸辣醬汁。
+  - text: 放入水已大滾的蒸鍋中，蓋緊鍋蓋大火清蒸約 12 至 15 分鐘至魚肉剛好熟透。
+    image:
+      src: ./step-3.webp
+      alt: 放入水已大滾的蒸鍋中，蓋緊鍋蓋大火清蒸約 12 至 15 分鐘至魚肉剛好熟透。
+  - text: 開蓋淋上剩餘的酸辣醬汁，擺上鮮檸檬片與香菜段，即可出鍋趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的泰式檸檬鱸魚
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蒸魚務必水大滾後再入蒸鍋，全程大火鎖住鮮甜肉汁；調醬時可先嚐酸甜平衡，起鍋前補淋少許新鮮檸檬汁，果香最為清新誘人。

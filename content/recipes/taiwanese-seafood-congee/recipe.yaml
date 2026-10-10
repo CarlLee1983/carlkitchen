@@ -1,0 +1,85 @@
+title: 台式海鮮粥
+summary: 以鮮美高湯滾煮白飯至米粒軟糊，放入鮮甜白蝦仁、花枝片、魚片與鮮蚵大火滾煮，調入鹽巴與白胡椒粉，淋入蛋液化作金黃蛋花，撒上香油，鮮香濃郁、暖胃鮮甜。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以白米飯與綜合海鮮熬煮成一碗飽足的海鮮粥品。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [粥品, 海鮮, 台式小吃, 主食]
+aliases: [海鮮粥, 海味海鮮粥]
+ingredients:
+  - name: 白飯
+    amount:
+      value: 200
+      unit: g
+    note: 熟白米飯約 1 碗半
+  - name: 高湯
+    amount:
+      value: 700
+      unit: ml
+    note: 大骨或雞高湯
+  - name: 蝦仁
+    amount:
+      value: 50
+      unit: g
+    note: 鮮蝦仁去腸泥
+  - name: 花枝
+    amount:
+      value: 50
+      unit: g
+    note: 切花花枝片
+  - name: 魚片
+    amount:
+      value: 50
+      unit: g
+    note: 無刺鯛魚片切厚片
+  - name: 鮮蚵
+    amount:
+      value: 50
+      unit: g
+    note: 洗淨瀝乾
+  - name: 雞蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 打散成蛋液
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提鮮
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 約半茶匙
+    group: 調味
+steps:
+  - text: 蝦仁挑除腸泥、花枝切花刀刻紋、魚片切厚片、鮮蚵輕輕洗淨瀝乾；白飯加少許水輕輕抓散備用。
+    image:
+      src: ./step-1.webp
+      alt: 蝦仁挑除腸泥、花枝切花刀刻紋、魚片切厚片、鮮蚵輕輕洗淨瀝乾；白飯加少許水輕輕抓散備用。
+  - text: 湯鍋倒入高湯大火煮滾，加入抓散的白飯轉小火熬煮約 5 分鐘至米粒開花微稠。
+  - text: 轉中大火放入蝦仁、花枝、魚片與鮮蚵快速攪拌煮約 1 分鐘至海鮮全熟變色，調入鹽、白胡椒粉與香油。
+    image:
+      src: ./step-3.webp
+      alt: 轉中大火放入蝦仁、花枝、魚片與鮮蚵快速攪拌煮約 1 分鐘至海鮮全熟變色，調入鹽、白胡椒粉與香油。
+  - text: 淋入打散的蛋液輕輕攪出蛋花，凝固後立即熄火盛入大碗趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的台式海鮮粥
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 海鮮極易過熟老韌，飯粒煮到稠度剛好時才下海鮮，大火滾煮 1 分鐘即可熄火，利用餘溫燙熟鮮蚵與魚片，海產才會軟嫩爆汁。

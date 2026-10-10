@@ -1,0 +1,71 @@
+title: 蜜汁排骨
+summary: 豬小排洗淨抓醃裹薄粉漿，油溫升高炸至金黃酥脆定型，調入番茄醬、糖、水與少許鹽熬煮成濃稠紅亮蜜汁，倒入炸排骨翻炒裹汁收濃，撒上熟白芝麻，酸甜濃郁、骨香肉嫩。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以豬小排裹粉炸熟裹蜜汁為唯一肉類主角，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [家常菜, 排骨, 蜜汁, 宴席菜]
+aliases: [蜜汁小排, 糖蜜小排骨]
+ingredients:
+  - name: 豬小排
+    amount:
+      value: 300
+      unit: g
+    note: 剁小塊洗淨瀝乾
+  - name: 白芝麻
+    amount:
+      value: 5
+      unit: g
+    note: 熟白芝麻粒飾頂
+  - name: 地瓜粉
+    amount:
+      value: 30
+      unit: g
+    note: 裹粉酥炸用
+  - name: 番茄醬
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙
+    group: 調味
+  - name: 糖
+    amount:
+      value: 20
+      unit: g
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 水
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 少許提味
+    group: 調味
+steps:
+  - text: 小排骨洗淨瀝乾水分，加少許鹽抓勻，裹上一層均勻的地瓜粉漿靜置片刻回潮。
+    image:
+      src: ./step-1.webp
+      alt: 小排骨洗淨瀝乾水分，加少許鹽抓勻，裹上一層均勻的地瓜粉漿靜置片刻回潮。
+  - text: 起油鍋燒熱至約 170°C，放入小排骨以中小火慢炸約 4 分鐘至金黃熟透，起鍋前大火逼油 20 秒撈起瀝乾。
+    image:
+      src: ./step-2.webp
+      alt: 起油鍋燒熱至約 170°C，放入小排骨以中小火慢炸約 4 分鐘至金黃熟透，起鍋前大火逼油 20 秒撈
+  - text: 另取炒鍋倒入番茄醬、糖、水與少許鹽，小火加熱煮至醬汁起濃稠大泡泡成紅亮蜜汁。
+  - text: 熄火倒入炸好的小排骨快速翻拌，讓每塊排骨均勻裹上濃郁蜜汁，撒上熟白芝麻拌勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蜜汁排骨
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蜜汁先在鍋中熬至糖完全融化、冒出細密稠密糖泡時再下排骨，裹汁動作要快且要關火翻拌，醬汁才能亮麗附著而不焦苦。
