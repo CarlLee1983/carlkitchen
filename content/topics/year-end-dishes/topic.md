@@ -1,7 +1,7 @@
 ---
 title: 尾牙與年菜：圍爐吃什麼、哪些可以再熱
 summary: 臘月十六的尾牙吃潤餅、刈包；除夕圍爐才談到魚、全雞和長年菜。家裡蒸魚照除夕那一餐，炆菜可以再熱。
-draft: true
+draft: false
 editorialLayout: true
 publishedAt: 2026-10-10
 hero:
