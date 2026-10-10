@@ -14,6 +14,7 @@
     "preview": "astro preview",
     "check": "pnpm format:check && astro check && pnpm build",
     "check:content": "node --experimental-strip-types scripts/check-content.ts",
+    "check:overlap": "node scripts/check-overlap.mjs",
     "check:merge": "node --experimental-strip-types scripts/check-merge.ts",
     "measure:mobile": "node --experimental-strip-types scripts/measure-mobile.ts",
     "test": "node --experimental-strip-types --test tests/*.test.ts",

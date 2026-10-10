@@ -23,6 +23,7 @@ import {
   parseSourceRecord,
 } from "./sources.ts";
 import { checkLaunchThreshold } from "./threshold.ts";
+import { findUnusedIngredients } from "./unused-ingredients.ts";
 
 export interface ContentCheckOptions {
   recipesDir: string;
@@ -36,6 +37,8 @@ export interface ContentCheckOptions {
   distDir: string;
   /** 開啟候選池門檻檢查（部署前）。 */
   launch: boolean;
+  /** 警告級發現（不影響通過與否）的接收者；未提供則不產生警告。 */
+  onWarning?: (warning: Issue) => void;
 }
 
 const failure = (file: string, message: string): Issue => ({ file, message });
@@ -125,6 +128,16 @@ export async function runContentChecks(
       const info = await readImageInfo(join(options.recipesDir, id, ref.src));
       issues.push(...checkImageFile({ recipe: id }, ref, info));
       issues.push(...checkHeroAlt({ recipe: id }, ref));
+    }
+  }
+
+  // 警告：已發布菜譜的材料表有、步驟沒用到的材料
+  if (options.onWarning) {
+    for (const { id, raw, data } of recipes) {
+      if (!data || isDraft(raw)) continue;
+      for (const warning of findUnusedIngredients(id, data)) {
+        options.onWarning(warning);
+      }
     }
   }
 

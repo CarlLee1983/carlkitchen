@@ -23,9 +23,10 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `pnpm dev` — 開發伺服器（顯示草稿）
 - `pnpm build` / `pnpm preview` — 正式建置（排除草稿，建置後以 Pagefind 建立含菜譜頁與專題頁的搜尋索引）與預覽。建置固定帶 `--force`，在 `RECIPES_DIR` 切換時清除 Astro 內容層快取，不可拿掉
 - `pnpm check` — 格式檢查、`astro check`、建置
-- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。節氣：目錄有資料時 24 個識別值須齊全且無未知檔名、每筆通過 schema、當令食材只指向已發布食材條目、每個節氣的說明在來源紀錄有對照且網址列於 `sources`，核准來源網址不得出現在輸出（空目錄通過）。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄，`SOLAR_TERMS_DIR` 可改節氣目錄（預設 `content/solar-terms`），`SOLAR_TERM_SOURCES_DIR` 可改節氣來源紀錄目錄（預設 `content/solar-term-sources`）
+- `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄與段落對照、封面圖規格、相關連結只指向已發布頁面、草稿與核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3），供部署前使用，PR 不開。另對已發布菜譜印出不影響結束碼的警告：材料表有、步驟沒用到的材料（規則見 `src/content-checks/unused-ingredients.ts`）。節氣：目錄有資料時 24 個識別值須齊全且無未知檔名、每筆通過 schema、當令食材只指向已發布食材條目、每個節氣的說明在來源紀錄有對照且網址列於 `sources`，核准來源網址不得出現在輸出（空目錄通過）。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄，`SOLAR_TERMS_DIR` 可改節氣目錄（預設 `content/solar-terms`），`SOLAR_TERM_SOURCES_DIR` 可改節氣來源紀錄目錄（預設 `content/solar-term-sources`）
 - `pnpm test` — 單元測試
-- `pnpm test:e2e` — 以固定菜譜建置三份站台後依序跑三輪 Playwright（chromium）：預設站台（`dist`）、配菜站台（`dist-meal`，只跑 `meal.spec.ts`）、顯示更多站台（`dist-show-more`，每批 1 道、含搜尋索引，只跑 `show-more.spec.ts`）；port 以 `E2E_PORT_BASE`（預設 4321）起算，三份站台依序占 +0／+1／+2，平行跑需各用一個 worktree 並錯開 port
+- `pnpm test:e2e` — 以固定菜譜建置三份站台後依序跑三輪 Playwright（chromium）：預設站台（`dist`）、配菜站台（`dist-meal`，只跑 `meal.spec.ts`）、顯示更多站台（`dist-show-more`，每批 1 道、含搜尋索引，只跑 `show-more.spec.ts`）；port 以 `E2E_PORT_BASE` 起算，三份站台依序占 +0／+1／+2；沒設定時自動從 4321 起找三個連續的空 port，平行跑需各用一個 worktree。機器負載高時個別測試可能逾時，重跑一次確認
+- `pnpm check:overlap <識別值…>` — 照抄檢查：菜譜自動抓 `content/sources/` 的每個網址比對，專題比對它連到的菜譜；去掉空白標點後有 12 字以上相同片段即失敗（ADR 0009）。需要網路
 - `pnpm check:merge` — 在暫時 worktree 合併 `origin/main` 後跑 CI 的檢查（加 `--e2e` 含瀏覽器測試），抓分支本身全綠、合併後才壞的情況
 - `pnpm measure:mobile` — 量測首頁手機版版面（篩選列與第一列位置、列高、一屏列數）；需先 `pnpm build`。談版面數字先量再估
 - `pnpm format` — 格式化
@@ -54,5 +55,5 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 ## 代理權限
 
 - 草稿留在本地工作分支。
-- 準備好請站主審閱時，才推送工作分支並開 PR。
+- 準備好請站主審閱時，才推送工作分支並開 PR。PR 一律以 draft 開（`gh pr create --draft`），檢查全綠、不再推送時才 `gh pr ready`；站主看到 ready 就可能合入，之後的修改從最新 `main` 開新分支另送 PR。
 - 不得推送 `main`，不得合入任何 PR（包含 `gh pr merge`）。合入由站主完成，等同發布核准。
