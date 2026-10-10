@@ -1,0 +1,74 @@
+title: 玉米筍炒百菇
+summary: 鮮脆玉米筍切斜段汆燙脆甜，搭配鮮香菇片、鴻禧菇、秀珍菇與甜豆莢，熱油爆香大蒜薄片與紅蘿蔔花片，大火快炒綜合菇類與玉米筍，調入少許鹽與米酒嗆香，鮮香甘美、爽脆多汁且色彩繽紛。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以玉米筍、綜合鮮菇與甜豆莢清炒為唯一蔬菜主角，屬於純蔬菜清炒料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [家常菜, 熱炒, 玉米筍, 菇類, 蔬菜]
+aliases: [百菇炒玉米筍, 彩椒玉米筍炒鮮菇]
+ingredients:
+  - name: 玉米筍
+    amount:
+      value: 100
+      unit: g
+    note: 洗淨切斜段
+  - name: 鮮香菇
+    amount:
+      value: 50
+      unit: g
+    note: 切厚片
+  - name: 鴻禧菇
+    amount:
+      value: 50
+      unit: g
+    note: 去根部撕小朵
+  - name: 甜豆莢
+    amount:
+      value: 40
+      unit: g
+    note: 撕去老筋
+  - name: 胡蘿蔔
+    amount:
+      value: 20
+      unit: g
+    note: 切薄花片
+  - name: 蒜頭
+    amount:
+      value: 10
+      unit: g
+    note: 切薄蒜片
+  - name: 米酒
+    amount:
+      value: 10
+      unit: ml
+    note: 約 1 茶匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+steps:
+  - text: 玉米筍切斜段入沸水汆燙 30 秒撈起；鮮香菇切片、鴻禧菇撕開小撮；甜豆莢撕去兩側粗筋；蒜頭切片、胡蘿蔔切片備用。
+    image:
+      src: ./step-1.webp
+      alt: 玉米筍切斜段入沸水汆燙 30 秒撈起；鮮香菇切片、鴻禧菇撕開小撮；甜豆莢撕去兩側粗筋；蒜頭切片、胡蘿
+  - text: 熱鍋倒入適量油，放入蒜片爆香，加入香菇片、鴻禧菇與胡蘿蔔片中大火翻炒至菇類出香微軟。
+  - text: 倒入汆燙過的玉米筍段與甜豆莢大火快速翻炒約 1 分鐘至甜豆翠綠斷生，調入鹽與米酒大火翻炒收汁均勻即可盛盤。
+    image:
+      src: ./step-3.webp
+      alt: 倒入汆燙過的玉米筍段與甜豆莢大火快速翻炒約 1 分鐘至甜豆翠綠斷生，調入鹽與米酒大火翻炒收汁均勻即可
+  - text: 盛入白色圓盤趁熱享用清脆香甜的多層次口感。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的玉米筍炒百菇
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 玉米筍先微燙能縮短後續炒製時間且口感格外脆甜；菇類下鍋時先不急著加水，用中大火乾煸炒至菇香散發，菇肉緊實多汁不軟爛。

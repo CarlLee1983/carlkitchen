@@ -1,0 +1,70 @@
+title: 培根高麗菜燜飯
+summary: 煙燻培根切丁小火煸出金黃油脂與焦香，加入鮮甜高麗菜大火快炒斷生，與洗淨優質白米、少許香油一同入電鍋燜煮，米粒吸飽煙燻肉香與蔬菜清甜，起鍋拌勻粒粒分明、油潤爽口。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: 主食不設料理主角與配餐角色，以白米結合培根丁與高麗菜燜煮為獨立飽足的家常炊飯主食。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 35
+tags: [米食, 炊飯, 高麗菜, 培根, 主食]
+aliases: [高麗菜培根炊飯, 高麗菜燜飯]
+ingredients:
+  - name: 白米
+    amount:
+      value: 300
+      unit: g
+    note: 約 2 量米杯洗淨瀝乾
+  - name: 培根
+    amount:
+      value: 4
+      unit: 片
+    note: 切約 1 公分小片
+  - name: 高麗菜
+    amount:
+      value: 200
+      unit: g
+    note: 洗淨切小片
+  - name: 蒜頭
+    amount:
+      value: 10
+      unit: g
+    note: 切蒜碎
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋拌入提香
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 少許調味
+    group: 調味
+steps:
+  - text: 白米洗淨瀝乾；培根切小片；高麗菜洗淨切小方塊；蒜頭切碎備用。
+    image:
+      src: ./step-1.webp
+      alt: 白米洗淨瀝乾；培根切小片；高麗菜洗淨切小方塊；蒜頭切碎備用。
+  - text: 熱平底鍋不放油，放入培根片小火煸炒至表面微焦香酥逼出油脂，加入蒜碎炒出蒜香。
+    image:
+      src: ./step-2.webp
+      alt: 熱平底鍋不放油，放入培根片小火煸炒至表面微焦香酥逼出油脂，加入蒜碎炒出蒜香。
+  - text: 倒入高麗菜塊翻炒至微軟出香氣，調入少許鹽與白胡椒粉拌勻關火。
+  - text: 將白米放入電鍋內鍋，加入相應刻度水量，鋪上炒好的培根與高麗菜，按下煮飯開關燜煮至開關跳起，再燜 10 分鐘，滴入香油用飯匙由下往上翻拌均勻即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的培根高麗菜燜飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 培根先在乾鍋中煸炒出煙燻油脂再炒高麗菜，米飯吸收動物油脂與蔬菜甘甜精華會格外油潤甘美；蔬菜煮時會微出水，水量可略比平時煮飯少 20 ml。

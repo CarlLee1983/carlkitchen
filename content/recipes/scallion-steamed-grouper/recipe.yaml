@@ -1,0 +1,76 @@
+title: 蔥油清蒸石斑魚
+summary: 新鮮石斑魚洗淨由背部深劃一刀，鋪上蔥段、老薑片與米酒大火蒸透鎖住鮮甜膠質，取出魚身瀝去蒸汁，鋪上大量細蔥絲、薑絲與紅椒絲，澆淋滾燙熱油激發出撲鼻蔥香，淋上蒸魚豉油，肉質細嫩彈牙、鮮香四溢。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以新鮮整尾石斑魚清蒸為唯一海鮮主角，淋上熱蔥油與蒸魚醬汁，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [宴席菜, 蒸魚, 海鮮, 石斑魚, 家常菜]
+aliases: [清蒸石斑魚, 蔥油石斑魚]
+ingredients:
+  - name: 石斑魚
+    amount:
+      value: 1
+      unit: 尾
+    note: 約 500 g 去鱗去內臟洗淨
+  - name: 青蔥
+    amount:
+      value: 4
+      unit: 根
+    note: 兩根切段蒸魚、兩根切極細蔥絲
+  - name: 生薑
+    amount:
+      value: 30
+      unit: g
+    note: 部分切片蒸魚、部分切極細薑絲
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 去籽切極細絲配色
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 去腥淋魚身
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙蒸魚醬油
+    group: 調味
+  - name: 糖
+    amount:
+      value: 10
+      unit: g
+    note: 約半大匙中和鹹度
+    group: 調味
+  - name: 沙拉油
+    amount:
+      value: 40
+      unit: ml
+    note: 熱油淋蔥絲激香
+    group: 調味
+steps:
+  - text: 石斑魚洗淨擦乾，由魚背鰭側切深刀至龍骨；青蔥與生薑分別切成細絲泡冰水捲曲瀝乾；取蒸盤鋪少許蔥段與薑片，放上石斑魚淋上米酒備用。
+    image:
+      src: ./step-1.webp
+      alt: 石斑魚洗淨擦乾，由魚背鰭側切深刀至龍骨；青蔥與生薑分別切成細絲泡冰水捲曲瀝乾；取蒸盤鋪少許蔥段與薑片
+  - text: 蒸鍋水大滾後放入石斑魚，蓋緊鍋蓋以大火清蒸約 12 至 14 分鐘至魚肉熟透，取出倒除蒸盤內的蒸魚水，拿掉蒸爛的蔥薑。
+    image:
+      src: ./step-2.webp
+      alt: 蒸鍋水大滾後放入石斑魚，蓋緊鍋蓋以大火清蒸約 12 至 14 分鐘至魚肉熟透，取出倒除蒸盤內的蒸魚水
+  - text: 在魚身表面鋪滿瀝乾的細蔥絲、薑絲與辣椒絲；另起一小鍋將沙拉油加熱至冒微煙，均勻澆淋在蔥薑絲上滋滋激發出濃烈蔥油香氣。
+  - text: 小鍋加熱醬油與少許糖煮滾成蒸魚豉油，沿盤邊淋入蒸魚醬汁即可端盤趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蔥油清蒸石斑魚
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蒸魚務必水大滾後再入蒸鍋，全程大火鎖住魚肉水分；蒸好後倒除盤底多餘腥水，鋪上細蔥絲後澆淋滾燙熱油，才能瞬間激發出極致甘香的清蔥香氣。
