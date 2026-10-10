@@ -1,0 +1,75 @@
+title: 味噌鮭魚豆腐湯
+summary: 肥美鮭魚切塊、嫩豆腐切丁，入柴魚高湯中輕煮釋放鮮甜魚脂，拌入甘醇細味噌慢火化開，撒入柴魚片與蔥花，魚肉滑嫩、豆腐軟綿，湯頭濃醇甘美、暖胃生津。
+servings: 4
+category: 湯
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [日式料理, 味噌湯, 鮭魚, 暖胃湯品]
+aliases: [鮭魚味噌湯, 日式鮭魚豆腐味噌湯]
+ingredients:
+  - name: 鮭魚
+    amount:
+      value: 250
+      unit: g
+    note: 切適口厚方塊
+  - name: 豆腐
+    amount:
+      value: 1
+      unit: 塊
+    note: 約 300 g 嫩豆腐切丁
+  - name: 柴魚片
+    amount:
+      value: 10
+      unit: g
+    note: 約半杯提鮮
+    group: 調味
+  - name: 蔥花
+    amount:
+      value: 20
+      unit: g
+    note: 約 2 大匙青蔥花
+    group: 調味
+  - name: 細味噌
+    amount:
+      value: 60
+      unit: g
+    note: 約 1/3 杯以溫水化開
+    group: 調味
+  - name: 糖
+    amount:
+      value: 8
+      unit: g
+    note: 約半大匙中和甘甜
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 約半小匙
+    group: 調味
+  - name: 高湯
+    amount:
+      value: 1000
+      unit: ml
+    note: 柴魚昆布高湯
+steps:
+  - text: 鮭魚洗淨切成約 2 公分見方厚塊；豆腐切成約 1.5 公分方塊；細味噌以少許溫高湯在碗中攪拌溶解備用。
+    image:
+      src: ./step-1.webp
+      alt: 鮭魚洗淨切成約 2 公分見方厚塊；豆腐切成約 1.5 公分方塊；細味噌以少許溫高湯在碗中攪拌溶解備用
+  - text: 湯鍋中倒入高湯煮沸，放入切好的鮭魚塊與豆腐丁，中火煮約 3 至 4 分鐘至鮭魚肉熟透變白。
+    image:
+      src: ./step-2.webp
+      alt: 湯鍋中倒入高湯煮沸，放入切好的鮭魚塊與豆腐丁，中火煮約 3 至 4 分鐘至鮭魚肉熟透變白。
+  - text: 轉微火倒入化開的細味噌、糖與鹽攪拌均勻，加入柴魚片略微滾煮 1 分鐘後立即熄火。
+  - text: 將煮好的味噌鮭魚豆腐湯盛入大碗中，表面撒上鮮綠蔥花即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的味噌鮭魚豆腐湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 味噌不宜高溫長時間滾煮，以免酵素破壞並散失豆香；先將味噌以溫高湯調勻，在熄火前轉微火加入化開，最能保留濃醇甘味。

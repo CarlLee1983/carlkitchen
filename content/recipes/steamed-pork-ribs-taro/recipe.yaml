@@ -1,0 +1,75 @@
+title: 粉蒸排骨
+summary: 小排骨洗淨以辣豆瓣醬、醬油、酒、糖醃漬入味，均勻沾裹特製蒸肉粉，以清香荷葉襯底鋪上香甜地瓜塊與排骨，入蒸籠大火蒸透 40 分鐘。肉質軟嫩多汁、米粉軟糯吸汁，地瓜甘甜綿密，荷葉清香四溢。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 55
+tags: [蒸菜, 經典名菜, 排骨, 家常菜]
+aliases: [荷葉粉蒸排骨, 地瓜粉蒸排骨]
+ingredients:
+  - name: 小排骨
+    amount:
+      value: 600
+      unit: g
+    note: 剁小塊洗淨瀝乾
+  - name: 地瓜
+    amount:
+      value: 250
+      unit: g
+    note: 約 2 個去皮切塊鋪底
+  - name: 蒸肉粉
+    amount:
+      value: 100
+      unit: g
+    note: 沾裹外層
+    group: 調味
+  - name: 辣豆瓣醬
+    amount:
+      value: 30
+      unit: g
+    note: 約 2 大匙醃料
+    group: 醃料
+  - name: 蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 抓醃保嫩
+    group: 醃料
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 醃料
+  - name: 酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙米酒
+    group: 醃料
+  - name: 糖
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙
+    group: 醃料
+steps:
+  - text: 小排骨洗淨剁成小塊瀝乾，加入辣豆瓣醬、蛋液、醬油、酒與糖抓勻醃漬約 30 分鐘入味。
+    image:
+      src: ./step-1.webp
+      alt: 小排骨洗淨剁成小塊瀝乾，加入辣豆瓣醬、蛋液、醬油、酒與糖抓勻醃漬約 30 分鐘入味。
+  - text: 地瓜去皮切成滾刀厚塊鋪於蒸盤底部；將醃好的小排骨均勻沾裹蒸肉粉，一塊塊排放在地瓜上方。
+    image:
+      src: ./step-2.webp
+      alt: 地瓜去皮切成滾刀厚塊鋪於蒸盤底部；將醃好的小排骨均勻沾裹蒸肉粉，一塊塊排放在地瓜上方。
+  - text: 蒸鍋中倒入充足清水大火燒滾，放入蒸盤蓋緊鍋蓋，大火蒸煮 40 分鐘至排骨軟爛透味、地瓜綿密熟透即可取出盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的粉蒸排骨
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 排骨抓醃時加入一顆全蛋液能使肉質極其滑嫩；沾裹蒸肉粉後可靜置 3 分鐘讓米粉自然吸收肉汁回潮，蒸出後粉粒軟糯不乾硬。

@@ -1,0 +1,71 @@
+title: 開陽白菜
+summary: 金黃蝦米與乾香菇絲入鍋爆香，投入清脆鮮甜大白菜慢火煨煮至軟透吸飽高湯，調入鹽巴與香油勾薄芡，湯汁清甜濃鮮、白菜軟嫩順口，經典江浙家常名菜。
+servings: 4
+category: 非湯料理
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 20
+tags: [江浙菜, 開陽, 家常菜, 大白菜]
+aliases: [蝦米炒白菜, 香菇開陽白菜]
+ingredients:
+  - name: 大白菜
+    amount:
+      value: 500
+      unit: g
+    note: 洗淨切大片
+  - name: 蝦米
+    amount:
+      value: 20
+      unit: g
+    note: 泡水洗淨瀝乾
+    group: 調味
+  - name: 乾香菇
+    amount:
+      value: 20
+      unit: g
+    note: 泡軟切絲
+    group: 調味
+  - name: 高湯
+    amount:
+      value: 360
+      unit: ml
+    note: 約 1.5 杯量米杯
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 8
+      unit: g
+    note: 約半大匙
+    group: 調味
+  - name: 香油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 太白粉
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙調水勾芡
+    group: 調味
+steps:
+  - text: 大白菜洗淨切成大片；蝦米與乾香菇分別以清水泡軟，香菇切成細絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 大白菜洗淨切成大片；蝦米與乾香菇分別以清水泡軟，香菇切成細絲備用。
+  - text: 熱鍋倒入適量油，放入蝦米與香菇絲以中火爆香至香氣四溢。
+  - text: 倒入大白菜大火翻炒均勻，注入高湯煮沸，轉中小火煨煮至白菜軟爛入味。
+    image:
+      src: ./step-3.webp
+      alt: 倒入大白菜大火翻炒均勻，注入高湯煮沸，轉中小火煨煮至白菜軟爛入味。
+  - text: 加入鹽調味，淋入太白粉水勾薄芡，起鍋前均勻淋上香油即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的開陽白菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蝦米以溫水快速泡洗瀝乾即可，爆香時以中小火慢慢煸炒出金黃海味；白菜煨煮至微透軟稔再勾薄芡，芡汁均勻掛在菜葉上滑潤鮮美。
