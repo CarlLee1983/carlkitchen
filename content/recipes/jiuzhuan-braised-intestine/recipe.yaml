@@ -1,0 +1,76 @@
+title: 紅燒九轉肥腸
+summary: 優質豬大腸頭徹底翻洗乾淨入鍋慢火水煮一小時至軟糯，切成厚圈圈段，熱油鍋爆香老薑末，放入大腸頭慢火煸炒逼出香氣，調入純釀醬油、冰糖、米酒與香濃麻油，轉微火慢煨收汁至湯汁紅亮濃稠如琥珀膠質緊裹大腸，出鍋撒上新鮮香菜末，色澤紅潤、肥而不膩、軟糯鹹甜，經典名菜。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以豬大腸頭慢火燜煮紅燒收汁為唯一肉類主角，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+tags: [肥腸, 大腸頭, 紅燒, 家常名菜, 肉類料理]
+aliases: [九轉肥腸, 紅燒大腸頭]
+ingredients:
+  - name: 豬大腸頭
+    amount:
+      value: 500
+      unit: g
+    note: 清洗乾淨煮軟切 2.5 公分厚圈
+  - name: 生薑
+    amount:
+      value: 25
+      unit: g
+    note: 去皮切細薑末
+  - name: 香菜
+    amount:
+      value: 20
+      unit: g
+    note: 洗淨切細碎末飾頂
+  - name: 黑麻油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙煸薑增濃郁香氣
+  - name: 醬油
+    amount:
+      value: 35
+      unit: ml
+    note: 約 2.5 大匙純釀醬油
+    group: 調味
+  - name: 冰糖
+    amount:
+      value: 20
+      unit: g
+    note: 約 1.5 大匙炒糖色收亮汁
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 35
+      unit: ml
+    note: 約 2.5 大匙去腥增香
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+steps:
+  - text: 豬大腸頭以麵粉與鹽反覆搓揉清洗乾淨，冷水下鍋煮滾後以中小火慢煮約 1 小時至筷子可穿透之軟度，撈出放涼切成 2.5 公分厚圈段；生薑切細薑末；香菜洗淨切碎備用。
+    image:
+      src: ./step-1.webp
+      alt: 豬大腸頭以麵粉與鹽反覆搓揉清洗乾淨，冷水下鍋煮滾後以中小火慢煮約 1 小時至可穿透之軟度，撈出放
+  - text: 炒鍋倒入黑麻油以中小火加熱，放入生薑末慢慢煸炒出辛香，倒入大腸頭圈塊轉中火煸炒約 2 分鐘逼出多餘油脂且表面微金黃。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋倒入黑麻油以中小火加熱，放入生薑末慢慢煸炒出辛香，倒入大腸頭圈塊轉中火煸炒約 2 分鐘逼出多餘油
+  - text: 加入冰糖、醬油、米酒、白胡椒粉與 50 ml 水煮滾，蓋上鍋蓋轉微火慢煨燜煮約 15 分鐘至大腸頭完全吸附醬汁紅潤入味。
+  - text: 揭開鍋蓋轉中大火快速翻拌收汁，至醬汁濃稠起大泡成晶亮琥珀色緊緊包覆肥腸表面，熄火盛盤，撒上新鮮香菜末即可端上桌享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的紅燒九轉肥腸
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 大腸頭先加麵粉與鹽徹底翻面搓洗去黏液與異味，預先水煮一小時軟化後再紅燒，大腸頭口感最為軟糯Ｑ彈不韌；最後收汁大火翻拋使冰糖焦化發亮，紅潤透光且甘鹹濃郁。

@@ -1,0 +1,81 @@
+title: 香菇肉燥飯
+summary: 優質豬前腿絞肉入鍋煸出油脂，投入泡發厚切乾香菇丁與大量金黃油蔥酥慢火煸炒出深邃古早味，加入醬油、米酒、冰糖與清水細火慢燉三十分鐘，滷汁油亮甘醇，澆淋在熱騰騰白飯上，香濃黏嘴、經典台灣美味。
+servings: 4
+category: 主食
+dishKinds: []
+classificationReason: 以白米飯為底淋上甘醇香菇肉燥滷汁，可直接作為一餐食用，屬於主食料理。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [肉燥飯, 香菇, 滷肉, 台灣小吃, 主食]
+aliases: [古早味香菇肉燥飯, 香菇滷肉飯]
+ingredients:
+  - name: 白飯
+    amount:
+      value: 4
+      unit: 碗
+    note: 現煮粒粒分明熱白飯
+  - name: 豬絞肉
+    amount:
+      value: 600
+      unit: g
+    note: 前腿粗絞肉肥瘦比例三比七
+  - name: 乾香菇
+    amount:
+      value: 10
+      unit: 朵
+    note: 洗淨溫水泡軟切小丁
+  - name: 油蔥酥
+    amount:
+      value: 100
+      unit: g
+    note: 自製或純釀紅蔥頭酥
+  - name: 水
+    amount:
+      value: 800
+      unit: ml
+    note: 含香菇泡發原汁
+  - name: 醬油
+    amount:
+      value: 100
+      unit: ml
+    note: 純釀造甘醇醬油
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙去腥增香
+    group: 調味
+  - name: 冰糖
+    amount:
+      value: 25
+      unit: g
+    note: 約 2 大匙融糖增色
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 2
+      unit: g
+    note: 約半茶匙提香
+    group: 調味
+steps:
+  - text: 乾香菇沖淨以溫水泡軟，去除硬蒂頭後切成約半公分均勻香菇小丁，香菇水沉澱過濾保留備用。
+    image:
+      src: ./step-1.webp
+      alt: 乾香菇沖淨以溫水泡軟，去除硬蒂頭後切成約半公分均勻香菇小丁，香菇水沉澱過濾保留備用。
+  - text: 取燉鍋加少許油熱鍋，倒入豬前腿絞肉以中火翻炒煸出多餘豬油與肉香，倒入香菇丁持續翻炒 3 分鐘至香氣四溢。
+    image:
+      src: ./step-2.webp
+      alt: 取燉鍋加少許油熱鍋，倒入豬前腿絞肉以中火翻炒煸出多餘豬油與肉香，倒入香菇丁持續翻炒 3 分鐘至香氣四
+  - text: 加入冰糖翻炒至微焦糖化上色，倒入醬油、米酒、白胡椒粉、過濾香菇水與清水，加入金黃油蔥酥攪拌均勻煮滾。
+  - text: 轉微火蓋上鍋蓋燜燉 35 分鐘至肉燥軟爛膠質釋出，湯汁濃郁油潤，盛裝熱白飯，淋上兩大匙甘醇香菇肉燥即可上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的香菇肉燥飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 香菇泡發水富含天然甘甜鳥苷酸，過濾掉底部泥沙後倒入同燉能讓肉燥香氣更加濃郁醇厚；冰糖先在炒肉時炒融上色能讓肉燥色澤紅潤發亮。

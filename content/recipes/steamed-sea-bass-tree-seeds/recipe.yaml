@@ -1,0 +1,79 @@
+title: 樹子蒸鱸魚
+summary: 金目鱸魚清洗劃刀淋熱水去腥，鋪上青蔥段與老薑片，淋上台灣傳統甘醇破布子（樹子）與蔭油湯汁、純釀米酒與少許細糖，入蒸籠大火蒸煮十二分鐘，出鍋撒上細蔥花與辣椒絲，魚肉細緻滑嫩、樹子甘醇回甘、湯汁鮮美無比。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以金目鱸魚清蒸佐甘醇樹子為唯一海鮮主角，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [清蒸, 鱸魚, 樹子, 破布子, 海鮮, 家常名菜]
+aliases: [破布子蒸鱸魚, 蔭樹子蒸鱸魚]
+ingredients:
+  - name: 金目鱸魚
+    amount:
+      value: 1
+      unit: 尾
+    note: 約 500 g 去鱗去鰓剖內臟魚身兩面劃直刀
+  - name: 破布子
+    amount:
+      value: 50
+      unit: g
+    note: 罐裝甘醇樹子連顆粒
+  - name: 破布子汁
+    amount:
+      value: 15
+      unit: ml
+    note: 罐內甘醇蔭油汁約 1 大匙
+  - name: 青蔥
+    amount:
+      value: 3
+      unit: 根
+    note: 2 根切段墊底、1 根切細蔥花飾頂
+  - name: 生薑
+    amount:
+      value: 20
+      unit: g
+    note: 切薄薑片
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 去籽切細絲配色
+  - name: 米酒
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙去腥增甘
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 10
+      unit: g
+    note: 約 2 茶匙引出回甘
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 15
+      unit: ml
+    note: 起鍋熱油淋香
+    group: 調味
+steps:
+  - text: 金目鱸魚清洗乾淨，魚身兩側斜劃兩刀，淋上熱水汆燙表面去腥擦乾；青蔥切段與細蔥花；生薑切薄片；紅辣椒去籽切細絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 金目鱸魚清洗乾淨，魚身兩側斜劃兩刀，淋上熱水汆燙表面去腥擦乾；青蔥切段與細蔥花；生薑切薄片；紅辣椒去
+  - text: 取蒸盤鋪上蔥段與薑片，擺上鱸魚，表面均勻淋上破布子顆粒、破布子汁、米酒與細砂糖。
+    image:
+      src: ./step-2.webp
+      alt: 取蒸盤鋪上蔥段與薑片，擺上鱸魚，表面均勻淋上破布子顆粒、破布子汁、米酒與細砂糖。
+  - text: 蒸鍋注水大火燒至大滾，放入蒸盤蓋上鍋蓋大火清蒸 12 分鐘至魚肉熟透蛋白質凝固，取出蒸盤撒上蔥花與紅辣椒絲，淋上少許燒熱植物油熗香即可端上桌享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的樹子蒸鱸魚
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 鱸魚處理好後先用熱水澆淋魚皮表面，能快速收緊表皮並洗去黏液腥味；破布子本身的甘甜蔭汁與米酒調和淋在魚身上大火蒸透，魚肉鮮嫩甘美、回味無窮。

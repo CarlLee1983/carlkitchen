@@ -1,0 +1,64 @@
+title: 吻仔魚煎蛋
+summary: 新鮮銀白吻仔魚先入油鍋微火慢煸至魚身乾香金黃，倒入調和翠綠蔥花與少許海鹽的滑嫩蛋液，文火半煎半烘至兩面金黃蓬鬆微焦，蛋香濃郁、吻仔魚香脆鮮甜。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood, egg-bean]
+classificationReason: 以新鮮吻仔魚煸香與雞蛋調和烘煎為海鮮與蛋類雙主角，屬於海鮮與蛋豆並陳料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [煎蛋, 吻仔魚, 海鮮, 家常菜, 高鈣]
+aliases: [銀魚煎蛋, 吻仔魚烘蛋]
+ingredients:
+  - name: 吻仔魚
+    amount:
+      value: 70
+      unit: g
+    note: 洗淨充分瀝乾水分
+  - name: 雞蛋
+    amount:
+      value: 4
+      unit: 顆
+    note: 打入大碗中打勻成滑順蛋液
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 洗淨切細蔥花
+  - name: 大蒜
+    amount:
+      value: 10
+      unit: g
+    note: 去皮剁細碎末
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 約 1/4 茶匙調味
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 30
+      unit: ml
+    note: 煎蛋食用油
+    group: 調味
+steps:
+  - text: 青蔥洗淨切細蔥花；大蒜去皮切細末；吻仔魚以濾網輕輕沖洗後充分瀝乾水氣備用。
+    image:
+      src: ./step-1.webp
+      alt: 青蔥洗淨切細蔥花；大蒜去皮切細末；吻仔魚以濾網輕輕沖洗後充分瀝乾水氣備用。
+  - text: 平底鍋熱鍋加少許植物油，放入大蒜末小火爆出香氣，倒入吻仔魚小火煸炒約 2 分鐘至魚身表面乾爽微金黃釋放海味，起鍋稍降溫。
+  - text: 雞蛋打入大碗中，加入蔥花、鹽與炒香的吻仔魚，充分攪拌均勻使材料分佈均勻。
+    image:
+      src: ./step-3.webp
+      alt: 雞蛋打入大碗中，加入蔥花、鹽與炒香的吻仔魚，充分攪拌均勻使材料分佈均勻。
+  - text: 平底鍋倒入其餘植物油燒熱，倒入拌勻的蛋液，中小火慢煎至底部金黃凝固，翻面續煎至兩面金黃微蓬鬆即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的吻仔魚煎蛋
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 吻仔魚一定要先入鍋小火煸炒至乾爽微金黃，才能徹底逼出天然鮮香並去掉多餘水氣；倒入蛋液中再煎，煎出的烘蛋才會香氣撲鼻且口感鬆軟。

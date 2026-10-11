@@ -1,0 +1,70 @@
+title: 蒜蓉蒸蝦
+summary: 鮮活大草蝦開背挑去沙腸平鋪盤中，鋪滿濃郁蒜末與薑碎，淋上米酒大火快蒸五分鐘保留蝦肉緊實彈脆，鋪上蔥花澆淋滾燙熱油與蒸魚醬汁，蒜香濃郁、蝦肉鮮甜彈牙。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以草蝦開背蒸熟為唯一海鮮主角，佐以濃郁蒜蓉與蔥薑，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 18
+tags: [蒸蝦, 海鮮, 草蝦, 蒜蓉, 家常名菜]
+aliases: [蒜蓉開邊蝦, 清蒸蒜蓉草蝦]
+ingredients:
+  - name: 草蝦
+    amount:
+      value: 12
+      unit: 尾
+    note: 洗淨剪鬚去蝦槍開背留尾扇
+  - name: 大蒜
+    amount:
+      value: 40
+      unit: g
+    note: 約 8 瓣細剁成香蒜碎
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 切青翠蔥花
+  - name: 生薑
+    amount:
+      value: 20
+      unit: g
+    note: 去皮剁細薑末
+  - name: 蒸魚醬油
+    amount:
+      value: 45
+      unit: ml
+    note: 約 3 大匙蒸魚汁
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙去腥增香
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 50
+      unit: ml
+    note: 燒熱熗油
+    group: 調味
+steps:
+  - text: 草蝦洗淨剪去蝦鬚，用利刀自蝦頭中央順延背部剖開至尾部但不切斷，挑除泥腸並以刀背輕拍斷筋，整齊攤平成放射狀排列於蒸盤上。
+    image:
+      src: ./step-1.webp
+      alt: 草蝦洗淨剪去蝦鬚，用利刀自蝦頭中央順延背部剖開至尾部但不切斷，挑除泥腸並以刀背輕拍斷筋，整齊攤平成放
+  - text: 青蔥切蔥花、大蒜與生薑去皮剁成細碎末備用。
+  - text: 草蝦背部均勻撒上米酒，再將大蒜碎均勻鋪在每一隻開背蝦肉上，放入水滾蒸鍋以大火蒸煮 5 分鐘至蝦肉變白熟透取出。
+    image:
+      src: ./step-3.webp
+      alt: 草蝦背部均勻撒上米酒，再將大蒜碎均勻鋪在每一隻開背蝦肉上，放入水滾蒸鍋以大火蒸煮 5 分鐘至蝦肉變白
+  - text: 將蔥花與生薑碎鋪在蝦身頂部，另起鍋將植物油燒熱至 100°C 淋在蔥蒜上熗出香氣，最後淋上蒸魚醬油即可盛盤享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒜蓉蒸蝦
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 草蝦開背後輕輕以刀背敲斷腹部橫筋，蒸的時候蝦身就不會蜷縮捲曲，保持平整美觀；大火蒸 5 分鐘剛剛好熟透，蝦肉最為彈牙多汁。
