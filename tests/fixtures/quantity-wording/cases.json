@@ -1,0 +1,272 @@
+[
+  {
+    "id": "air-fryer-salt-pepper-ribs",
+    "name": "地瓜粉",
+    "note": "裹粉用"
+  },
+  {
+    "id": "ants-climbing-tree",
+    "name": "蒜末",
+    "note": null
+  },
+  {
+    "id": "ants-climbing-tree",
+    "name": "薑末",
+    "note": null
+  },
+  {
+    "id": "ants-climbing-tree",
+    "name": "胡椒粉",
+    "note": null
+  },
+  {
+    "id": "ants-climbing-tree",
+    "name": "食用油",
+    "note": "炒絞肉用"
+  },
+  {
+    "id": "beef-curry",
+    "name": "鹽",
+    "note": null
+  },
+  {
+    "id": "beef-curry",
+    "name": "粗粒黑胡椒粉",
+    "note": null
+  },
+  {
+    "id": "beef-curry",
+    "name": "糖",
+    "note": null
+  },
+  {
+    "id": "chive-omelet",
+    "name": "食用油",
+    "note": null
+  },
+  {
+    "id": "cucumber-bean-paste-chicken",
+    "name": "水",
+    "note": null
+  },
+  {
+    "id": "daylily-pork-stir-fry",
+    "name": "食用油",
+    "note": "爆香用"
+  },
+  {
+    "id": "eggplant-clay-pot",
+    "name": "水",
+    "note": null
+  },
+  {
+    "id": "eggplant-clay-pot",
+    "name": "食用油",
+    "note": "過油及爆香用"
+  },
+  {
+    "id": "five-spice-fried-pork-ribs",
+    "name": "食用油",
+    "note": "炸油"
+  },
+  {
+    "id": "garlic-oysters",
+    "name": "九層塔",
+    "note": "墊盤用"
+  },
+  {
+    "id": "garlic-oysters",
+    "name": "粗地瓜粉",
+    "note": "裹蚵仔用"
+  },
+  {
+    "id": "garlic-oysters",
+    "name": "鹽",
+    "note": "洗蚵仔用"
+  },
+  {
+    "id": "garlic-shrimp",
+    "name": "青蔥",
+    "note": "切成蔥花"
+  },
+  {
+    "id": "garlic-shrimp",
+    "name": "香油",
+    "note": "起鍋後淋上"
+  },
+  {
+    "id": "green-pepper-pork",
+    "name": "食用油",
+    "note": "炒香蒜末用"
+  },
+  {
+    "id": "green-pepper-pork",
+    "name": "太白粉",
+    "note": "醃肉用"
+  },
+  {
+    "id": "green-pepper-pork",
+    "name": "黑胡椒粉",
+    "note": null
+  },
+  {
+    "id": "italian-chicken-wings",
+    "name": "義大利式香料",
+    "note": null
+  },
+  {
+    "id": "italian-chicken-wings",
+    "name": "檸檬胡椒鹽",
+    "note": null
+  },
+  {
+    "id": "japanese-chicken-curry",
+    "name": "食用油",
+    "note": "炒料用"
+  },
+  {
+    "id": "japanese-pork-cutlet",
+    "name": "食用油",
+    "note": "炸油"
+  },
+  {
+    "id": "lettuce-chicken-sang-choy-bao",
+    "name": "沙拉油",
+    "note": "炸冬粉、油條及炒餡用"
+  },
+  {
+    "id": "luosong-soup",
+    "name": "迷迭香",
+    "note": "來源也可用義大利香料"
+  },
+  {
+    "id": "luosong-soup",
+    "name": "雞高湯",
+    "note": "燉煮用"
+  },
+  {
+    "id": "orange-fish-slices",
+    "name": "太白粉水",
+    "note": "用於勾薄芡"
+  },
+  {
+    "id": "orange-pork-ribs",
+    "name": "食用油",
+    "note": "炸油"
+  },
+  {
+    "id": "oyster-omelet",
+    "name": "胡椒粉",
+    "note": null
+  },
+  {
+    "id": "oyster-omelet",
+    "name": "自製沾醬",
+    "note": "來源另附做法"
+  },
+  {
+    "id": "pineapple-shrimp-balls",
+    "name": "炸油",
+    "note": null
+  },
+  {
+    "id": "pork-sauce-spinach",
+    "name": "食用油",
+    "note": "炒肉燥用"
+  },
+  {
+    "id": "pork-thick-soup",
+    "name": "柴魚片",
+    "note": "熬湯後撈除"
+  },
+  {
+    "id": "pork-thick-soup",
+    "name": "太白粉水",
+    "note": "勾芡用，粉水比例待確認"
+  },
+  {
+    "id": "salt-crispy-chicken",
+    "name": "食用油",
+    "note": "炸油"
+  },
+  {
+    "id": "salt-crispy-chicken",
+    "name": "胡椒鹽",
+    "note": "來源前後各列一次，僅明示起鍋前撒"
+  },
+  {
+    "id": "salt-crispy-chicken",
+    "name": "辣椒粉",
+    "note": "起鍋前撒"
+  },
+  {
+    "id": "seafood-pasta",
+    "name": "奶油",
+    "note": null
+  },
+  {
+    "id": "shacha-lamb",
+    "name": "食用油",
+    "note": "炒料用"
+  },
+  {
+    "id": "shiitake-chicken-congee",
+    "name": "食用油",
+    "note": "炒乾香菇用"
+  },
+  {
+    "id": "shiitake-chicken-congee",
+    "name": "鹽",
+    "note": null
+  },
+  {
+    "id": "shiitake-chicken-congee",
+    "name": "白胡椒粉",
+    "note": null
+  },
+  {
+    "id": "shrimp-glass-noodles",
+    "name": "食用油",
+    "note": "炸白蝦用"
+  },
+  {
+    "id": "taiwanese-mapodofu",
+    "name": "食用油",
+    "note": "炒香用"
+  },
+  {
+    "id": "taiwanese-mapodofu",
+    "name": "胡椒粉",
+    "note": null
+  },
+  {
+    "id": "three-cup-king-oyster-mushrooms",
+    "name": "食用油",
+    "note": "炸杏鮑菇用"
+  },
+  {
+    "id": "vegetarian-stone-pot-bibimbap",
+    "name": "食用油",
+    "note": "炒黃豆芽、紅蘿蔔與豆皮用"
+  },
+  {
+    "id": "vinegar-fish-slices",
+    "name": "食用油",
+    "note": "過油與爆香用"
+  },
+  {
+    "id": "vinegar-fish-slices",
+    "name": "太白粉水",
+    "note": "粉水比例待確認"
+  },
+  {
+    "id": "xo-sauce-seafood-stir-fry",
+    "name": "太白粉水",
+    "note": "勾薄芡用"
+  },
+  {
+    "id": "yogurt-bamboo-shoot-salad",
+    "name": "水",
+    "note": "煮竹筍用"
+  }
+]

@@ -11,9 +11,9 @@ protein: true
 timeMinutes: 15
 ingredients:
   - { name: 蚵仔, amount: { value: 300, unit: g } }
-  - { name: 九層塔, note: 適量，墊盤用, group: 調味 }
-  - { name: 粗地瓜粉, note: 適量，裹蚵仔用, group: 調味 }
-  - { name: 鹽, note: 適量，洗蚵仔用, group: 調味 }
+  - { name: 九層塔, note: 墊盤用, group: 調味 }
+  - { name: 粗地瓜粉, note: 裹蚵仔用, group: 調味 }
+  - { name: 鹽, note: 洗蚵仔用, group: 調味 }
   - { name: 蒜泥, amount: { value: 12, unit: g }, note: 約 1 大匙, group: 調味 }
   - {
       name: 醬油,

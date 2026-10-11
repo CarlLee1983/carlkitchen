@@ -15,7 +15,7 @@ ingredients:
   - { name: 豬絞肉, amount: { value: 50, unit: g }, note: 建議用梅花絞肉 }
   - { name: 紅蔥頭, amount: { value: 20, unit: g }, note: 切碎 }
   - { name: 蒜末, amount: { value: 20, unit: g } }
-  - { name: 食用油, note: 適量，炒肉燥用, group: 調味 }
+  - { name: 食用油, note: 炒肉燥用, group: 調味 }
   - {
       name: 食用油,
       amount: { value: 15, unit: ml },

@@ -48,7 +48,7 @@ ingredients:
       group: 調味,
     }
   - { name: 水, note: 少許，調醬汁用, group: 調味 }
-  - { name: 食用油, note: 適量，炒黃豆芽、紅蘿蔔與豆皮用, group: 調味 }
+  - { name: 食用油, note: 炒黃豆芽、紅蘿蔔與豆皮用, group: 調味 }
 steps:
   - text: 海帶芽洗淨切小段，黃豆芽洗淨，豆皮切絲，紅蘿蔔去皮切絲。
     image:

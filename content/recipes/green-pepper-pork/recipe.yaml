@@ -19,7 +19,7 @@ ingredients:
   - { name: 青椒, amount: { value: 2, unit: 顆 }, note: 切絲 }
   - { name: 紅椒, amount: { value: 1, unit: 顆 }, note: 切絲 }
   - { name: 蒜頭, amount: { value: 2, unit: 瓣 }, note: 切末 }
-  - { name: 食用油, note: 適量，炒香蒜末用, group: 調味 }
+  - { name: 食用油, note: 炒香蒜末用, group: 調味 }
   - {
       name: 米酒,
       amount: { value: 15, unit: ml },
@@ -33,14 +33,14 @@ ingredients:
       group: 調味,
     }
   - { name: 白胡椒粉, note: 少許，醃肉用, group: 調味 }
-  - { name: 太白粉, note: 適量，醃肉用, group: 調味 }
+  - { name: 太白粉, note: 醃肉用, group: 調味 }
   - {
       name: 香菇素蠔油,
       amount: { value: 30, unit: ml },
       note: 約 2 湯匙,
       group: 調味,
     }
-  - { name: 黑胡椒粉, note: 適量, group: 調味 }
+  - { name: 黑胡椒粉, group: 調味 }
   - {
       name: 高湯粉,
       amount: { value: 0.25, unit: 茶匙 },

@@ -45,7 +45,7 @@ ingredients:
       note: 約 1/2 大匙，醃肉用,
       group: 調味,
     }
-  - { name: 食用油, note: 適量，炒料用, group: 調味 }
+  - { name: 食用油, note: 炒料用, group: 調味 }
   - { name: 蛋黃, amount: { value: 1, unit: 顆 }, note: 醃肉用, group: 調味 }
   - { name: 白胡椒粉, amount: { value: 2, unit: g }, note: 醃肉用, group: 調味 }
   - {

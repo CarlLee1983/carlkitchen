@@ -34,7 +34,7 @@ ingredients:
       group: 調味,
     }
   - { name: 水, amount: { value: 30, unit: ml }, note: 約 2 大匙, group: 調味 }
-  - { name: 食用油, note: 適量，爆香用, group: 調味 }
+  - { name: 食用油, note: 爆香用, group: 調味 }
 steps:
   - text: 金針花洗乾淨，下滾水快速燙一下就撈出瀝乾；瘦肉洗淨後切絲。
     image:
