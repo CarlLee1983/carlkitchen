@@ -1,0 +1,2039 @@
+{
+  "batch": 8,
+  "mode": "READ-ONLY PREFLIGHT; NO GENERATION; NO REPOSITORY OR REMOTE WRITES",
+  "checkedAtUtc": "2026-10-11T11:04:16.253502+00:00",
+  "baseSha": "946018506bf8a8fa66782e7d7a7ab28a13be9134",
+  "scope": "核對已發布且缺分享圖菜譜的現行YAML內部材料／步驟／摘要／tip一致性、已有核准來源紀錄、所有可取得歷史分享圖batch/preflight/recovery排除；直接目視每張hero。來源能讀到的再核對，楊桃無法讀取處明示，eligible並不宣稱重新審過每項上游事實。沒有改配方或正文圖。",
+  "globalImageRules": "分享卡保持所有文字；食物插圖以YAML為準，錯hero不可附為dish reference。自然遮擋允許，重量不轉成猜測顆數，原料數量不等於切後可見塊數。提示詞不授權生成；本次currentAttempts均0。",
+  "exclusionAudit": {
+    "historicalUniqueIds": 83,
+    "files": [
+      "../carlkitchen-share-print-batch06/.scratch/share-print-images/batch-03.json",
+      "../carlkitchen-share-print-batch06/.scratch/share-print-images/batch-01.json",
+      "../carlkitchen-share-print-batch06/.scratch/share-print-images/batch-04.json",
+      "../carlkitchen-share-print-batch06/.scratch/share-print-images/batch-02.json",
+      "../carlkitchen-share-print-batch06/.scratch/share-print-images/batch-06.json",
+      "../carlkitchen-share-print-batch07/.scratch/share-print-images/batch-07.json",
+      "../carlkitchen-share-print-batch07/.scratch/share-print-images/batch-03.json",
+      "../carlkitchen-share-print-batch07/.scratch/share-print-images/batch-01.json",
+      "../carlkitchen-share-print-batch07/.scratch/share-print-images/batch-04.json",
+      "../carlkitchen-share-print-batch07/.scratch/share-print-images/batch-02.json",
+      "../carlkitchen-share-print-batch04-resumed/.scratch/share-print-images/batch-03.json",
+      "../carlkitchen-share-print-batch04-resumed/.scratch/share-print-images/batch-01.json",
+      "../carlkitchen-share-print-batch04-resumed/.scratch/share-print-images/batch-04.json",
+      "../carlkitchen-share-print-batch04-resumed/.scratch/share-print-images/batch-02.json",
+      "../carlkitchen-share-print-batch05/.scratch/share-print-images/batch-03.json",
+      "../carlkitchen-share-print-batch05/.scratch/share-print-images/batch-01.json",
+      "../carlkitchen-share-print-batch05/.scratch/share-print-images/batch-05.json",
+      "../carlkitchen-share-print-batch05/.scratch/share-print-images/batch-02.json",
+      "../carlkitchen-share-print-batch06/.scratch/share-print-images/preflight-06-soups.json",
+      "../carlkitchen-share-print-batch06/.scratch/share-print-images/preflight-06.json",
+      "../carlkitchen-share-print-batch07/.scratch/share-print-images/preflight-07.json",
+      "../share-print-recovery-20261011/batch05/independent-review-current.json",
+      "../share-print-recovery-20261011/batch05/publication-result.json",
+      "../share-print-recovery-20261011/batch05/recovery-manifest.json",
+      "../share-print-recovery-20261011/live-verification/eight-print-results.json",
+      "../share-print-recovery-20261011/batch06/preflight-06-soups.json",
+      "../share-print-recovery-20261011/batch06/publication-result.json",
+      "../share-print-recovery-20261011/batch06/batch-06.json",
+      "../share-print-recovery-20261011/batch06/preflight-06.json",
+      "../share-print-recovery-20261011/batch06/qa-independent/review-06-soups-independent.json",
+      "../share-print-recovery-20261011/batch06/qa-independent/verification.json",
+      "../share-print-recovery-20261011/batch06/qa-independent/review-06-independent.json",
+      "../share-print-recovery-20261011/batch06/qa-independent/verification-soups.json",
+      "../share-print-recovery-20261011/batch04/recovery-verification.json",
+      "../share-print-recovery-20261011/batch04/remote-blob-verification.json",
+      "../share-print-recovery-20261011/batch07/batch-07.json",
+      "../share-print-recovery-20261011/batch07/preflight-07.json",
+      "../share-print-recovery-20261011/batch07/recovered-originals.json",
+      "/tmp/batch07-vegetables-preflight-initial10.json",
+      "/tmp/batch07-vegetables-preflight.json",
+      "/tmp/batch07-preflight.json"
+    ],
+    "excludedIds": [
+      "almond-crusted-fish",
+      "baby-corn-stir-fried-mushrooms",
+      "bacon-cabbage-rice",
+      "baked-butter-salmon",
+      "bamboo-pork-rib-soup",
+      "basil-eggplant",
+      "beef-meatball-soup",
+      "beef-roll-pancake",
+      "bitter-melon-pork-rib-soup",
+      "braised-cabbage-dried-shrimp",
+      "braised-tofu-mushrooms",
+      "cabbage-bacon-stir-fry",
+      "carrot-egg-stir-fry",
+      "chive-omelet",
+      "clams-steamed-egg",
+      "clear-radish-beef-soup",
+      "crispy-bean-cod",
+      "curry-pork-chops",
+      "curry-vegetable-medley",
+      "daylily-pork-stir-fry",
+      "deep-fried-squid-rings",
+      "dongpo-pork",
+      "egg-fried-rice",
+      "eggplant-clay-pot",
+      "fish-ball-soup",
+      "fried-king-oyster-mushrooms",
+      "fried-oysters",
+      "garlic-butter-shrimp",
+      "garlic-chicken-soup",
+      "garlic-spaghetti",
+      "garlic-sprout-cured-pork",
+      "garlic-sweet-potato-leaves",
+      "garlic-water-spinach",
+      "garlic-white-pork",
+      "ginger-basil-squid",
+      "ginger-pork-intestine",
+      "green-peas-shrimp",
+      "home-braised-tofu",
+      "honey-glazed-pork-ribs",
+      "jingjiang-tofu",
+      "kimchi-fried-beef",
+      "kung-pao-tofu",
+      "loofah-misua",
+      "lotus-root-pork-rib-soup",
+      "lotus-root-salad",
+      "milkfish-belly-soup",
+      "miso-steamed-chicken",
+      "onion-minced-pork",
+      "oyster-sauce-kale",
+      "oyster-vermicelli",
+      "peeled-chili-chicken-soup",
+      "pork-chops-black-pepper",
+      "potato-frittata",
+      "preserved-radish-omelette",
+      "salted-egg-king-oyster-mushrooms",
+      "salted-egg-pumpkin",
+      "sanbei-tofu",
+      "scallion-beef",
+      "scallion-braised-tofu",
+      "sesame-oil-birdsnest-fern",
+      "sesame-oil-vermicelli",
+      "sesame-spinach",
+      "shacha-pig-blood-cake",
+      "shrimp-scrambled-eggs",
+      "shrimp-stuffed-tofu",
+      "shrimp-thick-omelet",
+      "steamed-bitter-melon-tree-seeds",
+      "steamed-eggplant-garlic",
+      "steamed-pork-ribs-taro",
+      "stir-fried-cabbage",
+      "stir-fried-clams-basil",
+      "stir-fried-dragon-whiskers-tree-seeds",
+      "stir-fried-water-lotus-pork",
+      "string-beans-scrambled-eggs",
+      "thai-basil-pork",
+      "three-cup-king-oyster-mushrooms",
+      "tofu-shrimp",
+      "tomato-braised-chicken",
+      "tomato-egg-drop-soup",
+      "tree-seeds-fiddlehead",
+      "winter-melon-clam-soup",
+      "wood-ear-salad",
+      "yogurt-bamboo-shoot-salad"
+    ],
+    "bodyImageProjectExcluded": [
+      "shrimp-stuffed-tofu",
+      "oyster-vermicelli",
+      "braised-tofu-mushrooms"
+    ]
+  },
+  "rulesRead": [
+    "AGENTS.md",
+    ".claude/skills/recipe-making/SKILL.md",
+    ".claude/skills/recipe-making/illustration.md",
+    ".claude/skills/recipe-making/sourcing.md",
+    ".claude/skills/recipe-making/style.txt",
+    ".scratch/recipe-mvp/issues/06-homepage-direction.md"
+  ],
+  "eligibleIds": [
+    "italian-chicken-wings",
+    "salt-pepper-chicken-thigh",
+    "braised-chicken-legs",
+    "soy-braised-baby-potatoes",
+    "yogurt-pork-stew",
+    "pork-sauce-spinach",
+    "braised-yellow-croaker",
+    "sweet-sour-yellow-croaker",
+    "orange-pork-ribs",
+    "napa-cabbage-dried-shrimp"
+  ],
+  "skippedIds": [
+    "shrimp-glass-noodles",
+    "scallion-oil-chicken",
+    "pickled-mustard-beef-soup",
+    "garlic-shrimp",
+    "french-onion-soup",
+    "sauerkraut-pork-hotpot",
+    "japanese-chicken-curry",
+    "taiwanese-mapodofu"
+  ],
+  "recipes": [
+    {
+      "id": "italian-chicken-wings",
+      "title": "火烤義大利雞翅",
+      "eligible": true,
+      "sourceSha256": "9405acb25f5b1f1017534ea02f5ad2e3443fa6618f7925ee47af2e62f791ce05",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/italian-chicken-wings/hero.webp",
+        "sha256": "194e10e22ac52451c12e8236fd0e9234e3bc3596946ee629e612e129c27c8136",
+        "usableAsDishReference": true,
+        "result": "實際開啟 hero：素瓷盤上兩支烤上色的完整雞翅，可見翅尖和細碎香料；無檸檬片、綠葉或餐具。可以作外觀參考，但生成仍以 YAML 為準。"
+      },
+      "referenceMode": "layout-and-hero",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate holding two cooked whole chicken wings, golden-brown from grilling, with fine Italian-style seasoning and lemon-pepper seasoning flecks on the skin. Keep the natural connected wing shape; do not substitute drumsticks or chicken-thigh steaks. No lemon slices or fresh herb sprigs. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "5 項材料、2 步；所有材料均在醃漬／烤製使用，15＋5 分鐘醃漬與7＋2分鐘烤製可容於40分鐘總時間，烤箱替代法另列tip。文案短，無現行YAML內部矛盾。",
+      "concerns": [
+        "香料與檸檬胡椒鹽沒有定量，沿用材料預設適量，不編造克數。",
+        "原料2支即本體2支；自然局部重疊允許，不增畫分切翅塊。"
+      ],
+      "sourceCheck": "核准来源記錄存在；原頁 web 擷取 cache miss，官方 Big5 腳本 HTTP 403，未繞過限制、未用摘要代替全文。本輪只確認現行 YAML 與紀錄無新增矛盾，不宣稱原頁全文複核。",
+      "sourceRecord": "content/sources/italian-chicken-wings.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-1828"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "雞翅",
+          "amount": {
+            "value": 2,
+            "unit": "支"
+          }
+        },
+        {
+          "name": "橄欖油",
+          "amount": {
+            "value": 20,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "義大利式香料",
+          "group": "調味"
+        },
+        {
+          "name": "檸檬胡椒鹽",
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "note": "少許",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "雞翅洗淨，用竹籤戳出小洞。兩面撒上義大利式香料與檸檬胡椒鹽，靜置約 15 分鐘；抹上醬油稍加按摩，再靜置約 5 分鐘。",
+        "淋上橄欖油，放上烤網，以小火烤兩面約 7 分鐘，直到表面焦香、內部熟透。移到大火處再烤約 2 分鐘上色。"
+      ],
+      "summaryVerbatim": "雞翅用義大利式香料、檸檬胡椒鹽和醬油醃過，先以小火烤熟，再用大火烤上色。",
+      "tipVerbatim": "使用烤箱時，可先預熱，再以 200°C 烤約 15 分鐘。",
+      "servings": 1,
+      "timeMinutes": 40,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 5,
+        "stepCount": 2,
+        "narrativeCharacters": 183,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "salt-pepper-chicken-thigh",
+      "title": "香煎椒鹽雞腿排",
+      "eligible": true,
+      "sourceSha256": "1cc6a7e333e6244d8d7184793b58a33c31d3f770e935f930389f8020680724ca",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/salt-pepper-chicken-thigh/hero.webp",
+        "sha256": "500c6aa700ccdf910dafc3ef585e8542490b42a3d268b4269f7c590ab4758ffa",
+        "usableAsDishReference": true,
+        "result": "實際開啟 hero：三片完整帶皮去骨雞腿排，皮面金黃且有黑胡椒細點；無骨棒腿、切條、額外香草或餐具。外形符合。"
+      },
+      "referenceMode": "layout-and-hero",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate with approximately three intact boneless, skin-on chicken-thigh steaks, representing the recipe's 500 g total. The skin faces upward and is golden-brown from pan-searing in the chicken's own rendered fat, with fine black-pepper specks. Keep the steaks whole, not sliced strips, wings, or bone-in drumsticks. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "4 項材料、6 步；醃漬調味、皮面出油、壓重、翻面及74°C終點完整，140分鐘涵蓋最長120分鐘醃漬與烹調。材料和流程一致。",
+      "concerns": [
+        "3片為500g備註約數，不把重量或熟度宣稱為可由畫面量測。",
+        "原文74°C須原樣保留在卡片；不以圖片上色代替熟度判斷。"
+      ],
+      "sourceCheck": "本輪讀 Carol 核准原頁，500g約3片、酒鹽胡椒量、醃1–2小時與壓煎6–7分鐘均相符；另打開兩份核准 FoodSafety.gov 來源，74°C與冷藏醃漬有既有補充來源。",
+      "sourceRecord": "content/sources/salt-pepper-chicken-thigh.yaml",
+      "sourceUrls": [
+        "https://caroleasylife.blogspot.com/2020/11/blog-post_3.html",
+        "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+        "https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "去骨雞腿排",
+          "amount": {
+            "value": 500,
+            "unit": "g"
+          },
+          "note": "約 3 片，帶皮"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "1 湯匙",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 3,
+            "unit": "g"
+          },
+          "note": "約 3/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "黑胡椒粉",
+          "amount": {
+            "value": 2.5,
+            "unit": "ml"
+          },
+          "note": "1/2 茶匙，以體積量取",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "將米酒、鹽、黑胡椒粉揉入去骨雞腿排，放入冰箱冷藏醃漬 1–2 小時。",
+        "以中火預熱鑄鐵鍋，滴少許水測試；水能聚成滾動的水珠時，就可下去骨雞腿排。",
+        "將去骨雞腿排的雞皮面朝下排入鍋中，維持中火，煎到雞皮開始釋出油脂。",
+        "鋪上防沾烘焙紙，壓上重物；轉中小火煎約 6–7 分鐘。",
+        "拿開重物與烘焙紙，等雞皮變成金黃色、能離開鍋底時，再翻面。",
+        "保持中小火煎熟另一面；用食物溫度計確認雞肉最厚處達 74°C，再起鍋。"
+      ],
+      "summaryVerbatim": "雞腿排用米酒、鹽和黑胡椒粉醃漬，靠雞皮煎出的油煎熟，表皮金黃酥脆。",
+      "tipVerbatim": "鹽和黑胡椒粉的用量可依口味調整。",
+      "servings": 4,
+      "timeMinutes": 140,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 4,
+        "stepCount": 6,
+        "narrativeCharacters": 250,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "braised-chicken-legs",
+      "title": "滷雞腿",
+      "eligible": true,
+      "sourceSha256": "78403e90a253d769ce6c79228a75a0ba5352fba4b2195bf6e96f88a462c8cb3f",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/braised-chicken-legs/hero.webp",
+        "sha256": "9fa5aed050cd3d0e5acab6cf9684a6cefb2b934854bd5c7db63c445ca3307c6e",
+        "usableAsDishReference": true,
+        "result": "實際開啟 hero：素瓷盤五支完整帶骨棒棒腿、褐色皮面及少量滷汁；沒有蔥、薑、辣椒或其他未列材料。香料可留在滷鍋，不必在盛盤上強行全數可见。"
+      },
+      "referenceMode": "layout-and-hero",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate holding five whole bone-in chicken drumsticks, braised to a warm soy-brown color, with a shallow amount of their brown braising liquid. Keep the drumsticks intact, not boneless thigh steaks, sliced chicken, or whole leg quarters. Star anise and Sichuan pepper are braising aromatics, not decorative items beside the plate. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "7 項材料、6 步；全部滷料均有使用，大火10分鐘＋小火10分鐘＋熄火燜10分鐘之外保留煮滾備料空間，45分鐘總時間不衝突。74°C終點及原有酒後不駕車tip保留。",
+      "concerns": [
+        "一朵八角和少許花椒是入滷汁香料，不增加成品擺盤的可見朵數要求。",
+        "原頁標30分鐘，現稿45分鐘包含準備／煮滾，沒有把來源時間誤稱相同。"
+      ],
+      "sourceCheck": "本輪重讀核准愛料理原頁，5支雞腿、1000ml水、米酒及醬油各300ml、糖200g、八角1朵、少許花椒和三段10分鐘一致。食品溫度補充來源存在且已打開。",
+      "sourceRecord": "content/sources/braised-chicken-legs.yaml",
+      "sourceUrls": [
+        "https://icook.tw/recipes/131794",
+        "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "雞腿",
+          "amount": {
+            "value": 5,
+            "unit": "支"
+          },
+          "note": "帶骨棒棒腿"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 1000,
+            "unit": "ml"
+          }
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 300,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 300,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "砂糖",
+          "amount": {
+            "value": 200,
+            "unit": "g"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "八角",
+          "amount": {
+            "value": 1,
+            "unit": "朵"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "花椒",
+          "note": "少許",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "沖一下八角與花椒，備好滷汁用的香料。",
+        "在鍋中依序放入水、醬油、砂糖與米酒，加入八角、花椒，加熱至滷汁滾起。",
+        "放入雞腿，保持大火。鍋內重新沸騰後，計時煮 10 分鐘。",
+        "把火力降至中小火，讓雞腿再滷 10 分鐘。",
+        "關掉爐火，讓雞腿留在鍋中燜 10 分鐘。",
+        "用食物溫度計量雞肉中心，確認至少達到 74°C 再盛出上桌；未達時繼續加熱。"
+      ],
+      "summaryVerbatim": "雞腿以米酒、醬油和砂糖滷煮，加入八角與花椒，熄火後再燜 10 分鐘。",
+      "tipVerbatim": "這份配方用了 300 ml 米酒，來源提醒食用後不要開車或騎機車。",
+      "servings": 5,
+      "timeMinutes": 45,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 7,
+        "stepCount": 6,
+        "narrativeCharacters": 229,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "soy-braised-baby-potatoes",
+      "title": "韓式醬燒小馬鈴薯",
+      "eligible": true,
+      "sourceSha256": "c2f144e39eb54e205bc730ac8a8f4a31c8d7383db68e80d0604919e6e96f092c",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/soy-braised-baby-potatoes/hero.webp",
+        "sha256": "f7d08cec40639d9efa26a82f65d3a3f6c5b1a9a19f5fcd8d1644423a79acbb94",
+        "usableAsDishReference": true,
+        "result": "實際開啟 hero：碗中整顆帶皮小馬鈴薯、表皮略皺、褐色濃醬、熟芝麻與小蒜末；無馬鈴薯塊／切面或綠色裝飾。外形符合，不能靠碗或數量推測454g。"
+      },
+      "referenceMode": "layout-and-hero",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic bowl of whole, unpeeled baby potatoes about the size of quail eggs, with slightly wrinkled skins coated in reduced brown soy-and-rice-syrup sauce. Mix fine minced garlic through the sauce and scatter toasted sesame seeds over the potatoes, finished with sesame oil. Keep all potatoes whole and skin-on, not peeled halves or cut chunks. No scallions or green garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "7 項材料、7 步；炒燜20分鐘、收汁4–5分鐘與35分鐘總時間相容，蒜末及所有調味均使用。整顆带皮、小尺寸和最后芝麻均清楚。",
+      "concerns": [
+        "454g是原料重量，不指定馬鈴薯顆數。",
+        "熟芝麻12g約1湯匙為現有換算，分享圖不得自行改量。"
+      ],
+      "sourceCheck": "本輪重讀 Maangchi 核准原頁；整顆小馬鈴薯1磅、所有匙量、蒜末、20分鐘加4–5分鐘以及離火拌芝麻油／撒芝麻相符。",
+      "sourceRecord": "content/sources/soy-braised-baby-potatoes.yaml",
+      "sourceUrls": [
+        "https://www.maangchi.com/recipe/algamja-jorim"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "小馬鈴薯",
+          "amount": {
+            "value": 454,
+            "unit": "g"
+          },
+          "note": "鵪鶉蛋大小，整顆帶皮"
+        },
+        {
+          "name": "大蒜",
+          "amount": {
+            "value": 1,
+            "unit": "瓣"
+          }
+        },
+        {
+          "name": "食用油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "米糖漿",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "芝麻油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "熟芝麻",
+          "amount": {
+            "value": 12,
+            "unit": "g"
+          },
+          "note": "約 1 湯匙",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "削除小馬鈴薯腐損或破裂的部分，用冷水洗去泥土並瀝乾。",
+        "將大蒜切末。",
+        "將食用油倒入厚底平底鍋，開中火，放入小馬鈴薯。",
+        "蓋鍋燜煮 20 分鐘至小馬鈴薯全熟，每隔 5 分鐘晃動鍋子，讓受熱均勻、避免燒焦。",
+        "轉小火，加入醬油、米糖漿與大蒜，用木匙拌勻。",
+        "轉回中火，持續翻拌 4 至 5 分鐘，直到醬汁收濃、小馬鈴薯表皮發亮並起皺。",
+        "離火後拌入芝麻油，撒上熟芝麻，再盛入碗中。"
+      ],
+      "summaryVerbatim": "帶皮小馬鈴薯先燜熟，再裹上醬油與米糖漿收成的鹹甜醬汁，最後拌入芝麻油、撒上熟芝麻。",
+      "tipVerbatim": null,
+      "servings": 4,
+      "timeMinutes": 35,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 7,
+        "stepCount": 7,
+        "narrativeCharacters": 226,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "yogurt-pork-stew",
+      "title": "優格燉肉",
+      "eligible": true,
+      "sourceSha256": "578e330216a3615a77154d834cb94adc655e92239eaf40390495694d57bd50ad",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/yogurt-pork-stew/hero.webp",
+        "sha256": "273c1eb8b7eabcde7bea4e62ddac1fb846dcc98e7101c7be0b0876e93493ed2a",
+        "usableAsDishReference": false,
+        "result": "實際開啟 hero：有材料未列的綠色香草碎和黑胡椒顆粒，杏鮑菇看起來近完整長段；不得作dish reference，也不得沿用其香草／胡椒。"
+      },
+      "referenceMode": "layout-only",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic bowl containing a finished pale plain-yogurt pork stew. Large cooked chunks of pork hind-leg meat are mixed with chunks of potato, onion and king oyster mushroom, plus modest amounts of red and yellow sweet bell pepper. The yogurt cooking liquid remains visible around the ingredients; do not portray a dry stir-fry. Keep the bell peppers recognizable without prescribing an unsupported exact cut size. No parsley, green herb flakes, black-pepper specks, cream garnish, or extra vegetables. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "10 項材料、4 步；豬肉汆燙、炒洋蔥肉、加蔬菜及水、鹽優格小火30分鐘全流程完整，55分鐘總時間可含備料。現行材料和步驟對應，錯hero可用layout-only規避。",
+      "concerns": [
+        "紅黃甜椒各20g，材料／步驟未提供精確切法；提示不新增公分數或條絲形態。",
+        "800ml水與200ml優格均须在卡片保留，圖片不要自行縮成稠厚乾醬。",
+        "只呈現豬後腿肉大塊，不擅自改部位。"
+      ],
+      "sourceCheck": "核准来源記錄及batch08 review存在；2026-10-09肉類名稱覆核記錄明載A02-3056重抓確認豬後腿肉。本輪楊桃原頁未取到全文；未宣稱重新逐項上游驗證。",
+      "sourceRecord": "content/sources/yogurt-pork-stew.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-3056"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "豬後腿肉",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "切大塊"
+        },
+        {
+          "name": "馬鈴薯",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "切塊"
+        },
+        {
+          "name": "洋蔥",
+          "amount": {
+            "value": 30,
+            "unit": "g"
+          },
+          "note": "切塊"
+        },
+        {
+          "name": "杏鮑菇",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          },
+          "note": "切塊"
+        },
+        {
+          "name": "紅甜椒",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "黃甜椒",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "原味優格",
+          "amount": {
+            "value": 200,
+            "unit": "ml"
+          }
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 800,
+            "unit": "ml"
+          }
+        },
+        {
+          "name": "食用油",
+          "note": "少許，炒洋蔥用",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 1.25,
+            "unit": "ml"
+          },
+          "note": "約 1/4 小匙",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "豬後腿肉切大塊，放入滾水汆燙後瀝乾。",
+        "熱鍋加入少許油，炒香洋蔥，放入豬肉炒至表面上色。",
+        "加入馬鈴薯、紅甜椒、黃甜椒和杏鮑菇炒香，再加入水煮滾。",
+        "轉小火，拌入鹽和原味優格；鍋蓋留縫燉煮約 30 分鐘。"
+      ],
+      "summaryVerbatim": "豬肉與馬鈴薯、甜椒和杏鮑菇加入原味優格燉煮。",
+      "tipVerbatim": null,
+      "servings": 2,
+      "timeMinutes": 55,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 10,
+        "stepCount": 4,
+        "narrativeCharacters": 122,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "pork-sauce-spinach",
+      "title": "肉燥菠菜",
+      "eligible": true,
+      "sourceSha256": "6065f4927550414554bd98c9863365bd297fd92dcca09f23856702138b087aef",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/pork-sauce-spinach/hero.webp",
+        "sha256": "1f43aeea81355054a25db0fd2e6c5903398562389d015484e9ae5ab3cf7ee751",
+        "usableAsDishReference": false,
+        "result": "實際開啟 hero：菠菜切段與肉燥方向正確，但中央可見近完整紅蔥頭／大瓣形態，與紅蔥頭切碎不一致；不附此hero作dish reference。"
+      },
+      "referenceMode": "layout-only",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate with a generous mound of blanched spinach cut into short sections, its leaves and stems still distinguishable. Spoon a modest central topping of cooked ground pork in reduced thick-soy-sauce gravy over the spinach. The topping contains finely chopped shallot and finely minced garlic, all cooked into the gravy; the pork remains small ground-meat granules. Spinach is the main bulk, with only a modest meat-sauce topping. No whole or halved shallots, no pork cubes, no extra garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "8 項材料、5 步；兩筆油分別供肉燥與汆燙，60ml水只供肉燥，汆燙水另備已明示。先煮肉燥再汆燙菠菜、盛盤淋汁完整，25分鐘不衝突。",
+      "concerns": [
+        "兩筆食用油不能合併漏掉用途或把適量加到15ml裡。",
+        "50g絞肉是300g菠菜的配料，不放大成等量肉主菜；不要求由圖精確量測比例。"
+      ],
+      "sourceCheck": "核准来源記錄存在；release-review記載300g菠菜、50g絞肉、汆燙油1大匙=15ml及肉燥油／汆燙水缺定量。本輪楊桃原頁未取得，僅現行YAML／既有來源記錄交叉核對。",
+      "sourceRecord": "content/sources/pork-sauce-spinach.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F02-0772"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "菠菜",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "洗淨切小段"
+        },
+        {
+          "name": "豬絞肉",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          },
+          "note": "建議用梅花絞肉"
+        },
+        {
+          "name": "紅蔥頭",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "切碎"
+        },
+        {
+          "name": "蒜末",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "食用油",
+          "note": "炒肉燥用",
+          "group": "調味"
+        },
+        {
+          "name": "食用油",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙，汆燙菠菜用",
+          "group": "調味"
+        },
+        {
+          "name": "醬油膏",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 60,
+            "unit": "ml"
+          },
+          "note": "約 4 大匙，肉燥用；汆燙另備",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "把紅蔥頭切碎；菠菜洗乾淨，切成小段。",
+        "平底鍋加少許食用油，以小火炒香紅蔥頭和蒜末，加入豬絞肉炒散至變白。",
+        "倒入醬油膏和水，以小火煮開，等湯汁略為收少後盛起作肉燥。",
+        "另煮一鍋水，加入食用油和菠菜，蓋上鍋蓋煮至水再次沸騰，翻動菠菜後再煮約 10 秒，撈出瀝乾。",
+        "菠菜盛盤，淋上肉燥。"
+      ],
+      "summaryVerbatim": "菠菜汆燙後盛盤，淋上以紅蔥頭、蒜末和豬絞肉煮成的肉燥。",
+      "tipVerbatim": null,
+      "servings": 2,
+      "timeMinutes": 25,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 8,
+        "stepCount": 5,
+        "narrativeCharacters": 166,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "braised-yellow-croaker",
+      "title": "紅燒黃魚",
+      "eligible": true,
+      "sourceSha256": "c90ab81f92b749d57053ae87cb1dc244e2f35ad5ada1a71a3da5ab1e8efd5270",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/braised-yellow-croaker/hero.webp",
+        "sha256": "18dd0779946d502eb0535ab3547936af041d799f9f05728dd58d725289d44565",
+        "usableAsDishReference": false,
+        "result": "實際開啟 hero：一尾黃魚和五朵香菇、蒜仁及蔥段大致吻合，但辣椒畫成仍有明顯種子的封閉斜圈，薑絲偏粗；且盤內大量流動汁液不符最後收乾。不可作dish reference。"
+      },
+      "referenceMode": "layout-only",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate holding one cooked whole yellow croaker, pan-seared then braised in soy sauce until the liquid is reduced to a light coating. Around and over the fish are rehydrated shiitake mushroom caps with stems removed, sliced carrot, whole peeled garlic cloves, scallion segments, fine ginger threads, and red chili slices with their seeds removed. Use the recipe's five mushroom caps across the serving with natural overlap, without demanding that all five be exposed. No seeded chili rings, no whole chilies, no thick ginger batons, no herb garnish, and no deep pool of broth. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "11 項材料、4 步；香菇去蒂、薑絲、去籽紅椒片、蔥段及完整黃魚的成品形態明確，所有材料均在煎或燒的流程用到，30分鐘無硬時間矛盾。",
+      "concerns": [
+        "紅辣椒必須去籽，不能照hero的帶籽圈。",
+        "薑必須細絲，不能畫成粗薑條。",
+        "收乾只畫附著醬色，不能增添湯汁。"
+      ],
+      "sourceCheck": "核准來源B01-1835記錄存在；本輪web未取得楊桃全文，沒有改來源或把搜尋摘要視為已驗證。現行YAML材料與流程一致。",
+      "sourceRecord": "content/sources/braised-yellow-croaker.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1835"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "黃魚",
+          "amount": {
+            "value": 1,
+            "unit": "尾"
+          }
+        },
+        {
+          "name": "泡發香菇",
+          "amount": {
+            "value": 5,
+            "unit": "朵"
+          }
+        },
+        {
+          "name": "紅蘿蔔片",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "蒜仁",
+          "amount": {
+            "value": 60,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "蔥",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          }
+        },
+        {
+          "name": "薑",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "紅辣椒",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          }
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "細砂糖",
+          "amount": {
+            "value": 1,
+            "unit": "茶匙"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 250,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "油",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "蔥洗淨切段，薑去皮切絲，紅辣椒去蒂去籽後切片，泡發香菇去蒂。",
+        "鍋中倒入油，以中火燒至略熱。放入黃魚和蒜仁，轉小火煎至金黃，盛起瀝油。",
+        "鍋中留少許油，炒香蔥、薑和紅辣椒。放回黃魚和蒜仁，加入紅蘿蔔片、泡發香菇、醬油、細砂糖與水。",
+        "以中火煮滾後轉小火，不時輕推魚身避免沾鍋，煮至湯汁收乾。"
+      ],
+      "summaryVerbatim": "黃魚與蒜仁先煎至金黃，再和香菇、紅蘿蔔及蔥薑一起燒至收汁。",
+      "tipVerbatim": null,
+      "servings": 2,
+      "timeMinutes": 30,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 11,
+        "stepCount": 4,
+        "narrativeCharacters": 172,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "sweet-sour-yellow-croaker",
+      "title": "糖醋黃魚",
+      "eligible": true,
+      "sourceSha256": "9a69eb5fb7f6363c9e382cbed859374302528b22d27329220ff2969ed61ef54a",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/sweet-sour-yellow-croaker/hero.webp",
+        "sha256": "bb8074a3fb916ea6d95e8f0142d26db61d4c72d99864e9a60616ca2f7b9d5955",
+        "usableAsDishReference": false,
+        "result": "實際開啟 hero：兩尾魚、蔥段與洋蔥塊正確，但紅色醬中有大量似番茄果肉塊，材料只有番茄醬；薑片亦不清楚。保守標為不能作dish reference，避免沿錯新增番茄塊。"
+      },
+      "referenceMode": "layout-only",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate with two cooked whole yellow croakers, pan-fried and topped with a smooth red-orange sweet-and-sour sauce made from ketchup, fruit vinegar, soy sauce, sugar and water. Visible solid aromatics in the sauce are only cooked onion chunks, scallion segments and ginger slices. The fish remain whole with head and tail, with shallow back scoring partly covered by sauce. No diced tomato, no tomato wedges, no bell pepper, no pineapple, no garnish, and no batter coating. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "10 項材料、5 步；煎薑取出後與蔥洋蔥再炒是同份薑，非重複材料。兩尾完整魚、醬料與油全部有用，30分鐘沿用原頁；主要流程無矛盾。",
+      "concerns": [
+        "番茄醬是調味，不得轉成額外新鮮番茄果肉。",
+        "原材料薑2片後續回鍋，天然遮擋允许，不死數可見片數。"
+      ],
+      "sourceCheck": "本輪完整讀核准愛料理原頁，兩尾魚、半顆洋蔥、兩根蔥、兩片薑與醬汁全部匙量相符；原頁步驟明列煎魚油2大匙，現稿30ml有依據。",
+      "sourceRecord": "content/sources/sweet-sour-yellow-croaker.yaml",
+      "sourceUrls": [
+        "https://icook.tw/recipes/383025"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "黃魚",
+          "amount": {
+            "value": 2,
+            "unit": "尾"
+          }
+        },
+        {
+          "name": "洋蔥",
+          "amount": {
+            "value": 0.5,
+            "unit": "顆"
+          }
+        },
+        {
+          "name": "蔥",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          }
+        },
+        {
+          "name": "薑",
+          "amount": {
+            "value": 2,
+            "unit": "片"
+          }
+        },
+        {
+          "name": "番茄醬",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "糖",
+          "amount": {
+            "value": 1.5,
+            "unit": "大匙"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 22.5,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "水果醋",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 90,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "洋蔥切塊，蔥切段。黃魚刮鱗，洗淨魚腹與魚頭，在魚背各劃兩刀，擦乾表面水分。",
+        "番茄醬、糖、醬油、水果醋和水拌勻，調成糖醋醬汁。",
+        "鍋中加油，放入薑以中小火略煎後取出。放入兩尾黃魚，彼此留空隙，蓋上鍋蓋，以中小火煎約 4 分鐘。",
+        "翻面續煎至熟，將黃魚盛起，鍋中留油。煎煮時間依魚的大小調整。",
+        "放入洋蔥、薑和蔥，以中小火拌炒。倒入糖醋醬汁，煮至略為濃稠後淋在黃魚上。"
+      ],
+      "summaryVerbatim": "兩尾黃魚煎熟後，淋上以番茄醬、水果醋調成的糖醋醬汁。",
+      "tipVerbatim": null,
+      "servings": 4,
+      "timeMinutes": 30,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 10,
+        "stepCount": 5,
+        "narrativeCharacters": 205,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "orange-pork-ribs",
+      "title": "橙汁排骨",
+      "eligible": true,
+      "sourceSha256": "b274fdda3518d860ea2569fffac4d273da5881cdc8c35ccf5039d037d9790a2d",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/orange-pork-ribs/hero.webp",
+        "sha256": "524a134d568deee61dd544731ac35eee381d55ecd2a6809ee93f41634e9a47fb",
+        "usableAsDishReference": false,
+        "result": "實際開啟 hero：豬排骨裹橙汁且有細橙皮，但可見带完整橙皮邊的橙角；步驟是削皮取果肉且果皮另切細絲。不可作dish reference。豬小排原稿沒有指定剁切長度，不把圖上長短自行定為唯一切法。"
+      },
+      "referenceMode": "layout-only",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate of cooked bone-in pork spare-rib portions, fried golden then coated in an orange-juice sauce. Mix peeled orange flesh into the ribs and sauce, with a small amount of very thin orange-peel threads. The orange flesh must be peeled, not orange wedges with an attached thick rind. Keep rib portions distinct and do not invent a specific rib length, cut size, or piece count. No sesame seeds, scallions, parsley, or extra garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "9 項材料、4 步；橙汁30+200=230ml、砂糖1.25+5=6.25ml，醃料與醬汁分量合計一致；醃1小時可容90分鐘總時。柳橙果肉與細皮均在最後使用，流程完整。",
+      "concerns": [
+        "柳橙1顆取果肉與皮，另列柳橙皮少許是用途列示，不能再畫一顆額外橙或帶皮角。",
+        "豬小排沒有指定切成幾公分，不新增切法；油炸時間未定量，照原文不補。"
+      ],
+      "sourceCheck": "核准A02-2748来源記錄存在；本輪楊桃原頁無法取得，未繞過。原汁／糖分配只核對現行YAML明載數字，未聲稱新核定上游。",
+      "sourceRecord": "content/sources/orange-pork-ribs.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-2748"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "豬小排",
+          "amount": {
+            "value": 500,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "柳橙",
+          "amount": {
+            "value": 1,
+            "unit": "顆"
+          },
+          "note": "取果肉與果皮"
+        },
+        {
+          "name": "柳橙汁",
+          "amount": {
+            "value": 230,
+            "unit": "ml"
+          },
+          "note": "醃料用 30 ml，醬汁用 200 ml",
+          "group": "調味"
+        },
+        {
+          "name": "料理米酒",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 小匙，醃料用",
+          "group": "調味"
+        },
+        {
+          "name": "砂糖",
+          "amount": {
+            "value": 6.25,
+            "unit": "ml"
+          },
+          "note": "約 1 又 1/4 小匙，醃料用 1/4 小匙、醬汁用 1 小匙",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "group": "調味",
+          "note": "少許，醃料與醬汁各用一次"
+        },
+        {
+          "name": "柳橙皮",
+          "group": "調味",
+          "note": "少許，醃料與醬汁各用一次"
+        },
+        {
+          "name": "太白粉水",
+          "group": "調味",
+          "note": "少許，勾芡用"
+        },
+        {
+          "name": "食用油",
+          "group": "調味",
+          "note": "炸油"
+        }
+      ],
+      "stepsVerbatim": [
+        "柳橙削皮取出果肉，部分果皮切成細絲。",
+        "豬小排洗淨瀝乾，加入 30 ml 柳橙汁、5 ml 料理米酒、少許鹽、1.25 ml 砂糖和少許柳橙皮，醃約 1 小時。",
+        "將食用油加熱至約 160°C，放入豬小排炸至金黃色，撈起備用。",
+        "將 200 ml 柳橙汁、少許鹽和 5 ml 砂糖煮滾，放入豬小排拌勻；以太白粉水勾芡，再加入柳橙果肉和柳橙皮拌勻。"
+      ],
+      "summaryVerbatim": "豬小排先醃後炸，再拌入柳橙汁醬，最後加入柳橙果肉。",
+      "tipVerbatim": null,
+      "servings": 2,
+      "timeMinutes": 90,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 9,
+        "stepCount": 4,
+        "narrativeCharacters": 196,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "napa-cabbage-dried-shrimp",
+      "title": "開陽白菜",
+      "eligible": true,
+      "sourceSha256": "e0a79cf1f1636d2ad2301af047872e054aa606de6332f0a771ea6ceafc20e293",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/napa-cabbage-dried-shrimp/hero.webp",
+        "sha256": "55091399ee54efbfb897690cf344fa466a70fa901728b9874a582e2123d52791",
+        "usableAsDishReference": false,
+        "result": "實際開啟 hero：白菜片、香菇片與芡汁吻合；蝦形偏大而厚實，容易看成鮮蝦仁而非蝦米。無法可靠確認乾蝦米形態，因此不作dish reference，改用layout-only明確描述小蝦米。"
+      },
+      "referenceMode": "layout-only",
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate of softened napa-cabbage slices, pale green leaves and white rib sections mixed with sliced rehydrated dried shiitake mushrooms and small rehydrated dried shrimp (xia mi). The cooked vegetables and small dried shrimp are coated in a light translucent thickened sauce, finished with sesame oil. Make the dried shrimp small and lightly wrinkled, not large plump fresh prawns. No scallions, no chili, no pork, no fresh tomato, and no garlic garnish; the optional tip variation is not the main illustrated recipe. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "reason": "8 項材料、5 步；白菜汆燙、乾香菇與蝦米泡軟、香菇水加另200ml水、勾芡香油全有對應。40分鐘可包含冷水泡料，無硬時間矛盾。tip替代高湯／鹽糖蒜末保留全文，但不和主配方混畫。",
+      "concerns": [
+        "材料未定量的浸泡／勾芡用水不得猜；另加200ml水照字保留。",
+        "tip是替代版本，不把額外高湯、鹽糖與蒜末畫入主配方。",
+        "蝦米與鮮蝦仁不能混淆。"
+      ],
+      "sourceCheck": "本輪重讀核准味之素原頁，3項主料、油水高湯粉太白粉香油及全流程相符。第二來源楊桃F02-0572未取得，本輪未重新核定tip替代版本的原頁事實；僅保留已發布文字。",
+      "sourceRecord": "content/sources/napa-cabbage-dried-shrimp.yaml",
+      "sourceUrls": [
+        "https://www.ajinomoto.com.tw/recipes-detail.php?id=140",
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F02-0572"
+      ],
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "大白菜",
+          "amount": {
+            "value": 500,
+            "unit": "g"
+          },
+          "note": "切片"
+        },
+        {
+          "name": "乾香菇",
+          "amount": {
+            "value": 30,
+            "unit": "g"
+          },
+          "note": "花菇，泡軟後切片"
+        },
+        {
+          "name": "蝦米",
+          "amount": {
+            "value": 30,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "食用油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 湯匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 200,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "高湯粉",
+          "note": "約 1 湯匙，可用干貝風味",
+          "group": "調味"
+        },
+        {
+          "name": "太白粉",
+          "note": "約 1 湯匙，加水調成太白粉水",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 7.5,
+            "unit": "ml"
+          },
+          "note": "約 1/2 湯匙",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "大白菜切成片，放進滾水燙過，撈起泡冷水降溫，再瀝乾水分。",
+        "乾香菇和蝦米用冷水泡軟，香菇撈出切片，浸泡香菇的水留下備用。",
+        "炒鍋倒入食用油，放入香菇片和蝦米爆炒，炒到香味出來。",
+        "倒入浸泡香菇的水，再加 200 ml 水，煮到滾後放入大白菜，煮約 2 分鐘。",
+        "加入高湯粉拌勻，太白粉加水調勻後淋進鍋中勾芡，最後淋上香油拌勻就起鍋。"
+      ],
+      "summaryVerbatim": "大白菜先燙過，再和泡軟的蝦米、香菇一起煮，最後勾芡淋香油。白菜軟嫩、湯汁滑順，適合配飯。",
+      "tipVerbatim": "不用高湯粉時，可把水換成 200 ml 高湯，改加鹽 1/2 茶匙和糖 1/4 茶匙調味；爆香時也可以加入 10 g 蒜末。",
+      "servings": 4,
+      "timeMinutes": 40,
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "historicalMatches": []
+      },
+      "currentAttempts": 0,
+      "printCardAssessment": {
+        "materialRows": 8,
+        "stepCount": 5,
+        "narrativeCharacters": 268,
+        "assessment": "短至中等；可完整保留摘要、份數時間、全材料、全步驟及tip，不可為排版删減文字。"
+      }
+    },
+    {
+      "id": "shrimp-glass-noodles",
+      "title": "鮮蝦粉絲煲",
+      "eligible": false,
+      "sourceSha256": "c92f94632c43d16f6a7b00966d2687920366dbaa6a9396a7b98e4e596bb7baab",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/shrimp-glass-noodles/hero.webp",
+        "sha256": "ca1cde28bb52164948fc78c3d6124a77f4d8bd1c7deaea67482464753b633ab1",
+        "usableAsDishReference": false,
+        "result": "實看hero：砂鍋冬粉和整蝦，無蒜苗；缺口由文字造成，不能用無蒜苗成品圖掩蓋。"
+      },
+      "dishPrompt": null,
+      "reason": "蒜苗絲30ml明載來源未交代加入時機，步驟完全未使用；不能自行決定何時放或刪材料。",
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "白蝦",
+          "amount": {
+            "value": 15,
+            "unit": "隻"
+          },
+          "note": "去泥腸、開背"
+        },
+        {
+          "name": "冬粉",
+          "amount": {
+            "value": 2,
+            "unit": "把"
+          },
+          "note": "泡軟後剪短"
+        },
+        {
+          "name": "蒜苗絲",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "來源列 2 大匙，但未交代加入時機"
+        },
+        {
+          "name": "高湯",
+          "amount": {
+            "value": 200,
+            "unit": "ml"
+          }
+        },
+        {
+          "name": "黑胡椒肉片醬",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "group": "調味",
+          "note": "約 3 大匙"
+        },
+        {
+          "name": "食用油",
+          "group": "調味",
+          "note": "炸白蝦用"
+        }
+      ],
+      "stepsVerbatim": [
+        "白蝦去泥腸並開背。冬粉泡水至軟，剪短備用。",
+        "將食用油燒熱，放入白蝦炸到外層酥脆，撈起瀝油。",
+        "在砂鍋中拌勻高湯與黑胡椒肉片醬，煮約 2 分鐘。加入冬粉和白蝦，蓋鍋略煮至冬粉入味。"
+      ],
+      "summaryVerbatim": "白蝦先炸到外層酥脆，再與冬粉、黑胡椒醬汁放進砂鍋略煮。",
+      "tipVerbatim": null,
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B03-1150"
+      ],
+      "currentAttempts": 0
+    },
+    {
+      "id": "scallion-oil-chicken",
+      "title": "蔥油雞",
+      "eligible": false,
+      "sourceSha256": "77d9a86f5fa83f09af572f39b9cdd07d4baaad5abb76a55c09cd1f9273e3a632",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/scallion-oil-chicken/hero.webp",
+        "sha256": "030f36cef59e8eea4d7038646a2ed529eaa190e78165010eed3546d26549e9d6",
+        "usableAsDishReference": false,
+        "result": "實看hero：兩份去骨雞腿與蔥蒜薑，但蔥呈粗圈、蒜薑為較大碎塊，並非一致切末；也不宜作外觀參考。"
+      },
+      "dishPrompt": null,
+      "reason": "米酒30ml明載未交代加入步驟且待核；新卡不應把未決流程固化。",
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "去骨雞腿",
+          "amount": {
+            "value": 2,
+            "unit": "支"
+          }
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 3,
+            "unit": "支"
+          },
+          "note": "切末"
+        },
+        {
+          "name": "薑",
+          "amount": {
+            "value": 5,
+            "unit": "片"
+          },
+          "note": "切末"
+        },
+        {
+          "name": "蒜頭",
+          "note": "少許，切末",
+          "group": "調味"
+        },
+        {
+          "name": "亞麻油",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "note": "約 3 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "來源列 2 湯匙，未交代加入步驟，待核",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "note": "少許",
+          "group": "調味"
+        },
+        {
+          "name": "胡椒粉",
+          "note": "少許",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "去骨雞腿拌入鹽和胡椒粉，放進冰箱冷藏醃漬一晚。",
+        "將去骨雞腿放進電鍋，外鍋加一杯水，蒸約 20 分鐘。",
+        "青蔥切末，蒜頭與薑切末。",
+        "鍋中加熱亞麻油，放入青蔥、蒜頭與薑末，煮到油滾。",
+        "將蒸雞腿留下的雞油倒進鍋中，和蔥末、蒜末、薑末一起煮滾。",
+        "將去骨雞腿盛起，淋上煮好的蔥油。"
+      ],
+      "summaryVerbatim": "去骨雞腿先冷藏醃漬再蒸熟，淋上以青蔥、蒜末和薑末煮成的蔥油。",
+      "tipVerbatim": null,
+      "sourceUrls": [
+        "https://icook.tw/recipes/335573"
+      ],
+      "currentAttempts": 0
+    },
+    {
+      "id": "pickled-mustard-beef-soup",
+      "title": "酸菜牛肉湯",
+      "eligible": false,
+      "sourceSha256": "cf38bee342f4823e2e8bdc3236820d8554c9310aee1ce3eaa1f973e4ac5575cc",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/pickled-mustard-beef-soup/hero.webp",
+        "sha256": "f75d677ecc58a9bb73ac3a8247aa1f7a62a57b9a0b876cbe41764d770032b42d",
+        "usableAsDishReference": false,
+        "result": "實看hero：湯碗而非規範敞口湯鍋；材料可辨牛肉塊、酸菜、薑片、蔥段，不能沿用容器。"
+      },
+      "dishPrompt": null,
+      "reason": "摘要說最後以鹽米酒調味，步驟3卻在燉煮前加入，存在順序矛盾；外鍋杯量及長時間循環也不自行猜補。",
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "牛肉",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "切成約 6 × 3 公分塊，建議用牛腱"
+        },
+        {
+          "name": "酸菜心",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "沖洗後切片"
+        },
+        {
+          "name": "老薑",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          },
+          "note": "去皮切片"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          },
+          "note": "切段"
+        },
+        {
+          "name": "牛骨高湯",
+          "amount": {
+            "value": 3000,
+            "unit": "ml"
+          }
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 1.25,
+            "unit": "ml"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 2,
+            "unit": "杯"
+          },
+          "note": "電鍋外鍋用"
+        }
+      ],
+      "stepsVerbatim": [
+        "牛肉放入滾水中汆燙，撈出瀝乾後切成約 6 × 3 公分的塊狀。",
+        "酸菜心以清水沖洗後切片，老薑去皮切片，青蔥切段。",
+        "依序把酸菜心、牛肉、薑片和青蔥放入電鍋內鍋，加入牛骨高湯、鹽和米酒。",
+        "外鍋倒入 1 杯水後按下開關燉煮；開關跳起後再加 1 杯水，續煮至總時間約 2.5 小時。"
+      ],
+      "summaryVerbatim": "牛肉汆燙後，與酸菜心、薑片、蔥和牛骨高湯放入電鍋燉煮，最後以鹽和米酒調味。",
+      "tipVerbatim": null,
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-0530"
+      ],
+      "currentAttempts": 0
+    },
+    {
+      "id": "garlic-shrimp",
+      "title": "蒜蓉蝦",
+      "eligible": false,
+      "sourceSha256": "e533b7d665faddbbb1a36540d54dbfc9e7e3031926f9ae314f0f8a2a0cb4fae5",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/garlic-shrimp/hero.webp",
+        "sha256": "722f66eaea5d9fd160d017feb68b440c486bed2a1847a461dd48fb2ba34d8cb6",
+        "usableAsDishReference": false,
+        "result": "實看hero：12份蝦與圓豆腐片、蒜碎蔥花；蝦去頭去殼狀態和豆腐固定圓片／一蝦一片都不是YAML要求，不沿圖添加。"
+      },
+      "dishPrompt": null,
+      "reason": "電鍋水0.5杯備註明示容量待確認，先跳過有待核用量的候選。",
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "蝦子",
+          "amount": {
+            "value": 12,
+            "unit": "尾"
+          },
+          "note": "背部劃開取出腸泥"
+        },
+        {
+          "name": "雞蛋豆腐",
+          "amount": {
+            "value": 1,
+            "unit": "盒"
+          }
+        },
+        {
+          "name": "蒜頭",
+          "amount": {
+            "value": 10,
+            "unit": "瓣"
+          },
+          "note": "切碎"
+        },
+        {
+          "name": "青蔥",
+          "note": "切成蔥花",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "蠔油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "醬汁用，約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 0.5,
+            "unit": "杯"
+          },
+          "note": "電鍋用，杯的容量待確認",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "note": "起鍋後淋上",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "蝦子背部劃開，取出腸泥。蒜頭切碎，青蔥切成蔥花。",
+        "雞蛋豆腐切片鋪在盤中，再把蝦子排在豆腐上。",
+        "將米酒、蠔油、醬汁用的水與蒜頭拌勻，淋在蝦子和雞蛋豆腐上。",
+        "盤子放入電鍋，另加半杯水，蒸至蝦子熟透。",
+        "起鍋後淋上香油，撒上青蔥。"
+      ],
+      "summaryVerbatim": "蝦子鋪在雞蛋豆腐上，淋上蒜頭與蠔油調成的醬汁，用電鍋蒸熟後撒上蔥花。",
+      "tipVerbatim": null,
+      "sourceUrls": [
+        "https://icook.tw/recipes/256255"
+      ],
+      "currentAttempts": 0
+    },
+    {
+      "id": "french-onion-soup",
+      "title": "法式洋蔥湯",
+      "eligible": false,
+      "sourceSha256": "c6e79ed2b02542913195df1483df2832eb120b997663356ebe65f90d5f72fd5e",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/french-onion-soup/hero.webp",
+        "sha256": "ac78d8257ab1b03b1faff922c1b560973581b9e441a675f8fceb345e09917a5e",
+        "usableAsDishReference": false,
+        "result": "實看hero：雙耳湯鍋內四片起司麵包，非原步驟的分盅烘烤成品。"
+      },
+      "dishPrompt": null,
+      "reason": "步驟是分盛烤盅、每盅一片麵包與起司；hero卻以整鍋四片呈現，與湯圖統一整鍋規範形成製程容器衝突。本批先跳過，不自行改成整鍋焗烤。",
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "洋蔥",
+          "amount": {
+            "value": 1200,
+            "unit": "g"
+          },
+          "note": "洗淨切絲"
+        },
+        {
+          "name": "奶油",
+          "amount": {
+            "value": 80,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "大蒜末",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙"
+        },
+        {
+          "name": "白葡萄酒",
+          "amount": {
+            "value": 120,
+            "unit": "ml"
+          }
+        },
+        {
+          "name": "牛高湯",
+          "amount": {
+            "value": 800,
+            "unit": "ml"
+          }
+        },
+        {
+          "name": "月桂葉",
+          "amount": {
+            "value": 1,
+            "unit": "片"
+          },
+          "note": "盛入烤盅前取出"
+        },
+        {
+          "name": "起司",
+          "amount": {
+            "value": 4,
+            "unit": "片"
+          },
+          "note": "來源稱「起士」"
+        },
+        {
+          "name": "法國麵包",
+          "amount": {
+            "value": 4,
+            "unit": "片"
+          }
+        },
+        {
+          "name": "鹽",
+          "group": "調味",
+          "note": "適量"
+        },
+        {
+          "name": "胡椒粉",
+          "group": "調味",
+          "note": "適量"
+        }
+      ],
+      "stepsVerbatim": [
+        "洋蔥洗淨，全部切成絲。",
+        "以小火融化奶油，放入洋蔥和大蒜末慢慢炒軟，約 30 分鐘，至洋蔥呈棕色。",
+        "將炒好的洋蔥移入湯鍋，加入白葡萄酒、牛高湯和月桂葉。大火煮滾後轉小火再煮約 30 分鐘，以鹽和胡椒粉調味，取出月桂葉。",
+        "將湯分盛到烤盅，每盅放一片法國麵包和一片起司。送入烤箱以中溫烤至起司融化，食用時用湯匙將麵包與起司壓入湯中。"
+      ],
+      "summaryVerbatim": "洋蔥慢炒至棕色後與牛高湯熬煮，盛入烤盅，再烤融麵包上的起司。",
+      "tipVerbatim": null,
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F01-088"
+      ],
+      "currentAttempts": 0
+    },
+    {
+      "id": "sauerkraut-pork-hotpot",
+      "title": "酸菜白肉鍋",
+      "eligible": false,
+      "sourceSha256": "60b1fe681a05fd41d8a08a5e4a8c423006d29aacab99ad2e0e76b42ba2912586",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/sauerkraut-pork-hotpot/hero.webp",
+        "sha256": "7baa47f2c96adc4d6414e8cc5704b76943f0f8ad9b7063ea25f3ac702450a459",
+        "usableAsDishReference": false,
+        "result": "實看hero：敞口湯鍋、五花薄片、排骨、酸白菜、蒜苗斜段；薑條偏粗而非細絲，不沿錯。"
+      },
+      "dishPrompt": null,
+      "reason": "米酒2匙容量待確認；豬小排部位為來源外補充。為本批選文案無待核者，零次跳過。",
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "酸白菜",
+          "amount": {
+            "value": 0.5,
+            "unit": "顆"
+          },
+          "note": "切絲"
+        },
+        {
+          "name": "豬小排",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "來源僅寫豬排骨，部位為補充"
+        },
+        {
+          "name": "豬五花肉片",
+          "amount": {
+            "value": 500,
+            "unit": "g"
+          },
+          "note": "來源範圍 500–600 g，採下限"
+        },
+        {
+          "name": "老薑",
+          "amount": {
+            "value": 1,
+            "unit": "小塊"
+          },
+          "note": "切絲"
+        },
+        {
+          "name": "蒜苗",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          },
+          "note": "切斜段"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 2000,
+            "unit": "ml"
+          },
+          "note": "煮湯用；汆燙另備適量水",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 2,
+            "unit": "匙"
+          },
+          "note": "匙的容量待確認",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "note": "視需要添加",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "豬小排洗淨。另鍋備水，以中大火煮滾後放入豬小排汆燙 3 至 5 分鐘，撈出並沖掉浮沫。",
+        "酸白菜切絲；老薑切成細絲，蒜苗斜切成段。",
+        "把豬小排與老薑放入湯鍋，加入 2000 ml 水。以中大火煮滾，再轉小火煮 20 至 25 分鐘。",
+        "加入酸白菜，再煮 8 至 10 分鐘。",
+        "放入豬五花肉片並加入米酒，煮到肉片轉白。",
+        "放上蒜苗，煮到變綠就關火。"
+      ],
+      "summaryVerbatim": "豬小排先煮出湯底，再加入酸白菜與豬五花肉片，最後放蒜苗煮到轉綠。",
+      "tipVerbatim": "湯若太酸或太鹹，可酌量加水；鹹度不夠再加少許鹽。",
+      "sourceUrls": [
+        "https://icook.tw/recipes/188551"
+      ],
+      "currentAttempts": 0
+    },
+    {
+      "id": "japanese-chicken-curry",
+      "title": "日式咖哩雞",
+      "eligible": false,
+      "sourceSha256": "bf93f41f6e2cf1b82522a6780e9b157699b012b4a00befca5b1cbdcafa3921ca",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/japanese-chicken-curry/hero.webp",
+        "sha256": "6a98b0053cdfd145b473bef84dd1d1853afe85bbbf38c7c88a549b7113d6fb0a",
+        "usableAsDishReference": false,
+        "result": "實看hero：雞胸肉／馬鈴薯／胡蘿蔔丁及小洋蔥丁在咖哩中，符合目前切法，未見額外食材。此次skip原因是文案／來源既存缺口。"
+      },
+      "dishPrompt": null,
+      "reason": "來源紀錄明列食安補充來源仍待核准與熟度資訊缺口；本批為避免擴寫或將待核事項固化先跳過，並非聲稱現稿新增矛盾或不安全。",
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "雞胸肉",
+          "amount": {
+            "value": 1,
+            "unit": "塊"
+          },
+          "note": "切丁"
+        },
+        {
+          "name": "洋蔥",
+          "amount": {
+            "value": 0.5,
+            "unit": "顆"
+          },
+          "note": "切丁"
+        },
+        {
+          "name": "紅蘿蔔",
+          "amount": {
+            "value": 0.5,
+            "unit": "根"
+          },
+          "note": "切丁"
+        },
+        {
+          "name": "馬鈴薯",
+          "amount": {
+            "value": 0.5,
+            "unit": "顆"
+          },
+          "note": "切丁"
+        },
+        {
+          "name": "蒜頭",
+          "amount": {
+            "value": 3,
+            "unit": "瓣"
+          },
+          "note": "切末"
+        },
+        {
+          "name": "咖哩塊",
+          "amount": {
+            "value": 2,
+            "unit": "磚"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "咖哩粉",
+          "amount": {
+            "value": 3,
+            "unit": "大匙"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 500,
+            "unit": "ml"
+          },
+          "note": "來源標示約 500 ml",
+          "group": "調味"
+        },
+        {
+          "name": "食用油",
+          "note": "炒料用",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "把洋蔥、紅蘿蔔、馬鈴薯與雞胸肉切成丁，蒜頭另切成末。",
+        "熱炒雞胸肉，等肉塊轉白後先盛出。",
+        "留用原鍋，先炒洋蔥、蒜頭至洋蔥半透明，再加紅蘿蔔與馬鈴薯，用食用油略炒。",
+        "倒入約 500 ml 的水，中火續煮約 10 分鐘。",
+        "把咖哩塊掰開，和咖哩粉放進鍋裡溶開，再放回雞胸肉。蓋鍋煮 5 分鐘，煮到醬汁濃稠。"
+      ],
+      "summaryVerbatim": "雞胸肉搭配洋蔥、紅蘿蔔與馬鈴薯，加咖哩塊和咖哩粉煮成濃稠醬汁。",
+      "tipVerbatim": "想調整稠度時，可將咖哩塊分次加入；用量越多，醬汁越稠。",
+      "sourceUrls": [
+        "https://icook.tw/recipes/259337"
+      ],
+      "currentAttempts": 0
+    },
+    {
+      "id": "taiwanese-mapodofu",
+      "title": "台式家常麻婆豆腐",
+      "eligible": false,
+      "sourceSha256": "f51b5c37fe90844c486414ec207e66213a06a17ec9eb2303264bbb12081d1729",
+      "heroCheck": {
+        "inspected": true,
+        "method": "view_image 原尺寸直接目視",
+        "path": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/content/recipes/taiwanese-mapodofu/hero.webp",
+        "sha256": "7b86597dde61f90d19db1fce06cd32c183d1361f0e4e0bdd18206d4082a2876f",
+        "usableAsDishReference": false,
+        "result": "實看hero：嫩豆腐小塊、絞肉、蔥綠與紅褐醬可辨，未見明顯額外食材。此次skip原因是來源事實／用量缺口。"
+      },
+      "dishPrompt": null,
+      "reason": "絞肉的畜種與部位明載為推估，太白粉水僅一小碟且無比例；本批選無明示事實缺口者，零次跳過，不改豬肉或粉水。",
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "嫩豆腐",
+          "amount": {
+            "value": 1,
+            "unit": "盒"
+          }
+        },
+        {
+          "name": "豬絞肉",
+          "amount": {
+            "value": 100,
+            "unit": "g"
+          },
+          "note": "來源僅寫絞肉，畜種與部位為推估"
+        },
+        {
+          "name": "蒜頭",
+          "amount": {
+            "value": 3,
+            "unit": "瓣"
+          },
+          "note": "切末"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          },
+          "note": "分切蔥白與蔥綠"
+        },
+        {
+          "name": "食用油",
+          "note": "炒香用",
+          "group": "調味"
+        },
+        {
+          "name": "微辣豆瓣醬",
+          "amount": {
+            "value": 1.5,
+            "unit": "小匙"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 10,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 1,
+            "unit": "小匙"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "開水",
+          "amount": {
+            "value": 150,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "太白粉水",
+          "note": "來源標示一小碟，用於勾薄芡",
+          "group": "調味"
+        },
+        {
+          "name": "胡椒粉",
+          "group": "調味"
+        }
+      ],
+      "stepsVerbatim": [
+        "嫩豆腐切成小塊。蒜頭切末，青蔥分切蔥白與蔥綠。",
+        "鍋中倒入食用油，放入蒜末和蔥白炒香。",
+        "加入豬絞肉拌炒，過程中淋入米酒。",
+        "豬絞肉炒熟後，加入醬油和微辣豆瓣醬拌炒均勻。",
+        "放入嫩豆腐和開水，煨煮至入味。",
+        "加入太白粉水勾薄芡，撒上胡椒粉和青蔥綠後起鍋。"
+      ],
+      "summaryVerbatim": "嫩豆腐和絞肉以微辣豆瓣醬調味，最後勾薄芡並撒上蔥花。",
+      "tipVerbatim": null,
+      "sourceUrls": [
+        "https://icook.tw/recipes/455572"
+      ],
+      "currentAttempts": 0
+    }
+  ]
+}
