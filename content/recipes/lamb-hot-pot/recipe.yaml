@@ -1,0 +1,90 @@
+title: 清燉羊肉爐
+summary: 帶皮羊肉塊洗淨滾水汆燙去除羶氣，砂鍋中放入老薑片、青蔥段與溫潤中藥包（當歸、川芎、枸杞、黃耆），倒入米酒與甘甜大骨高湯，慢火細燉一小時至羊皮Ｑ彈、羊肉軟爛無羶，搭配大白菜與凍豆腐，湯頭溫潤甘醇、暖胃驅寒。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 清燉羊肉爐為經典冬令進補湯鍋，湯品不設料理主角與配餐角色。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [羊肉爐, 清燉, 冬令進補, 火鍋, 暖胃湯品]
+aliases: [清燉帶皮羊肉爐, 漢方羊肉爐]
+ingredients:
+  - name: 帶皮羊肉
+    amount:
+      value: 600
+      unit: g
+    note: 剁小塊滾水汆燙洗淨
+  - name: 大白菜
+    amount:
+      value: 300
+      unit: g
+    note: 洗淨切大塊
+  - name: 生薑
+    amount:
+      value: 40
+      unit: g
+    note: 切厚薑片
+  - name: 青蔥
+    amount:
+      value: 3
+      unit: 根
+    note: 整根打結燉湯
+  - name: 枸杞
+    amount:
+      value: 15
+      unit: g
+    note: 洗淨起鍋前加入
+  - name: 當歸
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 片增清香
+  - name: 黃耆
+    amount:
+      value: 10
+      unit: g
+    note: 約 3 片補氣提鮮
+  - name: 高湯
+    amount:
+      value: 1500
+      unit: ml
+    note: 大骨高湯或清水
+  - name: 米酒
+    amount:
+      value: 100
+      unit: ml
+    note: 去羶提味
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 8
+      unit: g
+    note: 調整鹹度
+    group: 調味
+  - name: 白胡椒粒
+    amount:
+      value: 5
+      unit: g
+    note: 拍碎裝入濾袋同燉
+    group: 調味
+steps:
+  - text: 帶皮羊肉剁適口小塊，放入冷水鍋中加薑片、蔥段大火煮滾汆燙 3 分鐘徹底清除血沫，撈起以冷水沖洗乾淨瀝乾；當歸、黃耆與白胡椒粒裝入棉布包；大白菜切大片備用。
+    image:
+      src: ./step-1.webp
+      alt: 帶皮羊肉剁適口小塊，放入冷水鍋中加薑片、蔥段大火煮滾汆燙 3 分鐘徹底清除血沫，撈起以冷水沖洗乾淨瀝
+  - text: 取砂鍋注入 1500 ml 高湯與 100 ml 米酒，放入汆燙好的帶皮羊肉塊、薑片、蔥結與中藥包，大火煮滾後撈去表面微沫。
+    image:
+      src: ./step-2.webp
+      alt: 取砂鍋注入 1500 ml 高湯與 100 ml 米酒，放入汆燙好的帶皮羊肉塊、薑片、蔥結與中藥包，
+  - text: 蓋上鍋蓋轉微火慢燉 50 分鐘，至羊皮軟Ｑ黏嘴、羊肉軟爛離骨不柴，放入大白菜與鹽續燉 10 分鐘至白菜軟爛釋出清甜。
+  - text: 起鍋前投入鮮紅枸杞滾煮 2 分鐘，整鍋熱氣騰騰上桌享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的清燉羊肉爐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 羊肉帶皮先以冷水下鍋慢慢加溫汆燙，能徹底逼出皮下油脂與羶氣；清燉時加入少許當歸與黃耆提甘，湯色金黃澄澈、滋味甘美溫補。

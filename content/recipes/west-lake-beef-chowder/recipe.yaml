@@ -1,0 +1,97 @@
+title: 西湖牛肉羹
+summary: 鮮嫩牛肉剁成極細肉茸，以米酒、少許醬油抓醃，入滾沸高湯中快速攪散成細緻肉粒，加入香菇末與豆腐末增添層次，以太白粉水勾出如絲綢般溫潤厚羹，細緩淋入純白蛋白推劃出如雪花般的白玉雲紋，撒上鮮綠香菜末與白胡椒粉，溫潤滑順、鮮香適口。
+servings: 3
+category: 湯
+dishKinds: []
+classificationReason: 西湖牛肉羹為傳統杭州經典燴羹，湯品不設料理主角與配餐角色。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 18
+tags: [牛肉羹, 西湖牛肉羹, 羹湯, 名菜, 滑潤濃湯]
+aliases: [傳統西湖牛肉羹, 雪花牛肉羹]
+ingredients:
+  - name: 牛絞肉
+    amount:
+      value: 120
+      unit: g
+    note: 或牛里肌切極細細粒
+  - name: 乾香菇
+    amount:
+      value: 3
+      unit: 朵
+    note: 泡發切極細小丁
+  - name: 嫩豆腐
+    amount:
+      value: 100
+      unit: g
+    note: 切細小碎粒
+  - name: 雞蛋
+    amount:
+      value: 2
+      unit: 顆
+    note: 取蛋白打散成滑順蛋白液
+  - name: 香菜
+    amount:
+      value: 15
+      unit: g
+    note: 洗淨切細碎末飾頂
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 磨成細薑泥
+  - name: 高湯
+    amount:
+      value: 800
+      unit: ml
+    note: 牛肉高湯或大骨湯
+  - name: 太白粉水
+    amount:
+      value: 40
+      unit: ml
+    note: 勾芡濃羹
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 醃肉去腥
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 4
+      unit: g
+    note: 調整鹹度
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 2
+      unit: g
+    note: 帶出辛香爽口感
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋滴入
+    group: 調味
+steps:
+  - text: 牛絞肉加入米酒、薑泥抓勻；乾香菇泡軟切極細末；嫩豆腐切細丁；雞蛋分開蛋黃取純蛋白打散；香菜洗淨切碎末備用。
+    image:
+      src: ./step-1.webp
+      alt: 牛絞肉加入米酒、薑泥抓勻；乾香菇泡軟切極細末；嫩豆腐切細丁；雞蛋分開蛋黃取純蛋白打散；香菜洗淨切碎末
+  - text: 取湯鍋倒入 800 ml 高湯煮滾，先放入香菇末與嫩豆腐丁小火煮 2 分鐘，將醃好的牛肉茸慢慢分批撥入滾湯中，快速劃散防止結團，煮約 1 分鐘熟透。
+    image:
+      src: ./step-2.webp
+      alt: 取湯鍋倒入 800 ml 高湯煮滾，先放入香菇末與嫩豆腐丁小火煮 2 分鐘，將醃好的牛肉茸慢慢分批撥
+  - text: 加入鹽與白胡椒粉調味，轉中火一邊攪動一邊淋入太白粉水勾出濃稠亮滑羹湯，轉微火，緩緩倒入蛋白液，用湯勺輕輕推動劃出如白雪般的雲紋蛋花。
+  - text: 熄火淋上香油，撒上滿滿香菜末，盛入大湯碗即可溫熱品嚐。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的西湖牛肉羹
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 牛肉末下鍋時湯水保持微滾並用筷子快速攪散，肉末才能均勻懸浮不結硬塊；只使用蛋白淋入推劃成雪白雲花，羹湯才能保持清雅如白雪浮江的經典視覺美感。

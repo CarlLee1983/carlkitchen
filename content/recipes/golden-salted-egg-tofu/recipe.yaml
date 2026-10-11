@@ -1,0 +1,80 @@
+title: 金沙豆腐
+summary: 熟透鹹鴨蛋黃細細壓碎入低溫油鍋微火慢煸，炒至金黃起滿綿密如沙的細緻油泡，投入表面炸至酥脆硬挺的雞蛋豆腐厚切丁，轉中大火快速翻拋包裹，起鍋撒入青翠蔥花與辣椒碎，豆腐外酥內嫩如布丁、表面裹滿鹹香甘潤金沙蛋黃，極致香濃下飯。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 以雞蛋豆腐裹熟鹹蛋黃（金沙）翻炒為唯一主角，屬於蛋豆類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 18
+tags: [金沙豆腐, 雞蛋豆腐, 鹹蛋黃, 熱炒, 家常名菜]
+aliases: [金沙雞蛋豆腐, 鹹蛋黃炒豆腐]
+ingredients:
+  - name: 雞蛋豆腐
+    amount:
+      value: 1
+      unit: 盒
+    note: 約 300 g 切 2 公分均勻方塊
+  - name: 熟鹹蛋黃
+    amount:
+      value: 3
+      unit: 顆
+    note: 熟鹹鴨蛋取純蛋黃蒸透壓碎泥
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 洗淨切細蔥花
+  - name: 大蒜
+    amount:
+      value: 10
+      unit: g
+    note: 切細蒜碎
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 去籽切細末配色
+  - name: 地瓜粉
+    amount:
+      value: 40
+      unit: g
+    note: 沾裹豆腐丁油炸
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 3
+      unit: g
+    note: 少許調和鹹蛋黃鹹度
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 50
+      unit: ml
+    note: 煎炸豆腐油
+    group: 調味
+steps:
+  - text: 雞蛋豆腐切成 2 公分均勻方塊，用紙巾輕輕吸去水分，均勻沾裹上一層薄地瓜粉；熟鹹蛋黃蒸熱後用刀背徹底壓碎成細膩沙狀；青蔥切細花、大蒜切末、紅辣椒切碎備用。
+    image:
+      src: ./step-1.webp
+      alt: 雞蛋豆腐切成 2 公分均勻方塊，用紙巾輕輕吸去水分，均勻沾裹上一層薄地瓜粉；熟鹹蛋黃蒸熱後用刀背徹底
+  - text: 油鍋燒熱至 170°C，放入沾粉豆腐丁以中大火油炸約 3 分鐘，至表面呈現金黃硬挺酥脆外殼，撈起充分瀝油備用。
+    image:
+      src: ./step-2.webp
+      alt: 油鍋燒熱至 170°C，放入沾粉豆腐丁以中大火油炸約 3 分鐘，至表面呈現金黃硬挺酥脆外殼，撈起充分
+  - text: 另取炒鍋倒入 1 大匙油加熱，轉微火倒入壓碎的鹹蛋黃泥，以鍋鏟不斷繞圈慢炒約 1 分鐘，至蛋黃完全融化膨起綿密金黃細泡（金沙狀）。
+  - text: 倒入蒜末、辣椒碎略炒出香，倒入炸酥的雞蛋豆腐丁、細砂糖與白胡椒粉，轉大火迅速翻拋翻炒約 15 秒使金沙均勻裹滿豆腐，撒入蔥花翻勻即可熄火盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的金沙豆腐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 鹹蛋黃先蒸熱再徹底壓細碎，下鍋時以小火慢煸至起滿綿密金黃細泡，這一步是金沙能否絲滑均勻裹上豆腐的關鍵；豆腐炸硬挺後下鍋快速翻拋十五秒即出鍋，保持外酥內嫩絕佳口感。

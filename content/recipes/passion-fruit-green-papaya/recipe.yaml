@@ -1,0 +1,58 @@
+title: 涼拌百香果青木瓜
+summary: 嚴選未熟青木瓜削皮刨成薄透脆片，以海鹽輕輕抓醃殺青去生澀，冷開水洗淨徹底瀝乾，拌入新鮮酸甜百香果原汁果泥、甘草話梅與細砂糖，冷藏醃漬浸透，果香濃郁、金黃明亮、極致爽脆甘甜，經典宴席開胃小菜。
+servings: 4
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以未熟青木瓜刨片涼拌為唯一蔬菜主角，調入新鮮百香果泥醃漬，屬於純蔬菜涼拌料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 20
+tags: [涼拌, 青木瓜, 百香果, 開胃菜, 水果入菜]
+aliases: [百香果青木瓜, 百香木瓜薄片]
+ingredients:
+  - name: 青木瓜
+    amount:
+      value: 500
+      unit: g
+    note: 削皮去籽刨成薄透木瓜片
+  - name: 百香果
+    amount:
+      value: 300
+      unit: g
+    note: 約 6 顆新鮮百香果取純果肉原汁
+  - name: 紹興話梅
+    amount:
+      value: 6
+      unit: 顆
+    note: 甘醇話梅增回甘層次
+  - name: 細砂糖
+    amount:
+      value: 80
+      unit: g
+    note: 調和果酸
+  - name: 鹽
+    amount:
+      value: 20
+      unit: g
+    note: 殺青去苦水
+    group: 調味
+steps:
+  - text: 青木瓜對剖刮除白籽與內膜，削去外層硬皮，用刨刀將果肉刨成均勻薄透片狀備用。
+    image:
+      src: ./step-1.webp
+      alt: 青木瓜對剖刮除白籽與內膜，削去外層硬皮，用刨刀將果肉刨成均勻薄透片狀備用。
+  - text: 木瓜薄片放入大盆中，加入鹽以雙手輕輕抓勻靜置 20 分鐘殺青出水，倒掉澀水後用冷開水充分漂洗兩次，以蔬菜脫水器徹底瀝乾水分。
+    image:
+      src: ./step-2.webp
+      alt: 木瓜薄片放入大盆中，加入鹽以雙手輕輕抓勻靜置 20 分鐘殺青出水，倒掉澀水後用冷開水充分漂洗兩次，以
+  - text: 大玻璃碗中放入瀝乾的青木瓜片，倒入新鮮百香果泥、話梅與細砂糖，充分攪拌抓勻使金黃果汁均勻浸泡覆蓋木瓜片。
+  - text: 密封放入冰箱冷藏浸漬至少 4 小時（冷藏隔夜更佳入味），果汁滲入纖維呈現亮麗金黃色澤，取出盛盤即可享用冰涼脆口酸甜滋味。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的涼拌百香果青木瓜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 青木瓜刨成薄片後用鹽抓勻殺青去除生澀苦水，並務必用冷開水沖淨瀝乾，才能保持最爽脆乾淨的果香口感；冷藏醃漬至少四小時能讓話梅的甘甜徹底釋放融於百香果汁中。

@@ -1,0 +1,98 @@
+title: 蘿蔔排骨酥湯
+summary: 帶骨豬小排以醬油、五香粉、米酒與油蔥酥醃漬入味，裹地瓜粉中火高溫炸至外殼紅棕金黃酥脆鎖住肉汁，放入湯鍋搭配清甜白蘿蔔滾刀塊與大骨高湯清燉，蘿蔔軟透甘甜、排骨酥吸滿鮮美湯汁、肉質軟嫩離骨、湯頭濃郁甘潤。
+servings: 3
+category: 湯
+dishKinds: []
+classificationReason: 蘿蔔排骨酥湯為經典台式燉湯，湯品不設料理主角與配餐角色。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [排骨酥湯, 白蘿蔔, 排骨, 夜市小吃, 暖胃湯品]
+aliases: [白蘿蔔排骨酥湯, 台式排骨酥湯]
+ingredients:
+  - name: 豬小排
+    amount:
+      value: 300
+      unit: g
+    note: 剁 2 公分適口小塊洗淨擦乾
+  - name: 白蘿蔔
+    amount:
+      value: 300
+      unit: g
+    note: 去皮切大滾刀塊
+  - name: 油蔥酥
+    amount:
+      value: 15
+      unit: g
+    note: 醃排骨與燉湯增香
+  - name: 地瓜粉
+    amount:
+      value: 45
+      unit: g
+    note: 裹粉炸排骨酥
+  - name: 雞蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 取半顆蛋液抓醃排骨
+  - name: 高湯
+    amount:
+      value: 1000
+      unit: ml
+    note: 大骨高湯或清水
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 醃肉調味
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 醃肉去腥
+    group: 調味
+  - name: 五香粉
+    amount:
+      value: 2
+      unit: g
+    note: 經典排骨酥香氣
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 5
+      unit: g
+    note: 醃肉提甘
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 5
+      unit: g
+    note: 調整湯底鹹度
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 2
+      unit: g
+    note: 出鍋提香
+    group: 調味
+steps:
+  - text: 豬小排剁成小塊洗淨吸乾水分，加入醬油、米酒、五香粉、細砂糖、少許油蔥酥與蛋液抓拌至黏稠起膠，均勻裹上地瓜粉靜置 5 分鐘回潮；白蘿蔔去皮切大滾刀塊備用。
+    image:
+      src: ./step-1.webp
+      alt: 豬小排剁成小塊洗淨吸乾水分，加入醬油、米酒、五香粉、細砂糖、少許油蔥酥與蛋液抓拌至黏稠起膠，均勻裹上
+  - text: 起油鍋燒熱至 160°C，逐塊放入排骨塊小火慢炸 3 分鐘定型，轉中大火炸至外殼紅棕金黃酥脆，撈起充分瀝油成排骨酥。
+    image:
+      src: ./step-2.webp
+      alt: 起油鍋燒熱至 160°C，逐塊放入排骨塊小火慢炸 3 分鐘定型，轉中大火炸至外殼紅棕金黃酥脆，撈起充
+  - text: 湯鍋注入高湯與清水煮滾，放入白蘿蔔塊與炸好的排骨酥，加入剩餘油蔥酥與鹽，加蓋轉小火燉煮 30 分鐘至蘿蔔晶瑩透光、排骨酥軟嫩入味。
+  - text: 起鍋前撒入白胡椒粉提香，盛入大湯碗即可熱氣騰騰享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蘿蔔排骨酥湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 排骨裹上地瓜粉後務必靜置五分鐘回潮，炸的時候粉漿才不會在熱油中脫落；燉湯時小火慢煨三十分鐘，排骨酥外皮吸飽甘甜蘿蔔高湯卻不散碎，滋味最為醇厚。
