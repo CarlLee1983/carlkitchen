@@ -1,0 +1,322 @@
+[
+  {
+    "id": "baby-corn-stir-fried-mushrooms",
+    "title": "玉米筍炒百菇",
+    "sourceSha256": "ac7b7f459d5044f4ddc561db51b1567c393cd31ac706eda614d689de25e03f3a",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; explicit ingredient/cut corrections below take priority over reference. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: Cooked baby corn cut into short DIAGONAL segments, thick fresh shiitake slices, small separated brown shimeji mushrooms, whole green snap peas, thin FLOWER-SHAPED carrot slices and thin garlic slices on plain white ceramic plate. Correct reference carrot rounds to flower slices and corn crosscuts to diagonal segments. Do not add other mushrooms, bell pepper, scallions or garnish. Summary mentions oyster mushrooms but ingredient list and steps omit them; do not invent additional mushroom species in image.\nExact text in reading order:\n煮奔\n玉米筍炒百菇\n鮮脆玉米筍切斜段汆燙脆甜，搭配鮮香菇片、鴻禧菇、秀珍菇與甜豆莢，熱油爆香大蒜薄片與紅蘿蔔花片，大火快炒綜合菇類與玉米筍，調入少許鹽與米酒嗆香，鮮香甘美、爽脆多汁且色彩繽紛。\n3 人份・15 分鐘・非湯料理\n材料\n主料\n玉米筍 100 g（洗淨切斜段）\n鮮香菇 50 g（切厚片）\n鴻禧菇 50 g（去根部撕小朵）\n甜豆莢 40 g（撕去老筋）\n胡蘿蔔 20 g（切薄花片）\n蒜頭 10 g（切薄蒜片）\n調味\n米酒 10 ml（約 1 茶匙）\n鹽 3 g（約半茶匙）\n做法\n1 玉米筍切斜段入沸水汆燙 30 秒撈起；鮮香菇切片、鴻禧菇撕開小撮；甜豆莢撕去兩側粗筋；蒜頭切片、胡蘿蔔切片備用。\n2 熱鍋倒入適量油，放入蒜片爆香，加入香菇片、鴻禧菇與胡蘿蔔片中大火翻炒至菇類出香微軟。\n3 倒入汆燙過的玉米筍段與甜豆莢大火快速翻炒約 1 分鐘至甜豆翠綠斷生，調入鹽與米酒大火翻炒收汁均勻即可盛盤。\n4 盛入白色圓盤趁熱享用清脆香甜的多層次口感。\n小提醒\n玉米筍先微燙能縮短後續炒製時間且口感格外脆甜；菇類下鍋時先不急著加水，用中大火乾煸炒至菇香散發，菇肉緊實多汁不軟爛。\n煮奔",
+    "generatedFile": "exec-a8252195-1b29-4c1e-9b91-5c9f8f9bf609.png",
+    "generatedSha256": "1163a238d544189bdbf71ef8055a096995e6655b7c80b7d4cdf8db361fd10772",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 129136,
+    "webpSha256": "da580e079a52c280411233ec75fe6f37bc31fd7503fb8419e0cf654ee1fbc22d",
+    "reason": "玉米筍多為尖頭完整短筍與平直横切面，未呈現 YAML 的斜段；不採用、不重試。",
+    "review": {
+      "text": "pass",
+      "illustration": "reject",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp",
+      "content/recipes/baby-corn-stir-fried-mushrooms/hero.webp"
+    ]
+  },
+  {
+    "id": "baked-butter-salmon",
+    "title": "奶油香烤鮭魚菲力",
+    "sourceSha256": "68f8e52eb6a21002a412a59a9de90f9c25063321247f25b7b43b61c3b4270238",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; explicit ingredient/cut corrections below take priority over reference. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: One thick cooked salmon fillet on FINE JULIENNED onion strips, small shimeji clusters and thin garlic slices, butter sauce and coarse black pepper. A small amount of finely chopped green herb garnish is explicitly in step 4. Show salmon inside a carefully OPENED parchment or foil packet on a plain ceramic plate, as recipe states. Correct reference thick onion wedges to fine shreds. No lemon.\nExact text in reading order:\n煮奔\n奶油香烤鮭魚菲力\n厚切新鮮大西洋鮭魚菲力雙面均勻抹上海鹽、黑胡椒粒與米酒醃漬，鋁箔紙上鋪上鮮甜洋蔥絲、鴻禧菇與蒜片，放上鮭魚菲力並抹上香濃天然發酵奶油包裹密封，入烤箱高溫烘烤至魚肉熟透溢出甘甜魚脂，撒上香草末，肉質鮮嫩多汁、奶香撲鼻。\n2 人份・20 分鐘・非湯料理\n材料\n主料\n鮭魚菲力 250 g（厚切新鮮鮭魚切片）\n洋蔥 50 g（切細絲鋪底）\n鴻禧菇 40 g（切去蒂頭撕散）\n蒜頭 10 g（切薄片）\n無鹽奶油 20 g（天然發酵奶油）\n調味\n米酒 10 ml（或白酒醃魚）\n黑胡椒粒 2 g（粗粒黑胡椒）\n鹽 2 g（均勻抹雙面）\n做法\n1 鮭魚菲力雙面均勻抹上鹽、黑胡椒粒與米酒醃漬 10 分鐘拭乾水分；洋蔥切細絲；鴻禧菇撕成小撮；大蒜切薄片備用。\n2 取一張大烘焙紙或鋁箔紙，底層鋪上洋蔥絲與鴻禧菇、蒜片，擺上醃好的鮭魚菲力，頂部放上奶油塊，四周向上折緊密封成包狀。\n3 烤箱預熱至 220°C，將紙包鮭魚放入烤盤烘烤約 14 至 15 分鐘至魚肉熟透、油脂溢出香氣四溢。\n4 取出小心撕開紙包，表面撒上少許新鮮黑胡椒粒與綠色香草末，即可端盤趁熱享用多汁細嫩的魚肉。\n小提醒\n用紙包或鋁箔紙包裹烘烤能牢牢鎖住鮭魚體內的天然水分與健康魚油，烘烤後魚肉宛如舒肥般柔嫩爆汁，底層洋蔥亦能吸飽甘甜魚脂。\n煮奔",
+    "generatedFile": "exec-37a7b19f-3431-4451-bc7f-973289535b7f.png",
+    "generatedSha256": "532f616fc50f2977630c83a510bb9b33fc3f31a73989bd53751eaffdc94253ad",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 158356,
+    "webpSha256": "969a698745a37c590cc9d94cd0aeeb61e5825c073ca33fe6f9423ab4ed756c29",
+    "reason": "原PNG與WebP逐字、圖文、縮圖檢查通過，另由獨立審核者覆核所有材料notes、數字單位、摘要、份量時間、步驟與tip。",
+    "review": {
+      "text": "pass",
+      "illustration": "pass",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp",
+      "content/recipes/baked-butter-salmon/hero.webp"
+    ]
+  },
+  {
+    "id": "crispy-bean-cod",
+    "title": "豆酥鱈魚",
+    "sourceSha256": "024ca9ffdc7a000d79d53a80059070cc4d6c2e7c90c2354c6a366717c32dbcba",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; explicit ingredient/cut corrections below take priority over reference. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: ONE thick skin-on steamed cod or halibut steak, opaque white cooked flesh topped with golden crispy soybean granules, fine minced garlic and finely chopped scallions, glossy soy sauce, on plain white ceramic plate. No extra ingredient or garnish.\nExact text in reading order:\n煮奔\n豆酥鱈魚\n厚切鱈魚抹少許鹽與米酒清蒸熟透，保留鮮甜原汁，取小鍋以溫油將特製豆酥、蒜末與蔥花小火慢炒至酥脆金黃、香氣四溢，調入少許醬油與糖，趁熱均勻淋在白嫩鱈魚排上，酥脆鹹香與細嫩魚肉完美交融。\n2 人份・20 分鐘・非湯料理\n材料\n主料\n厚切鱈魚 1 片（約 300 g 扁鱈或大比目魚）\n豆酥 30 g（黃豆酥顆粒）\n青蔥 15 g（切細蔥花）\n蒜頭 15 g（切細蒜末）\n調味\n米酒 15 ml（醃魚去腥）\n醬油 10 ml（炒豆酥調色）\n糖 3 g（少許中和鹹味）\n沙拉油 20 ml（炒酥豆酥用）\n做法\n1 鱈魚洗淨用廚房紙巾徹底擦乾水分，雙面抹上米酒與少許鹽，放上耐熱蒸盤備用；青蔥切蔥花、大蒜切末備用。\n2 蒸鍋水煮沸，放入鱈魚大火蒸約 10 至 12 分鐘至魚肉熟透，取出倒出多餘蒸魚水分備用。\n3 另起一小鍋倒入沙拉油燒微溫，放入蒜末、蔥花與豆酥，以極小火慢慢煸炒約 2 分鐘至豆酥冒細泡、轉金黃酥脆，加入醬油與糖快速拌勻關火。\n4 將炒得滾燙酥脆的豆酥醬汁均勻淋在清蒸鱈魚表面，撒上少許新鮮蔥花點綴即可上桌。\n小提醒\n炒豆酥火候務必保持最小火，油溫不可太高，持續用鍋鏟推動炒至豆酥由淺黃轉為金黃酥香即關火，餘溫會繼續上色，若火大易發苦焦黑。\n煮奔",
+    "generatedFile": "exec-5cbe2eb8-1aa8-47e0-9404-d9943bee906e.png",
+    "generatedSha256": "be14637a270e8325aa4f69299c56438a363f6531f3a1f69fdf01b21cbd3ddd11",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 144790,
+    "webpSha256": "6161b05c9193fc7f4fb143f75f9d84a89699827d6312b492d04d59eeb97fed71",
+    "reason": "原PNG與WebP逐字、圖文、縮圖檢查通過，另由獨立審核者覆核所有材料notes、數字單位、摘要、份量時間、步驟與tip。",
+    "review": {
+      "text": "pass",
+      "illustration": "pass",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp",
+      "content/recipes/crispy-bean-cod/hero.webp"
+    ]
+  },
+  {
+    "id": "curry-pork-chops",
+    "title": "咖哩炸豬排",
+    "sourceSha256": "b317f35a33f100a496f312b65819e3a187233aab6aa8526ac7ac1d3fbdcbbea2",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; explicit ingredient/cut corrections below take priority over reference. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: TWO boneless pork loin cutlets coated with curry-flour, egg and coarse breadcrumbs, deep fried golden then cut into thick strips, visibly two sliced cutlets, with ONLY finely shredded raw cabbage alongside, on plain ceramic plate. No sauce, curry sauce, lemon, sesame seeds or garnish.\nExact text in reading order:\n煮奔\n咖哩炸豬排\n厚切大里肌豬排拍鬆醃入味，沾裹低筋麵粉、香濃咖哩粉、蛋液與麵包粉，溫油酥炸至表面金黃焦脆、肉汁飽滿豐腴，佐以清爽高麗菜絲，香脆誘人。\n2 人份・30 分鐘・非湯料理\n材料\n主料\n大里肌肉 200 g（厚切豬里肌排約 2 片）\n雞蛋 1 顆（打散成蛋液）\n低筋麵粉 50 g（裹粉用）\n咖哩粉 5 g（混合麵粉提香）\n麵包粉 60 g（外層酥脆裹粉）\n高麗菜 80 g（切極細絲泡冰水佐餐）\n調味\n鹽 2 g（醃肉雙面抹勻）\n黑胡椒粉 1 g（醃肉提香）\n做法\n1 大里肌肉洗淨擦乾，用肉槌輕輕拍鬆邊緣劃斷筋膜，雙面抹上鹽與黑胡椒粉醃漬 10 分鐘；低筋麵粉與咖哩粉混合均勻備用。\n2 醃好的豬排依序均勻沾裹咖哩麵粉、蛋液，最後裹滿麵包粉輕輕壓實。\n3 油鍋加熱至約 170°C，放入豬排慢炸約 3 分鐘至肉塊浮起，轉大火至 180°C 逼油 30 秒至表皮金黃酥脆即可撈起瀝油切厚條。\n4 盛盤排上切段酥脆豬排，旁邊附上冰鎮瀝乾的清脆高麗菜絲即可上桌。\n小提醒\n炸豬排前將肉邊白色筋膜用刀切斷幾刀，炸時才不會受熱捲曲變形；先以中溫油炸熟內裡，起鍋前升溫逼出多餘油脂，外皮才會維持持久乾爽酥脆。\n煮奔",
+    "generatedFile": "exec-70c27cc2-f4f1-4833-9b7f-c9a7311c16ea.png",
+    "generatedSha256": "c7eea4689e68e972416cba0466b444e569362a47fab6f0b3fe9f4949aac87a1a",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 148352,
+    "webpSha256": "1a0d00b942f31ba198239a97a9de4b39f39966587a69b2ec60bf0a12fade43a9",
+    "reason": "前左與後右兩簇厚切片在中央重疊，無法連續追蹤兩片各自完整外輪廓與端部，不能確證兩片，也不能斷言只有一片；數量無法確證，維持隔離、不重試。",
+    "review": {
+      "text": "pass",
+      "illustration": "reject",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp",
+      "content/recipes/curry-pork-chops/hero.webp"
+    ]
+  },
+  {
+    "id": "dongpo-pork",
+    "title": "東坡肉",
+    "sourceSha256": "d275e657fcbe8ae4364d982344098b657705e6991c0fae0095420e0b25e6521d",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; explicit ingredient/cut corrections below take priority over reference. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: ONE large square block of braised skin-on pork belly, glossy reddish brown upper skin, visible layered fat/meat, on plain ceramic plate. Around it exactly TEN lengthwise HALVES from FIVE small bok choy heads, show cut faces. No scallions or ginger remaining on finished plate because removed in step 5. Correct reference four whole bok choy heads to ten halves.\nExact text in reading order:\n煮奔\n東坡肉\n帶皮五花肉修成方正大塊，汆燙洗淨後皮朝下置於鋪滿蔥段與薑片的鍋中，加入紹興酒、醬油與細砂糖慢火燜蒸至肉質酥爛。色澤紅亮晶透，肥而不膩。\n4 人份・90 分鐘・非湯料理\n材料\n主料\n帶皮五花肉 500 g（修成正方大塊）\n調味\n蔥段 30 g（鋪底去腥）\n薑片 20 g（鋪底提味）\n配菜\n青江菜 5 朵（洗淨對切汆燙）\n調味\n醬油 100 ml\n紹興酒 200 ml\n水 300 ml\n細砂糖 30 g（約 2 大匙）\n做法\n1 整塊帶皮五花肉洗淨修成正方塊，燒一鍋滾水將肉塊汆燙去除血水與雜質後撈出洗淨。\n2 電鍋內鍋先放入蔥段與薑片均勻鋪底，再將汆燙好的帶皮五花肉皮朝下放入鍋中。\n3 內鍋中倒入細砂糖、紹興酒、水及醬油；電鍋外鍋加 2 杯水，按下開關蒸煮至跳起。\n4 開蓋將肉塊翻面使外皮朝上，外鍋再加 2 杯水續蒸至跳起，蒸好後燜 15 分鐘讓肉質酥爛入味。\n5 挑去蔥段與薑片將東坡肉裝盤；青江菜對切入滾水汆燙熟後圍邊裝飾，淋上鍋中濃郁湯汁即可。\n小提醒\n蒸肉時蔥段與薑片鋪底可防肉皮黏鍋並增添底蘊清香；蒸到一半翻面讓豬皮朝上吸收酒香與醬色，燜透後表皮膠質軟糯不油膩。\n煮奔",
+    "generatedFile": "exec-16b24e9e-549f-4d08-80b9-34303f14cfcd.png",
+    "generatedSha256": "1ebb2cbbc110bcb5acd9cbcd50cc8689da0c6356cb3c9beb255368172e00093a",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 130282,
+    "webpSha256": "4c854c11e1cb2c93b0439104c21d990ea9420441c2c05574a607dffa62b10ec4",
+    "reason": "青江菜畫成圓鼓完整菜頭與圓形根部，沒有 5 朵對切後的 10 個半株與剖面；不採用、不重試。",
+    "review": {
+      "text": "pass",
+      "illustration": "reject",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp",
+      "content/recipes/dongpo-pork/hero.webp"
+    ]
+  },
+  {
+    "id": "fried-oysters",
+    "title": "蚵仔酥",
+    "sourceSha256": "1dc929c9622e2162abf56de19419a46d0fd9c1e2d06678ab4044d9e12ae0faa3",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; explicit ingredient/cut corrections below take priority over reference. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: Golden sweet-potato-starch fried oysters and crispy fried basil leaves on plain ceramic plate, small plain ceramic dishes of pepper salt and ketchup beside it. Oysters are shucked oyster meat, NOT shells. No lemon or extra garnish.\nExact text in reading order:\n煮奔\n蚵仔酥\n鮮蚵以少許鹽抓洗瀝乾水分，均勻沾裹地瓜粉回潮，投入油鍋以高溫炸至外皮金黃香脆、蚵肉飽滿多汁，搭配九層塔酥炸添香，佐胡椒鹽與番茄醬，台式熱炒經典滋味。\n4 人份・20 分鐘・非湯料理\n材料\n主料\n牡蠣 300 g（洗淨充分瀝乾水分）\n地瓜粉 150 g（約 1.5 杯沾粉用）\n配菜\n九層塔 20 g（洗淨充分拭乾油炸）\n調味\n胡椒鹽 20 g（約 2 大匙沾食）\n番茄醬 30 g（約 2 大匙沾食）\n做法\n1 牡蠣用少許鹽輕輕抓洗去除黏液，以清水沖洗乾淨至殘殼雜質沉澱，撈起以廚房紙巾徹底擦乾水分。\n2 地瓜粉倒入淺盤中，將瀝乾的牡蠣一顆顆放入均勻裹上地瓜粉，靜置 2 分鐘讓表面粉衣自然回潮附著。\n3 熱油鍋至約 170 度，將沾粉的牡蠣逐顆滑入油鍋中，炸約 2 分鐘至外表酥脆定型後撈起瀝乾油分。\n4 油溫拉高投入拭乾的九層塔快速過油 5 秒撈起；將蚵仔酥與炸九層塔盛盤，附上胡椒鹽與番茄醬即可享用。\n小提醒\n洗淨的牡蠣務必徹底吸乾水分再裹地瓜粉，下鍋油炸時才不會油爆噴濺；沾粉後靜置回潮片刻，油炸時粉衣緊緊吸附不脫落、外酥內嫩。\n煮奔",
+    "generatedFile": "exec-372ee79e-b186-4676-934d-76d839a35473.png",
+    "generatedSha256": "e40f4f090695798ccd43f747dfbed35a56decb93ab0572299c353ff71a784b68",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 139014,
+    "webpSha256": "fec98421fa06b98282be5902fb349a9c036649bf4e417ba1b27ff4a8c8279788",
+    "reason": "原PNG與WebP逐字、圖文、縮圖檢查通過，另由獨立審核者覆核所有材料notes、數字單位、摘要、份量時間、步驟與tip。",
+    "review": {
+      "text": "pass",
+      "illustration": "pass",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp",
+      "content/recipes/fried-oysters/hero.webp"
+    ]
+  },
+  {
+    "id": "garlic-butter-shrimp",
+    "title": "蒜香奶油大蝦",
+    "sourceSha256": "1e7009d00d8b9a98a8f571f5128f34b716a532e4c3b122197ee0c07c6d4ff65a",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. There is no dish reference image: draw the food strictly from the recipe description below; reference 1 is only for layout and watercolor style. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: Exactly EIGHT large shell-on HEAD-ON tiger prawns with long antennae and legs trimmed, backs split open and deveined, cooked red, generously coated in finely minced garlic butter with tiny minced red chili, chopped scallions and coarse black pepper. Plain ceramic plate. Keep shells and heads, eight full prawns. No parsley or other herbs.\nExact text in reading order:\n煮奔\n蒜香奶油大蝦\n草蝦剪鬚挑除腸泥開背，熱平底鍋融化香濃發酵奶油，放入大蝦與米酒加蓋微燜至蝦殼通紅酥香，投入大量蒜末、黑胡椒粒與辣椒末大火快翻，奶油香濃融化、蝦肉彈牙鮮甜。\n3 人份・15 分鐘・非湯料理\n材料\n主料\n大草蝦 300 g（約 8-10 隻剪鬚開背挑腸泥）\n無鹽奶油 30 g（天然發酵奶油）\n大蒜 30 g（切細蒜碎）\n紅辣椒 1 根（切細末配色）\n青蔥 15 g（切蔥花）\n調味\n米酒 20 ml（約 1.5 大匙）\n黑胡椒粒 3 g（粗粒現磨黑胡椒）\n鹽 2 g（少許調味）\n做法\n1 大草蝦剪去長鬚蝦腳，由背部劃開一刀挑除腸泥擦乾水分；大蒜切碎末、紅辣椒切碎、青蔥切花備用。\n2 平底鍋加熱融化一半奶油，放入大草蝦鋪平，淋入米酒蓋上鍋蓋中火燜煎約 2 分鐘至蝦身轉為鮮紅。\n3 開蓋翻面，加入剩餘奶油、大量蒜碎、紅辣椒末、黑胡椒粒與少許鹽，轉中大火快速翻炒 1 分鐘讓蒜香充分滲入蝦肉。\n4 起鍋前撒入青蔥花翻炒數秒，即可盛盤趁熱享用濃郁奶蒜鮮味。\n小提醒\n草蝦背部切開能使熱度更快進入蝦肉且能緊緊鎖住蒜味奶油醬汁；奶油分兩次下鍋，先煎出蝦殼焦香，後放蒜末與奶油，蒜粒金黃而不焦黑。\n煮奔",
+    "referenceDecision": "已檢視hero且發現切法/狀態落差，依更新指示不將hero送入生圖，只引用tomato-egg版式圖。",
+    "generatedFile": "exec-c673d71f-8aa9-4134-8847-1f4acee77060.png",
+    "generatedSha256": "a4bff8cfc3b35c9ec647fd793e3d2d86027a936adec10dccce429e777c93ff80",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 151330,
+    "webpSha256": "83b5ee1bb8f4155d694f13f0e341636196fa74644e4c7abd2a4c93715e17c90e",
+    "reason": "可辨至少七組蝦頭與相連身體（上右四、左下三），未辨到能獨立歸屬第八隻的頭或身體，重疊也不足以證明存在第八隻；不能確證材料約 8–10 隻，維持隔離、不重試。",
+    "review": {
+      "text": "pass",
+      "illustration": "reject",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp"
+    ]
+  },
+  {
+    "id": "garlic-sweet-potato-leaves",
+    "title": "蒜香地瓜葉",
+    "sourceSha256": "5bd95090bd3b773f31315d9266ba513521a03d8348e5bd2dfd4e41b1f1fac743",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. There is no dish reference image: draw the food strictly from the recipe description below; reference 1 is only for layout and watercolor style. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: Tender blanched green sweet potato leaves and tender stems, coarse old stalks removed, topped with golden FINELY MINCED garlic and slightly thickened glossy oyster sauce, on plain ceramic shallow bowl. All garlic must be finely minced. No chili or extra garnish.\nExact text in reading order:\n煮奔\n蒜香地瓜葉\n鮮嫩地瓜葉入滾水快速汆燙起鍋，淋上以蒜末、蠔油與米酒慢火煨煮的濃醇蒜香醬汁，口感爽嫩細緻。\n3 人份・10 分鐘・非湯料理\n材料\n主料\n地瓜葉 300 g（挑去粗老葉梗）\n蒜頭 30 g（去皮切碎成蒜末）\n調味\n食用油 10 ml（汆燙與炒香蒜末用）\n蠔油 30 ml（約 2 大匙，醬汁用）\n米酒 15 ml（約 1 大匙，醬汁用）\n細砂糖 5 g（約 1 小匙，醬汁用）\n水 15 ml（調製醬汁用）\n太白粉水（少許，勾薄芡用）\n做法\n1 地瓜葉摘除粗硬根莖與老葉，以清水洗淨瀝乾；蒜頭剝皮後切成細碎蒜末備用。\n2 雪平鍋加水約六分滿大火燒沸，滴入少許食用油，放入地瓜葉快速汆燙至葉片軟化碧綠，撈起徹底瀝乾水分盛入盤中。\n3 另起小鍋倒入少許食用油加熱，下蒜末以小火煸炒出香氣，接著加入蠔油、米酒、細砂糖與水煨煮，淋入少許太白粉水煮至醬汁略呈濃稠。\n4 將煮好的熱蒜香醬汁淋在盤中汆燙好的地瓜葉上，輕輕拌勻即可上桌食用。\n小提醒\n汆燙地瓜葉時加入少許油能保持葉片翠綠不變黑，汆燙時間不宜過久，葉片變軟即可撈出以維持嫩脆口感。\n煮奔",
+    "referenceDecision": "已檢視hero且發現切法/狀態落差，依更新指示不將hero送入生圖，只引用tomato-egg版式圖。",
+    "generatedFile": "exec-de3c7027-8905-4a5b-b5d4-a30eb10871bb.png",
+    "generatedSha256": "be58112ebf02a04d56d1d6eb0fd6f2e9623f1f2490dcd1c2947a2ccfa2708422",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 129410,
+    "webpSha256": "219f4b711a52aa477729a5d98d19cfe73b8ba0171aadc2a40eb093861bb89f93",
+    "reason": "蒜粒呈明顯粗切丁與大碎塊，非 YAML 的細碎蒜末；不採用、不重試。",
+    "review": {
+      "text": "pass",
+      "illustration": "reject",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp"
+    ]
+  },
+  {
+    "id": "pork-chops-black-pepper",
+    "title": "黑胡椒豬排",
+    "sourceSha256": "1f0731e15fc6f099f07198b820167f877e96f549b7284056f4020f084707499d",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. There is no dish reference image: draw the food strictly from the recipe description below; reference 1 is only for layout and watercolor style. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: Exactly TWO whole boneless pork loin chops pan fried golden, glossy black pepper sauce, finely sliced onion strips and green bell pepper STRIPS alongside, in a plain ceramic plate. No whole peppercorns, herbs or extra garnish. All onion must be thin uniform strips.\nExact text in reading order:\n煮奔\n黑胡椒豬排\n里肌肉排拍鬆斷筋醃漬入味，以奶油煎至雙面焦香金黃，加入洋蔥絲、青椒絲與濃郁黑胡椒醬翻炒收汁，肉排軟嫩多汁帶有奶油濃香與黑胡椒辛香，餐廳鐵板風味輕鬆重現。\n2 人份・25 分鐘・非湯料理\n材料\n主料\n里肌肉排 2 片（約 250 g，洗淨拍鬆斷筋）\n洋蔥 80 g（去皮切絲）\n青椒 50 g（去籽切條）\n調味\n黑胡椒醬 60 g（約 4 大匙）\n奶油 30 g（煎肉提香）\n做法\n1 里肌肉排洗淨擦乾水分，以肉槌或刀背拍打鬆散肉質並切斷周邊筋膜備用；洋蔥與青椒切成均勻條狀。\n2 取平底鍋開中火燒熱，放入奶油均勻融化塗抹於鍋面。\n3 放入里肌肉排以中大火煎約 3 分鐘至單面金黃上色，翻面續煎至雙面焦香封住肉汁。\n4 鍋中加入洋蔥絲、青椒絲與黑胡椒醬，快速翻炒拌勻並蓋鍋燜煮約 1 分鐘讓肉排吸飽黑胡椒濃醬即可盛盤。\n小提醒\n肉排煎前用刀背拍打並切斷邊緣筋膜，受熱時肉質才不會蜷縮捲起；奶油高溫融化後下鍋煎肉，能帶來濃郁滑順的焦化奶油香氣。\n煮奔",
+    "referenceDecision": "已檢視hero且發現切法/狀態落差，依更新指示不將hero送入生圖，只引用tomato-egg版式圖。",
+    "generatedFile": "exec-2a0dbc9c-fef4-4f78-bb08-cdf183a97a48.png",
+    "generatedSha256": "2d8957b4b9e84c09de79b645a984fb16b53767da1f2cab4a18513be85c5cb2bb",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 132684,
+    "webpSha256": "1b331822a04c2848d2ade1959331593bd1e749b936f26c623238c84c943178fa",
+    "reason": "原PNG與WebP逐字、圖文、縮圖檢查通過，另由獨立審核者覆核所有材料notes、數字單位、摘要、份量時間、步驟與tip。",
+    "review": {
+      "text": "pass",
+      "illustration": "pass",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp"
+    ]
+  },
+  {
+    "id": "salted-egg-pumpkin",
+    "title": "金沙南瓜",
+    "sourceSha256": "5c963c0af094413016b3443353ff53e038c30406f321673f1aab16323d6cc27f",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. There is no dish reference image: draw the food strictly from the recipe description below; reference 1 is only for layout and watercolor style. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, crisp black Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, full summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable columns and a smaller illustration to fit this complete long text. Keep outer safe margins, absolutely no clipped text. No interface. Dish illustration: Pumpkin with seeds removed cut into even approximately HALF-CENTIMETER THICK slices, skin allowed, pan fried and coated in golden salted egg yolk crumbs, mixed with tiny cooked ground pork crumbles and minced ginger, topped with chopped scallions, on plain ceramic plate. All pumpkin must be even 0.5cm slices; include tiny pork crumbles, not large meat chunks. No extra garnish.\nExact text in reading order:\n煮奔\n金沙南瓜\n新鮮南瓜切厚片裹薄粉微煎熟透，熟鹹蛋黃細剁碎後入鍋炒至金黃起泡，再放入南瓜片與薑末快速翻炒包裹均勻，鹹甜粉糯、香氣四溢。\n3 人份・25 分鐘・非湯料理\n材料\n主料\n南瓜 350 g（去籽切厚片）\n熟鹹蛋 1 顆（蛋黃與蛋白分別切碎）\n絞肉 50 g（細豬絞肉增添香氣）\n薑末 5 g（去腥提香）\n蔥花 10 g（起鍋裝飾）\n調味\n低筋麵粉 20 g（裹南瓜表面）\n鹽 1 g（少許調整鹹度）\n白胡椒粉 1 g（少許提香）\n做法\n1 南瓜洗淨去籽切成約半公分厚片，表面拍上薄薄一層低筋麵粉備用；鹹蛋黃與蛋白分別切碎。\n2 熱鍋倒入適量油，放入裹粉南瓜片煎至兩面金黃微軟後撈起瀝乾油分。\n3 原鍋留少許底油，放入鹹蛋黃碎以小火慢炒至起細白泡泡（金沙狀），加入絞肉與薑末炒散炒香。\n4 倒入煎好的南瓜片輕輕翻拌裹勻金沙，撒入少許白胡椒粉與蔥花拌勻即可盛盤。\n小提醒\n南瓜切片厚薄要一致，煎熟後質地鬆軟再裹金沙；炒鹹蛋黃時火候切忌過大，用小火慢壓炒至油亮起泡，金沙才能均勻吸附在南瓜上。\n煮奔",
+    "referenceDecision": "已檢視hero且發現切法/狀態落差，依更新指示不將hero送入生圖，只引用tomato-egg版式圖。",
+    "generatedFile": "exec-7c997832-34ae-42f1-951c-54522446488e.png",
+    "generatedSha256": "4a86388f710a780f0cf9b85b11a6806de77d43c4358a0839163cb4972454b77e",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 131212,
+    "webpSha256": "3ce39864708db582967362a319e0a7f79942451e5f32a39874d25bd567d0f397",
+    "reason": "原PNG與WebP逐字、圖文、縮圖檢查通過，另由獨立審核者覆核所有材料notes、數字單位、摘要、份量時間、步驟與tip。",
+    "review": {
+      "text": "pass",
+      "illustration": "pass",
+      "originalPng": "reviewed",
+      "finalWebp": "reviewed",
+      "mobileThumbnail": "reviewed",
+      "independentReview": "complete",
+      "crop": "none"
+    },
+    "references": [
+      "public/prints/tomato-egg.webp"
+    ]
+  }
+]
