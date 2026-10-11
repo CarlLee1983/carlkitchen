@@ -1,0 +1,88 @@
+title: 青椒牛肉炒飯
+summary: 鮮嫩牛肉絲以醬油、米酒抓醃入味，熱鍋滑油至變色撈起，大火爆炒洋蔥絲與甜脆青椒絲，倒入鬆散隔夜白飯與牛肉絲快速翻拋，調入黑胡椒粒、少許醬油大火快炒熗鍋，米粒粒粒分明乾爽帶焦香、青椒清脆鮮甜、牛肉滑嫩多汁。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: 以白飯為主體搭配牛肉絲與青椒熱炒，可獨立作為一餐，屬於主食料理。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [炒飯, 青椒牛肉, 主食, 家常便飯, 快炒]
+aliases: [青椒牛柳炒飯, 黑椒青椒牛肉炒飯]
+ingredients:
+  - name: 白飯
+    amount:
+      value: 2
+      unit: 碗
+    note: 約 350 g 隔夜冷飯捏鬆散
+  - name: 牛肉絲
+    amount:
+      value: 120
+      unit: g
+    note: 牛里肌或牛翼板切細絲
+  - name: 青椒
+    amount:
+      value: 80
+      unit: g
+    note: 去籽切細絲
+  - name: 洋蔥
+    amount:
+      value: 50
+      unit: g
+    note: 去皮切細絲
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 醃肉與熗香
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 10
+      unit: ml
+    note: 醃牛肉去腥
+    group: 調味
+  - name: 黑胡椒粒
+    amount:
+      value: 2
+      unit: g
+    note: 現磨黑胡椒粒約半茶匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 少許調味
+    group: 調味
+  - name: 太白粉
+    amount:
+      value: 5
+      unit: g
+    note: 醃牛肉抓勻保水
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 30
+      unit: ml
+    note: 炒飯油
+    group: 調味
+steps:
+  - text: 牛肉切均勻細絲，加入醬油、米酒與太白粉抓勻醃漬 10 分鐘；青椒去籽切細絲；洋蔥切細絲；隔夜白飯以雙手輕輕抓鬆備用。
+    image:
+      src: ./step-1.webp
+      alt: 牛肉切均勻細絲，加入醬油、米酒與太白粉抓勻醃漬 10 分鐘；青椒去籽切細絲；洋蔥切細絲；隔夜白飯以雙
+  - text: 炒鍋倒入植物油燒至七分熱，放入醃好牛肉絲以大火快速滑炒約 30 秒至肉色轉粉紅八分熟，盛出瀝油備用。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋倒入植物油燒至七分熱，放入醃好牛肉絲以大火快速滑炒約 30 秒至肉色轉粉紅八分熟，盛出瀝油備用。
+  - text: 原鍋留少許底油，放入洋蔥絲煸炒出甜香，倒入鬆散白飯，轉中大火以鍋鏟切壓翻拋，炒至米粒完全散開且在鍋中跳動。
+  - text: 倒回滑好的牛肉絲與青椒絲，撒入黑胡椒粒與鹽，沿鍋邊淋入少許醬油嗆鍋，轉大火高速翻炒 30 秒至青椒斷生翠綠，即可關火盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的青椒牛肉炒飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 青椒在炒飯收尾前三十秒才加入大火快炒，能徹底保留青椒的脆甜與鮮豔綠色，不會變軟出水；現磨黑胡椒粒在出鍋前撒入熗香，能激發出濃郁辛香風味。

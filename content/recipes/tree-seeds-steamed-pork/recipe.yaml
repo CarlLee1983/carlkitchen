@@ -1,0 +1,92 @@
+title: 樹子蒸肉
+summary: 新鮮豬前腿肉粗絞肉，拌入清脆荸薺碎、薑末、蔥末、醬油、白胡椒與太白粉攪打至起膠，捏成扁圓厚肉餅，表面鋪滿甘醇破布子（樹子）與紅辣椒碎，入大火蒸鍋清蒸十二分鐘，破布子甘醇蔭油與甘甜肉汁完全交融，肉餅軟嫩彈牙、甘香濃郁、經典下飯蒸菜。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以豬絞肉捏成肉餅佐破布子蒸熟為唯一肉類主角，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [樹子蒸肉, 破布子, 蒸肉餅, 家常菜, 肉類料理]
+aliases: [破布子蒸肉餅, 蔭樹子蒸絞肉]
+ingredients:
+  - name: 豬絞肉
+    amount:
+      value: 300
+      unit: g
+    note: 前腿粗絞肉三肥七瘦
+  - name: 荸薺
+    amount:
+      value: 60
+      unit: g
+    note: 去皮切細碎丁增清脆感
+  - name: 破布子
+    amount:
+      value: 40
+      unit: g
+    note: 罐裝甘醇樹子連少許原汁
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 一半切末入肉餡、一半切蔥花飾頂
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 去皮切細薑末
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 去籽切細末
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙調味
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙去腥
+    group: 調味
+  - name: 太白粉
+    amount:
+      value: 10
+      unit: g
+    note: 抓勻保水軟嫩
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提辛香
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許增香
+    group: 調味
+steps:
+  - text: 荸薺去皮切細碎丁；生薑去皮切細末；青蔥切細末；紅辣椒切細末備用。
+    image:
+      src: ./step-1.webp
+      alt: 荸薺去皮切細碎丁；生薑去皮切細末；青蔥切細末；紅辣椒切細末備用。
+  - text: 豬絞肉放入調理盆中，加入荸薺丁、薑末、蔥末、醬油、米酒、白胡椒粉、香油與太白粉，順同一方向用力攪拌摔打至肉餡起膠出黏性。
+    image:
+      src: ./step-2.webp
+      alt: 豬絞肉放入調理盆中，加入荸薺丁、薑末、蔥末、醬油、米酒、白胡椒粉、香油與太白粉，順同一方向用力攪拌摔
+  - text: 將肉餡平鋪捏成厚度約 2 公分圓形扁肉餅放入深蒸盤中，表面均勻鋪上破布子連同少許湯汁與紅辣椒碎。
+  - text: 蒸鍋水燒大滾，放入肉餅盤蓋上鍋蓋大火蒸煮 12 分鐘至肉餅熟透鮮美肉汁溢出，出鍋撒上蔥花即可趁熱享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的樹子蒸肉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 肉餡中加入荸薺碎能讓蒸出的肉餅軟嫩中帶有爽脆咬勁，層次豐富不油膩；破布子的甘甜蔭汁淋在肉餅表面一同蒸透，滋味甘美無比。
