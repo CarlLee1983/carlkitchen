@@ -1,0 +1,697 @@
+{
+  "batch": 15,
+  "baseSha": "3fe64f3ccb2e60f7e281cb2bd13840785ce5a870",
+  "checkedAtUtc": "2026-10-11T13:24:57.127192+00:00",
+  "scope": "Original-site read-only recipe audit after explicit user request; no recipe/source/image changes.",
+  "accessSummary": {
+    "readableOriginalRecipeCount": 4,
+    "unreadableOriginalRecipeCount": 6,
+    "originalRecipeSource403Ids": [
+      "japanese-yaki-udon",
+      "jingjiang-tofu",
+      "lettuce-chicken-sang-choy-bao",
+      "lotus-root-pork-rib-soup",
+      "miso-tofu-salmon-soup",
+      "orange-fish-slices"
+    ],
+    "eligibleCount": 1,
+    "eligibleIds": [
+      "kung-pao-chicken"
+    ],
+    "heldSelectedCount": 9,
+    "heldSelectedIds": [
+      "japanese-pork-cutlet",
+      "japanese-yaki-udon",
+      "jingjiang-tofu",
+      "lettuce-chicken-sang-choy-bao",
+      "lotus-root-pork-rib-soup",
+      "lotus-root-salad",
+      "luosong-soup",
+      "miso-tofu-salmon-soup",
+      "orange-fish-slices"
+    ],
+    "recipeCorrectionAppliedCount": 0,
+    "separateFromUnchangedPrior20Blockers": true,
+    "authoritySafetyUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+    "evidenceFile": "/tmp/batch15-source-audit.json",
+    "stopCondition": "All ten current YAML and original approved URLs assessed; denied pages require an accessible owner-supplied/approved source; source-rights and recipe corrections require owner/parent decisions. No attempts initiated."
+  },
+  "safetyAuthority": {
+    "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+    "checked": "FoodSafety.gov official chart directly opened",
+    "supportedFacts": [
+      "all poultry center74°C",
+      "pork steaks/chops center63°C plus3-minute rest",
+      "fish center63°C or opaque flesh that separates easily"
+    ],
+    "use": "audit recommendations only; current recipe text was not silently edited"
+  },
+  "recipes": [
+    {
+      "id": "japanese-pork-cutlet",
+      "title": "日式炸豬排",
+      "sourceAccess": [
+        {
+          "url": "https://taft.moa.gov.tw/cp-1050-1655-1da58-1.html",
+          "method": "web.run open original approved URL",
+          "status": "readable",
+          "fullRecipeReadable": true,
+          "role": "primary recipe"
+        }
+      ],
+      "sourceRecipeFullTextRead": true,
+      "externalRecipeVerificationComplete": true,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 13,
+      "stepRowsReviewed": 4,
+      "quantityAndProcessCheck": "主要食材、裹粉/蛋、醃料的數值及順序可對上來源；原來源6片各2兩、6人份，现450g是原單位換算，附約6片不當份量縮減。酒種被窄化另列待核；炸油自然量合理。",
+      "timeAndServingsCheck": {
+        "servings": "6人份來源明列。",
+        "totalTime": "來源未提供總分鐘；現30分鐘應標推估並補拆解，不能聲稱原站有30。無固定醃漬等待可從來源加入。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "非湯meat主角；裹衣蛋液不另列egg-bean，protein true合理。",
+      "foodSafetyCheck": [
+        {
+          "severity": "safety-improvement-needed",
+          "field": "steps 4 doneness endpoint",
+          "finding": "目前只以表面金黃作炸豬排終點，油溫不能證成肉中心已安全。官方表列豬排中心63°C並靜置3分鐘；需要把安全判定與表面顏色分開。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Pork / Steaks, roasts, chops",
+          "suggestedNarrowText": "量測肉排最厚處中心至少達到63°C，離火後靜置3分鐘。",
+          "applied": false
+        }
+      ],
+      "findings": [
+        {
+          "severity": "hold-owner-source-rights-review",
+          "field": "source page recipe attribution",
+          "finding": "原核准頁對這份食譜有明示需原著作同意的使用限制；依專案sourcing守則先交站主判斷，不把已核准URL當成已取得授權，也不作法律結論。",
+          "sourceUrl": "https://taft.moa.gov.tw/cp-1050-1655-1da58-1.html",
+          "sourcePointer": "食譜來源署名，網頁第66行",
+          "shortQuote": "需經原著作同意授權方可使用",
+          "suggestedAction": "先確認既有授權或站主如何處理此來源；未確認前不產新分享卡。"
+        },
+        {
+          "severity": "hold-unsupported-specificity",
+          "field": "ingredients 米酒; steps 2",
+          "finding": "原頁只寫酒10g，現YAML寫米酒10g；米酒是更窄種類，不能聲稱被這份來源明確支持。",
+          "sourceUrl": "https://taft.moa.gov.tw/cp-1050-1655-1da58-1.html",
+          "sourcePointer": "調味料第1組，網頁第56行",
+          "shortQuote": "酒10g",
+          "suggestedAction": "核對過去選用依據；若無則保留來源的酒類未指定，別替來源決定。"
+        },
+        {
+          "severity": "safety-improvement-needed",
+          "field": "steps 4 doneness endpoint",
+          "finding": "目前只以表面金黃作炸豬排終點，油溫不能證成肉中心已安全。官方表列豬排中心63°C並靜置3分鐘；需要把安全判定與表面顏色分開。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Pork / Steaks, roasts, chops",
+          "suggestedNarrowText": "量測肉排最厚處中心至少達到63°C，離火後靜置3分鐘。",
+          "applied": false
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-source-rights-and-fidelity",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "japanese-yaki-udon",
+      "title": "日式炒烏龍麵",
+      "sourceAccess": [
+        {
+          "id": "japanese-yaki-udon",
+          "url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1997",
+          "method": "official repo Big5 fetch-ytower.sh",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "curl: (22) The requested URL returned error: 403\n楊桃頁面無法以一般 HTTP 請求讀取；未保存錯誤頁，也不會嘗試繞過存取限制。請改用可公開讀取的核准來源或標記待核。\n",
+          "savedPath": null,
+          "status": "HTTP-403-access-denied",
+          "fullRecipeReadable": false,
+          "afterDenial": "Stopped; no alternate route or search-snippet substitution."
+        }
+      ],
+      "sourceRecipeFullTextRead": false,
+      "externalRecipeVerificationComplete": false,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 13,
+      "stepRowsReviewed": 5,
+      "quantityAndProcessCheck": "13列材料均在現步驟使用；柴魚先煮后撈，魚板/鮮香菇/肉絲/菜下鍋順序完整；所有來源值待外部核對，600ml不擅收乾。",
+      "timeAndServingsCheck": {
+        "servings": "1人份暫僅由現YAML得知，原頁403，推估依據待核。",
+        "totalTime": "現30分鐘，煮湯/切料可能並行但未有時間拆解；原頁403，不能確證來源總時。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "烏龍麵主食、dishKinds空、三個配餐旗標false合理；不可由湯汁多少硬改成湯。",
+      "foodSafetyCheck": [
+        {
+          "severity": "safety-review-pending",
+          "field": "steps 3–5",
+          "finding": "豬肉步驟只寫炒出香氣，最終熟透主語為麵；未有明確豬肉熟透終點。外站不可讀，先列待核，不憑估計時間宣稱已充分加熱。"
+        }
+      ],
+      "findings": [
+        {
+          "severity": "hold-source-unreadable",
+          "field": "all recipe facts",
+          "finding": "核准原站URL由專案Big5抓取腳本回403；本輪無原配方全文，不宣稱材料、量或步驟與原站一致。",
+          "sourceUrl": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1997"
+        },
+        {
+          "severity": "nonblocking-internal-observation",
+          "field": "liquid endpoint and illustration",
+          "finding": "現YAML是600ml水煮柴魚湯頭、倒入150g烏龍麵後加蓋燜至熟；本身可以是含湯成品，不能因菜名或hero少湯就另加收乾。柴魚片要先撈除。"
+        },
+        {
+          "severity": "safety-review-pending",
+          "field": "steps 3–5",
+          "finding": "豬肉步驟只寫炒出香氣，最終熟透主語為麵；未有明確豬肉熟透終點。外站不可讀，先列待核，不憑估計時間宣稱已充分加熱。"
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-source-unreadable",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "jingjiang-tofu",
+      "title": "京醬豆腐",
+      "sourceAccess": [
+        {
+          "id": "jingjiang-tofu",
+          "url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0434",
+          "method": "official repo Big5 fetch-ytower.sh",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "curl: (22) The requested URL returned error: 403\n楊桃頁面無法以一般 HTTP 請求讀取；未保存錯誤頁，也不會嘗試繞過存取限制。請改用可公開讀取的核准來源或標記待核。\n",
+          "savedPath": null,
+          "status": "HTTP-403-access-denied",
+          "fullRecipeReadable": false,
+          "afterDenial": "Stopped; no alternate route or search-snippet substitution."
+        }
+      ],
+      "sourceRecipeFullTextRead": false,
+      "externalRecipeVerificationComplete": false,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 9,
+      "stepRowsReviewed": 4,
+      "quantityAndProcessCheck": "9列材料現步驟均用到；炸油與150ml水在步驟，香油明確起鍋用途；粉水比例未定並非自行補比例的理由。",
+      "timeAndServingsCheck": {
+        "servings": "3人份來源403待核，2塊約400g不新增重量估算。",
+        "totalTime": "現20分鐘、最後煨3分鐘，其餘切/炸/煮時間未標；無明顯數學必然衝突但不是已驗证全程。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。京醬豆腐「胡蘿蔔」可作全站紅蘿蔔統一的非配方編輯建議。",
+      "classificationCheck": "板豆腐為主的非湯egg-bean、protein true；少量紅蘿蔔蔥薑不當蔬菜位。",
+      "foodSafetyCheck": [],
+      "findings": [
+        {
+          "severity": "hold-source-unreadable",
+          "field": "all recipe facts",
+          "finding": "核准原站URL回403，缺原配方全文；所有原材料/用量/時間/步驟外部一致性待核。",
+          "sourceUrl": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0434"
+        },
+        {
+          "severity": "nonblocking-internal-observation",
+          "field": "ingredients and steps 2–4",
+          "finding": "2塊板豆腐約400g、炸油適量、約150ml煮醬水、5g粉調水薄芡的操作在現文存在；不因操作油水未單獨列材料而補數或定比例。"
+        },
+        {
+          "severity": "nonblocking-language-observation",
+          "field": "carrot term and style",
+          "finding": "材料/步驟使用胡蘿蔔一致；如要統一全站常用的紅蘿蔔，只屬臺灣詞彙編輯。摘要與tip宣傳形容較多，與約50字平實摘要規範不符，不能以修語氣藉機改材料事實。"
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-source-unreadable",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "kung-pao-chicken",
+      "title": "宮保雞丁",
+      "sourceAccess": [
+        {
+          "url": "https://www.chinasichuanfood.com/kung-pao-chicken/",
+          "method": "web.run open original approved URL",
+          "status": "readable",
+          "fullRecipeReadable": true,
+          "role": "primary recipe"
+        },
+        {
+          "url": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "method": "web.run open original approved URL",
+          "status": "readable",
+          "fullRecipeReadable": false,
+          "role": "authoritative safety"
+        },
+        {
+          "url": "https://tw.lkk.com/zh-hk/foodservices/products/gold-label-dark-soy-sauce",
+          "method": "web.run open original approved URL",
+          "status": "readable",
+          "fullRecipeReadable": false,
+          "role": "official ingredient terminology reference"
+        },
+        {
+          "url": "https://tw.lkk.com/zh-hk/products/premium-soy-sauce",
+          "method": "web.run open original approved URL",
+          "status": "readable",
+          "fullRecipeReadable": false,
+          "role": "official ingredient terminology reference"
+        },
+        {
+          "url": "https://tw.lkk.com/zh-hk/products/salt-reduced-soy-sauce",
+          "method": "web.run open original approved URL",
+          "status": "readable",
+          "fullRecipeReadable": false,
+          "role": "official ingredient terminology reference"
+        }
+      ],
+      "sourceRecipeFullTextRead": true,
+      "externalRecipeVerificationComplete": true,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 17,
+      "stepRowsReviewed": 7,
+      "quantityAndProcessCheck": "17列均有用途；油55ml與澱粉15ml分配對得上源用量，兩種醬油不混為同品項；半杯花生自然量保留。",
+      "timeAndServingsCheck": {
+        "servings": "2人份與原站相同。",
+        "totalTime": "原站10分備料+10分烹調=20分；採來源允許的現成花生，不需另加自製時間。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "雞腿為非湯meat主角，花生與蔥作配料，protein true合理。",
+      "foodSafetyCheck": [
+        {
+          "severity": "pass",
+          "field": "steps 7",
+          "finding": "現文中心至少74°C後才上桌、未達繼續加熱，符合官方所有禽肉最低中心溫度。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Chicken, turkey, and other poultry"
+        }
+      ],
+      "findings": [
+        {
+          "severity": "pass",
+          "field": "original recipe and safe doneness",
+          "finding": "可讀原配方支持雞腿約250g、半杯花生、4支小蔥取白、6至8乾辣椒、薑蒜、兩種醬油、醃料/醬汁分量與先盛雞再炒香回鍋的次序。現配方取6根並保留原range，採現成烤花生是來源允許選項。",
+          "sourceUrl": "https://www.chinasichuanfood.com/kung-pao-chicken/",
+          "sourcePointer": "Ingredients、marinating、Mixed Sauce、Instructions"
+        },
+        {
+          "severity": "pass",
+          "field": "timeMinutes and servings",
+          "finding": "來源總時間20分鐘，分10分鐘備料及10分鐘烹調；2人份，與現YAML一致。來源允許現成花生，毋須加算另炸一大批花生。",
+          "sourceUrl": "https://www.chinasichuanfood.com/kung-pao-chicken/",
+          "sourcePointer": "Recipe card metadata"
+        },
+        {
+          "severity": "pass",
+          "field": "steps 7",
+          "finding": "現文中心至少74°C後才上桌、未達繼續加熱，符合官方所有禽肉最低中心溫度。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Chicken, turkey, and other poultry"
+        },
+        {
+          "severity": "nonblocking-quantity-observation",
+          "field": "cooking oil",
+          "finding": "來源炒製油3大匙加醃油2小匙，对應55ml；依正文另加1大匙炒香料，现文拆30ml炒雞與15ml炒香料，另10ml醃雞一致。半杯花生不換g。",
+          "sourceUrl": "https://www.chinasichuanfood.com/kung-pao-chicken/",
+          "sourcePointer": "Ingredients / marinating; prose instructions"
+        }
+      ],
+      "eligibleForImageGeneration": true,
+      "outcome": "pass-source-and-safety-audit",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "lettuce-chicken-sang-choy-bao",
+      "title": "生菜雞鬆",
+      "sourceAccess": [
+        {
+          "id": "lettuce-chicken-sang-choy-bao",
+          "url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-422",
+          "method": "official repo Big5 fetch-ytower.sh",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "curl: (22) The requested URL returned error: 403\n楊桃頁面無法以一般 HTTP 請求讀取；未保存錯誤頁，也不會嘗試繞過存取限制。請改用可公開讀取的核准來源或標記待核。\n",
+          "savedPath": null,
+          "status": "HTTP-403-access-denied",
+          "fullRecipeReadable": false,
+          "afterDenial": "Stopped; no alternate route or search-snippet substitution."
+        }
+      ],
+      "sourceRecipeFullTextRead": false,
+      "externalRecipeVerificationComplete": false,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 14,
+      "stepRowsReviewed": 7,
+      "quantityAndProcessCheck": "14列材料在現步驟均有用途；六葉不變六頭，半條油條切丁，炒餡與炸冬粉油用量自然量保留。",
+      "timeAndServingsCheck": {
+        "servings": "3人份及6片葉只能確認現文，來源403待核。",
+        "totalTime": "30分需含生菜泡冷水5分、炸冬粉10秒/回炸30秒與備料加熱；沒有必然不足，但雞肉完成不可只靠2分。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "整片生菜葉包雞肉蔬菜餡，兩者皆以完整形態入口，vegetable+meat並列可解釋；配餐vegetable false、protein true不重佔菜位。",
+      "foodSafetyCheck": [
+        {
+          "severity": "safety-improvement-needed",
+          "field": "steps 5 chicken doneness",
+          "finding": "現YAML只給鸡肉與菜中火約2分鐘、再收乾水分，未提供雞肉中心熟度條件；切丁大小未定，不能保證2分鐘足夠。官方禽肉中心須至少74°C。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Chicken, turkey, and other poultry",
+          "suggestedNarrowText": "確認雞肉中心至少達到74°C；未達時繼續加熱。",
+          "applied": false
+        }
+      ],
+      "findings": [
+        {
+          "severity": "hold-source-unreadable",
+          "field": "all recipe facts",
+          "finding": "楊桃核准原URL回403，外部全文與量/步驟核查未完成。",
+          "sourceUrl": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-422"
+        },
+        {
+          "severity": "safety-improvement-needed",
+          "field": "steps 5 chicken doneness",
+          "finding": "現YAML只給鸡肉與菜中火約2分鐘、再收乾水分，未提供雞肉中心熟度條件；切丁大小未定，不能保證2分鐘足夠。官方禽肉中心須至少74°C。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Chicken, turkey, and other poultry",
+          "suggestedNarrowText": "確認雞肉中心至少達到74°C；未達時繼續加熱。",
+          "applied": false
+        },
+        {
+          "severity": "nonblocking-internal-observation",
+          "field": "counts and assembly",
+          "finding": "6片整葉、半條油條切丁、25g冬粉炸膨鬆、先放雞鬆於炸冬粉再包生菜的先後不互斥，不自訂各葉餡量。雞胸是note建議，不能當原站指定。"
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-source-unreadable",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "lotus-root-pork-rib-soup",
+      "title": "蓮藕排骨湯",
+      "sourceAccess": [
+        {
+          "id": "lotus-root-pork-rib-soup",
+          "url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-550",
+          "method": "official repo Big5 fetch-ytower.sh",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "curl: (22) The requested URL returned error: 403\n楊桃頁面無法以一般 HTTP 請求讀取；未保存錯誤頁，也不會嘗試繞過存取限制。請改用可公開讀取的核准來源或標記待核。\n",
+          "savedPath": null,
+          "status": "HTTP-403-access-denied",
+          "fullRecipeReadable": false,
+          "afterDenial": "Stopped; no alternate route or search-snippet substitution."
+        }
+      ],
+      "sourceRecipeFullTextRead": false,
+      "externalRecipeVerificationComplete": false,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 7,
+      "stepRowsReviewed": 4,
+      "quantityAndProcessCheck": "7列現步驟皆用到；水2000ml及分段60分燉煮可操作，但全程總時不足，來源數值尚不可確認。",
+      "timeAndServingsCheck": {
+        "servings": "4人份來源403待核。",
+        "totalTime": "40+20分順序燉煮已=60，備料/汆燙/煮沸尚未算，timeMinutes60確實不符總時定義；hold。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "湯、dishKinds空、vegetable/protein false合理；mealCandidate false是既有政策，不擅改。",
+      "foodSafetyCheck": [],
+      "findings": [
+        {
+          "severity": "hold-source-unreadable",
+          "field": "all recipe facts",
+          "finding": "原核准URL回403，不能外部確證乾魷魚/鹽與各份量、刀法、時間或tip。",
+          "sourceUrl": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-550"
+        },
+        {
+          "severity": "hold-total-time-incomplete",
+          "field": "timeMinutes=60 versus steps 1–4",
+          "finding": "現文不可並行的40分燉排骨加20分燉蓮藕已用滿60分，另有備料、汆燙、煮沸及調味；依repo總時間定義，60不足，不能稱已驗證全程。",
+          "evidenceFromCurrentYaml": [
+            "steps 2: 慢燉40分鐘",
+            "steps 3: 續煮20分鐘",
+            "step 1: 洗切與排骨汆燙"
+          ],
+          "suggestedAction": "待核原站後依現工序補記含備料/煮沸的總時推估與拆解；此輪不指定猜測新數值。"
+        },
+        {
+          "severity": "nonblocking-internal-observation",
+          "field": "materials and image",
+          "finding": "現YAML 300g蓮藕/400g肋排/20g乾魷魚/15g薑/2000ml水齐全，原料各自有用到；既有hero未列蔥花和魷魚圈不能反推recipe有那些料。"
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-source-unreadable",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "lotus-root-salad",
+      "title": "涼拌蓮藕",
+      "sourceAccess": [
+        {
+          "url": "https://icook.tw/recipes/443342",
+          "method": "web.run open original approved URL",
+          "status": "readable",
+          "fullRecipeReadable": true,
+          "role": "primary recipe"
+        }
+      ],
+      "sourceRecipeFullTextRead": true,
+      "externalRecipeVerificationComplete": true,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 10,
+      "stepRowsReviewed": 4,
+      "quantityAndProcessCheck": "現10列內部可操作，但原站辣椒/香油/汆燙醋有實量差異，蒜薑等非直接g換算與新增刀法/冷藏來源不足，不能保持ready。",
+      "timeAndServingsCheck": {
+        "servings": "原站2、現3，未記另估依據。",
+        "totalTime": "原站5、現15又加半小時冷藏；原站未有該等待，不能作已核定總時；hold。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "蓮藕為非湯vegetable主角，vegetable true/protein false合理。",
+      "foodSafetyCheck": [],
+      "findings": [
+        {
+          "severity": "hold-confirmed-source-quantity-conflicts",
+          "field": "chili, sesame oil, blanching vinegar",
+          "finding": "原站辣椒2條、香油半小匙、汆燙醋1大匙；现YAML是10g約1根辣椒、香油5ml約1茶匙、汆燙少許醋。屬可確認原配方差異，非單純缺量。",
+          "sourceUrl": "https://icook.tw/recipes/443342",
+          "sourcePointer": "食材：辣椒/香油；步驟煮水汆燙",
+          "sourceFacts": {
+            "chili": "2條",
+            "sesameOil": "1/2小匙",
+            "blanchingVinegar": "1大匙"
+          },
+          "suggestedAction": "交站主決定是否回復原量；涉及配方，不在此輪直接改寫或以未知克重覆蓋原量詞。"
+        },
+        {
+          "severity": "hold-source-support-missing",
+          "field": "garlic/ginger weight, prep specificity, waiting",
+          "finding": "原站蒜末2大匙、嫩薑末1小匙、辣椒切小段；不能由此證成现20g蒜/10g薑、辣椒去籽碎末。原站只寫薄片及拌好即可吃，沒有0.2公分刀法或冷藏半小時這些限定。",
+          "sourceUrl": "https://icook.tw/recipes/443342",
+          "sourcePointer": "辛香料、步驟備料與上桌",
+          "suggestedAction": "核對是否尚有漏記核准來源；無則把超出來源的新增事實交站主審稿，不自行補另一配方。"
+        },
+        {
+          "severity": "hold-servings-provenance-conflict",
+          "field": "servings/timeMinutes",
+          "finding": "原站2人份/5分鐘，现文3人份/15分鐘又加半小時冷藏。15分鐘可以是另估的總時但需拆解；3人份與新增等待未在紀錄交代，不能聲稱原站支持。",
+          "sourceUrl": "https://icook.tw/recipes/443342",
+          "sourcePointer": "份量、時間、最后上桌步驟"
+        },
+        {
+          "severity": "nonblocking-internal-observation",
+          "field": "classification",
+          "finding": "現菜主要是蓮藕，vegetable分類與蔬菜角色合理，並不因蒜薑蔥辣椒而改主角。"
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-confirmed-source-conflicts",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "luosong-soup",
+      "title": "羅宋湯",
+      "sourceAccess": [
+        {
+          "url": "https://icook.tw/recipes/325261",
+          "method": "web.run open original approved URL",
+          "status": "readable",
+          "fullRecipeReadable": true,
+          "role": "primary recipe"
+        }
+      ],
+      "sourceRecipeFullTextRead": true,
+      "externalRecipeVerificationComplete": true,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 13,
+      "stepRowsReviewed": 6,
+      "quantityAndProcessCheck": "13列材料及投入順序可對上；來源雞高湯、鹽、油雖不在簡表仍在步驟，依自然量列入合理，不需猜容量或肉重。",
+      "timeAndServingsCheck": {
+        "servings": "4人份與原站相同。",
+        "totalTime": "原站和現文60，但最後燉煮50–60前另有切/煎/炒，總時應另估且揭露，不直接當原配方變量。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "湯、dishKinds空、vegetable/protein false、mealCandidate true維持既有政策。",
+      "foodSafetyCheck": [],
+      "findings": [
+        {
+          "severity": "pass",
+          "field": "source ingredients and sequence",
+          "finding": "原站可讀；牛肋條2條、馬鈴薯2顆、紅蘿蔔2根、番茄4顆、洋蔥1顆、蒜4瓣、月桂葉2片、番茄醬2大匙與香草自然量對應现文。先煎肉、炒洋蔥及菜、加雞高湯燉50至60分和最后鹽胡椒都吻合。",
+          "sourceUrl": "https://icook.tw/recipes/325261",
+          "sourcePointer": "食材與步驟1–6"
+        },
+        {
+          "severity": "hold-total-time-incomplete",
+          "field": "timeMinutes=60",
+          "finding": "原站標4人份/60分鐘，现份數吻合；但其最後燉煮本身50至60分，前面備料/煎肉/炒菜不能全與最後燉煮並行。現60分鐘應重新估含操作的全程，照抄原站60不等於符合本站總時定義。",
+          "sourceUrl": "https://icook.tw/recipes/325261",
+          "sourcePointer": "時間與最後燉煮步驟",
+          "suggestedAction": "建立可併行備料、煎炒及50至60分燉煮的時間拆解後再定新版總時；此輪不無依據指定新分鐘。"
+        },
+        {
+          "severity": "nonblocking-internal-observation",
+          "field": "natural measures and terminology",
+          "finding": "雞高湯在原站步驟有明寫但無容量，是自然量，不增ml；未知牛肋條重量不補g。现詞彙與湯分類適當，舊hero帶骨牛肉/大片洋蔥屬圖錯，不是原文字授權。"
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-total-time-metadata",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "miso-tofu-salmon-soup",
+      "title": "味噌鮭魚豆腐湯",
+      "sourceAccess": [
+        {
+          "id": "miso-tofu-salmon-soup",
+          "url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-108",
+          "method": "official repo Big5 fetch-ytower.sh",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "curl: (22) The requested URL returned error: 403\n楊桃頁面無法以一般 HTTP 請求讀取；未保存錯誤頁，也不會嘗試繞過存取限制。請改用可公開讀取的核准來源或標記待核。\n",
+          "savedPath": null,
+          "status": "HTTP-403-access-denied",
+          "fullRecipeReadable": false,
+          "afterDenial": "Stopped; no alternate route or search-snippet substitution."
+        }
+      ],
+      "sourceRecipeFullTextRead": false,
+      "externalRecipeVerificationComplete": false,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 8,
+      "stepRowsReviewed": 4,
+      "quantityAndProcessCheck": "8列現步驟皆用到；鮭魚/嫩豆腐/高湯規格已給、柴魚片最後入湯煮而非撈除；溫水/溫高湯字面不一致待來源。",
+      "timeAndServingsCheck": {
+        "servings": "4人份與1原塊豆腐約300g現文清楚，外站403待核。",
+        "totalTime": "現15分含切料/煮沸/煮魚3–4分/加味噌柴魚1分，無數學必然衝突，源總時未核。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "湯、dishKinds空、vegetable/protein false、mealCandidate false維持既有政策。",
+      "foodSafetyCheck": [
+        {
+          "severity": "nonblocking-safety-observation",
+          "field": "step 2 salmon endpoint",
+          "finding": "已有魚肉熟透變白的終點，不只靠3至4分鐘；官方魚類基準為63°C，或肉不透明且容易分離，可作安全補強的權威依據，不擅改魚種。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Seafood / Fish"
+        }
+      ],
+      "findings": [
+        {
+          "severity": "hold-source-unreadable",
+          "field": "all recipe facts",
+          "finding": "原核准楊桃URL回403；對原站全部份量、操作與tip的外部查證未完成。",
+          "sourceUrl": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-108"
+        },
+        {
+          "severity": "internal-wording-conflict-pending-source",
+          "field": "fine miso ingredient note versus step 1 and tip",
+          "finding": "note寫溫水化開，step1和tip寫少許溫高湯；現文可確認措辭不一致，但原站不可讀，不能定哪個才是來源。不得自加稀釋液容量或減少1000ml主湯。",
+          "suggestedAction": "等原站或核准原文可讀後再統一稀釋液詞，當前兩段原文完整保留。"
+        },
+        {
+          "severity": "nonblocking-safety-observation",
+          "field": "step 2 salmon endpoint",
+          "finding": "已有魚肉熟透變白的終點，不只靠3至4分鐘；官方魚類基準為63°C，或肉不透明且容易分離，可作安全補強的權威依據，不擅改魚種。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Seafood / Fish"
+        },
+        {
+          "severity": "nonblocking-style-observation",
+          "field": "summary/tip",
+          "finding": "暖胃生津等效果形容與酵素/香味解釋未有可讀來源支持；應避免把原文當經外部查證的健康或科學保證。"
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-source-unreadable",
+      "recipeEditsApplied": false
+    },
+    {
+      "id": "orange-fish-slices",
+      "title": "橙汁魚片",
+      "sourceAccess": [
+        {
+          "id": "orange-fish-slices",
+          "url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1447",
+          "method": "official repo Big5 fetch-ytower.sh",
+          "exitCode": 1,
+          "stdout": "",
+          "stderr": "curl: (22) The requested URL returned error: 403\n楊桃頁面無法以一般 HTTP 請求讀取；未保存錯誤頁，也不會嘗試繞過存取限制。請改用可公開讀取的核准來源或標記待核。\n",
+          "savedPath": null,
+          "status": "HTTP-403-access-denied",
+          "fullRecipeReadable": false,
+          "afterDenial": "Stopped; no alternate route or search-snippet substitution."
+        }
+      ],
+      "sourceRecipeFullTextRead": false,
+      "externalRecipeVerificationComplete": false,
+      "allCurrentYamlFieldsReviewed": true,
+      "ingredientRowsReviewed": 13,
+      "stepRowsReviewed": 6,
+      "quantityAndProcessCheck": "13列现用途齐全；香油2小匙分1+1、沙拉油5ml只炒另備炸油；勾芡用粉水不能變裹粉。",
+      "timeAndServingsCheck": {
+        "servings": "2人份目前只能確認现YAML；2原魚片不補重量。",
+        "totalTime": "30分至少包含醃10分、油炸與炒燴，蔬菜備料可於醃時並行，但來源403與熟度條件待核。"
+      },
+      "taiwanTerminologyCheck": "依臺灣常用食材與烹調語彙逐項檢查；未自動替换原名或品種。",
+      "classificationCheck": "魚為非湯seafood主角，洋蔥柳橙作配料，protein true、vegetable false合理。",
+      "foodSafetyCheck": [
+        {
+          "severity": "safety-improvement-needed",
+          "field": "steps 3 and 6 doneness",
+          "finding": "炸到上色酥脆再稍微燴煮沒有明確魚肉熟透條件；油溫180°C不等於中心溫度。官方魚類最低中心63°C，或肉不透明且容易分離。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Seafood / Fish",
+          "suggestedNarrowText": "確認魚肉中心達63°C，或魚肉不再透明且容易剝離後再上桌。",
+          "applied": false
+        }
+      ],
+      "findings": [
+        {
+          "severity": "hold-source-unreadable",
+          "field": "all recipe facts",
+          "finding": "楊桃原URL回403；鯛魚2片、橙汁量、切法與不裹粉流程均只能指現YAML，不是已重核外站。",
+          "sourceUrl": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1447"
+        },
+        {
+          "severity": "safety-improvement-needed",
+          "field": "steps 3 and 6 doneness",
+          "finding": "炸到上色酥脆再稍微燴煮沒有明確魚肉熟透條件；油溫180°C不等於中心溫度。官方魚類最低中心63°C，或肉不透明且容易分離。",
+          "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+          "sourcePointer": "Seafood / Fish",
+          "suggestedNarrowText": "確認魚肉中心達63°C，或魚肉不再透明且容易剝離後再上桌。",
+          "applied": false
+        },
+        {
+          "severity": "nonblocking-internal-observation",
+          "field": "ingredient identity and cuts",
+          "finding": "鯛魚原名不硬定生物物種；2片原fillet切大片不等於2塊成品；太白粉水只勾芡，原文未裹粉就不添加。"
+        }
+      ],
+      "eligibleForImageGeneration": false,
+      "outcome": "hold-source-unreadable",
+      "recipeEditsApplied": false
+    }
+  ]
+}
