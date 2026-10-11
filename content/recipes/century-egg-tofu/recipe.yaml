@@ -1,0 +1,76 @@
+title: 皮蛋豆腐
+summary: 冰涼滑嫩芙蓉嫩豆腐完整置盤，擺上香Ｑ彈牙溏心皮蛋丁，淋上純釀甘醇醬油膏、蠔油與香油調製的溫潤甜鹹醬汁，頂部撒滿鮮綠蔥花與細緻柴魚片，清涼爽口、入口即化、台灣家庭餐桌最受歡迎快手冷盤。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: 以嫩豆腐與皮蛋雙重蛋豆類為唯一主角，屬於蛋豆類涼拌冷盤料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 10
+tags: [皮蛋豆腐, 嫩豆腐, 皮蛋, 冷盤, 家常開胃菜]
+aliases: [柴魚皮蛋豆腐, 涼拌皮蛋豆腐]
+ingredients:
+  - name: 嫩豆腐
+    amount:
+      value: 1
+      unit: 盒
+    note: 約 300 g 冰涼滑嫩完整倒扣
+  - name: 皮蛋
+    amount:
+      value: 2
+      unit: 顆
+    note: 去殼切瓣或切小丁
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 洗淨切細蔥花
+  - name: 柴魚片
+    amount:
+      value: 5
+      unit: g
+    note: 細削柴魚花飾頂
+  - name: 醬油膏
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙古早味甘醇醬油膏
+    group: 調味
+  - name: 蠔油
+    amount:
+      value: 10
+      unit: ml
+    note: 約半大匙提鮮
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許增香
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 3
+      unit: g
+    note: 調和鹹度
+    group: 調味
+steps:
+  - text: 皮蛋剝除外殼，放入滾水中微燙 1 分鐘殺菌且使溏心微凝固，撈出泡冷水放涼後切成適口小角塊；青蔥切細蔥花備用。
+    image:
+      src: ./step-1.webp
+      alt: 皮蛋剝除外殼，放入滾水中微燙 1 分鐘殺菌且使溏心微凝固，撈出泡冷水放涼後切成適口小角塊；青蔥切細蔥
+  - text: 小碗中將醬油膏、蠔油、細砂糖與香油加入 1 大匙冷開水充分攪拌均勻，調和成甘甜順滑的淋醬。
+  - text: 冰涼的嫩豆腐倒扣置於平盤中央，在豆腐上方與四周整齊排入切塊皮蛋，均勻淋上調好的甘醇醬料，最後撒上滿滿青蔥花與輕盈舞動的柴魚片即可上桌享用。
+    image:
+      src: ./step-3.webp
+      alt: 冰涼的嫩豆腐倒扣置於平盤中央，在豆腐上方與四周整齊排入切塊皮蛋，均勻淋上調好的甘醇醬料，最後撒上滿滿
+  - text: 即刻享用冰涼滑潤、鹹甘開胃的經典滋味。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的皮蛋豆腐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 皮蛋剝殼後用滾水快速汆燙一分鐘再切，蛋黃邊緣更凝固不易沾刀，切面乾淨整齊；嫩豆腐冷藏冰涼後再淋醬，冰滑口感與溫潤醬香對比鮮明。

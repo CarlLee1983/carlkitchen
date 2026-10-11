@@ -1,0 +1,87 @@
+title: 清蒸鱈魚
+summary: 厚切鮮嫩格陵蘭大扁鱈片吸乾多餘水分置盤，鋪上細嫩薑絲、大蒜片與蔥絲，均勻淋入純釀米酒、淡薄蠔油與白胡椒粉，入蒸鍋或電鍋大火清蒸八分鐘，出鍋淋上燒熱純芝麻香油激發深層辛香，魚肉如凝脂般細緻軟滑、入口即化。
+servings: 2
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以厚切鱈魚片清蒸為唯一海鮮主角，佐以蔥薑蒜絲，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [清蒸, 鱈魚, 海鮮, 電鍋料理, 家常菜]
+aliases: [蔥油清蒸鱈魚, 清蒸扁鱈]
+ingredients:
+  - name: 鱈魚
+    amount:
+      value: 1
+      unit: 片
+    note: 約 300 g 厚切輪切片吸乾水分
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 切細蔥絲
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 切細薑絲
+  - name: 大蒜
+    amount:
+      value: 10
+      unit: g
+    note: 切薄蒜片
+  - name: 紅辣椒
+    amount:
+      value: 5
+      unit: g
+    note: 切細絲配色
+  - name: 米酒
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙去腥
+    group: 調味
+  - name: 蠔油
+    amount:
+      value: 10
+      unit: ml
+    note: 約 1 茶匙提甘味
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 少許抹於魚身
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許增香
+    group: 調味
+  - name: 香油
+    amount:
+      value: 15
+      unit: ml
+    note: 燒熱熗香
+    group: 調味
+steps:
+  - text: 鱈魚洗淨用紙巾徹底吸乾兩面多餘水分，置於蒸盤中，均勻抹上薄鹽；青蔥切細絲、生薑切細絲、大蒜切薄片、紅辣椒切細絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 鱈魚洗淨用紙巾徹底吸乾兩面多餘水分，置於蒸盤中，均勻抹上薄鹽；青蔥切細絲、生薑切細絲、大蒜切薄片、紅
+  - text: 調味碗中將米酒、蠔油與白胡椒粉攪拌均勻成蒸魚醬汁，均勻淋在鱈魚片上，再將薑絲、蒜片與半量蔥絲鋪在魚身上。
+  - text: 蒸鍋注水大火燒滾，放入鱈魚盤蓋上鍋蓋大火蒸煮 8 分鐘至魚肉熟透蛋白質凝固（肉質熟透呈蒜瓣狀）。
+    image:
+      src: ./step-3.webp
+      alt: 蒸鍋注水大火燒滾，放入鱈魚盤蓋上鍋蓋大火蒸煮 8 分鐘至魚肉熟透蛋白質凝固（肉質熟透呈蒜瓣狀）。
+  - text: 取出鱈魚盤，鋪上剩餘青蔥絲與紅辣椒絲；另起小鍋將香油加熱至微冒熱氣，澆淋在蔥薑絲上熗出濃郁香氣即可上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的清蒸鱈魚
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 扁鱈解凍後肉質水分較多，蒸之前務必用廚房紙巾徹底吸乾水分，蒸出的魚肉才不會出水過多而沖淡鮮美肉汁；大火蒸八分鐘剛剛好，肉質最為滑嫩如豆花。

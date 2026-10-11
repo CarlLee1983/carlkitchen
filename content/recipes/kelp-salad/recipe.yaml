@@ -1,0 +1,76 @@
+title: 涼拌海帶絲
+summary: 新鮮海帶絲入滾水汆燙去除海腥保留脆嫩，撈起沖冰開水冰鎮瀝乾，加入新鮮嫩薑細絲與紅辣椒絲，拌入蒜泥水、純純香油、白醋、細鹽與少許糖充分抓拌冷藏醃漬，酸香微辣、清脆滑爽、百吃不厭的經典小菜。
+servings: 4
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以海帶絲為唯一蔬菜主角（海藻類蔬菜），調入蒜香香油涼拌，屬於蔬菜類涼拌料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [涼拌, 海帶絲, 小菜, 開胃菜, 蔬菜]
+aliases: [涼拌海帶, 台式涼拌海帶絲]
+ingredients:
+  - name: 海帶絲
+    amount:
+      value: 300
+      unit: g
+    note: 洗淨剪適口長度
+  - name: 生薑
+    amount:
+      value: 30
+      unit: g
+    note: 去皮切極細嫩薑絲
+  - name: 紅辣椒
+    amount:
+      value: 2
+      unit: 根
+    note: 去籽切細長絲
+  - name: 大蒜
+    amount:
+      value: 20
+      unit: g
+    note: 磨成細蒜泥加少許水成蒜泥水
+  - name: 香油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙純芝麻香油
+    group: 調味
+  - name: 白醋
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙柔和果醋或白醋
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙調味
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙中和酸香
+    group: 調味
+steps:
+  - text: 海帶絲以清水漂洗去除泥沙，剪成約 10 公分長度；生薑去皮切細絲、紅辣椒去籽切長細絲、大蒜壓成細泥調入少許冷開水成蒜泥水備用。
+    image:
+      src: ./step-1.webp
+      alt: 海帶絲以清水漂洗去除泥沙，剪成約 10 公分長度；生薑去皮切細絲、紅辣椒去籽切長細絲、大蒜壓成細泥調
+  - text: 湯鍋注入足量清水煮滾，放入海帶絲大火煮約 3 分鐘至軟中帶脆，撈起立即浸入冰開水中冰鎮降溫，撈起徹底瀝乾水氣。
+    image:
+      src: ./step-2.webp
+      alt: 湯鍋注入足量清水煮滾，放入海帶絲大火煮約 3 分鐘至軟中帶脆，撈起立即浸入冰開水中冰鎮降溫，撈起徹底
+  - text: 取一大調理盆，放入瀝乾的海帶絲、嫩薑絲與紅辣椒絲，倒入蒜泥水、香油、白醋、鹽與細砂糖。
+  - text: 戴上手套充分抓拌均勻使每一根海帶絲均勻裹上香油與調料，放入冰箱冷藏浸漬 30 分鐘以上更加入味爽脆，盛盤即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的涼拌海帶絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 海帶絲滾水汆燙三分鐘後務必過冰水徹底冰鎮，可徹底去除黏液與腥氣，同時鎖住爽脆彈嫩的口感；拌勻後冷藏浸漬半小時更為入味醇香。
