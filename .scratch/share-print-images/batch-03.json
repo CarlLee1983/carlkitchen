@@ -1,0 +1,185 @@
+[
+  {
+    "id": "almond-crusted-fish",
+    "title": "杏仁煎魚片",
+    "sourceSha256": "00a83b66c9446b90e03e3cca679ef14b5d4a89a74632d33debe045e2a74434b8",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: tilapia fillets cut into bite-size chunks, egg-and-almond-flour batter, covered in golden sliced almonds on a plain ceramic plate. NO green herbs or parsley: reference 2 garnish is incorrect and must be omitted.\nExact text in reading order:\n煮奔\n杏仁煎魚片\n鯛魚片切塊裹上杏仁粉與蛋液調成的麵糊，再沾滿薄脆杏仁片，入鍋香煎至兩面金黃酥脆，魚肉細嫩香氣四溢。\n2 人份・20 分鐘・非湯料理\n材料\n主料\n鯛魚片 2 片（切塊）\n杏仁片 100 g\n雞蛋 1 顆（打成蛋液）\n調味\n杏仁粉 20 g（約 2 大匙，調麵糊用）\n食用油 15 ml（約 1 大匙，香煎用）\n鹽 1 g（約 1/4 小匙，調麵糊用）\n白胡椒粉 1 g（約 1/4 小匙，調麵糊用）\n做法\n1 雞蛋打入碗中攪打均勻，加入杏仁粉、鹽與白胡椒粉充分拌勻調成濃稠杏仁蛋糊。\n2 鯛魚片切成適口塊狀，先均勻沾裹調好的杏仁蛋糊，再放入盤中讓魚片表面緊密裹上一層杏仁薄片。\n3 平底鍋倒入食用油以中小火燒熱，放入裹好杏仁片的魚塊，慢煎約 2 分鐘至兩面呈現金黃酥脆後起鍋盛盤。\n小提醒\n煎魚時火力不宜過大，保持中小火慢煎能避免表面的杏仁片過早焦黑，並使魚肉均勻熟透。\n煮奔",
+    "generatedFile": "exec-20af3546-e3b1-4592-a1d0-979c2a858d51.png",
+    "generatedSha256": "c9f67b1bdf9f13a81037bc8aed63897d4b4392fc4170a8bbbfaf9e0cb9935b55",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 118560,
+    "webpSha256": "3d9ce40b71ad12af1dd1ecd1f1edbee96c00e9b3e550c10a8bebda140ce573e8",
+    "reason": "原圖與 WebP 仍畫數條大長形魚排，未依 YAML 步驟 2 切成適口魚塊；本輪一次後隔離，未重試。"
+  },
+  {
+    "id": "bacon-cabbage-rice",
+    "title": "培根高麗菜燜飯",
+    "sourceSha256": "9e4407e0af0b7e492e2b146cb9bfece782e31295b8ea1ceb31a75d084dbddeae",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: white rice with small roughly 1 cm bacon pieces, small square cabbage pieces, minced garlic mixed through in a plain ceramic bowl. NO scallions or green garnish: reference 2 scallion garnish is incorrect and must be omitted. Bacon must be small pieces, not long strips.\nExact text in reading order:\n煮奔\n培根高麗菜燜飯\n煙燻培根切丁小火煸出金黃油脂與焦香，加入鮮甜高麗菜大火快炒斷生，與洗淨優質白米、少許香油一同入電鍋燜煮，米粒吸飽煙燻肉香與蔬菜清甜，起鍋拌勻粒粒分明、油潤爽口。\n3 人份・35 分鐘・主食\n材料\n主料\n白米 300 g（約 2 量米杯洗淨瀝乾）\n培根 4 片（切約 1 公分小片）\n高麗菜 200 g（洗淨切小片）\n蒜頭 10 g（切蒜碎）\n調味\n香油 5 ml（起鍋拌入提香）\n白胡椒粉 1 g（少許提味）\n鹽 2 g（少許調味）\n做法\n1 白米洗淨瀝乾；培根切小片；高麗菜洗淨切小方塊；蒜頭切碎備用。\n2 熱平底鍋不放油，放入培根片小火煸炒至表面微焦香酥逼出油脂，加入蒜碎炒出蒜香。\n3 倒入高麗菜塊翻炒至微軟出香氣，調入少許鹽與白胡椒粉拌勻關火。\n4 將白米放入電鍋內鍋，加入相應刻度水量，鋪上炒好的培根與高麗菜，按下煮飯開關燜煮至開關跳起，再燜 10 分鐘，滴入香油用飯匙由下往上翻拌均勻即可享用。\n小提醒\n培根先在乾鍋中煸炒出煙燻油脂再炒高麗菜，米飯吸收動物油脂與蔬菜甘甜精華會格外油潤甘美；蔬菜煮時會微出水，水量可略比平時煮飯少 20 ml。\n煮奔",
+    "generatedFile": "exec-78ae237e-ace7-4661-b0d3-58acd322e598.png",
+    "generatedSha256": "50106a2a9cb69f5ee7f3ffed5c56f105eadca18997082fbce8a17c97e18bca64",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 122152,
+    "webpSha256": "9e81bf5f81334593d8d208e63e1c43b9b25919d24902a107dfe8d07d0544bf3c"
+  },
+  {
+    "id": "beef-roll-pancake",
+    "title": "青蔥牛肉捲餅",
+    "sourceSha256": "799ad56f049d71e39718159c03804c160b88c709d194214b3c7a3514240a68bf",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: thin plain lotus-leaf pancakes, braised beef shank thin slices, whole-length scallion sections, sweet bean paste. Tightly rolled, diagonally sliced into thick sections, cross sections upward on plain ceramic plate. NO chopped scallions embedded into pancake, NO cucumber or other greens.\nExact text in reading order:\n煮奔\n青蔥牛肉捲餅\n手工烙烤荷葉麵餅抹上香濃甜麵醬，鋪上滷透軟嫩切薄片的五香牛腱肉與整支新鮮鮮脆青蔥段，緊密捲成長筒狀切斜塊，餅皮酥香有嚼勁、牛腱鹹香濃郁、青蔥爽脆多汁辛香。\n2 人份・30 分鐘・主食\n材料\n主料\n荷葉餅 2 張（或家常烙單餅）\n滷牛腱 150 g（五香滷牛腱切薄片）\n青蔥 3 根（洗淨切去頭尾整段）\n調味\n甜麵醬 25 g（約 1.5 大匙）\n香油 5 ml（刷餅面提香）\n做法\n1 滷牛腱肉逆紋切成均勻薄片；青蔥洗淨切除根部與老葉擦乾水分；甜麵醬調入少許香油調勻備用。\n2 平底鍋不放油微溫，放入荷葉餅雙面烙烘約 30 秒至餅皮溫熱柔軟散發麥香取起鋪平。\n3 在餅皮表面均勻刷上一層甜麵醬，中間整齊鋪排滷牛腱肉薄片，放上青蔥段，緊緊向內捲成長筒狀。\n4 用刀將牛肉捲餅斜切成均勻厚段，剖面朝上整齊排盤即可上桌趁熱享用。\n小提醒\n牛腱肉務必冷藏放涼後再逆紋薄切，肉片平整不易碎散；捲餅時雙手均勻施力緊密捲起，切段時刀鋒要鋒利一刀切下，切面整齊漂亮不鬆散。\n煮奔",
+    "generatedFile": "exec-f37fe488-9b51-4054-8575-07f567d760fd.png",
+    "generatedSha256": "e7d8a9bfaac462d1f168831d6c155f2deb7c9d91d565c6565ef763735c22c635",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 139900,
+    "webpSha256": "d6d3dd8918111300eedf3df3486a865673360ee777abe2f7d28a0f588af4a24a",
+    "reason": "餅皮呈多層剝落酥皮且外皮嵌蔥末，成為蔥油／蔥抓餅，與荷葉餅或家常烙單餅不符；本輪一次後隔離，未重試。"
+  },
+  {
+    "id": "braised-cabbage-dried-shrimp",
+    "title": "開陽白菜",
+    "sourceSha256": "2eb7d1c453b2ae8d8e576c4af7bb108a9f8a7d75ef4701bee5daf4472a5bccae",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: napa cabbage cut into large pieces, braised soft in glossy pale sauce, tiny golden dried shrimps, rehydrated dried shiitake cut into THIN JULIENNE THREADS (not thick slices or mushroom caps). Reference 2 is wrong on shrimp size and mushroom cut: render tiny dried shrimps NOT large fresh prawns, and only thin mushroom strips. Plain ceramic shallow bowl.\nExact text in reading order:\n煮奔\n開陽白菜\n金黃蝦米與乾香菇絲入鍋爆香，投入清脆鮮甜大白菜慢火煨煮至軟透吸飽高湯，調入鹽巴與香油勾薄芡，湯汁清甜濃鮮、白菜軟嫩順口，經典江浙家常名菜。\n4 人份・20 分鐘・非湯料理\n材料\n主料\n大白菜 500 g（洗淨切大片）\n調味\n蝦米 20 g（泡水洗淨瀝乾）\n乾香菇 20 g（泡軟切絲）\n高湯 360 ml（約 1.5 杯量米杯）\n鹽 8 g（約半大匙）\n香油 15 ml（約 1 大匙）\n太白粉 15 g（約 1 大匙調水勾芡）\n做法\n1 大白菜洗淨切成大片；蝦米與乾香菇分別以清水泡軟，香菇切成細絲備用。\n2 熱鍋倒入適量油，放入蝦米與香菇絲以中火爆香至香氣四溢。\n3 倒入大白菜大火翻炒均勻，注入高湯煮沸，轉中小火煨煮至白菜軟爛入味。\n4 加入鹽調味，淋入太白粉水勾薄芡，起鍋前均勻淋上香油即可盛盤。\n小提醒\n蝦米以溫水快速泡洗瀝乾即可，爆香時以中小火慢慢煸炒出金黃海味；白菜煨煮至微透軟稔再勾薄芡，芡汁均勻掛在菜葉上滑潤鮮美。\n煮奔",
+    "generatedFile": "exec-476f3e24-dce2-459a-81fe-d1c038c303f2.png",
+    "generatedSha256": "b031fd0b3fade747cc39b2adc2d14392c9616c1a4d67685f863765a1c772c861",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 121366,
+    "webpSha256": "02762b865206b3a87ff920dbca88c3ed63adfcf0392021c0af37a7111f34d446",
+    "reason": "蝦呈飽滿橙白分節及尾扇的鮮蝦外觀，香菇呈帶宽白肉面的弧形厚片，與泡軟蝦米及香菇細絲不符；本輪一次後隔離，未重試。"
+  },
+  {
+    "id": "clams-steamed-egg",
+    "title": "蛤蜊蒸蛋",
+    "sourceSha256": "a275c52de18eb23194a2841a3242d6fa0d29fc46f0a5614ae572014787426fdd",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: smooth pale yellow steamed egg custard in a plain deep ceramic plate, with exactly SIX opened clams, each clam has a clearly identifiable pair of shells. NO green scallions or garnish: reference 2 has five clams and scallion garnish; correct to six clams and zero garnish.\nExact text in reading order:\n煮奔\n蛤蜊蒸蛋\n新鮮蛤蜊吐沙洗淨，雞蛋與水、鹽、糖充分打勻過濾去泡，蛋液注入深盤擺入肥美蛤蜊，入蒸鍋中小火蒸製。蛋面宛如布丁般平滑細緻，蛤蜊鮮甜原汁完全融入嫩蛋之中。\n3 人份・30 分鐘・非湯料理\n材料\n主料\n蛤蜊 6 顆（吐沙洗淨）\n蛋 3 顆（常溫新鮮雞蛋）\n水 240 ml（約 1 杯量米杯）\n調味\n鹽 5 g（約 1.5 小匙）\n糖 5 g（約 1/3 大匙提鮮）\n做法\n1 蛤蜊泡入淡鹽水中靜置吐沙約 2 小時，外殼互相搓洗乾淨後瀝乾備用。\n2 將蛋打入碗中，加入鹽、糖與水，充分拌打均勻至蛋黃與蛋白完全融合。\n3 以細濾網過濾蛋液去除氣泡與繫帶，使蒸蛋質地細膩；將濾好的蛋汁倒入深瓷盤中，輕輕排入蛤蜊。\n4 放入蒸鍋中以中火蒸約 20 分鐘；鍋蓋邊緣留出微小隙縫透氣，蒸至蛋液凝固表面平滑如鏡即可取出。\n小提醒\n蛋液過濾能去除氣泡與繫帶，是蒸出布丁般無孔洞滑嫩蒸蛋的關鍵；蒸煮時鍋蓋預留一條縫隙，能避免高溫水蒸氣聚集造成表面坑洞。\n煮奔",
+    "generatedFile": "exec-83670198-7f89-4d98-b877-76a57813d6eb.png",
+    "reason": "成品仍只有 5 顆蛤蜊，與材料 6 顆不符；本輪一次後隔離，未重試。",
+    "generatedSha256": "14c9dc81fb5e3b01c399970db1806db0529439e9ceca529dae09c219eff1a924",
+    "generatedDimensions": [
+      1086,
+      1448
+    ]
+  },
+  {
+    "id": "deep-fried-squid-rings",
+    "title": "酥炸中卷圈",
+    "sourceSha256": "c6a33c221727a34eda9795975b536f2538a77ac1c92b998e2a587d95bcff9dff",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: squid cut into approximately 1 cm wide rings, golden crispy starch batter coating, pepper-salt dust, on a plain ceramic flat plate lined with absorbent paper. No lemon, herbs, dipping sauce, or extra ingredients.\nExact text in reading order:\n煮奔\n酥炸中卷圈\n新鮮中卷洗淨去內膜切成圓圈，以米酒、白胡椒粉抓醃去腥，沾裹調味脆炸粉漿與乾麵粉，入高溫油鍋炸至表皮金黃酥脆爽口、肉質鮮甜Q彈，撒上椒鹽粉，金黃誘人、香氣撲鼻。\n3 人份・20 分鐘・非湯料理\n材料\n主料\n中卷 1 隻（約 300 g 切圈狀約 1 公分寬）\n低筋麵粉 50 g（裹乾粉定型）\n地瓜粉 50 g（調脆漿酥脆外殼）\n調味\n胡椒鹽 5 g（炸好撒勻調味）\n米酒 15 ml（抓醃去腥）\n做法\n1 中卷洗淨撕去外皮紅膜去除內臟，橫切成約 1 公分寬的圓圈狀，加入米酒與少許胡椒鹽抓勻醃漬 5 分鐘擦乾水分。\n2 地瓜粉加少許水調成濃稠脆漿，將中卷圈先沾裹粉漿，再薄薄沾上一層乾麵粉輕輕抖落多餘餘粉。\n3 起油鍋燒熱至約 180°C，將中卷圈逐一放入油鍋中，以中大火油炸約 2 分鐘至外皮呈金黃硬挺酥脆，撈起瀝乾油分。\n4 盛入鋪有吸油紙的平盤，趁熱均勻撒上特調胡椒鹽粉即可享用。\n小提醒\n中卷下鍋前務必用廚房紙巾吸乾表面水分再裹粉，高溫 180°C 快炸 2 分鐘內即撈出，不可久炸以避免魷魚肉質變硬橡皮化失去鮮甜水分。\n煮奔",
+    "generatedFile": "exec-b778119a-e036-47cc-bae5-894aa5fff3fd.png",
+    "generatedSha256": "f266eeb25edb0aff69519742b0fd3c5303167d175e858862b06f116d0e72ca27",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 133182,
+    "webpSha256": "52c2150555fcbae096f28d51ce43bfdd178e529f8e7d97947d0214adfd42718d"
+  },
+  {
+    "id": "garlic-white-pork",
+    "title": "蒜泥白肉",
+    "sourceSha256": "7e3bf57398428ee7711c4963fb548164a94ffe64705fae2a16605711f31c4a98",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: cooked skin-on pork belly cut into extremely thin slices, laid out on plain ceramic plate, topped only with minced garlic and reddish-brown sauce made from soy paste, sweet chili sauce, sesame oil, sugar and water. NO scallions, green garnish or sesame seeds: reference 2 toppings include incorrect extras which must be omitted.\nExact text in reading order:\n煮奔\n蒜泥白肉\n帶皮五花肉入冷水鍋慢火煮透封汁，撈起切成薄如紙片的肉片整齊鋪排，淋上以鮮磨蒜泥、醬油膏、甜辣醬、香油與砂糖調和的濃郁蒜香醬汁，肉質軟嫩肥而不膩、醬香濃烈爽口，宴客家常名盤。\n4 人份・25 分鐘・非湯料理\n材料\n主料\n五花肉片 400 g（帶皮五花肉整塊煮熟切薄片）\n蒜泥醬\n蒜末 25 g（約 1.5 大匙細蒜泥）\n醬油膏 15 ml（約 1 大匙）\n甜辣醬 30 ml（約 2 大匙增添層次）\n香油 8 ml（約半大匙）\n糖 5 g（約 1 小匙）\n冷開水 15 ml（約 1 大匙調開醬汁）\n做法\n1 帶皮五花肉洗淨，放入湯鍋中加入足量冷水（需完全淹過肉塊）。\n2 大火煮沸後轉中火慢煮約 10 分鐘，以竹籤戳入厚肉中心無血水滲出即可撈起，泡入冰水微涼後切成極薄肉片整齊排盤。\n3 取小碗放入蒜末、醬油膏、甜辣醬、香油、糖與冷開水充分攪拌均勻成特調蒜泥沾醬。\n4 將調好的蒜泥醬汁均勻淋在排好的五花肉片上即可上桌享用。\n小提醒\n五花肉必須冷水下鍋煮，受熱均勻肉汁才不會瞬間緊縮乾硬；煮熟後趁微溫或冰鎮後順紋切極薄片，口感最為軟嫩爽脆、肥腴不膩。\n煮奔",
+    "generatedFile": "exec-cda71a92-b5df-474a-bacd-d659244cbc00.png",
+    "generatedSha256": "455cd85ce203b0a35fede673de7edbe141fe1ded8fa82524b851b4d21fc492fc",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 131212,
+    "webpSha256": "93686f8a3ec3ecf8a93e519c27f290ff2369f3f9127664ce51e7ce446c2ad0fb"
+  },
+  {
+    "id": "ginger-basil-squid",
+    "title": "薑絲塔香炒透抽",
+    "sourceSha256": "6883dca11eeb5f86a6bd2042731bc9dac131de42c94c372c7e2b095bc2361733",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: cleaned peeled squid sliced crosswise into bite-size thin curved pieces, pale white and slightly curled after quick stir-fry, with FINE JULIENNED young ginger and basil LEAVES only, glossy soy sauce. Plain white oval ceramic plate. No extra garnish. Do not retain squid red outer skin: recipe says removed.\nExact text in reading order:\n煮奔\n薑絲塔香炒透抽\n新鮮透抽切片後與細嫩薑絲大火爆炒，淋入醬油、米酒與糖快速翻炒，起鍋前拌入九層塔葉提香，滋味鮮甜爽脆。\n3 人份・15 分鐘・非湯料理\n材料\n主料\n透抽 2 尾（洗淨去內臟及外皮，切片）\n嫩薑 20 g（切絲）\n九層塔 10 g（取葉片）\n調味\n食用油 25 ml\n醬油 30 ml（約 2 大匙）\n細砂糖 5 g（約 1 茶匙）\n米酒 10 ml（約 2 茶匙）\n做法\n1 透抽洗淨後撕除外層薄膜並清除內臟，橫切成適口片狀；嫩薑洗淨切成細絲備用。\n2 炒鍋倒入食用油以大火燒熱，放入嫩薑絲爆出香氣，接著下透抽片快速翻炒至透抽肉色轉白且微蜷曲。\n3 淋入醬油、米酒與細砂糖大火翻炒入味，起鍋前投入九層塔葉快速翻勻，香氣散發即可盛盤。\n小提醒\n透抽肉質易老，全程以大火快炒、見肉色泛白微捲即可下調味料並迅速起鍋，能保持最佳脆嫩口感。\n煮奔",
+    "generatedFile": "exec-6e489434-e940-40c9-8cc0-031e4296b0d1.png",
+    "generatedSha256": "744ba32610420ded47d8fd45974c111cc3b238792524f17f4467c4e60f4294d7",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 121226,
+    "webpSha256": "b0c4ba92df15963f3b949025ef5d9dadec976a9fdaa3987e66b343248284c55a",
+    "reason": "九層塔仍畫帶深褐主莖的多葉小枝，與材料「取葉片」不符；本輪一次後隔離，未重試。"
+  },
+  {
+    "id": "honey-glazed-pork-ribs",
+    "title": "蜜汁排骨",
+    "sourceSha256": "6c20d1c68b30b11bae77aedbcb6229e3c57c9e02cd77d9e0cb6a6df51191c476",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: pork short ribs CHOPPED INTO SMALL BONE-IN CHUNKS, not long whole rib sticks, fried then coated in glossy reddish ketchup-sugar glaze, scattered cooked white sesame seeds only, plain ceramic plate. No honey, scallions or other garnish.\nExact text in reading order:\n煮奔\n蜜汁排骨\n豬小排洗淨抓醃裹薄粉漿，油溫升高炸至金黃酥脆定型，調入番茄醬、糖、水與少許鹽熬煮成濃稠紅亮蜜汁，倒入炸排骨翻炒裹汁收濃，撒上熟白芝麻，酸甜濃郁、骨香肉嫩。\n3 人份・30 分鐘・非湯料理\n材料\n主料\n豬小排 300 g（剁小塊洗淨瀝乾）\n白芝麻 5 g（熟白芝麻粒飾頂）\n地瓜粉 30 g（裹粉酥炸用）\n調味\n番茄醬 15 g（約 1 大匙）\n糖 20 g（約 1.5 大匙）\n水 30 ml（約 2 大匙）\n鹽 2 g（少許提味）\n做法\n1 小排骨洗淨瀝乾水分，加少許鹽抓勻，裹上一層均勻的地瓜粉漿靜置片刻回潮。\n2 起油鍋燒熱至約 170°C，放入小排骨以中小火慢炸約 4 分鐘至金黃熟透，起鍋前大火逼油 20 秒撈起瀝乾。\n3 另取炒鍋倒入番茄醬、糖、水與少許鹽，小火加熱煮至醬汁起濃稠大泡泡成紅亮蜜汁。\n4 熄火倒入炸好的小排骨快速翻拌，讓每塊排骨均勻裹上濃郁蜜汁，撒上熟白芝麻拌勻即可盛盤。\n小提醒\n蜜汁先在鍋中熬至糖完全融化、冒出細密稠密糖泡時再下排骨，裹汁動作要快且要關火翻拌，醬汁才能亮麗附著而不焦苦。\n煮奔",
+    "generatedFile": "exec-8b013476-b939-4bad-9c76-76932f216240.png",
+    "generatedSha256": "376b1ab9a36414a1021d5e5f57ed1a9af47e666a9ae6751314956f28bf76552c",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 135920,
+    "webpSha256": "769c3b0367fad5128b81536a9cd0faf8a331a0a33672c5ea8c4674ae4540cd40"
+  },
+  {
+    "id": "loofah-misua",
+    "title": "鮮甜絲瓜麵線",
+    "sourceSha256": "b00d898808d2815f20224138ca4bac3123813c35e7cc51874d575877f7c92efa",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Use case: infographic-diagram. Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, 864×1152 or higher at same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is dish appearance reference; the explicit ingredient/cut corrections below take priority. Warm off-white subtle paper texture, delicate watercolor illustration with fine hand-drawn ink linework and muted natural colors, black crisp Traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit ALL text below EXACTLY verbatim, no omissions, substitutions, corrections or extra text. Preserve repeated characters and existing wording exactly, even if unusual. Use compact readable text columns and a slightly smaller illustration if needed to fit long text. Keep generous outer safe margins, absolutely no clipped text. No interface. Dish: thin white misua noodles with peeled loofah cut into approximately 1 cm THICK SLICES, washed whitebait and FINE JULIENNED ginger in clear chicken broth, in plain ceramic bowl (main-course noodles, recipe ends with serve in bowl). NO scallions or green garnish: omit the incorrect scallion garnish in reference 2.\nExact text in reading order:\n煮奔\n鮮甜絲瓜麵線\n新鮮絲瓜去皮切厚片，熱油小火煸香嫩薑絲，放入絲瓜大火翻炒燜煮出清甜原汁，注入高湯煮滾，加入白麵線與洗淨吻仔魚同煮至麵線軟熟入味，調入少許鹽，湯鮮甘甜、絲瓜翠綠軟滑、麵線滑順。\n2 人份・20 分鐘・主食\n材料\n主料\n白麵線 150 g（傳統白麵線）\n絲瓜 1 條（約 350 g 去皮切厚片）\n吻仔魚 30 g（洗淨瀝乾提鮮）\n生薑 15 g（洗淨切嫩薑絲）\n高湯 600 ml（清雞高湯或水）\n調味\n鹽 2 g（少許調味）\n香油 5 ml（起鍋滴入提香）\n做法\n1 絲瓜刨除粗外皮洗淨切成約 1 公分厚片；生薑切細薑絲；吻仔魚輕輕洗淨瀝乾；白麵線過滾水微燙 30 秒撈起泡冷水瀝乾備用。\n2 熱鍋倒入少許油，放入薑絲小火煸炒至出香，加入絲瓜厚片翻炒數下，蓋上鍋蓋小火燜煮 2 分鐘讓絲瓜出水變軟。\n3 注入高湯煮滾，放入處理好的白麵線與吻仔魚拌煮約 1 至 2 分鐘至麵線充分吸收絲瓜甘甜湯汁，調入少許鹽與香油即可熄火盛碗享用。\n小提醒\n絲瓜下鍋先加蓋燜炒逼出其自身甘甜水分，再加熱高湯，湯底格外鮮甜無比；麵線先快速過水微燙能去除多餘澱粉與鹽分，煮入湯中清爽不混濁。\n煮奔",
+    "generatedFile": "exec-968181c2-144b-4f00-b4e2-7d5a030b3231.png",
+    "generatedSha256": "1ffddc148de0c1877130890f4378559b893012a4b0cc3050ea9246ff6a1a084f",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 122500,
+    "webpSha256": "ba47d5d36893fcfe887a4e0224caa4680d13779930b2b7fa817690502e39fc62",
+    "reason": "絲瓜厚片外緣仍有連續、厚而深綠的外皮帶，與「刨除粗外皮／去皮」不符；本輪一次後隔離，未重試。"
+  }
+]
