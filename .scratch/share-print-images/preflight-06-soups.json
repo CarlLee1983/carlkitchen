@@ -1,0 +1,1015 @@
+{
+  "batch": 6,
+  "mode": "第六批追加湯品預審，4道eligible各首輪，6道零次跳過",
+  "checkedAtUtc": "2026-10-11T10:24:46.487666+00:00",
+  "baseSha": "836cc7b15e523d01331a2db3e09bcb8e1755bc25",
+  "scope": "Only current YAML print-body consistency, required source records, public print absence, batch non-overlap, and direct visual hero inspection. No external source pages re-fetched and no factual recipe changes made. Eligibility does not claim a new audit of every historical upstream source fact.",
+  "rulesRead": [
+    "AGENTS.md",
+    ".claude/skills/recipe-making/SKILL.md",
+    ".claude/skills/recipe-making/illustration.md",
+    ".claude/skills/recipe-making/style.txt",
+    ".claude/skills/recipe-making/sourcing.md",
+    ".claude/skills/recipe-writing/SKILL.md",
+    ".scratch/recipe-mvp/issues/06-homepage-direction.md"
+  ],
+  "eligibleIds": [
+    "bitter-melon-pork-rib-soup",
+    "milkfish-belly-soup",
+    "clear-radish-beef-soup",
+    "tomato-egg-drop-soup"
+  ],
+  "skippedIds": [
+    "garlic-chicken-soup",
+    "winter-melon-clam-soup",
+    "fish-ball-soup",
+    "lotus-root-pork-rib-soup",
+    "beef-meatball-soup",
+    "peeled-chili-chicken-soup"
+  ],
+  "globalImageRules": "Soup must be a finished, ready-to-serve soup in an open plain soup pot OFF HEAT, with no utensils or extras. A bad existing hero does not by itself disqualify an otherwise clear recipe; use layout/style-only references instead. Do not attach a mismatched hero. No prompts in this report authorize generation.",
+  "recipes": [
+    {
+      "id": "garlic-chicken-soup",
+      "title": "蒜頭雞湯",
+      "sourceSha256": "68584ee20b8f04d4e03dce9b97ae3314318a00897c776cf600e60454c2bedc55",
+      "heroSha256": "527cb5b287b8861488c38da16b53a2a8e1c18523eaf5ecfa779347eb9b823f30",
+      "sourceRecord": "content/sources/garlic-chicken-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-1228"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "土雞肉",
+          "amount": {
+            "value": 400,
+            "unit": "g"
+          },
+          "note": "剁小塊洗淨"
+        },
+        {
+          "name": "大蒜仁",
+          "amount": {
+            "value": 80,
+            "unit": "g"
+          },
+          "note": "整顆去皮蒜頭"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 1000,
+            "unit": "ml"
+          },
+          "note": "高湯底"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 40,
+            "unit": "ml"
+          },
+          "note": "約 3 大匙去腥增香",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        }
+      ],
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients vs steps[1]",
+          "reason": "步驟 2「熱鍋倒入適量油」炸蒜，但材料清單完全沒有油；不能補材料或自行省略此步。"
+        },
+        {
+          "field": "summary vs steps[1]/tip",
+          "reason": "摘要直接描述大蒜仁小火炸至金黃，未交代半數炸、半數生蒜；明確比例以步驟與 tip 為準，但本輪不改摘要。"
+        }
+      ],
+      "textReview": "雞肉 400 g 剁小塊、蒜仁 80 g 整顆去皮，步驟與 tip 都指定一半先炸、一半生蒜同燉；總時間 45 分鐘可涵蓋 35 分鐘燉煮加汆燙備料。炸油缺列是 skip 主因。",
+      "visualFacts": [
+        "土雞肉 400 g，剁成小塊；未明寫特定部位及帶骨/去骨，不指定雞腿、雞翅或整支棒腿。",
+        "大蒜仁 80 g，去皮完整單瓣蒜仁，不是整頭蒜；一半先炸金黄、一半生蒜投入，成品兩者皆燉軟。",
+        "水 1000 ml、米酒 40 ml、鹽 5 g；沒有蔥、薑或其他綠色配料。"
+      ],
+      "quantityAssessment": "400 g 小雞塊與 80 g 蒜仁可畫整鍋，無指定塊數或瓣數；禁止把 80 g 轉成猜測瓣數。圖像本身可清楚呈現，但文案缺油使本轮不可進入生圖。",
+      "heroDifferences": [
+        "容器為碗，非敞口湯鍋。",
+        "雞肉含一整支棒腿輪廓及大型雞腿塊，非一律剁小塊。",
+        "有材料未列的綠色蔥花。",
+        "蒜體積很大且近整頭蒜輪廓，不宜作單瓣蒜仁形態參考。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Chopped small pieces of country chicken in clear golden broth with whole peeled garlic cloves, some pale and some golden from prior frying, all now softened; no whole drumsticks, no scallions, no garlic bulbs. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+      "promptUse": "HOLD: uncontested visual description only; do not generate while recipe has missing frying oil.",
+      "status": "skipped",
+      "currentAttempts": 0
+    },
+    {
+      "id": "bitter-melon-pork-rib-soup",
+      "title": "苦瓜排骨湯",
+      "sourceSha256": "9bfbebabe1f00bbc9de978e2422d4be99e1883f657c53bd8dc83b82ddc4e91dd",
+      "heroSha256": "f369a8fc3a7d4e7b512330578aeccf5114f985fde2ad068e057b920833941d59",
+      "sourceRecord": "content/sources/bitter-melon-pork-rib-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1283"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "排骨",
+          "amount": {
+            "value": 200,
+            "unit": "g"
+          },
+          "note": "切小塊"
+        },
+        {
+          "name": "苦瓜",
+          "amount": {
+            "value": 200,
+            "unit": "g"
+          },
+          "note": "去皮去籽切小塊"
+        },
+        {
+          "name": "薑片",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 700,
+            "unit": "ml"
+          }
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "雞精粉",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        }
+      ],
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料、步驟一致；沒有 tip。排骨與去皮去籽苦瓜分別汆燙沖涼，加薑片及水煮滾、微滾約 30 分鐘再加三樣調味。50 分鐘總時間可涵蓋備料與汆燙。鹽與雞精粉以 5 ml 標體積且約 1 茶匙，沒有自行改成 g。",
+      "visualFacts": [
+        "排骨 200 g，切小塊；來源只寫排骨，不改指定小排。",
+        "苦瓜 200 g，削皮、去籽、切小塊；應為淡綠、無粗疙瘩外皮、無籽，不能畫成深綠苦瓜圈。",
+        "薑片 10 g；水 700 ml；鹽、雞精粉、米酒各 5 ml。"
+      ],
+      "quantityAssessment": "重量型主料，沒有成品硬性塊數；兩主料各 200 g 在 700 ml 湯中可畫清楚。薑沒有指定片數，不要求或杜撰 5 片。",
+      "heroDifferences": [],
+      "heroObservation": "已目視：敞口素色雙耳不鏽鋼湯鍋，離火成品，排骨小塊、去皮淡綠苦瓜小塊、薑片，無額外配料或餐具。可用 hero；仍需按 YAML 說明去皮去籽，避免變成中空圓管。",
+      "heroUsable": true,
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Clear lightly golden broth with small bone-in pork rib chunks, small pale-green bitter melon pieces fully peeled and deseeded, and thin ginger slices; no green bumpy rind, no seeds, no hollow melon tubes. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+      "promptUse": "Ready; hero may be used as a dish reference, or use layout-only and this description.",
+      "sourceContext": "2026-10-09-finish-group-b.md 明記 A02-1283 原頁 HTTP 200、Big5 成功與份量核對，並明記來源只寫「排骨」，未指定小排。",
+      "status": "eligible",
+      "currentAttempts": 0
+    },
+    {
+      "id": "winter-melon-clam-soup",
+      "title": "冬瓜蛤蜊湯",
+      "sourceSha256": "90bee8aab27888b8db78cf66db620254a3f2c9ded68fa995a50478b66a3889f6",
+      "heroSha256": "c74043c2bdd60ddd283215e64e27bddcdfe50ba1a2c90fd318897533acf275df",
+      "sourceRecord": "content/sources/winter-melon-clam-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F04-090"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "冬瓜",
+          "amount": {
+            "value": 600,
+            "unit": "g"
+          },
+          "note": "去皮去籽切大塊"
+        },
+        {
+          "name": "蛤蜊",
+          "amount": {
+            "value": 400,
+            "unit": "g"
+          },
+          "note": "吐沙洗淨"
+        },
+        {
+          "name": "薑",
+          "amount": {
+            "value": 30,
+            "unit": "g"
+          },
+          "note": "老薑切薄片",
+          "group": "調味"
+        },
+        {
+          "name": "高湯",
+          "amount": {
+            "value": 1200,
+            "unit": "ml"
+          },
+          "note": "約 6 量米杯高湯"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 8,
+            "unit": "ml"
+          },
+          "note": "約半大匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        }
+      ],
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "timeMinutes vs steps[0]",
+          "reason": "timeMinutes=20，但步驟 1 明寫蛤蜊泡水吐沙約 2 小時。recipe-writing 定義總時間含吐沙等待，因此現文存在明確時間矛盾。"
+        }
+      ],
+      "textReview": "摘要、材料與步驟的主要食材、去皮去籽切大塊、薑薄片及冬瓜先煮蛤蜊後下相符。tip 的先煮冬瓜再下蛤蜊亦相符；但 20 分鐘不能包含明示的 2 小時吐沙。高湯 note「約 6 量米杯」與 1200 ml 未另行換算查證，本輪保留、不改。",
+      "visualFacts": [
+        "冬瓜 600 g，去皮去籽、適口大厚塊，熟後半透明。",
+        "蛤蜊 400 g，吐沙洗淨，成品外殼完全張開；重量未指定顆數。",
+        "老薑 30 g，薄片，不能畫細絲。",
+        "高湯 1200 ml；鹽 15 g、香油 8 ml、米酒 30 ml，無青蔥或綠葉。"
+      ],
+      "quantityAssessment": "冬瓜/蛤蜊均用重量，未指定精確塊數/顆數，無須猜 400 g 等於幾顆。可在寬敞湯鍋顯示合理比例，圖像可畫；總時間矛盾阻擋本輪。",
+      "heroDifferences": [
+        "容器為碗，非敞口湯鍋。",
+        "薑呈細長絲狀，與切薄片不符。",
+        "出現材料未列的綠色蔥花。",
+        "部分冬瓜邊緣有深綠外緣，去皮狀態不夠明確，不引用。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Clear soup with large thick peeled and deseeded winter melon chunks, translucent from cooking, open-shell clams, and thin ginger slices; no green melon skin, no ginger shreds, no scallions. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+      "promptUse": "HOLD: visual recipe is clear but current total-time contradiction must be resolved outside this image-only task.",
+      "status": "skipped",
+      "currentAttempts": 0
+    },
+    {
+      "id": "fish-ball-soup",
+      "title": "虱目魚丸湯",
+      "sourceSha256": "aa00f956e3aa39bfd6f867b6e813234f79cf5cc016ddc9e5a147eb2c6b90d0ce",
+      "heroSha256": "449db1abc709b60890d3e9300eaa86472804c01f8d1ec88a1ce8b3b3a3f30e57",
+      "sourceRecord": "content/sources/fish-ball-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-561"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "魚丸",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "約 8 顆虱目魚丸"
+        },
+        {
+          "name": "芹菜",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          },
+          "note": "去葉切細末",
+          "group": "調味"
+        },
+        {
+          "name": "高湯",
+          "amount": {
+            "value": 600,
+            "unit": "ml"
+          },
+          "note": "大骨或雞高湯"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 2,
+            "unit": "g"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "白胡椒粉",
+          "amount": {
+            "value": 1,
+            "unit": "g"
+          },
+          "note": "少許白胡椒",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 3,
+            "unit": "ml"
+          },
+          "note": "少許滴香",
+          "group": "調味"
+        }
+      ],
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "summary vs steps[2]/tip",
+          "reason": "摘要「出鍋前撒上…芹菜末」，步驟 3「熄火盛碗並撒上芹菜粒」及 tip「起鍋後直接灑入熱湯」；撒芹菜的時點相反。依任何矛盾即 skip 的要求，不替文案選一個版本。"
+        }
+      ],
+      "textReview": "魚丸約 8 顆、芹菜去葉切細末、清高湯及三樣調味一致。tip 浮起後再煮 1–2 分鐘是步驟未明說的補充，非另外認定其一定衝突；skip 主因為撒芹菜前後次序不一致。",
+      "visualFacts": [
+        "虱目魚丸 150 g，材料 note 約 8 顆，成品圓潤煮熟。",
+        "芹菜 2 根，去葉切極細末/細碎小粒，只畫莖粒，不畫完整葉片或香菜。",
+        "清大骨或雞高湯 600 ml；鹽 2 g、白胡椒粉 1 g、香油 3 ml。"
+      ],
+      "quantityAssessment": "若文字解決，8 顆是可畫且可數的安全目標；必須八顆各有獨立輪廓，不能以遮擋猜數。原 hero 只能明辨 6 顆。",
+      "heroDifferences": [
+        "容器為有藍花圖案的碗，非敞口素色湯鍋。",
+        "明辨 6 顆大魚丸，不能確證材料約 8 顆。",
+        "湯中有大量完整鋸齒葉片與葉枝，違反芹菜去葉切細末。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Exactly eight separately countable round milkfish balls in clear broth, scattered with very finely minced leafless celery stalks and a faint dusting of white pepper; no whole herb leaves, no cilantro, no scallions. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+      "promptUse": "HOLD: uncontested finished-dish description only; printed garnish-timing contradiction remains.",
+      "status": "skipped",
+      "currentAttempts": 0
+    },
+    {
+      "id": "milkfish-belly-soup",
+      "title": "虱目魚肚湯",
+      "sourceSha256": "b31aa2c8fdc8123e5fd9c69a82bbdb4cdde489af9bf0a4fe064b39bfe207a57d",
+      "heroSha256": "6f049c0bbe57e472ad3164d61bfb216f8471055eeefec0e08e75fdec2dd0e80a",
+      "sourceRecord": "content/sources/milkfish-belly-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-1627"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "虱目魚肚",
+          "amount": {
+            "value": 1,
+            "unit": "片"
+          },
+          "note": "約 180 g，無刺洗淨拭乾"
+        },
+        {
+          "name": "薑絲",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "老薑切極細絲",
+          "group": "調味"
+        },
+        {
+          "name": "蔥絲",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          },
+          "note": "青蔥切絲泡水微捲",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 600,
+            "unit": "ml"
+          },
+          "note": "煮湯用清水"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 3,
+            "unit": "g"
+          },
+          "note": "約半茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙去腥提鮮",
+          "group": "調味"
+        }
+      ],
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料、步驟與 tip 的魚肚、清湯、薑絲、蔥絲一致。步驟煮 3–4 分鐘，tip 建議中小火 3 分鐘，3 分鐘在其範圍內；tip 容許起鍋前或盛碗時加薑絲，與步驟盛碗放薑絲相容。改用湯鍋呈現整鍋成品是新圖規格，不改印刷文案的盛碗步驟。",
+      "visualFacts": [
+        "虱目魚肚 1 片，約 180 g、無刺、完整未切塊；不得畫多片魚排或魚段。",
+        "老薑 15 g，極細絲；青蔥 10 g，縱切細絲泡水微捲，不是橫切蔥圈。",
+        "水 600 ml，鹽 3 g，米酒 5 ml；清澈魚湯。"
+      ],
+      "quantityAssessment": "硬性 1 片魚肚可畫，讓完整單片輪廓清楚，勿用重疊切片替代。薑絲、蔥絲以重量呈現，不猜絲數。",
+      "heroDifferences": [
+        "容器為碗，非敞口湯鍋。",
+        "大量青蔥表現為橫切圓圈，非細蔥絲。",
+        "薑條偏粗，未穩定呈現極細絲。",
+        "魚肉有分塊/疊片視覺，難以確證是一整片魚肚，不作單片數量參考。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. One intact uncut boneless milkfish belly fillet, about 180 g, cooked white in clear broth, topped with extremely fine ginger threads and finely lengthwise-shredded scallion strands curling gently; no scallion rings, no extra fish pieces. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+      "promptUse": "Ready with layout/style reference ONLY; do not attach current hero.",
+      "status": "eligible",
+      "currentAttempts": 0
+    },
+    {
+      "id": "clear-radish-beef-soup",
+      "title": "清燉蘿蔔牛肉湯",
+      "sourceSha256": "76106eb50845501c9a8065a2c1cee43c46b2b0f8abb5642e10b052891dce5a59",
+      "heroSha256": "796c626203b3351991ee1a631b16bd4a28e554571b1365310fd7aad8a74ec3f2",
+      "sourceRecord": "content/sources/clear-radish-beef-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-1071"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "牛腱",
+          "amount": {
+            "value": 500,
+            "unit": "g"
+          },
+          "note": "約 1 個，切成大塊"
+        },
+        {
+          "name": "白蘿蔔",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "去皮切成滾刀小塊"
+        },
+        {
+          "name": "紅蘿蔔",
+          "amount": {
+            "value": 100,
+            "unit": "g"
+          },
+          "note": "去皮切成滾刀小塊"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 1200,
+            "unit": "ml"
+          },
+          "note": "慢燉高湯用"
+        },
+        {
+          "name": "薑片",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "約 5 片，去腥提味",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 3,
+            "unit": "g"
+          },
+          "note": "約 1/2 茶匙，起鍋前調味",
+          "group": "調味"
+        }
+      ],
+      "eligible": true,
+      "blockers": [],
+      "textReview": "印刷欄位 summary、ingredients、steps.text、tip 相互一致：牛腱大塊、雙色蘿蔔滾刀小塊、薑片，分別汆燙後共同微火 3 小時，最後加鹽。190 分鐘與 180 分鐘燉煮加備料相容。既有圖 alt（非本輪印刷正文）有差異：step-1 alt 將薑放入汆燙鍋，文字僅備薑片；hero alt 稱雙耳陶土鍋但實圖為碗。",
+      "visualFacts": [
+        "牛腱 500 g，約 1 個、順肉紋切適口大塊；成品為燉軟牛腱塊，不畫牛腩/帶骨牛肉。",
+        "白蘿蔔 300 g、紅蘿蔔 100 g，去皮滾刀小塊，非大圓片。",
+        "薑片 15 g，約 5 片；水 1200 ml，鹽 3 g；沒有蔥、香菜或其他香料。"
+      ],
+      "quantityAssessment": "牛腱「約 1 個」是切塊前原料，不是成品只畫一塊；紅白蘿蔔重量約 1:3，可用合理比例。薑約 5 片是可畫數目，建議分布以可辨識薄片為主，不混充蘿蔔。",
+      "heroDifferences": [
+        "實圖是寬口碗，沒有雙耳鍋，與新湯圖規範及其 hero alt 都不符。",
+        "可見牛肉塊與雙色蘿蔔，未清楚辨出薑片；原圖無法作薑片數量/形態參考。",
+        "圖上牛肉外觀不足以單靠畫面確證牛腱部位；新圖依 YAML 指定牛腱，不從舊圖猜。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Clear broth with large tender beef shank chunks showing shank grain, smaller irregular roll-cut peeled white radish and carrot pieces, white radish about three times the carrot quantity, and about five thin ginger slices. No beef ribs, no scallions. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+      "promptUse": "Ready with layout/style reference ONLY; do not attach current hero. Hero and step image alt discrepancies are recorded but not copied into print text.",
+      "status": "eligible",
+      "currentAttempts": 0
+    },
+    {
+      "id": "lotus-root-pork-rib-soup",
+      "title": "蓮藕排骨湯",
+      "sourceSha256": "7019b2ac5b0e36930344b6568bdd2f0b630b333fb6e240d057696a931d3a3fa6",
+      "heroSha256": "e3ee8a28c0547df0999e624ffac2130175fb9837db79ece8668857891b592708",
+      "sourceRecord": "content/sources/lotus-root-pork-rib-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-550"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "蓮藕",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "去皮切約 0.5 公分片狀"
+        },
+        {
+          "name": "豬肋排",
+          "amount": {
+            "value": 400,
+            "unit": "g"
+          },
+          "note": "剁塊汆燙洗淨"
+        },
+        {
+          "name": "乾魷魚",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "剪絲提鮮甘甜",
+          "group": "調味"
+        },
+        {
+          "name": "薑",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "切片去腥",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 2000,
+            "unit": "ml"
+          },
+          "note": "燉湯清水"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          },
+          "note": "約半茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        }
+      ],
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "timeMinutes vs steps",
+          "reason": "timeMinutes=60，步驟 2、3 已要求先燉 40 分鐘再煮 20 分鐘，此外尚須洗切、豬肋排汆燙、煮沸與最後調味。依總時間必須含備料的規範，60 分鐘不涵蓋現行全流程。"
+        }
+      ],
+      "textReview": "摘要、材料、步驟使用蓮藕圓片、豬肋排塊、乾魷魚細絲與薑片，順序 40+20 分鐘一致；tip 微紅湯色與步驟淡粉褐相容。鹽 5 g note「約半茶匙」未另行驗證密度/換算，保留並列為次要待核，不以猜值改寫。",
+      "visualFacts": [
+        "蓮藕 300 g，去皮、約 0.5 公分厚的圓片，可見藕孔。",
+        "豬肋排 400 g，剁塊汆燙洗淨；帶骨短塊，不畫整條長肋排。",
+        "乾魷魚 20 g，剪細絲，不是鮮魷魚厚圈/白色粗條；老薑 15 g 切片。",
+        "水 2000 ml，鹽 5 g，米酒 15 ml；湯色淡粉褐，不加蔥花。"
+      ],
+      "quantityAssessment": "各主料以重量列出，無硬性片/塊/絲數；0.5 公分藕片厚度與乾魷魚細絲需清楚。圖像可畫，但時間欄矛盾使此輪 skip。",
+      "heroDifferences": [
+        "容器為碗，非敞口湯鍋。",
+        "有材料未列的蔥花。",
+        "魷魚畫成白/粉色厚條甚至彎圈，非乾魷魚細絲。",
+        "排骨偏長條，應依剁塊畫短塊。",
+        "部分藕片側邊顯得較厚，不能直接借其厚度作 0.5 公分參考。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Pale pinkish-brown broth with peeled lotus root rounds only 0.5 cm thick, chopped bone-in pork rib chunks, a small amount of very fine dried-squid shreds, and thin ginger slices. No fresh squid rings, no thick squid strips, no scallions. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+      "promptUse": "HOLD: uncontested visual description only; total-time issue remains.",
+      "status": "skipped",
+      "currentAttempts": 0
+    },
+    {
+      "id": "beef-meatball-soup",
+      "title": "翡翠豆腐肉丸湯",
+      "sourceSha256": "5036f399d19e4fc85e0ef05a23e2d4e6ae1fa88562e2e8bd0b6ea459926ba988",
+      "heroSha256": "6d1b02d6e8c0fe32c7d6a399175ef1414e4c33a4bd2fc816c563eaf17af52e20",
+      "sourceRecord": "content/sources/beef-meatball-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0390"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "板豆腐",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "壓成細泥擠去水分"
+        },
+        {
+          "name": "菠菜",
+          "amount": {
+            "value": 80,
+            "unit": "g"
+          },
+          "note": "汆燙擠乾切極細碎"
+        },
+        {
+          "name": "豬絞肉",
+          "amount": {
+            "value": 100,
+            "unit": "g"
+          },
+          "note": "細絞肉增加黏性"
+        },
+        {
+          "name": "胡蘿蔔",
+          "amount": {
+            "value": 30,
+            "unit": "g"
+          },
+          "note": "切細末配色"
+        },
+        {
+          "name": "高湯",
+          "amount": {
+            "value": 800,
+            "unit": "ml"
+          },
+          "note": "大骨或清雞高湯"
+        },
+        {
+          "name": "太白粉",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "捏丸定型",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 4,
+            "unit": "g"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "白胡椒粉",
+          "amount": {
+            "value": 1,
+            "unit": "g"
+          },
+          "note": "少許提味",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "少許起鍋提香",
+          "group": "調味"
+        }
+      ],
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "summary vs ingredients/steps",
+          "reason": "摘要明列吻仔魚，材料與全部步驟均沒有吻仔魚，不能決定要不要畫、也不能補份量。"
+        },
+        {
+          "field": "summary vs steps[2]",
+          "reason": "摘要「入油鍋微炸定型」，步驟是平底鍋少油滾煎，處理方式不一致。"
+        },
+        {
+          "field": "ingredients vs steps[2]",
+          "reason": "步驟 3 平底鍋加少許油，但材料只列起鍋提香的香油，未列煎丸用油，不能假定同一項用途。"
+        }
+      ],
+      "textReview": "slug 為 beef-meatball-soup，但現標題與材料是翡翠豆腐肉丸湯、豬絞肉，絕不可按 slug 畫牛肉丸。核心三個文字缺口見 blockers；丸子成品可描述部分外觀，但含不含吻仔魚與煎/炸方式不可猜。",
+      "visualFacts": [
+        "板豆腐 300 g，壓細泥擠水；菠菜 80 g，汆燙擠乾極細碎；豬絞肉 100 g，细絞肉。",
+        "胡蘿蔔 30 g 切細末，與菠菜及豆腐肉一起拌入丸子，不是另加整株菠菜或紅蘿蔔條。",
+        "太白粉 15 g、鹽 4 g、白胡椒 1 g、香油 5 ml；高湯 800 ml。",
+        "步驟指定約 6–8 顆均勻小圓丸子；摘要另有未列吻仔魚，無法確定完整食材集合。"
+      ],
+      "quantityAssessment": "已列混合物約 525 g（未計失水）卻只作 6–8 顆「小」丸子，每顆量級約 65–88 g（擠水前）；大小稱呼和量有風險，無來源時不自行縮為更多小丸。原 hero 可辨 7 顆，但多出鍋內整葉菜及蘿蔔條。",
+      "heroDifferences": [
+        "敞口素色雙耳器皿可見，但有大量整葉帶莖菠菜，非全部切極細碎拌丸。",
+        "有獨立長胡蘿蔔條，材料/步驟只指定細末入丸。",
+        "丸子數量約 7 顆位於 6–8 內，但不能消除吻仔魚與煎炸的文字衝突。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": false,
+      "dishPrompt": "HOLD — do not generate. The finished soup would need an open plain soup pot OFF HEAT, 6–8 tofu-and-pork balls flecked with finely minced spinach and carrot in clear broth, no loose spinach leaves or carrot sticks, and no utensils. Whether to include whitebait and whether the balls are fried or pan-seared must be resolved first; never draw beef from the slug.",
+      "promptUse": "Not usable; core recipe facts remain unresolved.",
+      "status": "skipped",
+      "currentAttempts": 0
+    },
+    {
+      "id": "tomato-egg-drop-soup",
+      "title": "番茄蛋花湯",
+      "sourceSha256": "2d2b04263bc756dba930aff21a47d6293743c424c0e605e117a78ba58aaf584f",
+      "heroSha256": "5da4c2444f460add2836bfc9640e62bcef43706ba1d29db47998e9a44be822b0",
+      "sourceRecord": "content/sources/tomato-egg-drop-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=C01-1112",
+        "https://health.udn.com/health/story/6036/4353262"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "番茄",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "牛番茄約 1 顆"
+        },
+        {
+          "name": "雞蛋",
+          "amount": {
+            "value": 3,
+            "unit": "顆"
+          }
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "約 2 支，切成蔥花"
+        },
+        {
+          "name": "食用油",
+          "note": "炒番茄用",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "note": "少許，起鍋前淋上",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 800,
+            "unit": "ml"
+          },
+          "group": "調味"
+        }
+      ],
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料、步驟一致。tip 明寫「可改用」4 顆番茄配 500 ml 水，屬可選替代比例，不是主配方矛盾；成品插畫嚴格按主材料 300 g 番茄、3 顆蛋、800 ml 水，不混用 tip 的濃縮版本。20 分鐘本地估时已有分解紀錄。",
+      "visualFacts": [
+        "牛番茄 300 g，約 1 顆，去蒂切小塊，炒軟出汁後煮湯。",
+        "雞蛋 3 顆，稍打散後淋成黃白相間的細嫩蛋花；不能畫整顆水煮蛋或炒蛋團。",
+        "青蔥 20 g 約 2 支，切蔥花；水 800 ml，鹽、炒番茄用油、少許香油。",
+        "湯色橘紅，保持可見湯面，不畫成乾番茄炒蛋。"
+      ],
+      "quantityAssessment": "一顆番茄、三顆蛋為原料計數，成品以小番茄塊與蛋花表現，不要求三團蛋。主配方 800 ml 湯可畫；油鹽沒有數量就不補。",
+      "heroDifferences": [
+        "容器是米白湯碗，非敞口湯鍋。",
+        "其餘可見番茄小塊、黃色蛋花、蔥花與主配方一致；因容器不符，不引用 hero。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Orange-red tomato broth with small softened tomato chunks, delicate yellow-and-white egg-drop ribbons from three eggs, and chopped scallion rings; clearly a soup with visible broth, not scrambled eggs or whole eggs. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+      "promptUse": "Ready with layout/style reference ONLY; do not attach current hero.",
+      "sourceContext": "launch-content/source-candidates.md 明記兩個已勾選來源的不同番茄/水比例；現主配方選 1 顆約 300 g + 800 ml，tip 明示另一個 4 顆 + 500 ml 版本。recipe-browsing/issues/05-time-basis.md 有 20 分鐘拆解。",
+      "status": "eligible",
+      "currentAttempts": 0
+    },
+    {
+      "id": "peeled-chili-chicken-soup",
+      "title": "甘甜剝皮辣椒雞湯",
+      "sourceSha256": "5d6b43f4414bc28f036ff216fc5922cecf0544274a992adbd4cd336536b113ee",
+      "heroSha256": "e5a06c3e1e11d3b7c9913e9b2576ba1f9ee7dd936b36e3aa356b4282bca1f32d",
+      "sourceRecord": "content/sources/peeled-chili-chicken-soup.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-0868"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": []
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "土雞肉",
+          "amount": {
+            "value": 500,
+            "unit": "g"
+          },
+          "note": "剁小塊洗淨汆燙"
+        },
+        {
+          "name": "剝皮辣椒",
+          "amount": {
+            "value": 8,
+            "unit": "條"
+          },
+          "note": "完整罐裝剝皮辣椒"
+        },
+        {
+          "name": "剝皮辣椒汁",
+          "amount": {
+            "value": 120,
+            "unit": "ml"
+          },
+          "note": "罐內甘醇醃醬汁"
+        },
+        {
+          "name": "生薑",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "切薑片"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "切長蔥段"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 1000,
+            "unit": "ml"
+          },
+          "note": "燉湯高湯底"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 2,
+            "unit": "g"
+          },
+          "note": "少許調整鹹度",
+          "group": "調味"
+        }
+      ],
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "summary vs steps[0:3]",
+          "reason": "摘要說老薑片與蔥段和雞一起慢燉；步驟 1 蔥段只在汆燙鍋使用，撈雞沖淨後，步驟 2 的正式湯鍋只有薑片、沒有蔥段。無法確定成品是否應有長蔥段。"
+        }
+      ],
+      "textReview": "雞肉小塊、8 條完整剝皮辣椒、醃汁 120 ml、薑片、米酒與先下醬汁後下辣椒的流程一致。青蔥在汆燙/燉湯的定位矛盾不可由圖像自行決定。",
+      "visualFacts": [
+        "土雞肉 500 g，剁適口小塊；未指定部位/帶骨狀態，不畫整支大雞腿。",
+        "罐裝剝皮辣椒正好 8 條完整，非切圈或切段；剝皮辣椒汁 120 ml。",
+        "生薑 15 g 切片；青蔥 15 g 切長蔥段，但是否留在成品不明。",
+        "水 1000 ml、米酒 15 ml、鹽 2 g。"
+      ],
+      "quantityAssessment": "8 條辣椒是硬性數量，需在完整湯鍋分散顯示 8 條獨立外輪廓且不被雞塊遮住；原圖僅清楚看到約 3 條，不能充當數量參考。雞塊按重量不猜塊數。",
+      "heroDifferences": [
+        "容器為碗，非敞口湯鍋。",
+        "有兩大塊保留棒腿/整腿形態雞肉，非小塊。",
+        "只能辨出約 3 條剝皮辣椒，未符合 8 條可驗證數量。",
+        "未見長蔥段，但不能用原 hero 解決摘要/步驟的蔥段矛盾。"
+      ],
+      "heroUsable": false,
+      "layoutOnlyPossible": false,
+      "dishPrompt": "HOLD — do not generate. Use an open plain soup pot OFF HEAT, with small chopped country-chicken pieces, exactly eight separately countable whole canned peeled green chilies and thin ginger slices in broth; no whole drumsticks or utensils. Whether long scallion sections belong in the finished soup is unresolved and must not be guessed.",
+      "promptUse": "Not usable until scallion disposition is resolved.",
+      "status": "skipped",
+      "currentAttempts": 0
+    }
+  ]
+}

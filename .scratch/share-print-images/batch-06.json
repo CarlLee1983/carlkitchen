@@ -1,0 +1,233 @@
+[
+  {
+    "id": "chive-omelet",
+    "title": "韭菜烘蛋",
+    "sourceSha256": "62e20c310f4a2af91fa73cf06433b365ed7c15076b17e21b2f0b38cdc071c986",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "A plain ceramic plate with a round cooked chive omelet cut into broad wedges, golden yellow egg with many short chopped chive pieces. Only chives and egg visible; no garnish, no chili, no tomatoes.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: A plain ceramic plate with a round cooked chive omelet cut into broad wedges, golden yellow egg with many short chopped chive pieces. Only chives and egg visible; no garnish, no chili, no tomatoes. No utensils or extra objects. Text verbatim:\n煮奔\n韭菜烘蛋\n韭菜先炒到半熟，再加入雞蛋以中小火煎熟，翻面後續煎至熟。\n2 人份・15 分鐘・非湯料理\n材料\n主料\n韭菜 140 g（切小段）\n雞蛋 5 顆\n調味\n食用油 適量\n鹽 2.5 ml（約 1/2 小匙）\n做法\n1 韭菜洗淨後切成小段。\n2 炒鍋加熱後倒入食用油，放入韭菜炒數分鐘至半熟。\n3 加入雞蛋和鹽，以中小火煎數分鐘。翻面後再煎數分鐘，起鍋。\n煮奔",
+    "generatedSha256": "016e5e7933773f399c9eb890c48a8525dc95f2f340cc34318a89ea43ee6a07b6",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-36a3c970-80eb-4cdc-83c1-1d718eb018f5.png",
+    "webpQuality": 80,
+    "webpBytes": 99218,
+    "webpSha256": "1736cb3a784f46eb1623b361a0f023d2fe211337dbbbc8825ee3aafa0b16213f",
+    "reason": "原圖與final解碼圖獨立逐字、量詞數字與食材切法審核通過。"
+  },
+  {
+    "id": "basil-eggplant",
+    "title": "塔香茄子",
+    "sourceSha256": "8d304dcfc373d13f0f0967ec7218ab5402c258a9e1f0b70d808838fcb44700da",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "A plain ceramic plate of soft purple eggplant SLICES, finely minced garlic and scattered individual basil leaves, coated in reduced soy-paste sauce. No long eggplant batons, no red chilies, no scallions.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: A plain ceramic plate of soft purple eggplant SLICES, finely minced garlic and scattered individual basil leaves, coated in reduced soy-paste sauce. No long eggplant batons, no red chilies, no scallions. No utensils or extra objects. Text verbatim:\n煮奔\n塔香茄子\n茄子先與蒜頭燜軟，再加入九層塔與醬油膏收汁。\n3 人份・15 分鐘・非湯料理\n材料\n主料\n茄子 2 根（切片）\n九層塔 1 小把\n蒜頭 3 瓣（來源標示 3 至 4 瓣，取下限並切細）\n調味\n食用油 15 ml\n醬油膏 少許\n水 少許\n做法\n1 茄子切片，蒜頭切細。\n2 鍋中加熱食用油，放入蒜頭與茄子拌炒，蓋上鍋蓋燜至茄子稍軟。\n3 加入醬油膏、九層塔與少許水，拌勻後蓋上鍋蓋，燜至湯汁減少再起鍋。\n煮奔",
+    "generatedSha256": "79e34d5cada23b6c596652a2b4889735245e17f2f63582125be99008690d4af8",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-51cd0367-e0a5-4adf-a824-392154308908.png",
+    "webpQuality": 80,
+    "webpBytes": 91578,
+    "webpSha256": "fd290ed9ed07d73522fc18a23025db3a46f64ee4797981cf8e53204da8a8655f",
+    "reason": "原圖與final解碼圖獨立逐字、量詞數字與食材切法審核通過。"
+  },
+  {
+    "id": "eggplant-clay-pot",
+    "title": "紅燒茄子煲",
+    "sourceSha256": "66b732ec94cef9a4e4150d7d2bad2a4241f0481c93857f56f22e0b3f7490605c",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "A reddish-brown open earthenware casserole, OFF HEAT ready to serve, filled with cooked purple eggplant SEGMENTS and green/white scallion SEGMENTS coated with reduced dark soy-paste sauce. No chilies, no garlic, no basil, no ground meat.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: A reddish-brown open earthenware casserole, OFF HEAT ready to serve, filled with cooked purple eggplant SEGMENTS and green/white scallion SEGMENTS coated with reduced dark soy-paste sauce. No chilies, no garlic, no basil, no ground meat. No utensils or extra objects. Text verbatim:\n煮奔\n紅燒茄子煲\n茄子先過油，再與蔥段和醬油膏放入砂鍋燜煮至湯汁收乾。\n2 人份・30 分鐘・非湯料理\n材料\n主料\n茄子 2 條（切段）\n蔥 3 支（切段）\n調味\n醬油膏 30 ml（約 2 大匙）\n水 適量\n食用油 適量（過油及爆香用）\n做法\n1 茄子切成段，先浸在水裡，撈出後把水分瀝乾。\n2 油鍋燒熱後放入茄段過油，再撈出放在一旁。\n3 鍋裡重新熱油，先把蔥段爆出香味，再把茄段倒回鍋中。\n4 加進醬油膏和水後，全部移到砂鍋裡，燜煮到湯汁收乾為止。\n煮奔",
+    "generatedSha256": "0cfdb7f52ab35defb736be0f2a309a450ba699dd21a631219e1f6da05e2b3fb1",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-7ed9000b-9801-45ba-ba89-9e2986a3b24b.png",
+    "webpQuality": 80,
+    "webpBytes": 109088,
+    "webpSha256": "ce76ea2a68b88913652ab4b50d868ad5a3645a06a7c48d987259c852f7b8ecdf",
+    "reason": "原圖與final解碼圖獨立逐字、量詞數字與食材切法審核通過。"
+  },
+  {
+    "id": "garlic-water-spinach",
+    "title": "蒜炒空心菜",
+    "sourceSha256": "2c0b234b497127f12819aecb3cc161c2cf1d433a6b289cc213565bd528a27268",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "A plain ceramic plate of stir-fried water spinach: hollow green stem SEGMENTS with slender cooked green LEAVES, thin garlic SLICES, very finely minced ginger and tiny diced red chili. Chili must be tiny DICE, never rings. No shrimp: optional tip shrimp are not used.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: A plain ceramic plate of stir-fried water spinach: hollow green stem SEGMENTS with slender cooked green LEAVES, thin garlic SLICES, very finely minced ginger and tiny diced red chili. Chili must be tiny DICE, never rings. No shrimp: optional tip shrimp are not used. No utensils or extra objects. Text verbatim:\n煮奔\n蒜炒空心菜\n蒜片、薑末和辣椒爆香後，先炒菜梗再下菜葉，大火快炒到翠綠就起鍋。菜梗脆、葉片軟，是常見的家常炒青菜。\n3 人份・10 分鐘・非湯料理\n材料\n主料\n空心菜 500 g（菜梗、菜葉分開）\n大蒜 3 瓣（切薄片）\n辣椒 0.5 條（切小丁）\n薑末 5 g\n調味\n食用油 30 ml（約 2 湯匙）\n米酒 15 ml（約 1 湯匙）\n熱水 30 ml（約 2 湯匙）\n鹽 3 g（約 1/2 茶匙）\n雞粉 適量（約 1/2 茶匙）\n做法\n1 空心菜切掉根部、洗淨，切成段，菜梗和菜葉分開放；辣椒切小丁，大蒜去膜切成薄片。\n2 炒鍋燒熱後倒入食用油，放入薑末、辣椒丁和蒜片，炒到蒜片邊緣微黃、聞得到蒜香。\n3 轉大火，先放入空心菜梗快炒幾下，炒到菜梗都沾上油、顏色轉為鮮綠。\n4 放入空心菜葉，加入米酒、熱水、鹽和雞粉，大火拌炒到菜葉縮軟、整體顏色更翠綠就起鍋。\n小提醒\n想讓香氣更足，可在爆香時加入 5 g 櫻花蝦一起炒。\n煮奔",
+    "generatedSha256": "acb72d315524b2c790f2d6904c78c3c65781041b999b8e853e30b4c6a39d6140",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-e4d79249-6ad8-4735-aecc-9c8beb048b8c.png",
+    "webpQuality": 80,
+    "webpBytes": 113380,
+    "webpSha256": "c6cb213a4d372cca859e8c53b1ec05effe70a37a8215bd5ff51337539aeb8fba",
+    "reason": "原圖與final解碼圖獨立逐字、量詞數字與食材切法審核通過。"
+  },
+  {
+    "id": "wood-ear-salad",
+    "title": "涼拌木耳",
+    "sourceSha256": "e2c6ec0bc10f61090c20d236a0a2a3cda8dfb473d69adb8d011a8feb6568097f",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "A plain ceramic shallow bowl of black wood-ear mushroom torn small pieces, very thin ginger THREADS, seedless red chili THREADS, finely minced garlic and scattered tiny white sesame seeds, lightly coated in sauce. No scallions, no green herbs, no chili rings.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: A plain ceramic shallow bowl of black wood-ear mushroom torn small pieces, very thin ginger THREADS, seedless red chili THREADS, finely minced garlic and scattered tiny white sesame seeds, lightly coated in sauce. No scallions, no green herbs, no chili rings. No utensils or extra objects. Text verbatim:\n煮奔\n涼拌木耳\n新鮮黑木耳汆燙後泡冰水冰鎮，搭配嫩薑絲、辣椒與蒜末，以醬油膏、白醋和香油調汁拌勻。口感脆嫩彈牙、酸甜開胃。\n2 人份・15 分鐘・非湯料理\n材料\n主料\n新鮮黑木耳 200 g（沖洗後手撕成適口小塊）\n嫩薑 10 g（切細絲）\n辣椒 1 支（切細絲）\n調味\n蒜仁 10 g（約 2 瓣，切碎末）\n醬油膏 30 ml（約 2 大匙）\n砂糖 15 ml（約 1 大匙）\n白醋 15 ml（約 1 大匙）\n香油 5 ml（約 1 茶匙）\n熟白芝麻 5 g（約 1 茶匙，提香用）\n做法\n1 新鮮黑木耳洗淨後以手撕成適口小塊；嫩薑洗淨切成細絲，辣椒去籽切細絲，蒜仁拍碎切成蒜末備用。\n2 煮滾一鍋水，放入黑木耳汆燙約 1 分鐘，撈起立即泡入冰水中冰鎮 5 分鐘，瀝乾多餘水分。\n3 保鮮盒中倒入醬油膏、白醋、砂糖與香油，攪拌至糖粒完全溶解融化成酸甜醬汁。\n4 將冰鎮瀝乾的黑木耳、薑絲、辣椒絲與蒜末加入醬汁中翻拌均勻，撒上熟白芝麻，冷藏醃漬更入味。\n小提醒\n黑木耳汆燙後立刻泡冰水能鎖住脆度，拌好後放冰箱冷藏醃漬 1 小時或隔夜，滋味更加酸甜爽脆。\n煮奔",
+    "generatedSha256": "116bb15c06649cd314605aef3198c9908df1d079e733b03ade549104fae239ce",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-07001628-9502-4a58-a5d1-316241df2b56.png",
+    "webpQuality": 80,
+    "webpBytes": 121818,
+    "webpSha256": "1eaba45290fc8bf8c7a6aea46a64fcf458dbc927fce067a903f09aefd0dd0b2a",
+    "reason": "原圖與final解碼圖獨立逐字、量詞數字與食材切法審核通過。"
+  },
+  {
+    "id": "string-beans-scrambled-eggs",
+    "title": "四季豆炒蛋",
+    "sourceSha256": "2931f6ca73ba69e1b2a15b33a0c4909b78b47ee9f71fe0a63ed94dfb8ae26f1d",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "A plain ceramic plate of golden loose scrambled egg pieces mixed with green beans finely DICED approximately 0.5 cm and fine crumbled cooked ground pork plus fine minced garlic. Beans are tiny short diced cross-sections, NOT long green bean segments. No other garnish.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: A plain ceramic plate of golden loose scrambled egg pieces mixed with green beans finely DICED approximately 0.5 cm and fine crumbled cooked ground pork plus fine minced garlic. Beans are tiny short diced cross-sections, NOT long green bean segments. No other garnish. No utensils or extra objects. Text verbatim:\n煮奔\n四季豆炒蛋\n清脆四季豆去老筋切成精巧小丁，豬絞肉小火煸炒至微焦出油香，新鮮雞蛋打散調入少許鹽與白胡椒粉，熱油鍋倒入四季豆丁與絞肉大火快炒斷生，淋入蛋液以大火快速翻炒至蛋花金黃鬆散、四季豆翠綠脆甜，甘香爽口。\n3 人份・15 分鐘・非湯料理\n材料\n主料\n四季豆 200 g（去頭尾老筋切小丁約 0.5 公分）\n雞蛋 3 顆（打散成蛋液）\n豬絞肉 50 g（細絞肉增香）\n蒜頭 10 g（切細蒜末）\n調味\n米酒 10 ml（炒肉去腥）\n鹽 3 g（約半茶匙）\n白胡椒粉 1 g（少許提味）\n做法\n1 四季豆洗淨撕除兩側粗纖維，切成約半公分均勻小丁；大蒜切碎末；雞蛋打入大碗中加少許鹽與白胡椒粉攪拌均勻備用。\n2 熱鍋倒入適量油，放入豬絞肉與蒜末小火煸炒至絞肉變白散開釋放油香，嗆入米酒炒勻。\n3 加入四季豆丁大火翻炒約 1 分鐘至四季豆轉為油亮深綠斷生微軟。\n4 均勻淋入打散的蛋液，轉大火快速用鍋鏟推動翻炒，使蛋液包裹四季豆丁受熱凝固成金黃鬆散小塊狀，調入剩餘鹽炒勻即可盛盤。\n小提醒\n四季豆務必切成細巧小丁，易熟且能與鬆散的蛋花完美融合；大火快炒四季豆至斷生再淋蛋液，蛋香濃郁且四季豆清脆不夾生。\n煮奔",
+    "generatedSha256": "2c8a7d0ed8067a89ca23ad8a933ded800ca5f000537ab69c3dbcaabb94ee26ff",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-4528c659-11fe-4760-8421-b02f4e1c9e23.png",
+    "webpQuality": 80,
+    "webpBytes": 123870,
+    "webpSha256": "ca443521dc935c4269246bc9a6b40e43e9a4b9763fbbbfc572b43c7bb0ad96b1",
+    "reason": "原圖與final解碼圖獨立逐字、量詞數字與食材切法審核通過。"
+  },
+  {
+    "id": "garlic-spaghetti",
+    "title": "蒜香義大利麵",
+    "sourceSha256": "7d45799edee0d66c05050d5b7983d25b82b036690b4b77e90e0448f19f8e2515",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "A plain ceramic plate of cooked spaghetti lightly coated in olive oil with thin golden garlic SLICES, tiny red chili flakes and finely minced parsley. Optional black pepper, parmesan and lemon are omitted. No whole parsley leaves, no chili rings, no lemon wedge.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: A plain ceramic plate of cooked spaghetti lightly coated in olive oil with thin golden garlic SLICES, tiny red chili flakes and finely minced parsley. Optional black pepper, parmesan and lemon are omitted. No whole parsley leaves, no chili rings, no lemon wedge. No utensils or extra objects. Text verbatim:\n煮奔\n蒜香義大利麵\n蒜片以橄欖油小火煎到金黃，拌入紅辣椒碎和煮到偏硬的義大利麵，大火快炒幾秒再撒上香芹。蒜香清爽，單盤就是一餐。\n1 人份・30 分鐘・主食\n材料\n主料\n義大利麵 160 g\n橄欖油 30 ml\n蒜頭 2 瓣（切成薄片）\n紅辣椒碎 5 g\n香芹 2 束（切末）\n調味\n鹽 10 g（煮麵水用）\n黑胡椒 少許（可省略）\n帕瑪森起司 少許（可省略）\n檸檬汁 少許（可省略）\n做法\n1 蒜頭剝皮後切成半透明的薄片；香芹去根洗淨，切成末備用。\n2 一鍋水煮滾後加鹽，放入義大利麵煮到全熟但還偏硬，時間比包裝標示略短一些。撈起瀝乾，留一杓煮麵水備用。\n3 冷鍋倒入橄欖油，放入蒜片，小火慢慢煎到金黃，再加入紅辣椒碎拌炒。\n4 倒入瀝乾的麵條，加入香芹末和一杓煮麵水，大火快炒約 10 秒就關火。\n5 撒上黑胡椒和帕瑪森起司，滴幾滴檸檬汁拌勻，盛盤上桌。這三樣都可以省略。\n煮奔",
+    "generatedSha256": "f245196c033fbf6e253ee5d1483c8cfbedc538e64dc411c6c73423a641c5b9de",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-f3435356-8512-4ae9-8e76-962a7e487134.png",
+    "webpQuality": 80,
+    "webpBytes": 116578,
+    "webpSha256": "18aeb65f1522cf69ea255211dcceffed03d2cc15e003cfb2e7f01d4b71c8b0ac",
+    "reason": "香芹呈完整三裂小葉／連梗葉簇，非切末；另有紅辣椒短筒圈，非碎末。原图與放大像素皆確認，本輪未重試。"
+  },
+  {
+    "id": "bitter-melon-pork-rib-soup",
+    "title": "苦瓜排骨湯",
+    "sourceSha256": "9bfbebabe1f00bbc9de978e2422d4be99e1883f657c53bd8dc83b82ddc4e91dd",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Clear lightly golden broth with small bone-in pork rib chunks, small pale-green bitter melon pieces fully peeled and deseeded, and thin ginger slices; no green bumpy rind, no seeds, no hollow melon tubes. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Clear lightly golden broth with small bone-in pork rib chunks, small pale-green bitter melon pieces fully peeled and deseeded, and thin ginger slices; no green bumpy rind, no seeds, no hollow melon tubes. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot. Text verbatim:\n煮奔\n苦瓜排骨湯\n排骨和苦瓜分別汆燙沖涼，加薑片和水煮滾後，以小火保持微滾約 30 分鐘再調味。\n3 人份・50 分鐘・湯\n材料\n主料\n排骨 200 g（切小塊）\n苦瓜 200 g（去皮去籽切小塊）\n薑片 10 g\n水 700 ml\n調味\n鹽 5 ml（約 1 茶匙）\n雞精粉 5 ml（約 1 茶匙）\n米酒 5 ml（約 1 茶匙）\n做法\n1 排骨切成小塊，下滾水燙約 1 分鐘，取出用冷水沖涼。\n2 苦瓜削皮、挖掉籽，切成小塊，一樣下滾水燙約 1 分鐘，取出用冷水沖涼。\n3 燙過的排骨和苦瓜放進湯鍋，加薑片與水，開中火煮到滾。\n4 改小火，讓湯面保持微微冒泡約 30 分鐘，再加鹽、雞精粉和米酒調味。\n煮奔",
+    "generatedSha256": "4f8956778c3d9fcea29d53fd7db19c200e475f9af365d51b26a6603c3e7a7285",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-be4cf969-80cd-434c-a7da-a2212e1eb476.png",
+    "webpQuality": 80,
+    "webpBytes": 90464,
+    "webpSha256": "3578528f538cf1e77a116620535146d83d0e3158630244efdc1a020b6ef103d3",
+    "reason": "追加湯圖原圖/final逐字、數字與食材切法獨立審核通過；原生dwebp像素核對一致。"
+  },
+  {
+    "id": "milkfish-belly-soup",
+    "title": "虱目魚肚湯",
+    "sourceSha256": "b31aa2c8fdc8123e5fd9c69a82bbdb4cdde489af9bf0a4fe064b39bfe207a57d",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. One intact uncut boneless milkfish belly fillet, about 180 g, cooked white in clear broth, topped with extremely fine ginger threads and finely lengthwise-shredded scallion strands curling gently; no scallion rings, no extra fish pieces. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. One intact uncut boneless milkfish belly fillet, about 180 g, cooked white in clear broth, topped with extremely fine ginger threads and finely lengthwise-shredded scallion strands curling gently; no scallion rings, no extra fish pieces. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot. Text verbatim:\n煮奔\n虱目魚肚湯\n新鮮去刺虱目魚肚入沸水清煮，加入米酒去腥與鹽巴提鮮，魚油清甜脂香四溢，起鍋撒上細薑絲與翠綠蔥絲，湯頭清澈鮮美，經典台南古早風味。\n2 人份・15 分鐘・湯\n材料\n主料\n虱目魚肚 1 片（約 180 g，無刺洗淨拭乾）\n水 600 ml（煮湯用清水）\n調味\n薑絲 15 g（老薑切極細絲）\n蔥絲 10 g（青蔥切絲泡水微捲）\n鹽 3 g（約半茶匙）\n米酒 5 ml（約 1 茶匙去腥提鮮）\n做法\n1 虱目魚肚洗淨並以廚房紙巾擦乾水分；老薑切成細薑絲，青蔥切成細蔥絲泡入冷水備用。\n2 取湯鍋倒入水大火煮至沸騰，將虱目魚肚輕輕滑入滾水中，煮約 3 至 4 分鐘至魚肉熟透變白。\n3 加入鹽與米酒調勻煮沸立即熄火，將魚肚與清澈湯汁盛入深碗中，頂端放上細薑絲與蔥絲即可趁熱享用。\n小提醒\n虱目魚肚肉質細嫩，滾水下鍋後以中小火煮 3 分鐘即可，切勿久滾以保持滑潤魚脂；薑絲於起鍋前或盛碗時加入，清爽辛香最能襯托魚肚甘甜。\n煮奔",
+    "generatedSha256": "348ea8607dcb0a0b8695e3d27e6a545342d3c18ea1e2ea753ca70f83af739b19",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-58eb3208-d4d6-4125-959c-5505131940c3.png",
+    "webpQuality": 80,
+    "webpBytes": 116100,
+    "webpSha256": "ed63a859ce3fc66f6c49232cd24278e86629d2d54218b0eb7826b2a5cf421ab9",
+    "reason": "追加湯圖原圖/final逐字、數字與食材切法獨立審核通過；原生dwebp像素核對一致。"
+  },
+  {
+    "id": "clear-radish-beef-soup",
+    "title": "清燉蘿蔔牛肉湯",
+    "sourceSha256": "76106eb50845501c9a8065a2c1cee43c46b2b0f8abb5642e10b052891dce5a59",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Clear broth with large tender beef shank chunks showing shank grain, smaller irregular roll-cut peeled white radish and carrot pieces, white radish about three times the carrot quantity, and about five thin ginger slices. No beef ribs, no scallions. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Clear broth with large tender beef shank chunks showing shank grain, smaller irregular roll-cut peeled white radish and carrot pieces, white radish about three times the carrot quantity, and about five thin ginger slices. No beef ribs, no scallions. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot. Text verbatim:\n煮奔\n清燉蘿蔔牛肉湯\n牛腱切大塊汆燙去腥，與白蘿蔔、紅蘿蔔及薑片一同入鍋，以微火慢燉三小時至牛肉軟嫩多汁、蘿蔔甘甜透亮。湯色清澄、風味醇厚溫潤。\n4 人份・190 分鐘・湯\n材料\n主料\n牛腱 500 g（約 1 個，切成大塊）\n白蘿蔔 300 g（去皮切成滾刀小塊）\n紅蘿蔔 100 g（去皮切成滾刀小塊）\n水 1200 ml（慢燉高湯用）\n調味\n薑片 15 g（約 5 片，去腥提味）\n鹽 3 g（約 1/2 茶匙，起鍋前調味）\n做法\n1 牛腱順著肉紋切成適口大塊，放入滾水中汆燙去除血水與雜質，撈起以冷水沖洗乾淨；生薑去皮切片備用。\n2 白蘿蔔與紅蘿蔔削去外皮，切成滾刀小塊，放入滾水中快速汆燙約 1 分鐘去除生澀味，撈起瀝乾。\n3 取深湯鍋放入汆燙好的牛腱塊、雙色蘿蔔塊與薑片，注入清水大火煮滾，撇去表面微量浮沫後轉微火，蓋上鍋蓋慢燉 3 小時至牛肉軟嫩、蘿蔔透甜。\n4 燉煮完成後掀蓋，加入鹽調勻試味，確認鹹淡適中即可熄火，趁熱盛入湯碗享用。\n小提醒\n牛肉與雙色蘿蔔先經沸水汆燙去除血水與生苦味，是維持湯頭清澈不濁的關鍵；燉煮時保持微火慢煨，能讓牛腱筋絡徹底軟化入味。\n煮奔",
+    "generatedSha256": "dba6d956cd9b0791c59b226b7f47e9a99115204ad8d038fbdc2512e40c1a9abf",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-a78a0aa5-0c23-4648-bb11-6bad1bd3cba6.png",
+    "webpQuality": 80,
+    "webpBytes": 123976,
+    "webpSha256": "0c234c5274735bfd04148f4cb27523681e4dbb5ee637d64e004b450af3912196",
+    "reason": "追加湯圖原圖/final逐字、數字與食材切法獨立審核通過；原生dwebp像素核對一致。"
+  },
+  {
+    "id": "tomato-egg-drop-soup",
+    "title": "番茄蛋花湯",
+    "sourceSha256": "2d2b04263bc756dba930aff21a47d6293743c424c0e605e117a78ba58aaf584f",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Orange-red tomato broth with small softened tomato chunks, delicate yellow-and-white egg-drop ribbons from three eggs, and chopped scallion rings; clearly a soup with visible broth, not scrambled eggs or whole eggs. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished soup illustration, 45-degree overhead view. Use one open, plain, unpatterned two-handled soup pot, OFF HEAT and ready to serve, with the full pot visible. Orange-red tomato broth with small softened tomato chunks, delicate yellow-and-white egg-drop ribbons from three eggs, and chopped scallion rings; clearly a soup with visible broth, not scrambled eggs or whole eggs. No utensils, no lid, no stove, no extra garnish or ingredients, nothing beside the pot. Text verbatim:\n煮奔\n番茄蛋花湯\n番茄先下鍋炒軟出汁，再加水煮滾、淋入蛋液成蛋花。湯色橘紅、蛋花細嫩，適合搭配家常菜。\n3 人份・20 分鐘・湯\n材料\n主料\n番茄 300 g（牛番茄約 1 顆）\n雞蛋 3 顆\n青蔥 20 g（約 2 支，切成蔥花）\n調味\n食用油 適量（炒番茄用）\n鹽 適量\n香油 少許（起鍋前淋上）\n水 800 ml\n做法\n1 番茄去蒂切成小塊，青蔥切成蔥花。雞蛋打進碗裡稍微攪散，還看得到蛋白與蛋黃的紋路就好，不必完全打勻。\n2 湯鍋燒熱後倒入食用油，下番茄塊翻炒，炒到番茄變軟出水、油色轉紅。\n3 倒入水煮到沸騰，滾了之後再續煮 3 分鐘，讓番茄味煮進湯裡。\n4 加鹽調味。蛋液分幾次細細地繞圈倒入湯中，邊倒邊輕推湯面，等蛋液散開凝固成蛋花。\n5 撒入蔥花後立刻熄火，淋上香油就可以盛碗。\n小提醒\n想要湯色更紅、番茄味更濃，可改用番茄 4 顆配 500 ml 水的比例，鹽約 1/2 茶匙。\n煮奔",
+    "generatedSha256": "b9c7f7b547406a4b657298ad87b8af26c366f4b33d1987a4f68e6cb85dd7ef6f",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "generatedFilename": "exec-c48935e1-3b13-42dc-8ba1-4505527f5924.png",
+    "webpQuality": 80,
+    "webpBytes": 109064,
+    "webpSha256": "45c0f8167557bc8e1b1fc043822b72f67ce35e87c9886005bf95886615b68893",
+    "reason": "追加湯圖原圖/final逐字、數字與食材切法獨立審核通過；原生dwebp像素核對一致。"
+  }
+]

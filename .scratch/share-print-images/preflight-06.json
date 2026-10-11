@@ -1,0 +1,29 @@
+{
+  "base": "836cc7b15e523d01331a2db3e09bcb8e1755bc25",
+  "heroReview": {
+    "chive-omelet": "形態符合",
+    "basil-eggplant": "形態符合",
+    "eggplant-clay-pot": "形態符合",
+    "garlic-water-spinach": "舊hero辣椒圈，改依原文字小丁不用hero",
+    "wood-ear-salad": "舊hero額外綠碎，不用hero",
+    "string-beans-scrambled-eggs": "形態符合",
+    "garlic-spaghetti": "形態符合"
+  },
+  "skipped": [
+    {
+      "id": "sesame-spinach",
+      "currentAttempts": 0,
+      "reason": "摘要白芝麻醬汁但材料僅醬油膏與芝麻，先不猜醬汁形態"
+    },
+    {
+      "id": "steamed-bitter-melon-tree-seeds",
+      "currentAttempts": 0,
+      "reason": "摘要高湯、步驟水及材料未列高湯不一致"
+    },
+    {
+      "id": "thai-basil-pork",
+      "currentAttempts": 0,
+      "reason": "本批先跳過需預製但製法未提供的豬肉燥"
+    }
+  ]
+}
