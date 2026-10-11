@@ -1,0 +1,86 @@
+title: 肉絲炒麵
+summary: 豬肉絲以醬油醃漬入味，起油鍋煸香洋蔥絲與蔥段，加入爽脆高麗菜絲、青江菜與肉絲大火快炒，投入彈牙烏龍麵條與高湯燜炒收汁，麵條吸滿鮮濃肉汁與蔬菜甘甜，鹹香濃郁、麵香十足。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: 以麵條為主體搭配肉絲與蔬菜熱炒，可獨立作為一餐，屬於主食料理。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [炒麵, 烏龍麵, 主食, 家常便飯, 熱炒]
+aliases: [台式肉絲炒麵, 什錦肉絲炒麵]
+ingredients:
+  - name: 烏龍麵
+    amount:
+      value: 200
+      unit: g
+    note: 熟烏龍麵或炒麵條
+  - name: 豬肉絲
+    amount:
+      value: 100
+      unit: g
+    note: 豬里肌或梅花肉切絲
+  - name: 高麗菜
+    amount:
+      value: 80
+      unit: g
+    note: 洗淨切粗絲
+  - name: 青江菜
+    amount:
+      value: 50
+      unit: g
+    note: 洗淨對剖切段
+  - name: 洋蔥
+    amount:
+      value: 40
+      unit: g
+    note: 去皮切細絲
+  - name: 青蔥
+    amount:
+      value: 20
+      unit: g
+    note: 洗淨切段
+  - name: 醬油
+    amount:
+      value: 20
+      unit: ml
+    note: 醃肉與炒麵調味
+    group: 調味
+  - name: 水
+    amount:
+      value: 100
+      unit: ml
+    note: 煨麵高湯水
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提香
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋提味
+    group: 調味
+steps:
+  - text: 豬肉切均勻細絲加少許醬油抓勻醃漬；高麗菜切粗絲、青江菜切段、洋蔥切細絲、青蔥切段備用。
+    image:
+      src: ./step-1.webp
+      alt: 豬肉切均勻細絲加少許醬油抓勻醃漬；高麗菜切粗絲、青江菜切段、洋蔥切細絲、青蔥切段備用。
+  - text: 熱鍋倒入香油與少許植物油，放入洋蔥絲與蔥段中火煸炒出甜香，倒入醃好的豬肉絲大火快炒至肉色轉白八分熟。
+  - text: 放入高麗菜絲與青江菜段大火翻炒均勻，倒入烏龍麵條、清水、醬油與白胡椒粉，蓋鍋蓋中小火燜煮約 2 分鐘讓麵條吸收鮮美醬汁。
+    image:
+      src: ./step-3.webp
+      alt: 放入高麗菜絲與青江菜段大火翻炒均勻，倒入烏龍麵條、清水、醬油與白胡椒粉，蓋鍋蓋中小火燜煮約 2 分鐘
+  - text: 揭蓋轉大火快速翻拌收乾多餘湯汁，淋入香油翻勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的肉絲炒麵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 肉絲先用少許醬油抓醃入味，下鍋快速炒散不黏連；燜煮麵條時加入蔬菜與少許水蓋上鍋蓋，能讓蔬菜甜汁完全滲透進麵心。

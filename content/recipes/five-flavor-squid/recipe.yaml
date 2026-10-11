@@ -1,0 +1,52 @@
+title: 五味軟絲
+summary: 新鮮厚實軟絲整隻入滾水，加青蔥與老薑片慢火汆燙燜熟，撈起冰鎮切片保持鮮脆彈牙，淋上以番茄醬、烏醋、醬油膏、薑泥與蒜泥調製的經典台式五味醬，酸甜微辣、海味極鮮。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以新鮮軟絲汆燙切片為唯一海鮮主角，淋上台式五味醬，屬於海鮮類冷盤料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [五味醬, 軟絲, 海鮮, 台式冷盤, 開胃菜]
+aliases: [五味冰鎮軟絲, 五味透抽]
+ingredients:
+  - name: 軟絲
+    amount:
+      value: 1
+      unit: 尾
+    note: 約 400 g 去內臟透明軟骨撕除外膜洗淨
+  - name: 青蔥
+    amount:
+      value: 15
+      unit: g
+    note: 切長段汆燙去腥
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 切薑片汆燙用
+  - name: 五味醬
+    amount:
+      value: 60
+      unit: g
+    note: 番茄醬、烏醋、醬油膏、薑蒜泥、糖調製
+    group: 調味
+steps:
+  - text: 軟絲洗淨撕除外膜與內臟透明軟骨，瀝乾水分；青蔥切段、生薑切片備用。
+    image:
+      src: ./step-1.webp
+      alt: 軟絲洗淨撕除外膜與內臟透明軟骨，瀝乾水分；青蔥切段、生薑切片備用。
+  - text: 湯鍋注入足量清水煮滾，放入青蔥段與生薑片煮沸，放入軟絲轉小火煮約 3 分鐘，熄火加蓋燜 2 分鐘至熟透微捲挺立。
+    image:
+      src: ./step-2.webp
+      alt: 湯鍋注入足量清水煮滾，放入青蔥段與生薑片煮沸，放入軟絲轉小火煮約 3 分鐘，熄火加蓋燜 2 分鐘至熟
+  - text: 撈起軟絲立即浸入冰開水中冰鎮降溫，瀝乾水分後切成適口厚圈片，整齊排入盤中，均勻淋上酸甜微辣的五味醬即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的五味軟絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 軟絲汆燙時間切忌過長，煮 3 分鐘燜 2 分鐘熟透即撈出泡冰水，肉質能維持彈嫩不韌口；切圈時刀口俐落更顯刀工美感。

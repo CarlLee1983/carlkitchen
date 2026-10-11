@@ -1,0 +1,81 @@
+title: 芹菜炒花枝丸
+summary: 鮮甜多汁花枝丸切厚塊，熱油爆香蒜末，投入花枝丸煸炒至表面微金黃微焦香，放入翠綠芹菜段、黑木耳絲與紅辣椒絲大火快炒，淋入少許高湯與香油燴炒收汁，爽脆多汁、海味清香。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以花枝丸切塊為主要海鮮主角，搭配芹菜與木耳絲快炒，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [花枝丸, 芹菜, 熱炒, 家常菜, 海鮮]
+aliases: [芹菜花枝丸, 芹菜炒墨魚丸]
+ingredients:
+  - name: 花枝丸
+    amount:
+      value: 250
+      unit: g
+    note: 約 8 顆切厚片或對半切塊
+  - name: 芹菜
+    amount:
+      value: 300
+      unit: g
+    note: 摘除老葉洗淨切 4 公分長段
+  - name: 黑木耳
+    amount:
+      value: 30
+      unit: g
+    note: 泡軟切細絲
+  - name: 紅辣椒
+    amount:
+      value: 10
+      unit: g
+    note: 去籽切細絲配色
+  - name: 大蒜
+    amount:
+      value: 10
+      unit: g
+    note: 去皮剁蒜末
+  - name: 高湯
+    amount:
+      value: 50
+      unit: ml
+    note: 或清水煨炒
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 約 1/4 茶匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提香
+    group: 調味
+  - name: 香油
+    amount:
+      value: 3
+      unit: ml
+    note: 起鍋少許提味
+    group: 調味
+steps:
+  - text: 花枝丸切厚片或四等分大塊；芹菜摘去菜葉洗淨切 4 公分長段；黑木耳洗淨切絲、紅辣椒去籽切絲、大蒜切末備用。
+    image:
+      src: ./step-1.webp
+      alt: 花枝丸切厚片或四等分大塊；芹菜摘去菜葉洗淨切 4 公分長段；黑木耳洗淨切絲、紅辣椒去籽切絲、大蒜切末
+  - text: 炒鍋熱鍋倒入少許植物油，放入大蒜末小火爆出香氣，倒入花枝丸塊中火煸炒 2 分鐘至表面呈現微焦微金黃色澤。
+  - text: 放入黑木耳絲、紅辣椒絲與芹菜段轉大火翻炒 1 分鐘，加入鹽、白胡椒粉與高湯煨炒至蔬菜斷生脆甜。
+    image:
+      src: ./step-3.webp
+      alt: 放入黑木耳絲、紅辣椒絲與芹菜段轉大火翻炒 1 分鐘，加入鹽、白胡椒粉與高湯煨炒至蔬菜斷生脆甜。
+  - text: 起鍋前滴入數滴香油快速翻勻，即可盛盤上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的芹菜炒花枝丸
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 花枝丸先下油鍋煸至表面微金黃上色，香氣倍增且表皮帶點韌度更具口感；芹菜下鍋後大火快炒片刻即可，避免炒太久變軟失掉脆度。

@@ -1,0 +1,98 @@
+title: 魚香烘蛋
+summary: 雞蛋打勻調入太白粉水入熱油鍋高溫烘煎成外酥內嫩金黃厚烘蛋，另起鍋爆香蒜末、薑末與辣豆瓣醬，炒香豬絞肉末、木耳丁與蔥花，調入醬油、烏醋與白糖燴煮成酸甜微辣魚香醬汁澆淋烘蛋上，層次豐富極致下飯。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean, meat]
+classificationReason: 以雞蛋厚煎烘蛋為主角，淋上豬絞肉與辛香料烹調之經典魚香肉燥醬汁，屬於蛋豆與肉類並陳料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [烘蛋, 魚香, 川味, 家常名菜, 下飯菜]
+aliases: [川味魚香烘蛋, 魚香煎蛋]
+ingredients:
+  - name: 雞蛋
+    amount:
+      value: 4
+      unit: 顆
+    note: 打勻成濃郁蛋液
+  - name: 豬絞肉
+    amount:
+      value: 80
+      unit: g
+    note: 細豬絞肉炒肉燥
+  - name: 黑木耳
+    amount:
+      value: 20
+      unit: g
+    note: 切細碎丁
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 切細碎蔥花
+  - name: 大蒜
+    amount:
+      value: 15
+      unit: g
+    note: 去皮切蒜末
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 切細薑末
+  - name: 太白粉水
+    amount:
+      value: 20
+      unit: ml
+    note: 10 ml 入蛋液、10 ml 勾魚香芡汁
+    group: 調味
+  - name: 辣豆瓣醬
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙炒香
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 烏醋
+    amount:
+      value: 10
+      unit: ml
+    note: 約 2 茶匙帶出酸香
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 10
+      unit: g
+    note: 約 2 茶匙提鮮
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 50
+      unit: ml
+    note: 高溫烘蛋油
+    group: 調味
+steps:
+  - text: 雞蛋打入大碗中，加入 10 ml 太白粉水攪打均勻備用；大蒜、生薑切細末，黑木耳切細碎丁，青蔥切細蔥花備用。
+    image:
+      src: ./step-1.webp
+      alt: 雞蛋打入大碗中，加入 10 ml 太白粉水攪打均勻備用；大蒜、生薑切細末，黑木耳切細碎丁，青蔥切細蔥
+  - text: 炒鍋倒入植物油燒至七分熱，一口氣倒入打勻蛋液，用鍋鏟快速從邊緣往中間推攏，中大火烘煎至兩面膨鬆金黃酥脆，盛入圓盤備用。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋倒入植物油燒至七分熱，一口氣倒入打勻蛋液，用鍋鏟快速從邊緣往中間推攏，中大火烘煎至兩面膨鬆金黃酥
+  - text: 鍋中留少許底油，放入豬絞肉小火煸炒至肉色轉白出油，加入蒜末、薑末與辣豆瓣醬小火炒出紅油香氣。
+  - text: 放入黑木耳碎丁、醬油、烏醋、細砂糖與 50 ml 水煮滾，倒入剩餘太白粉水勾芡至濃稠明亮，撒入蔥花，將熱騰騰的魚香肉燥淋在烘蛋上即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的魚香烘蛋
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 打蛋液時加入少許太白粉水能使烘蛋質地更加鬆厚柔軟且不易縮塌；煎蛋時油溫要足，蛋液下鍋後迅速膨脹，外層香脆內芯柔嫩。

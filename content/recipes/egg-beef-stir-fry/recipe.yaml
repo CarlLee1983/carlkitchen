@@ -1,0 +1,82 @@
+title: 滑蛋牛肉
+summary: 鮮嫩牛肉片以醬油米酒醃漬滑油保濕，雞蛋打散調入少許清水，熱油微火將蛋液滑炒至八分熟盛出，爆香蔥段蒜片回鍋牛肉片與嫩蛋大火快速翻拋融合，蛋嫩如凝脂、牛肉軟滑多汁、經典粵式家常名饌。
+servings: 3
+category: 非湯料理
+dishKinds: [meat, egg-bean]
+classificationReason: 以牛肉片滑嫩快炒與滑蛋結合為牛肉與蛋豆雙主角，屬於肉類與蛋豆並陳料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [滑蛋牛肉, 牛肉, 滑蛋, 家常菜, 粵菜]
+aliases: [嫩蛋牛肉, 滑蛋炒牛肉片]
+ingredients:
+  - name: 牛肉片
+    amount:
+      value: 200
+      unit: g
+    note: 牛里肌或牛翼板切薄片
+  - name: 雞蛋
+    amount:
+      value: 4
+      unit: 顆
+    note: 加 30 ml 水打成滑嫩蛋液
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 切青蔥段
+  - name: 大蒜
+    amount:
+      value: 10
+      unit: g
+    note: 去皮切蒜片
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 醃牛肉約 1 大匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 10
+      unit: ml
+    note: 醃牛肉去腥
+    group: 調味
+  - name: 太白粉
+    amount:
+      value: 5
+      unit: g
+    note: 醃牛肉抓勻保水
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 調味滑蛋
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 45
+      unit: ml
+    note: 滑炒用油
+    group: 調味
+steps:
+  - text: 牛肉片加入醬油、米酒與太白粉抓勻醃漬 15 分鐘保水；雞蛋打入碗中加入 30 ml 清水與少許鹽打勻；青蔥切段、大蒜切薄片備用。
+    image:
+      src: ./step-1.webp
+      alt: 牛肉片加入醬油、米酒與太白粉抓勻醃漬 15 分鐘保水；雞蛋打入碗中加入 30 ml 清水與少許鹽打勻
+  - text: 熱鍋倒入適量植物油燒至五分熱，放入醃好牛肉片大火滑炒約 30 秒至肉色轉粉紅八分熟，迅速撈起瀝油備用。
+    image:
+      src: ./step-2.webp
+      alt: 熱鍋倒入適量植物油燒至五分熱，放入醃好牛肉片大火滑炒約 30 秒至肉色轉粉紅八分熟，迅速撈起瀝油備用
+  - text: 鍋中留底油，倒入打勻蛋液轉中小火，用鍋鏟慢推滑動至蛋液呈現大片微凝固柔嫩半熟狀態，立即熄火盛起。
+  - text: 原鍋爆香蔥段與蒜片，投入滑好的牛肉片與滑蛋，轉大火迅速翻拌 10 秒使肉汁與嫩蛋相互交融，即可熄火滑入盤中。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的滑蛋牛肉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蛋液中加少許清水能讓蛋質地如絲綢般軟滑；牛肉快速滑油八分熟即撈出，最後與半熟嫩蛋在鍋中快速翻拋十秒，牛肉鮮嫩不老、滑蛋溫潤細緻。
