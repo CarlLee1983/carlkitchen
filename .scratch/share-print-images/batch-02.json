@@ -1,0 +1,89 @@
+[
+  {
+    "id": "cabbage-bacon-stir-fry",
+    "title": "培根炒高麗菜",
+    "sourceSha256": "c84c277c6c5efdfd3864a3307fc7ef07d944631cfe5a1ca446fc08e171234dce",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n培根炒高麗菜\n培根切片先入鍋煸炒逼出油脂與煙燻肉香，搭配清甜高麗菜大火快炒，嗆入米酒、蒜片與白胡椒粉，菜葉爽脆多汁且帶鹹香煙燻風味。\n3 人份・15 分鐘・非湯料理\n材料\n主料\n高麗菜 600 g（洗淨手撕或切片）\n培根 3 片（切小片約 60 g）\n蒜頭 10 g（去皮切蒜片）\n調味\n鹽 2 g（約 1/4 小匙）\n米酒 15 ml（約 1 大匙）\n白胡椒粉 1 g（少許提味）\n做法\n1 高麗菜洗淨撕成片狀瀝乾；培根切小片；蒜頭去皮切片備用。\n2 熱鍋倒入少許油，放入蒜片與培根小火煸炒至出油微焦散發煙燻香氣。\n3 轉大火倒入高麗菜翻炒至略呈半透明，嗆入米酒、加入鹽與白胡椒粉快速炒勻至脆嫩即可盛盤。\n小提醒\n培根先以中小火慢慢煸出油脂，利用培根天然鹹香與油脂大火炒高麗菜，高麗菜會格外甘甜油亮且不易出水軟爛。\n煮奔",
+    "generatedSha256": "101c704f513a3fe36143c38bf93dd4a72cb27274ea5a4ace2d9a5edf85984910",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 130138,
+    "webpSha256": "4925ec2560dda199fa79a48027d9a09ee9e207fa1592951ebde799f79c95c86f",
+    "review": "原圖與原生 WebP 全圖人工核對，獨立第二次逐字核對通過；用量、單位、步驟、份量及時間與來源一致。"
+  },
+  {
+    "id": "potato-frittata",
+    "title": "家常馬鈴薯烘蛋",
+    "sourceSha256": "c4e503eddacc998a569dfc93a72a302d5ef6ed38940d19d324e9ec028d27c60f",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n家常馬鈴薯烘蛋\n馬鈴薯去皮切細絲入鍋炒透，洋蔥絲與培根丁小火煸出香氣，倒入打勻的新鮮蛋液混合均勻，入平底鍋慢火烘煎至底面焦黃微脆，翻面略烘至蛋體厚實金黃膨起，蛋香濃醇、薯絲綿密鬆軟。\n3 人份・20 分鐘・非湯料理\n材料\n主料\n馬鈴薯 250 g（去皮切細絲泡水）\n雞蛋 3 顆（打散成蛋液）\n洋蔥 50 g（切細絲）\n培根 2 片（切小丁增香）\n奶油 20 g（烘蛋增香）\n調味\n鹽 3 g（約半茶匙）\n黑胡椒粉 1 g（少許提味）\n做法\n1 馬鈴薯去皮切細絲泡水洗去多餘澱粉瀝乾；洋蔥切絲；培根切小丁；雞蛋打入大碗加少許鹽與黑胡椒粉打散備用。\n2 熱平底鍋融化一半奶油，放入培根丁、洋蔥絲煸炒至香軟，加入馬鈴薯絲中火翻炒 2 分鐘至薯絲半透明變軟，盛出稍微降溫。\n3 將炒好的馬鈴薯培根料倒入蛋液中充分攪拌均勻；平底鍋融化剩餘奶油轉小火，倒入混合好的蛋液抹平鍋面。\n4 以極小火慢烘約 4 至 5 分鐘至底面金黃定型，翻面續烘約 2 分鐘至熟透微膨，盛盤切塊即可享用。\n小提醒\n馬鈴薯切絲後先在鍋中炒熟再拌入蛋液，烘煎時蛋才不會焦而馬鈴薯仍夾生；全程使用最小火慢烘，底面金黃定型後再翻面，烘蛋厚實飽滿不碎裂。\n煮奔\nImportant illustration correction to the reference: potato must be thin julienne shreds, NOT round potato slices. Onion thin shreds and small diced bacon mixed throughout a golden cooked egg frittata. All ingredients only from the text list.",
+    "generatedSha256": "c1c469628e0e4a88ff300d3e0a4f8cb43837b1605a1f3e26e271afc8eba5c4c1",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 137966,
+    "webpSha256": "f9ff385298e3b8557f260210b02f56abca12513240391d19020e3402ee31ce9c",
+    "review": "原圖與原生 WebP 全圖人工核對，獨立第二次逐字核對通過；用量、單位、步驟、份量及時間與來源一致。"
+  },
+  {
+    "id": "scallion-braised-tofu",
+    "title": "蔥燒嫩豆腐",
+    "sourceSha256": "c2ed961ec6052b3aad01de40c756415baf405748718a5319c022099bf174cd6f",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n蔥燒嫩豆腐\n嫩豆腐切厚片入熱鍋以中小火煎至兩面金黃微酥，加入大量鮮嫩青蔥段、紅辣椒段與甘醇醬油、糖與清水燜煮煨燒至醬汁收濃入味，豆腐內裡軟嫩滑口、外皮吸飽鹹甜濃香蔥汁，色澤金黃誘人。\n3 人份・20 分鐘・非湯料理\n材料\n主料\n板豆腐 1 塊（約 350 g 切厚片約 1 公分）\n青蔥 3 支（洗淨切 4 公分長蔥段）\n紅辣椒 1 根（切斜段配色）\n調味\n醬油 20 ml（約 1.5 大匙）\n糖 5 g（約 1 茶匙）\n白胡椒粉 1 g（少許提味）\n水 100 ml（煨煮高湯）\n做法\n1 豆腐用紙巾吸乾水分切成約 1 公分厚片；青蔥切成長段、紅辣椒切斜段備用。\n2 熱平底鍋倒入適量油，放入豆腐片以中小火煎約 3 分鐘至底面金黃微硬，翻面續煎至雙面均呈漂亮金黃色澤。\n3 將豆腐推至一側，在鍋空處放入蔥段與辣椒段爆炒出焦香蔥味，倒入醬油、糖、白胡椒粉與水大火煮滾。\n4 蓋上鍋蓋轉小火煨燒約 3 至 4 分鐘至豆腐充分吸飽醬汁、湯汁微收濃，開蓋大火收汁翻勻即可盛盤。\n小提醒\n豆腐下鍋後切忌心急頻繁翻動，待底層煎結成一層金黃硬皮再翻面，能維持豆腐完整方正不碎裂；蔥白先下鍋爆出焦蔥油香再下蔥綠，蔥香濃郁層次分明。\n煮奔\nImportant illustration correction to reference: include visible RED CHILI diagonal segments amongst scallion segments and pan-fried tofu slices, as explicitly required by the text ingredients and steps. Do not omit chili.",
+    "generatedSha256": "3b28520e593cece8d161a71f0b49f4f410f6bbe64f24301b6c912785443018a4",
+    "generatedDimensions": [
+      1087,
+      1447
+    ],
+    "webpQuality": 80,
+    "webpBytes": 142564,
+    "webpSha256": "07b58238ba08b2b691a7d94e2c9ae70b1a2d9e0928dd2ef19b43135147b17d8a",
+    "review": "原圖與原生 WebP 全圖人工核對，獨立第二次逐字核對通過；用量、單位、步驟、份量及時間與來源一致。"
+  },
+  {
+    "id": "stir-fried-water-lotus-pork",
+    "title": "水蓮炒肉絲",
+    "sourceSha256": "f8a81d2944ccd40ce0aa4b2241dc1125cacc16827833e26969d4385e8494cdb5",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n水蓮炒肉絲\n鮮脆水蓮洗淨切段，鮮香菇切細絲，豬肉絲過油滑嫩，熱鍋爆香薑末與紅辣椒絲，大火快速翻炒水蓮斷生，調入少許鹽與米酒嗆鍋，鮮綠清脆、爽口甘甜。\n3 人份・15 分鐘・非湯料理\n材料\n主料\n水蓮 250 g（洗淨切段約 5 公分）\n豬肉絲 80 g（細豬里肌肉絲）\n鮮香菇 3 朵（洗淨切細絲）\n紅辣椒 1 根（切細絲配色）\n生薑 10 g（洗淨切末）\n調味\n鹽 3 g（約半茶匙）\n米酒 10 ml（鍋邊嗆香）\n做法\n1 水蓮泡冷水充分洗淨泥沙，切成約 5 公分長段；鮮香菇、紅辣椒切細絲；生薑切末；豬肉絲抓少許米酒備用。\n2 熱鍋倒入適量油，放入薑末、辣椒絲爆香，加入肉絲與香菇絲大火翻炒至肉絲變白斷生。\n3 倒入水蓮段轉大火快速翻炒約 45 秒至水蓮受熱軟化轉翠綠，加入鹽調味並沿鍋邊嗆入米酒快翻數秒即可盛盤。\n4 盛入圓盤趁熱享用爽脆口感。\n小提醒\n水蓮下鍋後全程保持大火快炒，受熱翻炒時間不要超過 1 分鐘，一變深綠即調味起鍋，才能保留水蓮獨特的卡滋清脆爆汁口感。\n煮奔\nIngredient cuts: thin pork tenderloin strips; FRESH shiitake mushrooms cut in thin strips and red chili cut in thin strips, not large mushroom slices or chili rounds.",
+    "generatedSha256": "20b1a1b1460256e76b9041478de45838adeebb5befa7f1a6c453a59b372c36b3",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "reason": "香菇與紅辣椒仍畫厚片，未依文字畫細絲；保留未採用原圖，本輪未重試。 小提醒的「1 分鐘」後逗號被改為分號。"
+  },
+  {
+    "id": "oyster-sauce-kale",
+    "title": "蠔油芥蘭",
+    "sourceSha256": "14dac5158c58d3927bc29b9502f66870f41a5bad655e02e813c5a04c19240b68",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n蠔油芥蘭\n芥蘭菜修整後放入加了油與糖的滾水中快速汆燙，翠綠爽脆的菜梗整齊排盤，淋上濃郁鹹甜的蠔油即可上桌。\n4 人份・10 分鐘・非湯料理\n材料\n主料\n芥蘭菜 600 g（頭尾切齊修整）\n調味\n水 600 ml\n食用油 15 ml（約 1 大匙，汆燙用）\n細砂糖 30 g（約 2 大匙，汆燙用）\n蠔油 30 ml（約 2 大匙，淋醬用）\n做法\n1 芥蘭菜洗淨，將粗硬根部修除，整株切齊頭尾長度備用。\n2 鍋中注入 600 ml 水大火煮滾，加入食用油與細砂糖攪勻。\n3 放入芥蘭菜翻動汆燙，待水再次大滾約 10 秒後迅速撈起瀝乾水分，整齊排入長盤中。\n4 將蠔油均勻澆淋在排好的翠綠芥蘭菜中央表面即可上桌享用。\n小提醒\n汆燙水中加入食用油與細砂糖，能有效鎖住葉綠素使芥蘭保持碧綠油亮，並中和菜梗天然的微苦味。\n煮奔",
+    "generatedSha256": "c9621178f57be18ed0a8592f73d5d55b4c693f6f7c8cdae3ee3a9258f5b76351",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 124502,
+    "webpSha256": "931046d89dc5f5a77d1a9c2f02c6ebacb98ee03ca8c0745b2aadec232d3f0fba",
+    "review": "原圖與原生 WebP 全圖人工核對，獨立第二次逐字核對通過；用量、單位、步驟、份量及時間與來源一致。"
+  }
+]
