@@ -1,0 +1,93 @@
+title: 瓜仔肉燥
+summary: 台灣甘醇陳年花瓜切細碎丁，搭配肥瘦適中豬前腿絞肉煸炒出油脂，投入新鮮紅蔥頭末、蒜碎與青蔥花慢火煸出迷人蔥香，倒入甘甜花瓜醬汁、純釀醬油與清水小火慢燉二十分鐘，肉燥軟嫩多汁、花瓜脆嫩鹹甜回甘，澆飯拌麵皆令人食指大動。
+servings: 4
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以豬絞肉為主要肉類主角，搭配醃漬醬花瓜慢火燉煮，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [瓜仔肉, 肉燥, 絞肉, 家常便飯, 台灣古早味]
+aliases: [花瓜肉燥, 古早味瓜仔肉燥]
+ingredients:
+  - name: 豬絞肉
+    amount:
+      value: 300
+      unit: g
+    note: 前腿粗絞肉三肥七瘦
+  - name: 脆花瓜
+    amount:
+      value: 120
+      unit: g
+    note: 罐裝甘醇花瓜連汁切細碎丁
+  - name: 紅蔥頭
+    amount:
+      value: 40
+      unit: g
+    note: 去皮切細片爆香
+  - name: 大蒜
+    amount:
+      value: 20
+      unit: g
+    note: 去皮切細蒜碎
+  - name: 青蔥
+    amount:
+      value: 20
+      unit: g
+    note: 切細蔥花
+  - name: 醬油
+    amount:
+      value: 40
+      unit: ml
+    note: 純釀甘醇醬油
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙去腥
+    group: 調味
+  - name: 水
+    amount:
+      value: 300
+      unit: ml
+    note: 燉煮肉燥湯水
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提香
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 20
+      unit: ml
+    note: 煸炒油
+    group: 調味
+steps:
+  - text: 脆花瓜撈出切成半公分細碎小丁，花瓜罐頭醬汁保留備用；紅蔥頭與大蒜去皮切細末；青蔥切細蔥花備用。
+    image:
+      src: ./step-1.webp
+      alt: 脆花瓜撈出切成半公分細碎小丁，花瓜罐頭醬汁保留備用；紅蔥頭與大蒜去皮切細末；青蔥切細蔥花備用。
+  - text: 取炒鍋倒入植物油加熱，放入紅蔥頭碎與蒜碎以中小火慢煸 2 分鐘至金黃微焦香氣四溢，倒入豬絞肉轉大火翻炒至肉色轉白散開。
+    image:
+      src: ./step-2.webp
+      alt: 取炒鍋倒入植物油加熱，放入紅蔥頭碎與蒜碎以中小火慢煸 2 分鐘至金黃微焦香氣四溢，倒入豬絞肉轉大火翻
+  - text: 倒入切碎的花瓜丁與花瓜醃汁，加入醬油、米酒、細砂糖、白胡椒粉與 300 ml 清水大火煮滾，撈除表面浮沫。
+  - text: 轉小火蓋上鍋蓋慢燉 20 分鐘，至湯汁濃稠油亮、絞肉軟爛吸收花瓜甘甜，撒入蔥花拌勻即可盛入深碗配飯享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的瓜仔肉燥
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 罐頭花瓜的醃汁富含陳年蔭油與甘草甘甜，千萬不要倒掉，倒入鍋中同燉能自然調和鹹甜滋味，免去過多調味且滋味格外醇厚甘甜。

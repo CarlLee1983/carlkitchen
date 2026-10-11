@@ -1,0 +1,86 @@
+title: 櫻花蝦炒飯
+summary: 台灣東港珍貴乾燥櫻花蝦入乾熱鍋以小火慢煸出誘人酥脆甲殼焦香，原鍋爆香紅蔥頭碎與杏鮑菇丁，倒入金黃滑嫩蛋液與粒粒分明隔夜冷白飯大火快炒，撒上海鹽、白胡椒粉與青翠蔥花翻炒至米粒在鍋中歡快跳躍，粒粒分明、海味濃烈酥香、經典台味炒飯。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: 以米飯為主體搭配櫻花蝦與雞蛋熱炒，可獨立作為一餐，屬於主食料理。
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [炒飯, 櫻花蝦, 主食, 台灣名產, 快炒]
+aliases: [東港櫻花蝦炒飯, 金沙櫻花蝦炒飯]
+ingredients:
+  - name: 白飯
+    amount:
+      value: 2
+      unit: 碗
+    note: 約 350 g 隔夜冷飯捏鬆散
+  - name: 乾燥櫻花蝦
+    amount:
+      value: 30
+      unit: g
+    note: 純東港乾燥櫻花蝦洗淨瀝乾
+  - name: 雞蛋
+    amount:
+      value: 2
+      unit: 顆
+    note: 打散成均勻蛋液
+  - name: 杏鮑菇
+    amount:
+      value: 30
+      unit: g
+    note: 切細小碎丁增彈脆口感
+  - name: 紅蔥頭
+    amount:
+      value: 15
+      unit: g
+    note: 切細薄片爆香
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 洗淨切細蔥花
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙調味
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提鮮辛香
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 10
+      unit: ml
+    note: 鍋邊嗆香約 1 茶匙
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 30
+      unit: ml
+    note: 炒飯油
+    group: 調味
+steps:
+  - text: 隔夜白飯先以乾淨雙手捏散成粒粒分明狀態；雞蛋打散成蛋液；杏鮑菇切細小丁；紅蔥頭去皮切薄片；青蔥切細花備用。
+    image:
+      src: ./step-1.webp
+      alt: 隔夜白飯先以乾淨雙手捏散成粒粒分明狀態；雞蛋打散成蛋液；杏鮑菇切細小丁；紅蔥頭去皮切薄片；青蔥切細花
+  - text: 炒鍋加熱倒入 1 茶匙油，放入乾燥櫻花蝦以中小火慢煸炒約 2 分鐘，至蝦身轉為深粉紅香脆酥爽，盛起備用。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋加熱倒入 1 茶匙油，放入乾燥櫻花蝦以中小火慢煸炒約 2 分鐘，至蝦身轉為深粉紅香脆酥爽，盛起備
+  - text: 原鍋補入剩餘植物油燒熱，放入紅蔥頭片與杏鮑菇丁翻炒至微金黃，倒入打散蛋液快速攪炒至半凝固嫩蛋花，立即倒入白飯轉大火快速壓炒翻拋，炒至米粒均勻沾裹蛋香且粒粒分明。
+  - text: 倒入煸酥的櫻花蝦、鹽、白胡椒粉與蔥花，沿鍋邊淋入醬油嗆出焦香，轉大火高速翻炒 30 秒至炒飯乾爽香氣四溢即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的櫻花蝦炒飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 櫻花蝦先單獨用少許油以小火煸炒至香脆酥爽再盛起，最後炒飯收尾時才倒回翻勻，這樣櫻花蝦能始終保持卡滋卡滋的酥脆口感而不被飯氣蒸軟。

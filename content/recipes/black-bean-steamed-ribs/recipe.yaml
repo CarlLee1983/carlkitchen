@@ -1,0 +1,93 @@
+title: 豉汁蒸排骨
+summary: 精選新鮮豬小排剁成適口小塊流水沖洗去血水擦乾，黑豆豉粗剁泡發，與香脆炸金蒜末、生蒜蓉、蠔油、米酒、白糖與少許太白粉充分抓勻醃漬入味，鋪平盤中入大火蒸籠蒸二十分鐘，肉質滑嫩多汁、豉香濃郁醇厚、骨香肉滑、經典茶樓名點。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以豬小排拌黑豆豉蒜蓉蒸熟為唯一肉類主角，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [蒸排骨, 豆豉, 港式點心, 家常菜, 肉類料理]
+aliases: [港式豉汁蒸排骨, 豆豉蒸小排]
+ingredients:
+  - name: 豬小排
+    amount:
+      value: 350
+      unit: g
+    note: 剁 2 公分小方塊洗淨沖水吸乾水分
+  - name: 黑豆豉
+    amount:
+      value: 20
+      unit: g
+    note: 溫水泡軟粗剁碎
+  - name: 大蒜
+    amount:
+      value: 25
+      unit: g
+    note: 去皮切細蒜碎一半炸金黃一半生蒜
+  - name: 青蔥
+    amount:
+      value: 1
+      unit: 根
+    note: 切細蔥花出鍋飾頂
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切小圓圈增色
+  - name: 蠔油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙增甘醇底味
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 10
+      unit: ml
+    note: 約 2 茶匙
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙去腥
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙提鮮
+    group: 調味
+  - name: 太白粉
+    amount:
+      value: 15
+      unit: g
+    note: 抓醃鎖水滑嫩
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 少許提香
+    group: 調味
+steps:
+  - text: 豬小排剁成適口小塊，用流水沖洗約 15 分鐘洗去骨血，用廚房紙巾徹底吸乾水分；黑豆豉洗淨泡軟粗剁碎；大蒜一半炸至金黃酥香、一半保留生蒜末；紅辣椒切圈備用。
+    image:
+      src: ./step-1.webp
+      alt: 豬小排剁成適口小塊，用流水沖洗約 15 分鐘洗去骨血，用廚房紙巾徹底吸乾水分；黑豆豉洗淨泡軟粗剁碎；
+  - text: 小排塊放入大碗中，加入生熟蒜末、黑豆豉碎、紅辣椒圈、蠔油、醬油、米酒、細砂糖、香油與太白粉，用手充分抓拌均勻抓至起膠黏稠，醃漬 20 分鐘。
+    image:
+      src: ./step-2.webp
+      alt: 小排塊放入大碗中，加入生熟蒜末、黑豆豉碎、紅辣椒圈、蠔油、醬油、米酒、細砂糖、香油與太白粉，用手充分
+  - text: 將醃好的排骨平鋪於淺蒸盤中，盡量鋪平不重疊，放入水滾蒸鍋中，蓋上鍋蓋大火蒸煮 20 分鐘至肉質軟嫩熟透熟汁豐沛。
+  - text: 取出蒸盤，表面撒上青翠細蔥花，即可熱騰騰端上桌享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的豉汁蒸排骨
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 排骨剁小塊後用流水沖去殘留血水並徹底吸乾水分，是蒸排骨肉質鮮甜不腥、色澤潔白不發黑的關鍵秘訣；平鋪於盤中蒸二十鐘，受熱均勻肉質最為彈滑多汁。

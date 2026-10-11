@@ -1,0 +1,93 @@
+title: 乾燒蝦仁
+summary: 鮮甜飽滿大蝦仁以少許海鹽抓洗吸乾水分裹薄太白粉，入溫油鍋滑油定型鎖住彈脆，另起熱鍋爆香薑末、蒜末、蔥白碎與豆瓣醬，加入番茄醬、白醋、糖與少許高湯，倒回大蝦仁轉大火快速乾燒收汁至紅亮黏稠，酸甜微辣、蝦肉極致爽彈、經典宴客川饌。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以新鮮蝦仁滑油乾燒收汁為唯一海鮮主角，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [乾燒蝦仁, 蝦仁, 海鮮, 川菜, 熱炒]
+aliases: [茄汁乾燒蝦, 乾燒明蝦球]
+ingredients:
+  - name: 大蝦仁
+    amount:
+      value: 250
+      unit: g
+    note: 草蝦或白蝦仁開背去沙腸吸乾水分
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 蔥白切細末爆香、蔥綠切蔥花飾頂
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 去皮切細薑末
+  - name: 大蒜
+    amount:
+      value: 15
+      unit: g
+    note: 切細蒜末
+  - name: 太白粉
+    amount:
+      value: 10
+      unit: g
+    note: 醃蝦仁裹粉保水
+  - name: 番茄醬
+    amount:
+      value: 25
+      unit: g
+    note: 約 1.5 大匙增紅潤酸甜
+    group: 調味
+  - name: 辣豆瓣醬
+    amount:
+      value: 10
+      unit: g
+    note: 約 2 茶匙引微辣底韻
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 10
+      unit: g
+    note: 約 2 茶匙調和酸味
+    group: 調味
+  - name: 白醋
+    amount:
+      value: 5
+      unit: ml
+    note: 約 1 茶匙提果香酸度
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙去腥
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 40
+      unit: ml
+    note: 過油與炒醬
+    group: 調味
+steps:
+  - text: 蝦仁挑去背部沙腸，加 1 茶匙鹽輕抓洗去黏液，用紙巾徹底吸乾水分，抓少許米酒與太白粉拌勻抓勻；生薑、大蒜切細末，青蔥分切蔥白末與蔥花備用。
+    image:
+      src: ./step-1.webp
+      alt: 蝦仁挑去背部沙腸，加 1 茶匙鹽輕抓洗去黏液，用紙巾徹底吸乾水分，抓少許米酒與太白粉拌勻抓勻；生薑、
+  - text: 熱鍋倒入適量植物油燒至 130°C 溫油，放入蝦仁滑油約 30 秒至蝦身蜷曲轉粉紅八分熟，迅速撈起瀝油備用。
+    image:
+      src: ./step-2.webp
+      alt: 熱鍋倒入適量植物油燒至 130°C 溫油，放入蝦仁滑油約 30 秒至蝦身蜷曲轉粉紅八分熟，迅速撈起瀝
+  - text: 鍋中留 1 大匙底油，放入薑末、蒜末、蔥白末與辣豆瓣醬小火炒出紅油香氣，加入番茄醬、細砂糖、白醋與 30 ml 水煮滾成濃郁紅亮乾燒醬汁。
+  - text: 倒入滑好的大蝦仁轉大火快速翻拌煨燒約 20 秒，讓濃稠乾燒醬汁緊密包裹在每隻蝦球上，起鍋前撒入青翠蔥花翻勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的乾燒蝦仁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蝦仁洗淨後務必用廚房紙巾徹底吸乾水分再裹薄粉，滑油時油溫不宜過高，蝦肉才能維持多汁彈脆而不乾韌；乾燒醬汁大火收濃至紅油發亮，緊緊包覆蝦仁最為美味。

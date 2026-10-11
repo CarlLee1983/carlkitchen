@@ -1,0 +1,80 @@
+title: 椒鹽蝦球
+summary: 特選大草蝦仁開背去沙腸，以蛋白與太白粉醃漬抓勻，均勻沾裹細地瓜粉入高溫油鍋大火油炸至金黃酥脆硬挺，開背蝦肉蜷曲如開花金球，另起乾鍋煸香蒜末、青蔥碎與紅辣椒碎，倒入炸酥蝦球撒入特調椒鹽粉大火翻拋，外皮極致酥脆、內裡鮮甜彈牙、香氣撲鼻。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以草蝦仁裹粉油炸調味椒鹽為唯一海鮮主角，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 18
+tags: [椒鹽蝦, 蝦球, 海鮮, 熱炒, 鹽酥小吃]
+aliases: [鹽酥蝦球, 椒鹽鳳尾蝦球]
+ingredients:
+  - name: 草蝦仁
+    amount:
+      value: 250
+      unit: g
+    note: 洗淨吸乾由蝦背深劃一刀深及三分之二
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 洗淨切細蔥花
+  - name: 大蒜
+    amount:
+      value: 20
+      unit: g
+    note: 去皮切細蒜碎
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 去籽切細末
+  - name: 地瓜粉
+    amount:
+      value: 60
+      unit: g
+    note: 裹粉酥炸蝦球
+  - name: 雞蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 取 1 大匙蛋白抓醃蝦仁
+  - name: 胡椒鹽
+    amount:
+      value: 5
+      unit: g
+    note: 特調白胡椒鹽粉調味
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 10
+      unit: ml
+    note: 醃蝦仁去腥
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 60
+      unit: ml
+    note: 高溫炸油
+    group: 調味
+steps:
+  - text: 草蝦仁洗淨瀝乾，以利刀由蝦背中央深劃一刀（約深至三分之二不切斷）挑除沙腸，加入蛋白、米酒與少許鹽抓勻醃漬 5 分鐘；青蔥切細花、大蒜切碎、紅辣椒切碎備用。
+    image:
+      src: ./step-1.webp
+      alt: 草蝦仁洗淨瀝乾，以利刀由蝦背中央深劃一刀（約深至三分之二不切斷）挑除沙腸，加入蛋白、米酒與少許鹽抓勻
+  - text: 將醃好的開背蝦仁均勻沾裹上一層地瓜粉，靜置 2 分鐘讓表面粉漿回潮防脫落。
+  - text: 油鍋燒熱至 170°C，逐隻放入沾粉蝦仁，大火高溫炸約 2 分鐘至蝦肉受熱如花朵般蜷曲成金黃酥脆蝦球，撈起充分瀝乾油分。
+    image:
+      src: ./step-3.webp
+      alt: 油鍋燒熱至 170°C，逐隻放入沾粉蝦仁，大火高溫炸約 2 分鐘至蝦肉受熱如花朵般蜷曲成金黃酥脆蝦球
+  - text: 另取炒鍋加 1 茶匙油熱鍋，小火煸香蒜碎、蔥花與辣椒碎至香氣四溢，倒入炸酥的蝦球，均勻撒入胡椒鹽粉，轉大火快速翻拋翻勻 10 秒即可盛盤上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的椒鹽蝦球
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蝦背劃深至三分之二處，油炸時蝦肉受熱會自然外翻蜷曲成飽滿圓潤的花球狀；炸好後趁熱與爆香辛香料及椒鹽快速翻拋十秒，外殼酥香不含油、滋味絕佳。
