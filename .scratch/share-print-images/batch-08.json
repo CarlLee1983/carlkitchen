@@ -1,0 +1,338 @@
+[
+  {
+    "id": "italian-chicken-wings",
+    "title": "火烤義大利雞翅",
+    "sourceSha256": "9405acb25f5b1f1017534ea02f5ad2e3443fa6618f7925ee47af2e62f791ce05",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate holding two cooked whole chicken wings, golden-brown from grilling, with fine Italian-style seasoning and lemon-pepper seasoning flecks on the skin. Keep the natural connected wing shape; do not substitute drumsticks or chicken-thigh steaks. No lemon slices or fresh herb sprigs. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate holding two cooked whole chicken wings, golden-brown from grilling, with fine Italian-style seasoning and lemon-pepper seasoning flecks on the skin. Keep the natural connected wing shape; do not substitute drumsticks or chicken-thigh steaks. No lemon slices or fresh herb sprigs. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n火烤義大利雞翅\n雞翅用義大利式香料、檸檬胡椒鹽和醬油醃過，先以小火烤熟，再用大火烤上色。\n1 人份・40 分鐘・非湯料理\n材料\n主料\n雞翅 2 支\n調味\n橄欖油 20 ml\n義大利式香料 適量\n檸檬胡椒鹽 適量\n醬油 少許\n做法\n1 雞翅洗淨，用竹籤戳出小洞。兩面撒上義大利式香料與檸檬胡椒鹽，靜置約 15 分鐘；抹上醬油稍加按摩，再靜置約 5 分鐘。\n2 淋上橄欖油，放上烤網，以小火烤兩面約 7 分鐘，直到表面焦香、內部熟透。移到大火處再烤約 2 分鐘上色。\n小提醒\n使用烤箱時，可先預熱，再以 200°C 烤約 15 分鐘。\n煮奔",
+    "originalSha256": "b8646757a6bbe8c871404d22f803cc8e0cc89fc4d0ee2410b48283387eb188ed",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/italian-chicken-wings.png",
+    "webpSha256": "03f85a23b1fbc6ecce4439b1ee002373c06a677cfd5b9760da5a92e8114a629e",
+    "webpBytes": 105890,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過"
+  },
+  {
+    "id": "salt-pepper-chicken-thigh",
+    "title": "香煎椒鹽雞腿排",
+    "sourceSha256": "1cc6a7e333e6244d8d7184793b58a33c31d3f770e935f930389f8020680724ca",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate with approximately three intact boneless, skin-on chicken-thigh steaks, representing the recipe's 500 g total. The skin faces upward and is golden-brown from pan-searing in the chicken's own rendered fat, with fine black-pepper specks. Keep the steaks whole, not sliced strips, wings, or bone-in drumsticks. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate with approximately three intact boneless, skin-on chicken-thigh steaks, representing the recipe's 500 g total. The skin faces upward and is golden-brown from pan-searing in the chicken's own rendered fat, with fine black-pepper specks. Keep the steaks whole, not sliced strips, wings, or bone-in drumsticks. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n香煎椒鹽雞腿排\n雞腿排用米酒、鹽和黑胡椒粉醃漬，靠雞皮煎出的油煎熟，表皮金黃酥脆。\n4 人份・140 分鐘・非湯料理\n材料\n主料\n去骨雞腿排 500 g（約 3 片，帶皮）\n調味\n米酒 15 ml（1 湯匙）\n鹽 3 g（約 3/4 茶匙）\n黑胡椒粉 2.5 ml（1/2 茶匙，以體積量取）\n做法\n1 將米酒、鹽、黑胡椒粉揉入去骨雞腿排，放入冰箱冷藏醃漬 1–2 小時。\n2 以中火預熱鑄鐵鍋，滴少許水測試；水能聚成滾動的水珠時，就可下去骨雞腿排。\n3 將去骨雞腿排的雞皮面朝下排入鍋中，維持中火，煎到雞皮開始釋出油脂。\n4 鋪上防沾烘焙紙，壓上重物；轉中小火煎約 6–7 分鐘。\n5 拿開重物與烘焙紙，等雞皮變成金黃色、能離開鍋底時，再翻面。\n6 保持中小火煎熟另一面；用食物溫度計確認雞肉最厚處達 74°C，再起鍋。\n小提醒\n鹽和黑胡椒粉的用量可依口味調整。\n煮奔",
+    "originalSha256": "2e845f4ade47900e094c7062e7a5b5851bb806185d5816e3ace3c2323123074d",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/salt-pepper-chicken-thigh.png",
+    "webpSha256": "0949339d9d358351ae44c8e18b10a575faa4bbf7f58c1f586c6db0c5642ed74a",
+    "webpBytes": 123078,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過"
+  },
+  {
+    "id": "braised-chicken-legs",
+    "title": "滷雞腿",
+    "sourceSha256": "78403e90a253d769ce6c79228a75a0ba5352fba4b2195bf6e96f88a462c8cb3f",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate holding five whole bone-in chicken drumsticks, braised to a warm soy-brown color, with a shallow amount of their brown braising liquid. Keep the drumsticks intact, not boneless thigh steaks, sliced chicken, or whole leg quarters. Star anise and Sichuan pepper are braising aromatics, not decorative items beside the plate. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate holding five whole bone-in chicken drumsticks, braised to a warm soy-brown color, with a shallow amount of their brown braising liquid. Keep the drumsticks intact, not boneless thigh steaks, sliced chicken, or whole leg quarters. Star anise and Sichuan pepper are braising aromatics, not decorative items beside the plate. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n滷雞腿\n雞腿以米酒、醬油和砂糖滷煮，加入八角與花椒，熄火後再燜 10 分鐘。\n5 人份・45 分鐘・非湯料理\n材料\n主料\n雞腿 5 支（帶骨棒棒腿）\n水 1000 ml\n調味\n米酒 300 ml\n醬油 300 ml\n砂糖 200 g\n八角 1 朵\n花椒 少許\n做法\n1 沖一下八角與花椒，備好滷汁用的香料。\n2 在鍋中依序放入水、醬油、砂糖與米酒，加入八角、花椒，加熱至滷汁滾起。\n3 放入雞腿，保持大火。鍋內重新沸騰後，計時煮 10 分鐘。\n4 把火力降至中小火，讓雞腿再滷 10 分鐘。\n5 關掉爐火，讓雞腿留在鍋中燜 10 分鐘。\n6 用食物溫度計量雞肉中心，確認至少達到 74°C 再盛出上桌；未達時繼續加熱。\n小提醒\n這份配方用了 300 ml 米酒，來源提醒食用後不要開車或騎機車。\n煮奔",
+    "originalSha256": "b6d06da349f46a7f482cc55ba72b83ac0b75d6bfcafa630ea525672398ac3723",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/braised-chicken-legs.png",
+    "webpSha256": "9ce86668c4ece3252a7f92e3d83283036635f11553f606b726a63069ea012401",
+    "webpBytes": 117184,
+    "quality": 80,
+    "qa": "可辨兩朵各具完整星形中心的八角，材料只有1朵；不以可見雞腿少於5支另斷言缺量。"
+  },
+  {
+    "id": "soy-braised-baby-potatoes",
+    "title": "韓式醬燒小馬鈴薯",
+    "sourceSha256": "c2f144e39eb54e205bc730ac8a8f4a31c8d7383db68e80d0604919e6e96f092c",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic bowl of whole, unpeeled baby potatoes about the size of quail eggs, with slightly wrinkled skins coated in reduced brown soy-and-rice-syrup sauce. Mix fine minced garlic through the sauce and scatter toasted sesame seeds over the potatoes, finished with sesame oil. Keep all potatoes whole and skin-on, not peeled halves or cut chunks. No scallions or green garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic bowl of whole, unpeeled baby potatoes about the size of quail eggs, with slightly wrinkled skins coated in reduced brown soy-and-rice-syrup sauce. Mix fine minced garlic through the sauce and scatter toasted sesame seeds over the potatoes, finished with sesame oil. Keep all potatoes whole and skin-on, not peeled halves or cut chunks. No scallions or green garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n韓式醬燒小馬鈴薯\n帶皮小馬鈴薯先燜熟，再裹上醬油與米糖漿收成的鹹甜醬汁，最後拌入芝麻油、撒上熟芝麻。\n4 人份・35 分鐘・非湯料理\n材料\n主料\n小馬鈴薯 454 g（鵪鶉蛋大小，整顆帶皮）\n大蒜 1 瓣\n調味\n食用油 30 ml\n醬油 45 ml\n米糖漿 45 ml\n芝麻油 5 ml\n熟芝麻 12 g（約 1 湯匙）\n做法\n1 削除小馬鈴薯腐損或破裂的部分，用冷水洗去泥土並瀝乾。\n2 將大蒜切末。\n3 將食用油倒入厚底平底鍋，開中火，放入小馬鈴薯。\n4 蓋鍋燜煮 20 分鐘至小馬鈴薯全熟，每隔 5 分鐘晃動鍋子，讓受熱均勻、避免燒焦。\n5 轉小火，加入醬油、米糖漿與大蒜，用木匙拌勻。\n6 轉回中火，持續翻拌 4 至 5 分鐘，直到醬汁收濃、小馬鈴薯表皮發亮並起皺。\n7 離火後拌入芝麻油，撒上熟芝麻，再盛入碗中。\n煮奔",
+    "originalSha256": "f4c95c5d699304e158cc3bd5d371a2630bdf3571c0c52497582246c9ea6cf0bc",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/soy-braised-baby-potatoes.png",
+    "webpSha256": "e366aa1461a730123cf0c1d1a82358b51a564f1fff5b089a76760a4c88a2db01",
+    "webpBytes": 108164,
+    "quality": 80,
+    "qa": "蒜呈立體粗丁與小塊，未呈步驟所寫蒜末。"
+  },
+  {
+    "id": "yogurt-pork-stew",
+    "title": "優格燉肉",
+    "sourceSha256": "578e330216a3615a77154d834cb94adc655e92239eaf40390495694d57bd50ad",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic bowl containing a finished pale plain-yogurt pork stew. Large cooked chunks of pork hind-leg meat are mixed with chunks of potato, onion and king oyster mushroom, plus modest amounts of red and yellow sweet bell pepper. The yogurt cooking liquid remains visible around the ingredients; do not portray a dry stir-fry. Keep the bell peppers recognizable without prescribing an unsupported exact cut size. No parsley, green herb flakes, black-pepper specks, cream garnish, or extra vegetables. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic bowl containing a finished pale plain-yogurt pork stew. Large cooked chunks of pork hind-leg meat are mixed with chunks of potato, onion and king oyster mushroom, plus modest amounts of red and yellow sweet bell pepper. The yogurt cooking liquid remains visible around the ingredients; do not portray a dry stir-fry. Keep the bell peppers recognizable without prescribing an unsupported exact cut size. No parsley, green herb flakes, black-pepper specks, cream garnish, or extra vegetables. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n優格燉肉\n豬肉與馬鈴薯、甜椒和杏鮑菇加入原味優格燉煮。\n2 人份・55 分鐘・非湯料理\n材料\n主料\n豬後腿肉 300 g（切大塊）\n馬鈴薯 150 g（切塊）\n洋蔥 30 g（切塊）\n杏鮑菇 50 g（切塊）\n紅甜椒 20 g\n黃甜椒 20 g\n原味優格 200 ml\n水 800 ml\n調味\n食用油 少許（炒洋蔥用）\n鹽 1.25 ml（約 1/4 小匙）\n做法\n1 豬後腿肉切大塊，放入滾水汆燙後瀝乾。\n2 熱鍋加入少許油，炒香洋蔥，放入豬肉炒至表面上色。\n3 加入馬鈴薯、紅甜椒、黃甜椒和杏鮑菇炒香，再加入水煮滾。\n4 轉小火，拌入鹽和原味優格；鍋蓋留縫燉煮約 30 分鐘。\n煮奔",
+    "originalSha256": "704cbf7518228d89a1d1b5539e2228c062fbc8eed8238828f2f28ec4fff13128",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/yogurt-pork-stew.png",
+    "webpSha256": "ac050c4c9cc2f99352c0932d51267122bfc1596d16df5982900b1d644c0e89db",
+    "webpBytes": 87278,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過"
+  },
+  {
+    "id": "pork-sauce-spinach",
+    "title": "肉燥菠菜",
+    "sourceSha256": "6065f4927550414554bd98c9863365bd297fd92dcca09f23856702138b087aef",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate with a generous mound of blanched spinach cut into short sections, its leaves and stems still distinguishable. Spoon a modest central topping of cooked ground pork in reduced thick-soy-sauce gravy over the spinach. The topping contains finely chopped shallot and finely minced garlic, all cooked into the gravy; the pork remains small ground-meat granules. Spinach is the main bulk, with only a modest meat-sauce topping. No whole or halved shallots, no pork cubes, no extra garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate with a generous mound of blanched spinach cut into short sections, its leaves and stems still distinguishable. Spoon a modest central topping of cooked ground pork in reduced thick-soy-sauce gravy over the spinach. The topping contains finely chopped shallot and finely minced garlic, all cooked into the gravy; the pork remains small ground-meat granules. Spinach is the main bulk, with only a modest meat-sauce topping. No whole or halved shallots, no pork cubes, no extra garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n肉燥菠菜\n菠菜汆燙後盛盤，淋上以紅蔥頭、蒜末和豬絞肉煮成的肉燥。\n2 人份・25 分鐘・非湯料理\n材料\n主料\n菠菜 300 g（洗淨切小段）\n豬絞肉 50 g（建議用梅花絞肉）\n紅蔥頭 20 g（切碎）\n蒜末 20 g\n調味\n食用油 適量（炒肉燥用）\n食用油 15 ml（約 1 大匙，汆燙菠菜用）\n醬油膏 30 ml（約 2 大匙）\n水 60 ml（約 4 大匙，肉燥用；汆燙另備）\n做法\n1 把紅蔥頭切碎；菠菜洗乾淨，切成小段。\n2 平底鍋加少許食用油，以小火炒香紅蔥頭和蒜末，加入豬絞肉炒散至變白。\n3 倒入醬油膏和水，以小火煮開，等湯汁略為收少後盛起作肉燥。\n4 另煮一鍋水，加入食用油和菠菜，蓋上鍋蓋煮至水再次沸騰，翻動菠菜後再煮約 10 秒，撈出瀝乾。\n5 菠菜盛盤，淋上肉燥。\n煮奔",
+    "originalSha256": "d615c45b1be38dcac2d6e3fdf623aa268333693b58b683d445ef39ba2344f4f9",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/pork-sauce-spinach.png",
+    "webpSha256": "4a8d6a74d8e37b1d90d12239a3f79e89bc6bfdc8e146b551d872e8eea96bff7f",
+    "webpBytes": 105842,
+    "quality": 80,
+    "qa": "肉燥中有數塊獨立淡黃蒜塊，與材料蒜末不符。"
+  },
+  {
+    "id": "braised-yellow-croaker",
+    "title": "紅燒黃魚",
+    "sourceSha256": "c90ab81f92b749d57053ae87cb1dc244e2f35ad5ada1a71a3da5ab1e8efd5270",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate holding one cooked whole yellow croaker, pan-seared then braised in soy sauce until the liquid is reduced to a light coating. Around and over the fish are rehydrated shiitake mushroom caps with stems removed, sliced carrot, whole peeled garlic cloves, scallion segments, fine ginger threads, and red chili slices with their seeds removed. Use the recipe's five mushroom caps across the serving with natural overlap, without demanding that all five be exposed. No seeded chili rings, no whole chilies, no thick ginger batons, no herb garnish, and no deep pool of broth. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate holding one cooked whole yellow croaker, pan-seared then braised in soy sauce until the liquid is reduced to a light coating. Around and over the fish are rehydrated shiitake mushroom caps with stems removed, sliced carrot, whole peeled garlic cloves, scallion segments, fine ginger threads, and red chili slices with their seeds removed. Use the recipe's five mushroom caps across the serving with natural overlap, without demanding that all five be exposed. No seeded chili rings, no whole chilies, no thick ginger batons, no herb garnish, and no deep pool of broth. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n紅燒黃魚\n黃魚與蒜仁先煎至金黃，再和香菇、紅蘿蔔及蔥薑一起燒至收汁。\n2 人份・30 分鐘・非湯料理\n材料\n主料\n黃魚 1 尾\n泡發香菇 5 朵\n紅蘿蔔片 20 g\n蒜仁 60 g\n蔥 2 根\n薑 50 g\n紅辣椒 2 根\n調味\n醬油 30 ml\n細砂糖 1 茶匙\n水 250 ml\n油 45 ml\n做法\n1 蔥洗淨切段，薑去皮切絲，紅辣椒去蒂去籽後切片，泡發香菇去蒂。\n2 鍋中倒入油，以中火燒至略熱。放入黃魚和蒜仁，轉小火煎至金黃，盛起瀝油。\n3 鍋中留少許油，炒香蔥、薑和紅辣椒。放回黃魚和蒜仁，加入紅蘿蔔片、泡發香菇、醬油、細砂糖與水。\n4 以中火煮滾後轉小火，不時輕推魚身避免沾鍋，煮至湯汁收乾。\n煮奔",
+    "originalSha256": "39d65c72339fc06a8711c51da8a874cff2559e3d4ef8b5e3a3e9f10f0e9c106c",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/braised-yellow-croaker.png",
+    "webpSha256": "27b26603a9e1ce7c1449b3175d6da08f4fd4c2d8f9e8dca66db8435f57a9ded9",
+    "webpBytes": 113120,
+    "quality": 80,
+    "qa": "辣椒片內仍可辨種子，與去籽後切片不符；不以可見香菇數量或薑条寬度單獨判錯。"
+  },
+  {
+    "id": "sweet-sour-yellow-croaker",
+    "title": "糖醋黃魚",
+    "sourceSha256": "9a69eb5fb7f6363c9e382cbed859374302528b22d27329220ff2969ed61ef54a",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate with two cooked whole yellow croakers, pan-fried and topped with a smooth red-orange sweet-and-sour sauce made from ketchup, fruit vinegar, soy sauce, sugar and water. Visible solid aromatics in the sauce are only cooked onion chunks, scallion segments and ginger slices. The fish remain whole with head and tail, with shallow back scoring partly covered by sauce. No diced tomato, no tomato wedges, no bell pepper, no pineapple, no garnish, and no batter coating. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned oval ceramic plate with two cooked whole yellow croakers, pan-fried and topped with a smooth red-orange sweet-and-sour sauce made from ketchup, fruit vinegar, soy sauce, sugar and water. Visible solid aromatics in the sauce are only cooked onion chunks, scallion segments and ginger slices. The fish remain whole with head and tail, with shallow back scoring partly covered by sauce. No diced tomato, no tomato wedges, no bell pepper, no pineapple, no garnish, and no batter coating. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n糖醋黃魚\n兩尾黃魚煎熟後，淋上以番茄醬、水果醋調成的糖醋醬汁。\n4 人份・30 分鐘・非湯料理\n材料\n主料\n黃魚 2 尾\n洋蔥 0.5 顆\n蔥 2 根\n薑 2 片\n調味\n番茄醬 45 ml\n糖 1.5 大匙\n醬油 22.5 ml\n水果醋 45 ml\n水 90 ml\n油 30 ml\n做法\n1 洋蔥切塊，蔥切段。黃魚刮鱗，洗淨魚腹與魚頭，在魚背各劃兩刀，擦乾表面水分。\n2 番茄醬、糖、醬油、水果醋和水拌勻，調成糖醋醬汁。\n3 鍋中加油，放入薑以中小火略煎後取出。放入兩尾黃魚，彼此留空隙，蓋上鍋蓋，以中小火煎約 4 分鐘。\n4 翻面續煎至熟，將黃魚盛起，鍋中留油。煎煮時間依魚的大小調整。\n5 放入洋蔥、薑和蔥，以中小火拌炒。倒入糖醋醬汁，煮至略為濃稠後淋在黃魚上。\n煮奔",
+    "originalSha256": "c1c16488b3382b9dd89b9cc4d5f6359dd4d786bd719d08a14bc7e3549312b648",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/sweet-sour-yellow-croaker.png",
+    "webpSha256": "e318ffcb7bed4ce35fa37e3f4772fe4bc904e0101fa3e41ff286a20c5cbd4bca",
+    "webpBytes": 114560,
+    "quality": 80,
+    "qa": "畫面至少三片完整薑片，材料只有2片。"
+  },
+  {
+    "id": "orange-pork-ribs",
+    "title": "橙汁排骨",
+    "sourceSha256": "b274fdda3518d860ea2569fffac4d273da5881cdc8c35ccf5039d037d9790a2d",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate of cooked bone-in pork spare-rib portions, fried golden then coated in an orange-juice sauce. Mix peeled orange flesh into the ribs and sauce, with a small amount of very thin orange-peel threads. The orange flesh must be peeled, not orange wedges with an attached thick rind. Keep rib portions distinct and do not invent a specific rib length, cut size, or piece count. No sesame seeds, scallions, parsley, or extra garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate of cooked bone-in pork spare-rib portions, fried golden then coated in an orange-juice sauce. Mix peeled orange flesh into the ribs and sauce, with a small amount of very thin orange-peel threads. The orange flesh must be peeled, not orange wedges with an attached thick rind. Keep rib portions distinct and do not invent a specific rib length, cut size, or piece count. No sesame seeds, scallions, parsley, or extra garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n橙汁排骨\n豬小排先醃後炸，再拌入柳橙汁醬，最後加入柳橙果肉。\n2 人份・90 分鐘・非湯料理\n材料\n主料\n豬小排 500 g\n柳橙 1 顆（取果肉與果皮）\n調味\n柳橙汁 230 ml（醃料用 30 ml，醬汁用 200 ml）\n料理米酒 5 ml（約 1 小匙，醃料用）\n砂糖 6.25 ml（約 1 又 1/4 小匙，醃料用 1/4 小匙、醬汁用 1 小匙）\n鹽 少許（醃料與醬汁各用一次）\n柳橙皮 少許（醃料與醬汁各用一次）\n太白粉水 少許（勾芡用）\n食用油 適量（炸油）\n做法\n1 柳橙削皮取出果肉，部分果皮切成細絲。\n2 豬小排洗淨瀝乾，加入 30 ml 柳橙汁、5 ml 料理米酒、少許鹽、1.25 ml 砂糖和少許柳橙皮，醃約 1 小時。\n3 將食用油加熱至約 160°C，放入豬小排炸至金黃色，撈起備用。\n4 將 200 ml 柳橙汁、少許鹽和 5 ml 砂糖煮滾，放入豬小排拌勻；以太白粉水勾芡，再加入柳橙果肉和柳橙皮拌勻。\n煮奔",
+    "originalSha256": "e0bcb99587dbf2f5011d0daf631794e1491dbc537b014bc4cc487ae7a3e4ca41",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/orange-pork-ribs.png",
+    "webpSha256": "0590b9db2cc3e3064b612d86dd58aee3c05fddef82a7341b3c7bfec160560c83",
+    "webpBytes": 106062,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過"
+  },
+  {
+    "id": "napa-cabbage-dried-shrimp",
+    "title": "開陽白菜",
+    "sourceSha256": "e0a79cf1f1636d2ad2301af047872e054aa606de6332f0a771ea6ceafc20e293",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate of softened napa-cabbage slices, pale green leaves and white rib sections mixed with sliced rehydrated dried shiitake mushrooms and small rehydrated dried shrimp (xia mi). The cooked vegetables and small dried shrimp are coated in a light translucent thickened sauce, finished with sesame oil. Make the dried shrimp small and lightly wrinkled, not large plump fresh prawns. No scallions, no chili, no pork, no fresh tomato, and no garlic garnish; the optional tip variation is not the main illustrated recipe. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, muted natural ingredient colors, 45-degree overhead view. One plain unpatterned ceramic plate of softened napa-cabbage slices, pale green leaves and white rib sections mixed with sliced rehydrated dried shiitake mushrooms and small rehydrated dried shrimp (xia mi). The cooked vegetables and small dried shrimp are coated in a light translucent thickened sauce, finished with sesame oil. Make the dried shrimp small and lightly wrinkled, not large plump fresh prawns. No scallions, no chili, no pork, no fresh tomato, and no garlic garnish; the optional tip variation is not the main illustrated recipe. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. Natural ingredient overlap is allowed; do not turn ingredient weights into an invented visible-piece count. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n開陽白菜\n大白菜先燙過，再和泡軟的蝦米、香菇一起煮，最後勾芡淋香油。白菜軟嫩、湯汁滑順，適合配飯。\n4 人份・40 分鐘・非湯料理\n材料\n主料\n大白菜 500 g（切片）\n乾香菇 30 g（花菇，泡軟後切片）\n蝦米 30 g\n調味\n食用油 30 ml（約 2 湯匙）\n水 200 ml\n高湯粉 適量（約 1 湯匙，可用干貝風味）\n太白粉 適量（約 1 湯匙，加水調成太白粉水）\n香油 7.5 ml（約 1/2 湯匙）\n做法\n1 大白菜切成片，放進滾水燙過，撈起泡冷水降溫，再瀝乾水分。\n2 乾香菇和蝦米用冷水泡軟，香菇撈出切片，浸泡香菇的水留下備用。\n3 炒鍋倒入食用油，放入香菇片和蝦米爆炒，炒到香味出來。\n4 倒入浸泡香菇的水，再加 200 ml 水，煮到滾後放入大白菜，煮約 2 分鐘。\n5 加入高湯粉拌勻，太白粉加水調勻後淋進鍋中勾芡，最後淋上香油拌勻就起鍋。\n小提醒\n不用高湯粉時，可把水換成 200 ml 高湯，改加鹽 1/2 茶匙和糖 1/4 茶匙調味；爆香時也可以加入 10 g 蒜末。\n煮奔",
+    "originalSha256": "29d9d47f32424d39848b61de2deef84d17fdfc7fb160c15ea5aaafa8a6efce4a",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/napa-cabbage-dried-shrimp.png",
+    "webpSha256": "df16a7f0d90aa8f9b3ba9766746910fd673a60e318f2231371c98b761f1d9a7d",
+    "webpBytes": 103932,
+    "quality": 80,
+    "qa": "蝦呈飽滿光滑、清楚分節帶尾的鮮蝦狀，未呈小而皺縮的泡發蝦米。"
+  },
+  {
+    "id": "yam-vegetable-soup",
+    "title": "山藥蔬菜湯",
+    "sourceSha256": "fedb376ae6a67200eae08deea66454cb8e82091baea3d07b94319c3658317ba3",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain open soup pot of clear finished soup: 250 g peeled Chinese yam in irregular rolling-cut chunks, 50 g peeled carrot in rolling-cut chunks, 150 g konjac, 100 g root-trimmed shimeji mushrooms, 100 g fresh shiitake mushrooms with stems removed, and 10 g slender ginger shreds. The shiitake caps remain plain and unscored: NO cross cuts, stars, decorative knife marks, or slices. Ginger shreds are genuinely fine hairlike strips, not thick sticks. Konjac has no specified cutting method: do not invent knots, noodles, decorative shapes, or explicit cut instructions; show it partly submerged in a visually understated way. Broth is 800 ml stock seasoned with 5 ml salt, 0.83 ml white pepper and 2.5 ml sesame oil, all dissolved/dispersed, not separate toppings. Do not add meat, tofu, scallions, cilantro or chili. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain open soup pot of clear finished soup: 250 g peeled Chinese yam in irregular rolling-cut chunks, 50 g peeled carrot in rolling-cut chunks, 150 g konjac, 100 g root-trimmed shimeji mushrooms, 100 g fresh shiitake mushrooms with stems removed, and 10 g slender ginger shreds. The shiitake caps remain plain and unscored: NO cross cuts, stars, decorative knife marks, or slices. Ginger shreds are genuinely fine hairlike strips, not thick sticks. Konjac has no specified cutting method: do not invent knots, noodles, decorative shapes, or explicit cut instructions; show it partly submerged in a visually understated way. Broth is 800 ml stock seasoned with 5 ml salt, 0.83 ml white pepper and 2.5 ml sesame oil, all dissolved/dispersed, not separate toppings. Do not add meat, tofu, scallions, cilantro or chili. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene. Text verbatim:\n煮奔\n山藥蔬菜湯\n山藥、胡蘿蔔和菇類先後入湯煮熟，以鹽、白胡椒和香油調味。\n4 人份・35 分鐘・湯\n材料\n主料\n山藥 250 g（去皮切滾刀塊）\n胡蘿蔔 50 g（去皮切滾刀塊）\n蒟蒻 150 g\n鴻喜菇 100 g（切去根部）\n鮮香菇 100 g（去蒂）\n薑絲 10 g\n高湯 800 ml\n調味\n鹽 5 ml（約 1 茶匙）\n白胡椒 0.83 ml（約 1/6 茶匙）\n香油 2.5 ml（約 1/2 茶匙）\n做法\n1 山藥與胡蘿蔔削皮後切成滾刀塊；鮮香菇摘除蒂頭，鴻喜菇把根部切掉。\n2 先把高湯燒滾，放進山藥、胡蘿蔔與薑絲；等湯再度滾起，調成小火慢煮約 20 分鐘。\n3 接著下蒟蒻、鮮香菇和鴻喜菇，續煮約 3 分鐘，最後以鹽、白胡椒與香油調味。\n煮奔",
+    "originalSha256": "ca461cbac92cd8bf9eae42f60fa545b28ed26f37404a1a7bed5919674c3fbd31",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/yam-vegetable-soup.png",
+    "webpSha256": "78067e70a4e3ef48e903113b332d012a77213e52f5321c7d272a97d15f2a04b4",
+    "webpBytes": 96570,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過"
+  },
+  {
+    "id": "curry-chicken",
+    "title": "咖哩雞",
+    "sourceSha256": "05fb1940b37b00098cc03b42e2e94ed22d1de1ace7077ac42325216ad7483d36",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain ceramic deep plate holding finished curry chicken: 300 g boneless chicken thigh cut into small bite-sized chunks, 100 g frozen mixed three-color vegetables (carrot pieces, green peas and corn kernels, already identified in the YAML hero alt), coated in a reduced curry sauce. The vegetables are a modest supporting proportion, not large carrot wedges overwhelming the chicken. Red shallot 20 g and garlic 10 g are very finely minced tiny irregular flecks integrated into sauce, not coarse cubes/chunks; do not turn chopped/minced aromatics into puree or paste. Sauce is from 400 ml water, 30 ml cooking oil, 10 g curry powder, 6 g cocoa powder, 2.5 g salt and 5 g fine sugar, incorporated into the sauce rather than separate visible piles. No potatoes, onion chunks, coconut milk, cream or garnish. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain ceramic deep plate holding finished curry chicken: 300 g boneless chicken thigh cut into small bite-sized chunks, 100 g frozen mixed three-color vegetables (carrot pieces, green peas and corn kernels, already identified in the YAML hero alt), coated in a reduced curry sauce. The vegetables are a modest supporting proportion, not large carrot wedges overwhelming the chicken. Red shallot 20 g and garlic 10 g are very finely minced tiny irregular flecks integrated into sauce, not coarse cubes/chunks; do not turn chopped/minced aromatics into puree or paste. Sauce is from 400 ml water, 30 ml cooking oil, 10 g curry powder, 6 g cocoa powder, 2.5 g salt and 5 g fine sugar, incorporated into the sauce rather than separate visible piles. No potatoes, onion chunks, coconut milk, cream or garnish. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene. Text verbatim:\n煮奔\n咖哩雞\n去骨雞腿肉塊以紅蔥末與蒜末煸炒後，加入咖哩粉與可可粉細火燉煮入味，最後拌入三色蔬菜增色，湯汁濃郁醇厚。\n3 人份・35 分鐘・非湯料理\n材料\n主料\n去骨雞腿肉 300 g（切小塊）\n冷凍三色蔬菜 100 g\n紅蔥頭 20 g（切碎成紅蔥末）\n蒜頭 10 g（切碎成蒜末）\n調味\n水 400 ml\n食用油 30 ml（約 2 大匙，爆香與炒肉用）\n咖哩粉 10 g（約 1 大匙）\n鹽 2.5 g（約 1/2 茶匙）\n可可粉 6 g（約 2 茶匙，增添醬汁色澤與醇度）\n細砂糖 5 g（約 1 茶匙）\n做法\n1 將去骨雞腿肉切成適口小塊，紅蔥頭與蒜頭分別切成細碎末狀備用。\n2 鍋中倒入食用油以小火加熱，放入紅蔥末與蒜末煸炒出香氣，轉大火加入雞腿肉塊快速翻炒，炒到肉塊表面轉白。\n3 倒入咖哩粉翻炒均勻出香，接著注入水並加入可可粉，以大火煮滾後轉成微小火，蓋上鍋蓋慢火燉煮約 20 分鐘。\n4 揭蓋加入冷凍三色蔬菜、鹽與細砂糖拌勻，繼續加熱煮到湯汁略微收濃即可盛盤上桌。\n小提醒\n加入少許純可可粉能加深咖哩色澤並讓風味層次更為溫潤深邃。\n煮奔",
+    "originalSha256": "c346565fe8fb7f96df4c4a39ee53f4718be1b25f5c300427e85c181c7bd88de2",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/curry-chicken.png",
+    "webpSha256": "cb4fa682c2ae1be084589fa02ac0c8b0c6079a32928361ab710634d6d544c6db",
+    "webpBytes": 115138,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過；醬中褐粒不能可靠辨成粗蒜/紅蔥塊，也可能是小肉碎或濃醬筆觸，未以不確定身分臆判錯誤。"
+  },
+  {
+    "id": "garlic-fried-fish",
+    "title": "蒜味炸魚片",
+    "sourceSha256": "98dc931c1cf20ff72a5833f959078bf268bdc34d66315fa11f286c2bb1a54727",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain round ceramic plate with slices from exactly one cucumber lining the bottom. On top are 300 g tilapia fillet cut into small slices and fried golden, with golden garlic SLICES made from exactly five peeled garlic cloves. Five cloves are the original total, not five garlic slices; never show five whole cloves plus extra slices. No garlic paste or coarse garlic chunks. The fish is fried without flour, starch, breadcrumbs or batter: its surface is gently golden fried fish, not puffed breaded balls or thick cubes. A dark sauce made from 30 ml thick soy sauce, 15 ml black vinegar, 5 ml boiled water and 5 ml sugar is drizzled over the fish. A little salt and pepper season the fish; frying oil is an operational ingredient, approximately half a pot before frying, not a pool served on the plate. No sesame seeds or fresh herbs. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain round ceramic plate with slices from exactly one cucumber lining the bottom. On top are 300 g tilapia fillet cut into small slices and fried golden, with golden garlic SLICES made from exactly five peeled garlic cloves. Five cloves are the original total, not five garlic slices; never show five whole cloves plus extra slices. No garlic paste or coarse garlic chunks. The fish is fried without flour, starch, breadcrumbs or batter: its surface is gently golden fried fish, not puffed breaded balls or thick cubes. A dark sauce made from 30 ml thick soy sauce, 15 ml black vinegar, 5 ml boiled water and 5 ml sugar is drizzled over the fish. A little salt and pepper season the fish; frying oil is an operational ingredient, approximately half a pot before frying, not a pool served on the plate. No sesame seeds or fresh herbs. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene. Text verbatim:\n煮奔\n蒜味炸魚片\n鯛魚片與蒜片炸至金黃，淋上醬油膏、黑醋調成的醬汁。\n3 人份・25 分鐘・非湯料理\n材料\n主料\n鯛魚片 300 g（切小片）\n蒜頭 5 顆（去皮切片）\n小黃瓜 1 條（切片鋪盤底）\n調味\n醬油膏 30 ml（約 2 大匙）\n黑醋 15 ml（約 1 大匙）\n開水 5 ml（約 1 小匙）\n糖 5 ml（約 1 小匙）\n胡椒粉 少許（魚片醃料）\n鹽 少許（魚片醃料）\n炸油 適量（約半鍋）\n做法\n1 蒜頭剝皮後切片；鯛魚片分切成小片，撒少許胡椒粉和鹽。\n2 醬油膏、黑醋、開水和糖拌勻成調味醬；小黃瓜切片，鋪在盤底。\n3 鍋裡倒油到約半鍋高，燒到中油溫，下魚片和蒜片炸到表面金黃，撈出擺在小黃瓜上。\n4 要吃之前再淋上調味醬。\n小提醒\n鯛魚片切小片時順著魚肉紋路下刀，不要垂直紋路切，下鍋後比較不會散開。\n煮奔",
+    "originalSha256": "0343ecebed8d1229eac6518097d72ce0a59cfd3a9a28bc3d1d8111303e7f6009",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/garlic-fried-fish.png",
+    "webpSha256": "09115e75544f679e39ea8ca2b23763a4ee5048f94c89be868e758851411b4c36",
+    "webpBytes": 115442,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過"
+  },
+  {
+    "id": "steamed-pork-pickled-cucumber",
+    "title": "瓜仔肉",
+    "sourceSha256": "cd963898b73bb4b82ddc9d36df23b7cb130d20a20c79d93cd0c86b803cc27b8b",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain shallow ceramic plate holding ONE flattened round steamed pork patty, fully cooked with a little natural cooking juice. The patty contains 300 g ground pork, 120 ml canned pickled cucumber diced FINELY, 45 ml finely chopped scallions, and 22.5 ml minced garlic, all mixed throughout the meat BEFORE steaming, not scattered on top afterward. Pickled cucumber remains tiny fine diced pieces, not puree. Garlic is very finely minced tiny irregular flecks integrated into sauce and the moist meat mixture, not coarse cubes/chunks; do not change minced garlic into paste. Scallion is fine small chopped flecks within the meat, not a mound of large fresh scallion rings. Seasonings are 6 g salt, 15 ml soy sauce, 6 g sugar and 15 ml sesame oil incorporated into the patty. Do not depict salted egg yolk: it appears only as an optional variant in the tip, not in this base recipe. No extra topping or green garnish. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain shallow ceramic plate holding ONE flattened round steamed pork patty, fully cooked with a little natural cooking juice. The patty contains 300 g ground pork, 120 ml canned pickled cucumber diced FINELY, 45 ml finely chopped scallions, and 22.5 ml minced garlic, all mixed throughout the meat BEFORE steaming, not scattered on top afterward. Pickled cucumber remains tiny fine diced pieces, not puree. Garlic is very finely minced tiny irregular flecks integrated into sauce and the moist meat mixture, not coarse cubes/chunks; do not change minced garlic into paste. Scallion is fine small chopped flecks within the meat, not a mound of large fresh scallion rings. Seasonings are 6 g salt, 15 ml soy sauce, 6 g sugar and 15 ml sesame oil incorporated into the patty. Do not depict salted egg yolk: it appears only as an optional variant in the tip, not in this base recipe. No extra topping or green garnish. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene. Text verbatim:\n煮奔\n瓜仔肉\n豬絞肉拌入花瓜丁、蔥花和蒜末，甩打出彈性後壓成扁圓，放進電鍋蒸熟。做法簡單、不必顧爐火，適合配飯。\n3 人份・30 分鐘・非湯料理\n材料\n主料\n豬絞肉 300 g（建議用梅花絞肉）\n罐頭花瓜 120 ml（約 1/2 杯，切成細丁）\n蔥花 45 ml（約 3 湯匙，青蔥洗淨切末）\n蒜末 22.5 ml（約 1 又 1/2 湯匙，大蒜洗淨切末）\n調味\n鹽 6 g（約 1 茶匙）\n醬油 15 ml（約 1 湯匙）\n糖 6 g（約 1/2 湯匙）\n香油 15 ml（約 1 湯匙）\n做法\n1 罐頭花瓜取出，切成細丁；青蔥和大蒜洗淨，分別切成蔥花與蒜末。\n2 豬絞肉放進大碗，加入鹽、醬油、糖和香油，拌到調味料均勻融入絞肉。\n3 再放入花瓜丁、蔥花和蒜末，一起攪拌均勻。\n4 把肉餡抓起往碗裡甩打，重複約 10 次，讓肉餡產生彈性。\n5 肉餡移到盤中，用手按壓成一片扁圓形。\n6 盤子放進電鍋，外鍋加 1/2 杯水。\n7 蓋上鍋蓋按下開關，蒸約 20 分鐘，開關跳起、肉餡熟透就完成。\n小提醒\n想做成鹹蛋瓜仔肉，可先在盤底放鹹蛋黃，再鋪上肉餡壓實一起蒸。\n煮奔",
+    "originalSha256": "1d0050cff5865efc2ae560413c6ab305fea7a93eb7545c5c0d54472a731cb40b",
+    "originalSize": [
+      1086,
+      1449
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/steamed-pork-pickled-cucumber.png",
+    "webpSha256": "010063696b7158aeebb63ed30c9232a3c98687ba75ae3d072d7f8c275a56604e",
+    "webpBytes": 107030,
+    "quality": 80,
+    "qa": "可辨粗蒜塊及花瓜厚圓截面，不符細末/細丁；本輪一次，隔離不重試。"
+  },
+  {
+    "id": "meigan-braised-pork",
+    "title": "梅干扣肉",
+    "sourceSha256": "cecaba403243644e148706cf84658dc923175e4831d86eb66081a4a58245f4fa",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain ceramic deep plate of finished braised-and-steamed pork belly: 300 g pork belly cut into approximately 1 cm thick slices, with one bundle of preserved mustard greens (approximately 100 g) washed and cut into short lengths. Include the actual braising aromatics remaining in the finished dish: exactly THREE old ginger SLICES, exactly TWO whole dried chili peppers, exactly ONE whole star anise, and long scallion sections cut from exactly TWO original scallion stalks. This count constraint applies to ALL recognizable spices, not only the meat: never show two star-anise stars, four ginger slices, or three dried chilies. Do not turn three ginger slices into three ginger roots. Scallion segments are cuts of two stalks, not two large garnish stalks plus extras. Sauce is from 30 ml soy sauce, 60 ml Shaoxing wine used in the stated marinade/braise stages, 15 g rock sugar and 350 ml water, simmered and steamed with the pork; no extra oil, garlic, fresh greens or seeds. Preserved greens remain short wilted leafy/stem pieces, not a bed of arbitrary tiny vegetable cubes. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain ceramic deep plate of finished braised-and-steamed pork belly: 300 g pork belly cut into approximately 1 cm thick slices, with one bundle of preserved mustard greens (approximately 100 g) washed and cut into short lengths. Include the actual braising aromatics remaining in the finished dish: exactly THREE old ginger SLICES, exactly TWO whole dried chili peppers, exactly ONE whole star anise, and long scallion sections cut from exactly TWO original scallion stalks. This count constraint applies to ALL recognizable spices, not only the meat: never show two star-anise stars, four ginger slices, or three dried chilies. Do not turn three ginger slices into three ginger roots. Scallion segments are cuts of two stalks, not two large garnish stalks plus extras. Sauce is from 30 ml soy sauce, 60 ml Shaoxing wine used in the stated marinade/braise stages, 15 g rock sugar and 350 ml water, simmered and steamed with the pork; no extra oil, garlic, fresh greens or seeds. Preserved greens remain short wilted leafy/stem pieces, not a bed of arbitrary tiny vegetable cubes. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene. Text verbatim:\n煮奔\n梅干扣肉\n五花肉切厚片乾煎逼出油脂，與老薑片、乾辣椒、八角炒香，再結合反覆洗淨的梅干菜，加入醬油、紹興酒與冰糖燉蒸至軟爛。肥而不膩、鹹甜醇香。\n4 人份・60 分鐘・非湯料理\n材料\n主料\n五花肉 300 g（切成約 1 公分厚片）\n梅干菜 1 束（約 100 g，泡水洗淨切小段）\n水 350 ml（燒煮湯汁用）\n調味\n老薑片 3 片\n蔥 2 根（切長段）\n乾辣椒 2 根\n八角 1 粒\n醬油 30 ml（約 2 大匙）\n紹興酒 60 ml（約 4 大匙，分次醃肉與燒煮）\n冰糖 15 g（約 1 大匙）\n做法\n1 梅干菜整束撥開泡水，換水多次徹底洗淨細沙後切成小段；五花肉切成約 1 公分厚片，加入 1 大匙紹興酒抓勻醃漬 5 分鐘。\n2 熱鍋不放油，放入醃好的五花肉以中火慢煎，將兩面煎至金黃微焦並煸出多餘豬油。\n3 利用鍋內煸出的天然豬油，放入老薑片、乾辣椒與八角以小火炒出辛香，再下梅干菜拌炒，接著淋入剩餘紹興酒、醬油與冰糖炒勻至糖粒溶解融和。\n4 鍋中放入蔥並注入水，煮滾後續滾 5 分鐘，隨後整鍋食材連同湯汁移入電鍋內鍋，外鍋加 2 杯半水蒸煮約 40 分鐘至肉質軟爛入味，起鍋盛盤即可。\n小提醒\n梅干菜易夾帶細沙，務必反覆清洗直至盆底無砂粒；五花肉先煎至兩面金黃梅納反應充分，蒸出來的扣肉才更香且不油膩。\n煮奔",
+    "originalSha256": "3996155bdc7f87a9e8d573023434e2fa3e6b5bb48fd1f66dcbc3577df98daa25",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/meigan-braised-pork.png",
+    "webpSha256": "b92b2d3f5f9713a83b6a5a1f70d5471a0bc79967d1f31f4ef79bc5a7a3a3594e",
+    "webpBytes": 131084,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過"
+  },
+  {
+    "id": "mustard-greens-clam-chicken-soup",
+    "title": "芥菜蛤蜊雞湯",
+    "sourceSha256": "fe45c8852424ddce9d78a5017a510a61db44b23ea640c996288840827fbdc5d2",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain open soup pot of finished clear chicken soup: 400 g chopped chicken pieces, 250 g washed mustard-green hearts cut into LARGE CHUNKS, 150 g clams cooked with their shells open, and 20 g peeled ginger cut into slices. Mustard-green hearts should show broad thick pale-green heart/stem chunks with their leaves, not a substitute pile of slender spinach or water-spinach stems. The chicken is chopped pieces, not whole wings, not a whole chicken and not skinless shredded chicken. Broth is made from 1000 ml water and 20 ml rice wine, with 3 g salt adjusted according to clam salinity. Ginger is sliced, not julienned, diced or mashed. No scallions, carrots, mushrooms, pepper, extra aromatics or garnish. All quantities are weights or volumes, so do not invent fixed counts of chicken chunks, clams or ginger slices. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration on warm off-white paper, muted natural food colors, 45-degree overhead view, complete serving vessel with generous clear margin. The supplied reference is for card LAYOUT ONLY: do not copy its food, ingredients, garnish, vessel contents, or ingredient counts. One plain open soup pot of finished clear chicken soup: 400 g chopped chicken pieces, 250 g washed mustard-green hearts cut into LARGE CHUNKS, 150 g clams cooked with their shells open, and 20 g peeled ginger cut into slices. Mustard-green hearts should show broad thick pale-green heart/stem chunks with their leaves, not a substitute pile of slender spinach or water-spinach stems. The chicken is chopped pieces, not whole wings, not a whole chicken and not skinless shredded chicken. Broth is made from 1000 ml water and 20 ml rice wine, with 3 g salt adjusted according to clam salinity. Ginger is sliced, not julienned, diced or mashed. No scallions, carrots, mushrooms, pepper, extra aromatics or garnish. All quantities are weights or volumes, so do not invent fixed counts of chicken chunks, clams or ginger slices. Ingredient weights are recipe amounts, NOT invented visible-piece counts. Original whole-item counts do not become counts of sliced pieces. Natural overlap is allowed, but never add extra whole spices or duplicate counted ingredients. No extra garnish, herbs, sesame seeds, vegetables, rice, or side dishes unless expressly specified above. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. All food is finished and ready to serve, away from a stove or cooking scene. Text verbatim:\n煮奔\n芥菜蛤蜊雞湯\n長年芥菜剝開汆燙退苦，土雞塊滾水汆燙洗淨，放入湯鍋注入清水、老薑片與米酒溫火細燉，起鍋前投入新鮮蛤蜊煮至開殼，芥菜清苦回甘、土雞肉質鮮嫩、蛤蜊海味鮮美交織，清潤甘甜。\n4 人份・45 分鐘・湯\n材料\n主料\n土雞肉 400 g（剁塊汆燙）\n芥菜 250 g（芥菜仁洗淨切大塊）\n蛤蜊 150 g（吐沙洗淨提鮮）\n生薑 20 g（去皮切薑片）\n水 1000 ml（燉湯高湯底）\n調味\n米酒 20 ml（約 1.5 大匙）\n鹽 3 g（蛤蜊已有鹹度斟酌微調）\n做法\n1 芥菜仁一片片剝開洗淨切大塊，入滾水中汆燙 30 秒撈起泡冷水去除苦澀味；土雞肉剁塊入沸水汆燙 2 分鐘洗淨瀝乾；蛤蜊吐沙洗淨備用。\n2 取湯鍋注入 1000 ml 水煮滾，放入雞肉塊、薑片與米酒，大火煮沸後撈去浮沫。\n3 轉小火蓋上鍋蓋慢燉約 25 分鐘至雞肉軟嫩，開蓋放入處理好的芥菜塊續煮 8 分鐘至芥菜翠綠透熟。\n4 最後轉中大火加入蛤蜊煮約 1 至 2 分鐘至全數開殼，加入少許鹽調味即可熄火盛入大湯碗趁熱享用。\n小提醒\n芥菜先以滾水快速汆燙再泡冷水，能有效去除過度苦澀味並保持翡翠般的鮮綠色澤；蛤蜊最後下鍋開殼即關火，湯頭最鮮美且蛤肉飽滿爆汁。\n煮奔",
+    "originalSha256": "ca958f666bc7f29d3dcd61f65a69a3ddf02b4f4aac1a98a0dddacdd5fab0ab75",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch08/originals/mustard-greens-clam-chicken-soup.png",
+    "webpSha256": "df0860c2e131d50ec179429218cf3543846d2eccf6074a36c711927970198c0f",
+    "webpBytes": 128528,
+    "quality": 80,
+    "qa": "原PNG、最終WebP、324px縮圖雙重逐字與食材形態審核通過"
+  }
+]
