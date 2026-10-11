@@ -44,7 +44,7 @@ ingredients:
   - { name: 胡椒粉, note: 少許, group: 調味 }
   - { name: 香油, note: 少許, group: 調味 }
   - { name: 烏醋, note: 少許, group: 調味 }
-  - { name: 太白粉水, note: 勾芡用，來源未列用量與配比, group: 調味 }
+  - { name: 太白粉水, note: 勾芡用，適量，粉水比例待確認, group: 調味 }
 steps:
   - text: 將香菇加水泡軟，撈起切絲，泡香菇的水留用。
     image:

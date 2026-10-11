@@ -37,7 +37,7 @@ ingredients:
       note: 約 2 大匙，換算估值,
       group: 調味,
     }
-  - { name: 水, note: 適量，煮竹筍用，來源未列數量, group: 調味 }
+  - { name: 水, note: 適量，煮竹筍用, group: 調味 }
 steps:
   - text: 綠竹筍洗好放進鍋裡，倒水淹過筍身，大火煮滾後轉小火，續煮約 20 分鐘。
     image:

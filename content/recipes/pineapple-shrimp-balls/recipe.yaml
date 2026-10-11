@@ -55,7 +55,7 @@ ingredients:
       note: 裹蝦仁用，調味 C,
       group: 調味,
     }
-  - { name: 炸油, note: 適量，來源未標用量, group: 調味 }
+  - { name: 炸油, note: 適量, group: 調味 }
 steps:
   - text: 草蝦仁洗好後把水瀝乾，沿背部下刀切開約三分之一深，加入調味 A 抓勻，醃約 2 分鐘。
     image:

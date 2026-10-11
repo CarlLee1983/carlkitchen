@@ -31,7 +31,7 @@ ingredients:
   - {
       name: 沙拉油,
       amount: { value: 5, unit: ml },
-      note: 爆香另需油炸用量，來源未列,
+      note: 爆香用；油炸另備適量,
       group: 調味,
     }
 steps:

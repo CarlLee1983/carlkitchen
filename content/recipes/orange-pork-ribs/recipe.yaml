@@ -34,7 +34,7 @@ ingredients:
   - { name: 鹽, group: 調味, note: 少許，醃料與醬汁各用一次 }
   - { name: 柳橙皮, group: 調味, note: 少許，醃料與醬汁各用一次 }
   - { name: 太白粉水, group: 調味, note: 少許，勾芡用 }
-  - { name: 食用油, group: 調味, note: 炸油，來源未列用量 }
+  - { name: 食用油, group: 調味, note: 適量，炸油 }
 steps:
   - text: 柳橙削皮取出果肉，部分果皮切成細絲。
     image:

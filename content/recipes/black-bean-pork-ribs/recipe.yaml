@@ -57,7 +57,7 @@ ingredients:
       group: 調味,
       note: 約 1 大匙,
     }
-  - { name: 外鍋水, amount: { value: 1, unit: 杯 }, note: 來源未標杯量 }
+  - { name: 外鍋水, amount: { value: 1, unit: 杯 }, note: 杯的容量待確認 }
 steps:
   - text: 豬腩排浸水約 30 分鐘，至血水滲出。豆豉沖洗乾淨。
     image:

@@ -19,13 +19,13 @@ ingredients:
     }
   - { name: 蒜頭, amount: { value: 3, unit: 瓣 }, note: 切末 }
   - { name: 青蔥, amount: { value: 2, unit: 根 }, note: 分切蔥白與蔥綠 }
-  - { name: 食用油, note: 來源未提供用量，炒香用, group: 調味 }
+  - { name: 食用油, note: 適量，炒香用, group: 調味 }
   - { name: 微辣豆瓣醬, amount: { value: 1.5, unit: 小匙 }, group: 調味 }
   - { name: 醬油, amount: { value: 10, unit: ml }, group: 調味 }
   - { name: 米酒, amount: { value: 1, unit: 小匙 }, group: 調味 }
   - { name: 開水, amount: { value: 150, unit: ml }, group: 調味 }
   - { name: 太白粉水, note: 來源標示一小碟，用於勾薄芡, group: 調味 }
-  - { name: 胡椒粉, note: 來源標示適量, group: 調味 }
+  - { name: 胡椒粉, note: 適量, group: 調味 }
 steps:
   - text: 嫩豆腐切成小塊。蒜頭切末，青蔥分切蔥白與蔥綠。
     image:

@@ -24,7 +24,7 @@ ingredients:
   - {
       name: 芝麻鹽,
       amount: { value: 1, unit: 匙 },
-      note: 來源未註明匙的規格,
+      note: 匙的容量待確認,
       group: 調味,
     }
 steps:

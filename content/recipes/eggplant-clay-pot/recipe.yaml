@@ -24,8 +24,8 @@ ingredients:
       note: 約 2 大匙,
       group: 調味,
     }
-  - { name: 水, note: 來源未標用量, group: 調味 }
-  - { name: 食用油, note: 過油及爆香用，來源未標用量, group: 調味 }
+  - { name: 水, note: 適量, group: 調味 }
+  - { name: 食用油, note: 適量，過油及爆香用, group: 調味 }
 steps:
   - text: 茄子切成段，先浸在水裡，撈出後把水分瀝乾。
     image:

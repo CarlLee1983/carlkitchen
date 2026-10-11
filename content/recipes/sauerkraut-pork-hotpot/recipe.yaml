@@ -11,11 +11,7 @@ protein: false
 timeMinutes: 45
 tags: [豬肉, 酸白菜, 鍋物]
 ingredients:
-  - {
-      name: 酸白菜,
-      amount: { value: 0.5, unit: 顆 },
-      note: 切絲，來源未提供重量,
-    }
+  - { name: 酸白菜, amount: { value: 0.5, unit: 顆 }, note: 切絲 }
   - {
       name: 豬小排,
       amount: { value: 300, unit: g },
@@ -26,21 +22,21 @@ ingredients:
       amount: { value: 500, unit: g },
       note: 來源範圍 500–600 g，採下限,
     }
-  - { name: 老薑, amount: { value: 1, unit: 小塊 }, note: 切絲，來源未提供重量 }
+  - { name: 老薑, amount: { value: 1, unit: 小塊 }, note: 切絲 }
   - { name: 蒜苗, amount: { value: 2, unit: 根 }, note: 切斜段 }
   - {
       name: 水,
       amount: { value: 2000, unit: ml },
-      note: 煮湯用；汆燙另備水，來源未定量,
+      note: 煮湯用；汆燙另備適量水,
       group: 調味,
     }
   - {
       name: 米酒,
       amount: { value: 2, unit: 匙 },
-      note: 來源未註明湯匙或茶匙，待核,
+      note: 匙的容量待確認,
       group: 調味,
     }
-  - { name: 鹽, note: 來源標示視需要添加, group: 調味 }
+  - { name: 鹽, note: 視需要添加, group: 調味 }
 steps:
   - text: 豬小排洗淨。另鍋備水，以中大火煮滾後放入豬小排汆燙 3 至 5 分鐘，撈出並沖掉浮沫。
     image:

@@ -12,7 +12,7 @@ timeMinutes: 15
 tags: [家常菜]
 ingredients:
   - { name: 雪白菇, amount: { value: 120, unit: g }, note: 去蒂後剝散 }
-  - { name: 海帶芽, note: 來源未標用量, group: 調味 }
+  - { name: 海帶芽, note: 用量待確認, group: 調味 }
   - { name: 薑, amount: { value: 10, unit: g }, note: 切絲 }
   - { name: 辣椒, amount: { value: 10, unit: g }, note: 切絲 }
   - {

@@ -11,37 +11,37 @@ protein: true
 timeMinutes: 20
 tags: [粉絲, 豬肉, 家常菜]
 ingredients:
-  - { name: 粉絲, amount: { value: 3, unit: 份 }, note: 來源未提供每份重量 }
+  - { name: 粉絲, amount: { value: 3, unit: 份 } }
   - {
       name: 豬後腿絞肉,
       amount: { value: 300, unit: g },
       note: 來源僅寫豬絞肉，部位為推估,
     }
   - { name: 青蔥, amount: { value: 1, unit: 支 }, note: 蔥白切末、蔥綠切花 }
-  - { name: 蒜末, note: 來源標示適量, group: 調味 }
-  - { name: 薑末, note: 來源標示適量, group: 調味 }
+  - { name: 蒜末, note: 適量, group: 調味 }
+  - { name: 薑末, note: 適量, group: 調味 }
   - {
       name: 辣豆瓣醬,
       amount: { value: 1.5, unit: 匙 },
-      note: 來源未註明匙的規格,
+      note: 匙的容量待確認,
       group: 調味,
     }
   - {
       name: 醬油,
       amount: { value: 1.5, unit: 匙 },
-      note: 來源未註明匙的規格,
+      note: 匙的容量待確認,
       group: 調味,
     }
   - {
       name: 米酒,
       amount: { value: 1, unit: 匙 },
-      note: 來源未註明匙的規格,
+      note: 匙的容量待確認,
       group: 調味,
     }
   - { name: 糖, amount: { value: 1, unit: 小匙 }, group: 調味 }
   - { name: 水, amount: { value: 200, unit: ml }, group: 調味 }
-  - { name: 胡椒粉, note: 來源標示適量, group: 調味 }
-  - { name: 食用油, note: 來源未提供用量，炒絞肉用, group: 調味 }
+  - { name: 胡椒粉, note: 適量, group: 調味 }
+  - { name: 食用油, note: 適量，炒絞肉用, group: 調味 }
 steps:
   - text: 粉絲用冷水泡約 15 分鐘後瀝起。青蔥分切蔥白末與蔥花。
     image:

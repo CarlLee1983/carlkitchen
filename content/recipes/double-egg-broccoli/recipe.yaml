@@ -51,7 +51,7 @@ ingredients:
   - {
       name: 太白粉水,
       amount: { value: 15, unit: ml },
-      note: 約 1 大匙，來源未列粉水比例,
+      note: 約 1 大匙，粉水比例待確認,
       group: 調味,
     }
   - { name: 香油, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }

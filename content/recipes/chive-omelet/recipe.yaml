@@ -13,7 +13,7 @@ tags: [家常菜]
 ingredients:
   - { name: 韭菜, amount: { value: 140, unit: g }, note: 切小段 }
   - { name: 雞蛋, amount: { value: 5, unit: 顆 } }
-  - { name: 食用油, group: 調味, note: 用量未提供 }
+  - { name: 食用油, group: 調味, note: 適量 }
   - {
       name: 鹽,
       amount: { value: 2.5, unit: ml },

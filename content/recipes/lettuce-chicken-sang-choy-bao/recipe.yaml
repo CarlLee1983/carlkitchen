@@ -24,7 +24,7 @@ ingredients:
   - { name: 白胡椒粉, group: 調味, note: 少許 }
   - { name: 米酒, amount: { value: 15, unit: ml }, group: 調味 }
   - { name: 香油, amount: { value: 1, unit: 小匙 }, group: 調味 }
-  - { name: 沙拉油, group: 調味, note: 炸冬粉、油條及炒餡用；來源未列用量 }
+  - { name: 沙拉油, group: 調味, note: 適量，炸冬粉、油條及炒餡用 }
 steps:
   - text: 雞肉、芹菜、油條、荸薺和紅蘿蔔分別切丁。
     image:

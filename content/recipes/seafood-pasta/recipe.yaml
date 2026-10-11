@@ -50,8 +50,8 @@ ingredients:
       note: 約 1 大匙,
       group: 調味,
     }
-  - { name: 奶油, note: 適量，來源未標數量, group: 調味 }
-  - { name: 蒜末, note: 少許，來源未標用量, group: 調味 }
+  - { name: 奶油, note: 適量, group: 調味 }
+  - { name: 蒜末, note: 少許, group: 調味 }
 steps:
   - text: 義大利直麵放進滾水，煮約 8 分鐘後撈出。
     image:

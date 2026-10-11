@@ -40,7 +40,7 @@ ingredients:
   - {
       name: 太白粉,
       amount: { value: 15, unit: ml },
-      note: 約 1 大匙拌蝦漿；豆腐表面另薄撒，來源未列用量,
+      note: 約 1 大匙拌蝦漿；豆腐表面另薄撒,
       group: 調味,
     }
   - {
