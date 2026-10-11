@@ -1,0 +1,89 @@
+[
+  {
+    "id": "stir-fried-cabbage",
+    "title": "清炒高麗菜",
+    "sourceSha256": "0c863abde1924235652eaa18ef586766e17571756c1545b76309726d43641c56",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n清炒高麗菜\n蒜片爆香後下高麗菜快炒，淋米酒蓋鍋燜軟，最後只用鹽調味。菜梗軟、葉片帶清甜，是最基本的家常炒青菜。\n3 人份・10 分鐘・非湯料理\n材料\n主料\n高麗菜 500 g\n大蒜 20 g（切片）\n調味\n食用油 30 ml（約 2 湯匙）\n米酒 15 ml（約 1 湯匙）\n鹽 3 g（約 1/2 茶匙）\n做法\n1 高麗菜洗淨、瀝乾，切成一口大小的片狀；大蒜切成薄片。\n2 炒鍋燒熱後倒入食用油，油熱放入蒜片，炒到蒜片邊緣微黃、聞得到蒜香。\n3 放入高麗菜，大火翻炒到每片葉子都沾上油、顏色變得鮮亮。\n4 沿鍋邊淋入米酒後蓋鍋，維持大火燜約 2 分鐘，直到菜梗變軟。\n5 開蓋加鹽，翻拌均勻，高麗菜縮小、鍋底出一點湯汁就起鍋。\n小提醒\n喜歡口感脆一點，可以不蓋鍋燜，直接大火炒到菜軟就加鹽起鍋。\n煮奔",
+    "generatedSha256": "662e6fff74fe1fd91ca8fa672e14d7a79c9ca620272bbeed170893c35fb24e5b",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 100792,
+    "webpSha256": "3756e9fdfe613484c5677b0467bff4d008f45c897f1cda904906967ae47666ca",
+    "review": "原圖與原生 WebP 全圖人工核對，獨立第二次逐字核對通過；用量、單位、步驟、份量及時間與來源一致。"
+  },
+  {
+    "id": "carrot-egg-stir-fry",
+    "title": "胡蘿蔔炒蛋",
+    "sourceSha256": "b26c47d48462f1c0e6051deaab0d0a1e3873cae9010075c8b4fc4a69a3ee0ab6",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n胡蘿蔔炒蛋\n蛋裹在炒軟的胡蘿蔔粗絲上，拌入蒜香，做法只需五樣材料。\n3 人份・15 分鐘・非湯料理\n材料\n主料\n胡蘿蔔 370 g（約 1 根，去皮刨粗絲）\n雞蛋 3 顆\n蒜頭 2 瓣（切末）\n調味\n食用油 15 ml\n鹽 3 g\n做法\n1 將胡蘿蔔去皮，刨成粗絲；蒜頭切末，雞蛋備成蛋液。\n2 用中火熱鍋 30 秒，倒入食用油和蒜末。炒出香氣後放胡蘿蔔絲，炒到半軟時加鹽，接著炒軟。\n3 把胡蘿蔔絲攤開，再將蛋液淋入鍋中，轉成大火。\n4 輕拌並翻動胡蘿蔔絲與蛋，等蛋液完全凝固就盛出。\n煮奔",
+    "generatedSha256": "93d8146030c293a14df77a4c125a4e812d6d4bbaae2c496c66c7d8ab512d3747",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 95714,
+    "webpSha256": "5874fdb6a374d588e23793c99c6e216408820c200fb097ebb9e603b056241708",
+    "review": "原圖與原生 WebP 全圖人工核對，獨立第二次逐字核對通過；用量、單位、步驟、份量及時間與來源一致。"
+  },
+  {
+    "id": "bamboo-pork-rib-soup",
+    "title": "竹筍排骨湯",
+    "sourceSha256": "b862c9768a15ffe05ea39b3b52ac212f49e298b8e6f142b1b34e612f3f3b6df4",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "rejected",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n竹筍排骨湯\n鮮嫩綠竹筍滾刀切塊，豬小排滾水汆燙洗淨，放入湯鍋注入清水與薑片慢火細燉，竹筍清脆爽口、排骨酥軟甘甜、湯頭清澈醇美。\n4 人份・45 分鐘・湯\n材料\n主料\n豬排骨 250 g（剁小塊洗淨）\n竹筍 150 g（去殼切滾刀塊）\n薑片 10 g（約 3 片切薄片）\n水 1000 ml（高湯底）\n調味\n鹽 4 g（約 1 茶匙調整鹹度）\n做法\n1 綠竹筍剝除外殼修去粗纖維，切成適口滾刀塊；豬小排以滾水汆燙去血水後沖洗乾淨備用。\n2 取湯鍋注入 1000 ml 清水，放入處理好的排骨與竹筍塊，大火煮滾後撈去表面浮沫。\n3 轉中小火蓋上鍋蓋燜燉約 30 分鐘至排骨肉質軟嫩、竹筍甘甜透熟，開蓋加入薑片與鹽調味拌勻即可盛鍋。\n4 盛入大湯碗中趁熱享用。\n小提醒\n竹筍冷水下鍋煮能自然釋放甜味並減緩苦味；排骨汆燙徹底並洗淨骨渣，燉出來的湯色才能清澈明亮、鮮爽不油膩。\n煮奔\nFor soup illustration only, use an open plain soup pot as serving vessel, off heat, with exactly the same pork rib chunks, bamboo shoot chunks and ginger slices from reference.",
+    "generatedSha256": "6532da64591c7d76725ca22a115ff2d5a898c169eab20313a757c35c1f9551d2",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "reason": "未按現行湯品新圖規格畫敞口湯鍋，保留未採用原圖；本輪未重試。"
+  },
+  {
+    "id": "preserved-radish-omelette",
+    "title": "菜脯蛋",
+    "sourceSha256": "52b29d88a8c83fa7423963b2307910425e3423acde701eb6bf2d8f54823571f2",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n菜脯蛋\n菜脯先乾炒收乾水分，再拌進加了蔥花的蛋液，煎成一整片兩面金黃的厚蛋。帶菜脯鹹香，適合配飯。\n2 人份・15 分鐘・非湯料理\n材料\n主料\n雞蛋 3 顆\n菜脯 50 g（碎蘿蔔乾）\n青蔥 20 g（切成蔥花）\n調味\n食用油 30 ml（約 2 湯匙）\n鹽（約 1/6 茶匙）\n白胡椒粉（約 1/6 茶匙）\n做法\n1 菜脯稍微沖洗後瀝乾，放進不加油的炒鍋，以小火乾炒到水分收乾就盛出。\n2 雞蛋打散，加入蔥花、炒過的菜脯、鹽和白胡椒粉，攪打到均勻。\n3 炒鍋另外燒熱，倒入食用油後下蛋液。以中火快速翻拌到蛋液略為凝固，再轉小火，讓蛋煎到定型。\n4 底面煎到微微金黃就翻面，以小火再煎約 1 分鐘，兩面都呈金黃即可起鍋。\n煮奔",
+    "generatedSha256": "c8a9a6e7142232a3e9360e0be9f6b3b94758ba1b5475ae31f6d58aaabc4473bc",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 103380,
+    "webpSha256": "740bdb9f3be235ac26c1d0888212c2a56a4efd4182935869df0088823ac88f35",
+    "review": "原圖與原生 WebP 全圖人工核對，獨立第二次逐字核對通過；用量、單位、步驟、份量及時間與來源一致。"
+  },
+  {
+    "id": "egg-fried-rice",
+    "title": "蛋炒飯",
+    "sourceSha256": "fde095933878a9aeea228b70d89f00d61443c36c7bf1b40c4641854c6cf1cf9c",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "prompt": "Create ONE finished portrait Traditional Chinese recipe sharing and printing sheet, aspect ratio exactly 3:4, target 864×1152 or higher in the same aspect. Reference 1 is layout/style ONLY: replace all recipe content. Reference 2 is the exact finished dish to illustrate, preserve its ingredients and vessel. Warm off-white subtle paper texture, delicate watercolor illustration, black clear traditional Chinese typography, large Ming title. Match reference layout: centered small 煮奔 masthead, large title, summary, servings/time/category, generous centered dish illustration, then ingredients left and numbered directions right separated by fine vertical line; tip below, fine rule and 煮奔 footer. No food utensils, no extra garnish or ingredients. Fit every text line below, exact verbatim, no missing characters, no substitutions, no extra text. Body text crisp and readable, keep generous outer safe margins, absolutely no cropped text. Use compact well-spaced columns. This is a final image, not a screenshot, no interface. Exact text in reading order:\n煮奔\n蛋炒飯\n蛋液炒到稍微凝固就下白飯，大火炒到粒粒分明，再以醬油和白胡椒調味、撒上蔥花。一盤就是簡單的一餐。\n2 人份・15 分鐘・主食\n材料\n主料\n白飯 400 g（冷飯較容易炒散）\n雞蛋 2 顆\n青蔥 30 g（切成蔥花）\n調味\n食用油 30 ml（約 2 湯匙）\n醬油 30 ml（約 2 湯匙）\n鹽 1.5 g（約 1/4 茶匙）\n白胡椒粉 0.5 g（約 1/4 茶匙）\n做法\n1 青蔥切成蔥花；雞蛋打進碗中攪散。白飯用湯匙稍微壓散，下鍋時比較不會結塊。\n2 炒鍋大火燒熱後倒入食用油，下蛋液。蛋液稍微凝固時用鍋鏟劃散成小塊，表面還帶點濕潤就下一步。\n3 放入白飯，大火一邊翻炒、一邊用鍋鏟輕壓，炒到飯粒粒粒分明、蛋塊完全凝固。\n4 加入醬油、鹽和白胡椒粉翻炒，炒到每粒飯都均勻上色。\n5 撒上蔥花，翻炒幾下讓蔥花均勻散開就起鍋。\n小提醒\n醬油可以沿著燒熱的鍋邊淋入再翻炒，醬油受熱後香氣更明顯。\n煮奔",
+    "generatedSha256": "ced4e0d7a2f56f5d7fb8ccddf4af1a8fbf6b563660ea13843da75540bdb3d8b7",
+    "generatedDimensions": [
+      1086,
+      1448
+    ],
+    "webpQuality": 80,
+    "webpBytes": 108098,
+    "webpSha256": "3df3a673dc319d35495c67dbea997d9c7d395febab020436ce02808c516c70f2",
+    "review": "原圖與原生 WebP 全圖人工核對，獨立第二次逐字核對通過；用量、單位、步驟、份量及時間與來源一致。"
+  }
+]

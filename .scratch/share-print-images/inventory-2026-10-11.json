@@ -1,0 +1,1511 @@
+{
+  "base": "b4ff784de93e6694d5dbabc0cecfbc4544d2d2e7",
+  "before": {
+    "published": 246,
+    "available": 50,
+    "missing": 196,
+    "draftExcluded": 4
+  },
+  "recipes": [
+    {
+      "id": "air-fryer-salt-pepper-ribs",
+      "title": "氣炸椒鹽排骨",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "almond-crusted-fish",
+      "title": "杏仁煎魚片",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "amaranth-golden-silver-eggs",
+      "title": "金銀蛋莧菜",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "ants-climbing-tree",
+      "title": "螞蟻上樹",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "baby-corn-stir-fried-mushrooms",
+      "title": "玉米筍炒百菇",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "bacon-cabbage-rice",
+      "title": "培根高麗菜燜飯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "baked-butter-salmon",
+      "title": "奶油香烤鮭魚菲力",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "baked-cheddar-cauliflower",
+      "title": "起司焗烤白花椰菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "bamboo-pork-rib-soup",
+      "title": "竹筍排骨湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "bamboo-shoot-pork",
+      "title": "筍香炒肉絲",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "basil-clams",
+      "title": "塔香文蛤",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "basil-eggplant",
+      "title": "塔香茄子",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "basil-omelette",
+      "title": "九層塔煎蛋",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "beef-curry",
+      "title": "咖哩牛肉",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "beef-meatball-soup",
+      "title": "翡翠豆腐肉丸湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "beef-roll-pancake",
+      "title": "青蔥牛肉捲餅",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "beef-tofu-casserole",
+      "title": "麻辣牛肉豆腐煲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "beef-tomato-soup",
+      "title": "番茄燉牛肉湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "bitter-melon-pork-rib-soup",
+      "title": "苦瓜排骨湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "black-bean-oysters",
+      "title": "豆豉鮮蚵",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "black-bean-pork-ribs",
+      "title": "豆豉排骨",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "black-pepper-beef",
+      "title": "黑胡椒牛柳",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "braised-beef",
+      "title": "紅燒牛腩",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "braised-cabbage-dried-shrimp",
+      "title": "開陽白菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "braised-chicken-legs",
+      "title": "滷雞腿",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "braised-eggplant",
+      "title": "魚香茄子",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "braised-pork-belly",
+      "title": "台式滷肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "braised-pork-meatballs",
+      "title": "紅燒獅子頭",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "braised-tofu-mushrooms",
+      "title": "香菇紅燒豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "braised-yellow-croaker",
+      "title": "紅燒黃魚",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "cabbage-bacon-stir-fry",
+      "title": "培根炒高麗菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "cabbage-rice",
+      "title": "高麗菜飯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "carrot-egg-stir-fry",
+      "title": "胡蘿蔔炒蛋",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "celery-tofu",
+      "title": "芹菜炒豆干",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "chawanmushi",
+      "title": "日式茶碗蒸",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "chili-pork",
+      "title": "辣椒炒肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "chive-omelet",
+      "title": "韭菜烘蛋",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "clam-ginger-soup",
+      "title": "薑絲蛤蜊湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "clams-steamed-egg",
+      "title": "蛤蜊蒸蛋",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "clear-radish-beef-soup",
+      "title": "清燉蘿蔔牛肉湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "coconut-chickpea-curry",
+      "title": "椰奶鷹嘴豆咖哩",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "corn-chowder",
+      "title": "玉米濃湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "corn-pork-rib-soup",
+      "title": "玉米排骨湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "corn-radish-soup",
+      "title": "玉米蘿蔔湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "crab-roe-tofu",
+      "title": "蟹黃豆腐煲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "crab-vermicelli-casserole",
+      "title": "螃蟹粉絲煲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "creamy-pumpkin-soup",
+      "title": "南瓜濃湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "crispy-bean-cod",
+      "title": "豆酥鱈魚",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "cucumber-bean-paste-chicken",
+      "title": "小黃瓜醬爆雞丁",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "curry-chicken",
+      "title": "咖哩雞",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "curry-pork-chops",
+      "title": "咖哩炸豬排",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "curry-vegetable-medley",
+      "title": "咖哩蔬什錦",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "dan-dan-noodles",
+      "title": "四川擔擔麵",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "daylily-pork-stir-fry",
+      "title": "金針花炒肉絲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "deep-fried-squid-rings",
+      "title": "酥炸中卷圈",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "dongpo-pork",
+      "title": "東坡肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "double-egg-broccoli",
+      "title": "雙蛋燴青花菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "dry-fried-green-beans",
+      "title": "乾煸四季豆",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "egg-fried-rice",
+      "title": "蛋炒飯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "eggplant-clay-pot",
+      "title": "紅燒茄子煲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "fish-ball-soup",
+      "title": "虱目魚丸湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "five-color-vegetables",
+      "title": "五色蔬菜",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "five-element-vegetable-soup",
+      "title": "五行蔬菜湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "five-spice-fried-pork-ribs",
+      "title": "五香排骨酥",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "fly-head-stir-fry",
+      "title": "蒼蠅頭",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "french-onion-soup",
+      "title": "法式洋蔥湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "fried-king-oyster-mushrooms",
+      "title": "酥炸杏鮑菇",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "fried-oysters",
+      "title": "蚵仔酥",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-broccoli",
+      "title": "蒜炒花椰菜",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "garlic-butter-shrimp",
+      "title": "蒜香奶油大蝦",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-chicken-soup",
+      "title": "蒜頭雞湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-fried-fish",
+      "title": "蒜味炸魚片",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-okra-tofu",
+      "title": "蒜蓉秋葵豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-oysters",
+      "title": "蒜泥蚵仔",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "garlic-pork-slices",
+      "title": "蒜泥白肉",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "garlic-shrimp",
+      "title": "蒜蓉蝦",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-spaghetti",
+      "title": "蒜香義大利麵",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-sprout-cured-pork",
+      "title": "蒜苗炒臘肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-sweet-potato-leaves",
+      "title": "蒜香地瓜葉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-water-spinach",
+      "title": "蒜炒空心菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "garlic-white-pork",
+      "title": "蒜泥白肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "ginger-basil-squid",
+      "title": "薑絲塔香炒透抽",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "ginger-duck",
+      "title": "薑母鴨",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "ginger-pork-intestine",
+      "title": "薑絲炒大腸",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "ginger-pork-rice-bowl",
+      "title": "薑汁燒肉蓋飯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "green-peas-shrimp",
+      "title": "青豆蝦仁",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "green-pepper-pork",
+      "title": "青椒炒肉絲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "hakka-stir-fry",
+      "title": "客家小炒",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "home-braised-tofu",
+      "title": "家常燒豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "honey-glazed-pork-ribs",
+      "title": "蜜汁排骨",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "hot-and-sour-soup",
+      "title": "酸辣湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "italian-chicken-wings",
+      "title": "火烤義大利雞翅",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "japanese-chicken-curry",
+      "title": "日式咖哩雞",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "japanese-fried-tofu",
+      "title": "日式炸豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "japanese-mushroom-rice",
+      "title": "日式菇菇炊飯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "japanese-pork-cutlet",
+      "title": "日式炸豬排",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "japanese-yaki-udon",
+      "title": "日式炒烏龍麵",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "jingjiang-pork",
+      "title": "京醬肉絲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "jingjiang-tofu",
+      "title": "京醬豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "kimchi-fried-beef",
+      "title": "韓式泡菜炒牛肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "kung-pao-chicken",
+      "title": "宮保雞丁",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "kung-pao-shrimp",
+      "title": "宮保蝦仁",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "kung-pao-squid",
+      "title": "宮保魷魚",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "kung-pao-tofu",
+      "title": "宮保豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "lettuce-chicken-sang-choy-bao",
+      "title": "生菜雞鬆",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "loofah-misua",
+      "title": "鮮甜絲瓜麵線",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "loofah-omelette",
+      "title": "絲瓜煎蛋",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "lotus-root-pork-rib-soup",
+      "title": "蓮藕排骨湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "lotus-root-salad",
+      "title": "涼拌蓮藕",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "luffa-clams",
+      "title": "絲瓜蛤蜊",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "luosong-soup",
+      "title": "羅宋湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "mapo-tofu",
+      "title": "麻婆豆腐",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "meigan-braised-pork",
+      "title": "梅干扣肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "milkfish-belly-soup",
+      "title": "虱目魚肚湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "minced-pork-noodles",
+      "title": "肉燥麵",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "miso-baked-salmon",
+      "title": "味噌烤鮭魚",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "miso-steamed-chicken",
+      "title": "味噌蒸雞",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "miso-tofu-salmon-soup",
+      "title": "味噌鮭魚豆腐湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "miso-tofu-soup",
+      "title": "味噌豆腐湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "mustard-greens-clam-chicken-soup",
+      "title": "芥菜蛤蜊雞湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "napa-cabbage-dried-shrimp",
+      "title": "開陽白菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "old-skin-tender-tofu",
+      "title": "老皮嫩肉",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "onion-minced-pork",
+      "title": "洋蔥炒豬絞肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "onion-omelette",
+      "title": "洋蔥炒蛋",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "orange-fish-slices",
+      "title": "橙汁魚片",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "orange-pork-ribs",
+      "title": "橙汁排骨",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "oyster-omelet",
+      "title": "蚵仔煎",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "oyster-sauce-kale",
+      "title": "蠔油芥蘭",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "oyster-sauce-mixed-vegetables",
+      "title": "蠔油什錦炒鮮蔬",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "pan-seared-zucchini",
+      "title": "乾煎櫛瓜",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "peeled-chili-chicken-soup",
+      "title": "甘甜剝皮辣椒雞湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "peppercorn-chicken",
+      "title": "椒麻雞",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pickled-mustard-beef-soup",
+      "title": "酸菜牛肉湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pickled-mustard-pork-tripe-soup",
+      "title": "酸菜豬肚湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pineapple-bitter-melon-chicken-soup",
+      "title": "鳳梨苦瓜雞湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pineapple-shrimp-balls",
+      "title": "鳳梨蝦球",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pork-blood-soup",
+      "title": "豬血湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pork-chops-black-pepper",
+      "title": "黑胡椒豬排",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pork-kimchi-hotpot",
+      "title": "泡菜豬肉鍋",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pork-sauce-spinach",
+      "title": "肉燥菠菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "pork-thick-soup",
+      "title": "肉羹湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "potato-frittata",
+      "title": "家常馬鈴薯烘蛋",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "potato-pork-stew",
+      "title": "馬鈴薯燉肉",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "preserved-radish-omelette",
+      "title": "菜脯蛋",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "radish-pork-rib-soup",
+      "title": "白蘿蔔排骨湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "red-bean-soup",
+      "title": "紅豆湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "red-wine-beef-stew",
+      "title": "紅酒燉牛肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "rice-wine-pork-meatballs",
+      "title": "酒蒸肉丸",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "roast-chicken-legs",
+      "title": "香烤雞腿",
+      "draft": true,
+      "status": "draft-excluded"
+    },
+    {
+      "id": "salmon-rice",
+      "title": "鮭魚炊飯",
+      "draft": true,
+      "status": "draft-excluded"
+    },
+    {
+      "id": "salt-crispy-chicken",
+      "title": "鹽酥雞",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "salt-pepper-chicken-thigh",
+      "title": "香煎椒鹽雞腿排",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "salted-egg-bitter-melon",
+      "title": "鹹蛋苦瓜",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "salted-egg-king-oyster-mushrooms",
+      "title": "金沙杏鮑菇",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "salted-egg-pumpkin",
+      "title": "金沙南瓜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "salted-egg-squid",
+      "title": "金沙中卷",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "salted-fish-steamed-pork-patty",
+      "title": "鹹魚蒸肉餅",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sanbei-tofu",
+      "title": "三杯豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "satay-beef",
+      "title": "沙茶牛肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sauce-braised-pork-slices",
+      "title": "醬爆肉片",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sauerkraut-pork-hotpot",
+      "title": "酸菜白肉鍋",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "scallion-beef",
+      "title": "蔥爆牛肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "scallion-braised-tofu",
+      "title": "蔥燒嫩豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "scallion-oil-chicken",
+      "title": "蔥油雞",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "scallion-omelette",
+      "title": "蔥花蛋",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "scallion-pancake",
+      "title": "蔥油餅",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "scallion-steamed-grouper",
+      "title": "蔥油清蒸石斑魚",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "seafood-fried-noodles",
+      "title": "海鮮炒麵",
+      "draft": true,
+      "status": "draft-excluded"
+    },
+    {
+      "id": "seafood-pasta",
+      "title": "海鮮義大利麵",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "seaweed-egg-drop-soup",
+      "title": "紫菜蛋花湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "seaweed-shimeji-salad",
+      "title": "海帶芽拌雪白菇",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "sesame-oil-birdsnest-fern",
+      "title": "麻油炒山蘇",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sesame-oil-chicken",
+      "title": "麻油雞",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "sesame-oil-chicken-soup",
+      "title": "麻油雞湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sesame-oil-pork-jowl",
+      "title": "麻油松阪豬",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "sesame-oil-vermicelli",
+      "title": "古早味麻油麵線",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sesame-spinach",
+      "title": "涼拌胡麻菠菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shacha-beef-fried-noodles",
+      "title": "沙茶牛肉炒麵",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shacha-lamb",
+      "title": "沙茶羊肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shacha-pig-blood-cake",
+      "title": "沙茶炒米血糕",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shiitake-bok-choy",
+      "title": "香菇炒青江菜",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "shiitake-chicken-congee",
+      "title": "香菇雞肉粥",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shiitake-chicken-soup",
+      "title": "香菇雞湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "shrimp-fried-rice",
+      "title": "蝦仁炒飯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shrimp-glass-noodles",
+      "title": "鮮蝦粉絲煲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shrimp-scrambled-eggs",
+      "title": "蝦仁炒蛋",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shrimp-stuffed-tofu",
+      "title": "鮮蝦蒸釀豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "shrimp-thick-omelet",
+      "title": "滑蛋鮮蝦仁",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "smashed-cucumber",
+      "title": "涼拌小黃瓜",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "snap-peas-baby-corn",
+      "title": "甜豆玉米筍",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "soy-braised-baby-potatoes",
+      "title": "韓式醬燒小馬鈴薯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "soy-braised-pork-feet",
+      "title": "醬燒豬腳",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "spicy-typhoon-shelter-crab",
+      "title": "避風塘炒蟹",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "spinach-cream-soup",
+      "title": "菠菜濃湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "steamed-bitter-melon-tree-seeds",
+      "title": "破布子蒸苦瓜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "steamed-eggplant-garlic",
+      "title": "蒜泥蒸茄子",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "steamed-eggs",
+      "title": "家常蒸蛋",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "steamed-fish",
+      "title": "清蒸魚",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "steamed-pork-pickled-cucumber",
+      "title": "瓜仔肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "steamed-pork-ribs-taro",
+      "title": "粉蒸排骨",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "steamed-scallops-glass-noodles",
+      "title": "蒜蓉粉絲蒸扇貝",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "stir-fried-bean-sprouts",
+      "title": "清炒豆芽",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "stir-fried-cabbage",
+      "title": "清炒高麗菜",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "stir-fried-clams-basil",
+      "title": "九層塔炒海瓜子",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "stir-fried-dragon-whiskers-tree-seeds",
+      "title": "破布子炒龍鬚菜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "stir-fried-scallops",
+      "title": "生炒鮮干貝",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "stir-fried-water-lotus-pork",
+      "title": "水蓮炒肉絲",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "string-beans-scrambled-eggs",
+      "title": "四季豆炒蛋",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sweet-and-sour-pork-tenderloin",
+      "title": "糖醋里肌",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sweet-potato-chicken-risotto",
+      "title": "地瓜雞肉燉飯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sweet-sour-eggplant",
+      "title": "糖醋燒茄",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sweet-sour-fish",
+      "title": "糖醋魚片",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sweet-sour-pork-ribs",
+      "title": "家常糖醋排骨",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "sweet-sour-yellow-croaker",
+      "title": "糖醋黃魚",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "taiwanese-cold-noodles",
+      "title": "麻醬涼麵",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "taiwanese-fried-rice-noodles",
+      "title": "台式炒米粉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "taiwanese-mapodofu",
+      "title": "台式家常麻婆豆腐",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "taiwanese-oyster-misua",
+      "title": "大腸蚵仔麵線",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "taiwanese-seafood-congee",
+      "title": "台式海鮮粥",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "taro-braised-ribs",
+      "title": "芋頭燒排骨",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "teriyaki-chicken",
+      "title": "照燒雞肉",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "teriyaki-pork-rice-bowl",
+      "title": "照燒豬肉丼飯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "thai-basil-pork",
+      "title": "泰式打拋豬",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "thai-lemon-steamed-fish",
+      "title": "泰式檸檬鱸魚",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "thai-sour-spicy-papaya-salad",
+      "title": "泰式涼拌青木瓜",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "thai-sour-spicy-seafood-soup",
+      "title": "泰式酸辣海鮮湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "three-cup-chicken",
+      "title": "三杯雞",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "three-cup-cuttlefish",
+      "title": "三杯中卷",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "three-cup-king-oyster-mushrooms",
+      "title": "三杯杏鮑菇",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "three-cup-squid",
+      "title": "三杯透抽",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "tofu-shrimp",
+      "title": "豆腐蝦仁",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "tomato-beef-noodle-soup",
+      "title": "番茄牛肉麵",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "tomato-braised-chicken",
+      "title": "番茄燒雞肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "tomato-egg",
+      "title": "番茄炒蛋",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "tomato-egg-drop-soup",
+      "title": "番茄蛋花湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "tomato-tofu-fish-soup",
+      "title": "番茄豆腐魚湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "traditional-oil-rice",
+      "title": "傳統古早味油飯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "tree-seeds-fiddlehead",
+      "title": "樹子炒山蘇",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "turnip-cake-soup",
+      "title": "蘿蔔糕湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "unagi-rice",
+      "title": "蒲燒鰻魚炊飯",
+      "draft": true,
+      "status": "draft-excluded"
+    },
+    {
+      "id": "vegetarian-stone-pot-bibimbap",
+      "title": "素石鍋拌飯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "vinegar-fish-slices",
+      "title": "醋溜魚片",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "winter-melon-clam-soup",
+      "title": "冬瓜蛤蜊湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "winter-melon-pork-rib-soup",
+      "title": "冬瓜排骨湯",
+      "draft": false,
+      "status": "available"
+    },
+    {
+      "id": "wood-ear-salad",
+      "title": "涼拌木耳",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "xo-sauce-seafood-stir-fry",
+      "title": "XO 醬炒雙鮮",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "yam-vegetable-soup",
+      "title": "山藥蔬菜湯",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "yogurt-bamboo-shoot-salad",
+      "title": "優格沙拉筍",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "yogurt-pork-stew",
+      "title": "優格燉肉",
+      "draft": false,
+      "status": "missing"
+    },
+    {
+      "id": "yuxiang-pork",
+      "title": "魚香肉絲",
+      "draft": false,
+      "status": "missing"
+    }
+  ]
+}
