@@ -1,0 +1,2713 @@
+{
+  "batch": 7,
+  "mode": "READ-ONLY PREFLIGHT; NO GENERATION; NO REPOSITORY OR REMOTE WRITES",
+  "checkedAtUtc": "2026-10-11T10:45:13.797723+00:00",
+  "baseSha": "d98ee5c64843f9574de38f9e0a90306e07a69ae1",
+  "scope": "Current YAML summary/ingredients/steps/tip quantity, cut and total-time consistency; source-record presence; no draft; absence from public/prints and all available batch ledgers; each hero directly inspected. No external source pages re-fetched. This does not re-audit all historical upstream-source facts. Only the requested /tmp deliverable, its preserved first-ten snapshot and helper scripts were written.",
+  "rulesRead": [
+    "AGENTS.md",
+    ".claude/skills/recipe-making/SKILL.md",
+    ".claude/skills/recipe-making/illustration.md",
+    ".claude/skills/recipe-making/style.txt",
+    ".claude/skills/recipe-making/sourcing.md",
+    ".claude/skills/recipe-writing/SKILL.md",
+    ".scratch/recipe-mvp/issues/06-homepage-direction.md"
+  ],
+  "eligibleIds": [
+    "home-braised-tofu",
+    "three-cup-king-oyster-mushrooms",
+    "yogurt-bamboo-shoot-salad",
+    "garlic-sprout-cured-pork",
+    "green-peas-shrimp",
+    "tofu-shrimp",
+    "scallion-beef",
+    "miso-steamed-chicken",
+    "onion-minced-pork"
+  ],
+  "skippedIds": [
+    "jingjiang-tofu",
+    "sanbei-tofu",
+    "kung-pao-tofu",
+    "fried-king-oyster-mushrooms",
+    "salted-egg-king-oyster-mushrooms",
+    "lotus-root-salad",
+    "curry-vegetable-medley",
+    "daylily-pork-stir-fry",
+    "ginger-pork-intestine",
+    "kimchi-fried-beef",
+    "shrimp-thick-omelet"
+  ],
+  "globalImageRules": "All twenty are non-soup dishes; this report uses a plain ceramic plate or shallow bowl, consistent with their current serving steps. A pot is allowed only when justified by serving style and consistent cooking vessels; it must be OFF HEAT and ready to serve, never a cooking scene. No utensils. Do not attach a mismatched hero. Do not enlarge fine mince into chunks or threads into strips. Raw ingredient counts are not final cut-piece counts. Weight-only quantities are not converted to invented piece counts. Natural ingredient occlusion is allowed and is not alone evidence of a shortage.",
+  "nextAction": "WAIT for parent selection of additional eligible recipes. The parent has already started this same batch for ids in alreadySelectedInCurrentBatch; do not duplicate those. Historical checks exclude this in-progress batch07 itself. No image generation is authorized by this report. Recheck current YAML SHA, print absence and ledger matches immediately before later generation.",
+  "recipes": [
+    {
+      "id": "jingjiang-tofu",
+      "title": "京醬豆腐",
+      "sourceSha256": "24cd5c5eed4adbf3703703e368129ca2406500713d366abcd1c2b1143a579d5f",
+      "heroSha256": "1a450a7f7dffecfb2e91acb1356666ce54d9ed33f824b97387a6b7692bab4699",
+      "sourceRecord": "content/sources/jingjiang-tofu.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0434"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "板豆腐",
+          "amount": {
+            "value": 2,
+            "unit": "塊"
+          },
+          "note": "約 400 g 斜角切三角厚塊"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "切青蔥段"
+        },
+        {
+          "name": "生薑",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          },
+          "note": "切薑片"
+        },
+        {
+          "name": "胡蘿蔔",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "切薄花片配色"
+        },
+        {
+          "name": "甜麵醬",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "糖",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "太白粉",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          },
+          "note": "調水勾芡",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "起鍋提亮",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "板豆腐切厚三角塊入油鍋微炸定型形成金黃酥皮，熱鍋爆香青蔥段、薑片與胡蘿蔔片，加入甜麵醬、醬油與糖慢火煨煮入味，豆腐吸飽鹹甜濃稠醬汁，淋上香油，豆香濃郁、醬汁醇厚下飯。",
+      "stepsVerbatim": [
+        "板豆腐洗淨瀝乾，斜對角切成厚三角形塊狀；青蔥切段、生薑切片、胡蘿蔔切薄片備用。",
+        "熱鍋倒入適量油燒至約 160°C，放入三角豆腐塊以中火煎炸至外表微金黃定型後撈起瀝油。",
+        "原鍋留少許底油，爆香蔥段、薑片與胡蘿蔔片，加入甜麵醬炒香出醬味，注入醬油、糖與約 150 ml 水煮滾。",
+        "放入炸好的豆腐塊轉小火燒煮約 3 分鐘至湯汁微收濃入味，淋入太白粉水勾薄芡，起鍋前滴入香油拌勻即可盛盤。"
+      ],
+      "tipVerbatim": "豆腐切三角形受熱更均勻且擺盤美觀；甜麵醬先入油中小火炒出濃醇醬香味再加水煨豆腐，醬汁醇厚油亮且無生麵粉澀味。",
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients vs steps[1]",
+          "reason": "步驟 2 必須倒入適量油煎炸豆腐，但材料表沒有煎炸用油，只有起鍋提亮的 5 ml 香油，不能自行挪用或补列。"
+        },
+        {
+          "field": "ingredients vs steps[2:4]",
+          "reason": "步驟 3 約 150 ml 水煮醬、步驟 4 太白粉水，材料表沒有水；本輪不補份量、不把 150 ml 自行分配給粉水。"
+        }
+      ],
+      "textReview": "摘要、材料與步驟的厚三角板豆腐、蔥段、薑片與胡蘿蔔薄片大致一致；胡蘿蔔 note 更具體寫薄花片，步驟薄片是上位描述，不當成二者相反。20 分鐘沒有短於已寫明的 3 分鐘燒煮。炸油缺列已足以 skip。",
+      "timeReview": {
+        "timeMinutes": 20,
+        "finding": "3 分鐘燒煮之外無其他固定等待，未見明確總時間衝突；不是重新核准此歷史估時。"
+      },
+      "visualFacts": [
+        "板豆腐 2 塊約 400 g，斜對角切厚三角塊，不是兩塊成品，也不是立方丁。",
+        "青蔥 20 g 切段；生薑 10 g 切片；胡蘿蔔 20 g 切薄花片。",
+        "甜麵醬、醬油與糖煨成深棕醬，太白粉勾薄芡，香油起鍋。"
+      ],
+      "quantityAssessment": "2 塊指原料板豆腐，切後不推算三角塊數；蔥薑胡蘿蔔僅有重量，不編造段數、片數。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "胡蘿蔔為大片菱形斜片，不是材料 note 的薄花片。",
+        "醬汁裡有明顯顆粒團塊，不能把它們當成未列的肉末或新增配料；不採其顆粒形態。"
+      ],
+      "heroObservation": "已逐張看原 hero：素色盤、厚三角豆腐與蔥段清楚。即使圖可修正，文字缺口仍需先處理。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Thick triangular pieces cut from two blocks of firm tofu, about 400 g before cutting, fried pale golden then glazed with smooth brown sweet-bean sauce. Add short green-and-white scallion segments, thin ginger slices, and a small amount of thin flower-shaped carrot slices. No minced meat, no chili, no garlic, no tofu cubes. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "HOLD. Uncontested visual description only; no generation until missing cooking-oil/water facts are resolved by the parent outside this image-only task.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "home-braised-tofu",
+      "title": "家常燒豆腐",
+      "sourceSha256": "b7a00e6d90940b33cf99c00f57dc6a3c8528272049e346ab838e30bd46b0adf8",
+      "heroSha256": "493fff4db430dc2f5f4368d5f7103b52a02286ec3ace27baeb4cd552b4aba9c7",
+      "sourceRecord": "content/sources/home-braised-tofu.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0636"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": true
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "板豆腐",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "切約 1.5 公分厚片"
+        },
+        {
+          "name": "豬肉絲",
+          "amount": {
+            "value": 30,
+            "unit": "g"
+          },
+          "note": "建議用里肌肉"
+        },
+        {
+          "name": "蔥絲",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "薑絲",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "紅辣椒絲",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "食用油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙，分兩次各用 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "細砂糖",
+          "amount": {
+            "value": 12,
+            "unit": "g"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 75,
+            "unit": "ml"
+          },
+          "note": "約 5 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 2.5,
+            "unit": "ml"
+          },
+          "note": "約 1/2 茶匙",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "板豆腐煎至兩面焦黃，再和豬肉絲、薑蔥及醬汁燒到湯汁略收。",
+      "stepsVerbatim": [
+        "板豆腐切成 1.5 公分左右的厚片。熱鍋倒入 15 ml 食用油，豆腐片下鍋，兩面都煎出焦黃色再盛起。",
+        "鍋子再次燒熱，倒入 15 ml 食用油，用小火把薑絲、蔥絲與紅辣椒絲爆出香氣。",
+        "下豬肉絲，翻炒到肉絲分開且全熟，接著倒入醬油、細砂糖、米酒與水，拌炒均勻。",
+        "把煎好的豆腐片放回鍋中，維持小火燒約 2 分鐘，等醬汁稍微收乾，灑入香油就能起鍋。"
+      ],
+      "tipVerbatim": null,
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料和四步一致；300 g 板豆腐為 1.5 公分厚片、30 g 豬肉絲、蔥薑辣椒全為絲。食用油 30 ml 分成兩次 15 ml，總數吻合；醬油 30 ml、糖 12 g、米酒 15 ml、水 75 ml、香油 2.5 ml 都在步驟使用。沒有 tip。",
+      "timeReview": {
+        "timeMinutes": 25,
+        "finding": "備料、雙面煎豆腐、炒肉及小火約 2 分鐘收汁，未見顯式時間矛盾。"
+      },
+      "visualFacts": [
+        "板豆腐 300 g 切約 1.5 公分厚片，兩面煎出焦黃色，成品仍為厚片。",
+        "豬肉絲 30 g，里肌肉只是 note 的建議部位，不把它寫成確定部位。",
+        "蔥絲 10 g、薑絲 10 g、紅辣椒絲 5 g，都是縱向細絲，不能換成圈、段、薑片或整辣椒。",
+        "略收的醬色汁，不是湯；配料先炒熟再與豆腐燒約 2 分鐘。"
+      ],
+      "quantityAssessment": "豆腐與肉丝均為重量，無指定成品片數或肉絲條數；不要照 step-1 alt 的七片或 hero 片數新增數量限制。可合理交疊，不能憑可見片數宣稱 300 g 有缺量。",
+      "heroUsable": true,
+      "heroDifferences": [],
+      "heroObservation": "已逐張看原 hero：素色盤上的金黃厚方片、少量熟豬肉絲、蔥絲、薑絲、紅辣椒絲與浅醬汁吻合；無額外配料或餐具。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Golden-brown pan-seared firm tofu cut into broad approximately 1.5 cm THICK SLICES, representing 300 g tofu, lightly overlapping in a shallow reduced soy-colored sauce. A modest amount of fully cooked thin pork SHREDS, representing 30 g, is mixed with fine lengthwise scallion SHREDS, fine ginger THREADS and narrow red-chili THREADS. The aromatics are cooked, not a pile of unrelated raw garnish. No tofu cubes, no scallion rings or segments, no ginger slices, no chili rings, no whole chilies. Do not prescribe a tofu-slice count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection. Matching hero may be used as dish reference, or use only a layout/style reference with this prompt.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "hero-allowed"
+    },
+    {
+      "id": "sanbei-tofu",
+      "title": "三杯豆腐",
+      "sourceSha256": "ed1113075ec4e5968150efa2006f168d534a7325de368f30e4357a5b28efda18",
+      "heroSha256": "a940d72f90767a1b4a9afde9248766c9485bf3410f561d10c0b69c5df3c7bf95",
+      "sourceRecord": "content/sources/sanbei-tofu.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0286"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "板豆腐",
+          "amount": {
+            "value": 4,
+            "unit": "塊"
+          },
+          "note": "約 400 g 切厚塊拭乾"
+        },
+        {
+          "name": "九層塔",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "摘取嫩葉洗淨拭乾",
+          "group": "調味"
+        },
+        {
+          "name": "麻油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙黑麻油",
+          "group": "調味"
+        },
+        {
+          "name": "薑片",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "老薑切片",
+          "group": "調味"
+        },
+        {
+          "name": "蒜頭",
+          "amount": {
+            "value": 30,
+            "unit": "g"
+          },
+          "note": "約 10 顆去皮整粒",
+          "group": "調味"
+        },
+        {
+          "name": "辣椒片",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "紅辣椒切斜片",
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "醬油膏",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙增稠甘甜",
+          "group": "調味"
+        },
+        {
+          "name": "糖",
+          "amount": {
+            "value": 8,
+            "unit": "g"
+          },
+          "note": "約半大匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "扎實板豆腐切塊油炸至表面金黃焦脆，以黑麻油煸香薑片與整粒蒜頭，放入炸豆腐塊與辣椒片，淋入醬油、醬油膏、糖與米酒大火收汁裹滿濃醬，起鍋撒入鮮綠九層塔翻炒，外酥內嫩、醬香撲鼻。",
+      "stepsVerbatim": [
+        "板豆腐洗淨切成均勻厚方塊，以廚房紙巾擦乾表面水分；九層塔洗淨瀝乾備用。",
+        "熱油鍋至 180 度，放入板豆腐塊炸至外皮金黃酥脆硬挺，撈起瀝乾油分。",
+        "原鍋擦淨倒入麻油，放入薑片與蒜頭以小火煸香至表面微焦黃捲曲，再放入辣椒片翻炒。",
+        "放入炸好的板豆腐塊，加入醬油、醬油膏、糖與米酒，大火收汁翻炒至醬汁濃稠緊裹豆腐，最後放入九層塔炒至飄香即可起鍋盛盤。"
+      ],
+      "tipVerbatim": "板豆腐切塊後擦乾水分再炸，外皮才會形成酥脆金黃外殼且鎖住豆香；以小火將黑麻油、老薑片與整粒蒜頭煸出焦香，是三杯風味的靈魂所在。",
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients vs steps[1:3]",
+          "reason": "步驟 2 需要熱油鍋 180 度炸豆腐，但材料表只列步驟 3 原鍋擦淨後另倒入的麻油 30 ml；沒有炸豆腐用油，不可自行把麻油當炸油。"
+        }
+      ],
+      "textReview": "厚方塊豆腐、整粒去皮蒜、薑片、紅辣椒斜片及九層塔嫩葉前後一致，25 分鐘沒有明確固定等待衝突。4 塊指切之前約 400 g 板豆腐，不是只准畫四個成品方塊。",
+      "timeReview": {
+        "timeMinutes": 25,
+        "finding": "未見已明定時間大於總時間；炸油缺列是本輪阻擋。"
+      },
+      "visualFacts": [
+        "板豆腐 4 塊共約 400 g，切均勻厚方塊、炸到金黃外殼。",
+        "薑片 20 g；蒜頭 30 g 約 10 顆去皮整粒；辣椒片 15 g 為紅辣椒斜片。",
+        "九層塔 20 g 摘嫩葉；濃稠醬汁由麻油、醬油、醬油膏、糖、米酒收乾裹附。"
+      ],
+      "quantityAssessment": "原豆腐塊數不等於切後成品數；蒜約 10 顆可部分被豆腐遮擋，不因圖只能看見幾瓣就斷定缺量，也不要求十瓣全浮在表面。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 在雙耳砂鍋中，另有連梗的九層塔葉簇；此預審按材料「摘取嫩葉」与現步驟盛盤選盤，避免繼承連梗葉簇或未核同組鍋具。"
+      ],
+      "heroObservation": "已逐張看原 hero：厚方塊、斜辣椒片、整粒蒜与薑片形態大體符合；沒有因可見蒜瓣數較少而誤判數量。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Even thick square chunks cut from four blocks of firm tofu, about 400 g in total before cutting, with golden crisp fried surfaces coated in reduced dark three-cup sauce. Mix in thin old-ginger slices, whole peeled individual garlic cloves (about ten cloves in the whole dish, some may be naturally occluded), oblique red-chili slices, and detached tender Taiwanese basil leaves. No scallions, no minced garlic, no whole garlic bulbs, no large basil stalks. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "HOLD. Missing frying oil remains unresolved; this visual description is not permission to generate.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "kung-pao-tofu",
+      "title": "宮保豆腐",
+      "sourceSha256": "e5523dcbc3e140e7d0494ec56d31d2bc0090f7fde62294bd363bd827be162b9c",
+      "heroSha256": "d5877bd1725ac07c02142e178591fee371a05c6f1c41ff9a9ac84a04f0b41854",
+      "sourceRecord": "content/sources/kung-pao-tofu.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0144"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "板豆腐",
+          "amount": {
+            "value": 2,
+            "unit": "塊"
+          },
+          "note": "切丁狀約 400 g"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 1,
+            "unit": "根"
+          },
+          "note": "洗淨切蔥段"
+        },
+        {
+          "name": "紅辣椒",
+          "amount": {
+            "value": 1,
+            "unit": "根"
+          },
+          "note": "切小片或段"
+        },
+        {
+          "name": "熟花生",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          },
+          "note": "蒜味熟花生米"
+        },
+        {
+          "name": "沙拉油",
+          "amount": {
+            "value": 200,
+            "unit": "ml"
+          },
+          "note": "炸豆腐用",
+          "group": "調味"
+        },
+        {
+          "name": "豆瓣醬",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "糖",
+          "amount": {
+            "value": 3,
+            "unit": "g"
+          },
+          "note": "約半茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "太白粉",
+          "amount": {
+            "value": 2,
+            "unit": "g"
+          },
+          "note": "調兌汁勾芡",
+          "group": "調味"
+        },
+        {
+          "name": "白醋",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約半茶匙提香",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "板豆腐切丁油炸至金黃定型，搭配乾辣椒、花椒粒與青蔥段爆香，調入豆瓣醬、白醋與糖快火收汁，起鍋撒入酥脆花生米，鹹香微辣帶甜、外酥內嫩。",
+      "stepsVerbatim": [
+        "板豆腐切成均勻丁塊，放入滾水中加少許鹽微燙 1 分鐘後撈起瀝乾水分；青蔥切段、紅辣椒切小片備用。",
+        "豆瓣醬、糖、太白粉與白醋加入少許水調勻兌成宮保醬汁備用。",
+        "熱鍋倒入沙拉油燒熱，放入豆腐丁中火炸至表皮金黃酥脆後撈起瀝油。",
+        "原鍋留少許底油轉小火，放入辣椒片與蔥段炒香，倒入炸豆腐丁與宮保兌汁中火快炒裹勻，起鍋前撒入熟花生米拌炒均勻即可盛盤。"
+      ],
+      "tipVerbatim": "豆腐先用加鹽滾水汆燙能去除生豆味並使質地更緊實不易碎；炸豆腐時油溫足夠再下鍋，炸至外皮微硬再翻動可保持方正完好。",
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "summary vs ingredients/steps",
+          "reason": "摘要指定乾辣椒與花椒粒；材料只有紅辣椒 1 根（切小片或段），步驟為紅辣椒小片，完全沒有花椒粒。不能選一邊或新增花椒。"
+        },
+        {
+          "field": "ingredients[8].amount vs note",
+          "reason": "白醋 amount=5 ml，但 note 寫約半茶匙；本庫採 1 茶匙 5 ml，半茶匙應為 2.5 ml，數量標示直接不一致。"
+        },
+        {
+          "field": "ingredients vs steps[0]",
+          "reason": "步驟 1 使用少許鹽汆燙豆腐，但材料表沒有鹽。"
+        }
+      ],
+      "textReview": "豆腐丁、蔥段、熟蒜味花生與醬汁的主流程清楚，20 分鐘未短於明示的 1 分鐘微燙；但辣椒乾鮮、花椒有無、白醋標示及鹽缺列阻擋。",
+      "timeReview": {
+        "timeMinutes": 20,
+        "finding": "已明示 1 分鐘汆燙，未見總時間明確衝突。"
+      },
+      "visualFacts": [
+        "板豆腐 2 塊约 400 g 切均勻丁塊，炸成金黃色。",
+        "青蔥 1 根切段；熟蒜味花生米 50 g，蒜味不等於另列蒜瓣。",
+        "辣椒應乾辣椒還是鮮紅辣椒、是否花椒粒仍有現文矛盾，不可先決定。"
+      ],
+      "quantityAssessment": "不能將 2 塊原料豆腐解讀為兩個成品丁；花生 50 g 不轉換顆數。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 有多條完整或長段皺乾辣椒及黑褐花椒顆粒，與材料/步驟不合，不能用 hero 解決文字矛盾。"
+      ],
+      "heroObservation": "已逐張看原 hero：素色盤、豆腐丁、蔥段和熟花生清楚，但沿用了摘要的乾辣椒/花椒版本。",
+      "layoutOnlyPossible": false,
+      "dishPrompt": "HOLD — do not generate. The uncontested base is a plain ceramic plate of golden fried firm-tofu cubes, scallion segments and cooked garlic-flavored peanuts, with a light thickened bean-paste sauce. The recipe conflicts on fresh versus dried chilies and on the presence of Sichuan peppercorns; do not resolve those choices in an image prompt. No utensils.",
+      "promptUse": "Not ready: core ingredient-set conflict must be resolved first.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "blocked"
+    },
+    {
+      "id": "fried-king-oyster-mushrooms",
+      "title": "酥炸杏鮑菇",
+      "sourceSha256": "58fd1b0af9d80db0544489f53f12307f0277421c95bb46f0b137dbbdb6e96ea7",
+      "heroSha256": "ebc6fcd6ce710ce9c08e0f70051a2c5967bae168b89268cb26c69d8554a3d8fc",
+      "sourceRecord": "content/sources/fried-king-oyster-mushrooms.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F06-0293"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "杏鮑菇",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "洗淨後切小塊"
+        },
+        {
+          "name": "麵粉",
+          "amount": {
+            "value": 0.5,
+            "unit": "杯"
+          },
+          "note": "炸粉用；杯的容量待確認"
+        },
+        {
+          "name": "玉米粉",
+          "amount": {
+            "value": 0.5,
+            "unit": "杯"
+          },
+          "note": "炸粉用；杯的容量待確認"
+        },
+        {
+          "name": "吉士粉",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙，炸粉用"
+        },
+        {
+          "name": "泡打粉",
+          "amount": {
+            "value": 1.25,
+            "unit": "ml"
+          },
+          "note": "約 1/4 茶匙，炸粉用"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 140,
+            "unit": "ml"
+          },
+          "note": "調粉漿用"
+        },
+        {
+          "name": "沙拉油",
+          "amount": {
+            "value": 400,
+            "unit": "ml"
+          },
+          "note": "炸油，來源做法標示約 400 ml"
+        },
+        {
+          "name": "椒鹽粉",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "group": "調味",
+          "note": "約 1 茶匙"
+        }
+      ],
+      "summaryVerbatim": "杏鮑菇切塊裹上粉漿，炸到表面金黃酥脆，再拌上椒鹽粉。",
+      "stepsVerbatim": [
+        "杏鮑菇洗淨，切成小塊。",
+        "將麵粉、玉米粉、吉士粉、泡打粉和水調成粉漿。",
+        "把沙拉油加熱至約 180°C。杏鮑菇沾滿粉漿，以中火炸約 3 分鐘，至外層金黃酥脆。",
+        "撈起杏鮑菇瀝油，撒上椒鹽粉拌勻。"
+      ],
+      "tipVerbatim": null,
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients[1:3].amount/note",
+          "reason": "麵粉及玉米粉各 0.5 杯，兩項 note 明寫「杯的容量待確認」；粉漿比例的關鍵用量尚未確定，本輪不猜杯量、不替換成公制。"
+        }
+      ],
+      "textReview": "摘要、材料與步驟一致為小塊杏鮑菇裹粉漿、180°C 中火炸約 3 分鐘後拌椒鹽；20 分鐘無明示衝突。杯量待確認使這份可重複操作的列印配方尚未通過。",
+      "timeReview": {
+        "timeMinutes": 20,
+        "finding": "固定油炸約 3 分鐘，未見總時間明確矛盾。"
+      },
+      "visualFacts": [
+        "杏鮑菇 300 g 洗淨切小塊，不是整朵或長縱切半朵。",
+        "外層為麵粉、玉米粉、吉士粉、泡打粉及水調成的淡金色粉漿，炸成金黃酥脆。",
+        "灑椒鹽粉，無九層塔、辣椒、香草、檸檬或額外配菜。"
+      ],
+      "quantityAssessment": "300 g 沒有提供朵數或塊數；成品塊可交疊，不憑表面塊數推定缺量。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 的主視覺包含數塊接近整個菇帽連長菇柄的縱剖大片，不宜作「切小塊」的形態參考。"
+      ],
+      "heroObservation": "已逐張看原 hero：素色盤和金黃粉衣、椒鹽吻合；若文案缺量日後解決，仍宜 layout-only。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Small bite-size CHUNKS of king oyster mushroom, representing 300 g before cutting, individually coated in craggy golden crisp batter and lightly dusted with fine salt-and-pepper powder. Every mushroom piece is a small cut chunk, with occasional tiny cap fragments; no intact mushrooms, no long lengthwise mushroom halves, no large cap-and-stem silhouettes. No herbs, no basil, no chili, no lemon. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "HOLD. Batter flour/cornstarch cup capacity is explicitly pending; do not generate.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "salted-egg-king-oyster-mushrooms",
+      "title": "金沙杏鮑菇",
+      "sourceSha256": "dcdea90dc51db02f064c0d5aa3ba6eae3d58a542fae5010ed15df33fdee813db",
+      "heroSha256": "021d15142b214175f82a0064b204931316a8c59bea1c3e6d6ef2958480a5a977",
+      "sourceRecord": "content/sources/salted-egg-king-oyster-mushrooms.yaml",
+      "sourceUrls": [
+        "https://icook.tw/recipes/443471"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "杏鮑菇",
+          "amount": {
+            "value": 4,
+            "unit": "大根"
+          },
+          "note": "切滾刀塊"
+        },
+        {
+          "name": "鹹蛋",
+          "amount": {
+            "value": 2,
+            "unit": "顆"
+          },
+          "note": "蛋白與蛋黃分開切碎"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          },
+          "note": "切段"
+        },
+        {
+          "name": "辣椒",
+          "amount": {
+            "value": 1,
+            "unit": "根"
+          },
+          "note": "斜切片"
+        },
+        {
+          "name": "蒜頭",
+          "amount": {
+            "value": 3,
+            "unit": "瓣"
+          },
+          "note": "切片；來源有列材料與備料，但未交代何時入鍋"
+        },
+        {
+          "name": "橄欖油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "芝麻鹽",
+          "amount": {
+            "value": 1,
+            "unit": "匙"
+          },
+          "note": "匙的容量待確認",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "杏鮑菇裹上炒出泡沫的鹹蛋黃，再拌入鹹蛋白、青蔥與芝麻鹽。",
+      "stepsVerbatim": [
+        "杏鮑菇切滾刀塊，鹹蛋蛋黃與蛋白分開切碎。青蔥切段，辣椒斜切片，蒜頭切片。",
+        "鍋中加熱橄欖油，放入鹹蛋蛋黃，以中大火炒至起泡。",
+        "加入杏鮑菇拌炒均勻，再放入鹹蛋蛋白拌炒。",
+        "加入青蔥和芝麻鹽拌勻，最後撒上辣椒片。"
+      ],
+      "tipVerbatim": null,
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients[6].amount/note",
+          "reason": "芝麻鹽 1 匙的 note 明寫「匙的容量待確認」，不可猜是茶匙或湯匙。"
+        },
+        {
+          "field": "ingredients[4].note vs steps",
+          "reason": "蒜頭 3 瓣切片只有備料，note 明寫來源未交代何時入鍋。不能自行增加入鍋動作，也不能憑 hero 是否可見決定成品有無蒜片。"
+        }
+      ],
+      "textReview": "杏鮑菇滾刀塊、鹹蛋白黃分開切碎、蔥段及辣椒斜片一致；15 分鐘沒有固定等待超時，但芝麻鹽容量及蒜片去向不明。",
+      "timeReview": {
+        "timeMinutes": 15,
+        "finding": "沒有明列長於總時間的等待；仍不能用合理估時替代缺少蒜片使用步驟。"
+      },
+      "visualFacts": [
+        "杏鮑菇 4 大根，切滾刀塊。",
+        "2 顆鹹蛋的蛋黃與蛋白分別切碎，成品為黃色碎末裹菇，夾細碎白色蛋白，不畫半顆或整顆鹹蛋。",
+        "青蔥 2 根切段；辣椒 1 根斜切片；蒜 3 瓣切片的使用時點與成品去向未交代。"
+      ],
+      "quantityAssessment": "四大根是切前量，不要求四個菇塊；兩顆鹹蛋已切碎，不能要求或畫兩個完整蛋黃。蒜三瓣即使切片後不可用片數倒推原瓣數。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 中多塊含完整菇帽和長柄輪廓，與不規則滾刀塊有落差。",
+        "蒜片不易辨認，但不能把不可見當成未加入的證據，亦不能用其缺席補足使用時點。"
+      ],
+      "heroObservation": "已逐張看原 hero：金黃鹹蛋碎、蔥段、斜辣椒片吻合；圖像不能處理蒜片去向缺口。",
+      "layoutOnlyPossible": false,
+      "dishPrompt": "HOLD — do not generate. The uncontested base is one plain ceramic plate of irregular roll-cut king oyster mushroom chunks coated in finely crumbled golden salted-egg yolk, with small crumbled salted-egg whites, scallion segments and oblique red-chili slices. Do not paint whole salted eggs or whole mushroom silhouettes. Whether and how sliced garlic belongs in the finished dish remains unresolved. No utensils.",
+      "promptUse": "Not ready: seasoning capacity and garlic disposition must be resolved without inventing facts.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "blocked"
+    },
+    {
+      "id": "three-cup-king-oyster-mushrooms",
+      "title": "三杯杏鮑菇",
+      "sourceSha256": "bbf4eb3108f73544282a580bb54035feedebc91a9e7f1e221ad9add3ad67c7e4",
+      "heroSha256": "d9aa6ebd7d8417d788875d5522a2937502146ad65c7fae4d3474c54cd90f0b5a",
+      "sourceRecord": "content/sources/three-cup-king-oyster-mushrooms.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F06-0637"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": true
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "杏鮑菇",
+          "amount": {
+            "value": 500,
+            "unit": "g"
+          },
+          "note": "切大塊"
+        },
+        {
+          "name": "薑",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          },
+          "note": "切片"
+        },
+        {
+          "name": "紅辣椒",
+          "amount": {
+            "value": 2,
+            "unit": "根"
+          },
+          "note": "剖半"
+        },
+        {
+          "name": "蒜仁",
+          "amount": {
+            "value": 40,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "九層塔",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          },
+          "note": "去粗莖後洗淨"
+        },
+        {
+          "name": "食用油",
+          "note": "炸杏鮑菇用",
+          "group": "調味"
+        },
+        {
+          "name": "胡麻油",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 50,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "醬油膏",
+          "amount": {
+            "value": 60,
+            "unit": "ml"
+          },
+          "note": "約 4 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 50,
+            "unit": "ml"
+          },
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "杏鮑菇先炸到略帶金黃，再與薑、蒜仁、紅辣椒和醬汁炒至收乾，最後拌入九層塔。",
+      "stepsVerbatim": [
+        "杏鮑菇切成大塊，紅辣椒縱切兩半，薑切片；九層塔摘掉粗莖後洗淨。",
+        "將食用油加熱至約 160°C，下杏鮑菇以大火炸；表面略呈金黃色時撈出。",
+        "炸完先把鍋洗淨，重新燒熱後加胡麻油；下蒜仁、薑和紅辣椒，用小火炒香。",
+        "加入杏鮑菇、米酒、醬油膏與水，開大火煮滾後翻炒至湯汁收乾。",
+        "放入九層塔，稍微拌勻即可。"
+      ],
+      "tipVerbatim": null,
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料與五步一致。杏鮑菇大塊先炸，再加胡麻油炒薑片、整蒜仁及紅辣椒，米酒 50 ml／醬油膏 60 ml／水 50 ml 收乾，九層塔最後拌入。食用油無 amount 但 note 明示炸菇用途，保留公開顯示適量，不猜油量。無 tip。",
+      "timeReview": {
+        "timeMinutes": 30,
+        "finding": "無長時間等待或明定時間之和超過 30 分鐘；炸菇、重新熱鍋、炒香、收汁流程無總時間明顯矛盾。"
+      },
+      "visualFacts": [
+        "杏鮑菇 500 g 切大塊，先炸略金黃再收深色醬。",
+        "薑 50 g 切片；蒜仁 40 g，步驟無再切，畫去皮單瓣整蒜仁，不指定瓣數。",
+        "紅辣椒 2 根縱切兩半，四片縱向長半椒，不能畫成多片斜圈或小段。",
+        "九層塔 10 g 去粗莖，葉片可帶細嫩莖，不畫粗長梗。"
+      ],
+      "quantityAssessment": "菇塊、薑片、蒜仁、九層塔都以重量，不轉成猜測的件數。兩根辣椒各縱剖為四長半片，允許部分自然遮擋，不要求四片全部平鋪，但可見段必須符合縱剖長半椒形態。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 紅辣椒可見的是多片短橢圓斜切片／圈，不能確認為正文指定的兩根縱剖四長半片。"
+      ],
+      "heroObservation": "已逐張看原 hero：大塊杏鮑菇、薑片、蒜仁、九層塔與素色盤其餘大體吻合；不因只看見幾瓣蒜而誤判 40 g 不足。避免引用錯辣椒形態。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Large cut CHUNKS of king oyster mushroom, representing 500 g before cooking, lightly fried then coated in reduced dark soy-paste and sesame-oil sauce. Mix with thin ginger SLICES, whole peeled individual garlic CLOVES (40 g total, no invented clove count), and Taiwanese basil leaves with coarse stems removed. Use two red chilies cut LENGTHWISE into two halves each: four long longitudinal half-chilies in the whole dish, with lengthwise cut faces and tapered tips, some naturally partly occluded. These are long half-chilies, NOT short oblique slices, crosswise rings, chopped pieces or whole uncut chilies. No scallions or other garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection with layout/style reference ONLY. Do not attach the current hero as a dish reference.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "yogurt-bamboo-shoot-salad",
+      "title": "優格沙拉筍",
+      "sourceSha256": "eef7e52d60f2b89913885a058e3fe280248e03f58bda9d20b69beff36b0a5afe",
+      "heroSha256": "bde2cdef02b49b848dfcadf8392638fb7cfbe11320cd16a2234b91d742b0f2e9",
+      "sourceRecord": "content/sources/yogurt-bamboo-shoot-salad.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F01-1969"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": true
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "綠竹筍",
+          "amount": {
+            "value": 2,
+            "unit": "支"
+          }
+        },
+        {
+          "name": "蝦卵",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙"
+        },
+        {
+          "name": "優格",
+          "amount": {
+            "value": 60,
+            "unit": "ml"
+          },
+          "note": "約 4 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "檸檬汁",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 1.25,
+            "unit": "ml"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "細砂糖",
+          "amount": {
+            "value": 24,
+            "unit": "g"
+          },
+          "note": "約 2 大匙，換算估值",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "note": "煮竹筍用",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "綠竹筍煮熟切塊，拌入優格檸檬醬與蝦卵。",
+      "stepsVerbatim": [
+        "綠竹筍洗好放進鍋裡，倒水淹過筍身，大火煮滾後轉小火，續煮約 20 分鐘。",
+        "竹筍撈出後剝去外殼，切成小塊盛盤。",
+        "優格加入檸檬汁、鹽和細砂糖攪勻做成醬汁，最後拌進蝦卵。",
+        "把優格蝦卵醬澆在竹筍塊上。"
+      ],
+      "tipVerbatim": null,
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料與四步一致：兩支筍煮熟剝殼切小塊，優格 60 ml、檸檬汁 15 ml、鹽 1.25 ml、糖 24 g 調醬，蝦卵 15 ml 拌入醬再澆上筍。糖 note 已明示換算估值，無新換算。煮筍水僅要求淹過筍身，不補 ml。無 tip。",
+      "timeReview": {
+        "timeMinutes": 40,
+        "finding": "煮滾後小火 20 分鐘，加洗筍、煮滾、剝殼切塊與調醬，40 分鐘未見明確衝突；不額外加入冷藏等待。"
+      },
+      "visualFacts": [
+        "綠竹筍 2 支，煮熟後剝殼、切小塊，成品為淡黃小塊，沒有帶殼整筍。",
+        "乳白優格檸檬醬淋在筍上；15 ml 蝦卵拌入醬中為細小橘紅卵粒，不是大魚卵、蝦仁或整蝦。",
+        "沒有檸檬片、香草、蔥或其他装飾材料。"
+      ],
+      "quantityAssessment": "兩支是切前竹筍，不能畫成兩塊成品或猜 20 塊；蝦卵為 15 ml 不數粒，優格醬為 60 ml 主體加檸檬汁等，描繪合理澆醬覆蓋即可。",
+      "heroUsable": true,
+      "heroDifferences": [],
+      "heroObservation": "已逐張看原 hero：素色盘、去殼熟筍小塊、乳白醬、細小橘色卵粒，无額外配料；可用。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Small peeled cooked green-bamboo-shoot CHUNKS from two bamboo shoots, pale cream to light yellow with subtle bamboo fiber, piled on the plate. Spoon a creamy white yogurt-and-lemon dressing over the chunks, with many TINY orange-red SHRIMP-ROE specks mixed through the dressing. The roe is fine-grained, not large translucent salmon-roe pearls. No bamboo husks, no whole shoots, no whole shrimp or shrimp tails, no lemon wedge, no herbs. Do not invent a final chunk count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection. Matching hero may be used as dish reference, or use layout/style reference only.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "hero-allowed"
+    },
+    {
+      "id": "lotus-root-salad",
+      "title": "涼拌蓮藕",
+      "sourceSha256": "082b8dff78e5f0e1714a4816e159f4263d6a7be0270d90154db0b2604a27fb00",
+      "heroSha256": "6bc1d9ef086ceaa484af9687dc2ce0e129a70a63fc9b0dc9f382949ae7280da3",
+      "sourceRecord": "content/sources/lotus-root-salad.yaml",
+      "sourceUrls": [
+        "https://icook.tw/recipes/443342"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "蓮藕",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "削皮後切成薄片"
+        },
+        {
+          "name": "蒜仁",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "約 4 瓣，切碎末",
+          "group": "調味"
+        },
+        {
+          "name": "嫩薑",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          },
+          "note": "切碎末",
+          "group": "調味"
+        },
+        {
+          "name": "蔥",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "約 2 根，切成蔥花",
+          "group": "調味"
+        },
+        {
+          "name": "紅辣椒",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          },
+          "note": "約 1 根，去籽切碎末",
+          "group": "調味"
+        },
+        {
+          "name": "白醋",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "note": "約 3 大匙，調醬用",
+          "group": "調味"
+        },
+        {
+          "name": "砂糖",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          },
+          "note": "約 2 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 2,
+            "unit": "g"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "蓮藕切薄片汆燙後泡冰水冰鎮，維持清脆爽朗口感，佐以蒜碎、嫩薑末、蔥花與辣椒，以白醋、砂糖、醬油與香油調勻浸拌。酸甜開胃、爽脆多汁。",
+      "stepsVerbatim": [
+        "蓮藕洗淨削去外皮，切成約 0.2 公分薄片，立即浸泡於加了少許白醋的冷水中，防止藕片氧化褐變；青蔥切成蔥花，嫩薑與蒜仁切細末，紅辣椒去籽切碎備用。",
+        "煮滾一鍋水並滴入少許白醋，放入蓮藕片汆燙約 1.5 至 2 分鐘，撈起立刻浸入冰塊水中冰鎮降溫，徹底冷卻後撈出瀝乾水分。",
+        "取一小碗，放入白醋、砂糖、醬油、鹽與香油，徹底攪拌至砂糖與鹽粒完全溶解，調和成酸甜醬汁。",
+        "將瀝乾的蓮藕片置於調理盆中，加入蒜末、嫩薑末、蔥花與辣椒碎，淋上調好的醬汁充分翻拌均勻，冷藏醃漬半小時以上更加爽脆入味。"
+      ],
+      "tipVerbatim": "蓮藕切片後立刻泡入醋水能隔絕空氣防黑；汆燙時間切勿超過 2 分鐘並迅速冰鎮，才能鎖住蓮藕特有的爽脆口感。",
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "timeMinutes vs steps[3]",
+          "reason": "timeMinutes=15，但做法第4步含「冷藏醃漬半小時以上更加爽脆入味」。語氣可能是可選增味建議，卻未明示可省略或總時間不含；按不替原文決定關鍵等待是否必做的保守預審先 skip，不能斷言已證實為45分鐘配方。"
+        },
+        {
+          "field": "ingredients[6].note vs steps[0:3]",
+          "reason": "白醋 45 ml 明寫「調醬用」，步驟 1 浸泡與步驟 2 汆燙另各用少許白醋。45 ml 是醬用量還是全流程總量需要明確，現文不可由我自行扣除或增加。"
+        }
+      ],
+      "textReview": "食材形態本身清楚：300 g 蓮藕削皮切約 0.2 公分薄片，蒜/嫩薑細末、蔥花、去籽紅辣椒碎，tip 的汆燙不超過 2 分鐘與步驟1.5–2分鐘一致。冷藏是否可選與白醋全流程數量仍有需要選擇的歧義，因此本輪保守跳過。",
+      "timeReview": {
+        "timeMinutes": 15,
+        "finding": "汆燙1.5–2分鐘可在15分鐘內；若執行第4步冷藏至少30分鐘，總時間不可能15分鐘。原文「更加」有可選意味，故標為歧義而非把它硬判成必做等待。"
+      },
+      "visualFacts": [
+        "蓮藕 300 g 削皮，約 0.2 公分/2 mm 薄圓片，天然藕孔可見。",
+        "蒜仁 20 g 約4瓣與嫩薑10g都切細末；不能換成完整蒜瓣、薑片或薑絲。",
+        "蔥20g約2根切蔥花；紅辣椒10g約1根去籽切細碎末，不能畫大圈或完整辣椒。",
+        "清亮酸甜薄醬，不加白芝麻、香菜或其他葉片。"
+      ],
+      "quantityAssessment": "300 g 蓮藕無指定片數，可自然交疊；約4瓣蒜切末後不保留4瓣輪廓，紅椒約1根切末不保留整根或猜粒數。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 可辨的紅椒部分為短筒狀圈／粗碎片，未嚴格表現去籽細末；不引用，以免重製時放大成圈。"
+      ],
+      "heroObservation": "已逐張看原 hero：薄藕片与蔥花、蒜/薑細碎基本符合；紅椒形態應收斂為更細的去籽碎末，不能沿用粗圈。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned shallow ceramic bowl. Overlapping peeled lotus-root ROUNDS only about 2 mm thick, representing 300 g, with clear natural lotus holes and a light translucent vinegar-soy-sesame dressing. Scatter FINELY MINCED garlic, FINELY MINCED young ginger, small chopped scallion rings, and extremely fine DESEEDED red-chili MINCE. Garlic and ginger must appear as tiny chopped flecks, not whole cloves, slices, sticks or threads. Chili must be tiny irregular seedless flecks, not red rings, tubes or coarse pieces. No sesame seeds, no cilantro or leafy herbs. Do not invent a lotus-slice count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "HOLD. Visual facts are clear enough for future layout-only work, but do not generate until parent resolves recipe-time/quantity ambiguities.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "curry-vegetable-medley",
+      "title": "咖哩蔬什錦",
+      "sourceSha256": "755f36e84bc8a150aa1ffe37939067d09636179ef442a768a22f59de92c2f51e",
+      "heroSha256": "a97e1f1af71091eac1007b26c23a2a7a67b434b9e0e28176f15bc04b0c62305c",
+      "sourceRecord": "content/sources/curry-vegetable-medley.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F01-1572"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "馬鈴薯",
+          "amount": {
+            "value": 1,
+            "unit": "顆"
+          }
+        },
+        {
+          "name": "紅蘿蔔",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "青花椰菜",
+          "amount": {
+            "value": 100,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "洋蔥",
+          "amount": {
+            "value": 0.5,
+            "unit": "顆"
+          }
+        },
+        {
+          "name": "蒜末",
+          "note": "來源用量記為「1/小匙」，數值缺字待核",
+          "group": "調味"
+        },
+        {
+          "name": "沙拉油",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "雞高湯",
+          "amount": {
+            "value": 300,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "太白粉水",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 小匙",
+          "group": "調味"
+        },
+        {
+          "name": "咖哩粉",
+          "amount": {
+            "value": 2,
+            "unit": "小匙"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 0.5,
+            "unit": "小匙"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "細砂糖",
+          "amount": {
+            "value": 0.5,
+            "unit": "小匙"
+          },
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "馬鈴薯、紅蘿蔔與洋蔥用咖哩粉和雞高湯煮軟，最後加入青花椰菜。",
+      "stepsVerbatim": [
+        "馬鈴薯和紅蘿蔔去皮洗淨，切成菱形塊；青花椰菜去掉表面粗纖維後切小塊，洋蔥去皮切丁。",
+        "鍋中加入沙拉油，放入蒜末炒香，再放馬鈴薯、紅蘿蔔和洋蔥炒香。",
+        "加咖哩粉略炒，倒入雞高湯，加入鹽和細砂糖拌勻，以小火煮到蔬菜軟化。",
+        "放入青花椰菜煮約 1 分鐘，起鍋前加入太白粉水勾芡。"
+      ],
+      "tipVerbatim": null,
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients[4].note",
+          "reason": "蒜末 note 明寫來源「1/小匙」數值缺字待核，沒有確定份量；不自行補成1/2小匙或當作適量。"
+        }
+      ],
+      "textReview": "摘要、材料與四步的主料及順序一致，最後青花椰菜煮約1分鐘、太白粉水勾芡；30分鐘未見明確固定等待衝突。蒜末缺字用量是本輪skip主因。",
+      "timeReview": {
+        "timeMinutes": 30,
+        "finding": "先煮薯塊等至軟再加青花椰菜約1分鐘，未見大於30分鐘的明示等待。"
+      },
+      "visualFacts": [
+        "馬鈴薯1顆與紅蘿蔔50g去皮切菱形塊，不是大方丁或厚圓片。",
+        "青花椰菜100g去粗纖維切小塊；洋蔥半顆切丁。",
+        "蒜末細碎、咖哩粉与300ml雞高湯煮成浅黃色稠醬；雞高湯不代表有雞肉塊。"
+      ],
+      "quantityAssessment": "只按1顆馬鈴薯與半顆洋蔥的切後份量感，紅蘿蔔/青花椰菜按重量不猜塊數或朵數；蒜末缺量不可編造。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 洋蔥有明顯大片弧狀片瓣，與切丁不符；馬鈴薯/紅蘿蔔也多為厚立方或三角塊，不能當菱形塊切法的依據。"
+      ],
+      "heroObservation": "已逐張看原 hero：素色碗、黄咖哩醬及主菜群正確；不引用不精確切法。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned shallow ceramic bowl. Cooked peeled potato and carrot cut into distinct oblique DIAMOND-SHAPED chunks, small trimmed broccoli florets and stem pieces, and small diced onion softened in a pale yellow lightly thickened curry-and-chicken-stock sauce. Garlic is finely minced, never whole cloves. No large onion wedges or curved onion petals, no carrot rounds, no chicken meat, no rice, no extra herbs. Do not assign a garlic quantity or invent counts for weight-only vegetables. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "HOLD. Garlic amount explicitly has a missing numeral; do not generate.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "daylily-pork-stir-fry",
+      "title": "金針花炒肉絲",
+      "sourceSha256": "8dbc067caaf2fc86880b296daae02e7bffd06bf90f702a9981e59bed047f5f53",
+      "heroSha256": "e77fcc68ea9b78862b8f238cb4a25345b44e30294aa157c83d4150c56bab5af7",
+      "sourceRecord": "content/sources/daylily-pork-stir-fry.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F03-0057"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "金針花",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "瘦肉",
+          "amount": {
+            "value": 100,
+            "unit": "g"
+          },
+          "note": "切絲"
+        },
+        {
+          "name": "蒜末",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "辣椒片",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 2.5,
+            "unit": "ml"
+          },
+          "note": "約 1/2 小匙",
+          "group": "調味"
+        },
+        {
+          "name": "雞粉",
+          "amount": {
+            "value": 2.5,
+            "unit": "ml"
+          },
+          "note": "約 1/2 小匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "食用油",
+          "note": "爆香用",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "蒜末、辣椒片爆香後炒肉絲，調味後放入汆燙過的金針花，略炒就起鍋。",
+      "stepsVerbatim": [
+        "金針花洗乾淨，下滾水快速燙一下就撈出瀝乾；瘦肉洗淨後切絲。",
+        "鍋燒熱後倒入適量油，下蒜末和辣椒片炒香。",
+        "肉絲下鍋炒到轉白，先倒水翻炒幾下，再放鹽、雞粉和米酒炒勻。",
+        "最後放入金針花，稍微翻炒就盛出。"
+      ],
+      "tipVerbatim": null,
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients[1].name and recipe identity",
+          "reason": "主要肉料僅寫「瘦肉 100 g（切絲）」，摘要及步驟也只有肉絲，未明畜種；不依含 pork 的 slug 自行認定豬肉。本次「缺關鍵事實先skip」保守把此列待核，不改現文。"
+        }
+      ],
+      "textReview": "300 g 金針花、100 g 瘦肉絲、蒜末15g、辣椒片15g與各調味在摘要/材料/步驟一致；食用油已明列爆香用途可保留適量。缺明確畜種是本輪跳過原因。材料合照alt稱新鮮金針花，但主材料與步驟未明寫乾鮮；不靠成品圖或slug新增肉品事實。",
+      "timeReview": {
+        "timeMinutes": 20,
+        "finding": "沒有額外長等待與固定時間總和超時；未進行新的金針花食安或上游來源核查。"
+      },
+      "visualFacts": [
+        "金針花300g汆燙後合炒；瘦肉100g切細絲，未明確豬/其他畜種或部位。",
+        "蒜末15g必須細碎末；辣椒片15g可畫薄片，不是辣椒絲。",
+        "清亮少量汁，不含蔥、薑或其他配料。"
+      ],
+      "quantityAssessment": "金針花和肉均以重量，不推成花朵數或肉絲條數；不把slug當作肉類品種依據。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 畫成黃橙色新鮮花形與淡色肉絲，不能用淡色肉絲判定確切畜種。"
+      ],
+      "heroObservation": "已逐張看原 hero：金針花、肉絲、細蒜末、辣椒片與素色盤形態無額外配料；不用其外觀補肉料身分。",
+      "layoutOnlyPossible": false,
+      "dishPrompt": "HOLD — do not generate. The uncontested composition is a plain ceramic plate of blanched daylily flowers stir-fried with thin cooked lean-meat shreds, finely minced garlic and thin chili slices, lightly glossed with clear sauce. The source text does not specify the animal for the lean meat; do not silently label or render it as pork from the slug. No utensils.",
+      "promptUse": "Not ready under this conservative preflight: confirm the missing main-meat identity without altering the print copy in this task.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "blocked"
+    },
+    {
+      "id": "garlic-sprout-cured-pork",
+      "title": "蒜苗炒臘肉",
+      "sourceSha256": "f9797d9017e9aa9c02584b18996e50d8a5f149ef364faba247e9c08ffa299f96",
+      "heroSha256": "0ebd5b3c69818e7d3348da5d47b257f9a7b294c6d92ebc017ae8411db66bf377",
+      "sourceRecord": "content/sources/garlic-sprout-cured-pork.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-640"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "廣東臘肉",
+          "amount": {
+            "value": 180,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "蒜苗",
+          "amount": {
+            "value": 200,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "辣椒",
+          "amount": {
+            "value": 1,
+            "unit": "根"
+          }
+        },
+        {
+          "name": "蒜仁",
+          "amount": {
+            "value": 2,
+            "unit": "瓣"
+          }
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "細砂糖",
+          "amount": {
+            "value": 0.5,
+            "unit": "茶匙"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "料酒",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "group": "調味"
+        },
+        {
+          "name": "油",
+          "note": "少許，炒香用",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "廣東臘肉先蒸熟切片，再和蒜苗、辣椒一起快炒。",
+      "stepsVerbatim": [
+        "廣東臘肉蒸約 10 分鐘至熟，去皮切薄片。蒜苗切斜片，辣椒與蒜仁切碎。",
+        "鍋中加少許油，以小火炒香蒜仁和辣椒。加入廣東臘肉，炒約 10 秒。",
+        "加入蒜苗、醬油、細砂糖和料酒，轉大火快炒約 20 秒，起鍋前淋上香油。"
+      ],
+      "tipVerbatim": null,
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要與三步一致：180g廣東臘肉先蒸熟去皮切薄片、200g蒜苗斜片；辣椒1根與蒜仁2瓣皆切碎。醬油15ml、糖0.5茶匙、料酒5ml、香油5ml及少許油全部使用。保留糖茶匙原單位，不自行改g。",
+      "timeReview": {
+        "timeMinutes": 20,
+        "finding": "固定蒸10分鐘、炒臘肉10秒、加蒜苗炒20秒；剩餘時間可含備料和蒸鍋起汽，未見明確總時間衝突。"
+      },
+      "visualFacts": [
+        "廣東臘肉180g，蒸熟、去皮、切薄片；熟臘肉紅褐瘦肉與半透明脂肪層，不畫香腸、臘腸或厚肉塊。",
+        "蒜苗200g斜切片，保留綠葉與淡色蒜白斜切輪廓；不是青蔥圈，也不是蒜苔長杆。",
+        "辣椒1根、蒜仁2瓣都切碎；不能畫辣椒圈或完整/整片蒜。"
+      ],
+      "quantityAssessment": "180g臘肉與200g蒜苗都未指定片數；2瓣蒜切碎後不畫2整瓣。配菜可自然交疊，不凭可見片數猜原始重量。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 紅辣椒多為完整橢圓薄圈，與切碎不符。",
+        "可见部分蒜狀物呈長片，不能作蒜仁切碎參考。"
+      ],
+      "heroObservation": "已逐張看原 hero：臘肉薄片和蒜苗斜片基本相符；紅椒與蒜切法不符，故僅layout-only。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Thin skinless slices of steamed Cantonese cured pork, representing 180 g, showing reddish-brown lean meat and translucent rendered fat, stir-fried with 200 g of diagonally sliced young GARLIC GREENS, including flat green leaves and pale diagonal stem slices. Add finely chopped red CHILI FLECKS and finely chopped GARLIC, gently glazed with soy sauce. Chili and garlic must remain small chopped pieces, not chili rings, whole chilies, garlic slices or whole cloves. No sausage, no thick pork chunks, no scallion rings, no long garlic-scape stalks. Do not invent slice counts. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection with layout/style reference ONLY; do not attach the current hero as dish reference.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "green-peas-shrimp",
+      "title": "青豆蝦仁",
+      "sourceSha256": "99b09179c700fbf6674edb216a6b0f07c793e92734a16af8d62da8000b84a390",
+      "heroSha256": "f2d460918c3cf4dc8b6674463819ec8fef3b5efaba8e3748b6917a6ca78e7eb0",
+      "sourceRecord": "content/sources/green-peas-shrimp.yaml",
+      "sourceUrls": [
+        "https://icook.tw/recipes/165014"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "新鮮蝦子",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "剝殼取蝦仁，保留蝦頭煉蝦汁"
+        },
+        {
+          "name": "青豆",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "青豆仁"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 1,
+            "unit": "支"
+          },
+          "note": "蔥白、蔥綠分開切段"
+        },
+        {
+          "name": "薑末",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          },
+          "note": "約 1 茶匙醃蝦仁；起鍋另備少許調味",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙，醃蝦仁用",
+          "group": "調味"
+        },
+        {
+          "name": "太白粉",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙，醃蝦仁用",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 150,
+            "unit": "ml"
+          },
+          "note": "煮蝦汁用",
+          "group": "調味"
+        },
+        {
+          "name": "食用油",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙，炒蝦仁、蝦頭與青豆用",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "鮮蝦去殼後蝦頭煉出濃郁蝦汁，蝦仁略炒盛起，青豆以蝦汁煨煮至軟甜後與蝦仁、蔥綠拌炒。清爽鮮脆、蝦香四溢。",
+      "stepsVerbatim": [
+        "新鮮蝦子剝殼洗淨並吸乾水分，蝦頭保留備用；蝦仁加入鹽、米酒與太白粉抓勻醃漬。",
+        "熱鍋倒入少許食用油，放入醃好的蝦仁快速翻炒至轉為粉紅變色，立刻盛起備用。",
+        "原鍋補少許食用油，下蝦頭翻炒至通體轉紅並釋出橘紅蝦油，倒入水滾煮 2 分鐘，濾出濃郁蝦汁備用。",
+        "鍋中加少許食用油，下蔥白與薑末爆出香氣，加入青豆翻炒，倒入蝦汁蓋上鍋蓋燜煮至青豆軟熟。",
+        "倒回炒好的蝦仁與蔥綠大火翻炒均勻，撒少許鹽調味即可起鍋盛盤。"
+      ],
+      "tipVerbatim": "蝦頭煸香後加水滾煮能煉出鮮味濃郁的天然蝦汁，用來煨煮青豆可讓整道菜鮮甜加倍。",
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料、五步和tip一致。300g是完整鮮蝦起始重量，剝殼取仁，蝦頭煉汁後濾出，不能把300g全當蝦仁。150g青豆、蔥白綠分開切段、薑末5g；鹽5g醃蝦另少許起鍋的分量已在note明寫，油15ml也明寫分供三次操作。",
+      "timeReview": {
+        "timeMinutes": 20,
+        "finding": "蝦汁滾2分鐘，其餘醃漬和青豆燜軟未定長等待；沒有顯式大於20分鐘矛盾，不為未定時間新增分鐘數。"
+      },
+      "visualFacts": [
+        "由300g整蝦剝出的蝦仁，熟後粉紅白色；蝦頭煮汁濾出，不出現在成品；不保留頭殼。",
+        "青豆150g為圓形青豆仁，不是豌豆莢、毛豆莢或玉米。",
+        "青蔥1支，蔥白和蔥綠皆為短段；薑5g切細末，不能畫薑片。",
+        "清亮略帶橘色的蝦汁裹料，不是湯碗，也沒有紅辣椒或蒜。"
+      ],
+      "quantityAssessment": "原始蝦300g含頭殼，不能說成300g剝好蝦仁；沒有尾數，不指定8尾或10尾。青豆無顆數、蔥段可遮擋，合理比例而非可見件數推定重量。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 青蔥是短蔥花圈和小丁，與材料明示切段不符。"
+      ],
+      "heroObservation": "已逐張看原 hero：剝殼蝦仁、青豆與淺汁符合，無蝦頭；因蔥形態不符不引用。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Curled cooked peeled SHRIMP MEAT, pink and ivory, obtained from 300 g of whole fresh shrimp before shelling, mixed with 150 g round shelled GREEN PEAS. Add distinct short white scallion SEGMENTS and green scallion SEGMENTS, plus very finely minced ginger flecks, glossed with a small amount of strained pale orange shrimp-head stock. The shrimp heads and shells have been strained out: no shrimp heads, shells or tails in the dish. Scallions are short segments, NOT tiny chopped rings. No chili, garlic, pea pods, edamame pods or corn. Do not invent a shrimp or pea count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection with layout/style reference ONLY; use the exact scallion-segment wording.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "tofu-shrimp",
+      "title": "豆腐蝦仁",
+      "sourceSha256": "01976d0aeba78054bdf9941bca6593d862d2ded37cd923b0f3350fb7cbbee04e",
+      "heroSha256": "9ae92e9129f6a56bd57f5cab578794c3d24163bff3f920432a8991f8b35df736",
+      "sourceRecord": "content/sources/tofu-shrimp.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B03-0412"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "蝦仁",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "去腸泥、洗淨後瀝乾"
+        },
+        {
+          "name": "豆腐",
+          "amount": {
+            "value": 1,
+            "unit": "塊"
+          },
+          "note": "切成十片約 1 公分厚的長方片"
+        },
+        {
+          "name": "蔥花",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "薑末",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 1.25,
+            "unit": "ml"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "雞精粉",
+          "amount": {
+            "value": 1.25,
+            "unit": "ml"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "細糖",
+          "amount": {
+            "value": 1.25,
+            "unit": "ml"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "太白粉",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙拌蝦漿；豆腐表面另薄撒",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "豆腐片鋪上蔥薑蝦漿，用電鍋蒸熟，做成十塊可分食的配菜。",
+      "stepsVerbatim": [
+        "將蝦仁去腸泥、洗淨瀝乾，拍成泥。拌入蔥花、薑末、鹽、雞精粉和細糖，再拌入太白粉與香油，放入冰箱備用。",
+        "將豆腐切成十片約 1 公分厚的長方片，平放盤中，在表面薄撒太白粉。",
+        "將蝦漿分放在十片豆腐上，各自抹成小丘。",
+        "在電鍋外鍋倒入 1/2 杯水，放入蒸架和整盤豆腐，蓋上鍋蓋，按下開關蒸到跳起。"
+      ],
+      "tipVerbatim": null,
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料與四步都明定10塊成品。豆腐1塊切10片約1cm厚長方片，各放蒸熟蔥薑蝦漿一丘。太白粉15ml拌漿及表面另薄撒已由note明示是兩個用途；不把額外薄撒算回15ml、不新增克数。電鍋外鍋1/2杯水為蒸製操作，保留原杯數，未換算ml。",
+      "timeReview": {
+        "timeMinutes": 35,
+        "finding": "蝦漿只寫冰箱備用沒有規定長醃漬；電鍋外鍋半杯蒸到跳起沒有另一明確分鐘數，35分鐘未見明文衝突。不得自行加蒸後燜等時間。"
+      },
+      "visualFacts": [
+        "豆腐1塊切成10片，每片約1cm厚長方片，不是立方塊或油炸豆腐。",
+        "蝦仁150g拍成泥，拌蔥花20g、薑末10g，蒸熟為淡粉橘蝦漿小丘，無完整蝦身、蝦尾或大蝦塊。",
+        "每片豆腐各1丘，總計10份，不另加辣椒、九層塔或醬油淋汁。"
+      ],
+      "quantityAssessment": "這道正文確實指定10片/10塊成品；建議排2行各5塊讓數量易驗，不強迫其他重量型菜如此排。可輕微遮擋，但不足以核10塊時不能用想像補數。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 確為2行各5片；但蝦漿表面有多個較大圓潤塊粒，不够明確呈「拍成泥」的細漿，保守不用此質地參考。"
+      ],
+      "heroObservation": "已逐張看原 hero：十片豆腐數量、長方薄片、素色盤正確；下一圖蝦漿應是細泥小丘，帶细蔥花與薑末即可。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Exactly TEN rectangular white tofu SLICES, each about 1 cm thick, arranged as two clear rows of five. Each tofu slice carries one small mound of finely pounded SHRIMP PASTE, steamed until opaque pale pink-orange, with tiny chopped scallion and very finely minced ginger flecks mixed throughout. The topping is a cohesive fine paste, NOT intact shrimp, shrimp tails, large chopped shrimp pieces or round fish balls. Ten tofu bases and ten separate paste mounds are discernible; light natural overlap is acceptable only if the ten portions remain verifiable. No chili, no leafy garnish, no brown poured sauce. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection, preferably layout/style reference ONLY to avoid coarse shrimp-piece texture. Count the finished ten pieces during visual QA.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "ginger-pork-intestine",
+      "title": "薑絲炒大腸",
+      "sourceSha256": "2c264c3a585cc61b3c6a8e24675986c013c5c645bf6fd6ef92945eb0c9556b77",
+      "heroSha256": "d98b94de503a0d62d5c447cc543b2ac349f61cc10483abea12ccb888f49492aa",
+      "sourceRecord": "content/sources/ginger-pork-intestine.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1375"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "豬大腸",
+          "amount": {
+            "value": 500,
+            "unit": "g"
+          },
+          "note": "洗淨切段約 3 公分"
+        },
+        {
+          "name": "酸筍絲",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "泡水稍退鹹酸洗淨"
+        },
+        {
+          "name": "生薑",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          },
+          "note": "切大量細薑絲"
+        },
+        {
+          "name": "紅辣椒",
+          "amount": {
+            "value": 1,
+            "unit": "根"
+          },
+          "note": "切細絲配色"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 3,
+            "unit": "g"
+          },
+          "note": "約半小匙",
+          "group": "調味"
+        },
+        {
+          "name": "糖",
+          "amount": {
+            "value": 8,
+            "unit": "g"
+          },
+          "note": "約半大匙中和酸度",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "白醋",
+          "amount": {
+            "value": 20,
+            "unit": "ml"
+          },
+          "note": "酸香來源",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "少許提亮",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "豬大腸搓洗淨切段微汆燙，搭配酸筍絲與大量嫩薑絲大火爆炒，加入白醋、米酒與少許糖快炒收汁，酸勁俐落、大腸軟Q彈牙、開胃下飯。",
+      "stepsVerbatim": [
+        "豬大腸加鹽與麵粉徹底搓洗乾淨，切成約 3 公分段狀，入滾水汆燙 2 分鐘撈起瀝乾；生薑切細絲、辣椒切絲備用。",
+        "熱鍋倒入適量油，放入薑絲與辣椒絲爆炒出薑辣香氣，加入酸筍絲翻炒片刻。",
+        "倒入大腸段大火快炒約 2 分鐘，加入鹽、糖、米酒炒勻，最後沿鍋邊淋入白醋大火嗆出酸香，滴入少許香油即可盛盤。",
+        "起鍋盛入深盤中趁熱享用。"
+      ],
+      "tipVerbatim": "大腸需事先徹底搓洗去除多餘油脂與異味；白醋一定要在起鍋前由鍋邊淋入快速翻炒，利用高溫鑊氣激發出酸香而不至刺鼻。",
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients vs steps[0]",
+          "reason": "步驟1用麵粉搓洗大腸，材料無麵粉，且洗用鹽與最後調味鹽未區分；不能自行補清洗用量。"
+        },
+        {
+          "field": "ingredients vs steps[1]",
+          "reason": "步驟2熱鍋倒適量油爆炒，材料只列起鍋少許提亮的香油5ml，缺炒用油。"
+        }
+      ],
+      "textReview": "大腸3cm段、酸筍絲、細薑絲、紅椒細絲與白醋最後沿鍋邊淋入的文字形態清楚；但清洗麵粉與炒油未列。20分鐘包括未定長度的清洗/酸筍退鹹時間，僅4分鐘固定汆燙及快炒不足以重新認定20分鐘準確，主阻擋仍為材料缺口。",
+      "timeReview": {
+        "timeMinutes": 20,
+        "finding": "有2分鐘汆燙和2分鐘快炒；清洗、泡筍未定時間，不补等待數字。"
+      },
+      "visualFacts": [
+        "豬大腸500g徹底洗淨切約3cm段，為短彎管段而非整條或肉片。",
+        "酸筍絲150g、薑50g細絲、紅辣椒1根細絲；全部必須是細長絲而非大筍片或辣椒片。",
+        "鹽、糖、米酒、白醋、香油形成淺薄汁；完全沒有蔥。"
+      ],
+      "quantityAssessment": "大腸500g及酸筍150g不轉成段數；1根紅椒切絲也不畫成1根整椒。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 有材料未列的粗綠蔥段。",
+        "酸筍出现寬大片；紅椒為宽斜片，與細絲不符。"
+      ],
+      "heroObservation": "已逐張看原 hero：大腸短管和部分薑絲可辨，但額外蔥段與筍/椒切法不可引用。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Short approximately 3 cm segments of cleaned cooked pork large intestine, forming small curved hollow tubes, mixed with fine pickled-bamboo-shoot SHREDS, abundant very fine ginger THREADS, and thin lengthwise red-chili THREADS, in a light reduced vinegar glaze. All bamboo, ginger and chili are slender shreds, never broad bamboo slices or chili rings. No scallions, no whole intestine coils, no extra greens. Do not invent counts for weight-based ingredients. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "HOLD. Washing flour and stir-frying oil are missing from the current ingredient list.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "scallion-beef",
+      "title": "蔥爆牛肉",
+      "sourceSha256": "25de74366b29e3a05e6bf109bdb5ae8d9d649afc9d22ce99f67d12134c0917c4",
+      "heroSha256": "0418b9abad632fd6671cc1d26dc106a4854096d9ad4cf3a40dabba609afd7ecc",
+      "sourceRecord": "content/sources/scallion-beef.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-1253",
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-1206"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "牛肉",
+          "amount": {
+            "value": 180,
+            "unit": "g"
+          },
+          "note": "切片，建議用牛里肌"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "切段"
+        },
+        {
+          "name": "薑絲",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "辣椒絲",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 20,
+            "unit": "ml"
+          },
+          "note": "醃肉用 5 ml（約 1 茶匙），炒醬汁用 15 ml（約 1 湯匙）",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "醃肉與炒醬汁各 15 ml（約 1 湯匙）",
+          "group": "調味"
+        },
+        {
+          "name": "太白粉",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙，醃肉用",
+          "group": "調味"
+        },
+        {
+          "name": "蛋白",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 湯匙，醃肉用",
+          "group": "調味"
+        },
+        {
+          "name": "食用油",
+          "amount": {
+            "value": 45,
+            "unit": "ml"
+          },
+          "note": "醃好的牛肉拌 15 ml，炒牛肉約 30 ml",
+          "group": "調味"
+        },
+        {
+          "name": "太白粉水",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "牛肉片醃過後先大火快炒到表面變白盛起，再和爆香的蔥段、薑絲、辣椒絲回鍋快炒，勾薄芡收尾。蔥香明顯，適合配飯。",
+      "stepsVerbatim": [
+        "牛肉切成片；青蔥切段，備好薑絲和辣椒絲。",
+        "牛肉片加入醃肉用的醬油、水、太白粉和蛋白抓勻，醃 5 分鐘，再拌入 15 ml 食用油。",
+        "炒鍋燒熱，倒入約 30 ml 食用油，牛肉片下鍋用大火快炒，表面一變白就撈起。",
+        "鍋底留少許油，轉小火放入蔥段、薑絲和辣椒絲爆香，再加炒醬汁用的醬油和水炒勻。",
+        "倒回牛肉片，轉大火快炒 10 秒，淋入太白粉水炒勻勾芡，灑上香油就起鍋。"
+      ],
+      "tipVerbatim": "牛肉片容易炒老，第一次下鍋只要表面變白就撈起，回鍋後也只快炒 10 秒。",
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料、五步與tip一致。牛肉180g切片，牛里肌僅建議；蔥150g段、薑10g絲、辣椒5g絲。醬油20ml=醃5+炒15，水30ml=醃15+炒15，食用油45ml=拌15+炒約30，各分配一致。太白粉/蛋白醃肉與5ml太白粉水收尾分開，未混為同份。",
+      "timeReview": {
+        "timeMinutes": 15,
+        "finding": "醃5分鐘、回鍋10秒，15分鐘可包含備料及短時炒製，未見明示總時間矛盾。"
+      },
+      "visualFacts": [
+        "牛肉薄片180g，熟褐色薄片，不是牛肉條、丁或整塊牛排。",
+        "蔥150g切段，綠與白段可見；薑10g細絲、辣椒5g細絲。",
+        "帶光澤褐色薄芡，盤底可少量醬汁；無蒜、洋蔥、芝麻。"
+      ],
+      "quantityAssessment": "全部主料按重量，無牛片數、蔥支數或辣椒根數；不能把份量補成具體件數。",
+      "heroUsable": true,
+      "heroDifferences": [],
+      "heroObservation": "已逐張看原 hero：素色盤、褐色薄牛肉片、大量蔥段、细薑/紅椒絲及薄醬吻合；沒有新增配料。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Thin cooked brown BEEF SLICES, representing 180 g, folded naturally and mixed with many short green-and-white SCALLION SEGMENTS representing 150 g. Add fine ginger THREADS and fine narrow red-chili THREADS, all coated in a light glossy brown starch-thickened sauce. Beef remains thin irregular slices, not strips, cubes or steak. Chili and ginger remain fine shreds, not pepper rings or ginger slices. No garlic, onion chunks, sesame seeds or leafy herbs. Do not specify piece counts or turn the suggested beef cut into a required fact. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection. Matching hero can be referenced, or use layout-only.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "hero-allowed"
+    },
+    {
+      "id": "kimchi-fried-beef",
+      "title": "韓式泡菜炒牛肉",
+      "sourceSha256": "bff2426191435457fa235e32ac029badebda9e256b82c133000b3afa159323ab",
+      "heroSha256": "8fffbf70d2e1725ca6141c5659c1fa1ebd2d731eae16c1af1ac164e703ccd3e5",
+      "sourceRecord": "content/sources/kimchi-fried-beef.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-0803"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "牛肉",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "牛里肌切條狀"
+        },
+        {
+          "name": "韓式泡菜",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "切粗段含泡菜汁"
+        },
+        {
+          "name": "黃豆芽",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          },
+          "note": "洗淨瀝乾"
+        },
+        {
+          "name": "芹菜",
+          "amount": {
+            "value": 30,
+            "unit": "g"
+          },
+          "note": "切段"
+        },
+        {
+          "name": "蒜頭",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          },
+          "note": "切蒜片"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "切蔥段"
+        },
+        {
+          "name": "韓式辣椒醬",
+          "amount": {
+            "value": 15,
+            "unit": "g"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "少許提香",
+          "group": "調味"
+        },
+        {
+          "name": "白胡椒粉",
+          "amount": {
+            "value": 1,
+            "unit": "g"
+          },
+          "note": "少許提味",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "牛肉切條抓醃滑嫩，韓式白菜泡菜切塊，熱油鍋爆香蒜片、青蔥與辣椒，大火滑炒牛肉條至變色，加入泡菜、黃豆芽與芹菜大火快翻，調入韓式辣醬與米酒收汁，酸辣甘甜、鑊氣十足。",
+      "stepsVerbatim": [
+        "牛肉切均勻條狀，加少許米酒、醬油與太白粉抓醃 10 分鐘；泡菜切粗塊；芹菜切段、蒜頭切片、青蔥切段備用。",
+        "熱鍋倒入適量油，放入蒜片、蔥段爆香，倒入牛肉條大火滑炒至表面變白約八分熟先盛出。",
+        "原鍋放入泡菜塊、黃豆芽與芹菜段大火翻炒 1 分鐘出香氣，加入韓式辣椒醬與米酒炒勻。",
+        "倒回牛肉條大火快炒均勻包裹醬汁，淋上香油快速拌炒數秒即可盛盤趁熱享用。"
+      ],
+      "tipVerbatim": "牛肉條大火快速過油滑炒至八分熟即先起鍋，等泡菜與蔬菜翻炒釋放酸香後再回鍋結合，牛肉質地才能保持鮮嫩爆汁完全不老韌。",
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients vs steps[0]",
+          "reason": "步驟1醃牛肉用醬油與太白粉，材料表皆未列；米酒少許醃料與後續15ml是否分量也未交代。"
+        },
+        {
+          "field": "ingredients vs steps[1]",
+          "reason": "步驟2熱鍋倒適量炒油，但材料只有起鍋提香用香油5ml。"
+        },
+        {
+          "field": "summary vs ingredients/steps",
+          "reason": "摘要爆香含辣椒，材料及步驟沒有額外辣椒，只有韓式辣椒醬；不能自行把辣醬改成切椒或增列辣椒。"
+        },
+        {
+          "field": "ingredients[9] vs steps",
+          "reason": "白胡椒粉1g材料已列，但全部步驟沒有使用時點，不能自行加入醃料或起鍋撒入。"
+        }
+      ],
+      "textReview": "牛里肌條、泡菜粗段/粗塊、黃豆芽、芹菜段、蒜片及蔥段形態明確；關鍵醃料與炒油缺列且摘要另有辣椒。20分鐘與醃10分鐘不自動矛盾，但不能為時間足夠而略過文字缺口。",
+      "timeReview": {
+        "timeMinutes": 20,
+        "finding": "固定醃10分鐘、炒菜1分鐘及短炒，未見明文超時；不自行縮短醃時間。"
+      },
+      "visualFacts": [
+        "牛里肌300g切條；韓式白菜泡菜150g切粗段含汁。",
+        "黃豆芽50g保留豆芽形，芹菜30g段、蒜10g片、蔥20g段。",
+        "紅色辣醬汁；是否額外辣椒在摘要/清單間矛盾。"
+      ],
+      "quantityAssessment": "材料多為重量，不猜牛肉條或豆芽數；細碎紅色辣醬本身不代表可新增整辣椒。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 雖有主要列定材料形態，但不能用它判定摘要額外辣椒是否省略，也不能處理未列醃料。"
+      ],
+      "heroObservation": "已逐張看原 hero：牛肉條、泡菜塊、黃豆芽和芹菜段清楚，無法解決文字缺口；本輪不引用。",
+      "layoutOnlyPossible": false,
+      "dishPrompt": "HOLD — do not generate. The uncontested base is a plain ceramic plate of cooked beef-loin STRIPS, coarse napa-cabbage kimchi pieces, whole soybean sprouts with yellow beans, celery segments, garlic slices and scallion segments in reddish kimchi-gochujang sauce. Whether additional sliced chilies are present is unresolved, and marinade/cooking-oil facts are missing. Do not add sesame seeds or other garnish. No utensils.",
+      "promptUse": "Not ready: resolve ingredient-set and missing-marinade facts first.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "blocked"
+    },
+    {
+      "id": "miso-steamed-chicken",
+      "title": "味噌蒸雞",
+      "sourceSha256": "36ab11b37bed328572b8427e0abfe2d2d7fc99071086bc894c067988f6703ff6",
+      "heroSha256": "fb3f236a0177d9901c0816845445a34be2e6e3562a0f5b6a6842428329a50a4e",
+      "sourceRecord": "content/sources/miso-steamed-chicken.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-2142"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "雞腿",
+          "amount": {
+            "value": 1,
+            "unit": "支"
+          },
+          "note": "洗淨剁小塊"
+        },
+        {
+          "name": "泡發香菇",
+          "amount": {
+            "value": 50,
+            "unit": "g"
+          },
+          "note": "切小塊"
+        },
+        {
+          "name": "紅辣椒",
+          "amount": {
+            "value": 1,
+            "unit": "條"
+          },
+          "note": "切片"
+        },
+        {
+          "name": "薑末",
+          "amount": {
+            "value": 5,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "蔥段",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          }
+        },
+        {
+          "name": "味噌醬",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "細糖",
+          "amount": {
+            "value": 4,
+            "unit": "g"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "水",
+          "amount": {
+            "value": 30,
+            "unit": "ml"
+          },
+          "note": "約 2 大匙",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "雞腿塊拌入味噌醬汁，與香菇、辣椒和蔥段一起蒸熟。",
+      "stepsVerbatim": [
+        "雞腿洗淨剁小塊；泡發香菇切小塊，紅辣椒切片。",
+        "泡發香菇放入滾水中略汆燙，撈起瀝乾。",
+        "味噌醬、細糖、醬油、米酒和水拌勻，再加入雞腿、紅辣椒與薑末拌勻。",
+        "加入泡發香菇與香油拌勻，放上蔥段。待蒸籠水滾，以大火蒸約 20 分鐘。"
+      ],
+      "tipVerbatim": null,
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料及四步一致：一支雞腿剁小塊、50g泡發香菇切小塊，紅椒片、薑末、蔥段與味噌醬一起蒸。香菇起始材料已是泡發狀態，不在此自行補一段乾香菇泡發等待。所有調味在步驟3–4使用，無tip。",
+      "timeReview": {
+        "timeMinutes": 35,
+        "finding": "備料/汆燙後水滾大火蒸約20分鐘，35分鐘沒有明確衝突；已泡發香菇的前置處理不擅改成需現泡的主配方。"
+      },
+      "visualFacts": [
+        "雞腿1支洗淨剁小塊，不是整支棒腿、整片腿排或雞翅。",
+        "泡發香菇50g切小塊，不能畫整朵、完整半圓菇帽或長厚片。",
+        "紅辣椒1條切片、薑5g細末、蔥20g段；味噌為米褐色薄醬。",
+        "碗中成品與步驟一致，離開蒸籠呈現，無蒸架或爐火道具。"
+      ],
+      "quantityAssessment": "1支雞腿指原料，不指定切後塊數；50g泡發菇不猜朵數，小塊自然遮擋可接受。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 香菇有多個完整半圓菇帽輪廓及大片，與切小塊不符。",
+        "可見薑樣淺色塊较粗，重製應鎖定細末，不照其粗塊。"
+      ],
+      "heroObservation": "已逐張看原 hero：素色碗、剁雞塊、辣椒片與蔥段基本吻合；不用菇片和粗薑末形態。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic bowl. Small chopped CHICKEN-LEG pieces from one leg, steamed and coated in a light beige miso sauce. Mix with SMALL CUT CHUNKS of rehydrated shiitake mushrooms, representing 50 g, red-chili slices, very finely minced ginger FLECKS, and short green-and-white scallion SEGMENTS. The chicken is chopped into small pieces, never a whole drumstick, whole thigh fillet or wing. Shiitake is cut into small chunks, NOT whole caps, semicircular half-caps or large thick slices. Ginger is very fine mince, not pale diced chunks. Present the cooked dish in its plain ceramic serving bowl with no steamer, rack or stove. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection with layout/style reference ONLY; enforce small mushroom chunks and fine ginger.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "layout-only"
+    },
+    {
+      "id": "shrimp-thick-omelet",
+      "title": "滑蛋鮮蝦仁",
+      "sourceSha256": "91c0594ddd5f87751f8ecec59f62c4430efe747a2ac77e747b0c740df16c6b55",
+      "heroSha256": "8067650e6f0e6c03bf39016f496d7ccd2c056dbc6511eda9523a838d790e7aff",
+      "sourceRecord": "content/sources/shrimp-thick-omelet.yaml",
+      "sourceUrls": [
+        "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=G01-337"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "草蝦仁",
+          "amount": {
+            "value": 150,
+            "unit": "g"
+          },
+          "note": "挑除腸泥吸乾水分"
+        },
+        {
+          "name": "雞蛋",
+          "amount": {
+            "value": 4,
+            "unit": "顆"
+          },
+          "note": "打散成均勻蛋液"
+        },
+        {
+          "name": "青蔥",
+          "amount": {
+            "value": 20,
+            "unit": "g"
+          },
+          "note": "切細蔥花"
+        },
+        {
+          "name": "太白粉",
+          "amount": {
+            "value": 10,
+            "unit": "g"
+          },
+          "note": "調水太白粉水加入蛋液保嫩"
+        },
+        {
+          "name": "鹽",
+          "amount": {
+            "value": 2,
+            "unit": "g"
+          },
+          "note": "約半茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "白胡椒粉",
+          "amount": {
+            "value": 1,
+            "unit": "g"
+          },
+          "note": "少許提鮮",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "蛋液提香",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "草蝦仁去腸泥汆燙保脆嫩，雞蛋加入少許水與太白粉水打散成柔嫩蛋液，熱油鍋下蝦仁微翻，緩緩淋入蛋液以小火快速由外向內推炒至半凝固嫩黃金亮，撒上蔥花，蛋香滑嫩、蝦仁脆彈鮮甜。",
+      "stepsVerbatim": [
+        "蝦仁洗淨挑除腸泥拭乾，加少許鹽抓勻入滾水微燙 15 秒撈起瀝乾；雞蛋打入大碗，加入太白粉水、少許鹽與香油攪拌均勻備用。",
+        "熱鍋倒入稍多油燒至溫熱，放入燙過的蝦仁大火翻炒數秒均勻散開。",
+        "轉中小火淋入攪拌好的蛋液，待底層微凝固時，用鍋鏟由外緣向鍋中心輕輕推炒翻動，使蛋液層層堆疊成滑嫩凝乳狀。",
+        "在蛋液達到八分凝固、表面仍帶有水潤光澤時立即關火，撒上青蔥花快速翻拌盛盤。"
+      ],
+      "tipVerbatim": "蛋液中加入少許太白粉水能大幅增加蛋液延展性並延緩老化；炒蛋時火候切忌過大，油溫溫熱時下蛋液並用推炒手法，一見半凝固即刻離火，蛋質才會如絲綢般軟嫩滑溜。",
+      "eligible": false,
+      "blockers": [
+        {
+          "field": "ingredients vs steps[1]",
+          "reason": "步驟2熱鍋倒入稍多油炒蝦，材料只列加入蛋液提香的香油5ml，缺炒油。"
+        },
+        {
+          "field": "summary/tip vs steps[3]",
+          "reason": "摘要與tip說半凝固即離火，步驟4卻說蛋液達八分凝固才關火；停火熟度不同，不能為成品圖或列印文案自行選擇。"
+        },
+        {
+          "field": "ingredients[5] vs steps",
+          "reason": "白胡椒粉1g在材料表有列，全部步驟未使用。"
+        }
+      ],
+      "textReview": "蝦仁150g、雞蛋4顆、細蔥花20g、太白粉10g和香油5ml的形態清楚，但炒油缺列、白胡椒未用且半凝固/八分凝固衝突。15分鐘未見固定等待超時。",
+      "timeReview": {
+        "timeMinutes": 15,
+        "finding": "固定微燙15秒、炒數秒，總時間沒有明確超時；停火熟度矛盾不能靠時間欄解決。"
+      },
+      "visualFacts": [
+        "去腸泥草蝦仁150g，成品不可有蝦頭/殼/尾。",
+        "四顆蛋打散推炒成層疊滑蛋，不是厚圓煎蛋、卷蛋或蛋塊丁。",
+        "青蔥20g細蔥花；無辣椒、青豆或額外香草。"
+      ],
+      "quantityAssessment": "蝦仁重量不猜尾數；四顆蛋已打散不能畫成四團或四個完整蛋。",
+      "heroUsable": false,
+      "heroDifferences": [
+        "hero 呈成形金黄嫩炒蛋和蝦仁，無法用圖像裁定半凝固或八分凝固的正文矛盾。"
+      ],
+      "heroObservation": "已逐張看原 hero：滑蛋層、蝦仁與蔥花為未爭議食材；本輪因文字阻擋不引用。",
+      "layoutOnlyPossible": false,
+      "dishPrompt": "HOLD — do not generate. The uncontested ingredients would be peeled black-tiger shrimp meat folded through soft layered scrambled eggs made from four eggs, with finely chopped scallion, on a plain ceramic plate. Do not draw an omelet disk, rolled omelet, intact eggs or shell-on shrimp. The stopping state conflicts between half-set and eighty-percent set, and frying oil is missing; do not choose a doneness state. No utensils.",
+      "promptUse": "Not ready: resolve cooking-fat, unused seasoning and doneness conflicts first.",
+      "status": "skipped",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "blocked"
+    },
+    {
+      "id": "onion-minced-pork",
+      "title": "洋蔥炒豬絞肉",
+      "sourceSha256": "c1e7de2bef63362009ba7ade43f990e696be9d7107df5b8755d7216070b9ec1e",
+      "heroSha256": "390893ffb0f2e3dd8840a80777a2b707dadc5d6826294ccd9b0b3a1e39015b9a",
+      "sourceRecord": "content/sources/onion-minced-pork.yaml",
+      "sourceUrls": [
+        "https://icook.tw/recipes/253146",
+        "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      ],
+      "checks": {
+        "draft": false,
+        "printExists": false,
+        "priorBatchMatches": [],
+        "alreadySelectedInCurrentBatch": false
+      },
+      "ingredientsVerbatimStructured": [
+        {
+          "name": "豬絞肉",
+          "amount": {
+            "value": 300,
+            "unit": "g"
+          },
+          "note": "選用低脂絞肉，建議用後腿絞肉"
+        },
+        {
+          "name": "洋蔥",
+          "amount": {
+            "value": 170,
+            "unit": "g"
+          },
+          "note": "約半顆，切丁"
+        },
+        {
+          "name": "食用油",
+          "note": "少許",
+          "group": "調味"
+        },
+        {
+          "name": "醬油",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 湯匙",
+          "group": "調味"
+        },
+        {
+          "name": "醬油膏",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 湯匙",
+          "group": "調味"
+        },
+        {
+          "name": "米酒",
+          "amount": {
+            "value": 15,
+            "unit": "ml"
+          },
+          "note": "約 1 湯匙",
+          "group": "調味"
+        },
+        {
+          "name": "味醂",
+          "amount": {
+            "value": 5,
+            "unit": "ml"
+          },
+          "note": "約 1 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "糖",
+          "amount": {
+            "value": 1,
+            "unit": "g"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "香油",
+          "amount": {
+            "value": 1.25,
+            "unit": "ml"
+          },
+          "note": "約 1/4 茶匙",
+          "group": "調味"
+        },
+        {
+          "name": "鹽",
+          "note": "視情況少許，最多約 1 g（1/4 茶匙）",
+          "group": "調味"
+        }
+      ],
+      "summaryVerbatim": "洋蔥丁炒至金黃，再與豬絞肉拌炒收汁。以醬油和醬油膏調味，適合配飯或拌麵。",
+      "stepsVerbatim": [
+        "將洋蔥切丁。把醬油、醬油膏、米酒、味醂、糖與香油混合成調味汁。",
+        "倒少許食用油入平底鍋，放入洋蔥，以中小火炒到金黃。",
+        "撥開洋蔥，放入豬絞肉並炒散。肉色變白後，與洋蔥拌炒至略帶焦香。",
+        "倒入調味汁拌炒收汁，起鍋前用食物溫度計確認豬絞肉中心至少達 71°C。",
+        "確認豬絞肉熟透後試味，若不夠鹹或偏甜，加入少許鹽拌勻再盛出。"
+      ],
+      "tipVerbatim": "鹽依醬料鹹甜度調整，添加量不超過約 1 g（1/4 茶匙）。豬絞肉是否熟透須以食物溫度計確認，不能只靠肉色判斷。",
+      "eligible": true,
+      "blockers": [],
+      "textReview": "摘要、材料、五步與tip一致：低脂豬絞肉300g、洋蔥170g約半顆切丁；醬油/醬油膏/米酒各15ml、味醂5ml、糖1g、香油1.25ml拌成汁。少許炒油與視況鹽（最多約1g）均明列，鹽上限與tip一致；至少71°C確認熟度照原文保留，不改成看肉色。",
+      "timeReview": {
+        "timeMinutes": 10,
+        "finding": "步驟沒有規定必須等待的分鐘數，因此沒有可直接證明的總時間矛盾；10分鐘對切丁、洋蔥炒金黃與收汁偏緊但本輪不憑估計改時或判為硬矛盾。"
+      },
+      "visualFacts": [
+        "豬絞肉300g炒散為細小不規則熟肉粒；後腿肉為建議部位，不能變成必選。",
+        "洋蔥170g約半顆切丁，炒至金黃，與肉粒混合，不是洋蔥大瓣、長絲或整顆。",
+        "褐色醬汁略收乾，没有蔥花、蒜、辣椒、芝麻或配飯。"
+      ],
+      "quantityAssessment": "肉和洋蔥均為重量，不指定肉粒或洋蔥丁數；「約半顆」不代表成品擺半顆洋蔥。",
+      "heroUsable": true,
+      "heroDifferences": [],
+      "heroObservation": "已逐張看原 hero：素色盤、炒散棕褐肉粒、金黃透明洋蔥丁與收汁吻合，無新增裝飾或米飯。",
+      "layoutOnlyPossible": true,
+      "dishPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Fully cooked lean GROUND PORK, representing 300 g, broken into fine irregular brown CRUMBLES, mixed throughout with golden softened DICED ONION representing 170 g (about half an onion before cutting). Coat lightly in reduced brown soy sauce and soy-paste glaze, with only a little sauce at the base. Pork must be loose minced-meat crumbles, not meat strips, cubes or meatballs. Onion is small dice, not large petals, wedges, long strips or half an intact onion. No scallions, garlic, chili, sesame, herbs, rice or noodles. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+      "promptUse": "Ready after parent selection. Matching hero can be referenced, or use layout-only. Keep 71°C and salt maximum verbatim in printed copy.",
+      "status": "eligible",
+      "currentAttempts": 0,
+      "historicalAttempts": "unknown",
+      "referenceMode": "hero-allowed"
+    }
+  ],
+  "candidateCount": 20,
+  "initialTenSnapshot": "/tmp/batch07-vegetables-preflight-initial10.json",
+  "concurrentCurrentBatchLedger": "/workspace/scratch/d935b46a4408/carlkitchen-share-print-batch07/.scratch/share-print-images/batch-07.json",
+  "alreadySelectedInCurrentBatch": [
+    "home-braised-tofu",
+    "three-cup-king-oyster-mushrooms",
+    "yogurt-bamboo-shoot-salad"
+  ]
+}

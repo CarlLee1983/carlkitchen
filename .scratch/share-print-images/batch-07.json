@@ -1,0 +1,191 @@
+[
+  {
+    "id": "home-braised-tofu",
+    "title": "家常燒豆腐",
+    "sourceSha256": "b7a00e6d90940b33cf99c00f57dc6a3c8528272049e346ab838e30bd46b0adf8",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Golden-brown pan-seared firm tofu cut into broad approximately 1.5 cm THICK SLICES, representing 300 g tofu, lightly overlapping in a shallow reduced soy-colored sauce. A modest amount of fully cooked thin pork SHREDS, representing 30 g, is mixed with fine lengthwise scallion SHREDS, fine ginger THREADS and narrow red-chili THREADS. The aromatics are cooked, not a pile of unrelated raw garnish. No tofu cubes, no scallion rings or segments, no ginger slices, no chili rings, no whole chilies. Do not prescribe a tofu-slice count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Golden-brown pan-seared firm tofu cut into broad approximately 1.5 cm THICK SLICES, representing 300 g tofu, lightly overlapping in a shallow reduced soy-colored sauce. A modest amount of fully cooked thin pork SHREDS, representing 30 g, is mixed with fine lengthwise scallion SHREDS, fine ginger THREADS and narrow red-chili THREADS. The aromatics are cooked, not a pile of unrelated raw garnish. No tofu cubes, no scallion rings or segments, no ginger slices, no chili rings, no whole chilies. Do not prescribe a tofu-slice count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n家常燒豆腐\n板豆腐煎至兩面焦黃，再和豬肉絲、薑蔥及醬汁燒到湯汁略收。\n2 人份・25 分鐘・非湯料理\n材料\n主料\n板豆腐 300 g（切約 1.5 公分厚片）\n豬肉絲 30 g（建議用里肌肉）\n蔥絲 10 g\n薑絲 10 g\n紅辣椒絲 5 g\n調味\n食用油 30 ml（約 2 大匙，分兩次各用 1 大匙）\n醬油 30 ml（約 2 大匙）\n細砂糖 12 g（約 1 大匙）\n米酒 15 ml（約 1 大匙）\n水 75 ml（約 5 大匙）\n香油 2.5 ml（約 1/2 茶匙）\n做法\n1 板豆腐切成 1.5 公分左右的厚片。熱鍋倒入 15 ml 食用油，豆腐片下鍋，兩面都煎出焦黃色再盛起。\n2 鍋子再次燒熱，倒入 15 ml 食用油，用小火把薑絲、蔥絲與紅辣椒絲爆出香氣。\n3 下豬肉絲，翻炒到肉絲分開且全熟，接著倒入醬油、細砂糖、米酒與水，拌炒均勻。\n4 把煎好的豆腐片放回鍋中，維持小火燒約 2 分鐘，等醬汁稍微收乾，灑入香油就能起鍋。\n煮奔",
+    "originalSha256": "5e0e9eb724c88bda326e10d65924e2833dcfaab84d47dab02f84eb0e4f0fb155",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/home-braised-tofu.png",
+    "webpSha256": "1a42f7b8e1ed4e247916909b4e70509017c99f215ebc0fa361f476a2f24e1a37",
+    "webpBytes": 111402,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  },
+  {
+    "id": "three-cup-king-oyster-mushrooms",
+    "title": "三杯杏鮑菇",
+    "sourceSha256": "bbf4eb3108f73544282a580bb54035feedebc91a9e7f1e221ad9add3ad67c7e4",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Large cut CHUNKS of king oyster mushroom, representing 500 g before cooking, lightly fried then coated in reduced dark soy-paste and sesame-oil sauce. Mix with thin ginger SLICES, whole peeled individual garlic CLOVES (40 g total, no invented clove count), and Taiwanese basil leaves with coarse stems removed. Use two red chilies cut LENGTHWISE into two halves each: four long longitudinal half-chilies in the whole dish, with lengthwise cut faces and tapered tips, some naturally partly occluded. These are long half-chilies, NOT short oblique slices, crosswise rings, chopped pieces or whole uncut chilies. No scallions or other garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Large cut CHUNKS of king oyster mushroom, representing 500 g before cooking, lightly fried then coated in reduced dark soy-paste and sesame-oil sauce. Mix with thin ginger SLICES, whole peeled individual garlic CLOVES (40 g total, no invented clove count), and Taiwanese basil leaves with coarse stems removed. Use two red chilies cut LENGTHWISE into two halves each: four long longitudinal half-chilies in the whole dish, with lengthwise cut faces and tapered tips, some naturally partly occluded. These are long half-chilies, NOT short oblique slices, crosswise rings, chopped pieces or whole uncut chilies. No scallions or other garnish. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n三杯杏鮑菇\n杏鮑菇先炸到略帶金黃，再與薑、蒜仁、紅辣椒和醬汁炒至收乾，最後拌入九層塔。\n4 人份・30 分鐘・非湯料理\n材料\n主料\n杏鮑菇 500 g（切大塊）\n薑 50 g（切片）\n紅辣椒 2 根（剖半）\n蒜仁 40 g\n九層塔 10 g（去粗莖後洗淨）\n調味\n食用油 適量（炸杏鮑菇用）\n胡麻油 30 ml（約 2 大匙）\n米酒 50 ml\n醬油膏 60 ml（約 4 大匙）\n水 50 ml\n做法\n1 杏鮑菇切成大塊，紅辣椒縱切兩半，薑切片；九層塔摘掉粗莖後洗淨。\n2 將食用油加熱至約 160°C，下杏鮑菇以大火炸；表面略呈金黃色時撈出。\n3 炸完先把鍋洗淨，重新燒熱後加胡麻油；下蒜仁、薑和紅辣椒，用小火炒香。\n4 加入杏鮑菇、米酒、醬油膏與水，開大火煮滾後翻炒至湯汁收乾。\n5 放入九層塔，稍微拌勻即可。\n煮奔",
+    "originalSha256": "7037ac39f105b6763043618dda7f5adc382e4d839ad614c859d05532ce16c9c3",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/three-cup-king-oyster-mushrooms.png",
+    "webpSha256": "4b99ddd8180da5e2f6f6a292d2faa085f47db437c3ad26ba3ad622b475179dd8",
+    "webpBytes": 118714,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  },
+  {
+    "id": "yogurt-bamboo-shoot-salad",
+    "title": "優格沙拉筍",
+    "sourceSha256": "eef7e52d60f2b89913885a058e3fe280248e03f58bda9d20b69beff36b0a5afe",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Small peeled cooked green-bamboo-shoot CHUNKS from two bamboo shoots, pale cream to light yellow with subtle bamboo fiber, piled on the plate. Spoon a creamy white yogurt-and-lemon dressing over the chunks, with many TINY orange-red SHRIMP-ROE specks mixed through the dressing. The roe is fine-grained, not large translucent salmon-roe pearls. No bamboo husks, no whole shoots, no whole shrimp or shrimp tails, no lemon wedge, no herbs. Do not invent a final chunk count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Small peeled cooked green-bamboo-shoot CHUNKS from two bamboo shoots, pale cream to light yellow with subtle bamboo fiber, piled on the plate. Spoon a creamy white yogurt-and-lemon dressing over the chunks, with many TINY orange-red SHRIMP-ROE specks mixed through the dressing. The roe is fine-grained, not large translucent salmon-roe pearls. No bamboo husks, no whole shoots, no whole shrimp or shrimp tails, no lemon wedge, no herbs. Do not invent a final chunk count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n優格沙拉筍\n綠竹筍煮熟切塊，拌入優格檸檬醬與蝦卵。\n3 人份・40 分鐘・非湯料理\n材料\n主料\n綠竹筍 2 支\n蝦卵 15 ml（約 1 大匙）\n調味\n優格 60 ml（約 4 大匙）\n檸檬汁 15 ml（約 1 大匙）\n鹽 1.25 ml（約 1/4 茶匙）\n細砂糖 24 g（約 2 大匙，換算估值）\n水 適量（煮竹筍用）\n做法\n1 綠竹筍洗好放進鍋裡，倒水淹過筍身，大火煮滾後轉小火，續煮約 20 分鐘。\n2 竹筍撈出後剝去外殼，切成小塊盛盤。\n3 優格加入檸檬汁、鹽和細砂糖攪勻做成醬汁，最後拌進蝦卵。\n4 把優格蝦卵醬澆在竹筍塊上。\n煮奔",
+    "originalSha256": "4ddd7f6eaec085ad349523e8cd19af33b6f89d423b464b0c85498f23516c80e7",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/yogurt-bamboo-shoot-salad.png",
+    "webpSha256": "71159a5a4b883a7f96913bfa8fb524041d13eb5640cbe2b68ccf417e10d03fbb",
+    "webpBytes": 86126,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  },
+  {
+    "id": "garlic-sprout-cured-pork",
+    "title": "蒜苗炒臘肉",
+    "sourceSha256": "f9797d9017e9aa9c02584b18996e50d8a5f149ef364faba247e9c08ffa299f96",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Thin skinless slices of steamed Cantonese cured pork, representing 180 g, showing reddish-brown lean meat and translucent rendered fat, stir-fried with 200 g of diagonally sliced young GARLIC GREENS, including flat green leaves and pale diagonal stem slices. Add finely chopped red CHILI FLECKS and finely chopped GARLIC, gently glazed with soy sauce. Chili and garlic must remain small chopped pieces, not chili rings, whole chilies, garlic slices or whole cloves. No sausage, no thick pork chunks, no scallion rings, no long garlic-scape stalks. Do not invent slice counts. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Thin skinless slices of steamed Cantonese cured pork, representing 180 g, showing reddish-brown lean meat and translucent rendered fat, stir-fried with 200 g of diagonally sliced young GARLIC GREENS, including flat green leaves and pale diagonal stem slices. Add finely chopped red CHILI FLECKS and finely chopped GARLIC, gently glazed with soy sauce. Chili and garlic must remain small chopped pieces, not chili rings, whole chilies, garlic slices or whole cloves. No sausage, no thick pork chunks, no scallion rings, no long garlic-scape stalks. Do not invent slice counts. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n蒜苗炒臘肉\n廣東臘肉先蒸熟切片，再和蒜苗、辣椒一起快炒。\n3 人份・20 分鐘・非湯料理\n材料\n主料\n廣東臘肉 180 g\n蒜苗 200 g\n辣椒 1 根\n蒜仁 2 瓣\n調味\n醬油 15 ml\n細砂糖 0.5 茶匙\n料酒 5 ml\n香油 5 ml\n油 少許（炒香用）\n做法\n1 廣東臘肉蒸約 10 分鐘至熟，去皮切薄片。蒜苗切斜片，辣椒與蒜仁切碎。\n2 鍋中加少許油，以小火炒香蒜仁和辣椒。加入廣東臘肉，炒約 10 秒。\n3 加入蒜苗、醬油、細砂糖和料酒，轉大火快炒約 20 秒，起鍋前淋上香油。\n煮奔",
+    "originalSha256": "8bfb82a9cf9d935ea4a9294557879c55ec156f9ef6c28b636920b016830ab809",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/garlic-sprout-cured-pork.png",
+    "webpSha256": "2cf7aca1e7b199f5a867fbf1a7e1ae884c75e7828336444e30954a2ba23c8740",
+    "webpBytes": 101352,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  },
+  {
+    "id": "green-peas-shrimp",
+    "title": "青豆蝦仁",
+    "sourceSha256": "99b09179c700fbf6674edb216a6b0f07c793e92734a16af8d62da8000b84a390",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Curled cooked peeled SHRIMP MEAT, pink and ivory, obtained from 300 g of whole fresh shrimp before shelling, mixed with 150 g round shelled GREEN PEAS. Add distinct short white scallion SEGMENTS and green scallion SEGMENTS, plus very finely minced ginger flecks, glossed with a small amount of strained pale orange shrimp-head stock. The shrimp heads and shells have been strained out: no shrimp heads, shells or tails in the dish. Scallions are short segments, NOT tiny chopped rings. No chili, garlic, pea pods, edamame pods or corn. Do not invent a shrimp or pea count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Curled cooked peeled SHRIMP MEAT, pink and ivory, obtained from 300 g of whole fresh shrimp before shelling, mixed with 150 g round shelled GREEN PEAS. Add distinct short white scallion SEGMENTS and green scallion SEGMENTS, plus very finely minced ginger flecks, glossed with a small amount of strained pale orange shrimp-head stock. The shrimp heads and shells have been strained out: no shrimp heads, shells or tails in the dish. Scallions are short segments, NOT tiny chopped rings. No chili, garlic, pea pods, edamame pods or corn. Do not invent a shrimp or pea count. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n青豆蝦仁\n鮮蝦去殼後蝦頭煉出濃郁蝦汁，蝦仁略炒盛起，青豆以蝦汁煨煮至軟甜後與蝦仁、蔥綠拌炒。清爽鮮脆、蝦香四溢。\n4 人份・20 分鐘・非湯料理\n材料\n主料\n新鮮蝦子 300 g（剝殼取蝦仁，保留蝦頭煉蝦汁）\n青豆 150 g（青豆仁）\n青蔥 1 支（蔥白、蔥綠分開切段）\n調味\n薑末 5 g（約 1 茶匙）\n鹽 5 g（約 1 茶匙醃蝦仁；起鍋另備少許調味）\n米酒 15 ml（約 1 大匙，醃蝦仁用）\n太白粉 15 ml（約 1 大匙，醃蝦仁用）\n水 150 ml（煮蝦汁用）\n食用油 15 ml（約 1 大匙，炒蝦仁、蝦頭與青豆用）\n做法\n1 新鮮蝦子剝殼洗淨並吸乾水分，蝦頭保留備用；蝦仁加入鹽、米酒與太白粉抓勻醃漬。\n2 熱鍋倒入少許食用油，放入醃好的蝦仁快速翻炒至轉為粉紅變色，立刻盛起備用。\n3 原鍋補少許食用油，下蝦頭翻炒至通體轉紅並釋出橘紅蝦油，倒入水滾煮 2 分鐘，濾出濃郁蝦汁備用。\n4 鍋中加少許食用油，下蔥白與薑末爆出香氣，加入青豆翻炒，倒入蝦汁蓋上鍋蓋燜煮至青豆軟熟。\n5 倒回炒好的蝦仁與蔥綠大火翻炒均勻，撒少許鹽調味即可起鍋盛盤。\n小提醒\n蝦頭煸香後加水滾煮能煉出鮮味濃郁的天然蝦汁，用來煨煮青豆可讓整道菜鮮甜加倍。\n煮奔",
+    "originalSha256": "153fdf120bcccd2a83a7d545e40601ebdb7699d5e7d681b70154f24218c8c2f7",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/green-peas-shrimp.png",
+    "webpSha256": "b3987f5ce10f03b33a1f9496be3f8542bef9e805cbffeac260b694edaaa73212",
+    "webpBytes": 115394,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  },
+  {
+    "id": "tofu-shrimp",
+    "title": "豆腐蝦仁",
+    "sourceSha256": "01976d0aeba78054bdf9941bca6593d862d2ded37cd923b0f3350fb7cbbee04e",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Exactly TEN rectangular white tofu SLICES, each about 1 cm thick, arranged as two clear rows of five. Each tofu slice carries one small mound of finely pounded SHRIMP PASTE, steamed until opaque pale pink-orange, with tiny chopped scallion and very finely minced ginger flecks mixed throughout. The topping is a cohesive fine paste, NOT intact shrimp, shrimp tails, large chopped shrimp pieces or round fish balls. Ten tofu bases and ten separate paste mounds are discernible; light natural overlap is acceptable only if the ten portions remain verifiable. No chili, no leafy garnish, no brown poured sauce. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Exactly TEN rectangular white tofu SLICES, each about 1 cm thick, arranged as two clear rows of five. Each tofu slice carries one small mound of finely pounded SHRIMP PASTE, steamed until opaque pale pink-orange, with tiny chopped scallion and very finely minced ginger flecks mixed throughout. The topping is a cohesive fine paste, NOT intact shrimp, shrimp tails, large chopped shrimp pieces or round fish balls. Ten tofu bases and ten separate paste mounds are discernible; light natural overlap is acceptable only if the ten portions remain verifiable. No chili, no leafy garnish, no brown poured sauce. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n豆腐蝦仁\n豆腐片鋪上蔥薑蝦漿，用電鍋蒸熟，做成十塊可分食的配菜。\n2 人份・35 分鐘・非湯料理\n材料\n主料\n蝦仁 150 g（去腸泥、洗淨後瀝乾）\n豆腐 1 塊（切成十片約 1 公分厚的長方片）\n蔥花 20 g\n薑末 10 g\n調味\n鹽 1.25 ml（約 1/4 茶匙）\n雞精粉 1.25 ml（約 1/4 茶匙）\n細糖 1.25 ml（約 1/4 茶匙）\n太白粉 15 ml（約 1 大匙拌蝦漿；豆腐表面另薄撒）\n香油 15 ml（約 1 大匙）\n做法\n1 將蝦仁去腸泥、洗淨瀝乾，拍成泥。拌入蔥花、薑末、鹽、雞精粉和細糖，再拌入太白粉與香油，放入冰箱備用。\n2 將豆腐切成十片約 1 公分厚的長方片，平放盤中，在表面薄撒太白粉。\n3 將蝦漿分放在十片豆腐上，各自抹成小丘。\n4 在電鍋外鍋倒入 1/2 杯水，放入蒸架和整盤豆腐，蓋上鍋蓋，按下開關蒸到跳起。\n煮奔",
+    "originalSha256": "ee3c333108ac4c513fef4f754d528d6d09c263bcf07fe79967e3da7f8b6f211d",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/tofu-shrimp.png",
+    "webpSha256": "51e9dd5c4f600046e0d70644c69b6f020aad05b6f213d30c86d33b262548544d",
+    "webpBytes": 96738,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  },
+  {
+    "id": "scallion-beef",
+    "title": "蔥爆牛肉",
+    "sourceSha256": "25de74366b29e3a05e6bf109bdb5ae8d9d649afc9d22ce99f67d12134c0917c4",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Thin cooked brown BEEF SLICES, representing 180 g, folded naturally and mixed with many short green-and-white SCALLION SEGMENTS representing 150 g. Add fine ginger THREADS and fine narrow red-chili THREADS, all coated in a light glossy brown starch-thickened sauce. Beef remains thin irregular slices, not strips, cubes or steak. Chili and ginger remain fine shreds, not pepper rings or ginger slices. No garlic, onion chunks, sesame seeds or leafy herbs. Do not specify piece counts or turn the suggested beef cut into a required fact. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Thin cooked brown BEEF SLICES, representing 180 g, folded naturally and mixed with many short green-and-white SCALLION SEGMENTS representing 150 g. Add fine ginger THREADS and fine narrow red-chili THREADS, all coated in a light glossy brown starch-thickened sauce. Beef remains thin irregular slices, not strips, cubes or steak. Chili and ginger remain fine shreds, not pepper rings or ginger slices. No garlic, onion chunks, sesame seeds or leafy herbs. Do not specify piece counts or turn the suggested beef cut into a required fact. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n蔥爆牛肉\n牛肉片醃過後先大火快炒到表面變白盛起，再和爆香的蔥段、薑絲、辣椒絲回鍋快炒，勾薄芡收尾。蔥香明顯，適合配飯。\n2 人份・15 分鐘・非湯料理\n材料\n主料\n牛肉 180 g（切片，建議用牛里肌）\n青蔥 150 g（切段）\n薑絲 10 g\n辣椒絲 5 g\n調味\n醬油 20 ml（醃肉用 5 ml（約 1 茶匙），炒醬汁用 15 ml（約 1 湯匙））\n水 30 ml（醃肉與炒醬汁各 15 ml（約 1 湯匙））\n太白粉 5 ml（約 1 茶匙，醃肉用）\n蛋白 15 ml（約 1 湯匙，醃肉用）\n食用油 45 ml（醃好的牛肉拌 15 ml，炒牛肉約 30 ml）\n太白粉水 5 ml（約 1 茶匙）\n香油 5 ml（約 1 茶匙）\n做法\n1 牛肉切成片；青蔥切段，備好薑絲和辣椒絲。\n2 牛肉片加入醃肉用的醬油、水、太白粉和蛋白抓勻，醃 5 分鐘，再拌入 15 ml 食用油。\n3 炒鍋燒熱，倒入約 30 ml 食用油，牛肉片下鍋用大火快炒，表面一變白就撈起。\n4 鍋底留少許油，轉小火放入蔥段、薑絲和辣椒絲爆香，再加炒醬汁用的醬油和水炒勻。\n5 倒回牛肉片，轉大火快炒 10 秒，淋入太白粉水炒勻勾芡，灑上香油就起鍋。\n小提醒\n牛肉片容易炒老，第一次下鍋只要表面變白就撈起，回鍋後也只快炒 10 秒。\n煮奔",
+    "originalSha256": "c8de98588b373687894089a3c98667718799c51cd374ced91a6075de4ea35f4b",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/scallion-beef.png",
+    "webpSha256": "1a887189ef227262c4f14957739242d713153a704dd53f07debc9c292aa0dd51",
+    "webpBytes": 115922,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  },
+  {
+    "id": "miso-steamed-chicken",
+    "title": "味噌蒸雞",
+    "sourceSha256": "36ab11b37bed328572b8427e0abfe2d2d7fc99071086bc894c067988f6703ff6",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic bowl. Small chopped CHICKEN-LEG pieces from one leg, steamed and coated in a light beige miso sauce. Mix with SMALL CUT CHUNKS of rehydrated shiitake mushrooms, representing 50 g, red-chili slices, very finely minced ginger FLECKS, and short green-and-white scallion SEGMENTS. The chicken is chopped into small pieces, never a whole drumstick, whole thigh fillet or wing. Shiitake is cut into small chunks, NOT whole caps, semicircular half-caps or large thick slices. Ginger is very fine mince, not pale diced chunks. Present the cooked dish in its plain ceramic serving bowl with no steamer, rack or stove. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic bowl. Small chopped CHICKEN-LEG pieces from one leg, steamed and coated in a light beige miso sauce. Mix with SMALL CUT CHUNKS of rehydrated shiitake mushrooms, representing 50 g, red-chili slices, very finely minced ginger FLECKS, and short green-and-white scallion SEGMENTS. The chicken is chopped into small pieces, never a whole drumstick, whole thigh fillet or wing. Shiitake is cut into small chunks, NOT whole caps, semicircular half-caps or large thick slices. Ginger is very fine mince, not pale diced chunks. Present the cooked dish in its plain ceramic serving bowl with no steamer, rack or stove. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n味噌蒸雞\n雞腿塊拌入味噌醬汁，與香菇、辣椒和蔥段一起蒸熟。\n2 人份・35 分鐘・非湯料理\n材料\n主料\n雞腿 1 支（洗淨剁小塊）\n泡發香菇 50 g（切小塊）\n紅辣椒 1 條（切片）\n薑末 5 g\n蔥段 20 g\n調味\n味噌醬 30 ml（約 2 大匙）\n細糖 4 g（約 1 茶匙）\n醬油 5 ml（約 1 茶匙）\n米酒 30 ml（約 2 大匙）\n水 30 ml（約 2 大匙）\n香油 5 ml（約 1 茶匙）\n做法\n1 雞腿洗淨剁小塊；泡發香菇切小塊，紅辣椒切片。\n2 泡發香菇放入滾水中略汆燙，撈起瀝乾。\n3 味噌醬、細糖、醬油、米酒和水拌勻，再加入雞腿、紅辣椒與薑末拌勻。\n4 加入泡發香菇與香油拌勻，放上蔥段。待蒸籠水滾，以大火蒸約 20 分鐘。\n煮奔",
+    "originalSha256": "3ae48fddc16ef57007dbeb221faba2892f19d48f85fe544ea4039dbf014e3e09",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/miso-steamed-chicken.png",
+    "webpSha256": "c06bae48e5ecf5f60e8fd14440adf5d2d130a8aae0c5450e3076e28738cb242f",
+    "webpBytes": 97632,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  },
+  {
+    "id": "onion-minced-pork",
+    "title": "洋蔥炒豬絞肉",
+    "sourceSha256": "c1e7de2bef63362009ba7ade43f990e696be9d7107df5b8755d7216070b9ec1e",
+    "historicalAttempts": "unknown",
+    "currentAttempts": 1,
+    "status": "accepted",
+    "referenceMode": "layout-only",
+    "illustrationPrompt": "Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Fully cooked lean GROUND PORK, representing 300 g, broken into fine irregular brown CRUMBLES, mixed throughout with golden softened DICED ONION representing 170 g (about half an onion before cutting). Coat lightly in reduced brown soy sauce and soy-paste glaze, with only a little sauce at the base. Pork must be loose minced-meat crumbles, not meat strips, cubes or meatballs. Onion is small dice, not large petals, wedges, long strips or half an intact onion. No scallions, garlic, chili, sesame, herbs, rice or noodles. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients.",
+    "prompt": "Create ONE final Traditional Chinese recipe sharing and printing sheet, portrait 3:4. Reference is only the layout/style, NOT the dish. Delicate watercolor illustration, fine ink lines, muted natural colors, warm off-white paper, calm editorial look. Match centered 煮奔 masthead, clear large Ming title, summary, servings/time/category, dish illustration, materials left and numbered directions right, tip if supplied and footer. Generous safe margins, no cropped text. Every Chinese character and numeral below must be exact, complete, legible; never paraphrase, shorten or invent. Illustration: Warm fine-ink and soft-watercolor finished-dish illustration, 45-degree overhead view. Use one plain unpatterned ceramic plate. Fully cooked lean GROUND PORK, representing 300 g, broken into fine irregular brown CRUMBLES, mixed throughout with golden softened DICED ONION representing 170 g (about half an onion before cutting). Coat lightly in reduced brown soy sauce and soy-paste glaze, with only a little sauce at the base. Pork must be loose minced-meat crumbles, not meat strips, cubes or meatballs. Onion is small dice, not large petals, wedges, long strips or half an intact onion. No scallions, garlic, chili, sesame, herbs, rice or noodles. Show the complete serving vessel with comfortable empty margin, ready to serve and away from any cooking scene. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel. No extra garnish or ingredients. Text verbatim:\n煮奔\n洋蔥炒豬絞肉\n洋蔥丁炒至金黃，再與豬絞肉拌炒收汁。以醬油和醬油膏調味，適合配飯或拌麵。\n3 人份・10 分鐘・非湯料理\n材料\n主料\n豬絞肉 300 g（選用低脂絞肉，建議用後腿絞肉）\n洋蔥 170 g（約半顆，切丁）\n調味\n食用油 少許\n醬油 15 ml（約 1 湯匙）\n醬油膏 15 ml（約 1 湯匙）\n米酒 15 ml（約 1 湯匙）\n味醂 5 ml（約 1 茶匙）\n糖 1 g（約 1/4 茶匙）\n香油 1.25 ml（約 1/4 茶匙）\n鹽 適量（視情況少許，最多約 1 g（1/4 茶匙））\n做法\n1 將洋蔥切丁。把醬油、醬油膏、米酒、味醂、糖與香油混合成調味汁。\n2 倒少許食用油入平底鍋，放入洋蔥，以中小火炒到金黃。\n3 撥開洋蔥，放入豬絞肉並炒散。肉色變白後，與洋蔥拌炒至略帶焦香。\n4 倒入調味汁拌炒收汁，起鍋前用食物溫度計確認豬絞肉中心至少達 71°C。\n5 確認豬絞肉熟透後試味，若不夠鹹或偏甜，加入少許鹽拌勻再盛出。\n小提醒\n鹽依醬料鹹甜度調整，添加量不超過約 1 g（1/4 茶匙）。豬絞肉是否熟透須以食物溫度計確認，不能只靠肉色判斷。\n煮奔",
+    "originalSha256": "f3310987fc117000cf804bb34c950026fbaa5c3d903133b9b7113b9c0532a604",
+    "originalSize": [
+      1086,
+      1448
+    ],
+    "originalPath": "/workspace/scratch/d935b46a4408/share-print-recovery-20261011/batch07/originals/onion-minced-pork.png",
+    "webpSha256": "2b34683123202e016aacec661191ec6579a8cd92873bd1a3b56f71bf9f3bdd4d",
+    "webpBytes": 120436,
+    "quality": 80,
+    "qa": "原圖、最終WebP、324px縮圖雙人核對完整文字、用量與食材切法通過"
+  }
+]
