@@ -1,0 +1,71 @@
+title: 蒜香四季豆
+summary: 清脆四季豆撕去兩側粗老硬筋切段，入油鍋半煎半煸至表面起虎皮微焦香，投入大量鮮切蒜末與紅辣椒碎中火煸炒，調入純釀醬油、白胡椒粉與少許細糖快火翻炒收汁，豆莢清甜爽脆、蒜香濃郁撲鼻、經典下飯蔬食。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以四季豆為唯一蔬菜主角，佐以大量蒜末大火快炒，屬於純蔬菜料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 12
+tags: [四季豆, 蒜香, 熱炒, 家常青菜, 素食友善]
+aliases: [乾煸四季豆, 蒜炒四季豆]
+ingredients:
+  - name: 四季豆
+    amount:
+      value: 250
+      unit: g
+    note: 摘去頭尾撕除兩側老筋折成 5 公分長段
+  - name: 大蒜
+    amount:
+      value: 25
+      unit: g
+    note: 約 6 瓣去皮切粗蒜碎
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切細圈碎末
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙引醬香
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 3
+      unit: g
+    note: 提鮮中和
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提辛香
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 25
+      unit: ml
+    note: 煸炒油
+    group: 調味
+steps:
+  - text: 四季豆洗淨摘除頭尾兩端並順勢撕去兩側粗硬老筋，折成 5 公分長段吸乾水氣；大蒜去皮切粗粒蒜碎、紅辣椒切小圈末備用。
+    image:
+      src: ./step-1.webp
+      alt: 四季豆洗淨摘除頭尾兩端並順勢撕去兩側粗硬老筋，折成 5 公分長段吸乾水氣；大蒜去皮切粗粒蒜碎、紅辣椒
+  - text: 炒鍋倒入植物油中火加熱，放入四季豆段慢煎煸炒約 3 分鐘，至豆莢表面表皮微起皺褶（虎皮狀）且轉為深翠綠色盛起。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋倒入植物油中火加熱，放入四季豆段慢煎煸炒約 3 分鐘，至豆莢表面表皮微起皺褶（虎皮狀）且轉為深翠
+  - text: 原鍋利用餘油，放入蒜碎與紅辣椒圈中火煸炒出濃郁蒜香，倒回煸好的四季豆段轉大火翻炒均勻。
+  - text: 沿鍋邊淋入醬油、細砂糖與白胡椒粉，大火翻炒 20 秒使鹹香醬汁均勻緊裹在四季豆表面，即可熄火盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒜香四季豆
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 四季豆下鍋前一定要徹底擦乾水氣，中小火煸至豆皮呈現微皺微焦的「虎皮斑紋」，豆子的青澀味會完全轉化為天然清甜，口感脆中帶軟。

@@ -1,0 +1,74 @@
+title: 鮮魚味噌湯
+summary: 新鮮鮮魚切厚塊滾水輕燙去腥，湯鍋注入清水與柴魚高湯煮滾，放入魚肉塊慢火細煮至肉質雪白鮮嫩，調勻香濃甘醇白味噌融入湯中，撒上大量鮮脆青蔥花與少許香油，魚肉鮮嫩細緻、味噌甘甜濃郁、台式日本料理店經典湯品。
+servings: 3
+category: 湯
+dishKinds: []
+classificationReason: 鮮魚味噌湯為經典家常海鮮味噌湯品，湯品不設料理主角與配餐角色。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 18
+tags: [味噌湯, 鮮魚湯, 海鮮, 家常湯品, 日式風味]
+aliases: [海魚味噌湯, 台式鮮魚味噌湯]
+ingredients:
+  - name: 鮮魚肉
+    amount:
+      value: 350
+      unit: g
+    note: 鮭魚、鱸魚或鯛魚切厚塊
+  - name: 嫩豆腐
+    amount:
+      value: 150
+      unit: g
+    note: 切 1.5 公分小方塊
+  - name: 白味噌
+    amount:
+      value: 60
+      unit: g
+    note: 約 3 大匙甘醇味噌
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 洗淨切細蔥花
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 切細薄薑絲
+  - name: 水
+    amount:
+      value: 900
+      unit: ml
+    note: 燉湯清水或柴魚高湯
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 去魚腥增甘
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 3
+      unit: g
+    note: 少許調和味噌鹹度
+    group: 調味
+steps:
+  - text: 鮮魚肉洗淨切成約 3 公分適口厚塊，入滾水快燙 15 秒撈出洗淨血沫；嫩豆腐切均勻方塊；青蔥切細蔥花；生薑切細薑絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 鮮魚肉洗淨切成約 3 公分適口厚塊，入滾水快燙 15 秒撈出洗淨血沫；嫩豆腐切均勻方塊；青蔥切細蔥花
+  - text: 湯鍋注入 900 ml 清水與薑絲大火煮滾，放入豆腐丁與汆燙好的鮮魚塊，淋入米酒，煮滾後轉中小火慢煮約 4 分鐘至魚肉熟透散發香氣。
+    image:
+      src: ./step-2.webp
+      alt: 湯鍋注入 900 ml 清水與薑絲大火煮滾，放入豆腐丁與汆燙好的鮮魚塊，淋入米酒，煮滾後轉中小火慢煮
+  - text: 取小濾網置於湯鍋上方，將白味噌放入濾網中，用湯勺在湯汁中慢慢化開融勻入湯中，加入細砂糖調和滋味，煮至微沸即熄火。
+  - text: 撒入滿滿鮮翠青蔥花，盛入大湯碗中即可熱氣騰騰享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的鮮魚味噌湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 味噌千萬不可在高溫沸水中久煮，以免天然酵母香氣揮發變酸苦；將魚肉與豆腐煮熟後熄微火，透過濾網在湯中輕輕攪散融化味噌，最能保留味噌香醇豆香。
