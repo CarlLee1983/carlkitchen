@@ -29,3 +29,7 @@
 先確認未終態台帳測試如預期失敗，再將 QA 狀態定案；加入圖片前 6 張缺檔測試皆以 ENOENT 失敗，之後只複製 6 張 accepted 圖並重跑。送審門檻：frozen install、pnpm check（含 format／type／force build）、check:content --launch、test、Wrangler deploy --dry-run、diff check、fresh-main check:merge。Astro 只復用相同內容 hash 的圖片快取，保留 build --force。本地 Chromium socket EPERM／下載 ZIP 損壞已有先前證據，未再重試或改 sandbox，完整 E2E 由本 PR exact-head CI 補驗。
 
 本批單獨合入上述基底後為 77 張，缺 169 張；正式數量須在合入時依最新 main 複核。僅更動本批 public 圖檔、三份製作／審核紀錄及必要測試。PR 保持 draft，不 ready、合併或部署。
+
+## 最新 main 整合複核
+
+送審初始 head 的完整 CI 已通過（1020 單元測試、E2E 252＋47＋21）。其後站主合入第 6–11 批，main 前進至 3fe64f3ccb2e60f7e281cb2bd13840785ce5a870，本批已 rebase 至此。新增 main 僅為前批分享圖、台帳與測試，菜譜／來源／程式／設定均無變更。本批 10 道 YAML 與 source 雜湊仍全數一致、沒有重複 public 圖。現行 main 為 122 張，單獨合入本批後 128 張、缺 118 張；初始 71→77 數字只保留為歷史。新 head 重新執行完整本地門檻、fresh-main merge check，並以新 head CI 作最後驗證。
