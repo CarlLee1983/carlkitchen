@@ -18,7 +18,7 @@ ingredients:
   - { name: 細砂糖, amount: { value: 0.5, unit: 茶匙 }, group: 調味 }
   - { name: 料酒, amount: { value: 5, unit: ml }, group: 調味 }
   - { name: 香油, amount: { value: 5, unit: ml }, group: 調味 }
-  - { name: 油, note: 來源寫少許，炒香用, group: 調味 }
+  - { name: 油, note: 少許，炒香用, group: 調味 }
 steps:
   - text: 廣東臘肉蒸約 10 分鐘至熟，去皮切薄片。蒜苗切斜片，辣椒與蒜仁切碎。
     image:

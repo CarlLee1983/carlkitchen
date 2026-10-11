@@ -11,30 +11,20 @@ protein: true
 timeMinutes: 30
 tags: [雞肉, 咖哩, 馬鈴薯]
 ingredients:
-  - { name: 雞胸肉, amount: { value: 1, unit: 塊 }, note: 來源未提供重量，切丁 }
+  - { name: 雞胸肉, amount: { value: 1, unit: 塊 }, note: 切丁 }
   - { name: 洋蔥, amount: { value: 0.5, unit: 顆 }, note: 切丁 }
   - { name: 紅蘿蔔, amount: { value: 0.5, unit: 根 }, note: 切丁 }
   - { name: 馬鈴薯, amount: { value: 0.5, unit: 顆 }, note: 切丁 }
   - { name: 蒜頭, amount: { value: 3, unit: 瓣 }, note: 切末 }
-  - {
-      name: 咖哩塊,
-      amount: { value: 2, unit: 磚 },
-      note: 來源未提供每磚重量,
-      group: 調味,
-    }
-  - {
-      name: 咖哩粉,
-      amount: { value: 3, unit: 大匙 },
-      note: 來源以湯匙計量，未提供重量,
-      group: 調味,
-    }
+  - { name: 咖哩塊, amount: { value: 2, unit: 磚 }, group: 調味 }
+  - { name: 咖哩粉, amount: { value: 3, unit: 大匙 }, group: 調味 }
   - {
       name: 水,
       amount: { value: 500, unit: ml },
       note: 來源標示約 500 ml,
       group: 調味,
     }
-  - { name: 食用油, note: 來源未提供用量，炒料用, group: 調味 }
+  - { name: 食用油, note: 適量，炒料用, group: 調味 }
 steps:
   - text: 把洋蔥、紅蘿蔔、馬鈴薯與雞胸肉切成丁，蒜頭另切成末。
     image:

@@ -35,7 +35,7 @@ ingredients:
       group: 調味,
     }
   - { name: 糖, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
-  - { name: 太白粉水, note: 適量，來源未提供粉水比例, group: 調味 }
+  - { name: 太白粉水, note: 適量，粉水比例待確認, group: 調味 }
   - { name: 白醋, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
 steps:
   - text: 將鯛魚肉切成小片；洋蔥去皮後切絲。

@@ -16,7 +16,7 @@ ingredients:
   - { name: 紅辣椒, amount: { value: 2, unit: 根 }, note: 剖半 }
   - { name: 蒜仁, amount: { value: 40, unit: g } }
   - { name: 九層塔, amount: { value: 10, unit: g }, note: 去粗莖後洗淨 }
-  - { name: 食用油, note: 炸杏鮑菇用，來源未標用量, group: 調味 }
+  - { name: 食用油, note: 適量，炸杏鮑菇用, group: 調味 }
   - {
       name: 胡麻油,
       amount: { value: 30, unit: ml },

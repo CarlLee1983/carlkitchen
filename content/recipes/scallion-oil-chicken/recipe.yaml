@@ -14,7 +14,7 @@ ingredients:
   - { name: 去骨雞腿, amount: { value: 2, unit: 支 } }
   - { name: 青蔥, amount: { value: 3, unit: 支 }, note: 切末 }
   - { name: 薑, amount: { value: 5, unit: 片 }, note: 切末 }
-  - { name: 蒜頭, note: 來源標示少許，切末, group: 調味 }
+  - { name: 蒜頭, note: 少許，切末, group: 調味 }
   - {
       name: 亞麻油,
       amount: { value: 45, unit: ml },
@@ -27,8 +27,8 @@ ingredients:
       note: 來源列 2 湯匙，未交代加入步驟，待核,
       group: 調味,
     }
-  - { name: 鹽, note: 來源標示少許, group: 調味 }
-  - { name: 胡椒粉, note: 來源標示少許, group: 調味 }
+  - { name: 鹽, note: 少許, group: 調味 }
+  - { name: 胡椒粉, note: 少許, group: 調味 }
 steps:
   - text: 去骨雞腿拌入鹽和胡椒粉，放進冰箱冷藏醃漬一晚。
     image:

@@ -58,7 +58,7 @@ ingredients:
       note: 約 1 大匙，醃汁用,
       group: 調味,
     }
-  - { name: 食用油, note: 炸油，來源未列用量, group: 調味 }
+  - { name: 食用油, note: 適量，炸油, group: 調味 }
   - { name: 胡椒鹽, note: 適量；來源前後各列一次，僅明示起鍋前撒, group: 調味 }
   - { name: 辣椒粉, note: 適量，起鍋前撒, group: 調味 }
 steps:

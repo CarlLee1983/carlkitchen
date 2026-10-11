@@ -19,7 +19,7 @@ ingredients:
   - {
       name: 食用油,
       amount: { value: 400, unit: ml },
-      note: 炸肉用；另鍋拌炒少許，來源未標用量,
+      note: 炸肉用；另鍋拌炒少許,
     }
   - {
       name: 鹽,

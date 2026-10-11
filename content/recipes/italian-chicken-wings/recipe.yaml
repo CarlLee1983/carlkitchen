@@ -13,9 +13,9 @@ tags: [雞肉, 烤物]
 ingredients:
   - { name: 雞翅, amount: { value: 2, unit: 支 } }
   - { name: 橄欖油, amount: { value: 20, unit: ml }, group: 調味 }
-  - { name: 義大利式香料, note: 來源標示適量, group: 調味 }
-  - { name: 檸檬胡椒鹽, note: 來源標示適量, group: 調味 }
-  - { name: 醬油, note: 來源標示少許, group: 調味 }
+  - { name: 義大利式香料, note: 適量, group: 調味 }
+  - { name: 檸檬胡椒鹽, note: 適量, group: 調味 }
+  - { name: 醬油, note: 少許, group: 調味 }
 steps:
   - text: 雞翅洗淨，用竹籤戳出小洞。兩面撒上義大利式香料與檸檬胡椒鹽，靜置約 15 分鐘；抹上醬油稍加按摩，再靜置約 5 分鐘。
     image:

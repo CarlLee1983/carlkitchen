@@ -19,8 +19,8 @@ ingredients:
       note: 來源標示 3 至 4 瓣，取下限並切細,
     }
   - { name: 食用油, amount: { value: 15, unit: ml }, group: 調味 }
-  - { name: 醬油膏, note: 來源標示少許, group: 調味 }
-  - { name: 水, note: 來源標示少許, group: 調味 }
+  - { name: 醬油膏, note: 少許, group: 調味 }
+  - { name: 水, note: 少許, group: 調味 }
 steps:
   - text: 茄子切片，蒜頭切細。
     image:

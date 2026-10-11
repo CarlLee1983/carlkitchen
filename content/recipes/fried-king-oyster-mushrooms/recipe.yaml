@@ -15,12 +15,12 @@ ingredients:
   - {
       name: 麵粉,
       amount: { value: 0.5, unit: 杯 },
-      note: 炸粉用；來源未說明杯量,
+      note: 炸粉用；杯的容量待確認,
     }
   - {
       name: 玉米粉,
       amount: { value: 0.5, unit: 杯 },
-      note: 炸粉用；來源未說明杯量,
+      note: 炸粉用；杯的容量待確認,
     }
   - { name: 吉士粉, amount: { value: 15, unit: ml }, note: 約 1 大匙，炸粉用 }
   - {

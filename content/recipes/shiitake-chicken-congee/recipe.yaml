@@ -34,7 +34,7 @@ ingredients:
     amount: { value: 10, unit: ml }
     group: 調味
   - name: 食用油
-    note: 適量，炒乾香菇用；來源未標明用量
+    note: 適量，炒乾香菇用
     group: 調味
   - name: 鹽
     note: 適量

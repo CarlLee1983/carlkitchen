@@ -27,7 +27,7 @@ ingredients:
   - { name: 米酒, amount: { value: 10, unit: g }, group: 調味 }
   - { name: 香油, amount: { value: 10, unit: g }, group: 調味 }
   - { name: 水, amount: { value: 50, unit: g }, group: 調味 }
-  - { name: 食用油, note: 炸油，來源未列用量, group: 調味 }
+  - { name: 食用油, note: 適量，炸油, group: 調味 }
 steps:
   - text: 在豬小里肌肉排兩面縱橫劃刀痕，或將肉排拍鬆。
     image:

@@ -43,7 +43,7 @@ ingredients:
       note: 煮柴魚湯頭用,
       group: 調味,
     }
-  - { name: 食用油, note: 少許，炒料用，來源未標用量, group: 調味 }
+  - { name: 食用油, note: 少許，炒料用, group: 調味 }
 steps:
   - text: 青蔥切成段，紅蘿蔔和竹筍切絲，魚板切成小片，生香菇切片；各樣材料切之前先洗淨。
     image:
