@@ -12,11 +12,7 @@ timeMinutes: 20
 tags: [粉絲, 豬肉, 家常菜]
 ingredients:
   - { name: 粉絲, amount: { value: 3, unit: 份 } }
-  - {
-      name: 豬後腿絞肉,
-      amount: { value: 300, unit: g },
-      note: 來源僅寫豬絞肉，部位為推估,
-    }
+  - { name: 豬絞肉, amount: { value: 300, unit: g } }
   - { name: 青蔥, amount: { value: 1, unit: 支 }, note: 蔥白切末、蔥綠切花 }
   - { name: 蒜末, group: 調味 }
   - { name: 薑末, group: 調味 }
@@ -47,19 +43,19 @@ steps:
     image:
       src: ./step-1.webp
       alt: 瀝起的粉絲放在碗裡，砧板上有分開的蔥白末與蔥花
-  - text: 鍋中倒入食用油，炒散豬後腿絞肉，再加入薑末拌炒。
+  - text: 鍋中倒入食用油，炒散豬絞肉，再加入薑末拌炒。
   - text: 加入辣豆瓣醬炒勻，再放入蒜末與蔥白末拌炒。
     image:
       src: ./step-3.webp
-      alt: 炒鍋裡的豬後腿絞肉拌著辣豆瓣醬、蒜末、薑末與蔥白末
+      alt: 炒鍋裡的豬絞肉拌著辣豆瓣醬、蒜末、薑末與蔥白末
   - text: 倒入水、醬油、米酒、糖與胡椒粉，煮滾後加入剪短的粉絲。
   - text: 拌炒至鍋中只剩少量湯汁，撒上蔥花後起鍋。
     image:
       src: ./step-5.webp
-      alt: 炒鍋裡的粉絲吸收醬汁，與豬後腿絞肉拌在一起，表面撒有蔥花
+      alt: 炒鍋裡的粉絲吸收醬汁，與豬絞肉拌在一起，表面撒有蔥花
 hero:
   src: ./hero.webp
-  alt: 米白色淺陶盤盛著拌有豬後腿絞肉與豆瓣醬汁的粉絲，表面撒著蔥花
+  alt: 米白色淺陶盤盛著拌有豬絞肉與豆瓣醬汁的粉絲，表面撒著蔥花
 ingredientsPhoto:
   src: ./ingredients.webp
-  alt: 三份粉絲、300 克豬後腿絞肉與一支青蔥，旁邊分裝蒜末、薑末、辣豆瓣醬、醬油、米酒、糖、水、胡椒粉和食用油
+  alt: 三份粉絲、300 克豬絞肉與一支青蔥，旁邊分裝蒜末、薑末、辣豆瓣醬、醬油、米酒、糖、水、胡椒粉和食用油
