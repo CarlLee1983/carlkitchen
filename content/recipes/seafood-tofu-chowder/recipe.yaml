@@ -1,0 +1,102 @@
+title: 海鮮豆腐羹
+summary: 鮮蝦仁、軟嫩花枝丁、鮮蚵與滑嫩豆腐丁切精緻小丁，熱高湯中煮出鮮美海味，調入鹽、白胡椒粉與淡醬油，以太白粉水勾出如絲綢般滑潤濃羹，淋入金黃蛋液推劃出細緻蛋花，滴入純釀香油、撒上翠綠芹菜碎，鮮甜滑潤、極致暖胃。
+servings: 3
+category: 湯
+dishKinds: []
+classificationReason: 海鮮豆腐羹為經典濃稠燴羹湯品，湯品不設料理主角與配餐角色。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 18
+tags: [海鮮羹, 豆腐, 濃湯, 家常羹湯, 海鮮]
+aliases: [海鮮豆腐濃湯, 翡翠海鮮豆腐羹]
+ingredients:
+  - name: 蝦仁
+    amount:
+      value: 80
+      unit: g
+    note: 挑沙腸切小丁
+  - name: 花枝
+    amount:
+      value: 80
+      unit: g
+    note: 洗淨切小丁
+  - name: 嫩豆腐
+    amount:
+      value: 150
+      unit: g
+    note: 切 1 公分小方丁
+  - name: 胡蘿蔔
+    amount:
+      value: 30
+      unit: g
+    note: 切細碎丁配色
+  - name: 雞蛋
+    amount:
+      value: 1
+      unit: 顆
+    note: 打散成滑順蛋液淋蛋花
+  - name: 芹菜
+    amount:
+      value: 20
+      unit: g
+    note: 洗淨去葉切細末
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 切極細薑末
+  - name: 高湯
+    amount:
+      value: 800
+      unit: ml
+    note: 高湯或清水
+  - name: 太白粉水
+    amount:
+      value: 40
+      unit: ml
+    note: 太白粉加水調和勾芡
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 去海鮮腥氣
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 4
+      unit: g
+    note: 約 1 茶匙調味
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提鮮
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋淋香
+    group: 調味
+steps:
+  - text: 蝦仁與花枝切成約 1 公分小丁加少許米酒抓勻；嫩豆腐切均勻小方丁；胡蘿蔔切細末、芹菜切細末、生薑切細末；雞蛋打成蛋液備用。
+    image:
+      src: ./step-1.webp
+      alt: 蝦仁與花枝切成約 1 公分小丁加少許米酒抓勻；嫩豆腐切均勻小方丁；胡蘿蔔切細末、芹菜切細末、生薑切細
+  - text: 取湯鍋注入 800 ml 高湯煮滾，放入薑末、胡蘿蔔末與豆腐丁大火煮滾 2 分鐘，倒入蝦仁丁與花枝丁煮約 1 分鐘至海鮮變色熟透。
+    image:
+      src: ./step-2.webp
+      alt: 取湯鍋注入 800 ml 高湯煮滾，放入薑末、胡蘿蔔末與豆腐丁大火煮滾 2 分鐘，倒入蝦仁丁與花枝丁
+  - text: 轉中火加入鹽、白胡椒粉調味，一邊攪動湯汁一邊緩緩倒入太白粉水勾芡至晶亮濃稠，轉小火以細流淋入打勻蛋液，用湯勺順時針輕推劃出美麗蛋花。
+  - text: 熄火前撒入芹菜末並淋上香油，輕輕拌勻即可盛入大湯碗享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的海鮮豆腐羹
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 海鮮切成均勻小丁熟成速度快，下鍋燙一分鐘剛剛好熟透且鮮甜軟嫩；勾好芡汁後再淋入蛋液輕推，蛋花才會漂浮散開成薄如蟬翼的細緻絲緞。

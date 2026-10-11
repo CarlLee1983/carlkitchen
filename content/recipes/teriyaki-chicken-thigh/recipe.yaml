@@ -1,0 +1,72 @@
+title: 照燒雞腿排
+summary: 厚實去骨去軟骨新鮮雞腿排皮朝下入乾熱平底鍋，慢火乾煎逼出天然雞油並將雞皮煎至金黃薄脆硬挺，翻面煎至熟透，倒入以純釀醬油、味醂、米酒與冰糖調製的經典甘甜照燒醬汁微火慢煨收汁，醬汁濃稠紅亮緊裹雞腿，切厚塊盛盤撒上熟白芝麻，鮮嫩多汁、鹹甜濃郁。
+servings: 2
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以厚切去骨雞腿排煎烤照燒收汁為唯一肉類主角，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [雞腿排, 照燒, 日式家常, 便當菜, 肉類料理]
+aliases: [日式照燒雞腿, 蜜汁照燒雞排]
+ingredients:
+  - name: 去骨雞腿排
+    amount:
+      value: 2
+      unit: 片
+    note: 約 450 g 洗淨擦乾肉面劃幾刀切斷筋絡
+  - name: 熟白芝麻
+    amount:
+      value: 5
+      unit: g
+    note: 烘香撒於表面飾頂
+  - name: 醬油
+    amount:
+      value: 45
+      unit: ml
+    note: 約 3 大匙純釀醬油
+    group: 調味
+  - name: 味醂
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙提甘甜光澤
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙去腥增香
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 15
+      unit: g
+    note: 約 1 大匙收濃稠亮汁
+    group: 調味
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 磨成細薑汁入照燒醬
+    group: 調味
+steps:
+  - text: 去骨雞腿排洗淨用紙巾徹底吸乾水分，肉質厚處斜劃兩刀切斷白筋防止回縮；碗中將醬油、味醂、米酒、細砂糖與生薑汁攪拌均勻調成照燒醬汁備用。
+    image:
+      src: ./step-1.webp
+      alt: 去骨雞腿排洗淨用紙巾徹底吸乾水分，肉質厚處斜劃兩刀切斷白筋防止回縮；碗中將醬油、味醂、米酒、細砂糖與
+  - text: 乾淨平底鍋不需放油，將雞腿排雞皮朝下放入冷鍋中，開中小火慢煎約 6 分鐘逼出雞皮油脂，煎至雞皮呈現金黃酥脆硬挺。
+    image:
+      src: ./step-2.webp
+      alt: 乾淨平底鍋不需放油，將雞腿排雞皮朝下放入冷鍋中，開中小火慢煎約 6 分鐘逼出雞皮油脂，煎至雞皮呈現金
+  - text: 將雞腿排翻面，用紙巾吸除鍋內多餘油脂，續煎約 4 分鐘至肉質八分熟。
+  - text: 倒入調好的照燒醬汁轉小火慢煨，一邊將醬汁反覆澆淋在雞腿表面，煨煮約 3 分鐘至醬汁濃稠紅亮起大泡並均勻裹附，熄火取出切塊排盤，撒上熟白芝麻即可上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的照燒雞腿排
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 煎雞腿時皮朝下冷鍋慢慢煎，能自然逼出雞皮內部多餘油脂，煎出如烤鴨皮般極致薄脆的外皮；倒照燒醬前務必用紙巾吸去鍋內油脂，照燒醬汁才能均勻黏附乳化，呈現晶亮琥珀色澤。

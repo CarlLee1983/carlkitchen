@@ -1,0 +1,78 @@
+title: 何首烏雞湯
+summary: 特選台灣優質黑羽土雞剁塊滾水汆燙，砂鍋中加入製何首烏、黑棗、熟地、黃耆、枸杞與甘甜老薑片，注入米酒與清水慢火細燉四十分鐘，深黑晶亮黑金湯頭散發溫厚甘醇漢方香氣，雞肉軟嫩鮮甜、養血溫潤、深秋初冬滋補名品。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 何首烏雞湯為經典漢方藥膳燉湯，湯品不設料理主角與配餐角色。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [雞湯, 何首烏, 藥膳湯品, 養生, 溫補]
+aliases: [何首烏燉雞湯, 首烏黑棗雞湯]
+ingredients:
+  - name: 土雞肉
+    amount:
+      value: 600
+      unit: g
+    note: 剁小塊洗淨汆燙去除血水
+  - name: 製何首烏
+    amount:
+      value: 30
+      unit: g
+    note: 中藥行製首烏片沖淨
+  - name: 黑棗
+    amount:
+      value: 8
+      unit: 顆
+    note: 洗淨劃刀利於出味
+  - name: 黃耆
+    amount:
+      value: 15
+      unit: g
+    note: 補氣提鮮
+  - name: 枸杞
+    amount:
+      value: 15
+      unit: g
+    note: 甘甜增色起鍋前入
+  - name: 生薑
+    amount:
+      value: 20
+      unit: g
+    note: 切厚片
+  - name: 水
+    amount:
+      value: 1200
+      unit: ml
+    note: 燉湯高湯水
+  - name: 米酒
+    amount:
+      value: 50
+      unit: ml
+    note: 約 3 大匙去腥增香
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 4
+      unit: g
+    note: 調整鹹度
+    group: 調味
+steps:
+  - text: 土雞肉剁成均勻塊狀，放入滾水鍋中汆燙 2 分鐘徹底去除血水雜沫，撈起用冷水沖淨瀝乾；何首烏、黑棗、黃耆以冷水快速沖淨，黑棗表面輕劃兩刀備用。
+    image:
+      src: ./step-1.webp
+      alt: 土雞肉剁成均勻塊狀，放入滾水鍋中汆燙 2 分鐘徹底去除血水雜沫，撈起用冷水沖淨瀝乾；何首烏、黑棗、黃
+  - text: 砂鍋注入 1200 ml 清水與米酒煮滾，放入汆燙好的雞肉塊、生薑片、何首烏、黑棗與黃耆，大火煮沸後撈除表面微沫。
+    image:
+      src: ./step-2.webp
+      alt: 砂鍋注入 1200 ml 清水與米酒煮滾，放入汆燙好的雞肉塊、生薑片、何首烏、黑棗與黃耆，大火煮沸後
+  - text: 蓋上鍋蓋轉小火慢燉 35 分鐘讓首烏天然甘甜與藥性充分溶入雞湯中，放入枸杞與鹽續煮 5 分鐘至雞肉軟嫩多汁即可盛碗享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的何首烏雞湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 製何首烏需搭配黑棗與生薑同燉，黑棗自然的果甜能完美平衡首烏微帶的草藥微澀感，燉出的雞湯色黑如墨卻入口甘甜回潤。

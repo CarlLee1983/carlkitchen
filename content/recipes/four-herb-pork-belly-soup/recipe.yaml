@@ -1,0 +1,84 @@
+title: 豬肚四神湯
+summary: 新鮮厚實豬肚徹底洗淨汆燙切厚條，搭配淮山、芡實、蓮子、茯苓四味中藥材與大骨高湯慢火細燉一個半小時，豬肚軟Ｑ滑嫩、藥材粉糯香濃，起鍋淋入當歸藥酒，湯頭溫潤甘醇、健脾暖胃、台灣歷史悠久養生名湯。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 豬肚四神湯為傳統藥膳燉湯，湯品不設料理主角與配餐角色。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [四神湯, 豬肚, 藥膳湯品, 養生, 台灣傳統小吃]
+aliases: [四神豬肚湯, 傳統四神湯]
+ingredients:
+  - name: 豬肚
+    amount:
+      value: 500
+      unit: g
+    note: 洗淨滾水汆燙煮軟切厚條
+  - name: 淮山
+    amount:
+      value: 30
+      unit: g
+    note: 乾山藥片洗淨泡軟
+  - name: 芡實
+    amount:
+      value: 40
+      unit: g
+    note: 洗淨溫水浸泡 1 小時
+  - name: 蓮子
+    amount:
+      value: 40
+      unit: g
+    note: 去芯洗淨
+  - name: 茯苓
+    amount:
+      value: 20
+      unit: g
+    note: 洗淨略浸泡
+  - name: 生薑
+    amount:
+      value: 20
+      unit: g
+    note: 切生薑片
+  - name: 高湯
+    amount:
+      value: 1500
+      unit: ml
+    note: 大骨高湯或清水
+  - name: 米酒
+    amount:
+      value: 50
+      unit: ml
+    note: 約 3 大匙去腥增香
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 6
+      unit: g
+    note: 調整湯底鹹度
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 2
+      unit: g
+    note: 出鍋少許提辛香
+    group: 調味
+steps:
+  - text: 豬肚加粗鹽與麵粉徹底抓洗搓揉乾淨，入滾水加薑片、米酒汆燙 5 分鐘撈起沖涼，切成 1.5 公分寬厚條；芡實、淮山、蓮子與茯苓以清水沖淨泡水 30 分鐘備用。
+    image:
+      src: ./step-1.webp
+      alt: 豬肚加粗鹽與麵粉徹底抓洗搓揉乾淨，入滾水加薑片、米酒汆燙 5 分鐘撈起沖涼，切成 1.5 公分寬厚條
+  - text: 取燉鍋注入 1500 ml 高湯煮滾，放入豬肚條、生薑片、芡實、淮山、蓮子與茯苓，淋入米酒大火煮沸，撈除表面浮沫。
+    image:
+      src: ./step-2.webp
+      alt: 取燉鍋注入 1500 ml 高湯煮滾，放入豬肚條、生薑片、芡實、淮山、蓮子與茯苓，淋入米酒大火煮沸，
+  - text: 蓋上鍋蓋轉小火慢燉 50 分鐘，至豬肚軟爛Ｑ彈、蓮子與芡實粉糯化開，加入鹽調味續煮 5 分鐘，起鍋前撒入白胡椒粉即可盛碗。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的豬肚四神湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 芡實與蓮子質地較硬，料理前先以溫水浸泡半小時，同豬肚小火慢燉五十分鐘即可煮得鬆軟綿密；豬肚先以麵粉和粗鹽抓搓洗去黏液，燉出的湯色乳白清香無異味。
