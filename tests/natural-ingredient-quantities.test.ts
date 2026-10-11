@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 import { parse } from "yaml";
 
-function ingredient(id: string, name: string) {
+function ingredient(id: string, name: string, withoutAmount = false) {
   const data = parse(
     readFileSync(
       new URL(`../content/recipes/${id}/recipe.yaml`, import.meta.url),
@@ -11,7 +11,8 @@ function ingredient(id: string, name: string) {
     ),
   );
   const item = data.ingredients.find(
-    (value: { name: string }) => value.name === name,
+    (value: { name: string; amount?: unknown }) =>
+      value.name === name && (!withoutAmount || !value.amount),
   );
   assert.ok(item);
   return item;
@@ -19,11 +20,8 @@ function ingredient(id: string, name: string) {
 
 describe("材料用量的自然用詞", () => {
   it("彈性油量寫適量，保留用途與原有少許", () => {
-    assert.equal(
-      ingredient("japanese-chicken-curry", "食用油").note,
-      "適量，炒料用",
-    );
-    assert.equal(ingredient("chive-omelet", "食用油").note, "適量");
+    assert.equal(ingredient("japanese-chicken-curry", "食用油").note, "炒料用");
+    assert.equal(ingredient("chive-omelet", "食用油").note, undefined);
     assert.equal(
       ingredient("japanese-yaki-udon", "食用油").note,
       "少許，炒料用",
@@ -49,7 +47,7 @@ describe("材料用量的自然用詞", () => {
     );
     assert.equal(
       ingredient("vinegar-fish-slices", "太白粉水").note,
-      "適量，粉水比例待確認",
+      "粉水比例待確認",
     );
     assert.equal(
       ingredient("ants-climbing-tree", "醬油").note,
@@ -63,4 +61,21 @@ describe("材料用量的自然用詞", () => {
     );
     assert.match(source, /食用油.*用量未提供/);
   });
+});
+
+const quantityCases = JSON.parse(
+  readFileSync(
+    new URL("./fixtures/quantity-wording/cases.json", import.meta.url),
+    "utf8",
+  ),
+) as { id: string; name: string; note: string | null }[];
+
+describe("本批無定量材料只由用量欄顯示一次適量", () => {
+  for (const entry of quantityCases) {
+    it(`${entry.id}：${entry.name} 保留用途而不重複適量`, () => {
+      const item = ingredient(entry.id, entry.name, true);
+      assert.equal(item.amount, undefined);
+      assert.equal(item.note, entry.note ?? undefined);
+    });
+  }
 });

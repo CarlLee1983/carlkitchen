@@ -14,7 +14,7 @@ ingredients:
   - { name: 蝦子, amount: { value: 12, unit: 尾 }, note: 背部劃開取出腸泥 }
   - { name: 雞蛋豆腐, amount: { value: 1, unit: 盒 } }
   - { name: 蒜頭, amount: { value: 10, unit: 瓣 }, note: 切碎 }
-  - { name: 青蔥, note: 適量，切成蔥花, group: 調味 }
+  - { name: 青蔥, note: 切成蔥花, group: 調味 }
   - {
       name: 米酒,
       amount: { value: 15, unit: ml },
@@ -39,7 +39,7 @@ ingredients:
       note: 電鍋用，杯的容量待確認,
       group: 調味,
     }
-  - { name: 香油, note: 適量，起鍋後淋上, group: 調味 }
+  - { name: 香油, note: 起鍋後淋上, group: 調味 }
 steps:
   - text: 蝦子背部劃開，取出腸泥。蒜頭切碎，青蔥切成蔥花。
     image:

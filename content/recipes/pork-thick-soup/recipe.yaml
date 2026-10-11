@@ -21,7 +21,7 @@ ingredients:
       amount: { value: 1000, unit: ml },
       note: 湯底用；泡香菇另備水，電鍋外鍋每次另加 1 杯水,
     }
-  - { name: 柴魚片, note: 適量，熬湯後撈除, group: 調味 }
+  - { name: 柴魚片, note: 熬湯後撈除, group: 調味 }
   - {
       name: 醬油,
       amount: { value: 7.5, unit: ml },
@@ -44,7 +44,7 @@ ingredients:
   - { name: 胡椒粉, note: 少許, group: 調味 }
   - { name: 香油, note: 少許, group: 調味 }
   - { name: 烏醋, note: 少許, group: 調味 }
-  - { name: 太白粉水, note: 勾芡用，適量，粉水比例待確認, group: 調味 }
+  - { name: 太白粉水, note: 勾芡用，粉水比例待確認, group: 調味 }
 steps:
   - text: 將香菇加水泡軟，撈起切絲，泡香菇的水留用。
     image:

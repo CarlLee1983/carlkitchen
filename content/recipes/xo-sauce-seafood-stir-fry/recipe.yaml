@@ -42,7 +42,7 @@ ingredients:
       note: 約 1 大匙,
       group: 調味,
     }
-  - { name: 太白粉水, note: 適量，勾薄芡用, group: 調味 }
+  - { name: 太白粉水, note: 勾薄芡用, group: 調味 }
   - {
       name: 沙拉油,
       amount: { value: 15, unit: ml },

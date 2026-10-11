@@ -25,7 +25,7 @@ ingredients:
       group: 調味,
       note: 約 3 大匙,
     }
-  - { name: 食用油, group: 調味, note: 適量，炸白蝦用 }
+  - { name: 食用油, group: 調味, note: 炸白蝦用 }
 steps:
   - text: 白蝦去泥腸並開背。冬粉泡水至軟，剪短備用。
     image:

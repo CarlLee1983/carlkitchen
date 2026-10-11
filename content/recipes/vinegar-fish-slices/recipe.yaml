@@ -15,7 +15,7 @@ ingredients:
   - { name: 洋蔥, amount: { value: 120, unit: g }, note: 去皮切絲 }
   - { name: 蔥段, amount: { value: 10, unit: g } }
   - { name: 薑片, amount: { value: 5, unit: g } }
-  - { name: 食用油, note: 適量，過油與爆香用, group: 調味 }
+  - { name: 食用油, note: 過油與爆香用, group: 調味 }
   - {
       name: 日式風味醬油（鮮美露）,
       amount: { value: 15, unit: ml },
@@ -35,7 +35,7 @@ ingredients:
       group: 調味,
     }
   - { name: 糖, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
-  - { name: 太白粉水, note: 適量，粉水比例待確認, group: 調味 }
+  - { name: 太白粉水, note: 粉水比例待確認, group: 調味 }
   - { name: 白醋, amount: { value: 5, unit: ml }, note: 約 1 茶匙, group: 調味 }
 steps:
   - text: 將鯛魚肉切成小片；洋蔥去皮後切絲。

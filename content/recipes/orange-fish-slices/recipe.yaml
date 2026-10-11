@@ -15,7 +15,7 @@ ingredients:
   - { name: 柳橙, amount: { value: 1, unit: 顆 }, note: 去皮取果肉 }
   - { name: 洋蔥, amount: { value: 0.5, unit: 顆 }, note: 切絲 }
   - { name: 紅辣椒, amount: { value: 1, unit: 根 }, note: 切片 }
-  - { name: 太白粉水, group: 調味, note: 適量，用於勾薄芡 }
+  - { name: 太白粉水, group: 調味, note: 用於勾薄芡 }
   - { name: 柳橙汁, amount: { value: 300, unit: ml }, group: 調味 }
   - { name: 鹽, group: 調味, note: 少許，醃魚與醬汁分別使用 }
   - { name: 黑胡椒粒, group: 調味, note: 少許 }

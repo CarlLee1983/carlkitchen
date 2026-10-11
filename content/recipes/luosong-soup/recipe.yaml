@@ -24,8 +24,8 @@ ingredients:
       note: 約 2 大匙,
       group: 調味,
     }
-  - { name: 迷迭香, note: 適量；來源也可用義大利香料, group: 調味 }
-  - { name: 雞高湯, note: 適量，燉煮用, group: 調味 }
+  - { name: 迷迭香, note: 來源也可用義大利香料, group: 調味 }
+  - { name: 雞高湯, note: 燉煮用, group: 調味 }
   - { name: 鹽, note: 煎牛肉與起鍋調味用, group: 調味 }
   - { name: 黑胡椒粉, note: 煎牛肉與起鍋調味用, group: 調味 }
   - { name: 食用油, note: 煎牛肉用, group: 調味 }

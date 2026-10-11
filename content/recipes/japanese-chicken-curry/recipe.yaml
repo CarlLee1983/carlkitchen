@@ -24,7 +24,7 @@ ingredients:
       note: 來源標示約 500 ml,
       group: 調味,
     }
-  - { name: 食用油, note: 適量，炒料用, group: 調味 }
+  - { name: 食用油, note: 炒料用, group: 調味 }
 steps:
   - text: 把洋蔥、紅蘿蔔、馬鈴薯與雞胸肉切成丁，蒜頭另切成末。
     image:

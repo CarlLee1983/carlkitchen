@@ -37,7 +37,7 @@ ingredients:
       group: 醃料,
     }
   - { name: 水, amount: { value: 15, unit: ml }, note: 約 1 大匙, group: 醃料 }
-  - { name: 地瓜粉, note: 適量，裹粉用, group: 調味 }
+  - { name: 地瓜粉, note: 裹粉用, group: 調味 }
   - { name: 蒜末, amount: { value: 15, unit: g }, group: 調味 }
   - { name: 辣椒末, amount: { value: 10, unit: g }, group: 調味 }
   - { name: 蔥花, amount: { value: 15, unit: g }, group: 調味 }

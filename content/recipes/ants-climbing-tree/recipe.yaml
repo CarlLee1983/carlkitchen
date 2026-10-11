@@ -18,8 +18,8 @@ ingredients:
       note: 來源僅寫豬絞肉，部位為推估,
     }
   - { name: 青蔥, amount: { value: 1, unit: 支 }, note: 蔥白切末、蔥綠切花 }
-  - { name: 蒜末, note: 適量, group: 調味 }
-  - { name: 薑末, note: 適量, group: 調味 }
+  - { name: 蒜末, group: 調味 }
+  - { name: 薑末, group: 調味 }
   - {
       name: 辣豆瓣醬,
       amount: { value: 1.5, unit: 匙 },
@@ -40,8 +40,8 @@ ingredients:
     }
   - { name: 糖, amount: { value: 1, unit: 小匙 }, group: 調味 }
   - { name: 水, amount: { value: 200, unit: ml }, group: 調味 }
-  - { name: 胡椒粉, note: 適量, group: 調味 }
-  - { name: 食用油, note: 適量，炒絞肉用, group: 調味 }
+  - { name: 胡椒粉, group: 調味 }
+  - { name: 食用油, note: 炒絞肉用, group: 調味 }
 steps:
   - text: 粉絲用冷水泡約 15 分鐘後瀝起。青蔥分切蔥白末與蔥花。
     image:

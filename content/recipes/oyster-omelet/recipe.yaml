@@ -22,8 +22,8 @@ ingredients:
   - { name: 鹽, amount: { value: 0.25, unit: 茶匙 }, group: 調味 }
   - { name: 味精, amount: { value: 0.25, unit: 茶匙 }, group: 調味 }
   - { name: 魚露, group: 調味, note: 數滴 }
-  - { name: 胡椒粉, group: 調味, note: 適量 }
-  - { name: 自製沾醬, group: 調味, note: 適量，來源另附做法 }
+  - { name: 胡椒粉, group: 調味 }
+  - { name: 自製沾醬, group: 調味, note: 來源另附做法 }
   - { name: 沙拉油, group: 調味, note: 少許，煎製用 }
 steps:
   - text: 把蚵仔洗淨後瀝乾水分；小白菜切成小段，青蔥切成蔥花，香菜洗淨後摘好，雞蛋打勻。
