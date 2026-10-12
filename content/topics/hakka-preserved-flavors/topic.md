@@ -1,9 +1,9 @@
 ---
 title: 客家菜的鹹香肥：從客家小炒到菜脯蛋
 summary: 從蘿蔔乾的保存用途，看到客家小炒分段下料與菜脯入蛋的做法；對照不同示範，挑一份材料、備料與火候都能接得上的家常版本。
-draft: true
+draft: false
 editorialLayout: true
-publishedAt: 2026-10-12T16:00:00+08:00
+publishedAt: 2026-10-12T17:47:49+08:00
 hero:
   src: ./hero.webp
   alt: 低矮農舍前的綠色菜田延伸至遠山，近處竹籃裝著兩根帶葉白蘿蔔

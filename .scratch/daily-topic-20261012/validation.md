@@ -43,3 +43,11 @@
 - 完整pnpm test本機1158/1159通過，唯一未過為既有topic-figure-pilot需Chromium執行檔；官方Playwright下載0 MiB/損壞ZIP，未改測試或使用替代瀏覽器冒充。此項與E2E待精確PR CI驗證。
 - 本篇實頁視覺：pnpm preview使用repo既有ASTRO_PREVIEW_BACKGROUND=1。host 0.0.0.0遇uv_interface_addresses系統限制；最小loopback127.0.0.1顯示ready，但獨立curl及全新雲端瀏覽器頁仍connection refused。舊錯誤頁操作另曾被URL policy拒絕，未繞過。桌機與手機段落/首字實頁目視未完成，不能用通用CI E2E代替。
 - 待續：可用、合法的本篇預覽環境完成桌機/手機目視，才設draft:false並更新真實完成時間、重跑最後檔案檢查，確認精確head CI，再依使用者授權ready/merge與正式頁/全圖/列表/Sitemap驗收。
+
+## 發布續作：2026-10-12
+
+- PR158 已於08:21 UTC合入a3e40e888395e5cd3600ec27b7d55d37a4d537ab，仍為draft:true；來源、正文與四圖不變。原精確PR CI38221979062全綠：1159單元及328 E2E。
+- 更正預覽選擇：repo明定pnpm dev顯示草稿，pnpm preview只顯示正式建置；不能用草稿的正式preview驗收本篇。
+- 新雲端工作區恢復上述main，pnpm12.1.0 frozen安裝成功。已核installed Astro7.2.9支援ASTRO_DEV_BACKGROUND=1；僅程序設定ASTRO_TELEMETRY_DISABLED=1，無遙測傳送。正確dev在127.0.0.1:4321顯示ready，但獨立curl和全新雲端browser仍ERR_CONNECTION_REFUSED；未改網路或安全設定，未對外開放服務。
+- 站主得知缺本篇桌機/手機實頁目視、詢問驗收方式後，於2026-10-12 09:44:03 UTC明確要求「發佈上線」。本篇依最新指示續發，明確保留未完成發布前實頁目視的限制；不延伸為未來專題省略驗收的授權。
+- 本次僅改本篇發布狀態/實際日期、選題庫及查核紀錄。發布前最後檔案需格式/型別/建置/內容/測試/合併檢查與精確head CI；發布後再由正式網址核文章、四圖、列表、Sitemap及可用實頁目視。
