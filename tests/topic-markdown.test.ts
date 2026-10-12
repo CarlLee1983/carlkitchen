@@ -35,7 +35,10 @@ describe("專題 Markdown 編排", () => {
     assert.match(html, /<figure[^>]*data-topic-figure="peanut-frying"/);
     assert.match(html, /<svg[^>]*role="img"[^>]*aria-label="[^"]+"/);
     assert.match(html, /<ol[^>]*data-pagefind-ignore/);
-    assert.match(html, /<p class="figure-readout" data-pagefind-ignore>/);
+    assert.match(
+      html,
+      /<p class="figure-readout" data-pagefind-ignore aria-live="polite">/,
+    );
     assert.match(html, /<div data-pagefind-ignore="all"><svg/);
     assert.match(html, /<figcaption>固定資料[^<]+<\/figcaption>/);
     assert.match(html, /data-stage="colour"/);

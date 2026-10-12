@@ -202,11 +202,20 @@ const figureCss = `
 .topic-figure .figure-readout{margin:.4rem 0 1rem;color:var(--ink-soft);font-size:.9rem}
 .topic-figure ol{margin:.5rem 0 1rem;padding-inline-start:1.5rem}
 .topic-figure li{padding:.2rem 0}
+.topic-figure[data-enhanced="true"] li[data-stage-id]{cursor:pointer}
 .topic-figure li[data-current="true"]{font-weight:600}
+.topic-figure .figure-controls{margin:1rem 0}
+.topic-figure .figure-controls button,.topic-figure li button{font:inherit;cursor:pointer}
+.topic-figure .figure-controls button[aria-pressed="true"]{font-weight:700;text-decoration:underline}
+.topic-figure .figure-timeline{position:relative;margin:.5rem 0 1.5rem}
+.topic-figure .figure-band{position:absolute;top:1.2rem;left:var(--band-start);width:var(--band-width);height:.45rem;background:#b77744;opacity:.5;pointer-events:none}
+.topic-figure input[type="range"]{position:relative;width:100%;margin:.4rem 0;accent-color:#7a4933}
+.topic-figure .figure-band-label{font-size:.8rem;color:var(--ink-soft)}
+.topic-figure button:focus-visible,.topic-figure input:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .topic-figure figcaption{border-top:1px solid var(--line);padding-top:.8rem;font-family:var(--font-serif);line-height:1.7}
 `;
 
-/** 對應圖識別值的靜態繪圖模組；後續互動票只需切換 data-stage / data-variant。 */
+/** 對應圖識別值的靜態繪圖模組；無 JS 時保留關鍵狀態和完整階段。 */
 export function renderPeanutFrying(data: FigureData) {
   const keyStage = data.stages.find((stage) => stage.id === data.keyStage)!;
   const firstVariant = data.variants[0]!.id;
@@ -227,13 +236,28 @@ export function renderPeanutFrying(data: FigureData) {
           : data.variants
               .map((variant) => `${variant.label}：${readout[variant.id]}`)
               .join("；");
-      return `<li data-current="${stage.id === data.keyStage}" data-stage-id="${escapeHtml(stage.id)}"><strong>${escapeHtml(stage.label)}</strong>（${time}）：${escapeHtml(detail)}</li>`;
+      return `<li data-current="${stage.id === data.keyStage}" data-stage-id="${escapeHtml(stage.id)}"><strong>${escapeHtml(stage.label)}</strong>（${time}）：${escapeHtml(detail)} <button type="button" hidden aria-label="跳至${escapeHtml(stage.label)}">跳至</button></li>`;
     })
     .join("");
-  return `<style>${kitCss}\n${figureCss}</style><figure class="topic-figure iso" data-theme="light" data-topic-figure="peanut-frying" data-stage="${escapeHtml(data.keyStage)}" data-variant="${escapeHtml(firstVariant)}">
+  const stageData = JSON.stringify(data.stages).replace(/</g, "\\u003c");
+  const observation = data.stages.find((stage) => stage.id === "colour")!;
+  const bandStart = (observation.start / data.duration) * 100;
+  const bandWidth =
+    ((observation.end - observation.start) / data.duration) * 100;
+  return `<style data-topic-figure-style>${kitCss}\n${figureCss}</style><figure class="topic-figure iso" data-theme="light" data-topic-figure="peanut-frying" data-stage="${escapeHtml(data.keyStage)}" data-variant="${escapeHtml(firstVariant)}" data-stages="${escapeHtml(stageData)}">
     <div data-pagefind-ignore="all">${wokSvg(data.alt)}</div>
-    <p class="figure-readout" data-pagefind-ignore>${escapeHtml(readout)}</p>
+    <div class="figure-controls" data-pagefind-ignore hidden>
+      <div class="figure-timeline" style="--band-start:${bandStart}%;--band-width:${bandWidth}%">
+        <label for="peanut-frying-time">炸花生時間</label>
+        <div class="figure-band" aria-hidden="true"></div>
+        <input id="peanut-frying-time" type="range" min="0" max="${data.duration}" step="0.1" value="${keyStage.start}" aria-label="炸花生時間" />
+        <span class="figure-band-label">${observation.start}–${observation.end} 分鐘觀察區間</span>
+      </div>
+      <button type="button" data-figure-play>播放</button>
+      <div role="group" aria-label="花生種類">${data.variants.map((variant) => `<button type="button" data-figure-variant="${escapeHtml(variant.id)}" aria-pressed="${variant.id === firstVariant}">${escapeHtml(variant.label)}</button>`).join("")}</div>
+    </div>
+    <p class="figure-readout" data-pagefind-ignore aria-live="polite">${escapeHtml(readout)}</p>
     <ol data-pagefind-ignore>${stages}</ol>
     <figcaption>${escapeHtml(data.caption)}</figcaption>
-  </figure>`;
+  </figure><script src="/scripts/topic-figure.js" defer data-topic-figure-runtime></script>`;
 }
