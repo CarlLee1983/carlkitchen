@@ -1,0 +1,41 @@
+sources:
+  - title: 客委會客家雲〈客家飲食文化的成因與特色〉
+    url: https://cloud.hakka.gov.tw/Details?p=9226&pid=156302
+  - title: 客委會食食客客〈客家菜包〉
+    url: https://webc.hakka.gov.tw/findhakkafood/rice_inside4_cht.html
+  - title: 客家文化資產數位網〈屋下个滷鹹淡味緒〉
+    url: https://hch.hakka.gov.tw/reportdetail.asp?ArID=1416&MenuID=8&SubID=26&pageNums=2
+  - title: 教育部臺灣客語辭典〈菜脯〉
+    url: https://hakkadict.moe.edu.tw/search_result/?id=6630
+  - title: 國史館臺灣文獻館〈菜脯甕〉
+    url: https://dict.th.gov.tw/detailPage.aspx?Ca=56&ID=171
+  - title: 新北市客家文化典藏〈客家小炒〉
+    url: https://www.hakka-portal.ntpc.gov.tw/article/客家小炒080212141570644659
+  - title: 型男大主廚，阿基師〈客家小炒〉，2011-07-29
+    url: https://blogs.iset.com.tw/chef/archives/5363
+  - title: 龜甲萬，高鋼輝〈客家小炒〉
+    url: https://kikkoman.com.tw/recipe_detal_客家小炒_413
+  - title: 欣葉台菜〈正宗菜脯蛋〉，2019-02-23
+    url: https://www.shinyeh.com.tw/content/zh/brand/MenuDetail.aspx?BrandId=1&Id=1
+  - title: 食譜自由配，阿全師、林昕志〈菜脯蛋〉，2017-06-20
+    url: https://food.ltn.com.tw/article/3938
+sections:
+  - heading: 從菜田到菜脯，保存食有不同去處
+    urls:
+      - https://webc.hakka.gov.tw/findhakkafood/rice_inside4_cht.html
+      - https://hch.hakka.gov.tw/reportdetail.asp?ArID=1416&MenuID=8&SubID=26&pageNums=2
+      - https://hakkadict.moe.edu.tw/search_result/?id=6630
+      - https://dict.th.gov.tw/detailPage.aspx?Ca=56&ID=171
+  - heading: 客家小炒的版本，從材料表就有差別
+    urls:
+      - https://www.hakka-portal.ntpc.gov.tw/article/客家小炒080212141570644659
+      - https://blogs.iset.com.tw/chef/archives/5363
+      - https://kikkoman.com.tw/recipe_detal_客家小炒_413
+  - heading: 肉與豆干先炒，魷魚照版本預處理
+    urls:
+      - https://blogs.iset.com.tw/chef/archives/5363
+      - https://kikkoman.com.tw/recipe_detal_客家小炒_413
+  - heading: 菜脯入蛋，先看切法與處理方式
+    urls:
+      - https://www.shinyeh.com.tw/content/zh/brand/MenuDetail.aspx?BrandId=1&Id=1
+      - https://food.ltn.com.tw/article/3938
