@@ -1,0 +1,82 @@
+title: 蒜香炒鴨賞
+summary: 宜蘭特產甘蔗煙燻去骨鴨賞切薄片，熱油鍋爆香新鮮蒜末與紅辣椒片，投入鴨賞片大火快速翻炒逼出煙燻蔗香油脂，加入青翠青蒜苗斜段，嗆入米酒、少許細砂糖與清水翻炒收汁，鴨皮Ｑ脆、鴨肉軟嫩多汁、煙燻香與蒜香完美融合，經典宜蘭鄉土名菜。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以煙燻鴨賞切片快炒為唯一肉類主角，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 10
+tags: [鴨賞, 宜蘭名產, 熱炒, 家常菜, 煙燻料理]
+aliases: [蒜苗炒鴨賞, 宜蘭煙燻炒鴨賞]
+ingredients:
+  - name: 煙燻鴨賞
+    amount:
+      value: 200
+      unit: g
+    note: 宜蘭甘蔗煙燻去骨鴨賞切薄片
+  - name: 青蒜苗
+    amount:
+      value: 60
+      unit: g
+    note: 洗淨斜切厚段
+  - name: 大蒜
+    amount:
+      value: 15
+      unit: g
+    note: 去皮切蒜片
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 斜切薄片配色
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 嗆鍋增香
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙調和煙燻鹹度
+    group: 調味
+  - name: 白醋
+    amount:
+      value: 5
+      unit: ml
+    note: 約 1 茶匙去油膩提清香
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋少許提味
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 15
+      unit: ml
+    note: 炒料油
+    group: 調味
+steps:
+  - text: 煙燻鴨賞切成適口薄片；青蒜苗洗淨斜切長片；大蒜切片；紅辣椒切斜片備用。
+    image:
+      src: ./step-1.webp
+      alt: 煙燻鴨賞切成適口薄片；青蒜苗洗淨斜切長片；大蒜切片；紅辣椒切斜片備用。
+  - text: 炒鍋加熱倒入植物油，放入蒜片與紅辣椒片以中小火爆炒出香氣。
+  - text: 倒入切好的鴨賞薄片轉中大火快速翻炒約 1 分鐘，煸出鴨皮中的煙燻蔗糖油脂與濃郁肉香。
+    image:
+      src: ./step-3.webp
+      alt: 倒入切好的鴨賞薄片轉中大火快速翻炒約 1 分鐘，煸出鴨皮中的煙燻蔗糖油脂與濃郁肉香。
+  - text: 放入青蒜苗段，沿鍋邊嗆入米酒、細砂糖、白醋與少許清水，大火高速翻炒 20 秒至蒜苗斷生翠綠，滴入香油翻勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的蒜香炒鴨賞
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 鴨賞本身已具備煙燻鹹甘底味，料理時無需再額外加鹽；起鍋前嗆入少許白醋與白糖大火快炒，能完美平衡煙燻的鹹重感，使肉質更加甘甜爽口。

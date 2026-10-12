@@ -1,0 +1,114 @@
+title: 五更腸旺
+summary: 熟透滷豬大腸頭切厚圈片，嫩滑鴨血切厚塊滾水汆燙，熱油鍋爆香花椒粒、薑末、蒜末與香濃辣豆瓣醬炒出紅油，投入高湯、客家酸菜薄片、鴨血與大腸頭微火慢煨入味，太白粉水勾厚亮芡汁，撒入斜切青翠蒜苗，起鍋淋入花椒香油，麻辣鮮香、鴨血滑嫩、大腸軟糯Ｑ彈、川台融合經典砂鍋名菜。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以豬大腸頭與鴨血為主角慢火煨燒，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [五更腸旺, 大腸頭, 鴨血, 川菜, 熱炒, 砂鍋料理]
+aliases: [五更腸旺煲, 麻辣腸旺煲]
+ingredients:
+  - name: 滷大腸頭
+    amount:
+      value: 200
+      unit: g
+    note: 熟大腸頭斜切厚圈片
+  - name: 鴨血
+    amount:
+      value: 300
+      unit: g
+    note: 切 1.5 公分厚方塊滾水汆燙
+  - name: 酸菜心
+    amount:
+      value: 60
+      unit: g
+    note: 洗淨切薄片擠乾水分
+  - name: 青蒜苗
+    amount:
+      value: 2
+      unit: 根
+    note: 洗淨斜切厚片
+  - name: 大蒜
+    amount:
+      value: 15
+      unit: g
+    note: 去皮切蒜碎
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 去皮切細薑末
+  - name: 花椒粒
+    amount:
+      value: 5
+      unit: g
+    note: 小火爆香熗麻香
+  - name: 高湯
+    amount:
+      value: 400
+      unit: ml
+    note: 大骨高湯或清水
+  - name: 辣豆瓣醬
+    amount:
+      value: 30
+      unit: g
+    note: 約 2 大匙炒紅油
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 8
+      unit: g
+    note: 約 1.5 茶匙調和辣度
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙增色
+    group: 調味
+  - name: 太白粉水
+    amount:
+      value: 25
+      unit: ml
+    note: 勾芡濃郁滑亮
+    group: 調味
+  - name: 花椒油
+    amount:
+      value: 10
+      unit: ml
+    note: 起鍋淋亮提麻
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 25
+      unit: ml
+    note: 爆香油
+    group: 調味
+steps:
+  - text: 鴨血切適口厚片，入微滾熱水加少許鹽小火慢浸汆燙 3 分鐘撈起泡冷水保持滑嫩；滷大腸頭斜切厚圈片；酸菜切薄片漂洗擠乾；青蒜苗切斜段；大蒜、生薑切末備用。
+    image:
+      src: ./step-1.webp
+      alt: 鴨血切適口厚片，入微滾熱水加少許鹽小火慢浸汆燙 3 分鐘撈起泡冷水保持滑嫩；滷大腸頭斜切厚圈片；酸菜
+  - text: 炒鍋倒入植物油加熱，放入花椒粒以微火慢慢爆出香氣後撈出花椒粒，原油中放入蒜末、薑末與辣豆瓣醬小火炒出紅亮油光。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋倒入植物油加熱，放入花椒粒以微火慢慢爆出香氣後撈出花椒粒，原油中放入蒜末、薑末與辣豆瓣醬小火炒出
+  - text: 倒入高湯、米酒、醬油與細砂糖煮滾，加入大腸頭圈片、酸菜片與汆燙好的鴨血，加蓋轉小火慢煨燉煮 6 分鐘至鴨血充分入味孔隙吸飽湯汁。
+  - text: 倒入青蒜苗段，緩緩淋入太白粉水勾出油亮滑潤濃芡，起鍋前淋入花椒油翻勻，移入溫熱小砂鍋中即可沸騰上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的五更腸旺
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 鴨血切塊後以微滾帶鹽的水小火慢浸汆燙，能使鴨血緊實滑嫩不破碎且易吸汁；辣豆瓣醬一定要以小火慢炒出紅油，湯色才紅亮誘人、辣香醇厚。

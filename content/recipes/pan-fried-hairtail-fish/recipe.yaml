@@ -1,0 +1,70 @@
+title: 乾煎白帶魚
+summary: 新鮮厚肉銀亮白帶魚段洗淨吸乾水分，斜劃刀抹勻薄鹽與米酒醃漬，薄沾地瓜粉入熱油鍋中火慢煎至兩面金黃酥脆硬挺，加入生薑絲與辣椒絲煸出香氣，外皮酥脆香濃、魚肉雪白細緻鮮甜，經典台灣家常海味。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以厚切白帶魚乾煎為唯一海鮮主角，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 18
+tags: [白帶魚, 乾煎, 海鮮, 家常便飯, 便當菜]
+aliases: [香煎白帶魚, 酥煎白帶魚段]
+ingredients:
+  - name: 白帶魚
+    amount:
+      value: 400
+      unit: g
+    note: 切 8 公分寬段去內臟洗淨吸乾水分兩面劃刀
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 切細薑絲
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切細斜絲
+  - name: 地瓜粉
+    amount:
+      value: 30
+      unit: g
+    note: 表面薄拍防沾酥脆
+  - name: 鹽
+    amount:
+      value: 4
+      unit: g
+    note: 均勻抹於魚身
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 醃魚去腥
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 40
+      unit: ml
+    note: 香煎食用油
+    group: 調味
+steps:
+  - text: 白帶魚段洗淨去除腹膜黑膜用紙巾徹底吸乾水分，魚身兩面各劃兩道斜刀痕，抹上鹽與米酒抓勻醃漬 10 分鐘入味；生薑切細絲、紅辣椒切細絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 白帶魚段洗淨去除腹膜黑膜用紙巾徹底吸乾水分，魚身兩面各劃兩道斜刀痕，抹上鹽與米酒抓勻醃漬 10 分鐘
+  - text: 將醃好的白帶魚段兩面均勻沾裹上一層薄薄的地瓜粉，輕拍掉多餘餘粉，靜置 2 分鐘讓表面回潮。
+  - text: 平底鍋倒入植物油燒至中溫，將白帶魚段整齊排入鍋中，以中小火慢煎約 4 分鐘至底面金黃硬挺，翻面續煎 3 分鐘至兩面皆呈現金黃酥脆微焦。
+    image:
+      src: ./step-3.webp
+      alt: 平底鍋倒入植物油燒至中溫，將白帶魚段整齊排入鍋中，以中小火慢煎約 4 分鐘至底面金黃硬挺，翻面續煎
+  - text: 將白帶魚推至鍋邊，利用鍋中餘油放入薑絲與紅辣椒絲小火煸出香氣，熄火盛盤，將煸香薑絲辣椒點綴於魚身即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的乾煎白帶魚
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 白帶魚下鍋煎之前一定要拍上薄薄一層地瓜粉並等候回潮，下鍋後切忌急著翻動，一定要等到底部完全凝固硬挺呈金黃色再翻面，魚皮才能保持完整金黃不破皮。

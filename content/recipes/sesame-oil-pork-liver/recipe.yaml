@@ -1,0 +1,82 @@
+title: 麻油豬肝
+summary: 新鮮粉嫩豬肝切厚片以清水充分漂洗血水擦乾，抓拌米酒與少許薄地瓜粉，入熱油鍋快速滑油十秒鎖住脆嫩，另起鍋以香醇純黑麻油小火煸香老薑薄片至邊緣微捲曲金黃，倒入滑熟豬肝與鮮嫩菠菜葉轉大火快速翻炒，嗆入米酒收汁，豬肝軟嫩粉嫩無腥味、麻油薑香溫潤暖身。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: 以新鮮豬肝切片黑麻油快炒為唯一肉類主角，屬於肉類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 12
+tags: [麻油豬肝, 豬肝, 黑麻油, 家常補湯, 熱炒]
+aliases: [麻油薑絲炒豬肝, 台式麻油豬肝]
+ingredients:
+  - name: 新鮮豬肝
+    amount:
+      value: 250
+      unit: g
+    note: 切 0.5 公分厚片漂水洗淨吸乾
+  - name: 老薑
+    amount:
+      value: 30
+      unit: g
+    note: 洗淨連皮切薄薑片
+  - name: 菠菜
+    amount:
+      value: 50
+      unit: g
+    note: 洗淨摘取嫩葉配色提味
+  - name: 黑麻油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙純黑芝麻油
+  - name: 米酒
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙嗆鍋增甘
+    group: 調味
+  - name: 地瓜粉
+    amount:
+      value: 15
+      unit: g
+    note: 醃豬肝裹薄粉保嫩
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 3
+      unit: g
+    note: 少許提鮮中和
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 少許調味
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 30
+      unit: ml
+    note: 滑油用
+    group: 調味
+steps:
+  - text: 豬肝切成約 0.5 公分厚片，置於流動冷水中沖洗漂淨血水，用餐巾紙徹底吸乾表面水分，加入米酒、鹽與地瓜粉抓勻醃漬 5 分鐘；老薑切薄片；菠菜摘取嫩葉備用。
+    image:
+      src: ./step-1.webp
+      alt: 豬肝切成約 0.5 公分厚片，置於流動冷水中沖洗漂淨血水，用餐巾紙徹底吸乾表面水分，加入米酒、鹽與地
+  - text: 起炒鍋倒入植物油燒至中高溫，放入抓粉豬肝片快速滑油約 15 秒至豬肝表面微變色七分熟，迅速撈起瀝乾油分。
+    image:
+      src: ./step-2.webp
+      alt: 起炒鍋倒入植物油燒至中高溫，放入抓粉豬肝片快速滑油約 15 秒至豬肝表面微變色七分熟，迅速撈起瀝乾油
+  - text: 原鍋擦乾，倒入純黑麻油與老薑薄片，以中小火慢慢煸炒 2 分鐘至薑片邊緣微微捲曲散發濃郁薑香（注意火候避免麻油焦苦）。
+  - text: 轉大火倒入滑好的豬肝片與菠菜葉，淋入米酒、細砂糖快速翻炒 15 秒至菠菜變軟、豬肝剛好熟透無血水，立即熄火盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的麻油豬肝
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 豬肝切片後先用冷水沖洗去除多餘血水，吸乾水氣裹薄地瓜粉先滑油十五秒撈起，是豬肝脆嫩如布丁、入口化渣絕不乾硬變柴的關鍵技巧；黑麻油以中小火慢煸老薑片，不可大火燒焦以防苦味。

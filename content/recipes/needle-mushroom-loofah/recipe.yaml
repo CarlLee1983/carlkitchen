@@ -1,0 +1,76 @@
+title: 金針菇炒絲瓜
+summary: 當令新鮮翠綠絲瓜削去粗皮切滾刀厚塊，金針菇洗淨切除根部，熱油鍋爆香薑絲與蒜末，倒入絲瓜塊大火快炒一分鐘，加入鮮脆金針菇與少許熱水加蓋燜煮兩分鐘，絲瓜清甜多汁、金針菇滑嫩爽脆、湯汁翠綠澄澈、天然鮮美清甜。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以絲瓜為主要蔬菜主角，搭配金針菇清炒燜煮，屬於純蔬菜料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 10
+tags: [絲瓜, 金針菇, 熱炒, 家常青菜, 素食友善]
+aliases: [金針菇燴絲瓜, 絲瓜炒金針菇]
+ingredients:
+  - name: 絲瓜
+    amount:
+      value: 350
+      unit: g
+    note: 約 1 條去粗皮切滾刀厚塊
+  - name: 金針菇
+    amount:
+      value: 150
+      unit: g
+    note: 去除根部洗淨撕成小束
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 切細嫩薑絲
+  - name: 大蒜
+    amount:
+      value: 10
+      unit: g
+    note: 切細碎末
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 熗鍋增香防變黑
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙帶出自然鮮甜
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提味
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 25
+      unit: ml
+    note: 快炒油
+    group: 調味
+steps:
+  - text: 絲瓜削去外層粗硬深綠表皮，保留薄薄翠綠內皮，切成適口滾刀厚塊；金針菇切除底部木質化部位，洗淨撕成小束對切半；生薑切細絲、大蒜切碎末備用。
+    image:
+      src: ./step-1.webp
+      alt: 絲瓜削去外層粗硬深綠表皮，保留薄薄翠綠內皮，切成適口滾刀厚塊；金針菇切除底部木質化部位，洗淨撕成小束
+  - text: 炒鍋加熱倒入植物油，放入薑絲與蒜碎以中小火爆炒出清雅香氣。
+  - text: 倒入絲瓜厚塊轉大火快速翻炒約 1 分鐘，倒入金針菇束，淋入米酒與 30 ml 熱水，蓋上鍋蓋以中火燜煮約 2 分鐘至絲瓜變得晶瑩軟嫩釋出清甜原汁。
+    image:
+      src: ./step-3.webp
+      alt: 倒入絲瓜厚塊轉大火快速翻炒約 1 分鐘，倒入金針菇束，淋入米酒與 30 ml 熱水，蓋上鍋蓋以中火燜
+  - text: 掀開鍋蓋，加入鹽與白胡椒粉輕輕翻炒均勻入味，絲瓜翠綠鮮嫩、金針菇吸飽絲瓜甘甜原汁，立即盛盤即可享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的金針菇炒絲瓜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 絲瓜去皮時輕輕刨去外層粗皮保留薄薄翠綠層，切滾刀厚塊入鍋燜煮兩分鐘剛好熟透多汁，且絲瓜水色清亮翠綠不氧化發黑；加鹽在起鍋前調味能保持絲瓜鮮甜爽口。
