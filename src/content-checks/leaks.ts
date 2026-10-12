@@ -6,6 +6,16 @@ export interface BuildFile {
   text: string;
 }
 
+export interface FigureFingerprint {
+  topic: string;
+  alt: string;
+  caption: string;
+  duration: number;
+  keyStage: string;
+  stages: string;
+  variants: { id: string; label: string }[];
+}
+
 const escapeRegExp = (text: string) =>
   text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -71,6 +81,9 @@ export function checkLeaks(input: {
   draftIds: readonly string[];
   draftIngredientIds?: readonly string[];
   draftTopicIds?: readonly string[];
+  draftFigureTexts?: readonly { topic: string; text: string }[];
+  draftFigureLabels?: readonly { topic: string; text: string }[];
+  draftFigureFingerprints?: readonly FigureFingerprint[];
   sourceUrls: readonly string[];
 }): Issue[] {
   const draftPatterns = [
@@ -117,6 +130,73 @@ export function checkLeaks(input: {
           [kind]: id,
           file: file.path,
           message: "建置輸出內容含草稿頁面連結。",
+        });
+      }
+    }
+    // 短標籤只在互動圖內比對，避免一般正文提到「帶膜」等詞時誤報。
+    const figureHtml = [
+      ...text.matchAll(
+        /<figure\b[^>]*data-topic-figure[^>]*>[\s\S]*?<\/figure>/g,
+      ),
+    ]
+      .map(([html]) => html)
+      .join("\n");
+    for (const fingerprint of input.draftFigureFingerprints ?? []) {
+      const figureAppears = [
+        ...file.text.matchAll(
+          /<figure\b[^>]*data-topic-figure[^>]*>[\s\S]*?<\/figure>/g,
+        ),
+      ].some(([html]) => {
+        const stage = /\bdata-stage="([^"]*)"/.exec(html)?.[1];
+        const stages = /\bdata-stages="([^"]*)"/.exec(html)?.[1];
+        const duration = /<input\b[^>]*\bmax="([^"]*)"/.exec(html)?.[1];
+        const alt = /<svg\b[^>]*\baria-label="([^"]*)"/.exec(html)?.[1];
+        const caption = /<figcaption>([\s\S]*?)<\/figcaption>/.exec(html)?.[1];
+        const variants = [
+          ...html.matchAll(
+            /<button\b[^>]*\bdata-figure-variant="([^"]*)"[^>]*>([\s\S]*?)<\/button>/g,
+          ),
+        ].map((match) => ({ id: match[1], label: normalizeText(match[2]!) }));
+        return (
+          alt !== undefined &&
+          normalizeText(alt) === normalizeText(fingerprint.alt) &&
+          caption !== undefined &&
+          normalizeText(caption) === normalizeText(fingerprint.caption) &&
+          stage === fingerprint.keyStage &&
+          stages !== undefined &&
+          normalizeText(stages) === normalizeText(fingerprint.stages) &&
+          Number(duration) === fingerprint.duration &&
+          JSON.stringify(variants) ===
+            JSON.stringify(
+              fingerprint.variants.map(({ id, label }) => ({
+                id,
+                label: normalizeText(label),
+              })),
+            )
+        );
+      });
+      if (figureAppears)
+        issues.push({
+          topic: fingerprint.topic,
+          file: file.path,
+          message: "建置輸出含草稿互動圖內容（階段與時間軸）。",
+        });
+    }
+    for (const { topic, text: label } of input.draftFigureLabels ?? []) {
+      if (figureHtml.includes(normalizeText(label))) {
+        issues.push({
+          topic,
+          file: file.path,
+          message: `建置輸出含草稿互動圖內容：${label}。`,
+        });
+      }
+    }
+    for (const { topic, text: figureText } of input.draftFigureTexts ?? []) {
+      if (text.includes(normalizeText(figureText))) {
+        issues.push({
+          topic,
+          file: file.path,
+          message: `建置輸出含草稿互動圖內容：${figureText}。`,
         });
       }
     }

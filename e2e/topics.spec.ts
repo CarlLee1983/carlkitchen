@@ -130,6 +130,10 @@ test("從導覽列的「專題」進入列表，再點進文章", async ({ page 
 test("草稿專題網址在正式建置回 404", async ({ page }) => {
   const response = await page.goto("/topics/draft-topic/");
   expect(response?.status()).toBe(404);
+  await page.goto("/");
+  await expect(
+    page.getByText("固定資料：草稿互動圖專用", { exact: false }),
+  ).toHaveCount(0);
 });
 
 test("專題文章頁在桌面寬度水平置中且寬度適度放寬", async ({ page }) => {

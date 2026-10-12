@@ -1,0 +1,37 @@
+alt: 固定資料：草稿互動圖專用等角炒鍋裡的花生浸在油面，鍋邊有小氣泡，表示薄膜轉色階段。
+caption: 固定資料：草稿互動圖專用炸花生從冷油到放涼的階段。
+duration: 12
+keyStage: colour
+variants:
+  - id: skin
+    label: 草稿專用帶膜
+  - id: peeled
+    label: 草稿專用去膜
+stages:
+  - id: start
+    start: 0
+    end: 0
+    label: 草稿專用冷油下鍋
+    readout: 固定資料：草稿互動圖專用冷油蓋過花生，開小火。
+  - id: bubbles
+    start: 1
+    end: 6
+    label: 草稿專用小泡與蒸氣
+    readout: 固定資料：草稿互動圖專用冒小泡與蒸氣，聽見劈啪聲。
+  - id: colour
+    start: 7
+    end: 12
+    label: 草稿專用觀察轉色
+    readout:
+      skin: 固定資料：草稿互動圖專用帶膜花生的薄膜轉深紅褐，劈啪聲停。
+      peeled: 固定資料：草稿互動圖專用去膜花生表面轉淡黃。
+  - id: rest
+    start: 10
+    end: 12
+    label: 草稿專用關火餘溫
+    readout: 固定資料：草稿互動圖專用最後 1 到 2 分鐘關火，靠餘溫完成。
+  - id: cool
+    start: 12
+    end: 12
+    label: 草稿專用撈起放涼
+    readout: 固定資料：草稿互動圖專用放涼後才酥脆。

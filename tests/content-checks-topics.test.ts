@@ -12,6 +12,9 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { after, describe, it } from "node:test";
 import sharp from "sharp";
+import { parse } from "yaml";
+import { figureSchema } from "../src/content/figure-schema.ts";
+import { renderPeanutFrying } from "../src/figures/peanut-frying.ts";
 import { fileURLToPath } from "node:url";
 import { runContentChecks } from "../src/content-checks/run.ts";
 
@@ -26,6 +29,21 @@ sections:
   - heading: 涼拌小黃瓜
     urls:
       - ${sourceUrl}
+`;
+const figureBlock = "\n```figure\npeanut-frying\n```\n";
+const figureData = `alt: 固定資料：草稿互動圖專用替代文字
+caption: 固定資料：草稿互動圖專用圖說
+duration: 12
+keyStage: colour
+variants:
+  - id: skin
+    label: 草稿專用帶膜
+stages:
+  - id: colour
+    start: 7
+    end: 12
+    label: 草稿獨有階段
+    readout: 固定資料：草稿互動圖專用階段讀數
 `;
 const workDirs: string[] = [];
 
@@ -103,6 +121,245 @@ after(() => {
 });
 
 describe("專題內容檢查", () => {
+  it("互動圖資料與核准來源對照完整時通過", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: ["alpha"], ingredients: ["cabbage"] }) + figureBlock,
+    );
+    s.write(
+      join(s.root, "topics/summer-salads/peanut-frying.figure.yaml"),
+      figureData,
+    );
+    s.write(
+      s.sourceFile,
+      sourceRecord +
+        `figures:\n  - id: peanut-frying\n    urls:\n      - ${sourceUrl}\n`,
+    );
+    s.write(
+      join(s.root, "dist/topics/summer-salads/index.html"),
+      '<figure data-topic-figure="peanut-frying">固定資料：草稿互動圖專用圖說</figure>',
+    );
+    assert.deepEqual(await runContentChecks(s.options), []);
+  });
+
+  it("已發布圖與草稿圖共用階段名稱不算草稿洩漏", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: ["alpha"], ingredients: ["cabbage"] }) + figureBlock,
+    );
+    s.write(
+      join(s.root, "topics/summer-salads/peanut-frying.figure.yaml"),
+      figureData.replace("label: 草稿獨有階段", "label: 小泡與蒸氣"),
+    );
+    s.write(
+      s.sourceFile,
+      sourceRecord +
+        `figures:\n  - id: peanut-frying\n    urls:\n      - ${sourceUrl}\n`,
+    );
+    s.write(
+      join(s.root, "topics/other/topic.md"),
+      topic({ recipes: [], ingredients: [] }).replace(
+        "draft: false",
+        "draft: true",
+      ) + figureBlock,
+    );
+    s.write(
+      join(s.root, "topics/other/peanut-frying.figure.yaml"),
+      figureData.replace("label: 草稿獨有階段", "label: 小泡"),
+    );
+    s.write(
+      join(s.root, "dist/topics/summer-salads/index.html"),
+      '<figure data-topic-figure="peanut-frying">草稿專用帶膜</figure>',
+    );
+    assert.deepEqual(await runContentChecks(s.options), []);
+    s.write(
+      join(s.root, "dist/topics/summer-salads/index.html"),
+      '<figure data-topic-figure="peanut-frying">固定資料：草稿互動圖專用圖說</figure>',
+    );
+    assert.deepEqual(await runContentChecks(s.options), []);
+    s.write(
+      join(s.root, "dist/topics/summer-salads/index.html"),
+      '<figure data-topic-figure="peanut-frying">小泡與蒸氣</figure>',
+    );
+    assert.deepEqual(await runContentChecks(s.options), []);
+  });
+
+  it("草稿圖只改時間軸仍不得出現在建置輸出", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: ["alpha"], ingredients: ["cabbage"] }) + figureBlock,
+    );
+    s.write(
+      join(s.root, "topics/summer-salads/peanut-frying.figure.yaml"),
+      figureData,
+    );
+    s.write(
+      s.sourceFile,
+      sourceRecord +
+        `figures:\n  - id: peanut-frying\n    urls:\n      - ${sourceUrl}\n`,
+    );
+    s.write(
+      join(s.root, "topics/other/topic.md"),
+      topic({ recipes: [], ingredients: [] }).replace(
+        "draft: false",
+        "draft: true",
+      ) + figureBlock,
+    );
+    const timedFigure = figureData.replace("duration: 12", "duration: 14");
+    s.write(
+      join(s.root, "topics/other/peanut-frying.figure.yaml"),
+      timedFigure,
+    );
+    s.write(
+      join(s.root, "dist/index.html"),
+      renderPeanutFrying(figureSchema.parse(parse(timedFigure))),
+    );
+    const issues = await runContentChecks(s.options);
+    assert.ok(issues.some((issue) => /草稿互動圖/.test(issue.message)));
+  });
+
+  it("草稿圖只改變體名稱或圖說也不能外洩", async () => {
+    for (const [from, to] of [
+      ["草稿專用帶膜", "膜"],
+      ["固定資料：草稿互動圖專用圖說", "圖說"],
+    ] as const) {
+      const s = scenario();
+      s.write(
+        s.file,
+        topic({ recipes: ["alpha"], ingredients: ["cabbage"] }) + figureBlock,
+      );
+      s.write(
+        join(s.root, "topics/summer-salads/peanut-frying.figure.yaml"),
+        figureData,
+      );
+      s.write(
+        s.sourceFile,
+        sourceRecord +
+          `figures:\n  - id: peanut-frying\n    urls:\n      - ${sourceUrl}\n`,
+      );
+      s.write(
+        join(s.root, "topics/other/topic.md"),
+        topic({ recipes: [], ingredients: [] }).replace(
+          "draft: false",
+          "draft: true",
+        ) + figureBlock,
+      );
+      const draftData = figureData.replace(from, to);
+      s.write(
+        join(s.root, "topics/other/peanut-frying.figure.yaml"),
+        draftData,
+      );
+      s.write(
+        join(s.root, "dist/index.html"),
+        renderPeanutFrying(figureSchema.parse(parse(draftData))),
+      );
+      const issues = await runContentChecks(s.options);
+      assert.ok(
+        issues.some((issue) => /草稿互動圖/.test(issue.message)),
+        `${from} → ${to}`,
+      );
+    }
+  });
+
+  it("互動圖缺資料、資料不符 schema、缺對照、網址未核准與孤兒檔各自報錯", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: ["alpha"], ingredients: ["cabbage"] }) + figureBlock,
+    );
+    let issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some(
+        (issue) =>
+          /peanut-frying/.test(issue.message) && /資料檔/.test(issue.message),
+      ),
+    );
+
+    const dataFile = join(
+      s.root,
+      "topics/summer-salads/peanut-frying.figure.yaml",
+    );
+    s.write(dataFile, "duration: nope\n");
+    issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some(
+        (issue) =>
+          /peanut-frying/.test(issue.message) && /schema/.test(issue.message),
+      ),
+    );
+
+    s.write(dataFile, figureData);
+    issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some(
+        (issue) =>
+          /peanut-frying/.test(issue.message) && /對照/.test(issue.message),
+      ),
+    );
+
+    s.write(
+      s.sourceFile,
+      sourceRecord +
+        "figures:\n  - id: peanut-frying\n    urls:\n      - https://example.com/not-approved\n",
+    );
+    issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some(
+        (issue) =>
+          /figures/.test(issue.field ?? "") && /sources/.test(issue.message),
+      ),
+    );
+
+    s.write(
+      join(s.root, "topics/summer-salads/orphan.figure.yaml"),
+      figureData,
+    );
+    issues = await runContentChecks(s.options);
+    assert.ok(
+      issues.some(
+        (issue) => /orphan/.test(issue.message) && /孤兒/.test(issue.message),
+      ),
+    );
+  });
+
+  it("草稿互動圖文字出現在其他建置頁面時報洩漏", async () => {
+    const s = scenario();
+    s.write(
+      s.file,
+      topic({ recipes: [], ingredients: [] }).replace(
+        "draft: false",
+        "draft: true",
+      ) + figureBlock,
+    );
+    s.write(
+      join(s.root, "topics/summer-salads/peanut-frying.figure.yaml"),
+      figureData,
+    );
+    s.write(
+      join(s.root, "dist/index.html"),
+      "<p>固定資料：草稿互動圖專用圖說</p>",
+    );
+    const issues = await runContentChecks(s.options);
+    assert.ok(issues.some((issue) => /草稿互動圖/.test(issue.message)));
+    s.write(
+      join(s.root, "dist/index.html"),
+      '<figure data-topic-figure="peanut-frying"><ol><li>草稿獨有階段</li></ol></figure>',
+    );
+    const labelIssues = await runContentChecks(s.options);
+    assert.ok(labelIssues.some((issue) => /草稿互動圖/.test(issue.message)));
+    s.write(
+      join(s.root, "dist/index.html"),
+      '<figure data-topic-figure="peanut-frying"><button>草稿專用帶膜</button></figure>',
+    );
+    const variantIssues = await runContentChecks(s.options);
+    assert.ok(variantIssues.some((issue) => /草稿互動圖/.test(issue.message)));
+    s.write(join(s.root, "dist/index.html"), "<p>帶膜、草稿獨有階段</p>");
+    assert.deepEqual(await runContentChecks(s.options), []);
+  });
+
   it("首頁推薦設定在內容檢查也拒絕草稿與多個常青備選", async () => {
     const s = scenario();
     s.write(

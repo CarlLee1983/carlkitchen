@@ -5,3 +5,7 @@ sections:
   - heading: 握刀
     urls:
       - https://example.com/topic-approved-d
+figures:
+  - id: peanut-frying
+    urls:
+      - https://example.com/topic-approved-d
