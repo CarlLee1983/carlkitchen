@@ -1,0 +1,97 @@
+title: 生菜蝦鬆
+summary: 新鮮鮮蝦仁剁細粒，搭配清脆荸薺丁、竹筍丁、芹菜末與香菇丁熱油大火爆炒，調入少許海鹽與白胡椒粉帶出海鮮甘甜，拌入酥脆老油條碎，包入冰鎮後爽脆如碗的新鮮美生菜葉中，外脆內嫩、清甜多汁、經典名饌。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: 以鮮蝦仁切丁熱炒為主軸海鮮主角，搭配荸薺與美生菜包食，屬於海鮮類料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [生菜蝦鬆, 海鮮, 蝦仁, 宴席菜, 經典名菜]
+aliases: [美生菜蝦鬆, 包生菜蝦鬆]
+ingredients:
+  - name: 蝦仁
+    amount:
+      value: 200
+      unit: g
+    note: 洗淨吸乾水分粗剁成小蝦丁
+  - name: 美生菜
+    amount:
+      value: 200
+      unit: g
+    note: 洗淨剪修成圓碗狀泡冰水瀝乾
+  - name: 荸薺
+    amount:
+      value: 50
+      unit: g
+    note: 去皮切細丁
+  - name: 竹筍
+    amount:
+      value: 40
+      unit: g
+    note: 熟筍切細丁
+  - name: 芹菜
+    amount:
+      value: 30
+      unit: g
+    note: 洗淨去葉切細末
+  - name: 老油條
+    amount:
+      value: 40
+      unit: g
+    note: 低溫回烤至酥脆壓粗碎
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 去皮切細薑末
+  - name: 米酒
+    amount:
+      value: 10
+      unit: ml
+    note: 醃蝦仁去腥
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 3
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 1
+      unit: g
+    note: 少許提鮮
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋少許提味
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 25
+      unit: ml
+    note: 炒料油
+    group: 調味
+steps:
+  - text: 蝦仁挑除泥腸洗淨用紙巾吸乾水分，粗剁成米粒大小蝦丁加少許米酒抓勻；荸薺、熟竹筍去皮切細丁；芹菜切末、生薑切細末；老油條低溫烤酥壓碎；美生菜剪修成圓碗狀泡冰水瀝乾備用。
+    image:
+      src: ./step-1.webp
+      alt: 蝦仁挑除泥腸洗淨用紙巾吸乾水分，粗剁成米粒大小蝦丁加少許米酒抓勻；荸薺、熟竹筍去皮切細丁；芹菜切末、
+  - text: 炒鍋倒入植物油加熱，放入薑末小火炒香，倒入蝦仁丁大火快炒約 40 秒至蝦肉變粉紅緊實八分熟盛出。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋倒入植物油加熱，放入薑末小火炒香，倒入蝦仁丁大火快炒約 40 秒至蝦肉變粉紅緊實八分熟盛出。
+  - text: 原鍋放入荸薺丁、竹筍丁與芹菜末翻炒 1 分鐘煸出香氣，倒回炒好的蝦仁丁，加入鹽、白胡椒粉與香油快速翻炒均勻熄火盛盤。
+  - text: 將炒好的蝦鬆盛入盤中，表面撒上酥脆老油條碎，搭配冰脆美生菜碗一同上桌，食用時以生菜包裹享用。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的生菜蝦鬆
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 蝦仁粗剁保持顆粒口感不要剁成肉泥；老油條碎在上桌前最後一刻撒上或單獨擺放，能確保入口時每一口都享有極致酥脆的層次。

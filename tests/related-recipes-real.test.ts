@@ -18,12 +18,16 @@ const related = relatedRecipeIds(published);
 describe("真實菜譜的相關菜譜", () => {
   it("宮保蝦仁的相關菜譜有共用蝦仁的菜", () => {
     const top = related.get("kung-pao-shrimp")!;
-    for (const id of [
+    const shrimpDishes = new Set([
       "tofu-shrimp",
       "shrimp-scrambled-eggs",
       "xo-sauce-seafood-stir-fry",
-    ]) {
-      assert.ok(top.includes(id), `${id} 應在宮保蝦仁的相關菜譜`);
+      "shrimp-stuffed-tofu",
+      "lettuce-shrimp-mince",
+    ]);
+    assert.ok(top.length > 0, "宮保蝦仁應有相關菜譜");
+    for (const id of top) {
+      assert.ok(shrimpDishes.has(id), `${id} 應在共用蝦仁的菜名單中`);
     }
   });
 

@@ -1,0 +1,93 @@
+title: 紅燒家常豆腐
+summary: 厚切板豆腐入油鍋慢火煎至兩面金黃微焦硬挺，爆香蒜末、生薑絲與肉絲，倒入豆腐塊與甘醇醬油、糖、白胡椒煨煮入味，青蔥段與辣椒絲收汁勾薄芡，豆腐外酥內軟、吸飽鹹甜肉汁，經典家常代表菜。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean, meat]
+classificationReason: 以板豆腐切片煎黃為主角，搭配少許豬肉絲與辛香料紅燒，屬於蛋豆與肉類並陳料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [紅燒豆腐, 家常豆腐, 板豆腐, 熱炒, 家常便飯]
+aliases: [家常煎豆腐, 肉絲紅燒豆腐]
+ingredients:
+  - name: 板豆腐
+    amount:
+      value: 300
+      unit: g
+    note: 切 1 公分厚、3 公分寬方塊片
+  - name: 豬肉絲
+    amount:
+      value: 50
+      unit: g
+    note: 切細絲增肉香
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 切青蔥段
+  - name: 生薑
+    amount:
+      value: 10
+      unit: g
+    note: 切細薑絲
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 斜切薄片
+  - name: 醬油
+    amount:
+      value: 25
+      unit: ml
+    note: 紅燒調色調味
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 8
+      unit: g
+    note: 約 1 茶匙
+    group: 調味
+  - name: 水
+    amount:
+      value: 100
+      unit: ml
+    note: 煨煮豆腐湯水
+    group: 調味
+  - name: 太白粉水
+    amount:
+      value: 15
+      unit: ml
+    note: 勾薄芡
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋提味
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 30
+      unit: ml
+    note: 煎豆腐與炒菜油
+    group: 調味
+steps:
+  - text: 板豆腐切成 1 公分厚、3 公分均勻方塊片，以紙巾輕壓吸乾表面水氣；豬肉切細絲；生薑切絲、青蔥切段、紅辣椒切斜片備用。
+    image:
+      src: ./step-1.webp
+      alt: 板豆腐切成 1 公分厚、3 公分均勻方塊片，以紙巾輕壓吸乾表面水氣；豬肉切細絲；生薑切絲、青蔥切段、
+  - text: 平底鍋倒入植物油加熱，放入板豆腐片以中小火慢煎約 3 分鐘，翻面續煎至兩面皆呈現金黃微焦微酥外皮，盛起備用。
+    image:
+      src: ./step-2.webp
+      alt: 平底鍋倒入植物油加熱，放入板豆腐片以中小火慢煎約 3 分鐘，翻面續煎至兩面皆呈現金黃微焦微酥外皮，盛
+  - text: 原鍋留少許底油，放入薑絲與紅辣椒片爆香，加入豬肉絲翻炒至肉色轉白散開。
+  - text: 倒回煎好的金黃豆腐塊，加入醬油、細砂糖與水煮滾，轉小火加蓋煨煮 3 分鐘讓豆腐充分吸附醬汁，放入蔥段，淋入太白粉水勾薄芡收汁，起鍋淋上香油翻勻即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的紅燒家常豆腐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 板豆腐煎之前用紙巾吸乾水分，下鍋就不會油爆，且能迅速煎出焦香金黃硬皮；煨煮時小火燜三分鐘讓豆腐孔隙充分吸收醬汁，咬下去多汁入味。

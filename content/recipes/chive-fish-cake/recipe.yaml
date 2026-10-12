@@ -1,0 +1,75 @@
+title: 韭菜花炒甜不辣
+summary: 脆嫩韭菜花切段，魚漿鮮香甜不辣切條滾水輕燙去油脂，熱鍋爆香蒜末，投入韭菜花與甜不辣大火快炒，加入紅辣椒絲、鹽、米酒與糖快速燴炒入味，甜不辣軟彈入味、韭菜花清甜爽脆，色彩繽紛開胃。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood, vegetable]
+classificationReason: 以甜不辣魚漿製品與韭菜花同鍋快炒為海鮮與蔬菜雙主角，屬於海鮮與蔬菜並陳料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 12
+tags: [韭菜花, 甜不辣, 熱炒, 家常菜, 快炒]
+aliases: [韭菜花炒魚板, 甜不辣炒韭菜花]
+ingredients:
+  - name: 韭菜花
+    amount:
+      value: 150
+      unit: g
+    note: 洗淨摘除老梗切 4 公分長段
+  - name: 甜不辣
+    amount:
+      value: 200
+      unit: g
+    note: 條狀甜不辣斜切厚片或切條
+  - name: 大蒜
+    amount:
+      value: 10
+      unit: g
+    note: 去皮切蒜碎
+  - name: 紅辣椒
+    amount:
+      value: 10
+      unit: g
+    note: 去籽切細絲
+  - name: 植物油
+    amount:
+      value: 20
+      unit: ml
+    note: 快炒油
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 2
+      unit: g
+    note: 約半茶匙
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 3
+      unit: g
+    note: 少許提鮮中和
+    group: 調味
+steps:
+  - text: 韭菜花洗淨摘除尾端粗老纖維，切成 4 公分長段；甜不辣斜切成適口條狀；大蒜切末、紅辣椒去籽切細絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 韭菜花洗淨摘除尾端粗老纖維，切成 4 公分長段；甜不辣斜切成適口條狀；大蒜切末、紅辣椒去籽切細絲備用
+  - text: 起一小鍋滾水，將甜不辣片放入滾水中快燙 30 秒去除表面多餘油脂，撈起瀝乾水分備用。
+  - text: 炒鍋加熱倒入植物油，放入蒜末小火爆出香氣，倒入甜不辣條煸炒 1 分鐘至表面微焦香金黃。
+    image:
+      src: ./step-3.webp
+      alt: 炒鍋加熱倒入植物油，放入蒜末小火爆出香氣，倒入甜不辣條煸炒 1 分鐘至表面微焦香金黃。
+  - text: 倒入韭菜花段與紅辣椒絲轉大火快速翻炒 1 分鐘，加入鹽、細砂糖與米酒嗆炒入味，炒至韭菜花翠綠爽脆即可盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的韭菜花炒甜不辣
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 甜不辣先用滾水快燙能洗去炸油殘留的油耗味，炒起來更清爽不油膩；韭菜花下鍋後大火快炒一分鐘斷生即可，維持最鮮甜爽脆的咬勁。

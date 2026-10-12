@@ -1,0 +1,88 @@
+title: 豆乾肉絲
+summary: 五香黃豆乾切細絲以少許熱油煸煎至表皮微金黃微焦香，原鍋爆香蔥段與辣椒醬，投入鮮嫩豬肉絲滑炒散開，倒回豆乾絲調入甘醇醬油、細糖與少許清水翻炒收汁，豆乾軟Ｑ微韌、肉絲滑嫩鹹甜，經典便當家常熱炒。
+servings: 3
+category: 非湯料理
+dishKinds: [meat, egg-bean]
+classificationReason: 以豆乾絲與豬肉絲同鍋熱炒為蛋豆與肉類雙主角，屬於蛋豆與肉類並陳料理。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [豆乾, 肉絲, 家常菜, 便當菜, 熱炒]
+aliases: [家常豆乾肉絲, 醬炒豆乾肉絲]
+ingredients:
+  - name: 五香豆乾
+    amount:
+      value: 150
+      unit: g
+    note: 約 4 塊橫切薄片再切細絲
+  - name: 豬肉絲
+    amount:
+      value: 100
+      unit: g
+    note: 豬里肌或梅花肉切細絲
+  - name: 青蔥
+    amount:
+      value: 2
+      unit: 根
+    note: 切 3 公分長段
+  - name: 紅辣椒
+    amount:
+      value: 1
+      unit: 根
+    note: 切細斜絲
+  - name: 醬油
+    amount:
+      value: 20
+      unit: ml
+    note: 約 1.5 大匙
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 8
+      unit: g
+    note: 約 1.5 茶匙提鮮
+    group: 調味
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 約 1 大匙
+    group: 調味
+  - name: 水
+    amount:
+      value: 30
+      unit: ml
+    note: 煨煮收汁
+    group: 調味
+  - name: 香油
+    amount:
+      value: 5
+      unit: ml
+    note: 起鍋提味
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 30
+      unit: ml
+    note: 炒菜油
+    group: 調味
+steps:
+  - text: 豆乾先橫剖兩刀成薄片再順紋切成細絲；豬肉切細絲；青蔥洗淨切 3 公分長段、紅辣椒切細絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 豆乾先橫剖兩刀成薄片再順紋切成細絲；豬肉切細絲；青蔥洗淨切 3 公分長段、紅辣椒切細絲備用。
+  - text: 炒鍋倒入植物油加熱，放入豆乾絲以中火慢煎煸炒約 2 分鐘，至豆乾絲表面呈現微金黃微韌起微皺褶後撈出瀝油。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋倒入植物油加熱，放入豆乾絲以中火慢煎煸炒約 2 分鐘，至豆乾絲表面呈現微金黃微韌起微皺褶後撈出瀝
+  - text: 原鍋留少許底油，放入青蔥段與紅辣椒絲小火爆香，加入豬肉絲大火翻炒至肉色轉白散開。
+  - text: 倒回煸好的豆乾絲，加入醬油、細砂糖、米酒與清水，轉中大火快速翻炒約 2 分鐘讓醬汁收乾緊裹食材，起鍋前滴入香油翻勻盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的豆乾肉絲
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 豆乾絲先入油鍋中小火煸炒至表面微起細泡變金黃，豆乾質地會變得外韌內嫩且更容易吸附醬汁；最後大火把醬汁收乾收亮，香氣最足。

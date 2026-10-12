@@ -1,0 +1,106 @@
+title: 砂鍋魚頭
+summary: 肥美新鮮大鰱魚頭沾薄地瓜粉炸至金黃酥香，砂鍋中以蒜末與爆香扁魚乾為底，鋪滿甘甜大白菜、香菇、腐竹、金針菇與熟筍片，擺入炸魚頭注入高湯細火慢燉，白菜釋放自然清甜、魚肉鮮濃軟嫩、湯頭濃郁甘醇。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: 砂鍋魚頭為經典大鍋燉湯，湯品不設料理主角與配餐角色。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [砂鍋魚頭, 魚頭, 湯品, 年菜, 家常名菜]
+aliases: [砂鍋鰱魚頭, 台式砂鍋魚頭]
+ingredients:
+  - name: 鰱魚頭
+    amount:
+      value: 1
+      unit: 個
+    note: 約 700 g 洗淨剖半沾薄地瓜粉酥炸
+  - name: 大白菜
+    amount:
+      value: 400
+      unit: g
+    note: 洗淨手撕大片墊底
+  - name: 乾香菇
+    amount:
+      value: 4
+      unit: 朵
+    note: 泡發切厚片
+  - name: 腐竹
+    amount:
+      value: 40
+      unit: g
+    note: 溫水泡軟切段滾水燙去油
+  - name: 扁魚乾
+    amount:
+      value: 15
+      unit: g
+    note: 約 3 片油炸酥脆壓碎增甘鮮
+  - name: 金針菇
+    amount:
+      value: 100
+      unit: g
+    note: 去根部分撕小束
+  - name: 青蒜
+    amount:
+      value: 30
+      unit: g
+    note: 切青蒜絲飾頂
+  - name: 大蒜
+    amount:
+      value: 20
+      unit: g
+    note: 去皮切蒜碎
+  - name: 生薑
+    amount:
+      value: 15
+      unit: g
+    note: 切薑片
+  - name: 高湯
+    amount:
+      value: 1200
+      unit: ml
+    note: 大骨高湯或清水
+  - name: 米酒
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 醬油
+    amount:
+      value: 30
+      unit: ml
+    note: 約 2 大匙
+    group: 調味
+  - name: 鹽
+    amount:
+      value: 5
+      unit: g
+    note: 調整湯底鹹度
+    group: 調味
+  - name: 白胡椒粉
+    amount:
+      value: 2
+      unit: g
+    note: 少許提辛香
+    group: 調味
+steps:
+  - text: 鰱魚頭刮洗乾淨擦乾水分，表面均勻拍上一層薄地瓜粉；大白菜手撕成大片、乾香菇泡軟切厚片、腐竹泡軟切段滾水汆燙撈起；大蒜切碎、青蒜切絲備用。
+    image:
+      src: ./step-1.webp
+      alt: 鰱魚頭刮洗乾淨擦乾水分，表面均勻拍上一層薄地瓜粉；大白菜手撕成大片、乾香菇泡軟切厚片、腐竹泡軟切段滾
+  - text: 油鍋燒熱，放入拍粉魚頭中火油炸約 6 分鐘至兩面表皮金黃酥脆硬挺，撈起瀝乾油分備用。
+    image:
+      src: ./step-2.webp
+      alt: 油鍋燒熱，放入拍粉魚頭中火油炸約 6 分鐘至兩面表皮金黃酥脆硬挺，撈起瀝乾油分備用。
+  - text: 取砂鍋熱鍋加少許油，爆香蒜末、薑片與扁魚乾至香氣四溢，鋪入大白菜、香菇、腐竹與金針菇，將炸金黃的魚頭擺在蔬菜上方。
+  - text: 倒入高湯、米酒、醬油、鹽與白胡椒粉煮滾，加蓋轉小火慢燉 25 分鐘讓魚香與蔬菜鮮甜充分融合，起鍋前撒上青蒜絲即可整鍋上桌。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的砂鍋魚頭
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 扁魚乾先以少許油炸酥壓碎下鍋爆香，是台式砂鍋魚頭湯底濃郁甘醇的秘密武器；魚頭炸得夠透酥香，久煮也不會散爛且能釋出濃濃膠質。

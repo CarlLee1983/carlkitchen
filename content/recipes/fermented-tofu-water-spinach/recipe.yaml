@@ -1,0 +1,64 @@
+title: 腐乳空心菜
+summary: 清脆鮮嫩空心菜洗淨切段，甘醇手工豆腐乳以米酒、細砂糖充分研磨調成香濃腐乳醬汁，熱油爆香蒜末，投入空心菜大火狂炒，淋入腐乳醬汁翻拋均勻，菜葉翠綠油亮、口感爽脆、腐乳甘醇厚實、極致下飯。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: 以新鮮空心菜為唯一蔬菜主角，調入腐乳醬汁大火快炒，屬於純蔬菜料理。
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 10
+tags: [空心菜, 豆腐乳, 熱炒, 家常青菜, 素食友善]
+aliases: [豆腐乳炒空心菜, 腐乳炒空心菜]
+ingredients:
+  - name: 空心菜
+    amount:
+      value: 250
+      unit: g
+    note: 洗淨摘去老梗切 5 公分長段
+  - name: 豆腐乳
+    amount:
+      value: 30
+      unit: g
+    note: 約 1.5 塊白腐乳或辣腐乳研細
+  - name: 大蒜
+    amount:
+      value: 15
+      unit: g
+    note: 去皮切蒜碎
+  - name: 米酒
+    amount:
+      value: 15
+      unit: ml
+    note: 調開豆腐乳
+    group: 調味
+  - name: 細砂糖
+    amount:
+      value: 5
+      unit: g
+    note: 約 1 茶匙中和鹹度
+    group: 調味
+  - name: 植物油
+    amount:
+      value: 25
+      unit: ml
+    note: 炒青菜油
+    group: 調味
+steps:
+  - text: 空心菜洗淨瀝乾水分，梗葉分別切成 5 公分長段；大蒜切碎；豆腐乳放入小碗中，加入米酒與細砂糖徹底壓碎攪勻成細滑腐乳醬汁備用。
+    image:
+      src: ./step-1.webp
+      alt: 空心菜洗淨瀝乾水分，梗葉分別切成 5 公分長段；大蒜切碎；豆腐乳放入小碗中，加入米酒與細砂糖徹底壓碎
+  - text: 炒鍋加熱倒入植物油，放入蒜碎小火爆香，先倒入空心菜菜梗大火快速翻炒 20 秒。
+    image:
+      src: ./step-2.webp
+      alt: 炒鍋加熱倒入植物油，放入蒜碎小火爆香，先倒入空心菜菜梗大火快速翻炒 20 秒。
+  - text: 再放入空心菜菜葉，淋入調勻的腐乳醬汁，轉大火迅速翻拌約 30 秒至菜葉變軟翠綠油亮，立即熄火盛盤。
+hero:
+  src: ./hero.webp
+  alt: 盛盤完成的腐乳空心菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 料理食材整齊擺放於木砧板上
+tip: 豆腐乳先用少許米酒和糖磨碎化開，下鍋時才能均勻裹附在每一片菜葉上；炒青菜時先下菜梗再下菜葉大火快炒，能保證整盤青菜熟度一致且葉色碧綠如茵。
