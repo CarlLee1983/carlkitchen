@@ -39,3 +39,8 @@ sections:
     urls:
       - https://cooksillustrated.com/how_tos/6581-blooming-in-oil-for-flavor
       - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11941942/
+figures:
+  - id: peanut-frying
+    urls:
+      - https://thewoksoflife.com/wok-fried-peanuts/
+      - https://omnivorescookbook.com/szechuan-spicy-peanuts/

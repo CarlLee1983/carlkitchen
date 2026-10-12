@@ -1,5 +1,6 @@
 import { z } from "astro/zod";
 import { httpUrl } from "./http-url.ts";
+import { CONTENT_ID_PATTERN } from "./content-id.ts";
 
 const nonEmpty = z.string().trim().min(1);
 
@@ -10,12 +11,39 @@ const nonEmpty = z.string().trim().min(1);
 const topicSourceSchema = z
   .object({
     sources: z.array(z.object({ title: nonEmpty, url: httpUrl })),
+    figures: z
+      .array(
+        z.object({
+          id: nonEmpty.regex(CONTENT_ID_PATTERN),
+          urls: z.array(httpUrl).min(1),
+        }),
+      )
+      .optional(),
     sections: z.array(
       z.object({ heading: nonEmpty, urls: z.array(httpUrl).min(1) }),
     ),
   })
   .superRefine((record, context) => {
     const approved = new Set(record.sources.map((source) => source.url));
+    record.figures?.forEach((figure, figureIndex) => {
+      if (
+        record.figures!.findIndex(({ id }) => id === figure.id) !== figureIndex
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["figures", figureIndex, "id"],
+          message: `互動圖 ${figure.id} 的來源對照重複。`,
+        });
+      }
+      figure.urls.forEach((url, urlIndex) => {
+        if (!approved.has(url))
+          context.addIssue({
+            code: "custom",
+            path: ["figures", figureIndex, "urls", urlIndex],
+            message: `互動圖對照的網址 ${url} 沒有列在 sources。`,
+          });
+      });
+    });
     record.sections.forEach((section, sectionIndex) => {
       section.urls.forEach((url, urlIndex) => {
         if (!approved.has(url)) {

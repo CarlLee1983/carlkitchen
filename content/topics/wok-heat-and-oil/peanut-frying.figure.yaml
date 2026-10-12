@@ -1,0 +1,43 @@
+alt: 等角炒鍋裡的花生浸在油中；帶膜做法可見油面的小泡與蒸氣，去膜比較顯示花生表面顏色。
+caption: 帶膜花生的炸製過程，約 7 到 12 分鐘，依顆粒大小而變；其他階段在滑桿上的位置僅供切換畫面，不代表固定發生時刻。去膜花生只比較熟度顏色，火力和時間不沿用帶膜做法。
+duration: 12
+keyStage: colour
+variants:
+  - id: skin
+    label: 帶膜
+  - id: peeled
+    label: 去膜
+    comparisonOnly: true
+stages:
+  - id: start
+    start: 0
+    end: 0
+    label: 冷油下鍋
+    timeLabel: 開始
+    readout: 帶膜花生放進冷油，油剛好蓋過花生，再開小火慢炸。
+  - id: bubbles
+    start: 1
+    end: 6
+    label: 小泡與蒸氣
+    timeLabel: 加熱時
+    readout: 帶膜花生加熱時，油裡冒小泡與蒸氣，並有細小的劈啪聲。
+  - id: colour
+    start: 7
+    end: 12
+    label: 觀察轉色
+    timeLabel: 帶膜花生約 7 到 12 分鐘
+    readout:
+      skin: 帶膜花生的薄膜轉深紅褐，劈啪聲停下來。
+      peeled: 去膜花生先用中火加熱，到滋滋作響後轉中小火；表面淡黃就撈起。
+  - id: rest
+    start: 10
+    end: 12
+    label: 關火餘溫
+    timeLabel: 最後 1 到 2 分鐘
+    readout: 帶膜花生最後 1 到 2 分鐘可先關火，靠熱油餘溫炸完。
+  - id: cool
+    start: 12
+    end: 12
+    label: 撈起放涼
+    timeLabel: 起鍋後
+    readout: 撈起後放涼，完全冷卻才會酥脆。

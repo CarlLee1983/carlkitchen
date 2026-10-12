@@ -12,3 +12,5 @@ playwright-report
 .scratch
 index.html
 PROTOTYPE_SPEC.md
+src/vendor/anatomy/iso-kit.ts
+src/vendor/anatomy/iso.css

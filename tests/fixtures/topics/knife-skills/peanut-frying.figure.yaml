@@ -1,0 +1,37 @@
+alt: 固定資料：等角炒鍋裡的花生浸在油面，鍋邊有小氣泡，表示薄膜轉色階段。
+caption: 固定資料：炸花生從冷油到放涼的階段。
+duration: 12
+keyStage: colour
+variants:
+  - id: skin
+    label: 帶膜
+  - id: peeled
+    label: 去膜
+stages:
+  - id: start
+    start: 0
+    end: 0
+    label: 冷油下鍋
+    readout: 固定資料：冷油蓋過花生，開小火。
+  - id: bubbles
+    start: 1
+    end: 6
+    label: 小泡與蒸氣
+    readout: 固定資料：冒小泡與蒸氣，聽見劈啪聲。
+  - id: colour
+    start: 7
+    end: 12
+    label: 觀察轉色
+    readout:
+      skin: 固定資料：帶膜花生的薄膜轉深紅褐，劈啪聲停。
+      peeled: 固定資料：去膜花生表面轉淡黃。
+  - id: rest
+    start: 10
+    end: 12
+    label: 關火餘溫
+    readout: 固定資料：最後 1 到 2 分鐘關火，靠餘溫完成。
+  - id: cool
+    start: 12
+    end: 12
+    label: 撈起放涼
+    readout: 固定資料：放涼後才酥脆。

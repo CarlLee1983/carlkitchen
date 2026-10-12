@@ -43,6 +43,8 @@ export default defineConfig({
     },
   },
   markdown: {
+    // figure 交給專題 hast 外掛解析；若先經 Shiki，語言標記會被改成 plaintext。
+    syntaxHighlight: { type: "shiki", excludeLangs: ["math", "figure"] },
     processor: satteri({
       hastPlugins: [
         topicMarkdown({

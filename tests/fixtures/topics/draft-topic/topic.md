@@ -11,3 +11,7 @@ references: []
 ---
 
 草稿內文。
+
+```figure
+peanut-frying
+```

@@ -1,6 +1,9 @@
 import { relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { HastNode, HastPluginEntry, HastVisitorContext } from "satteri";
+import { CONTENT_ID_PATTERN } from "../content/content-id.ts";
+import { readFigure } from "../content/figure-schema.ts";
+import { renderPeanutFrying } from "../figures/peanut-frying.ts";
 
 const BODY_IMAGE_SIZES = "(min-width: 49rem) 46rem, calc(100vw - 3rem)";
 
@@ -76,8 +79,32 @@ export function topicMarkdown({
         }
       },
       element: {
-        filter: ["img"],
+        filter: ["img", "pre"],
         visit(node, context) {
+          if (node.tagName === "pre") {
+            const code = node.children[0];
+            if (
+              code?.type !== "element" ||
+              code.tagName !== "code" ||
+              !code.properties.className?.includes("language-figure")
+            )
+              return;
+            const figureId = context.textContent(code).trim();
+            if (!CONTENT_ID_PATTERN.test(figureId))
+              throw new Error(
+                `專題 ${parts[0]} 的互動圖識別值無效：${figureId}`,
+              );
+            const data = readFigure(root, parts[0]!, figureId);
+            if (figureId !== "peanut-frying")
+              throw new Error(
+                `專題 ${parts[0]} 的互動圖 ${figureId} 缺少繪圖模組`,
+              );
+            context.replaceNode(node, {
+              type: "raw",
+              value: renderPeanutFrying(data),
+            });
+            return;
+          }
           context.setProperty(node, "layout", "constrained");
           context.setProperty(node, "sizes", BODY_IMAGE_SIZES);
           context.setProperty(node, "loading", "lazy");

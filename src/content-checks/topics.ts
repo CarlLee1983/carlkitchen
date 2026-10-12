@@ -1,8 +1,10 @@
 import { basename, join } from "node:path";
+import { readdirSync } from "node:fs";
 import { markdownToHast, type HastNode } from "satteri";
 import { z } from "astro/zod";
 import { CONTENT_ID_PATTERN } from "../content/content-id.ts";
 import { createTopicSchema } from "../content/topic-schema.ts";
+import { readFigure } from "../content/figure-schema.ts";
 import { parseTopicSourceRecord } from "../content/topic-sources.ts";
 import { homeTopicIssues } from "../utils/home-topics.ts";
 import { checkHeroAlt, checkImageFile } from "./images.ts";
@@ -15,7 +17,7 @@ import {
   readYaml,
 } from "./io.ts";
 import type { Issue } from "./issue.ts";
-import { sourceCore } from "./leaks.ts";
+import { normalizeText, sourceCore, type FigureFingerprint } from "./leaks.ts";
 
 const schema = createTopicSchema(z.string());
 
@@ -32,6 +34,7 @@ export interface TopicCheckOptions {
 interface SourceRecord {
   approvedUrls: string[];
   sectionHeadings: string[];
+  figures: Map<string, string[]>;
 }
 
 interface Heading {
@@ -144,6 +147,9 @@ function readSourceRecords(
         records.set(id, {
           approvedUrls,
           sectionHeadings: result.data.sections.map(({ heading }) => heading),
+          figures: new Map(
+            result.data.figures?.map(({ id, urls }) => [id, urls]) ?? [],
+          ),
         });
         urls.push(...approvedUrls);
       } else {
@@ -328,6 +334,133 @@ async function checkBodyImages(
   return issues;
 }
 
+/** 與 Markdown 繪圖外掛相同，僅把 language-figure 的程式碼區塊當作互動圖引用。 */
+function bodyFigureIds(body: string): string[] {
+  const ids: string[] = [];
+  const visit = (node: HastNode) => {
+    if (node.type === "element" && node.tagName === "pre") {
+      const code = node.children[0];
+      if (
+        code?.type === "element" &&
+        code.tagName === "code" &&
+        code.properties.className?.includes("language-figure")
+      ) {
+        const value = code.children
+          .map((child) => (child.type === "text" ? child.value : ""))
+          .join("")
+          .trim();
+        ids.push(value);
+      }
+    }
+    if ("children" in node) node.children.forEach(visit);
+  };
+  visit(markdownToHast(body));
+  return ids;
+}
+
+function checkFigures(
+  topicsDir: string,
+  id: string,
+  body: string,
+  record: SourceRecord | undefined,
+  published: boolean,
+): {
+  issues: Issue[];
+  draftTexts: string[];
+  draftLabels: string[];
+  publishedTexts: string[];
+  publishedLabels: string[];
+  fingerprints: Omit<FigureFingerprint, "topic">[];
+} {
+  const issues: Issue[] = [];
+  const draftTexts: string[] = [];
+  const draftLabels: string[] = [];
+  const publishedTexts: string[] = [];
+  const publishedLabels: string[] = [];
+  const fingerprints: Omit<FigureFingerprint, "topic">[] = [];
+  const cited = new Set(bodyFigureIds(body));
+  const topicDir = join(topicsDir, id);
+  for (const name of readdirSync(topicDir).filter((name) =>
+    name.endsWith(".figure.yaml"),
+  )) {
+    const figureId = name.slice(0, -".figure.yaml".length);
+    if (!cited.has(figureId))
+      issues.push({
+        topic: id,
+        file: join(topicDir, name),
+        message: `孤兒互動圖資料檔：${figureId} 沒有被正文引用。`,
+      });
+  }
+  for (const figureId of cited) {
+    if (!CONTENT_ID_PATTERN.test(figureId)) {
+      issues.push({
+        topic: id,
+        file: join(topicDir, "topic.md"),
+        message: `互動圖識別值無效：${figureId}。`,
+      });
+      continue;
+    }
+    if (published && !record?.figures.has(figureId))
+      issues.push({
+        topic: id,
+        file: join(topicDir, "topic.md"),
+        field: "figures",
+        message: `互動圖 ${figureId} 沒有來源對照。`,
+      });
+    if (
+      !published &&
+      !readdirSync(topicDir).includes(`${figureId}.figure.yaml`)
+    )
+      continue;
+    try {
+      const data = readFigure(topicsDir, id, figureId);
+      fingerprints.push({
+        alt: data.alt,
+        caption: data.caption,
+        duration: data.duration,
+        keyStage: data.keyStage,
+        stages: JSON.stringify(data.stages),
+        variants: data.variants.map(({ id, label }) => ({ id, label })),
+      });
+      const labels = [
+        ...data.variants.map(({ label }) => label),
+        ...data.stages.map(({ label }) => label),
+        ...data.stages.flatMap(({ timeLabel }) =>
+          timeLabel ? [timeLabel] : [],
+        ),
+      ];
+      const texts = [
+        data.alt,
+        data.caption,
+        ...data.stages.flatMap(({ readout }) =>
+          typeof readout === "string" ? [readout] : Object.values(readout),
+        ),
+      ];
+      if (published) publishedLabels.push(...labels);
+      if (published) publishedTexts.push(...texts);
+      if (!published) {
+        draftLabels.push(...labels);
+        draftTexts.push(...texts);
+      }
+    } catch (error) {
+      if (published)
+        issues.push({
+          topic: id,
+          file: join(topicDir, `${figureId}.figure.yaml`),
+          message: (error as Error).message,
+        });
+    }
+  }
+  return {
+    issues,
+    draftTexts,
+    draftLabels,
+    publishedTexts,
+    publishedLabels,
+    fingerprints,
+  };
+}
+
 /** 已發布專題的來源紀錄：存在、至少一筆核准來源，且段落對照涵蓋內文每個 `##` 小節。 */
 function checkSourceRecord(
   id: string,
@@ -402,6 +535,9 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
   issues: Issue[];
   draftIds: string[];
   sourceUrls: string[];
+  draftFigureTexts: { topic: string; text: string }[];
+  draftFigureLabels: { topic: string; text: string }[];
+  draftFigureFingerprints: FigureFingerprint[];
 }> {
   const ids = listDirectories(input.topicsDir);
   if (!ids) {
@@ -414,11 +550,19 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
       ],
       draftIds: [],
       sourceUrls: [],
+      draftFigureTexts: [],
+      draftFigureLabels: [],
+      draftFigureFingerprints: [],
     };
   }
   const sources = readSourceRecords(input.topicSourcesDir, new Set(ids));
   const issues = [...sources.issues];
   const draftIds: string[] = [];
+  const draftFigureTexts: { topic: string; text: string }[] = [];
+  const draftFigureLabels: { topic: string; text: string }[] = [];
+  const publishedFigureContent: string[] = [];
+  const draftFigureFingerprints: FigureFingerprint[] = [];
+  const publishedFigureFingerprints = new Set<string>();
   const topics = ids.map((id) => ({ id, ...readTopic(input.topicsDir, id) }));
   issues.push(
     ...homeTopicIssues(
@@ -441,6 +585,36 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
     const file = join(input.topicsDir, id, "topic.md");
     issues.push(...topicIssues);
     if (!topic || body === undefined) continue;
+    const record = sources.records.get(id);
+    const figures = checkFigures(
+      input.topicsDir,
+      id,
+      body,
+      record,
+      !topic.draft,
+    );
+    issues.push(...figures.issues);
+    draftFigureTexts.push(
+      ...figures.draftTexts.map((text) => ({ topic: id, text })),
+    );
+    draftFigureLabels.push(
+      ...figures.draftLabels.map((text) => ({ topic: id, text })),
+    );
+    publishedFigureContent.push(
+      ...figures.publishedTexts,
+      ...figures.publishedLabels,
+    );
+    if (topic.draft)
+      draftFigureFingerprints.push(
+        ...figures.fingerprints.map((fingerprint) => ({
+          topic: id,
+          ...fingerprint,
+        })),
+      );
+    else
+      figures.fingerprints.forEach((fingerprint) =>
+        publishedFigureFingerprints.add(JSON.stringify(fingerprint)),
+      );
     if (topic.draft) {
       draftIds.push(id);
       continue;
@@ -452,7 +626,6 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
       issues.push(...(await checkHero(input.topicsDir, id, topic.hero)));
     }
     const sourceFile = join(input.topicSourcesDir, `${id}.yaml`);
-    const record = sources.records.get(id);
     if (!sources.fileIds.has(id)) {
       issues.push({
         topic: id,
@@ -466,5 +639,23 @@ export async function checkTopics(input: TopicCheckOptions): Promise<{
       issues.push(...checkReferences(id, file, topic, record.approvedUrls));
     }
   }
-  return { issues, draftIds, sourceUrls: sources.urls };
+  const isPublishedFigureText = (text: string) =>
+    publishedFigureContent.some((publishedText) =>
+      normalizeText(publishedText).includes(normalizeText(text)),
+    );
+  return {
+    issues,
+    draftIds,
+    sourceUrls: sources.urls,
+    draftFigureTexts: draftFigureTexts.filter(
+      ({ text }) => !isPublishedFigureText(text),
+    ),
+    draftFigureLabels: draftFigureLabels.filter(
+      ({ text }) => !isPublishedFigureText(text),
+    ),
+    draftFigureFingerprints: draftFigureFingerprints.filter(
+      ({ topic, ...fingerprint }) =>
+        !publishedFigureFingerprints.has(JSON.stringify(fingerprint)),
+    ),
+  };
 }

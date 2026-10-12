@@ -204,7 +204,14 @@ export async function runContentChecks(
             .filter(({ entry }) => entry && !entry.draft)
             .map(({ id }) => id),
         })
-      : { issues: [], draftIds: [], sourceUrls: [] };
+      : {
+          issues: [],
+          draftIds: [],
+          sourceUrls: [],
+          draftFigureTexts: [],
+          draftFigureLabels: [],
+          draftFigureFingerprints: [],
+        };
   issues.push(...topicCheck.issues);
 
   // 節氣：24 筆齊全、schema、來源對照，以及當令食材只能指向已發布的食材條目
@@ -256,6 +263,9 @@ export async function runContentChecks(
         draftIds: recipes.filter(({ raw }) => isDraft(raw)).map(({ id }) => id),
         draftIngredientIds: ingredientCheck.draftIds,
         draftTopicIds: topicCheck.draftIds,
+        draftFigureTexts: topicCheck.draftFigureTexts,
+        draftFigureLabels: topicCheck.draftFigureLabels,
+        draftFigureFingerprints: topicCheck.draftFigureFingerprints,
         sourceUrls: [
           ...sourceUrls,
           ...ingredientCheck.sourceUrls,
