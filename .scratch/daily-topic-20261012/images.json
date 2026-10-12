@@ -1,0 +1,34 @@
+[
+  {
+    "name": "egg-preparation.webp",
+    "bytes": 98862,
+    "sha256": "67c34ec23d626ecc8e0e396c5e322384274e74266bc05127cc28cef0d04cebb8",
+    "attempts": 1,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "name": "hero.webp",
+    "bytes": 306812,
+    "sha256": "4fbaf372a8671335847ec791044de75a96895428de3233f055a59bc1c270d6bd",
+    "attempts": 1,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "name": "pork-tofu-stage.webp",
+    "bytes": 263454,
+    "sha256": "22e839704a9c9da90190613860f9cae84a4754130899a486158701e898f122c6",
+    "attempts": 1,
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "name": "radish-forms.webp",
+    "bytes": 131530,
+    "sha256": "d4e094bf051d05ff51345095dbacab8bf7e5b4e0995f18ba6a1fb239bc1bec70",
+    "attempts": 1,
+    "width": 1536,
+    "height": 1024
+  }
+]
