@@ -2,6 +2,9 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { pathToFileURL } from "node:url";
 import { resolve } from "node:path";
+import { copyFileSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { createSatteriMarkdownProcessor } from "@astrojs/markdown-satteri";
 import { topicMarkdown } from "../src/markdown/topic-markdown.ts";
 
@@ -23,6 +26,73 @@ const render = async (
   ).code;
 
 describe("專題 Markdown 編排", () => {
+  it("figure 區塊輸出關鍵狀態、完整階段與可索引圖說", async () => {
+    const html = await render(
+      "開場文字。\n\n```figure\npeanut-frying\n```",
+      false,
+      `${topicsDir}/knife-skills/topic.md`,
+    );
+    assert.match(html, /<figure[^>]*data-topic-figure="peanut-frying"/);
+    assert.match(html, /<svg[^>]*role="img"[^>]*aria-label="[^"]+"/);
+    assert.match(html, /<ol[^>]*data-pagefind-ignore/);
+    assert.match(html, /<p class="figure-readout" data-pagefind-ignore>/);
+    assert.match(html, /<div data-pagefind-ignore="all"><svg/);
+    assert.match(html, /<figcaption>固定資料[^<]+<\/figcaption>/);
+    assert.match(html, /data-stage="colour"/);
+    assert.equal((html.match(/<li/g) ?? []).length, 5);
+  });
+
+  it("figure 缺資料、缺繪圖模組或資料不符 schema 時指出專題和圖識別值", async () => {
+    await assert.rejects(
+      render(
+        "```figure\nmissing-figure\n```",
+        false,
+        `${topicsDir}/knife-skills/topic.md`,
+      ),
+      /專題 knife-skills 的互動圖 missing-figure 缺少資料檔/,
+    );
+    const root = mkdtempSync(join(tmpdir(), "topic-figure-"));
+    try {
+      const topic = join(root, "sample");
+      const valid = resolve(
+        "tests/fixtures/topics/knife-skills/peanut-frying.figure.yaml",
+      );
+      const { mkdirSync } = await import("node:fs");
+      mkdirSync(topic);
+      copyFileSync(valid, join(topic, "unknown-figure.figure.yaml"));
+      const localRenderer = await createSatteriMarkdownProcessor({
+        syntaxHighlight: false,
+        hastPlugins: [topicMarkdown({ topicsDir: root })],
+      });
+      const localRender = async (id: string) =>
+        localRenderer.render(`\`\`\`figure\n${id}\n\`\`\``, {
+          fileURL: pathToFileURL(join(topic, "topic.md")),
+          frontmatter: { editorialLayout: false },
+        });
+      await assert.rejects(
+        localRender("unknown-figure"),
+        /專題 sample 的互動圖 unknown-figure 缺少繪圖模組/,
+      );
+      writeFileSync(
+        join(topic, "peanut-frying.figure.yaml"),
+        "alt: 缺少其他欄位\n",
+      );
+      await assert.rejects(
+        localRender("peanut-frying"),
+        /專題 sample 的互動圖 peanut-frying 資料檔不符 schema/,
+      );
+    } finally {
+      rmSync(root, { recursive: true, force: true });
+    }
+  });
+
+  it("一般程式碼區塊仍以 pre 顯示", async () => {
+    assert.match(
+      await render("```js\nconst x = 1;\n```"),
+      /<pre><code class="language-js">const x = 1;/,
+    );
+  });
+
   it("只把首個頂層內文段落的首字加大，保留原文與強調、連結順序", async () => {
     const html = await render(
       "## 前言\n\n「**備菜**」先從[清洗](/ingredients/tomato/)開始。\n\n第二段不加大。",

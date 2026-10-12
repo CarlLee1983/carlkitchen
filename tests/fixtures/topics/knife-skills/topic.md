@@ -19,3 +19,7 @@ references: []
 食指與拇指捏住刀身根部。
 
 磨刀石要先泡水，磨好的刀才不容易崩口。
+
+```figure
+peanut-frying
+```
