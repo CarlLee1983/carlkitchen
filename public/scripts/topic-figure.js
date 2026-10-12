@@ -1,5 +1,5 @@
 // 只由含互動圖的專題頁載入；圖上的事實皆取自已驗證的 figure 資料。
-/** @typedef {{id:string,start:number,label:string,readout:string|Record<string,string>}} Stage */
+/** @typedef {{id:string,start:number,label:string,timeLabel?:string,readout:string|Record<string,string>}} Stage */
 for (const figure of /** @type {NodeListOf<HTMLElement>} */ (
   document.querySelectorAll("[data-topic-figure]")
 )) {
@@ -7,6 +7,9 @@ for (const figure of /** @type {NodeListOf<HTMLElement>} */ (
     JSON.parse(figure.dataset.stages ?? "[]")
   );
   const controls = figure.querySelector(".figure-controls");
+  const variants = figure.querySelector(".figure-variants");
+  const stageList = figure.querySelector("ol");
+  const comparison = figure.querySelector(".figure-comparison");
   const slider = /** @type {HTMLInputElement | null} */ (
     figure.querySelector('input[type="range"]')
   );
@@ -16,6 +19,8 @@ for (const figure of /** @type {NodeListOf<HTMLElement>} */ (
   const readout = figure.querySelector(".figure-readout");
   if (
     !(controls instanceof HTMLElement) ||
+    !(variants instanceof HTMLElement) ||
+    !(stageList instanceof HTMLElement) ||
     !slider ||
     !play ||
     !readout ||
@@ -31,6 +36,7 @@ for (const figure of /** @type {NodeListOf<HTMLElement>} */ (
   let timer = 0;
   let started = 0;
   let playing = false;
+  let comparisonOnly = false;
 
   function stop() {
     cancelAnimationFrame(frame);
@@ -43,9 +49,12 @@ for (const figure of /** @type {NodeListOf<HTMLElement>} */ (
 
   /** @param {number} time @param {Stage} [chosenStage] */
   function show(time, chosenStage) {
-    range.value = String(time);
+    if (!comparisonOnly) range.value = String(time);
     const stage =
-      chosenStage ?? [...stages].reverse().find((item) => time >= item.start);
+      (comparisonOnly
+        ? stages.find((item) => item.id === "colour")
+        : chosenStage) ??
+      [...stages].reverse().find((item) => time >= item.start);
     if (!stage) return;
     const variant = figure.dataset.variant;
     const detail =
@@ -56,10 +65,12 @@ for (const figure of /** @type {NodeListOf<HTMLElement>} */ (
     const announcement = `${stage.label}：${detail}`;
     if (announcementText.textContent !== announcement)
       announcementText.textContent = announcement;
-    range.setAttribute(
-      "aria-valuetext",
-      `${time} 分鐘，${stage.label}：${detail}`,
-    );
+    if (comparisonOnly) range.removeAttribute("aria-valuetext");
+    else
+      range.setAttribute(
+        "aria-valuetext",
+        `${stage.timeLabel ?? `${time} 分鐘`}，${stage.label}：${detail}`,
+      );
     for (const item of /** @type {NodeListOf<HTMLElement>} */ (
       figure.querySelectorAll("li[data-stage-id]")
     )) {
@@ -96,6 +107,8 @@ for (const figure of /** @type {NodeListOf<HTMLElement>} */ (
   }
 
   controls.hidden = false;
+  variants.hidden = false;
+  if (comparison instanceof HTMLElement) comparison.hidden = true;
   figure.dataset.enhanced = "true";
   for (const item of /** @type {NodeListOf<HTMLLIElement>} */ (
     figure.querySelectorAll("li[data-stage-id]")
@@ -121,12 +134,16 @@ for (const figure of /** @type {NodeListOf<HTMLElement>} */ (
     figure.querySelectorAll("[data-figure-variant]")
   )) {
     button.addEventListener("click", () => {
+      stop();
       figure.dataset.variant = button.dataset.figureVariant;
+      comparisonOnly = button.dataset.comparisonOnly === "true";
+      figure.dataset.comparisonOnly = String(comparisonOnly);
+      controls.hidden = comparisonOnly;
+      stageList.hidden = comparisonOnly;
       for (const choice of figure.querySelectorAll("[data-figure-variant]")) {
         choice.setAttribute("aria-pressed", String(choice === button));
       }
-      const stage = stages.find((item) => item.id === figure.dataset.stage);
-      show(Number(range.value), stage);
+      show(Number(range.value));
     });
   }
   motion.addEventListener("change", stop);

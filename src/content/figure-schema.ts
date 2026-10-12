@@ -14,7 +14,11 @@ export const figureSchema = z
     caption: text,
     duration: z.number().positive(),
     keyStage: id,
-    variants: z.array(z.object({ id, label: text })).min(1),
+    variants: z
+      .array(
+        z.object({ id, label: text, comparisonOnly: z.boolean().optional() }),
+      )
+      .min(1),
     stages: z
       .array(
         z.object({
@@ -22,6 +26,7 @@ export const figureSchema = z
           start: z.number().nonnegative(),
           end: z.number().nonnegative(),
           label: text,
+          timeLabel: text.optional(),
           readout: z.union([text, z.record(id, text)]),
         }),
       )

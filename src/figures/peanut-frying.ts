@@ -199,7 +199,10 @@ const figureCss = `
 .topic-figure[data-stage="rest"] .wok-steam{display:none}
 .topic-figure[data-stage="start"] .wok-bubbles,.topic-figure[data-stage="start"] .wok-steam,
 .topic-figure[data-stage="cool"] .wok-bubbles,.topic-figure[data-stage="cool"] .wok-steam{display:none}
+.topic-figure[data-comparison-only="true"] .wok-bubbles,.topic-figure[data-comparison-only="true"] .wok-steam{display:none}
 .topic-figure .figure-readout{margin:.4rem 0 1rem;color:var(--ink-soft);font-size:.9rem}
+.topic-figure .figure-variants{margin:1rem 0}
+.topic-figure .figure-comparison{margin:.8rem 0;color:var(--ink-soft);font-size:.9rem}
 .topic-figure ol{margin:.5rem 0 1rem;padding-inline-start:1.5rem}
 .topic-figure li{padding:.2rem 0}
 .topic-figure[data-enhanced="true"] li[data-stage-id]{cursor:pointer}
@@ -226,14 +229,16 @@ export function renderPeanutFrying(data: FigureData) {
   const stages = data.stages
     .map((stage) => {
       const time =
-        stage.start === stage.end
+        stage.timeLabel ??
+        (stage.start === stage.end
           ? `${stage.start} 分鐘`
-          : `${stage.start}–${stage.end} 分鐘`;
+          : `${stage.start}–${stage.end} 分鐘`);
       const { readout } = stage;
       const detail =
         typeof readout === "string"
           ? readout
           : data.variants
+              .filter((variant) => !variant.comparisonOnly)
               .map((variant) => `${variant.label}：${readout[variant.id]}`)
               .join("；");
       return `<li data-current="${stage.id === data.keyStage}" data-stage-id="${escapeHtml(stage.id)}"><strong>${escapeHtml(stage.label)}</strong>（${time}）：${escapeHtml(detail)} <button type="button" hidden aria-label="跳至${escapeHtml(stage.label)}">跳至</button></li>`;
@@ -241,6 +246,15 @@ export function renderPeanutFrying(data: FigureData) {
     .join("");
   const stageData = JSON.stringify(data.stages).replace(/</g, "\\u003c");
   const observation = data.stages.find((stage) => stage.id === "colour")!;
+  const comparisons = data.variants
+    .filter((variant) => variant.comparisonOnly)
+    .map((variant) => {
+      const detail =
+        typeof observation.readout === "string"
+          ? observation.readout
+          : observation.readout[variant.id]!;
+      return `${variant.label}：${detail}`;
+    });
   const bandStart = (observation.start / data.duration) * 100;
   const bandWidth =
     ((observation.end - observation.start) / data.duration) * 100;
@@ -254,10 +268,11 @@ export function renderPeanutFrying(data: FigureData) {
         <span class="figure-band-label">${observation.start}–${observation.end} 分鐘觀察區間</span>
       </div>
       <button type="button" data-figure-play>播放</button>
-      <div role="group" aria-label="花生種類">${data.variants.map((variant) => `<button type="button" data-figure-variant="${escapeHtml(variant.id)}" aria-pressed="${variant.id === firstVariant}">${escapeHtml(variant.label)}</button>`).join("")}</div>
     </div>
+    <div class="figure-variants" role="group" aria-label="花生種類" data-pagefind-ignore hidden>${data.variants.map((variant) => `<button type="button" data-figure-variant="${escapeHtml(variant.id)}" data-comparison-only="${Boolean(variant.comparisonOnly)}" aria-pressed="${variant.id === firstVariant}">${escapeHtml(variant.label)}</button>`).join("")}</div>
     <p class="figure-readout" data-pagefind-ignore aria-live="polite">${escapeHtml(readout)}</p>
     <ol data-pagefind-ignore>${stages}</ol>
+    ${comparisons.length ? `<p class="figure-comparison" data-pagefind-ignore>${escapeHtml(comparisons.join("；"))}</p>` : ""}
     <figcaption>${escapeHtml(data.caption)}</figcaption>
   </figure><script src="/scripts/topic-figure.js" defer data-topic-figure-runtime></script>`;
 }

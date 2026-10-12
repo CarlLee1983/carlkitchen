@@ -425,6 +425,9 @@ function checkFigures(
       const labels = [
         ...data.variants.map(({ label }) => label),
         ...data.stages.map(({ label }) => label),
+        ...data.stages.flatMap(({ timeLabel }) =>
+          timeLabel ? [timeLabel] : [],
+        ),
       ];
       const texts = [
         data.alt,
