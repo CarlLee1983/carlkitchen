@@ -1,0 +1,90 @@
+[
+  {
+    "file": "content/recipes/green-pepper-beef-fried-rice/hero.webp",
+    "previous_generation_attempts": "unknown",
+    "additional_attempts_authorized": 1,
+    "additional_attempts_used": 1,
+    "authorization_date_utc": "2026-10-12T03:49:40Z",
+    "method": "built-in image_gen",
+    "prompt": "Use case: precise-object-edit.\nAsset type: CarlKitchen finished-dish hero illustration.\nInput images: Image 1 is the existing green-pepper beef fried-rice hero to edit. Image 2 is supporting ingredient and same-recipe style reference only; do not draw its board or raw ingredients.\nPrimary request: Correct this plate of green-pepper beef fried rice by removing EVERY piece of scrambled egg. There is absolutely NO EGG in this recipe. Replace ALL yellow egg curds and yellow fluffy fragments with individually distinct off-white/light soy-brown rice grains, never with another food.\nThe complete cooked dish contains only: loosened overnight cooked white rice (about 350 g); beef tenderloin or flat-iron beef cut into thin strips (120 g), cooked brown; deseeded green bell pepper cut into thin strips (80 g); peeled onion cut into thin strips (50 g), translucent pale ivory; a light soy-sauce coating; tiny freshly ground black pepper specks. The recipe also uses rice wine, salt, potato starch coating the beef and vegetable oil; do not render these as separate objects.\nKeep the same plain oval white ceramic plate, the beef / green pepper / onion character, fine ink outlines, soft watercolor washes and cream paper background as the references. Show a complete ready-to-eat, plated fried rice dish, with all plate edges visible. Adjust framing outward so the whole plate and food are about 60% of the canvas, at about 45-degree elevated view, slightly off-center, with generous empty cream-paper margins on every side. Nothing touches the image edge.\nSTYLE: Warm hand-drawn illustration: loose fine ink linework with soft watercolor washes, slightly uneven lines, muted natural food colors, visible paper texture, calm and minimal like a Japanese cookbook illustration. Not photorealistic, not 3D or glossy rendering. Plain background close to #F7F6F3 with generous empty space; no table, cloth or scene. Landscape 3:2, exactly 1536x1024.\nStrict ingredient constraints: NO eggs, NO scrambled egg curds, NO yellow egg fragments; NO scallions, red pepper, carrots, peas, corn, herbs or garnish; no unlisted food. The green vegetables must be thin green bell-pepper strips, not scallion rings.\nRULES: No text, letters, numbers, labels, logos or watermarks. No human faces. No faces or expressions on food. No people or hands. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel.\n",
+    "source_size": [
+      1536,
+      1024
+    ],
+    "output_size": [
+      1536,
+      1024
+    ],
+    "native_webp_version": "1.6.0",
+    "quality": 80,
+    "bytes": 190484,
+    "original_sha256": "d68aa1e8c349462de6a3f51aecfe2b3c2461b4d568b7eb6cf0280f651ea26def",
+    "output_sha256": "71039467fce00f6debb843ba9adeb40c756a58c7fb185e3d0c93a5bb02deb399"
+  },
+  {
+    "file": "content/recipes/pan-fried-hairtail-fish/hero.webp",
+    "previous_generation_attempts": "unknown",
+    "additional_attempts_authorized": 1,
+    "additional_attempts_used": 1,
+    "authorization_date_utc": "2026-10-12T03:49:40Z",
+    "method": "built-in image_gen",
+    "prompt": "Use case: precise-object-edit.\nAsset type: CarlKitchen finished-dish hero illustration.\nInput images: Image 1 is the existing pan-fried hairtail-fish hero to correct; image 2 is the same-recipe ingredient and watercolor-style reference only, NOT a composition to reproduce.\nPrimary request: Remove EVERY green scallion ring and every small green garnish from Image 1. This recipe contains NO scallions and absolutely NO green ingredients. Replace each removed green piece with the underlying fish or plate, preserving the fish and its ginger/red chili topping. Also pull the camera back: reduce the entire plate and food so that its widest horizontal extent is only about 70% of the 1536-pixel-wide canvas, leaving a MINIMUM of 180 pixels of blank cream paper at BOTH left and right edges. The whole plate must be fully visible with generous clear margins, unlike the close-cropped reference.\nRecipe ingredients represented in the finished dish: 400 g hairtail fish, cut into 8-centimeter-wide cleaned bone-in body sections, dried and diagonally scored on both sides; 15 g fresh ginger cut into fine matchstick julienne; one red chili cut into thin diagonal slivers; a very light coating of sweet-potato starch for pan-frying. Salt, rice wine and vegetable oil are incorporated seasonings, not separate items. Preserve the four broad fried fish body portions shown in the references, with lightly crisp golden-brown skin and silvery gray patches, white flesh at cut ends. The ONLY garnish is pale-yellow fine ginger strips and thin RED chili strips. Do not include the red chili's green stem.\nFinished dish is OFF the heat, served on one plain oval white ceramic plate. About 45-degree elevated view, plate slightly off-center, all edges visible, generous surrounding blank paper, subject about 60% of the image overall. Preserve same fine ink line thickness, soft watercolor coloring and food/ceramic character as the existing illustrations. No new objects.\nSTYLE: Warm hand-drawn illustration: loose fine ink linework with soft watercolor washes, slightly uneven lines, muted natural colors, visible paper texture, calm and minimal like a Japanese cookbook illustration. Not photorealistic, not 3D or glossy rendering. Plain background close to #F7F6F3 with generous empty space; no table, cloth or scene. Landscape 3:2, exactly 1536x1024.\nStrict avoidance: NO scallions, NO green onion rings, NO chives, NO cilantro, NO green herbs, NO green chili stems, NO green food, NO lemon, NO extra ingredients. Keep ginger and red chili, do not remove them.\nRULES: No text, letters, numbers, labels, logos or watermarks. No human faces. No faces or expressions on food. No people or hands. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel.\n",
+    "source_size": [
+      1536,
+      1024
+    ],
+    "output_size": [
+      1536,
+      1024
+    ],
+    "native_webp_version": "1.6.0",
+    "quality": 80,
+    "bytes": 151248,
+    "original_sha256": "b8699586666c2f7a0e5899d96910337d884c91efd8c3eaa1546e47a62dbdb323",
+    "output_sha256": "055232cacef355be06ae118fe4d0d652ea01fde574db8ca2787a8fff89d1405c"
+  },
+  {
+    "file": "content/recipes/taiwanese-pickled-cabbage/step-2.webp",
+    "previous_generation_attempts": "unknown",
+    "additional_attempts_authorized": 1,
+    "additional_attempts_used": 1,
+    "authorization_date_utc": "2026-10-12T03:49:40Z",
+    "method": "built-in image_gen",
+    "prompt": "Use case: precise-object-edit.\nAsset type: CarlKitchen Taiwanese pickled cabbage recipe step 2 illustration.\nPrimary request: Correct the food in the first reference image, keeping the same stainless-steel mixing basin, watercolor/ink character, 45-degree overhead view, and gentle two-handed mixing action. Replace ALL narrow long cabbage strips with broad irregular hand-torn approximately 5 cm pieces of ordinary Taiwanese ROUND GREEN CABBAGE, washed and with hard cores removed. These are broad, smooth pale-green and ivory cabbage leaf patches with natural torn edges and fine veins. NOT napa cabbage, NOT Chinese cabbage, NOT long white-ribbed leaves, NOT shredded cabbage. Mix visibly plentiful fine, thin orange grated carrot shreds THROUGHOUT the cabbage, including between the hands and throughout the basin, in the approximate ratio of 500 g cabbage to 80 g carrot. These are the only vegetables at this salting stage. Show the key state after salt has been gently massaged through both vegetables: slightly softened leaves, faint moisture in the basin, tiny residual salt crystals. Do not show garlic, red chilies, vinegar, sugar, a jar, or the finished pickle.\nInput images: image 1 is the edit target for basin and hand pose; image 2 is a same-recipe STYLE REFERENCE ONLY. Do NOT copy the incorrect napa-like thick rib morphology, glass serving bowl, chili or garlic in image 2.\nComposition/framing: Landscape 3:2 canvas, exactly 1536x1024 pixels. Keep the complete stainless-steel basin visible, inset from the frame; hands may enter from the top. Clear broad cabbage pieces and delicate orange carrot shreds must be instantly distinguishable.\nSTYLE: Warm hand-drawn illustration: loose fine ink linework with soft watercolor washes, slightly uneven lines, muted natural colors (tomato red, egg yellow, scallion green, warm grays), paper texture, calm and minimal like a Japanese cookbook illustration. Not photorealistic. Plain background close to #F7F6F3 with generous empty space. Landscape 3:2, 1536x1024.\nRULES: No text, letters, numbers, labels, logos or watermarks. No human faces. No faces or expressions on food. Hands are allowed but optional.\nNo table, cloth, kitchen scenery, extra props or utensils. Produce exactly one finished replacement image.\n",
+    "source_size": [
+      1536,
+      1024
+    ],
+    "output_size": [
+      1536,
+      1024
+    ],
+    "native_webp_version": "1.6.0",
+    "quality": 80,
+    "bytes": 155286,
+    "original_sha256": "0a27d85a2dcbec72ea9fba47f73a8b1afb3ed1c6195a493ba28c66c055602509",
+    "output_sha256": "f20c420861969ac8baf0a62ec369f82eb1b226ed14990d5e5ef87dad108a8e5f"
+  },
+  {
+    "file": "content/recipes/wugeng-changwang/hero.webp",
+    "previous_generation_attempts": "unknown",
+    "additional_attempts_authorized": 1,
+    "additional_attempts_used": 1,
+    "authorization_date_utc": "2026-10-12T03:49:40Z",
+    "method": "built-in image_gen",
+    "prompt": "Use case: precise-object-edit.\nAsset type: CarlKitchen finished-dish hero for Wugeng Changwang, Taiwanese spicy pork intestine and duck blood casserole.\nPrimary request: Redraw the finished dish from reference image 1 in a plain brown EARTHENWARE CLAY CASSEROLE, already transferred out of the wok and OFF ALL HEAT, ready to serve. Completely remove the original metal pot, charcoal stove, coal, flame, fire, glowing embers, burner and every stand or trivet. There must be only one simple intact low round brown ceramic clay casserole with short integral side handles, resting by itself on the plain cream paper background. Its entire rounded bottom exterior and both handles must be visible with nothing supporting or attached beneath it. A subtle contact shadow is allowed.\nFood requirements based on recipe ingredients and notes: cooked braised pork large intestine cut diagonally into thick ring slices, warm beige-brown with visible hollow centers; blanched duck blood cut into dark maroon square blocks approximately 1.5 cm thick; pickled mustard-green hearts washed, thinly sliced and squeezed dry, now softened olive green; fresh green garlic shoots diagonally cut into thick short slices, with both pale and green portions visible. These four ingredients remain clearly recognizable in thick red-brown chili-bean gravy made with finely minced peeled garlic, finely minced peeled ginger, stock, spicy broad-bean paste, rice wine, sugar, soy sauce, potato-starch slurry, Sichuan pepper oil and vegetable oil. Whole Sichuan peppercorns were removed earlier and should not appear. No added garnish, scallion rings, cilantro, tofu, meat chunks, whole chilies or other unlisted ingredients. This is the FINISHED dish, no cooking action, no utensil, no hands. At most two faint wisps of steam; no vigorous rolling boil.\nInput images: image 1 is the edit target for dish and illustration style only; its metal vessel and all heating equipment are WRONG and must be replaced. Image 2 is a same-recipe ingredient/color reference only; do not copy its cutting board, raw ingredient layout, whole garlic or peppercorns.\nComposition/framing: exactly 1536x1024, horizontal 3:2. Approximately 45-degree overhead view. The COMPLETE casserole should occupy about 60 percent of the canvas width, placed slightly right of center, with generous clean cream-paper margins on all four sides and ample space above and below. Do not crop the pot, handles or food. It should read as a complete generous serving in a modest small clay casserole, not a close-up or a stove scene.\nSTYLE: Warm hand-drawn illustration: loose fine ink linework with soft watercolor washes, slightly uneven lines, muted natural colors (tomato red, egg yellow, scallion green, warm grays), paper texture, calm and minimal like a Japanese cookbook illustration. Not photorealistic. Plain background close to #F7F6F3 with generous empty space. Landscape 3:2, 1536x1024.\nRULES: No text, letters, numbers, labels, logos or watermarks. No human faces. No faces or expressions on food. No table, cloth, kitchen scenery or props. No utensils: no chopsticks, no spoon, no fork, nothing beside the vessel.\nFinal decisive constraints: CLAY casserole only, no metal pot, no heat source, no fire or charcoal, no burner, no trivet, no support stand. Produce exactly one finished replacement image.\n",
+    "source_size": [
+      1536,
+      1024
+    ],
+    "output_size": [
+      1536,
+      1024
+    ],
+    "native_webp_version": "1.6.0",
+    "quality": 80,
+    "bytes": 201512,
+    "original_sha256": "a1bed0e72e53184c55f2b3a7c000e02462d524852ee3654fd96a24c936923783",
+    "output_sha256": "759aa0ec91094d912b8b4e7663fce3be14a07a8085a692a25a58298a696a9c94"
+  }
+]
