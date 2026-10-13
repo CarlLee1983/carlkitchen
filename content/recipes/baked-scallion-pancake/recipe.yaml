@@ -1,0 +1,35 @@
+title: 烤蔥油餅
+summary: 依核准食譜指南製作之經典家常烤蔥油餅，風味道地鮮明。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: "烤箱烘烤酥脆不油膩之蔥油餅，主食點心。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 30
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 中筋麵粉, amount: { value: 100, unit: g }, note: 原料標示 600公克 }
+  - { name: 細鹽, amount: { value: 100, unit: g }, note: 原料標示 5公克 }
+  - { name: 細砂糖, amount: { value: 100, unit: g }, note: 原料標示 30公克 }
+  - { name: 70℃溫水, amount: { value: 100, unit: g }, note: 原料標示 380㏄ }
+  - { name: 蔥花, amount: { value: 100, unit: g }, note: 原料標示 100公克 }
+  - { name: 豬油, amount: { value: 100, unit: g }, note: 原料標示 80公克 }
+  - { name: 細鹽, amount: { value: 100, unit: g }, note: 原料標示 10公克 }
+steps:
+  - text: "將中筋麵粉、細鹽及細砂糖放入盆中，倒入溫水，以桿麵棍攪拌均勻後，再用雙手揉約3分鐘至&#21248;。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的烤蔥油餅主要材料
+  - text: "取乾淨的濕毛巾或保鮮膜，將作法1材料蓋好，以防止表皮乾硬，靜置放涼，醒約20分鐘備用。"
+  - text: "將作法2醒過的麵糰揉至表面光滑，再將麵糰均分成8份，各桿成厚約0.2公分的圓型，於麵糰表面塗上豬油後，撒上細鹽及蔥花，捲成長條圓筒狀後，再依順時針或逆時針方向盤成圓型，將麵糰另一端收於中心點，並蓋上濕毛巾或保鮮膜，靜置醒約10分鐘備用。"
+  - text: "烤箱預熱，上下火各180℃。取平底鍋加熱後，加入約1大匙沙拉油，將作法3的麵糰略壓扁後，放入鍋中，以小火將兩面略煎使其定型，再放入烤箱烤約15分鐘至表面金黃即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味烤蔥油餅
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之烤蔥油餅各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

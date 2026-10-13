@@ -1,0 +1,37 @@
+title: 滑蛋蛋包咖哩飯
+summary: 依核准食譜指南製作之經典家常滑蛋蛋包咖哩飯，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "滑嫩歐姆蛋覆蓋於白飯並淋濃郁咖哩，經典主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 蛋, amount: { value: 100, unit: g }, note: 原料標示 2顆 }
+  - { name: 牛奶, amount: { value: 100, unit: g }, note: 原料標示 15㏄ }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 奶油, amount: { value: 100, unit: g }, note: 原料標示 15㏄ }
+  - { name: 茄汁炒飯, amount: { value: 100, unit: g }, note: 原料標示 1碗 }
+  - { name: 辣味咖哩醬, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 巴西里, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+steps:
+  - text: "茄汁炒飯用模型整成半圓形，置於盤中備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的滑蛋蛋包咖哩飯主要材料
+  - text: "將蛋、牛奶、鹽、胡椒粉，一起打勻成蛋液備用。"
+  - text: "平底鍋燒熱，倒入沙拉油，待鍋熱後再放入奶油。"
+  - text: "將作法2的蛋液倒入作法3的鍋中，並迅速用叉子打散，待蛋液微微凝固成滑蛋時（注意不可太熟），即扣到作法1的飯上。"
+  - text: "趁熱將辣味咖哩醬加到作法4的蛋包飯四周，蛋包中間撒上適量巴西里裝飾即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味滑蛋蛋包咖哩飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之滑蛋蛋包咖哩飯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

@@ -1,0 +1,32 @@
+title: 蔥花菜脯蛋
+summary: 依核准食譜指南製作之經典家常蔥花菜脯蛋，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: "香脆菜脯與青蔥碎打入蛋液烘煎，蛋豆主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 12
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 雞蛋, amount: { value: 100, unit: g }, note: 原料標示 2顆 }
+  - { name: 碎菜脯, amount: { value: 100, unit: g }, note: 原料標示 1又1/2大匙 }
+  - { name: 蔥花, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 雞粉, amount: { value: 100, unit: g }, note: 原料標示 1/4茶匙 }
+  - { name: 胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 1/4茶匙 }
+steps:
+  - text: "碎菜脯略沖洗、瀝乾，再放入乾鍋內以小火炒至乾，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的蔥花菜脯蛋主要材料
+  - text: "雞蛋打散，加入蔥花、調味料拌勻，再加入作法1碎菜脯拌勻。"
+  - text: "熱鍋，放入2大匙沙拉油，慢慢倒入作法2入鍋，並集中於中間，不斷以筷子撥蛋液集中至中間，直到凝固，再以小火煎至兩面金黃即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味蔥花菜脯蛋
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之蔥花菜脯蛋各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

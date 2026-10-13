@@ -1,0 +1,37 @@
+title: 豆苗蝦仁
+summary: 依核准食譜指南製作之經典家常豆苗蝦仁，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable, seafood]
+classificationReason: "清甜豆苗與鮮脆蝦仁快炒，蔬菜與海鮮雙主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 豆苗, amount: { value: 100, unit: g }, note: 原料標示 200公克 }
+  - { name: 蝦仁, amount: { value: 100, unit: g }, note: 原料標示 300公克 }
+  - { name: 蒜頭, amount: { value: 100, unit: g }, note: 原料標示 1粒 }
+  - { name: 薑, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: A.料理米酒, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1/3小匙 }
+  - { name: 糖, amount: { value: 100, unit: g }, note: 原料標示 1/2小匙 }
+  - { name: B.料理米酒, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1/4小匙 }
+steps:
+  - text: "蒜、薑切末；蝦仁去腸泥洗淨用鹽、胡椒粉、料理米酒醃約10分鐘，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的豆苗蝦仁主要材料
+  - text: "豆苗挑較老的部分後洗淨瀝乾備用。"
+  - text: "熱一鍋，放入1大匙油，將作法1的蒜末、薑末放入鍋中爆香後，再放入作法1的蝦仁、調味料A炒熟後盛起。"
+  - text: "另熱一鍋，放入1大匙油，放入作法2的豆苗拌炒一下，加入調味料B，再加入作法3的蝦仁炒勻即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味豆苗蝦仁
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之豆苗蝦仁各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

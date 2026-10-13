@@ -1,0 +1,53 @@
+title: 艾草粿
+summary: 依核准食譜指南製作之經典家常艾草粿，風味道地鮮明。
+servings: 4
+category: 主食
+dishKinds: []
+classificationReason: "新鮮艾草揉入糯米糰包餡蒸熟，傳統米食點心。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 艾草乾, amount: { value: 100, unit: g }, note: 原料標示 15g }
+  - { name: 巴蕉葉, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 圓糯米, amount: { value: 100, unit: g }, note: 原料標示 1斤 }
+  - { name: 蓬萊米, amount: { value: 100, unit: g }, note: 原料標示 1斤 }
+  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 1200㏄ }
+  - { name: 糖, amount: { value: 100, unit: g }, note: 原料標示 375g }
+  - {
+      name: 餡料：紅蔥酥,
+      amount: { value: 100, unit: g },
+      note: 原料標示 3大匙,
+    }
+  - { name: 蘿蔔絲, amount: { value: 100, unit: g }, note: 原料標示 187g }
+  - { name: 香菇, amount: { value: 100, unit: g }, note: 原料標示 10朵 }
+  - { name: 開陽, amount: { value: 100, unit: g }, note: 原料標示 20g }
+  - { name: 絞肉, amount: { value: 100, unit: g }, note: 原料標示 200g }
+  - { name: 花生油, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+  - { name: 香油, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 糖, amount: { value: 100, unit: g }, note: 原料標示 3大匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 2茶匙 }
+  - { name: 味精, amount: { value: 100, unit: g }, note: 原料標示 2茶匙 }
+  - { name: 胡椒, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+steps:
+  - text: "艾草洗淨，放入水中以中火煮約半小時，擠乾水份後，將它剁碎備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的艾草粿主要材料
+  - text: "巴蕉葉洗淨，剪成適當大小；蘿蔔絲洗淨、香菇泡軟切丁備用。"
+  - text: "將糯米、蓬萊米洗淨泡水4小時，加入1200㏄的水，用研磨機磨成米漿，裝入布袋中，壓乾（或脫水）製成粉糰。"
+  - text: "取2塊約200g的粉糰，放入滾水鍋中煮到浮起；其餘粉糰搓揉粉碎，再與煮熟的麵糰、糖及艾草混合均勻，揉至光滑。"
+  - text: "蒸籠水煮開，鋪上蒸籠布，再放入作法4粉糰，蒸40分鐘。"
+  - text: "起油鍋，將香菇、開陽及絞肉炒香，加入調味料，再放入紅蔥酥及蘿蔔絲拌炒至熟香起鍋。"
+  - text: "將蒸好的粿待稍涼後，分成40等份，再分別包入作法6餡料，放在巴蕉葉上即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味艾草粿
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之艾草粿各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

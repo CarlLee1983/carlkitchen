@@ -1,0 +1,36 @@
+title: 金瓜炒米粉
+summary: 依核准食譜指南製作之經典家常金瓜炒米粉，風味道地鮮明。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: "以南瓜絲與米粉拌炒之傳統主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 南瓜, amount: { value: 100, unit: g }, note: 原料標示 150公克 }
+  - { name: 韭黃, amount: { value: 100, unit: g }, note: 原料標示 50公克 }
+  - { name: 紅蘿蔔, amount: { value: 100, unit: g }, note: 原料標示 20公克 }
+  - { name: 米粉, amount: { value: 100, unit: g }, note: 原料標示 150公克 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1/2小匙 }
+  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 烏醋, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 100㏄ }
+steps:
+  - text: "南瓜、紅蘿蔔均洗淨，去皮切絲；韭黃洗淨切段；備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的金瓜炒米粉主要材料
+  - text: "米粉以熱水浸泡至柔軟，撈出瀝乾水份備用。"
+  - text: "熱鍋倒入適量油燒熱，放入南瓜絲與紅蘿蔔絲以中小火炒出香味，加入米粉與所有調味料拌炒至湯汁略收乾，最後加入韭黃段炒勻即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味金瓜炒米粉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之金瓜炒米粉各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

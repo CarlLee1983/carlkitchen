@@ -1,0 +1,33 @@
+title: 椒鹽排骨
+summary: 依核准食譜指南製作之經典家常椒鹽排骨，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "排骨酥炸後拌炒蒜末胡椒鹽，肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 排骨, amount: { value: 100, unit: g }, note: 原料標示 300公克 }
+  - { name: 蔥花, amount: { value: 100, unit: g }, note: 原料標示 20公克 }
+  - { name: 蒜仁, amount: { value: 100, unit: g }, note: 原料標示 10公克 }
+  - { name: 紅辣椒末, amount: { value: 100, unit: g }, note: 原料標示 10公克 }
+  - { name: 椒鹽粉, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+steps:
+  - text: "排骨洗淨剁成小塊，瀝乾水份備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的椒鹽排骨主要材料
+  - text: "將作法1排骨塊加入所有醃料抓勻，醃漬約30分鐘，備用。"
+  - text: "熱油鍋至油溫約160℃，作法2醃好的排骨塊一塊塊放入油鍋，以小火炸約12分鐘至表面酥脆後撈起。"
+  - text: "另熱一鍋，倒入少許沙拉油，以小火爆香蔥花、蒜末以及紅辣椒末，加入作法3排骨塊並撒上椒鹽粉，以小火拌炒均勻即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味椒鹽排骨
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之椒鹽排骨各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

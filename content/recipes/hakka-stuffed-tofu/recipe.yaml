@@ -1,0 +1,45 @@
+title: 客家釀豆腐
+summary: 依核准食譜指南製作之經典家常客家釀豆腐，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean, meat]
+classificationReason: "板豆腐中鑲入調味絞肉煎燜，蛋豆與肉類雙主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 板豆腐, amount: { value: 100, unit: g }, note: 原料標示 2塊 }
+  - { name: 太白粉, amount: { value: 100, unit: g }, note: 原料標示 1/2杯 }
+  - { name: 蔥末, amount: { value: 100, unit: g }, note: 原料標示 1支 }
+  - { name: 餡料：香油, amount: { value: 100, unit: g }, note: 原料標示 1茶匙 }
+  - { name: 絞肉, amount: { value: 100, unit: g }, note: 原料標示 1/2斤 }
+  - { name: 香菇, amount: { value: 100, unit: g }, note: 原料標示 2朵 }
+  - { name: 蔥, amount: { value: 100, unit: g }, note: 原料標示 1支 }
+  - { name: 薑, amount: { value: 100, unit: g }, note: 原料標示 2片 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1茶匙 }
+  - { name: 胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 1茶匙 }
+  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 3/2茶匙 }
+  - { name: 蠔油, amount: { value: 100, unit: g }, note: 原料標示 3大匙 }
+  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 3大匙 }
+  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 3/2杯 }
+  - { name: 味精, amount: { value: 100, unit: g }, note: 原料標示 1茶匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1茶匙 }
+  - { name: 太白粉, amount: { value: 100, unit: g }, note: 原料標示 3/2大匙 }
+  - { name: 糖, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+steps:
+  - text: "將所有餡料拌勻；全部調味料調勻備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的客家釀豆腐主要材料
+  - text: "板豆腐洗淨後，切成4×7cm的塊狀，用湯匙在中間挖洞（約2㎝深，勿深及底層），在凹洞內抹上一層太白粉（加強黏性），將作法1拌好的餡料填入（最好讓餡料能鼓起來較為好看），再抹上一層太白粉（炸好後會呈現較光滑色澤），最後放入150℃油鍋中炸約2分鐘至表面呈金黃色，取出瀝油備用。"
+  - text: "另起油鍋爆香蔥花後，倒入作法1調勻的調味料煮開，再放入作法2豆腐，用中火煮約3分鐘即可起鍋。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味客家釀豆腐
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之客家釀豆腐各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

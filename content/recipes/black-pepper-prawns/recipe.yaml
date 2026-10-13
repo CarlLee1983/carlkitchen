@@ -1,0 +1,33 @@
+title: 胡椒蝦
+summary: 依核准食譜指南製作之經典家常胡椒蝦，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: "鮮蝦拌入白胡椒黑胡椒在砂鍋中烘乾入味，海鮮主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 25
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 泰國蝦, amount: { value: 100, unit: g }, note: 原料標示 1斤 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 味素, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 肉桂粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 辣椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 米酒, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+steps:
+  - text: "將胡椒粉、辣椒粉、肉桂粉、鹽、味素、酒放入鼎中攪拌，加入蝦子，加熱沸騰後，攪拌均勻瀝乾、刮渣，關小火烘乾即可"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的胡椒蝦主要材料
+  - text: "食譜已完成"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味胡椒蝦
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之胡椒蝦各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

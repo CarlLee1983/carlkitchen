@@ -1,0 +1,45 @@
+title: 鮮蚵煎蛋
+summary: 鮮蚵裹蘿蔔泥輕洗去黏膜，先以蔥薑味噌炒香瀝乾，再均勻鋪於半熟蛋液上兩面煎至金黃酥香。
+servings: 2
+category: 非湯料理
+dishKinds: [egg-bean, seafood]
+classificationReason: 以鮮蚵與雞蛋煎製，海鮮與蛋豆雙主角。
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 台菜]
+ingredients:
+  - { name: 鮮蚵, amount: { value: 150, unit: g }, note: 肥美新鮮蚵仔 }
+  - { name: 雞蛋, amount: { value: 3, unit: 顆 } }
+  - { name: 白蘿蔔, amount: { value: 150, unit: g }, note: 約半條，磨成泥洗蚵 }
+  - { name: 韭菜, amount: { value: 20, unit: g }, note: 洗淨切成 1 公分段 }
+  - { name: 蔥末, amount: { value: 10, unit: g }, group: 爆香 }
+  - { name: 薑末, amount: { value: 5, unit: g }, group: 爆香 }
+  - { name: 味噌, amount: { value: 15, unit: g }, group: 調味 }
+  - { name: 味醂, amount: { value: 15, unit: ml }, group: 調味 }
+  - { name: 蠔油, amount: { value: 8, unit: g }, group: 調味 }
+  - { name: 鹽, amount: { value: 1, unit: g }, group: 調味 }
+  - { name: 白胡椒粉, amount: { value: 0.5, unit: g }, group: 調味 }
+  - { name: 米酒, amount: { value: 5, unit: ml }, group: 調味 }
+  - { name: 食用油, amount: { value: 20, unit: ml }, group: 烹調 }
+steps:
+  - text: 白蘿蔔去皮磨成泥，放入鮮蚵輕輕抓洗去除表面黏膜，再以清水輕輕沖淨並徹底瀝乾；韭菜切成 1 公分小段。
+    image:
+      src: ./step-1.webp
+      alt: 砧板上切成小段的青綠韭菜，與白色小瓷碗中洗淨瀝乾的飽滿鮮蚵
+  - text: 雞蛋打入大碗，加入鹽、白胡椒粉與米酒攪打均勻，再倒入韭菜段拌成蛋液備用。
+  - text: 將味噌、味醂與蠔油在小碗中調勻兌成調味醬汁。
+  - text: 熱鍋下少許食用油，下蔥末、薑末大火爆香，轉中火倒入調味醬汁炒勻，放入鮮蚵炒至約八分熟，立即盛起瀝乾多餘水分。
+  - text: 平底鍋倒入食用油燒熱，倒進韭菜蛋液，中火以筷子邊煎邊輕攪成半熟狀，轉小火將鮮蚵均勻鋪在蛋上，翻面慢煎至兩面金黃酥香即可起鍋。
+    image:
+      src: ./step-5.webp
+      alt: 平底鍋中兩面煎成金黃微焦的韭菜煎蛋，表面均勻散布著飽滿多汁的鮮蚵
+hero:
+  src: ./hero.webp
+  alt: 白色圓盤中盛裝整片金黃酥香的鮮蚵煎蛋，表面點綴著鮮綠韭菜段與飽滿熟鮮蚵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 盤中盛裝的新鮮生蚵、三顆雞蛋、一把鮮綠韭菜段、一塊白蘿蔔，以及小碟中的味噌、蠔油與調味料
+tip: 鮮蚵用白蘿蔔泥抓洗能徹底帶走黏液且不傷蚵肉完整；下鍋前務必瀝乾，才不會讓煎蛋出水變軟。

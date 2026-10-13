@@ -1,0 +1,41 @@
+title: 三杯炒海瓜子
+summary: 依核准食譜指南製作之經典家常三杯炒海瓜子，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: "海瓜子以麻油、米酒、醬油與九層塔熱炒，海鮮主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 海瓜仔, amount: { value: 100, unit: g }, note: 原料標示 300公克 }
+  - { name: 薑, amount: { value: 100, unit: g }, note: 原料標示 20公克 }
+  - { name: 九層塔, amount: { value: 100, unit: g }, note: 原料標示 3根 }
+  - { name: 蒜仁, amount: { value: 100, unit: g }, note: 原料標示 3顆 }
+  - { name: 紅辣椒, amount: { value: 100, unit: g }, note: 原料標示 1根 }
+  - { name: 沙拉油, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 蠔油, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+  - { name: 香油, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+  - { name: 鹽巴, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 白胡椒, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 米酒, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 太白粉水, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+steps:
+  - text: "首先將海瓜子洗淨，再浸泡鹽巴水去除沙礫，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的三杯炒海瓜子主要材料
+  - text: "把薑、蒜仁、紅辣椒都切成片狀；九層塔洗淨，備用。"
+  - text: "取一炒鍋倒入沙拉油，再加入作法2的材料以中火爆香。"
+  - text: "將作法1的材料、蠔油、香油、鹽巴、白胡椒、米酒加入鍋中，以中火拌炒均勻。"
+  - text: "最後，蓋上鍋蓋以大火燜煮約3分鐘，至海瓜子全開再用太白粉水勾芡即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味三杯炒海瓜子
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之三杯炒海瓜子各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

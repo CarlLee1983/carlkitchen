@@ -24,6 +24,7 @@ describe("真實菜譜的相關菜譜", () => {
       "xo-sauce-seafood-stir-fry",
       "shrimp-stuffed-tofu",
       "lettuce-shrimp-mince",
+      "stir-fried-pea-shoots-shrimp",
     ]);
     assert.ok(top.length > 0, "宮保蝦仁應有相關菜譜");
     for (const id of top) {

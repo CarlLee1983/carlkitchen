@@ -1,0 +1,42 @@
+title: 生炒花枝羹
+summary: 依核准食譜指南製作之經典家常生炒花枝羹，風味道地鮮明。
+servings: 3
+category: 湯
+dishKinds: []
+classificationReason: "大火生炒花枝後勾芡之經典羹湯。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 25
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 花枝, amount: { value: 100, unit: g }, note: 原料標示 1尾 }
+  - { name: 洋蔥, amount: { value: 100, unit: g }, note: 原料標示 1/2粒 }
+  - { name: 青蔥, amount: { value: 100, unit: g }, note: 原料標示 1支 }
+  - { name: 蒜頭, amount: { value: 100, unit: g }, note: 原料標示 3顆 }
+  - { name: 辣椒, amount: { value: 100, unit: g }, note: 原料標示 1/2條 }
+  - { name: 九層塔, amount: { value: 100, unit: g }, note: 原料標示 2根 }
+  - { name: 蛋白, amount: { value: 100, unit: g }, note: 原料標示 1個 }
+  - { name: 海鮮高湯, amount: { value: 100, unit: g }, note: 原料標示 600㏄ }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 沙茶醬, amount: { value: 100, unit: g }, note: 原料標示 1大匙香油 }
+  - { name: 白醋, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 太白粉水, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+steps:
+  - text: "花枝切花刀小塊狀，放入滾水中汆燙，撈起過冷水冰鎮備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的生炒花枝羹主要材料
+  - text: "洋蔥洗淨切成絲狀；青蔥洗淨切段；蒜頭、辣椒切片；九層塔洗淨取葉備用。"
+  - text: "起一油鍋，加入作法2的所有材料（九層塔除外），以中火先爆香。"
+  - text: "作法3鍋中，加入作法1的的花枝塊和所有調味料（太白粉水除外）以及海鮮高湯，以中火煮約3分鐘。"
+  - text: "最後起鍋前加入太白粉水勾薄芡，再加入作法2的九層塔葉即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味生炒花枝羹
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之生炒花枝羹各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

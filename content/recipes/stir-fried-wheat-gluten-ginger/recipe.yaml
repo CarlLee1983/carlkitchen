@@ -1,0 +1,36 @@
+title: 薑絲炒麵腸
+summary: 依核准食譜指南製作之經典家常薑絲炒麵腸，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean]
+classificationReason: "素麵腸切片與嫩薑絲酸菜大火快炒，麵筋蛋豆主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 麵腸, amount: { value: 100, unit: g }, note: 原料標示 400公克 }
+  - { name: 薑絲, amount: { value: 100, unit: g }, note: 原料標示 15公克 }
+  - { name: 辣椒絲, amount: { value: 100, unit: g }, note: 原料標示 10公克 }
+  - { name: 香菜, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 麻油, amount: { value: 100, unit: g }, note: 原料標示 3大匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 米酒, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 糖, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+steps:
+  - text: "將麵腸洗淨切片，放入鍋中煎至微乾。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的薑絲炒麵腸主要材料
+  - text: "加入麻油和薑絲炒香，再放入所有調味料拌炒均勻。"
+  - text: "最後加入辣椒絲即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味薑絲炒麵腸
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之薑絲炒麵腸各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

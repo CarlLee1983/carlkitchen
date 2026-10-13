@@ -1,0 +1,50 @@
+title: 鹹酥雞
+summary: 依核准食譜指南製作之經典家常鹹酥雞，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "去骨雞肉醃漬裹地瓜粉酥炸灑九層塔椒鹽，肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 30
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 雞胸肉, amount: { value: 100, unit: g }, note: 原料標示 1副 }
+  - { name: 九層塔, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - {
+      name: 粉料：黃豆粉,
+      amount: { value: 100, unit: g },
+      note: 原料標示 20公克,
+    }
+  - { name: 蕃薯粉, amount: { value: 100, unit: g }, note: 原料標示 200公克 }
+  - { name: 沾料：胡椒鹽, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 蒜泥, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+  - { name: 蛋液, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+  - { name: 太白粉, amount: { value: 100, unit: g }, note: 原料標示 3大匙 }
+  - { name: 淡色醬油, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+  - { name: 米酒, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+  - { name: 冰糖, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 1/2小匙 }
+  - { name: 五香粉, amount: { value: 100, unit: g }, note: 原料標示 1/4小匙 }
+  - { name: 甘草粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "將雞胸肉先去皮，接著清洗乾淨，可依個人喜好選擇是否要將雞胸肉內的軟骨去除，再分切成小塊狀。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的鹹酥雞主要材料
+  - text: "將處理好的雞胸放入容器中加入所有A料充分的拌均勻。"
+  - text: "接著將醃好的雞胸肉冷藏靜置2小時，讓雞肉充分入味後取出。"
+  - text: "將蕃薯粉與黃豆粉一起放入大盆中混合均勻作成沾粉。"
+  - text: "將雞肉放入裹粉中以抓拌及滾動的方式讓雞肉塊均勻沾裹沾粉，接著放入180℃的熱油中以中火油炸6分鐘，入鍋時稍微翻動以避免雞肉互相沾黏。"
+  - text: "油炸至浮於油表面且油泡變小時，將雞肉塊撈至漏杓中。"
+  - text: "在漏杓中放入九層塔，與雞肉一起再入油鍋中油炸2秒鐘，讓雞肉吸收九層塔的香氣，九層大勿炸至酥脆，口感反而會不好。"
+  - text: "將步驟7以稍微搖動漏杓的方式快速瀝乾油分，並趁熱撒上B料即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味鹹酥雞
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之鹹酥雞各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

@@ -1,0 +1,36 @@
+title: 莧菜吻仔魚羹
+summary: 依核准食譜指南製作之經典家常莧菜吻仔魚羹，風味道地鮮明。
+servings: 3
+category: 湯
+dishKinds: []
+classificationReason: "莧菜與吻仔魚勾芡成羹之湯品。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 沙拉油, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 蝦米, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 600c.c }
+  - { name: 莧菜, amount: { value: 100, unit: g }, note: 原料標示 40公克 }
+  - { name: 吻仔魚, amount: { value: 100, unit: g }, note: 原料標示 10公克 }
+  - { name: 太白粉水, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 香油, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1/2小匙 }
+  - { name: 米酒, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "取一炒鍋，在鍋中加入少許的沙拉油，以小火爆香蝦米後，加入水以大火煮滾。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的莧菜吻仔魚羹主要材料
+  - text: "將莧菜、吻仔魚加入在作法1的材料中，以中火煮滾後加入所有的調味料，再加入太白粉水芶芡，起鍋前淋少許香油即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味莧菜吻仔魚羹
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之莧菜吻仔魚羹各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

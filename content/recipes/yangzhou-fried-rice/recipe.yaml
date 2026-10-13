@@ -1,0 +1,37 @@
+title: 揚州炒飯
+summary: 依核准食譜指南製作之經典家常揚州炒飯，風味道地鮮明。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: "叉燒蝦仁與蔬菜丁金黃米飯拌炒，經典主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 叉燒, amount: { value: 100, unit: g }, note: 原料標示 1兩 }
+  - { name: 蝦仁, amount: { value: 100, unit: g }, note: 原料標示 1兩 }
+  - { name: 蛋, amount: { value: 100, unit: g }, note: 原料標示 1個 }
+  - { name: 青豆, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 西生菜絲, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 蔥花, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 白飯, amount: { value: 100, unit: g }, note: 原料標示 6兩 }
+  - { name: 美極鮮味露, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 鮮雞晶, amount: { value: 100, unit: g }, note: 原料標示 1/4小匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+steps:
+  - text: "蝦仁洗淨擦乾後切丁；叉燒切丁；青豆以沸水汆燙後澇起瀝乾。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的揚州炒飯主要材料
+  - text: "鍋入少許油燒熱，將叉燒丁、蝦仁丁以大火快炒過油後隨即撈起備用。"
+  - text: "蛋打散成蛋液，趁熱下鍋翻炒至顏色略變金黃時，放入白飯翻炒至米粒呈鬆散狀，再加入作法2的叉燒丁、蝦仁丁及熟青豆、蔥花、西生菜絲及所有調味料繼續拌炒均勻入味即可盛起食用。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味揚州炒飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之揚州炒飯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。
