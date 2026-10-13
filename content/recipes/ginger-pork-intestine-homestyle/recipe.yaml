@@ -11,7 +11,11 @@ protein: true
 timeMinutes: 20
 tags: [家常菜, 台灣小吃]
 ingredients:
-  - { name: 處理好大腸, amount: { value: 100, unit: g }, note: 原料標示 600公克 }
+  - {
+      name: 處理好大腸,
+      amount: { value: 100, unit: g },
+      note: 原料標示 600公克,
+    }
   - { name: 嫩薑, amount: { value: 100, unit: g }, note: 原料標示 1塊 }
   - { name: 蒜末, amount: { value: 100, unit: g }, note: 原料標示 10公克 }
   - { name: 辣椒, amount: { value: 100, unit: g }, note: 原料標示 1支 }
@@ -27,9 +31,9 @@ steps:
     image:
       src: ./step-1.webp
       alt: 砧板上準備妥當並切整齊的薑絲大腸主要材料
-  - text: "將作法1的大腸切段；嫩薑切絲；辣椒切片，備用。" 
-  - text: "熱一鍋，倒入油，放入蒜末及作法2的薑絲爆香，再放入作法2的大腸段以大火炒約1分鐘。" 
-  - text: "加入米酒蓋上鍋蓋，以中火燜煮約2分鐘，再放入作法2的辣椒片、其餘調味料炒入味即可。" 
+  - text: "將作法1的大腸切段；嫩薑切絲；辣椒切片，備用。"
+  - text: "熱一鍋，倒入油，放入蒜末及作法2的薑絲爆香，再放入作法2的大腸段以大火炒約1分鐘。"
+  - text: "加入米酒蓋上鍋蓋，以中火燜煮約2分鐘，再放入作法2的辣椒片、其餘調味料炒入味即可。"
 hero:
   src: ./hero.webp
   alt: 盤中盛裝熱氣騰騰之美味薑絲大腸

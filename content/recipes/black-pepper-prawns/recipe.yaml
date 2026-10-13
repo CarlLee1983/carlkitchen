@@ -23,7 +23,7 @@ steps:
     image:
       src: ./step-1.webp
       alt: 砧板上準備妥當並切整齊的胡椒蝦主要材料
-  - text: "食譜已完成" 
+  - text: "食譜已完成"
 hero:
   src: ./hero.webp
   alt: 盤中盛裝熱氣騰騰之美味胡椒蝦

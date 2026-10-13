@@ -11,7 +11,11 @@ protein: true
 timeMinutes: 15
 tags: [家常菜, 台灣小吃]
 ingredients:
-  - { name: 豬小里肌肉, amount: { value: 100, unit: g }, note: 原料標示 900公克 }
+  - {
+      name: 豬小里肌肉,
+      amount: { value: 100, unit: g },
+      note: 原料標示 900公克,
+    }
   - { name: 薑汁, amount: { value: 100, unit: g }, note: 原料標示 20㏄ }
   - { name: 薑末, amount: { value: 100, unit: g }, note: 原料標示 10公克 }
   - { name: 高麗菜, amount: { value: 100, unit: g }, note: 原料標示 100公克 }
@@ -27,8 +31,8 @@ steps:
     image:
       src: ./step-1.webp
       alt: 砧板上準備妥當並切整齊的薑汁燒肉主要材料
-  - text: "豬小里肌肉洗淨切片，瀝乾水分後放入大碗中，加入所有調味料拌勻並醃約10分鐘備用。" 
-  - text: "熱鍋倒入適量沙拉油燒熱，放入薑末小火爆香，放入作法2豬小里肌肉片炒至變色，倒入作法2剩餘的醃汁小火燒煮至略收乾，盛出放在作法1上即可。" 
+  - text: "豬小里肌肉洗淨切片，瀝乾水分後放入大碗中，加入所有調味料拌勻並醃約10分鐘備用。"
+  - text: "熱鍋倒入適量沙拉油燒熱，放入薑末小火爆香，放入作法2豬小里肌肉片炒至變色，倒入作法2剩餘的醃汁小火燒煮至略收乾，盛出放在作法1上即可。"
 hero:
   src: ./hero.webp
   alt: 盤中盛裝熱氣騰騰之美味薑汁燒肉
