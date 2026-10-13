@@ -1,0 +1,33 @@
+title: 山藥排骨湯
+summary: 依核准食譜指南製作之經典家常山藥排骨湯，風味道地鮮明。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: "排骨與鬆軟日本山藥燉煮滋補清湯。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 排骨, amount: { value: 100, unit: g }, note: 原料標示 300公克 }
+  - { name: 山藥, amount: { value: 100, unit: g }, note: 原料標示 450公克 }
+  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 2000㏄ }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 雞粉, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+steps:
+  - text: "排骨洗淨川燙去血水，再用清水洗淨。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的山藥排骨湯主要材料
+  - text: "山藥洗淨去皮切塊" 
+  - text: "取一湯鍋，將水煮開，放入作法1的排骨煮至水再度滾開後轉小火，續煮20分鐘。" 
+  - text: "在作法3的鍋中放入作法2的山藥塊續煮5分鐘，再放入調味料即可。" 
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味山藥排骨湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之山藥排骨湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

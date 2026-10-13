@@ -1,0 +1,28 @@
+title: 炸銀絲卷
+summary: 依核准食譜指南製作之經典家常炸銀絲卷，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "銀絲卷外皮炸至金黃香脆淋煉乳，主食麵點。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 銀絲卷, amount: { value: 100, unit: g }, note: 原料標示 1個 }
+  - { name: 胡椒鹽, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+steps:
+  - text: "將銀絲卷整個放入170℃的熱油中以中火炸約1分半鐘後，再翻面續炸1分半鐘至表皮呈均勻的金黃色。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的炸銀絲卷主要材料
+  - text: "撈起作法1瀝油後，再切成大小適中的塊狀，並趁熱撒上胡椒鹽即可。" 
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味炸銀絲卷
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之炸銀絲卷各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

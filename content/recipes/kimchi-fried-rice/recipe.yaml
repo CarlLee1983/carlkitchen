@@ -1,0 +1,35 @@
+title: 泡菜炒飯
+summary: 依核准食譜指南製作之經典家常泡菜炒飯，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "泡菜酸辣汁水與白飯肉絲大火快炒，經典主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 白飯, amount: { value: 100, unit: g }, note: 原料標示 1碗 }
+  - { name: 雞蛋, amount: { value: 100, unit: g }, note: 原料標示 2顆 }
+  - { name: 泡菜, amount: { value: 100, unit: g }, note: 原料標示 60公克 }
+  - { name: 豬肉絲, amount: { value: 100, unit: g }, note: 原料標示 30公克 }
+  - { name: 青蔥花, amount: { value: 100, unit: g }, note: 原料標示 1支 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 1/2小匙 }
+steps:
+  - text: "泡菜水份壓乾後切小片備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的泡菜炒飯主要材料
+  - text: "雞蛋打入碗中，攪拌均勻成蛋液。" 
+  - text: "取鍋，加入少許油燒熱，倒入作法2的蛋液炒勻至水份收乾。" 
+  - text: "續加入白飯、豬肉絲、青蔥花、調味料拌炒均勻後，再加入作法1的泡菜片略拌炒至入味即可。" 
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味泡菜炒飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之泡菜炒飯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

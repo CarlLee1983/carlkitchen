@@ -1,0 +1,34 @@
+title: 金針排骨湯
+summary: 依核准食譜指南製作之經典家常金針排骨湯，風味道地鮮明。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: "乾金針花泡發後與排骨燉煮清甜排骨湯。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 排骨, amount: { value: 100, unit: g }, note: 原料標示 400公克 }
+  - { name: 乾金針, amount: { value: 100, unit: g }, note: 原料標示 5公克 }
+  - { name: 薑片, amount: { value: 100, unit: g }, note: 原料標示 3片 }
+  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 1500c.c }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 米酒, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+steps:
+  - text: "將排骨切塊過水川燙備用；乾金針泡水備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的金針排骨湯主要材料
+  - text: "取一湯鍋，鍋中加入所有的材料，以大火煮沸後再轉小火繼續煮40分鐘。" 
+  - text: "起鍋前加入所有的調味料即可。" 
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味金針排骨湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之金針排骨湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。
