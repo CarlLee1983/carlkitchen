@@ -1,0 +1,36 @@
+sources:
+  - title: "食藥署：仙人掌桿菌"
+    url: https://www.fda.gov.tw/tc/siteContent.aspx?sid=1938
+  - title: "食藥署：隔餐飯菜暗藏風險，仙人掌桿菌來攪局，2026-07-17"
+    url: https://www.fda.gov.tw/TC/PublishOtherEpaperContent.aspx?id=1629&r=209676548&tid=5696
+  - title: "英國食品標準局：Home food fact checker，Rice"
+    url: https://www.gov.uk/government/publications/home-food-fact-checker/home-food-fact-checker#rice
+  - title: "J. Kenji López-Alt：Easy Fried Rice"
+    url: https://www.seriouseats.com/easy-vegetable-fried-rice-recipe
+  - title: "Isa 媽媽的小廚房：香菇雞肉粥"
+    url: https://icook.tw/recipes/282575
+  - title: "Made With Lau：Chicken Congee"
+    url: https://www.madewithlau.com/recipes/chicken-congee
+  - title: "Namiko Hirasawa Chen：Zosui"
+    url: https://www.justonecookbook.com/zosui-japanese-rice-soup/
+sections:
+  - heading: 要留下的飯，分裝後盡快冷卻
+    urls:
+      - https://www.fda.gov.tw/tc/siteContent.aspx?sid=1938
+      - https://www.fda.gov.tw/TC/PublishOtherEpaperContent.aspx?id=1629&r=209676548&tid=5696
+      - https://www.gov.uk/government/publications/home-food-fact-checker/home-food-fact-checker#rice
+  - heading: 再炒一次，不能補救保存不當
+    urls:
+      - https://www.fda.gov.tw/tc/siteContent.aspx?sid=1938
+      - https://www.fda.gov.tw/TC/PublishOtherEpaperContent.aspx?id=1629&r=209676548&tid=5696
+  - heading: 炒飯看表面水氣，也要先把飯團鬆開
+    urls:
+      - https://www.seriouseats.com/easy-vegetable-fried-rice-recipe
+  - heading: 煮粥先認清材料寫的是白飯還是生米
+    urls:
+      - https://icook.tw/recipes/282575
+      - https://www.madewithlau.com/recipes/chicken-congee
+  - heading: 想保留飯粒，可以選湯飯的方向
+    urls:
+      - https://www.justonecookbook.com/zosui-japanese-rice-soup/
+      - https://icook.tw/recipes/282575
