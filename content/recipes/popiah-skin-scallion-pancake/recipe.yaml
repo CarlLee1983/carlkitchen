@@ -1,0 +1,34 @@
+title: 潤餅皮蔥油餅
+summary: 依核准食譜指南製作之經典家常潤餅皮蔥油餅，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "以潤餅皮夾入蔥花酥煎之簡易蔥油餅，主食點心。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 潤餅皮, amount: { value: 100, unit: g }, note: 原料標示 4張 }
+  - { name: 蔥花, amount: { value: 100, unit: g }, note: 原料標示 80公克 }
+  - { name: 沙拉油, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 1/2茶匙 }
+  - { name: 麵粉, amount: { value: 100, unit: g }, note: 原料標示 2大匙 }
+steps:
+  - text: "蔥花與沙拉油拌勻，加入白胡椒粉和鹽拌勻成餡料，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的潤餅皮蔥油餅主要材料
+  - text: "取2張潤餅皮攤開，將作法1餡料平均鋪至潤餅皮上，留最外一圈邊緣不要舖到。" 
+  - text: "麵粉加少許水調勻成麵糊，抹在作法2潤餅皮外圈，再取一張潤餅皮蓋上，邊緣壓緊封口後用牙籤在水餃皮表面刺幾下，避免潤餅皮膨脹成空心狀。" 
+  - text: "平底鍋加熱，加入2大匙沙拉油，放入作法3蔥餅以小火將兩面煎至金黃酥脆即可。" 
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味潤餅皮蔥油餅
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之潤餅皮蔥油餅各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。
