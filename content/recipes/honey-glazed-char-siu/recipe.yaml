@@ -28,7 +28,7 @@ steps:
   - text: "煎至肉熟(切開看)，打開鍋蓋間至水份收乾表面微焦香取出。刷上蜂蜜即可。"
 hero:
   src: ./hero.webp
-  alt: 盤中盛裝熱氣騰騰之美味蜜汁叉燒肉
+  alt: 盤中盛裝熱氣騰騰之美味蜜汁燒肉
 ingredientsPhoto:
   src: ./ingredients.webp
   alt: 備料桌上整齊擺放之蜜汁叉燒各項新鮮食材
