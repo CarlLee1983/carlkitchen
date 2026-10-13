@@ -1,0 +1,43 @@
+title: 沙茶羊肉燴飯
+summary: 依核准食譜指南製作之經典家常沙茶羊肉燴飯，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "羊肉片沙茶快炒勾芡淋於白飯，單吃即可成餐之主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 羊肉片, amount: { value: 100, unit: g }, note: 原料標示 1盒 }
+  - { name: 蔥, amount: { value: 100, unit: g }, note: 原料標示 1支 }
+  - { name: 薑, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 蒜, amount: { value: 100, unit: g }, note: 原料標示 1粒 }
+  - { name: 油菜, amount: { value: 100, unit: g }, note: 原料標示 60公克 }
+  - { name: 辣椒, amount: { value: 100, unit: g }, note: 原料標示 1條 }
+  - { name: 高湯, amount: { value: 100, unit: g }, note: 原料標示 250㏄ }
+  - { name: A.沙茶, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+  - { name: 蠔油, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 酒, amount: { value: 100, unit: g }, note: 原料標示 1小匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 味精, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: B.太白粉水, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 香油, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "羊肉片用醃漬料一起拌勻醃漬約15分鐘；油菜洗淨切段；蔥切段；薑切絲；辣椒切片；蒜切末備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的沙茶羊肉燴飯主要材料
+  - text: "作法1的羊肉片加入1大匙油將其拌開。" 
+  - text: "熱一油鍋，加入2大匙油燒至熱後加入蔥、薑、蒜爆香，再加入作法2的羊肉片炒開。" 
+  - text: "於作法3鍋中倒入高湯改轉大火煮至開，再放入調味料A、辣椒片、油菜炒至油菜熟後，倒入太白粉水勾芡。" 
+  - text: "作法4起鍋前淋上少許香油，拌勻後盛於白飯盤上即可。" 
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味沙茶羊肉燴飯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之沙茶羊肉燴飯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

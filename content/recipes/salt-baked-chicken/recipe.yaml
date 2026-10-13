@@ -1,0 +1,41 @@
+title: 鹽焗雞
+summary: 依核准食譜指南製作之經典家常鹽焗雞，風味道地鮮明。
+servings: 4
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "全雞以粗鹽燜焗出鹹香肉汁，肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 60
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 土雞腿, amount: { value: 100, unit: g }, note: 原料標示 1隻 }
+  - { name: 蔥, amount: { value: 100, unit: g }, note: 原料標示 30公克 }
+  - { name: 薑, amount: { value: 100, unit: g }, note: 原料標示 25公克 }
+  - { name: 八角, amount: { value: 100, unit: g }, note: 原料標示 2粒 }
+  - { name: 花椒粉, amount: { value: 100, unit: g }, note: 原料標示 1/4茶匙 }
+  - { name: 沙薑粉, amount: { value: 100, unit: g }, note: 原料標示 1/4茶匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1茶匙 }
+  - { name: 雞精粉, amount: { value: 100, unit: g }, note: 原料標示 1/2茶匙 }
+  - { name: 細糖, amount: { value: 100, unit: g }, note: 原料標示 1/6茶匙 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 1/6茶匙 }
+  - { name: 料酒, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 50cc }
+steps:
+  - text: "土雞腿洗淨後，在雞腿內側的骨頭兩側部位，用刀劃深約1公分的切痕備用，以便醃漬入味。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的鹽焗雞主要材料
+  - text: "蔥、薑及八角拍破一起放入容器中，再加入所有調味料及花椒粉、沙薑粉。" 
+  - text: "用手抓至蔥、薑的味道滲出後，入作法1的土雞腿，用作法2的香料水搓揉至雞腿入味後，再醃漬約20分鐘。" 
+  - text: "將作法3的雞腿連同醃汁一起放入蒸鍋中，蒸約20分鐘至熟後起鍋，取出雞腿，過濾去除掉蔥、薑及香料渣，留下乾淨的醃汁作為淋汁。" 
+  - text: "將作法4的雞腿切塊後再澆淋上淋汁即可。" 
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味鹽焗雞
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之鹽焗雞各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

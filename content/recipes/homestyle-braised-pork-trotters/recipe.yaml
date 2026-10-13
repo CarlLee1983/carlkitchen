@@ -1,0 +1,38 @@
+title: 家常紅燒豬腳
+summary: 依核准食譜指南製作之經典家常家常紅燒豬腳，風味道地鮮明。
+servings: 4
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "豬腳汆燙後醬油冰糖慢火細燉，肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 75
+tags: [家常菜, 台灣小吃]
+ingredients:
+  - { name: 豬腳, amount: { value: 100, unit: g }, note: 原料標示 700公克 }
+  - { name: 八角, amount: { value: 100, unit: g }, note: 原料標示 2粒 }
+  - { name: 薑片, amount: { value: 100, unit: g }, note: 原料標示 10公克 }
+  - { name: 蔥段, amount: { value: 100, unit: g }, note: 原料標示 25公克 }
+  - { name: 蒜仁, amount: { value: 100, unit: g }, note: 原料標示 25公克 }
+  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 1200㏄ }
+  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 100㏄ }
+  - { name: 紹興酒, amount: { value: 100, unit: g }, note: 原料標示 30㏄ }
+  - { name: 冰糖, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
+  - { name: 五香粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "把豬腳去毛後洗淨，放入滾水中汆燙約3分鐘，撈出泡冰水待涼，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 砧板上準備妥當並切整齊的家常紅燒豬腳主要材料
+  - text: "熱一炒鍋，加入2大匙沙拉油，放入薑片、蒜仁、蔥段、八角炒香，再放入作法1的豬腳炒約2分鐘。" 
+  - text: "在作法2中加入醬油、紹興酒、冰糖炒至上色，再加入水煮滾，蓋上鍋蓋以小火煮約15分鐘。" 
+  - text: "將作法3的鍋蓋打開，翻動鍋中的豬腳後再蓋回去以極小火燜煮約50分鐘，最後打開鍋蓋轉中火燒煮約10分鐘至皮用筷子可以輕易戳入時即可。" 
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味家常紅燒豬腳
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之家常紅燒豬腳各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。
