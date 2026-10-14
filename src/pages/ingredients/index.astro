@@ -47,12 +47,9 @@ const groups = INGREDIENT_CATEGORIES.map((category) => ({
       entries.length === 0 ? (
         <p class="empty">目前還沒有已發布的食材介紹，請稍後再來看看。</p>
       ) : (
-        groups.map((group, index) => (
+        groups.map((group) => (
           <section aria-labelledby={`category-${group.category}`}>
             <div class="category-heading">
-              <span class="chapter-number" aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
-              </span>
               <h2 id={`category-${group.category}`}>{group.label}</h2>
             </div>
             <ul>
@@ -117,11 +114,6 @@ const groups = INGREDIENT_CATEGORIES.map((category) => ({
     display: flex;
     align-items: baseline;
     gap: 0.75rem;
-  }
-  .chapter-number {
-    color: var(--ink-soft);
-    font-family: var(--font-serif);
-    font-size: 0.85rem;
   }
   h2 {
     margin: 0;

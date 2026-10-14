@@ -40,6 +40,22 @@ a {
   outline-offset: 3px;
 }
 
+/* 鍵盤先跳過重複導覽；僅聚焦時浮在頁首，避免佔用閱讀空間。 */
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  z-index: 2;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
 .site-header {
   border-bottom: 1px solid var(--line);
   background: var(--paper);
@@ -59,7 +75,7 @@ a {
   display: flex;
   align-items: center;
   gap: 0.5rem 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .site-header a {
@@ -78,6 +94,8 @@ a {
   font-weight: 600;
   letter-spacing: 0.15em;
   margin-right: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .site-header .brand .brand-roman {
@@ -143,20 +161,20 @@ a {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .site-header-inner {
     padding: 0 1rem;
     min-height: 56px;
     flex-wrap: wrap;
   }
 
-  .nav-toggle {
+  .site-header.nav-ready .nav-toggle {
     display: inline-flex;
     margin-left: auto;
   }
 
   .site-header .site-nav-links {
-    display: none;
+    display: flex;
     width: 100%;
     flex-direction: column;
     align-items: stretch;
@@ -165,7 +183,11 @@ a {
     border-top: 1px solid var(--line);
   }
 
-  .site-header .site-nav-links.is-open {
+  .site-header.nav-ready .site-nav-links {
+    display: none;
+  }
+
+  .site-header.nav-ready .site-nav-links.is-open {
     display: flex;
   }
 
@@ -274,6 +296,7 @@ figure.illustration img {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+  .skip-link,
   .site-header,
   .site-footer,
   astro-dev-toolbar {
@@ -282,5 +305,11 @@ figure.illustration img {
   main {
     max-width: none;
     padding: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle-icon span {
+    transition: none;
   }
 }

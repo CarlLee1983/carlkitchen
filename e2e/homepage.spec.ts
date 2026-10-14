@@ -563,3 +563,38 @@ test("舊 protein 網址退回全部並正規化，不暗中改成肉類", async
   await expect(page).not.toHaveURL(/kind=/);
   await expect(page).toHaveURL(/foo=keep/);
 });
+
+for (const width of [640, 768, 1023]) {
+  test(`平板首頁搜尋與大圖並排，清單不用捲超過一屏（${width}px）`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.clock.setFixedTime(new Date("2026-10-10T12:00:00+08:00"));
+    await page.goto("/");
+    const search = await page.getByRole("searchbox").boundingBox();
+    const picture = await hero(page).getByRole("img").boundingBox();
+    expect(picture!.x).toBeGreaterThanOrEqual(search!.x + search!.width);
+    const picks = await page
+      .getByRole("region", { name: "今天煮什麼" })
+      .boundingBox();
+    const listBox = await list(page).boundingBox();
+    expect(Math.abs(picks!.width - listBox!.width)).toBeLessThanOrEqual(1);
+    const first = await rows(page).first().boundingBox();
+    expect(first!.y).toBeLessThanOrEqual(900);
+    const { slot, rendered } = await sizesSlot(hero(page).getByRole("img"));
+    expect(Math.abs(slot - rendered)).toBeLessThanOrEqual(1);
+    await page.getByRole("button", { name: "湯", exact: true }).click();
+    await expect(hero(page)).toBeHidden();
+    await page.getByRole("button", { name: "全部", exact: true }).click();
+    await expect(hero(page)).toBeVisible();
+    const restoredSearch = await page.getByRole("searchbox").boundingBox();
+    const restoredPicture = await hero(page).getByRole("img").boundingBox();
+    expect(restoredPicture!.x).toBeGreaterThanOrEqual(
+      restoredSearch!.x + restoredSearch!.width,
+    );
+    const restoredSize = await sizesSlot(hero(page).getByRole("img"));
+    expect(
+      Math.abs(restoredSize.slot - restoredSize.rendered),
+    ).toBeLessThanOrEqual(1);
+  });
+}

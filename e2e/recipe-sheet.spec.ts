@@ -90,23 +90,25 @@ for (const reason of ["unsupported", "rejected", "fetch-failed"]) {
 }
 
 for (const width of [320, 390, 1280]) {
-  test(`圖示操作保留名稱、提示與觸控面積（${width}px）`, async ({ page }) => {
+  test(`圖示操作有可見短標籤、保留完整名稱與觸控面積（${width}px）`, async ({
+    page,
+  }) => {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/recipes/tomato-egg/");
-    for (const name of [
-      "列印",
-      "查看菜單圖片",
-      "下載圖片",
-      "分享圖片",
-      "收藏這道菜",
-    ]) {
+    for (const [name, label] of [
+      ["列印", "列印"],
+      ["查看菜單圖片", "看圖"],
+      ["下載圖片", "下載"],
+      ["分享圖片", "分享"],
+      ["收藏這道菜", "收藏"],
+    ] as const) {
       const action = page.getByRole(
         name.includes("查看") || name.includes("下載") ? "link" : "button",
         { name, exact: true },
       );
       await expect(action).toBeVisible();
       await expect(action).toHaveAttribute("title", name);
-      expect(await action.innerText()).toBe("");
+      await expect(action.getByText(label, { exact: true })).toBeVisible();
       await expect(action.locator("svg")).toBeVisible();
       const box = await action.boundingBox();
       expect(box!.width).toBeGreaterThanOrEqual(44);
@@ -116,5 +118,19 @@ for (const width of [320, 390, 1280]) {
     }
     await page.getByRole("button", { name: "列印", exact: true }).focus();
     await expect(page.getByText("列印", { exact: true })).toBeVisible();
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+    ).toBeLessThanOrEqual(width);
   });
 }
+
+test("收藏短標籤隨狀態改變，列印頁不顯示快速跳轉與操作", async ({ page }) => {
+  await page.goto("/recipes/tomato-egg/");
+  const favorite = page.getByRole("button", { name: "收藏這道菜" });
+  await expect(favorite.getByText("收藏", { exact: true })).toBeVisible();
+  await favorite.click();
+  await expect(favorite.getByText("已收藏", { exact: true })).toBeVisible();
+  await page.emulateMedia({ media: "print" });
+  await expect(page.locator(".recipe-jumps")).toBeHidden();
+  await expect(page.locator(".recipe-actions")).toBeHidden();
+});

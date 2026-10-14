@@ -46,6 +46,7 @@ const imageUrl = new URL(image.src, Astro.site).href;
     <meta name="twitter:image:alt" content={image.alt} />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳至主內容</a>
     <header class="site-header">
       <nav class="site-header-inner" aria-label="主選單">
         <a class="brand" href="/">
@@ -76,56 +77,65 @@ const imageUrl = new URL(image.src, Astro.site).href;
         </div>
       </nav>
     </header>
-    <script>
-      const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
-      const nav = document.querySelector<HTMLElement>(".site-nav-links");
+    <script is:inline>
+      // 同步初始化頁首，避免模組延後執行時才收合選單、推移主內容。
+      (() => {
+        const toggle = document.querySelector(".nav-toggle");
+        const nav = document.querySelector(".site-nav-links");
 
-      if (toggle && nav) {
-        const setExpanded = (expanded: boolean) => {
-          toggle.setAttribute("aria-expanded", String(expanded));
-          if (expanded) {
-            nav.classList.add("is-open");
-          } else {
-            nav.classList.remove("is-open");
-          }
-        };
+        if (toggle instanceof HTMLButtonElement && nav instanceof HTMLElement) {
+          const setExpanded = (expanded = false) => {
+            toggle.setAttribute("aria-expanded", String(expanded));
+            if (expanded) {
+              nav.classList.add("is-open");
+            } else {
+              nav.classList.remove("is-open");
+            }
+          };
 
-        toggle.addEventListener("click", () => {
-          const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-          setExpanded(!isExpanded);
-        });
+          toggle.addEventListener("click", () => {
+            const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+            setExpanded(!isExpanded);
+          });
 
-        // 點擊選單項目後收合
-        nav.addEventListener("click", (e) => {
-          const target = e.target as HTMLElement | null;
-          if (target && target.closest("a")) {
-            setExpanded(false);
-          }
-        });
-
-        // Escape 鍵關閉並還原焦點
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            toggle.getAttribute("aria-expanded") === "true"
-          ) {
-            setExpanded(false);
-            toggle.focus();
-          }
-        });
-
-        // 點擊頁面其他地方關閉選單
-        document.addEventListener("click", (e) => {
-          if (toggle.getAttribute("aria-expanded") === "true") {
-            const target = e.target as Node | null;
-            if (target && !nav.contains(target) && !toggle.contains(target)) {
+          // 點擊選單項目後收合
+          nav.addEventListener("click", (e) => {
+            const target = e.target;
+            if (target instanceof Element && target.closest("a")) {
               setExpanded(false);
             }
-          }
-        });
-      }
+          });
+
+          // Escape 鍵關閉並還原焦點
+          document.addEventListener("keydown", (e) => {
+            if (
+              e.key === "Escape" &&
+              toggle.getAttribute("aria-expanded") === "true"
+            ) {
+              setExpanded(false);
+              toggle.focus();
+            }
+          });
+
+          // 點擊頁面其他地方關閉選單
+          document.addEventListener("click", (e) => {
+            if (toggle.getAttribute("aria-expanded") === "true") {
+              const target = e.target;
+              if (
+                target instanceof Node &&
+                !nav.contains(target) &&
+                !toggle.contains(target)
+              ) {
+                setExpanded(false);
+              }
+            }
+          });
+          // 綁好互動後才收合；沒有腳本或載入失敗時主選單仍可直接使用。
+          document.querySelector(".site-header")?.classList.add("nav-ready");
+        }
+      })();
     </script>
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <footer class="site-footer">
