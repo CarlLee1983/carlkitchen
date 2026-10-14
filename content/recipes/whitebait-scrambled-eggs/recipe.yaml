@@ -1,0 +1,36 @@
+title: 吻仔魚炒蛋
+summary: 依核准食譜指南製作之經典家常吻仔魚炒蛋，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [egg-bean, seafood]
+classificationReason: "新鮮吻仔魚與青蔥打入蛋液烘煎至金黃，蛋豆與海鮮雙主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 12
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 吻仔魚, amount: { value: 150.0, unit: g }, note: 原料標示 150公克 }
+  - { name: 雞蛋, amount: { value: 4.0, unit: g }, note: 原料標示 4個 }
+  - { name: 蔥花, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 太白粉水, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 糖, amount: { value: 4.0, unit: g }, note: 原料標示 4/1小匙 }
+  - { name: 米酒, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+steps:
+  - text: "吻仔魚沖洗乾淨，馬上瀝乾備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之吻仔魚炒蛋主要材料
+  - text: "雞蛋打入大碗中，加入所有調味料、太白粉水拌勻備用。"
+  - text: "於作法2中加入作法1的吻仔魚與蔥花拌勻。"
+  - text: "熱鍋，加入2大匙油，倒入作法3的蛋液，轉中小火煎至凝固定型，再翻面煎至上色。"
+  - text: "取出煎好的蛋，切成4大片即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味吻仔魚炒蛋
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之吻仔魚炒蛋各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

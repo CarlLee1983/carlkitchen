@@ -1,0 +1,32 @@
+title: 清燉牛肉湯
+summary: 依核准食譜指南製作之經典家常清燉牛肉湯，風味道地鮮明。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: "新鮮牛腩與紅白蘿蔔老薑細火慢燉之甘甜清湯。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 90
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 牛腱心, amount: { value: 1.0, unit: g }, note: 原料標示 1顆 }
+  - { name: 白羅蔔, amount: { value: 1.0, unit: g }, note: 原料標示 1條 }
+  - { name: 香菜, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 白胡椒粒, amount: { value: 5.0, unit: g }, note: 原料標示 5公克 }
+steps:
+  - text: "牛腱心用熱開水清洗後切塊；白羅蔔去皮切大塊；香菜去葉留莖，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之清燉牛肉湯主要材料
+  - text: "取一內鍋放入作法1的牛腱塊、白羅蔔塊、香菜莖及白胡椒粒、水。"
+  - text: "將內鍋放入電鍋中，外鍋放3杯水（份量外），蓋鍋蓋後按下開關，待開關跳起後，加鹽調味即可。"
+hero:
+  src: ./hero.webp
+  alt: 敞口深鍋中熱氣騰騰之美味清燉牛肉湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之清燉牛肉湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

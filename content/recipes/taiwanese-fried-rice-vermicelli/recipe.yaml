@@ -1,0 +1,39 @@
+title: 台式米粉炒
+summary: 依核准食譜指南製作之經典家常台式米粉炒，風味道地鮮明。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: "細米粉泡軟以油蔥肉絲高湯大火燜炒入味，經典主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣料理]
+ingredients:
+  - {
+      name: 新鮮粗米粉,
+      amount: { value: 600.0, unit: g },
+      note: 原料標示 600公克,
+    }
+  - { name: 紅蔥頭, amount: { value: 8.0, unit: g }, note: 原料標示 8顆 }
+  - { name: 芹菜, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 蝦皮, amount: { value: 10.0, unit: g }, note: 原料標示 10公克 }
+  - { name: 豬油, amount: { value: 5.0, unit: g }, note: 原料標示 5大匙 }
+  - { name: 高湯, amount: { value: 2000.0, unit: g }, note: 原料標示 2000㏄ }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "將粗米粉放入溫水中清洗，紅蔥頭、芹菜洗淨切末備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之台式米粉炒主要材料
+  - text: "熱鍋加入豬油，將作法1紅蔥頭及蝦皮放入爆香，並以小火拌炒至金黃色後撈起。"
+  - text: "取湯鍋倒入高湯煮滾，加入作法1的米粉及鹽，轉小火煮約50分鐘即可，食用前可放入作法1的芹菜末、作法2的油蔥酥及胡椒粉。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味台式米粉炒
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之台式米粉炒各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

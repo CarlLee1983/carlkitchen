@@ -1,0 +1,29 @@
+title: 煎虱目魚肚
+summary: 依核准食譜指南製作之經典家常煎虱目魚肚，風味道地鮮明。
+servings: 2
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: "新鮮虱目魚肚抹鹽下鍋煎至金黃酥香，海鮮主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 虱目魚肚, amount: { value: 1.0, unit: g }, note: 原料標示 1片 }
+  - { name: 胡椒鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 沙拉油, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+steps:
+  - text: "虱目魚肚洗淨瀝乾水份後，於表層均勻地塗抹上胡椒鹽。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之煎虱目魚肚主要材料
+  - text: "取一煎鍋，放入沙拉油熱鍋後，再放入作法1的虱目魚肚，以中火煎至表皮呈現出金黃色澤即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味煎虱目魚肚
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之煎虱目魚肚各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

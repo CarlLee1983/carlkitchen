@@ -1,0 +1,40 @@
+title: 炒冬粉
+summary: 依核准食譜指南製作之經典家常炒冬粉，風味道地鮮明。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: "冬粉吸飽肉絲香菇蔬菜高湯大火翻炒入味，經典主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 大白菜, amount: { value: 250.0, unit: g }, note: 原料標示 250公克 }
+  - { name: 冬粉, amount: { value: 60.0, unit: g }, note: 原料標示 60公克 }
+  - { name: 肉絲, amount: { value: 80.0, unit: g }, note: 原料標示 80公克 }
+  - { name: 蔥段, amount: { value: 10.0, unit: g }, note: 原料標示 10公克 }
+  - { name: 蒜末, amount: { value: 10.0, unit: g }, note: 原料標示 10公克 }
+  - { name: 鮮木耳絲, amount: { value: 25.0, unit: g }, note: 原料標示 25公克 }
+  - { name: 紅蘿蔔絲, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 糖, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 雞粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 醬油, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "白菜洗淨切段；冬粉以冷水泡軟，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之炒冬粉主要材料
+  - text: "熱鍋，倒入適量的油，放入蒜末、蔥段爆香，再加入肉絲炒至顏色變白。"
+  - text: "加入鮮木耳絲，紅蘿蔔絲及作法1的白菜段炒至微軟。"
+  - text: "加入冬粉炒開，再加入所有調味料炒入味即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味炒冬粉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之炒冬粉各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

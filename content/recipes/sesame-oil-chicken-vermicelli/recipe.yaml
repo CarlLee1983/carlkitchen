@@ -1,0 +1,36 @@
+title: 麻油雞麵線
+summary: 依核准食譜指南製作之經典家常麻油雞麵線，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "黑麻油煸炒土雞肉燉煮後淋上現煮手工麵線之主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 30
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 去骨雞腿, amount: { value: 1.0, unit: g }, note: 原料標示 1/2隻 }
+  - { name: 老薑, amount: { value: 50.0, unit: g }, note: 原料標示 50g }
+  - { name: 白麵線, amount: { value: 30.0, unit: g }, note: 原料標示 30g }
+  - { name: 水, amount: { value: 400.0, unit: g }, note: 原料標示 400cc }
+  - { name: 胡麻油, amount: { value: 40.0, unit: g }, note: 原料標示 40g }
+  - { name: 米酒, amount: { value: 100.0, unit: g }, note: 原料標示 100cc }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1/8茶匙 }
+  - { name: 蔥花, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "將去骨雞腿切成條狀；老薑切成粗絲備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之麻油雞麵線主要材料
+  - text: "白麵線放入蒸籠中蒸約10分鐘，取出以滾水汆燙一下即撈起備用。"
+  - text: "熱鍋，倒入胡麻油、薑絲炒出香味後，放入作法1的雞肉條炒至肉變白色後，倒入米酒、水煮到雞肉軟嫩時熄火即為麻油雞湯。"
+  - text: "將作法2的白麵線放入大碗中，再盛入麻油雞湯即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味麻油雞麵線
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之麻油雞麵線各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

@@ -1,0 +1,32 @@
+title: 菜脯雞湯
+summary: 依核准食譜指南製作之經典家常菜脯雞湯，風味道地鮮明。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: "陳年老菜脯與鮮嫩雞肉熬煮出古早甘醇滋味之燉湯。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 老菜脯, amount: { value: 5.0, unit: g }, note: 原料標示 5片 }
+  - { name: 仿土雞腿, amount: { value: 1.0, unit: g }, note: 原料標示 1支 }
+  - { name: 蒜頭, amount: { value: 5.0, unit: g }, note: 原料標示 5顆 }
+  - { name: 水, amount: { value: 8.0, unit: g }, note: 原料標示 8杯 }
+steps:
+  - text: "老菜脯洗淨；蒜頭拍扁，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之菜脯雞湯主要材料
+  - text: "仿土雞腿切大塊，用熱開水洗淨瀝乾備用。"
+  - text: "取一內鍋放入雞塊、老菜脯、拍碎蒜頭及水8杯。"
+  - text: "將內鍋放入電鍋，外鍋放2杯水（份量外），蓋鍋蓋後按下開關，待開關跳起後即可。"
+hero:
+  src: ./hero.webp
+  alt: 敞口深鍋中熱氣騰騰之美味菜脯雞湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之菜脯雞湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

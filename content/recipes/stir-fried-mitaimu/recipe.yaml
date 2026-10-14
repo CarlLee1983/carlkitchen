@@ -1,0 +1,37 @@
+title: 炒米苔目
+summary: 依核准食譜指南製作之經典家常炒米苔目，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "客家米苔目搭配肉絲、香菇絲與韭菜大火拌炒之經典主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 米苔目, amount: { value: 150.0, unit: g }, note: 原料標示 150公克 }
+  - { name: 肉絲, amount: { value: 80.0, unit: g }, note: 原料標示 80公克 }
+  - { name: 香菇絲, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 豆芽, amount: { value: 40.0, unit: g }, note: 原料標示 40公克 }
+  - { name: 韭菜段, amount: { value: 20.0, unit: g }, note: 原料標示 20公克 }
+  - { name: 紅蔥頭, amount: { value: 20.0, unit: g }, note: 原料標示 20公克 }
+  - { name: 高湯, amount: { value: 250.0, unit: g }, note: 原料標示 250CC }
+  - { name: 醬油, amount: { value: 2.0, unit: g }, note: 原料標示 2小匙 }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: 雞精粉, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: 糖, amount: { value: 1.0, unit: g }, note: 原料標示 1/2小匙 }
+steps:
+  - text: "熱油鍋，以小火爆香紅蔥頭，放入肉絲、香菇絲略炒一下，再放入所有調味料拌勻，轉中火，加入米苔目炒至湯汁收乾，最後放入韭菜段及豆芽略炒入味即可。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之炒米苔目主要材料
+  - text: "食譜已完成"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味炒米苔目
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之炒米苔目各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

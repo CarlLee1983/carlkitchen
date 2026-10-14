@@ -1,0 +1,33 @@
+title: 櫻花蝦高麗菜
+summary: 依核准食譜指南製作之經典家常櫻花蝦高麗菜，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable, seafood]
+classificationReason: "脆甜高麗菜與鮮香櫻花蝦拌炒，蔬菜與海鮮雙主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 高麗菜, amount: { value: 200.0, unit: g }, note: 原料標示 200公克 }
+  - { name: 蒜末, amount: { value: 10.0, unit: g }, note: 原料標示 10公克 }
+  - { name: 櫻花蝦, amount: { value: 10.0, unit: g }, note: 原料標示 10公克 }
+  - { name: 水, amount: { value: 3.0, unit: g }, note: 原料標示 3大匙 }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1/2茶匙 }
+  - { name: 細糖, amount: { value: 1.0, unit: g }, note: 原料標示 1/4茶匙 }
+steps:
+  - text: "高麗菜洗淨後切片。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之櫻花蝦高麗菜主要材料
+  - text: "熱鍋，下沙拉油小火爆香蒜末及櫻花蝦。"
+  - text: "加入高麗菜、水、鹽、細糖炒至高麗菜軟即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味櫻花蝦高麗菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之櫻花蝦高麗菜各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

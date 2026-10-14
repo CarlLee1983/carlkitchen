@@ -1,0 +1,32 @@
+title: 鹹酥蝦
+summary: 依核准食譜指南製作之經典家常鹹酥蝦，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [seafood]
+classificationReason: "鮮蝦高溫油炸後與蒜末蔥花胡椒鹽大火拌炒，海鮮主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 白刺蝦, amount: { value: 300.0, unit: g }, note: 原料標示 300公克 }
+  - { name: 蔥, amount: { value: 1.0, unit: g }, note: 原料標示 1支 }
+  - { name: 蒜頭, amount: { value: 4.0, unit: g }, note: 原料標示 4粒 }
+  - { name: 辣椒, amount: { value: 1.0, unit: g }, note: 原料標示 1/2支 }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: 胡椒粉, amount: { value: 1.0, unit: g }, note: 原料標示 1/2小匙 }
+steps:
+  - text: "白刺蝦剪去頭鬚、腳、尾、刺，放入140℃油鍋中炸熟，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之鹹酥蝦主要材料
+  - text: "熱鍋，加入適量沙拉油，放入蔥末、蒜末、辣椒末炒香，再加入作法1的蝦及所有調味料拌炒均勻即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味鹹酥蝦
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之鹹酥蝦各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

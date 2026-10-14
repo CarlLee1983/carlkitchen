@@ -1,0 +1,37 @@
+title: 客家炒粄條
+summary: 依核准食譜指南製作之經典家常客家炒粄條，風味道地鮮明。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: "Q彈粄條與肉絲、油蔥酥及豆芽大火翻炒，客家傳統主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 粄條, amount: { value: 4.0, unit: g }, note: 原料標示 4片 }
+  - { name: 蝦米, amount: { value: 1.0, unit: g }, note: 原料標示 1茶匙 }
+  - { name: 肉絲, amount: { value: 50.0, unit: g }, note: 原料標示 50公克 }
+  - { name: 韭菜, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 綠豆芽, amount: { value: 50.0, unit: g }, note: 原料標示 50公克 }
+  - { name: 油蔥酥, amount: { value: 2.0, unit: g }, note: 原料標示 2茶匙 }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1/2茶匙 }
+  - { name: 醬油, amount: { value: 1.0, unit: g }, note: 原料標示 1茶匙 }
+  - { name: 胡椒粉, amount: { value: 1.0, unit: g }, note: 原料標示 1/4茶匙 }
+steps:
+  - text: "蝦米泡水10分鐘、瀝乾；粄條切1.5公分寬條；韭菜切段，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之客家炒粄條主要材料
+  - text: "肉絲加入醃料拌勻，備用。"
+  - text: "熱鍋，加入1大匙油，放入作法2的肉絲炒至肉色反白，盛起備用。"
+  - text: "同作法3原鍋，加入1茶匙油爆香蝦米，再放入作法1的粄條以大火快炒約2分鐘，接著加入韭菜段、豆芽、作法3的肉絲、油蔥酥及所有調味料，以大火炒均勻即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味客家炒粄條
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之客家炒粄條各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

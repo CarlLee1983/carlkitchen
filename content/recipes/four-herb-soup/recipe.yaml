@@ -1,0 +1,38 @@
+title: 四神湯
+summary: 依核准食譜指南製作之經典家常四神湯，風味道地鮮明。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: "茯苓、芡實、蓮子、淮山與豬小腸慢燉之溫潤養生湯品。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 60
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 排骨, amount: { value: 200.0, unit: g }, note: 原料標示 200公克 }
+  - { name: 小腸, amount: { value: 200.0, unit: g }, note: 原料標示 200公克 }
+  - { name: 四神湯料, amount: { value: 1.0, unit: g }, note: 原料標示 1包 }
+  - { name: 米酒, amount: { value: 3.0, unit: g }, note: 原料標示 3大匙 }
+  - { name: A.水, amount: { value: 800.0, unit: g }, note: 原料標示 800㏄ }
+  - { name: 薑, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 蔥, amount: { value: 1.0, unit: g }, note: 原料標示 1根 }
+  - { name: 八角, amount: { value: 3.0, unit: g }, note: 原料標示 3粒 }
+  - { name: 花椒, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: B.鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+steps:
+  - text: "將排骨剁小塊，放入滾水汆燙後撈出備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之四神湯主要材料
+  - text: "將小腸翻面，加1大匙鹽(份量外)搓洗後用水沖洗乾淨，再加1大匙白醋(份量外)搓洗後沖水洗淨，放入滾水汆燙後撈出備用。"
+  - text: "取一深鍋，放入小腸，加調味料A、水(份量外，需蓋過小腸)，用小火煮半小時後撈出備用。"
+  - text: "將作法1的排骨、作法3的小腸、四神湯料，加水和調味料B放入電子鍋內鍋，按下「煮粥」鍵，煮至開關跳起，掀開鍋蓋，加入米酒略燜即可。"
+hero:
+  src: ./hero.webp
+  alt: 敞口深鍋中熱氣騰騰之美味四神湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之四神湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

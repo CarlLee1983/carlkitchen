@@ -1,0 +1,36 @@
+title: 餛飩湯
+summary: 依核准食譜指南製作之經典家常餛飩湯，風味道地鮮明。
+servings: 2
+category: 湯
+dishKinds: []
+classificationReason: "鮮肉餛飩滾水煮熟佐以清甜大骨高湯與芹菜珠。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 餛飩, amount: { value: 5.0, unit: g }, note: 原料標示 5顆 }
+  - { name: 青菜, amount: { value: 20.0, unit: g }, note: 原料標示 20公克 }
+  - { name: 蔥花, amount: { value: 5.0, unit: g }, note: 原料標示 5公克 }
+  - { name: 高湯, amount: { value: 400.0, unit: g }, note: 原料標示 400㏄ }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1/2茶匙 }
+  - { name: 雞精粉, amount: { value: 1.0, unit: g }, note: 原料標示 1/2茶匙 }
+  - { name: 白胡椒粉, amount: { value: 1.0, unit: g }, note: 原料標示 1/8茶匙 }
+  - { name: 香油, amount: { value: 1.0, unit: g }, note: 原料標示 1/8茶匙 }
+steps:
+  - text: "將高湯煮開後，將所有調味料後加入湯中備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之餛飩湯主要材料
+  - text: "取鍋將水燒開，把餛飩放入開水中，以小火煮約半分鐘。"
+  - text: "再將青菜放入開水中略燙熟後，撈起稍水分瀝乾後，將餛飩、青菜放入湯中。"
+  - text: "在湯面灑上蔥花即完成。"
+hero:
+  src: ./hero.webp
+  alt: 敞口深鍋中熱氣騰騰之美味餛飩湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之餛飩湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

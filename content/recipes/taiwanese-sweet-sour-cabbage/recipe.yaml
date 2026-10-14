@@ -1,0 +1,35 @@
+title: 台式泡菜
+summary: 依核准食譜指南製作之經典家常台式泡菜，風味道地鮮明。
+servings: 4
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: "高麗菜鹽漬去水後拌糖醋醃漬，酸甜爽脆純蔬菜主角。"
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 臭豆腐, amount: { value: 4.0, unit: g }, note: 原料標示 4塊 }
+  - {
+      name: 台式泡菜,
+      amount: { value: 150.0, unit: g },
+      note: 原料標示 150公克,
+    }
+  - { name: 辣椒醬, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+steps:
+  - text: "臭豆腐洗淨瀝乾備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之台式泡菜主要材料
+  - text: "熱鍋下約800㏄沙拉油燒熱至約160℃，將豆腐入油鍋炸約5分鐘至金黃色表皮酥脆，撈出瀝乾。"
+  - text: "再將油持續加熱至約180℃，再將豆腐入鍋，中火炸約2分鐘水分更乾更酥脆後撈起瀝乾油裝盤。"
+  - text: "用剪刀剪開臭豆腐，放上辣椒醬及台式泡菜伴食即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味台式泡菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之台式泡菜各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

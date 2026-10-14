@@ -1,0 +1,40 @@
+title: 回鍋肉
+summary: 依核准食譜指南製作之經典家常回鍋肉，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "五花肉煮熟切片後與青椒大蔥下鍋煸香快炒，肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 20
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 高麗菜, amount: { value: 300.0, unit: g }, note: 原料標示 300公克 }
+  - {
+      name: 熟五花肉,
+      amount: { value: 100.0, unit: g },
+      note: 原料標示 100公克,
+    }
+  - { name: 青蒜段, amount: { value: 40.0, unit: g }, note: 原料標示 40公克 }
+  - { name: 辣椒片, amount: { value: 15.0, unit: g }, note: 原料標示 15公克 }
+  - { name: 辣豆瓣醬, amount: { value: 2.0, unit: g }, note: 原料標示 2大匙 }
+  - { name: 米酒, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 糖, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "熟五花肉切片；高麗菜洗淨切片，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之回鍋肉主要材料
+  - text: "高麗菜放入沸水中汆燙至微軟，取出瀝乾備用。"
+  - text: "熱鍋，倒入適量的油，放入青蒜段、辣椒片爆香，再放入肉片炒至油亮。"
+  - text: "加入辣豆瓣醬炒香，再加入作法2的高麗菜炒勻，最後加入剩餘的調味料炒勻即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味回鍋肉
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之回鍋肉各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

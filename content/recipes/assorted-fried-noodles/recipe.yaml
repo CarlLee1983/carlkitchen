@@ -1,0 +1,40 @@
+title: 什錦炒麵
+summary: 依核准食譜指南製作之經典家常什錦炒麵，風味道地鮮明。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: "油麵與豬肉絲、鮮蝦、蛤蜊及蔬菜大火同炒之主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 油麵, amount: { value: 250.0, unit: g }, note: 原料標示 250公克 }
+  - { name: 豬肉絲, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 蝦仁, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 木耳絲, amount: { value: 20.0, unit: g }, note: 原料標示 20公克 }
+  - { name: 紅蘿蔔絲, amount: { value: 30.0, unit: g }, note: 原料標示 30公克 }
+  - { name: 蒜末, amount: { value: 1.0, unit: g }, note: 原料標示 1/2茶匙 }
+  - { name: 青菜, amount: { value: 50.0, unit: g }, note: 原料標示 50公克 }
+  - { name: 水, amount: { value: 350.0, unit: g }, note: 原料標示 350㏄ }
+  - { name: 醬油, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1/4茶匙 }
+  - { name: 糖, amount: { value: 1.0, unit: g }, note: 原料標示 1/4茶匙 }
+  - { name: 胡椒粉, amount: { value: 1.0, unit: g }, note: 原料標示 1/2茶匙 }
+  - { name: 香油, amount: { value: 1.0, unit: g }, note: 原料標示 1/2茶匙 }
+steps:
+  - text: "豬肉絲加入醃料抓勻醃，備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之什錦炒麵主要材料
+  - text: "取鍋燒熱後加入2大匙沙拉油，放入蒜末爆香，加入豬肉絲、蝦仁炒2分鐘。"
+  - text: "於作法2加入水、木耳絲、紅蘿蔔絲及油麵，加入所有調味料，待滾沸後蓋上鍋蓋以中火燜煮至湯汁收少，加入青菜，以大火拌炒至軟即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味什錦炒麵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之什錦炒麵各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

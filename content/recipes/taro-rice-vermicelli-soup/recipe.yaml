@@ -1,0 +1,43 @@
+title: 芋頭米粉湯
+summary: 依核准食譜指南製作之經典家常芋頭米粉湯，風味道地鮮明。
+servings: 3
+category: 主食
+dishKinds: []
+classificationReason: "鬆軟芋頭塊與細米粉吸飽油蔥大骨高湯，經典主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 35
+tags: [家常菜, 台灣料理]
+ingredients:
+  - {
+      name: 埔里米粉,
+      amount: { value: 300.0, unit: g },
+      note: 原料標示 300公克,
+    }
+  - { name: 芋頭, amount: { value: 200.0, unit: g }, note: 原料標示 200公克 }
+  - { name: 香菇, amount: { value: 3.0, unit: g }, note: 原料標示 3朵 }
+  - { name: 紅蔥頭, amount: { value: 5.0, unit: g }, note: 原料標示 5顆 }
+  - { name: 瘦肉, amount: { value: 100.0, unit: g }, note: 原料標示 100公克 }
+  - { name: 高湯, amount: { value: 1500.0, unit: g }, note: 原料標示 1500㏄ }
+  - { name: 芹菜末, amount: { value: 10.0, unit: g }, note: 原料標示 10公克 }
+  - { name: 油蔥酥, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 香菜, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1/2大匙 }
+  - { name: 胡椒粉, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+steps:
+  - text: "將芋頭去皮切成細丁狀，香菇浸水泡軟約1小時後切丁，紅蔥頭洗淨切末，瘦肉洗淨後切丁備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之芋頭米粉湯主要材料
+  - text: "熱鍋倒入適量的水，將米粉放入滾水中燙約3分鐘後撈起瀝乾水分備用。"
+  - text: "熱鍋倒入適量沙拉油，以油溫130℃將作法1的芋頭放入鍋中炸約1分鐘，隨即撈起。"
+  - text: "熱鍋加入3大匙沙拉油，倒入紅蔥頭爆香成微黃後，放入作法1的香菇丁和瘦肉丁拌炒至香氣溢出，加入高湯、作法2的米粉、作法3的芋頭丁下鍋煮滾，再撒入鹽巴，並轉小火燜煮10分鐘，起鍋時撒上少許的芹菜末、油蔥酥、香菜及胡椒粉即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味芋頭米粉湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之芋頭米粉湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

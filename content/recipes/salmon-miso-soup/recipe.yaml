@@ -1,0 +1,36 @@
+title: 鮭魚味噌湯
+summary: 依核准食譜指南製作之經典家常鮭魚味噌湯，風味道地鮮明。
+servings: 3
+category: 湯
+dishKinds: []
+classificationReason: "鮮美鮭魚肉塊與嫩豆腐以日式味噌滾煮之濃郁湯品。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 20
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 鮭魚, amount: { value: 1.0, unit: g }, note: 原料標示 1片 }
+  - { name: 嫩豆腐塊, amount: { value: 1.0, unit: g }, note: 原料標示 1盒 }
+  - { name: 薑絲, amount: { value: 5.0, unit: g }, note: 原料標示 5公克 }
+  - { name: 青蔥末, amount: { value: 1.0, unit: g }, note: 原料標示 1支 }
+  - { name: 米酒, amount: { value: 2.0, unit: g }, note: 原料標示 2大匙 }
+  - { name: 味噌, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 糖, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: 水, amount: { value: 2.0, unit: g }, note: 原料標示 2碗 }
+  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "取可微波的大碗，放入所有的調味料混合拌勻。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之鮭魚味噌湯主要材料
+  - text: "將鯛魚洗淨切塊，用餐巾紙吸乾水份，放入作法1的大碗中，加入嫩豆腐塊、薑絲和青蔥末，再放入微波爐中，將微波時間設定為5分鐘即可。"
+hero:
+  src: ./hero.webp
+  alt: 敞口深鍋中熱氣騰騰之美味鮭魚味噌湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之鮭魚味噌湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。
