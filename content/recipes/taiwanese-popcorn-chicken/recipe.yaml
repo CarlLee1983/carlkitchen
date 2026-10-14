@@ -4,7 +4,7 @@ servings: 3
 category: 非湯料理
 dishKinds: [meat]
 classificationReason: "去骨雞肉醃漬裹地瓜粉酥炸灑九層塔椒鹽，肉類主角。"
-draft: false
+draft: true
 mealCandidate: true
 vegetable: false
 protein: true
