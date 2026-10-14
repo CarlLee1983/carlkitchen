@@ -183,7 +183,10 @@ test("頁底有僅供參考聲明，且頁面沒有外部或來源連結", async
   const hrefs = await page
     .getByRole("link")
     .evaluateAll((links) => links.map((a) => a.getAttribute("href")));
-  for (const href of hrefs) expect(href).toMatch(/^\/(?!\/)/);
+  for (const href of hrefs)
+    expect(href).toMatch(
+      /^(?:\/(?!\/)|#(?:(?:ingredients|method)-title|main-content)$)/,
+    );
 });
 
 test("設計語彙：米白底、炭灰字、標題用明體、內文用黑體", async ({ page }) => {
@@ -237,6 +240,27 @@ test("頁首連結觸控目標至少 44×44", async ({ page }) => {
     const box = await links.nth(i).boundingBox();
     expect(box!.width).toBeGreaterThanOrEqual(44);
     expect(box!.height).toBeGreaterThanOrEqual(44);
+  }
+});
+
+test("菜譜快速跳轉讓材料與做法進入視窗並取得焦點", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.goto(url);
+  for (const [label, hash] of [
+    ["跳至材料", "#ingredients-title"],
+    ["跳至做法", "#method-title"],
+  ] as const) {
+    const link = page.getByRole("link", { name: label, exact: true });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute("href", hash);
+    const box = await link.boundingBox();
+    expect(box!.width).toBeGreaterThanOrEqual(44);
+    expect(box!.height).toBeGreaterThanOrEqual(44);
+    await link.click();
+    await expect(page).toHaveURL(new RegExp(`${hash}$`));
+    const heading = page.locator(hash);
+    await expect(heading).toBeInViewport();
+    await expect(heading).toBeFocused();
   }
 });
 

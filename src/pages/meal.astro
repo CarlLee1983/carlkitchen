@@ -38,20 +38,16 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
 
     <section class="meal-builder" aria-label="設定菜單">
       <div class="meal-builder-copy">
-        <span class="meal-step"
-          >01 <span aria-hidden="true">/</span> 選擇桌菜份量</span
-        >
+        <span class="meal-step">選擇桌菜份量</span>
         <span class="meal-builder-hint">配菜與湯品會一併安排</span>
       </div>
       <div class="meal-tools">
         <div class="meal-modes" role="group" aria-label="菜數">
           <button type="button" data-mode="4" aria-pressed="true">
-            <span class="meal-mode-count" aria-hidden="true">04</span>
             <span class="meal-mode-name">四菜一湯</span>
             <span class="meal-mode-check" aria-hidden="true">✓</span>
           </button>
           <button type="button" data-mode="5" aria-pressed="false">
-            <span class="meal-mode-count" aria-hidden="true">05</span>
             <span class="meal-mode-name">五菜一湯</span>
             <span class="meal-mode-check" aria-hidden="true">✓</span>
           </button>
@@ -100,11 +96,9 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
     <section class="meal-results" aria-label="抽選結果">
       <div class="meal-results-heading">
         <div>
-          <p class="meal-step">02 <span aria-hidden="true">/</span> 本桌菜色</p>
+          <p class="meal-step">本桌菜色</p>
           <p class="meal-results-note">點菜名查看做法，也可搜尋或指定菜色。</p>
         </div>
-        <span class="meal-results-stamp" aria-hidden="true">家常<br />菜單</span
-        >
       </div>
 
       <!-- 全頁唯一會朗讀的區域；其餘訊息只放一般文字，避免重複朗讀。 -->
@@ -207,10 +201,6 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
     color: var(--ink-soft);
     font-size: 0.84rem;
   }
-  .meal-step span {
-    padding: 0 0.2rem;
-    color: #a49f95;
-  }
   .meal-tools {
     display: grid;
     justify-items: end;
@@ -222,7 +212,7 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
   }
   .meal-modes button {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
     align-items: center;
     gap: 0.55rem;
     min-width: 9rem;
@@ -245,16 +235,6 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
     border-color: var(--meal-accent);
     background: var(--meal-accent-wash);
     color: var(--meal-accent-dark);
-  }
-  .meal-mode-count {
-    color: var(--ink-soft);
-    font-family: var(--font-serif);
-    font-size: 1.15rem;
-    font-variant-numeric: tabular-nums;
-    line-height: 1;
-  }
-  .meal-modes button[aria-pressed="true"] .meal-mode-count {
-    color: var(--meal-accent);
   }
   .meal-mode-name {
     font-size: 0.85rem;
@@ -417,20 +397,6 @@ const dataJson = JSON.stringify(data).replace(/</g, "\\u003c");
   }
   .meal-results-note {
     margin: 0.2rem 0 0;
-  }
-  .meal-results-stamp {
-    display: grid;
-    width: 3.25rem;
-    height: 3.25rem;
-    place-content: center;
-    border: 1px solid var(--line);
-    border-radius: 50%;
-    color: var(--ink-soft);
-    font-family: var(--font-serif);
-    font-size: 0.68rem;
-    line-height: 1.35;
-    text-align: center;
-    transform: rotate(8deg);
   }
   .meal-status {
     margin: 0;

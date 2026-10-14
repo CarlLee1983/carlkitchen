@@ -7,7 +7,6 @@ import {
 export function initRecipeFavorite() {
   const button =
     document.querySelector<HTMLButtonElement>("[data-favorite-id]");
-  const state = document.querySelector<HTMLElement>("[data-favorite-state]");
   const error = document.querySelector<HTMLElement>("[data-favorite-error]");
   if (!button) return;
   const id = button.dataset.favoriteId;
@@ -19,17 +18,12 @@ export function initRecipeFavorite() {
     const ids = readFavoriteIds();
     if (ids === null) {
       favoriteButton.hidden = true;
-      if (state) state.hidden = true;
       if (error) error.textContent = "無法讀取收藏，請檢查瀏覽器儲存設定。";
       return;
     }
     const saved = ids.includes(recipeId);
     favoriteButton.hidden = false;
     favoriteButton.setAttribute("aria-pressed", String(saved));
-    if (state) {
-      state.hidden = false;
-      state.textContent = saved ? "已收藏" : "尚未收藏";
-    }
     if (error) error.textContent = "";
   }
 

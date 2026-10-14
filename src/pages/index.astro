@@ -54,8 +54,8 @@ const batchSize = parseBatchSize(process.env.HOME_BATCH_SIZE);
 // 手機版大圖（< 40rem）佔內容寬的比例，只在這裡定義：CSS 以 --hero-image-width 取用，sizes 由它算出。
 // 插畫是 3:2，佔一半寬時框高是內容寬 ÷ 3；調整依 pnpm measure:mobile 的第一列底端。
 const HERO_MOBILE_WIDTH_RATIO = 0.5;
-// sizes 照實際顯示寬度寫：寬螢幕 36rem、平板整個內容寬、手機依上面的比例。
-const HERO_SIZES = `(min-width: 64rem) 36rem, (min-width: 40rem) calc(100vw - 3rem), calc((100vw - 3rem) * ${HERO_MOBILE_WIDTH_RATIO})`;
+// sizes 照實際顯示寬度寫：寬螢幕 36rem、平板雙欄扣除頁面與欄間留白、手機依上面的比例。
+const HERO_SIZES = `(min-width: 64rem) 36rem, (min-width: 40rem) calc((100vw - 5rem) / 2), calc((100vw - 3rem) * ${HERO_MOBILE_WIDTH_RATIO})`;
 
 const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
 ---
@@ -736,6 +736,56 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
   @media (max-width: 63.99rem) {
     .home[data-has-criteria] .hero-pick {
       display: none;
+    }
+  }
+
+  /* 平板也並排搜尋與插畫，避免直排題字旁留下整片空白，再疊一張全寬大圖。 */
+  @media (min-width: 40rem) and (max-width: 63.99rem) {
+    :global(main) {
+      padding-top: 1.5rem;
+    }
+    .home[data-has-hero]:not([data-has-criteria]) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+    }
+    .masthead {
+      margin-bottom: 0.5rem;
+    }
+    .intro-text h1 {
+      font-size: 2.5rem;
+    }
+    .masthead .tagline {
+      font-size: 0.85rem;
+    }
+    .hero-pick {
+      margin-top: 0;
+      align-self: center;
+    }
+    .hero-label {
+      position: static;
+      margin-bottom: 0.5rem;
+      padding: 0;
+    }
+    .random-picks,
+    .recipe-list {
+      grid-column: 1 / -1;
+    }
+    .meal-link {
+      margin-top: 0.5rem;
+    }
+    .random-picks {
+      margin-top: 1rem;
+    }
+    .picks-head {
+      margin-bottom: 0;
+    }
+    .recipe-list h2 {
+      margin-bottom: 0.5rem;
+    }
+    .recipe-list {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
     }
   }
 
