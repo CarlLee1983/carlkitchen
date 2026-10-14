@@ -33,3 +33,13 @@ texture：左清湯飯粒，右濃粥；不冒充完整配方成品。
 draft:true、editorialLayout:true，必要桌機／手機實頁目視未完成。Astro以正式dev及ASTRO_DEV_BACKGROUND=1啟動，日誌ready；雲端正常瀏覽器與curl在127.0.0.1:4347、4348均connection refused。沒有改安全設定、開放公開服務或繞限制。不能將通用CI E2E當實頁目視。本次保持draft PR，不merge、不聲稱發布。
 
 Playwright本地安裝預設cache不可建立；改到工作區可寫/tmp後官方下載ZIP不完整。unit中topic-figure-pilot測試要求Chromium，缺binary失敗。其餘和完整E2E由精確PR head CI核實，不削弱測試。
+
+## 2026-10-14 續作
+
+基底 main `588d35fca84efa8d1c04d50011c8f60e91011286`，PR161 已合入但 topic 仍 draft:true，本日續作同篇，沒有新增另一篇或重生圖片。兩個相關菜譜目前皆為已發布。
+
+獨立來源複核重新完整開啟六個原文。食藥署 2026-07-17 電子報在網頁讀取工具逾時後，以一般 HTTPS 取得完整原始頁面並解析內文，確認室溫超過 2 小時、毒素耐熱與中心溫度超過 70°C 的陳述；七個原文均重新查核，不把搜尋摘錄當全文。來源與段落對照仍成立。FSA 原文明列冷藏 24 小時及只再熱一次；本次補進正文，並區分 TFDA 一般食品的兩天冷藏建議。本文採熟飯專屬的較保守安排，不把兩個機構的期限拼成同一規則，也不稱為臺灣法規。FSA 冷凍段支持煮好後儘早分裝、快速冷卻後冷凍，不等冷藏期限將至才處理。來源網址及第一節對照已包含 FSA，無需新增來源。
+
+既有四張 WebP 未改動；重新讀取實際像素，均為 1536×1024、低於 300 KB，圖與 alt 相符。沒有新增食材、時間、溫度或操作圖。
+
+環境限制：pnpm 12.1.0 frozen install 成功。Astro dev 前景模式啟動後顯示 ready，但雲端瀏覽器及另一個命令的 localhost 連線均被拒絕。Playwright 官方下載的 Chromium ZIP 不完整；已安裝的 /usr/bin/chromium 以標準 Playwright 啟動也因 socket() Operation not permitted 終止。未改安全設定、未繞過限制。必要實頁桌機／手機目視仍未完成，保持 draft:true，不轉 ready、不合併。這不是今天已發布的新專題。
