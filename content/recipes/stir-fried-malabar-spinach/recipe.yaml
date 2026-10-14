@@ -1,0 +1,32 @@
+title: 清炒皇宮菜
+summary: 依核准食譜指南製作之經典家常清炒皇宮菜，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: "皇宮菜佐蒜片大火清炒，滑嫩爽口之純蔬菜料理。"
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 12
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 皇宮菜, amount: { value: 300.0, unit: g }, note: 原料標示 300公克 }
+  - { name: 嫩薑, amount: { value: 20.0, unit: g }, note: 原料標示 20公克 }
+  - { name: 沙拉油, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: 砂糖, amount: { value: 1.0, unit: g }, note: 原料標示 1/2小匙 }
+  - { name: 米酒, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+steps:
+  - text: "皇宮菜洗淨瀝乾；嫩薑洗淨瀝乾，切菱形片狀備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之清炒皇宮菜主要材料
+  - text: "取鍋，加入適量的油燒熱後，放入作法1的薑片爆香後，再放入作法1的皇宮菜和調味料略炒勻後即可盛盤。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味清炒皇宮菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之清炒皇宮菜各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

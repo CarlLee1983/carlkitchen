@@ -1,0 +1,31 @@
+title: 麻油腰花
+summary: 依核准食譜指南製作之經典家常麻油腰花，風味道地鮮明。
+servings: 2
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "新鮮豬腰刻花汆燙後以黑麻油老薑片大火快炒，肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 15
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 洋菇, amount: { value: 150.0, unit: g }, note: 原料標示 150公克 }
+  - { name: 老薑片, amount: { value: 50.0, unit: g }, note: 原料標示 50公克 }
+  - { name: 黑胡麻油, amount: { value: 3.0, unit: g }, note: 原料標示 3大匙 }
+  - { name: 醬油, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 水, amount: { value: 50.0, unit: g }, note: 原料標示 50㏄ }
+steps:
+  - text: "洋菇去除蒂頭，切十字刀狀，放入滾水中汆燙後撈起備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之麻油腰花主要材料
+  - text: "取鍋，加入胡麻油和老薑片炒乾，放入作法1的洋菇和其餘調味料略拌炒後，燜煮至入味即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味麻油腰花
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之麻油腰花各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

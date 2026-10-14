@@ -1,0 +1,33 @@
+title: 清炒絲瓜
+summary: 依核准食譜指南製作之經典家常清炒絲瓜，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: "鮮嫩絲瓜切塊以薑絲清炒燜出自然清甜，純蔬菜主角。"
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 15
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 絲瓜, amount: { value: 570.0, unit: g }, note: 原料標示 570公克 }
+  - { name: 蝦米, amount: { value: 20.0, unit: g }, note: 原料標示 20公克 }
+  - { name: 薑末, amount: { value: 8.0, unit: g }, note: 原料標示 8公克 }
+  - { name: 鹽, amount: { value: 1.0, unit: g }, note: 原料標示 1/2茶匙 }
+steps:
+  - text: "絲瓜削皮，切滾刀塊，洗淨瀝乾。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之清炒絲瓜主要材料
+  - text: "熱鍋，倒入適量沙拉油，爆香薑末和蝦米。"
+  - text: "再加入絲瓜塊炒勻。"
+  - text: "蓋上鍋蓋，燜約2分鐘。"
+  - text: "開蓋加入鹽拌炒均勻即可"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味清炒絲瓜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之清炒絲瓜各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

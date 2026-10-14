@@ -1,0 +1,39 @@
+title: 牛肉炒麵
+summary: 依核准食譜指南製作之經典家常牛肉炒麵，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "滑嫩牛肉片與油麵佐沙茶大火熱炒，單吃即成一餐之主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常菜, 台灣料理]
+ingredients:
+  - {
+      name: 火鍋牛肉片,
+      amount: { value: 120.0, unit: g },
+      note: 原料標示 120公克,
+    }
+  - { name: 油麵, amount: { value: 200.0, unit: g }, note: 原料標示 200公克 }
+  - { name: 蔥段, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 紅蘿蔔絲, amount: { value: 10.0, unit: g }, note: 原料標示 10公克 }
+  - { name: 高麗菜絲, amount: { value: 20.0, unit: g }, note: 原料標示 20公克 }
+  - { name: 鮮香菇絲, amount: { value: 10.0, unit: g }, note: 原料標示 10公克 }
+  - { name: 蠔油, amount: { value: 20.0, unit: g }, note: 原料標示 20㏄ }
+  - { name: 高湯, amount: { value: 100.0, unit: g }, note: 原料標示 100㏄ }
+steps:
+  - text: "紅蘿蔔絲、高麗菜絲、鮮香菇絲快速洗淨瀝乾水分備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之牛肉炒麵主要材料
+  - text: "熱鍋倒入少許油燒熱，放入蔥段小火炒香，加入所有作法1材料續炒至軟。"
+  - text: "於作法2中加入牛肉片和所有調味料炒勻，最後加入油麵略煮至湯汁吸收即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味牛肉炒麵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之牛肉炒麵各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

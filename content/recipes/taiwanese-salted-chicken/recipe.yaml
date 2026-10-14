@@ -1,0 +1,33 @@
+title: 台式鹽水雞
+summary: 依核准食譜指南製作之經典家常台式鹽水雞，風味道地鮮明。
+servings: 4
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "帶骨雞肉以花椒鹽水浸熟放涼切塊，鹹香多汁肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 40
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 土雞, amount: { value: 1.0, unit: g }, note: 原料標示 1隻 }
+  - { name: 薑, amount: { value: 100.0, unit: g }, note: 原料標示 100公克 }
+  - { name: 蔥, amount: { value: 4.0, unit: g }, note: 原料標示 4根 }
+  - { name: 水, amount: { value: 2500.0, unit: g }, note: 原料標示 2500㏄ }
+  - { name: 鹽, amount: { value: 2.0, unit: g }, note: 原料標示 2大匙 }
+  - { name: 米酒, amount: { value: 3.0, unit: g }, note: 原料標示 3大匙 }
+steps:
+  - text: "將土雞洗淨取出雞脂肪剁去雞腳；薑去皮後先取50公克切片，另50公克切碎；2根蔥切段備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之台式鹽水雞主要材料
+  - text: "備一鍋，放入水、薑片、蔥2根煮至滾沸時，將作法1的雞從頸提起雞放入滾水中，上下拉提六次使其內部充分受熱，再把整隻雞泡入滾水中開大火至水滾後再轉極微火，煮15分鐘後熄火，再燜30分鐘。"
+  - text: "將雞泡熟後用筷子撈出，將作法1的薑碎、蔥段與所有調味料調勻，再用手搓爛，趁熱塗雞身內外，再用電風扇吹涼即可剁盤。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味台式鹽水雞
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之台式鹽水雞各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

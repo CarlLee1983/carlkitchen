@@ -1,0 +1,47 @@
+title: 排骨酥湯
+summary: 依核准食譜指南製作之經典家常排骨酥湯，風味道地鮮明。
+servings: 4
+category: 湯
+dishKinds: []
+classificationReason: "醃漬炸香之排骨酥與白蘿蔔蒸煮成濃郁排骨湯。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: false
+timeMinutes: 45
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 排骨, amount: { value: 350.0, unit: g }, note: 原料標示 350公克 }
+  - {
+      name: 白蘿蔔塊,
+      amount: { value: 300.0, unit: g },
+      note: 原料標示 300公克,
+    }
+  - { name: 蔥段, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 蒜頭, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 香菜, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 地瓜粉, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 高湯, amount: { value: 1600.0, unit: g }, note: 原料標示 1600㏄ }
+  - { name: 醬油, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 糖, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 米酒, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 胡椒粉, amount: { value: 1.0, unit: g }, note: 原料標示 1/4小匙 }
+  - { name: 五香粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 雞蛋, amount: { value: 1.0, unit: g }, note: 原料標示 1/3顆 }
+steps:
+  - text: "將排骨和醃料放入大碗中混合拌勻，醃約60分鐘至入味後，均勻沾裹上地瓜粉。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之排骨酥湯主要材料
+  - text: "取鍋，加入拌鍋油燒熱至170℃，放入作法1的醃排骨、蔥段和蒜頭炸至排骨浮起至油面，即可撈起瀝油備用。"
+  - text: "將高湯和調味料放入鍋中煮至滾沸備用。"
+  - text: "取容器放入適量的白蘿蔔塊、作法2炸好的排骨、蔥段和蒜頭，加入作法3的高湯約八分滿，放入電鍋中，外鍋加入2杯水，煮至開關跳起，再燜10分鐘即可。"
+  - text: "倒入碗中，食用前再加入香菜即可。"
+hero:
+  src: ./hero.webp
+  alt: 敞口深鍋中熱氣騰騰之美味排骨酥湯
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之排骨酥湯各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

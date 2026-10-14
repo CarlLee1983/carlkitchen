@@ -1,0 +1,1551 @@
+[
+  {
+    "slug": "sakura-shrimp-cabbage",
+    "title": "櫻花蝦高麗菜",
+    "category": "非湯料理",
+    "dishKinds": [
+      "vegetable",
+      "seafood"
+    ],
+    "classificationReason": "脆甜高麗菜與鮮香櫻花蝦拌炒，蔬菜與海鮮雙主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F02-1003",
+    "raw_ingredients": [
+      "高麗菜 200公克",
+      "蒜末 10公克",
+      "櫻花蝦 10公克&",
+      "水 3大匙",
+      "鹽 1/2茶匙",
+      "細糖 1/4茶匙",
+      ""
+    ],
+    "raw_instructions": [
+      "高麗菜洗淨後切片。",
+      "熱鍋，下沙拉油小火爆香蒜末及櫻花蝦。",
+      "加入高麗菜、水、鹽、細糖炒至高麗菜軟即可。"
+    ]
+  },
+  {
+    "slug": "stir-fried-malabar-spinach",
+    "title": "清炒皇宮菜",
+    "category": "非湯料理",
+    "dishKinds": [
+      "vegetable"
+    ],
+    "classificationReason": "皇宮菜佐蒜片大火清炒，滑嫩爽口之純蔬菜料理。",
+    "vegetable": true,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 12,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F02-0786",
+    "raw_ingredients": [
+      "皇宮菜 300公克",
+      "嫩薑 20公克",
+      "沙拉油 適量&",
+      "鹽 1小匙",
+      "砂糖 1/2小匙",
+      "米酒 1大匙",
+      ""
+    ],
+    "raw_instructions": [
+      "皇宮菜洗淨瀝乾；嫩薑洗淨瀝乾，切菱形片狀備用。",
+      "取鍋，加入適量的油燒熱後，放入作法1的薑片爆香後，再放入作法1的皇宮菜和調味料略炒勻後即可盛盤。"
+    ]
+  },
+  {
+    "slug": "taiwanese-sweet-sour-cabbage",
+    "title": "台式泡菜",
+    "category": "非湯料理",
+    "dishKinds": [
+      "vegetable"
+    ],
+    "classificationReason": "高麗菜鹽漬去水後拌糖醋醃漬，酸甜爽脆純蔬菜主角。",
+    "vegetable": true,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 20,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0354",
+    "raw_ingredients": [
+      "臭豆腐 4塊",
+      "台式泡菜 150公克&",
+      "辣椒醬 1大匙"
+    ],
+    "raw_instructions": [
+      "臭豆腐洗淨瀝乾備用。",
+      "熱鍋下約800㏄沙拉油燒熱至約160℃，將豆腐入油鍋炸約5分鐘至金黃色表皮酥脆，撈出瀝乾。",
+      "再將油持續加熱至約180℃，再將豆腐入鍋，中火炸約2分鐘水分更乾更酥脆後撈起瀝乾油裝盤。",
+      "用剪刀剪開臭豆腐，放上辣椒醬及台式泡菜伴食即可。"
+    ]
+  },
+  {
+    "slug": "stir-fried-chayote-shoots",
+    "title": "炒龍鬚菜",
+    "category": "非湯料理",
+    "dishKinds": [
+      "vegetable"
+    ],
+    "classificationReason": "鮮嫩龍鬚菜與蒜末大火快炒，爽脆可口純蔬菜料理。",
+    "vegetable": true,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 12,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F02-0364",
+    "raw_ingredients": [
+      "龍鬚菜 1把",
+      "鮮香菇 2朵",
+      "蒜仁 2瓣",
+      "沙拉油 3大匙&",
+      "鹽 適量",
+      "米酒 少許"
+    ],
+    "raw_instructions": [
+      "龍鬚菜去除老硬的部份，洗淨瀝乾；鮮香菇洗淨切片；蒜仁切成細末。",
+      "取鍋倒入沙拉油加熱，爆香作法1的蒜末和鮮香菇片，放入作法1的龍鬚菜，再加入調味料快炒至熟即可。"
+    ]
+  },
+  {
+    "slug": "stir-fried-luffa",
+    "title": "清炒絲瓜",
+    "category": "非湯料理",
+    "dishKinds": [
+      "vegetable"
+    ],
+    "classificationReason": "鮮嫩絲瓜切塊以薑絲清炒燜出自然清甜，純蔬菜主角。",
+    "vegetable": true,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F04-1079",
+    "raw_ingredients": [
+      "絲瓜 570公克",
+      "蝦米 20公克",
+      "薑末 8公克&",
+      "鹽 1/2茶匙",
+      ""
+    ],
+    "raw_instructions": [
+      "絲瓜削皮，切滾刀塊，洗淨瀝乾。",
+      "熱鍋，倒入適量沙拉油，爆香薑末和蝦米。",
+      "再加入絲瓜塊炒勻。",
+      "蓋上鍋蓋，燜約2分鐘。",
+      "開蓋加入鹽拌炒均勻即可"
+    ]
+  },
+  {
+    "slug": "scallion-stir-fried-pork",
+    "title": "蔥爆豬肉",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "豬肉片醃漬後與大段青蔥熱鍋大火快炒，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-3185",
+    "raw_ingredients": [
+      "小里肌肉 300g公克",
+      "洋蔥 1/2顆",
+      "蔥 1根",
+      "辣椒 1根",
+      "蒜頭 3~4瓣&",
+      "A.龜甲萬料亭和露 1大匙",
+      "米酒 1茶匙",
+      "香油 1大匙",
+      "玉米粉或太白粉 適量",
+      "B.龜甲萬料亭和露 2大匙",
+      "糖 1茶匙",
+      "鹽 1/4茶匙",
+      "水 少許",
+      ""
+    ],
+    "raw_instructions": [
+      "先準備好所需材料，小里肌肉切片、搭配蔬菜洗淨切成適當大小備用。",
+      "小里肌肉片先以調味料A抓勻入味。",
+      "鍋內放入油2大匙燒熱，將作法2下鍋，拌炒至7~8分熟後先盛起備用。",
+      "用原鍋餘油爆香辣椒、蒜頭、蔥段、再加入洋蔥拌炒均勻，接著加入所有調味料快速翻炒均勻即可。"
+    ]
+  },
+  {
+    "slug": "sweet-and-sour-pork-ribs",
+    "title": "糖醋排骨",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "排骨油炸後裹上酸甜濃郁糖醋醬汁，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 35,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1882",
+    "raw_ingredients": [
+      "小排骨 400公克",
+      "鳳梨罐頭 1罐",
+      "洋蔥片 50公克",
+      "青椒片 50公克",
+      "紅甜椒片 50公克",
+      "地瓜粉 適量",
+      "太白粉水 少許",
+      "水 100㏄&",
+      "蕃茄醬 3大匙",
+      "白醋 2大匙",
+      "糖 2大匙",
+      "鹽 少許"
+    ],
+    "raw_instructions": [
+      "小排骨洗淨加入所有醃料醃約20分鐘後沾上地瓜粉備用。",
+      "熱鍋，倒入稍多的油，待油溫熱至160℃，放入作法1的小排骨炸至上色且熟，撈出瀝油備用。",
+      "於作法2鍋中再放入洋蔥片、青椒片、紅甜椒片過油一下，撈出瀝油備用。",
+      "另熱鍋，倒入水、所有調味料煮勻，再加入太白粉水勾芡，放入作法2及3的所有材料拌勻即可。"
+    ]
+  },
+  {
+    "slug": "steamed-pork-ribs-black-bean",
+    "title": "豆豉蒸排骨",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "排骨拌入豆豉蒜蓉醬汁入鍋大火蒸透，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 30,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-246",
+    "raw_ingredients": [
+      "小排骨 1/2斤",
+      "蔥末 1小匙",
+      "薑末 1小匙",
+      "蒜末 1小匙",
+      "辣椒末 1小匙",
+      "香油 1小匙&",
+      "乾豆豉 1大匙",
+      "蠔油 2小匙",
+      "糖 1小匙",
+      "醋 少許"
+    ],
+    "raw_instructions": [
+      "小排骨洗淨切小塊，加入所有醃料拌勻，靜置約20分鐘至入味；乾豆豉泡水至軟備用。",
+      "將半鍋油燒熱至油溫約170℃時，放入作法1的小排骨，用中火略炸約30秒即可撈出瀝乾油脂，放入盤內待涼備用。",
+      "將所有調味料拌勻，加入作法2的排骨中，連同盤子放入竹製蒸籠內，蓋上蒸籠蓋。",
+      "取一中華鍋，裝入半鍋水煮沸後，再放上作法3的竹蒸籠，用大火蒸約30分鐘後取出，並滴入香油，灑上蔥末、薑末、蒜末、辣椒末即可。"
+    ]
+  },
+  {
+    "slug": "sesame-oil-pork-kidney",
+    "title": "麻油腰花",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "新鮮豬腰刻花汆燙後以黑麻油老薑片大火快炒，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 2,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F06-0289",
+    "raw_ingredients": [
+      "洋菇 150公克",
+      "老薑片 50公克&",
+      "黑胡麻油 3大匙",
+      "醬油 1大匙",
+      "水 50㏄"
+    ],
+    "raw_instructions": [
+      "洋菇去除蒂頭，切十字刀狀，放入滾水中汆燙後撈起備用。",
+      "取鍋，加入胡麻油和老薑片炒乾，放入作法1的洋菇和其餘調味料略拌炒後，燜煮至入味即可。"
+    ]
+  },
+  {
+    "slug": "steamed-pork-patty-salted-egg",
+    "title": "鹹蛋蒸肉餅",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "調味豬絞肉鑲入鹹蛋黃蒸熟多汁鹹香，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 25,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-0932",
+    "raw_ingredients": [
+      "豬絞肉 300公克",
+      "鹹蛋 2顆",
+      "蒜末 10公克",
+      "蔥末 10公克",
+      "蔥花 適量&",
+      "蠔油 1大匙",
+      "米酒 2大匙",
+      "糖 1/4小匙",
+      "雞粉 1/4小匙"
+    ],
+    "raw_instructions": [
+      "鹹蛋去殼後，留一顆蛋黃不切，其餘的蛋白跟蛋黃切碎備用。",
+      "將豬絞肉、作法1的鹹蛋碎、蒜末、蔥末及所有調味料混合拌勻備用。",
+      "將作法2的肉餡填入碗中，再將作法1保留的完整蛋黃放置上面，放入蒸籠內蒸約15分鐘後，取出撒上蔥花或香菜即可。"
+    ]
+  },
+  {
+    "slug": "pan-fried-milkfish-belly",
+    "title": "煎虱目魚肚",
+    "category": "非湯料理",
+    "dishKinds": [
+      "seafood"
+    ],
+    "classificationReason": "新鮮虱目魚肚抹鹽下鍋煎至金黃酥香，海鮮主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 2,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-0679",
+    "raw_ingredients": [
+      "虱目魚肚 1片",
+      "胡椒鹽 少許",
+      "沙拉油 1大匙"
+    ],
+    "raw_instructions": [
+      "虱目魚肚洗淨瀝乾水份後，於表層均勻地塗抹上胡椒鹽。",
+      "取一煎鍋，放入沙拉油熱鍋後，再放入作法1的虱目魚肚，以中火煎至表皮呈現出金黃色澤即可。"
+    ]
+  },
+  {
+    "slug": "celery-stir-fried-squid",
+    "title": "芹菜炒透抽",
+    "category": "非湯料理",
+    "dishKinds": [
+      "seafood"
+    ],
+    "classificationReason": "爽脆芹菜段與鮮美透抽圈大火快炒，海鮮主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B04-0718",
+    "raw_ingredients": [
+      "透抽 500公克",
+      "芹菜 200公克",
+      "辣椒絲 10公克",
+      "蒜末 5公克&",
+      "鹽 1/4茶匙",
+      "米酒 1大匙",
+      "水 3大匙",
+      "太白粉水 1茶匙",
+      ""
+    ],
+    "raw_instructions": [
+      "透抽去皮去內臟後洗淨再切花；芹菜挑去葉子洗淨切小段。",
+      "熱鍋，下少許油，小火爆香辣椒絲及蒜末後下透抽炒至捲曲。",
+      "加入芹菜略翻炒。下鹽、白胡椒粉、米酒及水小火炒勻。加入太白粉水勾芡即可起鍋。"
+    ]
+  },
+  {
+    "slug": "five-flavor-cuttlefish",
+    "title": "五味花枝",
+    "category": "非湯料理",
+    "dishKinds": [
+      "seafood"
+    ],
+    "classificationReason": "新鮮花枝刻花汆燙冰鎮後佐酸甜香辣五味醬，海鮮主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B04-0728",
+    "raw_ingredients": [
+      "花枝 350公克",
+      "蔥 1/2支",
+      "薑 10公克",
+      "蒜仁 10公克",
+      "蒜苗 5公克",
+      "紅辣椒 1/2支",
+      "香菜 適量",
+      "九層塔 適量&",
+      "醬油膏 1大匙",
+      "番茄醬 1大匙",
+      "紅辣椒醬 1小匙",
+      "白醋 1小匙",
+      "砂糖 1大匙",
+      "香油 1大匙",
+      "辣油 1大匙",
+      ""
+    ],
+    "raw_instructions": [
+      "花枝清除內臟後洗淨，表面切十字刀，再切小片後，放入沸水中燙熟，瀝乾放入盤中備用。",
+      "蔥、薑、蒜仁、蒜苗、紅辣椒、香菜、九層塔切碎，加入所有調味料拌勻。",
+      "將作法2醬汁淋在花枝上即可。"
+    ]
+  },
+  {
+    "slug": "stir-fried-luffa-clams",
+    "title": "絲瓜炒蛤蜊",
+    "category": "非湯料理",
+    "dishKinds": [
+      "seafood",
+      "vegetable"
+    ],
+    "classificationReason": "鮮甜絲瓜與鮮活蛤蜊燜煮出鮮甜湯汁，海鮮與蔬菜雙主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F04-0615",
+    "raw_ingredients": [
+      "絲瓜 1條",
+      "蛤蜊 250公克",
+      "蒜頭 3粒",
+      "薑 15公克&",
+      "雞粉 少許",
+      "香油 少許",
+      "鹽 少許",
+      ""
+    ],
+    "raw_instructions": [
+      "蛤蜊放入冷水中，加入1小匙鹽,，讓蛤蜊慢慢吐沙，再撈起瀝乾備用。",
+      "絲瓜去皮再切成小條狀備用。",
+      "蒜頭與薑都切成片狀備用。",
+      "熱鍋，加入1大匙沙拉油，放入作法3的材料以中火爆香。",
+      "加入作法1、2的所有材料與所有調味料，以中火翻炒均勻至蛤蜊開口即可。"
+    ]
+  },
+  {
+    "slug": "scallion-braised-firm-tofu",
+    "title": "蔥燒豆腐",
+    "category": "非湯料理",
+    "dishKinds": [
+      "egg-bean"
+    ],
+    "classificationReason": "板豆腐煎至金黃後與青蔥段同燒入味，蛋豆主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0176",
+    "raw_ingredients": [
+      "黑豆腐 2塊",
+      "香菇 3朵",
+      "紅蘿蔔 20公克",
+      "青蔥 3支",
+      "沙拉油 2大匙",
+      "高湯 150㏄&",
+      "醬油 3大匙",
+      "冰糖 1小匙",
+      "米酒 1大匙",
+      "香油 1小匙"
+    ],
+    "raw_instructions": [
+      "黑豆腐切塊，放入熱油鍋中以中火炸至定型，撈出瀝油備用。",
+      "香菇以冷水泡軟後，切片；紅蘿蔔切片；青蔥切段備用。。",
+      "取一鍋，熱鍋後放入2大匙沙拉油燒熱，先放入作法2的蔥白爆香，接著放入作法的香菇片與紅蘿蔔片炒香後,加入高湯及醬油、冰糖和米酒拌勻。",
+      "於作法3的鍋中放入作法1的黑豆腐塊，以小火煮約5分鐘，再放入蔥尾煮一下立即熄火，最後淋上香油即可。"
+    ]
+  },
+  {
+    "slug": "basil-scrambled-eggs",
+    "title": "九層塔炒蛋",
+    "category": "非湯料理",
+    "dishKinds": [
+      "egg-bean"
+    ],
+    "classificationReason": "鮮香九層塔葉切碎拌入蛋液熱油烘炒，蛋豆主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 10,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=C01-0600",
+    "raw_ingredients": [
+      "九層塔 10公克",
+      "全蛋 3粒&",
+      "鹽 少許",
+      "白胡椒粉 少許",
+      "香油 1小匙",
+      ""
+    ],
+    "raw_instructions": [
+      "將九層塔挑除梗，洗淨後切成碎狀備用。",
+      "取一個容器打入全蛋、作法1的九層塔碎和所有調味料攪拌均勻。",
+      "熱鍋，加入1大匙沙拉油，放入作法2的所有材料，以中火將蛋煎成二面呈金黃色。",
+      "上桌前再切成小片狀即可。"
+    ]
+  },
+  {
+    "slug": "crispy-pork-rib-soup",
+    "title": "排骨酥湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "醃漬炸香之排骨酥與白蘿蔔蒸煮成濃郁排骨湯。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 45,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-2429",
+    "raw_ingredients": [
+      "排骨 350公克",
+      "白蘿蔔塊 300公克",
+      "蔥段 適量",
+      "蒜頭 適量",
+      "香菜 適量",
+      "地瓜粉 適量",
+      "高湯 1600㏄&",
+      "醬油 1小匙",
+      "鹽 少許",
+      "糖 少許",
+      "米酒 1大匙",
+      "胡椒粉 1/4小匙",
+      "五香粉 少許",
+      "雞蛋 1/3顆",
+      ""
+    ],
+    "raw_instructions": [
+      "將排骨和醃料放入大碗中混合拌勻，醃約60分鐘至入味後，均勻沾裹上地瓜粉。",
+      "取鍋，加入拌鍋油燒熱至170℃，放入作法1的醃排骨、蔥段和蒜頭炸至排骨浮起至油面，即可撈起瀝油備用。",
+      "將高湯和調味料放入鍋中煮至滾沸備用。",
+      "取容器放入適量的白蘿蔔塊、作法2炸好的排骨、蔥段和蒜頭，加入作法3的高湯約八分滿，放入電鍋中，外鍋加入2杯水，煮至開關跳起，再燜10分鐘即可。",
+      "倒入碗中，食用前再加入香菜即可。"
+    ]
+  },
+  {
+    "slug": "wonton-soup",
+    "title": "餛飩湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "鮮肉餛飩滾水煮熟佐以清甜大骨高湯與芹菜珠。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 2,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-710",
+    "raw_ingredients": [
+      "餛飩 5顆",
+      "青菜 20公克",
+      "蔥花 5公克&",
+      "高湯 400㏄",
+      "鹽 1/2茶匙",
+      "雞精粉 1/2茶匙",
+      "白胡椒粉 1/8茶匙",
+      "香油 1/8茶匙"
+    ],
+    "raw_instructions": [
+      "將高湯煮開後，將所有調味料後加入湯中備用。",
+      "取鍋將水燒開，把餛飩放入開水中，以小火煮約半分鐘。",
+      "再將青菜放入開水中略燙熟後，撈起稍水分瀝乾後，將餛飩、青菜放入湯中。",
+      "在湯面灑上蔥花即完成。"
+    ]
+  },
+  {
+    "slug": "clear-broth-beef-soup",
+    "title": "清燉牛肉湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "新鮮牛腩與紅白蘿蔔老薑細火慢燉之甘甜清湯。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 90,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-0796",
+    "raw_ingredients": [
+      "牛腱心 1顆",
+      "白羅蔔 1條",
+      "香菜 30公克&",
+      "鹽 少許",
+      "白胡椒粒 5公克"
+    ],
+    "raw_instructions": [
+      "牛腱心用熱開水清洗後切塊；白羅蔔去皮切大塊；香菜去葉留莖，備用。",
+      "取一內鍋放入作法1的牛腱塊、白羅蔔塊、香菜莖及白胡椒粒、水。",
+      "將內鍋放入電鍋中，外鍋放3杯水（份量外），蓋鍋蓋後按下開關，待開關跳起後，加鹽調味即可。"
+    ]
+  },
+  {
+    "slug": "salmon-miso-soup",
+    "title": "鮭魚味噌湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "鮮美鮭魚肉塊與嫩豆腐以日式味噌滾煮之濃郁湯品。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 20,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1187",
+    "raw_ingredients": [
+      "鮭魚 1片",
+      "嫩豆腐塊 1盒",
+      "薑絲 5公克",
+      "青蔥末 1支&",
+      "米酒 2大匙",
+      "味噌 1大匙",
+      "糖 1小匙",
+      "水 2碗",
+      "白胡椒粉 少許",
+      "鹽 少許"
+    ],
+    "raw_instructions": [
+      "取可微波的大碗，放入所有的調味料混合拌勻。",
+      "將鯛魚洗淨切塊，用餐巾紙吸乾水份，放入作法1的大碗中，加入嫩豆腐塊、薑絲和青蔥末，再放入微波爐中，將微波時間設定為5分鐘即可。"
+    ]
+  },
+  {
+    "slug": "stir-fried-mitaimu",
+    "title": "炒米苔目",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "客家米苔目搭配肉絲、香菇絲與韭菜大火拌炒之經典主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 20,
+    "servings": 2,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=G02-393",
+    "raw_ingredients": [
+      "米苔目 150公克",
+      "肉絲 80公克",
+      "香菇絲 30公克",
+      "豆芽  40公克",
+      "&#38894;菜段 20公克",
+      "紅蔥頭 20公克",
+      "高湯 250CC",
+      "醬油 2小匙",
+      "鹽 1小匙",
+      "雞精粉 1小匙",
+      "糖 1/2小匙"
+    ],
+    "raw_instructions": [
+      "熱油鍋，以小火爆香紅蔥頭，放入肉絲、香菇絲略炒一下，再放入所有調味料拌勻，轉中火，加入米苔目炒至湯汁收乾，最後放入韭菜段及豆芽略炒入味即可。",
+      "食譜已完成"
+    ]
+  },
+  {
+    "slug": "assorted-fried-noodles",
+    "title": "什錦炒麵",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "油麵與豬肉絲、鮮蝦、蛤蜊及蔬菜大火同炒之主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 20,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1575",
+    "raw_ingredients": [
+      "油麵 250公克",
+      "豬肉絲 30公克",
+      "蝦仁 30公克",
+      "木耳絲 20公克",
+      "紅蘿蔔絲 30公克",
+      "蒜末 1/2茶匙",
+      "青菜 50公克",
+      "水 350㏄&",
+      "醬油 1大匙",
+      "鹽 1/4茶匙",
+      "糖 1/4茶匙",
+      "胡椒粉 1/2茶匙",
+      "香油 1/2茶匙"
+    ],
+    "raw_instructions": [
+      "豬肉絲加入醃料抓勻醃，備用。",
+      "取鍋燒熱後加入2大匙沙拉油，放入蒜末爆香，加入豬肉絲、蝦仁炒2分鐘。",
+      "於作法2加入水、木耳絲、紅蘿蔔絲及油麵，加入所有調味料，待滾沸後蓋上鍋蓋以中火燜煮至湯汁收少，加入青菜，以大火拌炒至軟即可。"
+    ]
+  },
+  {
+    "slug": "pickled-mustard-pork-noodles",
+    "title": "榨菜肉絲麵",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "爽脆榨菜與炒肉絲拌入現煮湯麵，單吃即成一餐之主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 15,
+    "servings": 2,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1157",
+    "raw_ingredients": [
+      "細陽春麵 100公克",
+      "榨菜肉絲湯頭 500㏄",
+      "蔥花 適量"
+    ],
+    "raw_instructions": [
+      "將細陽春麵放入沸水中汆燙約1分鐘，撈起瀝乾。",
+      "加入榨菜肉絲湯頭與湯中的榨菜與肉絲，最後撒上蔥花即可。"
+    ]
+  },
+  {
+    "slug": "taro-rice-vermicelli-soup",
+    "title": "芋頭米粉湯",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "鬆軟芋頭塊與細米粉吸飽油蔥大骨高湯，經典主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 35,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F01-294",
+    "raw_ingredients": [
+      "埔里米粉 300公克",
+      "芋頭 200公克",
+      "香菇 3朵",
+      "紅蔥頭 5顆",
+      "瘦肉 100公克",
+      "高湯 1500㏄",
+      "芹菜末 10公克",
+      "油蔥酥 少許",
+      "香菜 少許&",
+      "鹽 1/2大匙",
+      "胡椒粉 1小匙"
+    ],
+    "raw_instructions": [
+      "將芋頭去皮切成細丁狀，香菇浸水泡軟約1小時後切丁，紅蔥頭洗淨切末，瘦肉洗淨後切丁備用。",
+      "熱鍋倒入適量的水，將米粉放入滾水中燙約3分鐘後撈起瀝乾水分備用。",
+      "熱鍋倒入適量沙拉油，以油溫130℃將作法1的芋頭放入鍋中炸約1分鐘，隨即撈起。",
+      "熱鍋加入3大匙沙拉油，倒入紅蔥頭爆香成微黃後，放入作法1的香菇丁和瘦肉丁拌炒至香氣溢出，加入高湯、作法2的米粉、作法3的芋頭丁下鍋煮滾，再撒入鹽巴，並轉小火燜煮10分鐘，起鍋時撒上少許的芹菜末、油蔥酥、香菜及胡椒粉即可。"
+    ]
+  },
+  {
+    "slug": "sesame-oil-chicken-vermicelli",
+    "title": "麻油雞麵線",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "黑麻油煸炒土雞肉燉煮後淋上現煮手工麵線之主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 30,
+    "servings": 2,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-330",
+    "raw_ingredients": [
+      "去骨雞腿 1/2隻",
+      "老薑 50g",
+      "白麵線 30g",
+      "水 400cc",
+      "胡麻油 40g",
+      "米酒 100cc",
+      "鹽 1/8茶匙",
+      "蔥花 少許"
+    ],
+    "raw_instructions": [
+      "將去骨雞腿切成條狀；老薑切成粗絲備用。",
+      "白麵線放入蒸籠中蒸約10分鐘，取出以滾水汆燙一下即撈起備用。",
+      "熱鍋，倒入胡麻油、薑絲炒出香味後，放入作法1的雞肉條炒至肉變白色後，倒入米酒、水煮到雞肉軟嫩時熄火即為麻油雞湯。",
+      "將作法2的白麵線放入大碗中，再盛入麻油雞湯即可。"
+    ]
+  },
+  {
+    "slug": "oyster-vermicelli",
+    "title": "蚵仔麵線",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "鮮蚵裹地瓜粉汆燙拌入紅麵線柴魚羹湯之經典台灣小吃主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 30,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B02-0169",
+    "raw_ingredients": [
+      "鮮蚵 350公克",
+      "紅蔥末 10公克",
+      "蒜末 10公克",
+      "香菜 適量",
+      "柴魚片 30公克",
+      "紅麵線 300公克",
+      "地瓜粉 150公克",
+      "蒜泥 適量",
+      "高湯 2000㏄&",
+      "A.鹽 1小匙",
+      "醬油 3大匙",
+      "雞粉 1小匙",
+      "冰糖 1大匙",
+      "B.烏醋 少許",
+      "太白粉水 適量"
+    ],
+    "raw_instructions": [
+      "鮮蚵洗淨瀝乾水份，再沾裹上地瓜粉放入滾水中汆燙至熟撈出備用。",
+      "紅麵線放入滾水中煮熟後撈出沖洗，並瀝乾水份。",
+      "熱一鍋倒入2大匙油量後，放入紅蔥末、蒜末爆香，再加入高湯煮滾後，放入調味料B中的太白粉水芶芡。",
+      "繼續放入紅麵線、調味料A於作法3的鍋中，一起煮5分鐘後，再放入作法1的鮮蚵、柴魚片拌勻。",
+      "食用時，再加入烏醋、香菜、蒜泥即可。"
+    ]
+  },
+  {
+    "slug": "twice-cooked-pork",
+    "title": "回鍋肉",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "五花肉煮熟切片後與青椒大蔥下鍋煸香快炒，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 20,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F02-0590",
+    "raw_ingredients": [
+      "高麗菜 300公克",
+      "熟五花肉 100公克",
+      "青蒜段 40公克",
+      "辣椒片 15公克&",
+      "辣豆瓣醬 2大匙",
+      "米酒 1大匙",
+      "醬油 少許",
+      "糖 少許"
+    ],
+    "raw_instructions": [
+      "熟五花肉切片；高麗菜洗淨切片，備用。",
+      "高麗菜放入沸水中汆燙至微軟，取出瀝乾備用。",
+      "熱鍋，倒入適量的油，放入青蒜段、辣椒片爆香，再放入肉片炒至油亮。",
+      "加入辣豆瓣醬炒香，再加入作法2的高麗菜炒勻，最後加入剩餘的調味料炒勻即可。"
+    ]
+  },
+  {
+    "slug": "taiwanese-salt-crispy-shrimp",
+    "title": "鹹酥蝦",
+    "category": "非湯料理",
+    "dishKinds": [
+      "seafood"
+    ],
+    "classificationReason": "鮮蝦高溫油炸後與蒜末蔥花胡椒鹽大火拌炒，海鮮主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B03-0613",
+    "raw_ingredients": [
+      "白刺蝦 300公克",
+      "蔥 1支",
+      "蒜頭 4粒",
+      "辣椒 1/2支&",
+      "鹽 1小匙",
+      "胡椒粉 1/2小匙"
+    ],
+    "raw_instructions": [
+      "白刺蝦剪去頭鬚、腳、尾、刺，放入140℃油鍋中炸熟，備用。",
+      "熱鍋，加入適量沙拉油，放入蔥末、蒜末、辣椒末炒香，再加入作法1的蝦及所有調味料拌炒均勻即可。"
+    ]
+  },
+  {
+    "slug": "taiwanese-peeled-chili-chicken-soup",
+    "title": "剝皮辣椒雞湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "甘甜微辣剝皮辣椒與土雞肉慢火燉煮之回甘雞湯。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 40,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-0886",
+    "raw_ingredients": [
+      "土雞 200公克",
+      "剝皮辣椒 80公克",
+      "剝皮辣椒汁 50㏄",
+      "蒜仁 15公克",
+      "水 800㏄&",
+      "鹽 1/2茶匙",
+      "雞粉 1/4茶匙"
+    ],
+    "raw_instructions": [
+      "土雞肉剁小塊，放入滾水中汆燙去髒，再撈出用冷水沖涼洗淨，放入湯鍋中。",
+      "在作法1的湯鍋中續加入剝皮辣椒、剝皮辣椒及汁、蒜仁、水，以中火煮至滾沸。",
+      "待作法2的雞湯滾沸後撈去浮沫，再轉微火，不蓋鍋蓋煮約30分鐘，關火後加入所有調味料調味即可。"
+    ]
+  },
+  {
+    "slug": "dried-radish-chicken-soup",
+    "title": "菜脯雞湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "陳年老菜脯與鮮嫩雞肉熬煮出古早甘醇滋味之燉湯。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 45,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-1307",
+    "raw_ingredients": [
+      "老菜脯 5片",
+      "仿土雞腿 1支",
+      "蒜頭 5顆",
+      "水 8杯"
+    ],
+    "raw_instructions": [
+      "老菜脯洗淨；蒜頭拍扁，備用。",
+      "仿土雞腿切大塊，用熱開水洗淨瀝乾備用。",
+      "取一內鍋放入雞塊、老菜脯、拍碎蒜頭及水8杯。",
+      "將內鍋放入電鍋，外鍋放2杯水（份量外），蓋鍋蓋後按下開關，待開關跳起後即可。"
+    ]
+  },
+  {
+    "slug": "four-herb-soup",
+    "title": "四神湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "茯苓、芡實、蓮子、淮山與豬小腸慢燉之溫潤養生湯品。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 60,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1607",
+    "raw_ingredients": [
+      "排骨 200公克",
+      "小腸 200公克",
+      "四神湯料 1包",
+      "米酒 3大匙&",
+      "A.水 800㏄",
+      "薑 30公克",
+      "蔥 1根",
+      "八角 3粒",
+      "花椒 1小匙",
+      "B.鹽 1小匙"
+    ],
+    "raw_instructions": [
+      "將排骨剁小塊，放入滾水汆燙後撈出備用。",
+      "將小腸翻面，加1大匙鹽(份量外)搓洗後用水沖洗乾淨，再加1大匙白醋(份量外)搓洗後沖水洗淨，放入滾水汆燙後撈出備用。",
+      "取一深鍋，放入小腸，加調味料A、水(份量外，需蓋過小腸)，用小火煮半小時後撈出備用。",
+      "將作法1的排骨、作法3的小腸、四神湯料，加水和調味料B放入電子鍋內鍋，按下「煮粥」鍵，煮至開關跳起，掀開鍋蓋，加入米酒略燜即可。"
+    ]
+  },
+  {
+    "slug": "white-radish-rib-soup",
+    "title": "蘿蔔排骨湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "清甜白蘿蔔塊與豬排骨慢火細熬之甘甜家常湯。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 45,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1162",
+    "raw_ingredients": [
+      "白蘿蔔 400公克",
+      "排骨 600公克",
+      "薑片 適量",
+      "香菜 適量",
+      "香油 適量&",
+      "鹽 1小匙",
+      "水 2000㏄",
+      "米酒 120㏄"
+    ],
+    "raw_instructions": [
+      "排骨切塊放入沸水中汆燙去除血水；白蘿蔔去皮切滾刀塊，放入沸水中汆燙去除辛辣味，備用。",
+      "將作法1的排骨塊、白蘿蔔塊及所有調味料放入沸水中以大火煮至沸騰。",
+      "轉小火繼續煮約30分鐘，起鍋前放入香油及香菜即可。"
+    ]
+  },
+  {
+    "slug": "hakka-stir-fried-flat-noodles",
+    "title": "客家炒粄條",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "Q彈粄條與肉絲、油蔥酥及豆芽大火翻炒，客家傳統主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 20,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=G01-0864",
+    "raw_ingredients": [
+      "粄條 4片",
+      "蝦米 1茶匙",
+      "肉絲 50公克",
+      "韭菜 30公克",
+      "綠豆芽 50公克",
+      "油蔥酥 2茶匙&",
+      "鹽 1/2茶匙",
+      "醬油 1茶匙",
+      "胡椒粉 1/4茶匙"
+    ],
+    "raw_instructions": [
+      "蝦米泡水10分鐘、瀝乾；粄條切1.5公分寬條；韭菜切段，備用。",
+      "肉絲加入醃料拌勻，備用。",
+      "熱鍋，加入1大匙油，放入作法2的肉絲炒至肉色反白，盛起備用。",
+      "同作法3原鍋，加入1茶匙油爆香蝦米，再放入作法1的粄條以大火快炒約2分鐘，接著加入韭菜段、豆芽、作法3的肉絲、油蔥酥及所有調味料，以大火炒均勻即可。"
+    ]
+  },
+  {
+    "slug": "stir-fried-glass-noodles",
+    "title": "炒冬粉",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "冬粉吸飽肉絲香菇蔬菜高湯大火翻炒入味，經典主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 20,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F02-0596",
+    "raw_ingredients": [
+      "大白菜 250公克",
+      "冬粉 60公克",
+      "肉絲 80公克",
+      "蔥段 10公克",
+      "蒜末 10公克",
+      "鮮木耳絲 25公克",
+      "紅蘿蔔絲 適量&",
+      "鹽 少許",
+      "糖 少許",
+      "雞粉 少許",
+      "醬油 1大匙",
+      "白胡椒粉 少許"
+    ],
+    "raw_instructions": [
+      "白菜洗淨切段；冬粉以冷水泡軟，備用。",
+      "熱鍋，倒入適量的油，放入蒜末、蔥段爆香，再加入肉絲炒至顏色變白。",
+      "加入鮮木耳絲，紅蘿蔔絲及作法1的白菜段炒至微軟。",
+      "加入冬粉炒開，再加入所有調味料炒入味即可。"
+    ]
+  },
+  {
+    "slug": "beef-fried-noodles",
+    "title": "牛肉炒麵",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "滑嫩牛肉片與油麵佐沙茶大火熱炒，單吃即成一餐之主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 15,
+    "servings": 2,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-0831",
+    "raw_ingredients": [
+      "火鍋牛肉片 120公克",
+      "油麵 200公克",
+      "蔥段 1大匙",
+      "紅蘿蔔絲 10公克",
+      "高麗菜絲 20公克",
+      "鮮香菇絲 10公克&",
+      "蠔油 20㏄",
+      "高湯 100㏄"
+    ],
+    "raw_instructions": [
+      "紅蘿蔔絲、高麗菜絲、鮮香菇絲快速洗淨瀝乾水分備用。",
+      "熱鍋倒入少許油燒熱，放入蔥段小火炒香，加入所有作法1材料續炒至軟。",
+      "於作法2中加入牛肉片和所有調味料炒勻，最後加入油麵略煮至湯汁吸收即可。"
+    ]
+  },
+  {
+    "slug": "sesame-oil-chuan-qi",
+    "title": "麻油川七",
+    "category": "非湯料理",
+    "dishKinds": [
+      "vegetable"
+    ],
+    "classificationReason": "鮮嫩川七葉以黑麻油老薑絲與枸杞快炒，純蔬菜主角。",
+    "vegetable": true,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 10,
+    "servings": 2,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F02-0788",
+    "raw_ingredients": [
+      "川七 150公克",
+      "枸杞 10公克",
+      "老薑 30公克",
+      "高湯 200㏄&",
+      "黑麻油 2大匙",
+      "米酒 1大匙",
+      ""
+    ],
+    "raw_instructions": [
+      "將川七葉中較老的梗摘除後，洗淨瀝乾；枸杞洗淨瀝乾；老薑洗淨瀝乾後，切片狀備用。",
+      "取鍋，倒入黑麻油，續放入作法1老薑片爆香後，加入高湯、作法1的川七、枸杞和米酒，煮至滾沸後盛起即可。"
+    ]
+  },
+  {
+    "slug": "spicy-kung-pao-chicken",
+    "title": "香辣宮保雞丁",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "雞肉丁醃漬過油與乾辣椒花生花椒大火醬炒，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 20,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-390",
+    "raw_ingredients": [
+      "雞肉 250公克",
+      "蔥 1根",
+      "乾辣椒 5公克",
+      "沙拉油 1小匙",
+      "蒜味花生 40公克&",
+      "A.醬油 1小匙",
+      "米酒 1小匙",
+      "蛋液 少許",
+      "太白粉 1小匙",
+      "B.醬油 1小匙",
+      "烏醋 3/2小匙",
+      "糖 1小匙",
+      "米酒 1小匙",
+      "辣油 1小匙",
+      "水 2小匙"
+    ],
+    "raw_instructions": [
+      "將雞肉洗乾淨後切成丁狀，再放入調味料A一起醃漬20分鐘後，放入180℃油鍋中，以中火過油30秒後撈起備用。",
+      "將蔥、乾辣椒切成小段備用。取一鍋，鍋中加入沙拉油熱鍋後，再以小火爆香乾辣椒段，然後依序放入雞丁、蔥段、調味料B，一起用大火快速拌炒到所有湯汁收乾，在起鍋之前再加入蒜味花生拌勻即可。"
+    ]
+  },
+  {
+    "slug": "mapo-tofu-claypot",
+    "title": "麻婆豆腐煲",
+    "category": "非湯料理",
+    "dishKinds": [
+      "egg-bean"
+    ],
+    "classificationReason": "嫩豆腐與調味牛豬絞肉佐花椒辣豆瓣熱煲收汁，蛋豆主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 20,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0391",
+    "raw_ingredients": [
+      "豆腐 300公克",
+      "茄子 100公克",
+      "絞肉 50公克",
+      "花豆 30公克",
+      "蒜末 20公克",
+      "蔥花 20公克",
+      "玉米筍 30公克",
+      "鴻禧菇 50公克&",
+      "辣椒醬 2大匙",
+      "醬油 1大匙",
+      "糖 1大匙",
+      "水 500㏄",
+      ""
+    ],
+    "raw_instructions": [
+      "豆腐切丁；茄子切圓段；花豆泡水；玉米筍切斜段，備用。",
+      "熱鍋，倒入稍多的油，放入作法1的茄子段過油一下，取出瀝油備用。",
+      "作法2鍋中留少許油，放入蒜末爆香，再放入絞肉炒至變色。",
+      "放入豆腐、茄子、花豆、玉米筍、鴻喜菇及所有調味料炒勻，移入砂鍋中煮至收汁，撒入蔥花即可。"
+    ]
+  },
+  {
+    "slug": "scallion-braised-pork-ribs",
+    "title": "蔥燒排骨",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "排骨煸香後以整把青蔥慢火紅燒收汁入味，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 45,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-2218",
+    "raw_ingredients": [
+      "豬肋排 350公克",
+      "青蔥 2支",
+      "薑 6公克",
+      "蒜頭 3粒",
+      "辣椒 1條",
+      "滷汁：甘甜醬油 30㏄",
+      "甘草粉 1小匙",
+      "八角 2粒",
+      "丁香 3粒",
+      "細砂糖 1大匙",
+      "雞粉 1小匙",
+      "水 500㏄"
+    ],
+    "raw_instructions": [
+      "首先將豬肋排洗淨備用。",
+      "將青蔥、辣椒切段；蒜頭、薑用菜刀拍扁備用。",
+      "取一個湯鍋先加入1大匙沙拉油，再加入作法2的所有材料以中火先爆香。",
+      "再加入所有的滷汁材料和作法1處理好的豬肋排，以大火煮至滾，邊煮邊將浮渣輕輕的撈除。",
+      "最後蓋上鍋蓋再以中小火燉煮約30分鐘即可。"
+    ]
+  },
+  {
+    "slug": "huadiao-chicken",
+    "title": "花雕雞",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "雞肉切塊以濃醇花雕酒及特調醬汁燜煮收汁，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 30,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-1296",
+    "raw_ingredients": [
+      "仿土雞 1/2隻",
+      "紅蔥頭 5粒",
+      "蒜仁 5粒",
+      "乾辣椒 5條",
+      "芹菜 30公克",
+      "洋蔥 30公克",
+      "黑木耳 50公克&",
+      "A.辣豆瓣醬 1茶匙",
+      "花雕酒 1大匙",
+      "蠔油 2茶匙",
+      "麻醬 1/2茶匙",
+      "糖 1/2茶匙",
+      "水 1碗",
+      "雞粉 1茶匙",
+      "B.花雕酒 1大匙"
+    ],
+    "raw_instructions": [
+      "雞肉剁小塊，加入所有醃料拌勻，醃漬約1小時，備用。",
+      "紅蔥頭及蒜仁切片；乾辣椒切小段；洋蔥切小塊；芹菜切段；木耳切小片，備用。",
+      "熱鍋，放入2大匙沙拉油，將作法1的雞塊煎至兩面金黃後盛出，備用。",
+      "同作法3原鍋，放入蒜片、紅蔥片、乾辣椒段、洋蔥塊以小火炸至金黃，再加入作法3的雞塊及所有調味料A炒勻，轉小火蓋上鍋蓋燜煮約15分鐘。",
+      "接著開蓋加入芹菜段、木耳片拌炒1分鐘，再淋入1大匙花雕酒炒勻後盛入小鍋中即可。"
+    ]
+  },
+  {
+    "slug": "taiwanese-salted-chicken",
+    "title": "台式鹽水雞",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "帶骨雞肉以花椒鹽水浸熟放涼切塊，鹹香多汁肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 40,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-0754",
+    "raw_ingredients": [
+      "土雞 1隻",
+      "薑 100公克",
+      "蔥 4根",
+      "水 2500㏄&",
+      "鹽 2大匙",
+      "米酒 3大匙"
+    ],
+    "raw_instructions": [
+      "將土雞洗淨取出雞脂肪剁去雞腳；薑去皮後先取50公克切片，另50公克切碎；2根蔥切段備用。",
+      "備一鍋，放入水、薑片、蔥2根煮至滾沸時，將作法1的雞從頸提起雞放入滾水中，上下拉提六次使其內部充分受熱，再把整隻雞泡入滾水中開大火至水滾後再轉極微火，煮15分鐘後熄火，再燜30分鐘。",
+      "將雞泡熟後用筷子撈出，將作法1的薑碎、蔥段與所有調味料調勻，再用手搓爛，趁熱塗雞身內外，再用電風扇吹涼即可剁盤。"
+    ]
+  },
+  {
+    "slug": "taiwanese-sliced-boiled-chicken",
+    "title": "白斬雞",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "全雞慢火浸熟冰鎮切塊佐客家桔醬或蒜蓉醬油，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 45,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A03-1164",
+    "raw_ingredients": [
+      "土雞 1隻",
+      "薑片 3片",
+      "蔥段 10公克",
+      "沾醬：雞湯 150㏄",
+      "素蠔油 50㏄",
+      "醬油膏 少許",
+      "糖 少許",
+      "香油 少許",
+      "蒜末 少許",
+      "辣椒末 少許&",
+      "米酒 1大匙"
+    ],
+    "raw_instructions": [
+      "土雞洗淨、去毛，瀝乾後放入沸水中汆燙，再撈出瀝乾，備用。",
+      "接著重複放入沸水中汆燙，再撈出瀝乾的動作，重複來回約3至4次後，取出瀝乾備用。",
+      "將作法2的雞放入裝有冰塊的盆中，用冰塊將整隻雞外皮冰鎮冷卻，再放回作法2原鍋中，加入米酒、薑片及蔥段，以中火煮約15分鐘後熄火，蓋上蓋子續燜約30分鐘。",
+      "取作法3中150㏄的雞湯，加入其餘沾醬調勻，即為白斬雞沾醬。",
+      "將作法3的雞肉取出，待涼後剁塊盛盤，食用時搭配作法4的白斬雞沾醬即可。"
+    ]
+  },
+  {
+    "slug": "homestyle-red-braised-tofu",
+    "title": "家常紅燒豆腐",
+    "category": "非湯料理",
+    "dishKinds": [
+      "egg-bean"
+    ],
+    "classificationReason": "嫩豆腐切厚塊兩面煎金黃以醬油高湯醬燒入味，蛋豆主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=D01-0400",
+    "raw_ingredients": [
+      "蛋豆腐 1盒",
+      "蔥 10公克",
+      "蒜末 10公克",
+      "辣椒絲 5公克&",
+      "牛頭牌紅蔥肉燥 2大匙",
+      "牛頭牌原味高湯 50㏄",
+      ""
+    ],
+    "raw_instructions": [
+      "將蛋豆腐切厚片；蔥切花，備用。",
+      "熱鍋，倒入少許油，將作法1的蛋豆腐片放入鍋中煎至兩面金黃。",
+      "加入蒜末、辣椒絲、牛頭牌紅蔥肉燥及牛頭牌原味高湯，以小火煮開。",
+      "續煮約1分鐘後湯汁略收乾，起鍋盛盤撒上蔥花及辣椒絲即可。"
+    ]
+  },
+  {
+    "slug": "whitebait-scrambled-eggs",
+    "title": "吻仔魚炒蛋",
+    "category": "非湯料理",
+    "dishKinds": [
+      "egg-bean",
+      "seafood"
+    ],
+    "classificationReason": "新鮮吻仔魚與青蔥打入蛋液烘煎至金黃，蛋豆與海鮮雙主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 12,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=C01-0491",
+    "raw_ingredients": [
+      "吻仔魚 150公克",
+      "雞蛋 4個",
+      "蔥花 30公克",
+      "太白粉水 少許&",
+      "鹽 少許",
+      "糖 4/1小匙",
+      "米酒 1小匙"
+    ],
+    "raw_instructions": [
+      "吻仔魚沖洗乾淨，馬上瀝乾備用。",
+      "雞蛋打入大碗中，加入所有調味料、太白粉水拌勻備用。",
+      "於作法2中加入作法1的吻仔魚與蔥花拌勻。",
+      "熱鍋，加入2大匙油，倒入作法3的蛋液，轉中小火煎至凝固定型，再翻面煎至上色。",
+      "取出煎好的蛋，切成4大片即可。"
+    ]
+  },
+  {
+    "slug": "bitter-melon-salted-egg",
+    "title": "苦瓜炒鹹蛋",
+    "category": "非湯料理",
+    "dishKinds": [
+      "vegetable"
+    ],
+    "classificationReason": "薄片苦瓜汆燙後與鹹蛋黃碎末大火翻炒均勻，蔬菜主角。",
+    "vegetable": true,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=F04-0702",
+    "raw_ingredients": [
+      "苦瓜 1條",
+      "鹹蛋 1顆",
+      "紅辣椒片 1支",
+      "蒜末 2顆",
+      "沙拉油 適量&",
+      "水 100㏄",
+      "米酒 1大匙",
+      "鹽 少許",
+      ""
+    ],
+    "raw_instructions": [
+      "苦瓜洗淨瀝乾，縱切剖開去籽，切成1公分的小塊狀，放入滾沸水中汆燙至稍稍變軟，撈起瀝乾備用。",
+      "鹹蛋去殼，將蛋白（不要捏的過碎）、蛋黃捏碎備用。",
+      "熱鍋，加入適量沙拉油後，放入蒜末爆香，加入紅辣椒片、作法1的苦瓜塊、作法2的鹹蛋碎末和調味料拌炒均勻即可。"
+    ]
+  },
+  {
+    "slug": "oyster-sauce-beef",
+    "title": "蠔油炒牛肉",
+    "category": "非湯料理",
+    "dishKinds": [
+      "meat"
+    ],
+    "classificationReason": "牛肉片醃漬軟嫩佐蠔油蔥薑大火熱炒，肉類主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 15,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A01-0446",
+    "raw_ingredients": [
+      "牛肉片 200公克",
+      "洋蔥 1/3顆",
+      "青椒 1/2顆",
+      "紅蘿蔔 少許",
+      "辣椒 1條",
+      "蒜 2粒",
+      "薑 少許&",
+      "A.蠔油 1大匙",
+      "水 300㏄",
+      "糖 1/2小匙",
+      "雞粉 1/2小匙",
+      "鹽 適量",
+      "B.醬油 1小匙",
+      "太白粉水 適量",
+      "香油 少許"
+    ],
+    "raw_instructions": [
+      "牛肉用醃漬料抓勻醃漬約30分鐘，過油撈起備用。",
+      "洋蔥、青椒、紅蘿蔔、辣椒、薑皆洗淨後切片；蒜切末備用。",
+      "熱一油鍋，倒1大匙油爆香蒜末、洋蔥片，加入調味料A拌勻。",
+      "煮開後先放入青椒片、紅蘿蔔片，待湯續滾至開後再加入醬油、作法1的牛肉片拌炒後，加入太白粉水勾芡。",
+      "作法4起鍋前淋上香油拌勻，後盛於白飯盤上即可。"
+    ]
+  },
+  {
+    "slug": "clam-winter-melon-rib-soup",
+    "title": "蛤蜊冬瓜排骨湯",
+    "category": "湯",
+    "dishKinds": [],
+    "classificationReason": "冬瓜塊與排骨慢火燉煮起鍋前加入鮮活蛤蜊提鮮之甘美湯品。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": true,
+    "timeMinutes": 45,
+    "servings": 4,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=A02-1282",
+    "raw_ingredients": [
+      "排骨 200公克",
+      "冬瓜 200公克",
+      "薑片 8公克",
+      "水 700㏄&",
+      "鹽 1茶匙",
+      "雞精粉 1茶匙",
+      "米酒 1茶匙"
+    ],
+    "raw_instructions": [
+      "排骨切小塊，放入滾沸的水中汆燙約1分鐘撈起，以冷水沖涼備用。",
+      "冬瓜去皮切小塊，放入滾沸的水中汆燙約1分鐘撈起，以冷水沖涼備用。",
+      "將作法1的排骨塊和作法2的冬瓜塊放入湯鍋中，加入薑片、水，以中火將冬瓜排骨湯煮至滾沸，轉至微火使湯保持在微微滾沸的狀態下煮約30分鐘後，放入所有調味料調味即可。"
+    ]
+  },
+  {
+    "slug": "garlic-braised-yellow-croaker",
+    "title": "蒜燒黃魚",
+    "category": "非湯料理",
+    "dishKinds": [
+      "seafood"
+    ],
+    "classificationReason": "整尾黃魚煎至兩面金黃後佐大量蒜瓣醬油燒煮入味，海鮮主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 25,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B01-1435",
+    "raw_ingredients": [
+      "黃魚 1條",
+      "蒜仁 10顆",
+      "蔥段 1根&",
+      "蠔油 1小匙",
+      "醬油 1小匙",
+      "番茄醬 1小匙",
+      "米酒 1大匙",
+      "鎮江醋 1大匙",
+      "水 400cc",
+      "香油 1大匙",
+      "辣油 1小匙",
+      ""
+    ],
+    "raw_instructions": [
+      "蒜仁洗淨，去蒂去尾，再取一油鍋用150℃油溫炸至金黃色，撈起備用。",
+      "黃魚洗淨，去鰓去鱗，再取作法1的油鍋用160℃油溫，略炸撈起備用。",
+      "取作法2的油鍋留少許油，將蔥段放入炒香，再加入作法1的蒜仁、作法2的黃魚及所有調味料，小火煮至湯汁略乾即可。"
+    ]
+  },
+  {
+    "slug": "garlic-stir-fried-squid",
+    "title": "蒜香炒中卷",
+    "category": "非湯料理",
+    "dishKinds": [
+      "seafood"
+    ],
+    "classificationReason": "新鮮中卷切圈大火與蒜末蔥花快炒起鍋，海鮮主角。",
+    "vegetable": false,
+    "protein": true,
+    "mealCandidate": true,
+    "timeMinutes": 12,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=B04-0638",
+    "raw_ingredients": [
+      "中卷 200公克",
+      "蔥花 10公克",
+      "辣椒末 5公克",
+      "大蒜 5公克",
+      "歐洲粉玫瑰 10公克",
+      "蒜味花生 20公克",
+      "炸粉：雞蛋 30公克",
+      "地瓜粉 1大匙",
+      "太白粉 1大匙",
+      "沙拉油 1大匙&",
+      "鹽 少許",
+      "辣椒粉 少許",
+      ""
+    ],
+    "raw_instructions": [
+      "先將中卷洗淨去除腸泥，切成一圈一圈備用。",
+      "將大蒜剁成末，以低油溫方式炸至金黃色，瀝乾備用。",
+      "起油鍋，將油溫加熱至200℃，把作法1的中卷拌入炸粉，入油鍋炸至金黃色撈起。",
+      "起乾鍋先將蔥花，辣椒末，在依序放入作法3的中卷、作法2的蒜酥、花生、調味料即可。",
+      "放入玫瑰，拌炒至香味出來即可。"
+    ]
+  },
+  {
+    "slug": "taiwanese-fried-rice-vermicelli",
+    "title": "台式米粉炒",
+    "category": "主食",
+    "dishKinds": [],
+    "classificationReason": "細米粉泡軟以油蔥肉絲高湯大火燜炒入味，經典主食。",
+    "vegetable": false,
+    "protein": false,
+    "mealCandidate": false,
+    "timeMinutes": 20,
+    "servings": 3,
+    "source_url": "https://www.ytower.com.tw/recipe/iframe-recipe.asp?seq=G01-604",
+    "raw_ingredients": [
+      "新鮮粗米粉 600公克",
+      "紅蔥頭 8顆",
+      "芹菜 30公克",
+      "蝦皮 10公克",
+      "豬油 5大匙",
+      "高湯 2000㏄&",
+      "鹽 1大匙",
+      "胡椒粉 少許"
+    ],
+    "raw_instructions": [
+      "將粗米粉放入溫水中清洗，紅蔥頭、芹菜洗淨切末備用。",
+      "熱鍋加入豬油，將作法1紅蔥頭及蝦皮放入爆香，並以小火拌炒至金黃色後撈起。",
+      "取湯鍋倒入高湯煮滾，加入作法1的米粉及鹽，轉小火煮約50分鐘即可，食用前可放入作法1的芹菜末、作法2的油蔥酥及胡椒粉。"
+    ]
+  }
+]

@@ -60,8 +60,9 @@ if [[ -n $ref ]]; then
   refargs=(-i "$ref"); [[ -n $ref2 ]] && refargs+=("$ref2")
   refnote="The attached image is the style reference: match the style, line weight, colors, background and the same cookware of the reference image. "
 fi
+codex_model="${CODEX_MODEL:-gpt-6-luna}"
 cd "$out" && rm -f "./$name.png" "./$name.preview.jpg" && perl -e 'alarm shift; exec @ARGV' 300 \
-  codex exec --skip-git-repo-check -C "$out" -s workspace-write \
+  codex exec --skip-git-repo-check -C "$out" -s workspace-write -m "$codex_model" \
   "Use your image generation tool to create exactly one image and save it as ./$name.png in the current directory, then reply with only the absolute path. ${refnote}Prompt: $style
 
 COMPOSITION: $scene" "${refargs[@]}" </dev/null 2>&1 | tail -2

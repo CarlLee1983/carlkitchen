@@ -1,0 +1,45 @@
+title: 蔥燒排骨
+summary: 依核准食譜指南製作之經典家常蔥燒排骨，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "排骨煸香後以整把青蔥慢火紅燒收汁入味，肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 45
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 豬肋排, amount: { value: 350.0, unit: g }, note: 原料標示 350公克 }
+  - { name: 青蔥, amount: { value: 2.0, unit: g }, note: 原料標示 2支 }
+  - { name: 薑, amount: { value: 6.0, unit: g }, note: 原料標示 6公克 }
+  - { name: 蒜頭, amount: { value: 3.0, unit: g }, note: 原料標示 3粒 }
+  - { name: 辣椒, amount: { value: 1.0, unit: g }, note: 原料標示 1條 }
+  - {
+      name: 滷汁：甘甜醬油,
+      amount: { value: 30.0, unit: g },
+      note: 原料標示 30㏄,
+    }
+  - { name: 甘草粉, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: 八角, amount: { value: 2.0, unit: g }, note: 原料標示 2粒 }
+  - { name: 丁香, amount: { value: 3.0, unit: g }, note: 原料標示 3粒 }
+  - { name: 細砂糖, amount: { value: 1.0, unit: g }, note: 原料標示 1大匙 }
+  - { name: 雞粉, amount: { value: 1.0, unit: g }, note: 原料標示 1小匙 }
+  - { name: 水, amount: { value: 500.0, unit: g }, note: 原料標示 500㏄ }
+steps:
+  - text: "首先將豬肋排洗淨備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之蔥燒排骨主要材料
+  - text: "將青蔥、辣椒切段；蒜頭、薑用菜刀拍扁備用。"
+  - text: "取一個湯鍋先加入1大匙沙拉油，再加入作法2的所有材料以中火先爆香。"
+  - text: "再加入所有的滷汁材料和作法1處理好的豬肋排，以大火煮至滾，邊煮邊將浮渣輕輕的撈除。"
+  - text: "最後蓋上鍋蓋再以中小火燉煮約30分鐘即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味蔥燒排骨
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之蔥燒排骨各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

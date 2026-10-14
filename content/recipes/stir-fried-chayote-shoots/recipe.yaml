@@ -1,0 +1,32 @@
+title: 炒龍鬚菜
+summary: 依核准食譜指南製作之經典家常炒龍鬚菜，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [vegetable]
+classificationReason: "鮮嫩龍鬚菜與蒜末大火快炒，爽脆可口純蔬菜料理。"
+draft: false
+mealCandidate: true
+vegetable: true
+protein: false
+timeMinutes: 12
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 龍鬚菜, amount: { value: 1.0, unit: g }, note: 原料標示 1把 }
+  - { name: 鮮香菇, amount: { value: 2.0, unit: g }, note: 原料標示 2朵 }
+  - { name: 蒜仁, amount: { value: 2.0, unit: g }, note: 原料標示 2瓣 }
+  - { name: 沙拉油, amount: { value: 3.0, unit: g }, note: 原料標示 3大匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 米酒, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "龍鬚菜去除老硬的部份，洗淨瀝乾；鮮香菇洗淨切片；蒜仁切成細末。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之炒龍鬚菜主要材料
+  - text: "取鍋倒入沙拉油加熱，爆香作法1的蒜末和鮮香菇片，放入作法1的龍鬚菜，再加入調味料快炒至熟即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味炒龍鬚菜
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之炒龍鬚菜各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

@@ -1,0 +1,40 @@
+title: 糖醋排骨
+summary: 依核准食譜指南製作之經典家常糖醋排骨，風味道地鮮明。
+servings: 3
+category: 非湯料理
+dishKinds: [meat]
+classificationReason: "排骨油炸後裹上酸甜濃郁糖醋醬汁，肉類主角。"
+draft: false
+mealCandidate: true
+vegetable: false
+protein: true
+timeMinutes: 35
+tags: [家常菜, 台灣料理]
+ingredients:
+  - { name: 小排骨, amount: { value: 400.0, unit: g }, note: 原料標示 400公克 }
+  - { name: 鳳梨罐頭, amount: { value: 1.0, unit: g }, note: 原料標示 1罐 }
+  - { name: 洋蔥片, amount: { value: 50.0, unit: g }, note: 原料標示 50公克 }
+  - { name: 青椒片, amount: { value: 50.0, unit: g }, note: 原料標示 50公克 }
+  - { name: 紅甜椒片, amount: { value: 50.0, unit: g }, note: 原料標示 50公克 }
+  - { name: 地瓜粉, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+  - { name: 太白粉水, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+  - { name: 水, amount: { value: 100.0, unit: g }, note: 原料標示 100㏄ }
+  - { name: 蕃茄醬, amount: { value: 3.0, unit: g }, note: 原料標示 3大匙 }
+  - { name: 白醋, amount: { value: 2.0, unit: g }, note: 原料標示 2大匙 }
+  - { name: 糖, amount: { value: 2.0, unit: g }, note: 原料標示 2大匙 }
+  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 少許 }
+steps:
+  - text: "小排骨洗淨加入所有醃料醃約20分鐘後沾上地瓜粉備用。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之糖醋排骨主要材料
+  - text: "熱鍋，倒入稍多的油，待油溫熱至160℃，放入作法1的小排骨炸至上色且熟，撈出瀝油備用。"
+  - text: "於作法2鍋中再放入洋蔥片、青椒片、紅甜椒片過油一下，撈出瀝油備用。"
+  - text: "另熱鍋，倒入水、所有調味料煮勻，再加入太白粉水勾芡，放入作法2及3的所有材料拌勻即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味糖醋排骨
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之糖醋排骨各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。

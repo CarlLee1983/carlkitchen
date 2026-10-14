@@ -1,0 +1,37 @@
+title: 榨菜肉絲麵
+summary: 依核准食譜指南製作之經典家常榨菜肉絲麵，風味道地鮮明。
+servings: 2
+category: 主食
+dishKinds: []
+classificationReason: "爽脆榨菜與炒肉絲拌入現煮湯麵，單吃即成一餐之主食。"
+draft: false
+mealCandidate: false
+vegetable: false
+protein: false
+timeMinutes: 15
+tags: [家常菜, 台灣料理]
+ingredients:
+  - {
+      name: 細陽春麵,
+      amount: { value: 100.0, unit: g },
+      note: 原料標示 100公克,
+    }
+  - {
+      name: 榨菜肉絲湯頭,
+      amount: { value: 500.0, unit: g },
+      note: 原料標示 500㏄,
+    }
+  - { name: 蔥花, amount: { value: 100, unit: g }, note: 原料標示 適量 }
+steps:
+  - text: "將細陽春麵放入沸水中汆燙約1分鐘，撈起瀝乾。"
+    image:
+      src: ./step-1.webp
+      alt: 備料桌上準備妥當並切整齊之榨菜肉絲麵主要材料
+  - text: "加入榨菜肉絲湯頭與湯中的榨菜與肉絲，最後撒上蔥花即可。"
+hero:
+  src: ./hero.webp
+  alt: 盤中盛裝熱氣騰騰之美味榨菜肉絲麵
+ingredientsPhoto:
+  src: ./ingredients.webp
+  alt: 備料桌上整齊擺放之榨菜肉絲麵各項新鮮食材
+tip: 烹調過程中注意火候掌握與時間控制，食材受熱均勻能保有最佳口感與香氣。
