@@ -68,3 +68,16 @@ Playwright本地安裝預設cache不可建立；改到工作區可寫/tmp後官�
 使用者已得知桌機／手機實頁目視及本機缺少 WebP／Chromium 工具的限制，於 2026-10-15 明確要求「發佈」。本篇依此單次指示續作；整頁目視仍標為未完成，不延伸為後續專題的通用豁免。必要 build、content、單元及 E2E 仍須由精確 PR head 的 CI 全部通過，才轉 ready 並合併。CI 自行安裝官方 WebP 與 Chromium 工具，沒有降低測試要求。
 
 本篇從未正式發布，將首次發布日期設為本輪完成時間 2026-10-15T15:54:00+08:00，保留 editorialLayout:true。發布後另核對正式頁、四圖、列表與 sitemap；未驗證前不宣稱已上線。
+
+
+### 2026-10-15 正式發布驗證完成
+
+[PR 169](https://github.com/CarlLee1983/carlkitchen/pull/169) 的精確 head `6e837c6c4c7de468fcb92a950480d3fc7d86970f`，由 [CI 38702180548](https://github.com/CarlLee1983/carlkitchen/actions/runs/38702180548) 全部通過。日誌確認 checkout 合併測試 commit `c21f7bb25e487e394e5772613976bc2942a8dab9`，其 tree 與 head 相同，基底 main 未移動。1259 項單元全部通過；E2E 三組 271、47、21 項全部通過；格式、型別、正式 build、內容與 Cloudflare dry-run 通過。本機 check:merge 的合併、build、content 通過，單元仍因上述缺工具失敗，沒有將本機結果改寫為通過；可在 CI 執行的相同檢查已用精確合併樹核實。
+
+PR 轉 ready 後合併，真正 main commit `e6cd19961ec530af697a66a15fa2a8e2557f72f0` 的 [Deploy 38704028730](https://github.com/CarlLee1983/carlkitchen/actions/runs/38704028730) 成功，包含完整 Verify、正式內容重建、候選池門檻及既有 Cloudflare 部署。未直接執行真實部署命令。
+
+2026-10-15 16:30（Asia/Taipei）驗證 [正式頁](https://carlkitchen.gravito.dev/topics/leftover-rice/) HTTP 200、標題與日期正確。正式瀏覽器中的封面、portion、loosen、texture 四圖在捲動載入後均 complete 且 naturalWidth 非零；桌機 1188 CSS px 全頁目視圖片與段落正常，無橫向溢位。原本本機預覽限制仍未消失，這是發布後的正式頁檢查。
+
+以雲端瀏覽器調整視窗與 125% 縮放補查 400 CSS px 窄版，實際視窗文字與插圖可讀，scrollWidth 388 小於 innerWidth 400；未宣稱真實手機裝置／iOS 驗收或完整窄版逐段目視。[專題列表](https://carlkitchen.gravito.dev/topics/) 含本篇標題與連結，[sitemap](https://carlkitchen.gravito.dev/sitemap-0.xml) 含完整正式 URL。
+
+本篇完成；此後不得把舊的環境待驗記錄當成仍未發布，也不得再次另起相同稿件。
