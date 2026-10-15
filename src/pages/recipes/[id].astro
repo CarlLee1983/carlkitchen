@@ -443,11 +443,18 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
     color: inherit;
     font-size: 0.9rem;
     text-decoration: none;
+    transition:
+      background-color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease;
   }
   .recipe-jumps a:hover,
   .recipe-jumps a:focus-visible {
     border-color: var(--ink);
     background: var(--line);
+  }
+  .recipe-jumps a:active {
+    transform: translateY(1px);
   }
   .favorite-actions button,
   .print-recipe,
@@ -467,9 +474,16 @@ const STEP_SIZES = "(min-width: 64rem) 41.5rem, calc(100vw - 5.5rem)";
     color: inherit;
     font: inherit;
     cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease;
   }
   .recipe-actions > a {
     text-decoration: none;
+  }
+  .recipe-actions > a:active {
+    transform: translateY(1px);
   }
   .recipe-actions .action-label {
     white-space: nowrap;

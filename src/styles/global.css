@@ -4,8 +4,12 @@
   --ink: #33322f;
   --ink-soft: #6b6862;
   --line: #d9d6cf;
+  --shadow-ink-sm: 0 1px 3px rgba(51, 50, 47, 0.08);
+  --shadow-ink: 0 4px 12px rgba(51, 50, 47, 0.08);
+  --shadow-ink-hover: 0 6px 18px rgba(51, 50, 47, 0.12);
   --font-serif:
-    "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
+    "Noto Serif TC", "Source Han Serif TC", "Songti TC", -apple-system-ui-serif,
+    "STSong", "Songti SC", serif;
   --font-sans:
     "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
   --page-width: 72rem;
@@ -15,12 +19,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
   line-height: 1.8;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -29,10 +39,28 @@ h3 {
   font-family: var(--font-serif);
   font-weight: 600;
   line-height: 1.4;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 a {
   color: inherit;
+}
+
+button {
+  font-family: inherit;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 120ms ease;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
 }
 
 :focus-visible {
@@ -309,7 +337,14 @@ figure.illustration img {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav-toggle-icon span {
-    transition: none;
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    transform: none !important;
   }
 }
