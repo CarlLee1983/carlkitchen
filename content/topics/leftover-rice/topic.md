@@ -1,9 +1,9 @@
 ---
 title: 剩飯怎麼辦：從保存到炒飯、煮粥的選擇
 summary: 冷飯能炒，也能煮成粥；先確認保存過程，再看飯粒表面的水氣與想吃的口感，分清熟飯和生米配方。
-draft: true
+draft: false
 editorialLayout: true
-publishedAt: 2026-10-13T16:00:00+08:00
+publishedAt: 2026-10-15T15:54:00+08:00
 hero:
   src: ./hero.webp
   alt: 淺色廚房窗外透進日光，灰綠櫥櫃前的木檯面放著一小份白飯
