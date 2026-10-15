@@ -105,5 +105,11 @@ try {
   if (values.shot) await page.screenshot({ path: values.shot });
   await browser.close();
 } finally {
-  if (preview.pid) process.kill(-preview.pid);
+  if (preview.pid) {
+    try {
+      process.kill(-preview.pid);
+    } catch {
+      // preview 行程可能已正常關閉
+    }
+  }
 }

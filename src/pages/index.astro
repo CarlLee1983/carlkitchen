@@ -360,6 +360,18 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     padding: 0 1.25rem;
     border: 1px solid var(--ink);
     text-decoration: none;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease;
+  }
+  .meal-link:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .meal-link:active {
+    transform: translateY(1px);
   }
   .hero-pick {
     position: relative;
@@ -430,6 +442,18 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     color: inherit;
     font: inherit;
     cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease;
+  }
+  .picks-shuffle:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .picks-shuffle:active {
+    transform: translateY(1px);
   }
   .picks-shuffle[hidden] {
     display: none;
@@ -509,6 +533,16 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     color: var(--ink-soft);
     font: inherit;
     cursor: pointer;
+    transition:
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease;
+  }
+  .filters button:hover {
+    color: var(--ink);
+  }
+  .filters button:active {
+    transform: scale(0.97);
   }
   .filters button[aria-pressed="true"] {
     border-bottom-color: var(--ink);
@@ -530,6 +564,18 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     color: inherit;
     font: inherit;
     cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease;
+  }
+  .empty button:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .empty button:active {
+    transform: translateY(1px);
   }
 
   .show-more {
@@ -542,6 +588,18 @@ const filters = visibleKindOptions(recipes.map((recipe) => recipe.data));
     color: inherit;
     font: inherit;
     cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease;
+  }
+  .show-more:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .show-more:active {
+    transform: translateY(1px);
   }
 
   .rows {

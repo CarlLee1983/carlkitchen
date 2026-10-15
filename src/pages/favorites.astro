@@ -104,6 +104,20 @@ const recipes = (await getVisibleRecipes()).filter(
     color: inherit;
     font: inherit;
     cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 120ms ease;
+  }
+  .favorites button:hover,
+  .browse-link:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .favorites button:active,
+  .browse-link:active {
+    transform: translateY(1px);
   }
   .favorites button {
     grid-column: 2;
