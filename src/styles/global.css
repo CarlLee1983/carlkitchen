@@ -7,9 +7,10 @@
   --shadow-ink-sm: 0 1px 3px rgba(51, 50, 47, 0.08);
   --shadow-ink: 0 4px 12px rgba(51, 50, 47, 0.08);
   --shadow-ink-hover: 0 6px 18px rgba(51, 50, 47, 0.12);
+  /* "Noto Serif CJK TC" 是 Linux（CI 裝的 fonts-noto-cjk）上的實際字族名；少了它會落到 WenQuanYi，直排字高為 0。 */
   --font-serif:
-    "Noto Serif TC", "Source Han Serif TC", "Songti TC", -apple-system-ui-serif,
-    "STSong", "Songti SC", serif;
+    "Noto Serif TC", "Noto Serif CJK TC", "Source Han Serif TC", "Songti TC",
+    -apple-system-ui-serif, "STSong", "Songti SC", serif;
   --font-sans:
     "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
   --page-width: 72rem;
