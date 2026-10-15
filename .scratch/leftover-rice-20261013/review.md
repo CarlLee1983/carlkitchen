@@ -43,3 +43,28 @@ Playwright本地安裝預設cache不可建立；改到工作區可寫/tmp後官�
 既有四張 WebP 未改動；重新讀取實際像素，均為 1536×1024、低於 300 KB，圖與 alt 相符。沒有新增食材、時間、溫度或操作圖。
 
 環境限制：pnpm 12.1.0 frozen install 成功。Astro dev 前景模式啟動後顯示 ready，但雲端瀏覽器及另一個命令的 localhost 連線均被拒絕。Playwright 官方下載的 Chromium ZIP 不完整；已安裝的 /usr/bin/chromium 以標準 Playwright 啟動也因 socket() Operation not permitted 終止。未改安全設定、未繞過限制。必要實頁桌機／手機目視仍未完成，保持 draft:true，不轉 ready、不合併。這不是今天已發布的新專題。
+
+## 2026-10-15 續作
+
+基底 main `b2c6c99721d2706a5655af4f66319becc3093eec`。PR 165 已合併，稿件仍為 `draft:true`；本輪續作同一稿件，未新增專題或重生圖片。獨立來源審核重新開啟七個原文，確認 FSA 熟飯冷藏 24 小時、只再熱一次與 TFDA 一般食品保存期限的區分正確，熟飯／生米配方與兩個相關已發布菜譜一致，沒有新增事實或正文修改。
+
+四張原有 WebP 均為 1536×1024，大小依序 hero 136816、portion 87546、loosen 99048、texture 70118 bytes；本輪重新目視四張全圖與首頁 64×43 封面裁切。碗、飯團、淺容器與湯飯／粥的教學重點清楚，與 alt 相符。此圖片檢查不等同於桌機／手機文章實頁目視。
+
+### 本輪驗收與環境阻礙
+
+- pnpm 12.1.0 frozen install 完成。以獨立工作區、暫存 npm cache 與 XDG 目錄執行，未變更安全設定。
+- 恢復草稿狀態後的正式 build 與 check:content --launch 通過（含候選池門檻）；既有其他菜譜有材料未在步驟使用的警告，未擴張本篇範圍處理。format:check 通過；本篇兩個相關菜譜的 check:overlap 均 OK。
+- 型別檢查 197 檔，0 errors、0 warnings、7 hints。
+- 單元測試 1259 項，1254 通過、5 失敗。四項因環境缺少 cwebp／dwebp，一項因缺少 Playwright Chromium executable。沒有更動或略過測試。
+- Astro dev 在本環境尚未 ready 即退出。Python 靜態伺服器同一 shell 的 HTTP 請求可得 200，另一個命令及雲端瀏覽器的 localhost 均 connection refused，不能因此聲稱本篇實頁已可預覽。
+- 雲端桌面終端可執行一般 pwd；嘗試以瀏覽器 clipboard 輸入檢查稿件工作區的命令時，工具因當時頁面是 chrome-error:// 而拒絕，回報 URL policy 不允許該協定。該 clipboard 動作已停止，後續貼上與執行沒有發生；未改用其他輸入方法重做受拒命令。
+- 本輪未完成 E2E、推送前合併檢查及文章桌機／手機實頁目視，不引用前輪 CI 作為本輪已通過證據。
+
+本輪曾在本機短暫設 draft:false 以建置預覽產物，因必要驗收仍受阻，已恢復原始 draft:true 與 publishedAt；未提交或推送該發布切換、未新增 PR、未合併、未部署。候選維持進行中，本輪不計為已完成或已發布新專題。
+
+
+### 本篇發布續作授權
+
+使用者已得知桌機／手機實頁目視及本機缺少 WebP／Chromium 工具的限制，於 2026-10-15 明確要求「發佈」。本篇依此單次指示續作；整頁目視仍標為未完成，不延伸為後續專題的通用豁免。必要 build、content、單元及 E2E 仍須由精確 PR head 的 CI 全部通過，才轉 ready 並合併。CI 自行安裝官方 WebP 與 Chromium 工具，沒有降低測試要求。
+
+本篇從未正式發布，將首次發布日期設為本輪完成時間 2026-10-15T15:54:00+08:00，保留 editorialLayout:true。發布後另核對正式頁、四圖、列表與 sitemap；未驗證前不宣稱已上線。
