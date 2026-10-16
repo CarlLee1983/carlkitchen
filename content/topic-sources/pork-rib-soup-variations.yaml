@@ -1,0 +1,31 @@
+sources:
+  - title: 味之素：玉米排骨湯
+    url: https://www.ajinomoto.com.tw/recipes-detail.php?id=200
+  - title: 味之素：蘿蔔排骨湯
+    url: https://www.ajinomoto.com.tw/recipes-detail.php?id=153
+  - title: 自由時報食譜自由配：薏仁冬瓜排骨湯，示範／文芳，2017-06-13
+    url: https://food.ltn.com.tw/article/2941
+  - title: USDA FSIS：Washing Food Does It Promote Food Safety，2011 修訂版官方保存 PDF
+    url: https://www.govinfo.gov/content/pkg/GOVPUB-A110-PURL-gpo30228/pdf/GOVPUB-A110-PURL-gpo30228.pdf
+sections:
+  - heading: 汆燙之後，還有一段正式烹煮
+    urls:
+      - https://food.ltn.com.tw/article/2941
+      - https://www.ajinomoto.com.tw/recipes-detail.php?id=200
+      - https://www.ajinomoto.com.tw/recipes-detail.php?id=153
+      - https://www.govinfo.gov/content/pkg/GOVPUB-A110-PURL-gpo30228/pdf/GOVPUB-A110-PURL-gpo30228.pdf
+  - heading: 玉米湯的兩段時間，連紅白蘿蔔一起看
+    urls:
+      - https://www.ajinomoto.com.tw/recipes-detail.php?id=200
+  - heading: 白蘿蔔版本，後段多留了時間
+    urls:
+      - https://www.ajinomoto.com.tw/recipes-detail.php?id=153
+      - https://www.ajinomoto.com.tw/recipes-detail.php?id=200
+  - heading: 冬瓜放進電鍋，採另一套安排
+    urls:
+      - https://food.ltn.com.tw/article/2941
+  - heading: 晚餐想煮哪鍋，先選一份完整做法
+    urls:
+      - https://www.ajinomoto.com.tw/recipes-detail.php?id=200
+      - https://www.ajinomoto.com.tw/recipes-detail.php?id=153
+      - https://food.ltn.com.tw/article/2941
