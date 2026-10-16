@@ -1,9 +1,9 @@
 ---
 title: 排骨湯換配料，先看懂下鍋順序
 summary: 玉米、白蘿蔔與冬瓜都能搭排骨，但爐火分段燉煮與電鍋一起蒸煮，各有自己的配方條件。從三種安排看懂怎麼選食譜、讀時間，避免只換材料卻沿用整套步驟。
-draft: true
+draft: false
 editorialLayout: true
-publishedAt: 2026-10-16T15:47:00+08:00
+publishedAt: 2026-10-16T16:30:00+08:00
 hero:
   src: ./hero.webp
   alt: 日光照進安靜的廚房，窗前有湯鍋，近處放著玉米、白蘿蔔與冬瓜切塊
