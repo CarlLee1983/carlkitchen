@@ -27,4 +27,10 @@
 
 ## 驗收狀態
 
-待完成最終格式、型別、內容／候選池、照抄、單元、建置、E2E、合併檢查、桌機／手機實頁目視、精確head CI及正式部署／頁面／圖片／列表／sitemap。
+- PR：https://github.com/CarlLee1983/carlkitchen/pull/172。維持 PR draft 與 topic draft:true，未合併／部署。
+- Frozen install 與格式通過；照抄檢查三個菜譜內鏈均 OK；全尺寸四圖與64×43封面裁切已目視。
+- 暫用 draft:false 的 b090e66162311bbb2dab0257021f6241adb7a2f5 本地建置，產生本篇HTML但在14090/15060響應圖時exit137，未取得最終完整build或正式索引驗證。先前過早執行content檢查碰到未清除的.prerender中間輸出，其失敗不當成最終結果。
+- 本機型別check exit137。官方WebP 1.6.0加入PATH後單元1260項中1259通過，1項因缺Playwright瀏覽器失敗；官方瀏覽器下載檔非完整zip，未削弱測試。
+- Astro dev啟動前退出；Python靜態server的loopback無法從雲端Chrome連入。另查得已安裝Chromium154，但同exec啟動受socket權限限制；正式工具執行例外在環境啟動階段失敗。停止重試該路徑，未更動安全設定。
+- 桌機／手機本篇實頁目視未完成，不能用通用CI E2E代替。昨日文章的個別預覽豁免不適用本篇。
+- 後續須核實最後head CI；所有必要驗收通過或獲本篇明確例外後，才可改draft:false，以真實完成時間更新新文日期，重跑發布前驗收及合併檢查，再依既有流程合併部署並驗正式頁、四圖、列表與sitemap。
