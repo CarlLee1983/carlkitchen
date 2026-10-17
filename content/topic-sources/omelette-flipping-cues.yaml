@@ -1,0 +1,29 @@
+sources:
+  - title: 農業部兒童網｜九層塔煎蛋
+    url: https://kids.moa.gov.tw/theme_data.php?id=254&theme=kids_cooking
+  - title: 江玉美｜蔥花蛋卷｜食譜自由配（2017-06-15）
+    url: https://food.ltn.com.tw/article/5724
+  - title: 阿全師、林昕志｜菜脯蛋｜食譜自由配（2017-06-20）
+    url: https://food.ltn.com.tw/article/3938
+  - title: Exploratorium｜Egg Science
+    url: https://annex.exploratorium.edu/cooking/eggs/eggscience.html
+  - title: FoodSafety.gov｜Safe Minimum Internal Temperatures（2024-11-21 reviewed）
+    url: https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
+sections:
+  - heading: 蛋液正在成形，鍋鏟先別急
+    urls:
+      - https://annex.exploratorium.edu/cooking/eggs/eggscience.html
+      - https://food.ltn.com.tw/article/5724
+      - https://food.ltn.com.tw/article/3938
+  - heading: 蔥花蛋：先決定要攤平，還是捲起來
+    urls:
+      - https://food.ltn.com.tw/article/5724
+  - heading: 菜脯蛋：留意中央，別只盯著邊緣
+    urls:
+      - https://food.ltn.com.tw/article/3938
+  - heading: 九層塔蛋：香草先備好，火別一路開大
+    urls:
+      - https://kids.moa.gov.tw/theme_data.php?id=254&theme=kids_cooking
+  - heading: 翻面只是中途，最後確認整份蛋已熟
+    urls:
+      - https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
