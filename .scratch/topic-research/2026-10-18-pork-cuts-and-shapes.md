@@ -38,3 +38,11 @@ WebP 使用官方 Debian webp1.5.0 套件解包，已核對官方 SHA256 9019d0e
 - 四張 WebP 為 1536×1024，q80，124494–295216 bytes，repo 指定 cwebp/dwebp 轉檔與解碼通過。
 - Playwright 官方下載回傳無效 ZIP，Chromium1243 未安裝。工具路徑補齊後單元 1260 項中 1259 通過，唯一失敗為既有互動圖測試無法啟動 Chromium。必須由精確 PR head CI 補驗，不算本機通過。
 - 雲端 Astro 預覽程序在 ready 前退出，雲端 Chrome 開本地預覽回報 ERR_CONNECTION_REFUSED。桌機/手機實頁預覽尚未完成，圖檔目視不代替實頁驗收；依授權此純預覽環境限制不單獨阻擋發布。
+
+## 推送前檢查與發布條件
+
+- `pnpm check` 完整通過（格式、型別0 errors/0 warnings、正式建置與Pagefind）；`pnpm check:content --launch` 通過，候選池達標。
+- `pnpm test:e2e` 實跑339項：4通過、335項均因缺Chromium1243無法啟動；沒有修改測試或跳過測試。E2E後重建正式內容，再驗證內容及候選池。
+- `pnpm check:merge` 在與 origin/main 合併的獨立暫存worktree執行。瀏覽器依賴項仍須由最後PR head CI核實；正式PR說明保留完整結果。
+- 靜態伺服器預覽亦無法由雲端Chrome連線。僅純實頁預覽受環境限制；發布後仍需逐一核實正式頁、四圖、列表與sitemap。
+- 候選庫的已發布狀態隨本分支合併部署後生效，不代表分支建立當下已正式上線。只有精確head CI通過才合併；真正main merge commit部署與正式驗證結果留在對應PR紀錄。
