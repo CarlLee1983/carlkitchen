@@ -1,0 +1,28 @@
+sources:
+  - title: 農業部食農教育資訊整合平臺｜豬事知多少（2024-11-05 更新）
+    url: https://fae.moa.gov.tw/theme_data.php?id=34&sub_theme=knowledge&theme=topics
+  - title: 農業部食農教育資訊整合平臺｜豬
+    url: https://fae.moa.gov.tw/map/food_item.php?id=20&type=AS01
+  - title: Amanda 張采如｜醬炒高麗菜肉片 嫩炒肉絲、肉片（2021-02-25）
+    url: https://amanda.tw/archives/35727
+  - title: FoodSafety.gov｜Cook to a Safe Minimum Internal Temperature（2024-11-21 reviewed）
+    url: https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
+sections:
+  - heading: 部位和切法，分成兩件事問
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=34&sub_theme=knowledge&theme=topics
+  - heading: 肉絲快炒，先選一份完整做法
+    urls:
+      - https://amanda.tw/archives/35727
+  - heading: 都叫肉片，先切與煮後切卻差很多
+    urls:
+      - https://fae.moa.gov.tw/map/food_item.php?id=20&type=AS01
+  - heading: 絞肉看不出原形，更要問清楚原料
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=34&sub_theme=knowledge&theme=topics
+      - https://fae.moa.gov.tw/map/food_item.php?id=20&type=AS01
+      - https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
+  - heading: 買肉之前，先把菜名寫下來
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=34&sub_theme=knowledge&theme=topics
+      - https://fae.moa.gov.tw/map/food_item.php?id=20&type=AS01
