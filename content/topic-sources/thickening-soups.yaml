@@ -1,0 +1,39 @@
+sources:
+  - title: 衛生福利部｜106 年不可不知的食品規範新制（第六項太白粉原料標示）
+    url: https://www.mohw.gov.tw/cp-16-9681-1.html
+  - title: Duke University｜Get Cooking Handouts（Slurry，第 21 頁）
+    url: https://students.duke.edu/wp-content/uploads/2024/03/GetCooking-Handouts.pdf
+  - title: Argo Foodservice｜Corn Starch 1lb（Preparation）
+    url: https://www.argofoodservice.com/product/CORN-STARCH--1LB
+  - title: Namiko Hirasawa Chen｜How to Thicken Sauce and Soup（2026-05-27）
+    url: https://www.justonecookbook.com/how-to-thicken-sauce-soup-cornstarch-slurry/
+  - title: Bob's Red Mill｜All About Starches（Whitney Barnes，2018-07-06）
+    url: https://www.bobsredmill.com/articles/all-about-starches
+  - title: 愛料理官方品牌廚房｜酸辣湯
+    url: https://icook.tw/recipes/279840
+  - title: 小磨坊｜酸辣湯
+    url: https://icook.tw/recipes/363456
+sections:
+  - heading: 包裝上的成分，比粉的白色外觀更有用
+    urls:
+      - https://www.mohw.gov.tw/cp-16-9681-1.html
+      - https://students.duke.edu/wp-content/uploads/2024/03/GetCooking-Handouts.pdf
+  - heading: 用冷水調勻，倒進鍋前再攪一次
+    urls:
+      - https://www.argofoodservice.com/product/CORN-STARCH--1LB
+      - https://students.duke.edu/wp-content/uploads/2024/03/GetCooking-Handouts.pdf
+      - https://www.justonecookbook.com/how-to-thicken-sauce-soup-cornstarch-slurry/
+  - heading: 少量加入，攪拌後看湯怎麼流
+    urls:
+      - https://students.duke.edu/wp-content/uploads/2024/03/GetCooking-Handouts.pdf
+      - https://www.bobsredmill.com/articles/all-about-starches
+      - https://www.justonecookbook.com/how-to-thicken-sauce-soup-cornstarch-slurry/
+      - https://icook.tw/recipes/279840
+  - heading: 太厚先調整液體，太稀另調粉水
+    urls:
+      - https://www.justonecookbook.com/how-to-thicken-sauce-soup-cornstarch-slurry/
+      - https://students.duke.edu/wp-content/uploads/2024/03/GetCooking-Handouts.pdf
+  - heading: 勾好芡之後，照這道湯的順序收尾
+    urls:
+      - https://icook.tw/recipes/279840
+      - https://icook.tw/recipes/363456
