@@ -1,0 +1,31 @@
+sources:
+  - title: 農業部食農教育資訊整合平臺：豬／飲食文化
+    url: https://fae.moa.gov.tw/map/food_item.php?id=20&type=AS08
+  - title: 臺南市政府觀光旅遊局：台南推出700家最強肉燥攻略（2020-06-19）
+    url: https://www.tainan.gov.tw/News_Content.aspx?n=13370&s=7682344
+  - title: 龜甲萬／One Life 煮婦團：手切滷肉燥
+    url: https://kikkoman.com.tw/recipe_detal_%E6%89%8B%E5%88%87%E6%BB%B7%E8%82%89%E7%87%A5_1252_%E9%A3%9F%E8%AD%9C%E5%BD%B1%E9%9F%B3
+  - title: 龜甲萬／趙曉翌：台式滷肉
+    url: https://kikkoman.com.tw/recipe_detal_%E5%8F%B0%E5%BC%8F%E6%BB%B7%E8%82%89_1096
+  - title: CarlKitchen 已發布台式滷肉配方（固定 main 版本；僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/082016b2e00eba77d51e1348c74080aaf16f5d06/content/recipes/braised-pork-belly/recipe.yaml
+  - title: CarlKitchen 已發布肉燥麵配方（固定 main 版本；僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/082016b2e00eba77d51e1348c74080aaf16f5d06/content/recipes/minced-pork-noodles/recipe.yaml
+sections:
+  - heading: 點滷肉飯時，多看一眼肉的模樣
+    urls:
+      - https://fae.moa.gov.tw/map/food_item.php?id=20&type=AS08
+      - https://kikkoman.com.tw/recipe_detal_%E6%89%8B%E5%88%87%E6%BB%B7%E8%82%89%E7%87%A5_1252_%E9%A3%9F%E8%AD%9C%E5%BD%B1%E9%9F%B3
+  - heading: 要一鍋配菜，選厚片五花肉的版本
+    urls:
+      - https://github.com/CarlLee1983/carlkitchen/blob/082016b2e00eba77d51e1348c74080aaf16f5d06/content/recipes/braised-pork-belly/recipe.yaml
+      - https://kikkoman.com.tw/recipe_detal_%E5%8F%B0%E5%BC%8F%E6%BB%B7%E8%82%89_1096
+  - heading: 要拌麵肉醬，分清紅蔥頭和油蔥酥
+    urls:
+      - https://github.com/CarlLee1983/carlkitchen/blob/082016b2e00eba77d51e1348c74080aaf16f5d06/content/recipes/minced-pork-noodles/recipe.yaml
+      - https://kikkoman.com.tw/recipe_detal_%E6%89%8B%E5%88%87%E6%BB%B7%E8%82%89%E7%87%A5_1252_%E9%A3%9F%E8%AD%9C%E5%BD%B1%E9%9F%B3
+  - heading: 決定主食後，再選今天的份量
+    urls:
+      - https://www.tainan.gov.tw/News_Content.aspx?n=13370&s=7682344
+      - https://github.com/CarlLee1983/carlkitchen/blob/082016b2e00eba77d51e1348c74080aaf16f5d06/content/recipes/braised-pork-belly/recipe.yaml
+      - https://github.com/CarlLee1983/carlkitchen/blob/082016b2e00eba77d51e1348c74080aaf16f5d06/content/recipes/minced-pork-noodles/recipe.yaml
