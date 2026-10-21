@@ -1,0 +1,35 @@
+sources:
+  - title: 愛料理／阿卿－輕鬆學料理鄧正中老師指導：蒜炒花椰菜
+    url: https://icook.tw/recipes/198082
+  - title: 台灣主婦聯盟生活消費合作社／楊芷菡：蔥爆牛肉
+    url: https://www.hucc-coop.tw/recipe/meat/21908
+  - title: 愛料理／文青家的廚房：薑絲蛤蜊湯
+    url: https://icook.tw/recipes/272237
+  - title: 龜甲萬／李德全：三杯雞
+    url: https://kikkoman.com.tw/recipe_detal_%E4%B8%89%E6%9D%AF%E9%9B%9E_214
+  - title: CarlKitchen 已發布 garlic-broccoli 固定 main 配方（僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/garlic-broccoli/recipe.yaml
+  - title: CarlKitchen 已發布 scallion-beef 固定 main 配方（僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/scallion-beef/recipe.yaml
+  - title: CarlKitchen 已發布 clam-ginger-soup 固定 main 配方（僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/clam-ginger-soup/recipe.yaml
+  - title: CarlKitchen 已發布 three-cup-chicken 固定 main 配方（僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/three-cup-chicken/recipe.yaml
+sections:
+  - heading: 蒜片先煸，花椰菜另行汆燙
+    urls:
+      - https://icook.tw/recipes/198082
+      - https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/garlic-broccoli/recipe.yaml
+  - heading: 蔥段何時炒，要連著牛肉的進出看
+    urls:
+      - https://www.hucc-coop.tw/recipe/meat/21908
+      - https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/scallion-beef/recipe.yaml
+  - heading: 薑絲可以入湯，薑片另看煸炒步驟
+    urls:
+      - https://icook.tw/recipes/272237
+      - https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/clam-ginger-soup/recipe.yaml
+      - https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/three-cup-chicken/recipe.yaml
+  - heading: 九層塔留到收汁後，備料時先放一旁
+    urls:
+      - https://kikkoman.com.tw/recipe_detal_%E4%B8%89%E6%9D%AF%E9%9B%9E_214
+      - https://github.com/CarlLee1983/carlkitchen/blob/327a43093f455aa8fbe8ddf26c9d83147e37066c/content/recipes/three-cup-chicken/recipe.yaml
