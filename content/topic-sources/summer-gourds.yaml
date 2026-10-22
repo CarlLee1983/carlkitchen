@@ -1,0 +1,29 @@
+sources:
+  - title: 農業部食農教育資訊整合平臺：夏季食物真好吃（6月食譜）
+    url: https://fae.moa.gov.tw/theme_data.php?id=843&sub_theme=recipe&theme=topics
+  - title: 龜甲萬／李德全：絲瓜蛤蜊湯麵
+    url: https://www.kikkoman.com.tw/recipe_detal_%E7%B5%B2%E7%93%9C%E8%9B%A4%E8%9C%8A%E6%B9%AF%E9%BA%B5_300
+  - title: 保誠人壽自家刊載食譜：冬瓜排骨湯（非農業官方；僅採料理操作）
+    url: https://online.pcalife.com.tw/oicms/HowMaji/recipe/ph/detail/10
+  - title: 龜甲萬／吳庭宇：鹹蛋苦瓜
+    url: https://www.kikkoman.com.tw/recipe_detal_%E9%B9%B9%E8%9B%8B%E8%8B%A6%E7%93%9C_450
+  - title: CarlKitchen 已發布 luffa-clams 固定 main 配方（僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/c58a8608df6ef67d2d5fcf5b10986b48e249af1f/content/recipes/luffa-clams/recipe.yaml
+  - title: CarlKitchen 已發布 winter-melon-pork-rib-soup 固定 main 配方（僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/c58a8608df6ef67d2d5fcf5b10986b48e249af1f/content/recipes/winter-melon-pork-rib-soup/recipe.yaml
+  - title: CarlKitchen 已發布 salted-egg-bitter-melon 固定 main 配方（僅支撐本站版本導讀）
+    url: https://github.com/CarlLee1983/carlkitchen/blob/c58a8608df6ef67d2d5fcf5b10986b48e249af1f/content/recipes/salted-egg-bitter-melon/recipe.yaml
+sections:
+  - heading: 絲瓜先切塊，留意蛤蜊與湯汁的收尾
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=843&sub_theme=recipe&theme=topics
+      - https://www.kikkoman.com.tw/recipe_detal_%E7%B5%B2%E7%93%9C%E8%9B%A4%E8%9C%8A%E6%B9%AF%E9%BA%B5_300
+      - https://github.com/CarlLee1983/carlkitchen/blob/c58a8608df6ef67d2d5fcf5b10986b48e249af1f/content/recipes/luffa-clams/recipe.yaml
+  - heading: 冬瓜排骨一起入電鍋，內外鍋的水分開看
+    urls:
+      - https://online.pcalife.com.tw/oicms/HowMaji/recipe/ph/detail/10
+      - https://github.com/CarlLee1983/carlkitchen/blob/c58a8608df6ef67d2d5fcf5b10986b48e249af1f/content/recipes/winter-melon-pork-rib-soup/recipe.yaml
+  - heading: 苦瓜先切薄片，熟鹹蛋整顆切碎再拌炒
+    urls:
+      - https://www.kikkoman.com.tw/recipe_detal_%E9%B9%B9%E8%9B%8B%E8%8B%A6%E7%93%9C_450
+      - https://github.com/CarlLee1983/carlkitchen/blob/c58a8608df6ef67d2d5fcf5b10986b48e249af1f/content/recipes/salted-egg-bitter-melon/recipe.yaml
