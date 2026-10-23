@@ -1,0 +1,29 @@
+sources:
+  - title: Carol 自在生活：鑄鐵鍋無油椒鹽脆皮雞排
+    url: https://caroleasylife.blogspot.com/2020/11/blog-post_3.html
+  - title: FoodSafety.gov：Cook to a Safe Minimum Internal Temperature
+    url: https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
+  - title: FoodSafety.gov：4 Steps to Food Safety
+    url: https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety
+  - title: 台視美食好簡單：川味蒼蠅頭
+    url: https://www.ttv.com.tw/drama11/gourmeteasy/view.asp?from=633&id=13460
+  - title: 三立型男大主廚：大明星指定菜 蒜泥鮮蚵
+    url: https://blogs.iset.com.tw/chef/archives/5329
+sections:
+  - heading: 雞腿排先醃，煎的時候留在爐邊
+    urls:
+      - https://caroleasylife.blogspot.com/2020/11/blog-post_3.html
+      - https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
+      - https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety
+  - heading: 蒼蠅頭的細料在開火前備齊
+    urls:
+      - https://www.ttv.com.tw/drama11/gourmeteasy/view.asp?from=633&id=13460
+      - https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety
+  - heading: 蒜泥蚵仔留給煮水鍋，醬汁另外拌
+    urls:
+      - https://blogs.iset.com.tw/chef/archives/5329
+      - https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety
+  - heading: 下鍋前，把份量和鍋子對一遍
+    urls:
+      - https://caroleasylife.blogspot.com/2020/11/blog-post_3.html
+      - https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety
