@@ -20,6 +20,22 @@ runs:
       shell: bash
       run: pnpm install --frozen-lockfile
 
+    - name: Identify image cache toolchain
+      id: image-cache-toolchain
+      shell: bash
+      run: echo "versions=node-$(node --version)-pnpm-$(pnpm --version)" >> "$GITHUB_OUTPUT"
+
+    # 只保存圖片，不保存會受 RECIPES_DIR 影響的內容層快取；build --force 照常執行。
+    # Astro 的圖片檔名包含來源內容與轉換參數，但不包含 sharp 編碼設定，故另以設定與依賴隔離。
+    # 每個 commit 可保存新增圖片；還原前綴不可放寬工具鏈／設定邊界。
+    - name: Restore and save Astro image cache
+      uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0 (Node.js 24)
+      with:
+        path: node_modules/.astro/assets
+        key: astro-images-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.image-cache-toolchain.outputs.versions }}-${{ hashFiles('pnpm-lock.yaml', 'package.json', 'astro.config.mjs') }}-${{ github.sha }}
+        restore-keys: |
+          astro-images-v1-${{ runner.os }}-${{ runner.arch }}-${{ steps.image-cache-toolchain.outputs.versions }}-${{ hashFiles('pnpm-lock.yaml', 'package.json', 'astro.config.mjs') }}-
+
     - name: Install Playwright Chromium
       shell: bash
       run: pnpm exec playwright install --with-deps chromium
@@ -34,7 +50,7 @@ runs:
       shell: bash
       run: pnpm check
 
-    # 必須在 e2e 之前：e2e 會以固定菜譜覆寫 dist，這裡檢查的是 pnpm check 建出的真實內容。
+    # 檢查 pnpm check 建出的真實內容；e2e 另外輸出到 dist-e2e／dist-meal／dist-show-more。
     # 候選池門檻（--launch）只在部署工作流程開啟。
     - name: Check content and build output
       shell: bash
@@ -48,8 +64,7 @@ runs:
       shell: bash
       run: pnpm test:e2e
 
-    # 只驗證設定：此時 dist 是 e2e 步驟用固定菜譜建出來的，
-    # 部署工作流程必須另以正式內容重新建置。
+    # 只驗證設定與保留的正式 dist，不執行真實部署。
     - name: Validate Cloudflare deployment
       shell: bash
       run: pnpm exec wrangler deploy --dry-run
