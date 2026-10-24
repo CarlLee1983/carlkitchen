@@ -6,7 +6,7 @@ import {
 
 // 不在這裡建置：`pnpm test:e2e` 先建置三份站台，再由 scripts/run-e2e.mjs 依序跑三輪 playwright（astro preview 同一專案
 // 一次只能起一個，所以三份站台不能同時 serve）。以 E2E_SITE 選擇這一輪測哪份站台：
-// - 預設（chromium 專案）：`tests/fixtures/recipes` 建置到 `dist`，跑除 `meal.spec.ts`、`show-more.spec.ts` 以外的規格；
+// - 預設（chromium 專案）：`tests/fixtures/recipes` 建置到 `dist-e2e`，跑除 `meal.spec.ts`、`show-more.spec.ts` 以外的規格；
 //   它的候選池不足四菜一湯，同時用來驗證「候選不足」。
 // - E2E_SITE=meal（meal 專案）：`tests/fixtures/meal-recipes` 建置到 `dist-meal`，
 //   候選池剛好 5 道非湯菜加 1 道湯，只跑 `meal.spec.ts`。
@@ -18,7 +18,7 @@ const SITES: Record<
   { outDir: string; portOffset: number; project: PlaywrightTestProject }
 > = {
   default: {
-    outDir: "dist",
+    outDir: "dist-e2e",
     portOffset: 0,
     project: {
       name: "chromium",
@@ -58,7 +58,7 @@ export default defineConfig({
     command: `pnpm exec astro preview --port ${port}`,
     url: `http://localhost:${port}/`,
     // 一律自己起 preview：沿用殘留的 server 會測到別的工作目錄或舊建置的內容。
-    // port 被占用時 Playwright 直接報錯；平行跑請換 E2E_PORT_BASE，並各用一個 worktree（`dist` 也不共用）。
+    // port 被占用時 Playwright 直接報錯；平行跑請換 E2E_PORT_BASE，並各用一個 worktree（建置輸出也不共用）。
     // 經 `pnpm test:e2e`（scripts/run-e2e.mjs）執行且沒設 E2E_PORT_BASE 時，會自動挑三個連續 port 都空著的起點。
     reuseExistingServer: false,
     env: {

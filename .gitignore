@@ -4,6 +4,7 @@ graft/
 # 建置與工具產物
 node_modules/
 /dist/
+/dist-e2e/
 /dist-meal/
 /dist-show-more/
 .astro/

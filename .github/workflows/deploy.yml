@@ -29,11 +29,7 @@ jobs:
       - name: Verify
         uses: ./.github/actions/verify
 
-      # 驗證步驟中的 e2e 已以固定菜譜覆寫 dist，必須以正式內容重建。
-      - name: Rebuild with production content
-        run: pnpm build
-
-      # 對正式建置輸出再檢查一次，並開啟候選池門檻（非湯料理 >= 12、湯 >= 3）。
+      # e2e 使用獨立輸出；沿用 Verify 已檢查的正式 dist，再檢查一次，並開啟候選池門檻（非湯料理 >= 12、湯 >= 3）。
       # 未達標時以非零狀態結束並列出缺額，此步驟之後不會部署。
       - name: Check content, build output and candidate pool
         run: pnpm check:content --launch

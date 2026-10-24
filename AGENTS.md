@@ -25,7 +25,7 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 - `pnpm check` — 格式檢查、`astro check`、建置
 - `pnpm check:content` — 內容與建置輸出檢查（來源紀錄、洩漏、圖片規格、成品圖替代文字不得提到餐具、頁面文案不得提 AI 或試做；含專題：已發布專題的來源紀錄、段落與互動圖來源對照、互動圖資料與孤兒檔、封面圖規格、相關連結只指向已發布頁面、草稿頁面與互動圖內容、核准來源網址不得出現在輸出）；需先 `pnpm build`，輸出目錄預設 `dist`（`--dist <目錄>` 可改）。加 `--launch` 另檢查候選池門檻（非湯配菜候選 ≥ 12、湯 ≥ 3，且具備不同的蔬菜主角與肉、海鮮或蛋豆角色），供部署前使用，PR 不開。另對已發布菜譜印出不影響結束碼的警告：材料表有、步驟沒用到的材料（規則見 `src/content-checks/unused-ingredients.ts`）。節氣：目錄有資料時 24 個識別值須齊全且無未知檔名、每筆通過 schema、當令食材只指向已發布食材條目、每個節氣的說明在來源紀錄有對照且網址列於 `sources`，核准來源網址不得出現在輸出（空目錄通過）。`SOURCES_DIR` 可改來源紀錄目錄，`TOPIC_SOURCES_DIR` 可改專題來源紀錄目錄，`SOLAR_TERMS_DIR` 可改節氣目錄（預設 `content/solar-terms`），`SOLAR_TERM_SOURCES_DIR` 可改節氣來源紀錄目錄（預設 `content/solar-term-sources`）
 - `pnpm test` — 單元測試
-- `pnpm test:e2e` — 以固定菜譜建置三份站台後依序跑三輪 Playwright（chromium）：預設站台（`dist`）、配菜站台（`dist-meal`，只跑 `meal.spec.ts`）、顯示更多站台（`dist-show-more`，每批 1 道、含搜尋索引，只跑 `show-more.spec.ts`）；port 以 `E2E_PORT_BASE` 起算，三份站台依序占 +0／+1／+2；沒設定時自動從 4321 起找三個連續的空 port，平行跑需各用一個 worktree。機器負載高時個別測試可能逾時，重跑一次確認
+- `pnpm test:e2e` — 以固定菜譜建置三份站台後依序跑三輪 Playwright（chromium）：預設站台（`dist-e2e`）、配菜站台（`dist-meal`，只跑 `meal.spec.ts`）、顯示更多站台（`dist-show-more`，每批 1 道、含搜尋索引，只跑 `show-more.spec.ts`）；port 以 `E2E_PORT_BASE` 起算，三份站台依序占 +0／+1／+2；沒設定時自動從 4321 起找三個連續的空 port，平行跑需各用一個 worktree。機器負載高時個別測試可能逾時，重跑一次確認
 - `pnpm check:overlap <識別值…>` — 照抄檢查：菜譜自動抓 `content/sources/` 的每個網址比對，專題比對它連到的菜譜；去掉空白標點後有 12 字以上相同片段即失敗（ADR 0009）。需要網路
 - `pnpm check:merge` — 在暫時 worktree 合併 `origin/main` 後跑 CI 的檢查（加 `--e2e` 含瀏覽器測試），抓分支本身全綠、合併後才壞的情況
 - `pnpm measure:mobile` — 量測首頁手機版版面（篩選列與第一列位置、列高、一屏列數）；需先 `pnpm build`。談版面數字先量再估
@@ -38,7 +38,7 @@ CarlKitchen：依公開資料整理、站主審閱的繁體中文菜譜網站。
 ## 部署
 
 - `.github/workflows/ci.yml`（PR）與 `deploy.yml`（推送 `main`／手動，手動也只部署 `main`，無排程，並行排隊不取消）共用 `.github/actions/verify`，改檢查步驟只改這一處。
-- 部署在共用檢查後以正式內容重建，再跑 `pnpm check:content --launch`（非湯料理 ≥ 12、湯 ≥ 3）才 `wrangler deploy`；不得為了讓部署通過而放寬門檻。
+- e2e 三份站台各用獨立輸出，不覆寫 `pnpm check` 建出的正式 `dist`；部署沿用這份已驗證的正式輸出，再跑 `pnpm check:content --launch`（非湯料理 ≥ 12、湯 ≥ 3）才 `wrangler deploy`；不得為了讓部署通過而放寬門檻。
 - 回滾程序見 `README.md`「部署與回滾」；上線驗收檢核表見 `docs/acceptance.md`。
 - 不得執行真實部署或 `wrangler rollback`，也不得把 token 寫進檔案或日誌。
 
