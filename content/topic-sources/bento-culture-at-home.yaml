@@ -1,0 +1,47 @@
+# 本次查核：2026-10-24。核准來源只存內部，不重複列在公開 references。
+# 歷史材料為官方發布的研究者講座回顧，並非本次逐筆重查原始史料。
+# 本站四份 recipe.yaml 已核對 draft:false；其配方事實不等同本次重讀楊桃原頁。
+# 段落對照（下列段次均不計圖片）：導言1=臺鐵商品與本站菜名；導言2=食藥署Q7–9的保存要求。
+sources:
+  - title: 國史館臺灣文獻館：臺灣文獻講座回顧，從鐵路便當到臺鐵便當
+    url: https://www.th.gov.tw/News_Content/35/10062/
+  - title: 國營臺灣鐵路股份有限公司：排骨便當（列車供應）
+    url: https://tip.railway.gov.tw/tra-tip-web/tip/tip004/tip421/dishes/1965
+  - title: 自由時報食譜自由配：黑胡椒豬排（吳致萱示範）
+    url: https://food.ltn.com.tw/article/878
+  - title: 三立型男大主廚：大明星指定菜，照燒雞腿（詹姆士）
+    url: https://blogs.iset.com.tw/chef/archives/110
+  - title: 愛料理官方品牌廚房：乾煸四季豆
+    url: https://icook.tw/recipes/264731
+  - title: 衛生福利部食品藥物管理署：食品中毒常見問與答
+    url: https://www.fda.gov.tw/TC/sitecontent.aspx?sid=2572
+sections:
+  # 第1段=文獻館旅程需求、1914與餐旅服務所；第2段=同源1956/1961及史料界線。
+  # 第3段=臺鐵現行商品成分與配菜變動；家庭選菜為編輯建議，不稱復刻。
+  - heading: 一盒飯，從長途旅程談起
+    urls:
+      - https://www.th.gov.tw/News_Content/35/10062/
+      - https://tip.railway.gov.tw/tra-tip-web/tip/tip004/tip421/dishes/1965
+  # 原發示範僅支持共有的材料類型及版本差異；本站奶油、青椒、米酒等以本站 YAML 為準。
+  # 不移植外部炸法、清酒比例與分鐘數，也不採本站舊文「封住肉汁」及外觀判熟。
+  # 第1段=本站pork-chops-black-pepper材料；第2段=本站teriyaki-chicken-thigh材料表及切塊。
+  # 第3段=兩個外部原發示範及其版本差異；第4段=依現有食材選菜的編輯建議。
+  - heading: 豬排與雞腿，先看醬汁要準備什麼
+    urls:
+      - https://food.ltn.com.tw/article/878
+      - https://blogs.iset.com.tw/chef/archives/110
+  # 豆乾肉絲的指定材料及切絲僅對應本站已發布 recipe.yaml；不是下列四季豆來源的內容。
+  # 愛料理原文的末步蔥未列於材料，本文與插畫不採；不以四季豆顏色、皺皮判熟。
+  # 第1段=本站tofu-pork-strips材料與切絲；第2段=本站整根四季豆形態與愛料理材料搭配。
+  # 第3段=兩份本站配方含肉，愛料理也含肉；照片不作熟度依據，不補來源外的加熱訊號。
+  - heading: 豆乾切絲，青菜留出自己的位置
+    urls:
+      - https://icook.tw/recipes/264731
+  # FAQ Q6、Q7、Q8、Q9：熟食5°C以下；一般室溫2小時、>32°C時1小時；中心>70°C一般指引。
+  # 不混港美口徑，不給冰袋保證；不以加熱補救失溫，部分毒素耐熱。
+  # 第1段=Q7時間及熟食冷藏；第2段=Q7/Q9的外帶應用，不將分格視為溫控。
+  # 第3段=Q6/Q8/Q9清潔、生熟分開、一般加熱及耐熱毒素；第4段=冷藏要求的安排建議。
+  # 未提供來源外的快速冷卻流程，因此刪去前一晚備餐建議，不保證便當隔餐口感。
+  - heading: 裝好飯盒，還要安排冷藏與加熱
+    urls:
+      - https://www.fda.gov.tw/TC/sitecontent.aspx?sid=2572
