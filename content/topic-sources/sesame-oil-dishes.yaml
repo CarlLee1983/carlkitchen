@@ -1,0 +1,41 @@
+# 2026-10-25 查核。核准來源留在內容集合之外，不放入公開 references。
+# 僅採地方民俗記錄、詞義與料理材料／流程，不採來源中的功效、體質分類、產後時程或酒精全揮發說法。
+# 本站四份已發布 recipe.yaml 另逐份核對；其配方資訊不是本次重讀楊桃原頁所得。
+# 楊桃麻油雞、薑母鴨原頁此次讀取為403，沒有重試或繞過，也未列作此次已讀來源。
+# 導言1=四份本站配方的用途、薑形態及選菜建議；導言2=下列詞典／地方文化記錄及文章範圍。
+sources:
+  - title: 教育部臺灣台語常用詞辭典：麻油酒
+    url: https://sutian.moe.edu.tw/zh-hant/su/8110/
+  - title: 國家文化記憶庫：擐酒（屏東縣政府文化處建檔，社團法人屏東縣深耕永續發展協會撰寫）
+    url: https://tcmb.culture.tw/zh-tw/detail?id=594378&indexCode=Culture_Invisible
+  - title: 西港區農會：食譜料理-溫補
+    url: https://shop.sgfa.org.tw/article_view.php?new_sn=7574
+sections:
+  # 第1段=教育部詞義及近義詞，不移植辭典「必備藥膳」為現代醫療指引。
+  # 第2段=六堆、十二朝、分享與回禮的地方記錄；不稱全臺固定規矩，不用來源圖片重建儀式。
+  # 第3段=明示一般家常選菜範圍，不提供產後餐單或適用性判斷。
+  - heading: 麻油酒這個名字，留著生育習俗的記錄
+    urls:
+      - https://sutian.moe.edu.tw/zh-hant/su/8110/
+      - https://tcmb.culture.tw/zh-tw/detail?id=594378&indexCode=Culture_Invisible
+  # 第1段=本站sesame-oil-chicken土雞塊／老薑片與爐火流程，無藥材。
+  # 第2段=本站ginger-duck拍薑、汆燙、炒薑後移電鍋；鍋具選擇為編輯安排。
+  # 第3段=本站兩配方液體不同，ginger-duck明列內外鍋用水；不另給液體或時間數值。
+  # 第4段=農會麻油雞先汆燙與本站流程差異；不以肉色／插畫判熟，不保證酒精消失。
+  # 圖1=本站三菜薑片／拍薑／薑絲形態；圖2=本站兩配方器材與食材，不作熟度依據。
+  - heading: 同樣有薑與麻油，雞湯和鴨肉用的鍋不同
+    urls:
+      - https://shop.sgfa.org.tw/article_view.php?new_sn=7574
+  # 三段的指定配料、煮麵與調汁分開、瀝水再拌、雞或大骨高湯，僅對應本站sesame-oil-vermicelli/recipe.yaml。
+  # 下列農會來源只支持薑麻油可先處理再接主材料的做法背景，不冒稱包含本站麵線配方。
+  # 不採本站舊文「溫補」等功效，沒有移植來源外的煮麵分鐘、三點水口訣或完成口感保證。
+  - heading: 想吃主食，麵線另煮再拌
+    urls:
+      - https://shop.sgfa.org.tw/article_view.php?new_sn=7574
+  # 第1段=本站與農會山蘇500g、生薑30g、豆豉、黑麻油共同材料與切段／切絲，不在正文重述配方數值。
+  # 第2段=農會與本站小火薑絲到大火山蘇的流程；不延伸成麻油耐熱性機制。
+  # 第3段=依材料表採買、含米酒須確認需求；不提出健康指引。
+  # 圖3只畫山蘇段／薑絲／豆豉／黑麻油，非完整材料合照，不畫鹽／味精／米酒。
+  - heading: 缺一道青菜，山蘇配的是薑絲與豆豉
+    urls:
+      - https://shop.sgfa.org.tw/article_view.php?new_sn=7574
