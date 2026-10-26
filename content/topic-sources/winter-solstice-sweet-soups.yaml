@@ -1,0 +1,41 @@
+# 2026-10-26 完整查核。依本每日專題自主選題與來源授權。
+# 導言為選菜安排，非新配方；目前是十月，沒有宣稱已到冬至。
+# 本站 red-bean-soup/recipe.yaml 已核 draft:false；其楊桃原頁本次403，未繞過，未稱重讀原頁。
+# 不採來源的食補、占卜、全臺一致習俗或起源傳說；不重述來源不完整的電鍋水量與時間。
+sources:
+  - title: 農業部：冬至
+    url: https://www.moa.gov.tw/ws.php?RWD_mode=Y&id=2507794
+  - title: 國史館臺灣文獻館：冬節圓
+    url: https://dict.th.gov.tw/detailPage.aspx?Ca=312&ID=1512
+  - title: 農業知識入口網稻米主題館：冬至
+    url: https://kmweb.moa.gov.tw/subject/subject.php?id=18441
+  - title: 新北市客家文化典藏：12月冬節（海陸腔）
+    url: https://www.hakka-portal.ntpc.gov.tw/article/12%E6%9C%88%E5%86%AC%E7%AF%80(%E6%B5%B7%E9%99%B8%E8%85%94)180317431942236565
+  - title: 農業部食農教育資訊整合平臺：冬至吃湯圓，你也會配一碗熱呼呼的紅豆湯嗎？
+    url: https://fae.moa.gov.tw/theme_data.php?id=4881&sub_theme=knowledge&theme=topics
+sections:
+  # 1=農業部前夕磨米、全家搓圓與團圓寓意；2=文獻館雞母狗仔與祭祖記錄；3=文化說法及不強加家庭習俗的編輯界線。
+  # 封面只是家屋/山景與紅豆湯小圓的原創飲食場景，不是實際地點或歷史儀式重建。
+  - heading: 冬節圓，從一家人搓圓的晚上談起
+    urls:
+      - https://www.moa.gov.tw/ws.php?RWD_mode=Y&id=2507794
+      - https://dict.th.gov.tw/detailPage.aspx?Ca=312&ID=1512
+  # 1=稻米主題館圓糯米磨漿脫水與紅白；沒有粉水比例。
+  # 2=新北客家廣播文本紅白鹹圓與金銀稱呼；不是所有客家家庭通則。
+  # 3=採買/依完整配方的編輯建議，不給煮熟時間。圖rolling只畫粉團/紅白小圓/搓圓手勢。
+  - heading: 紅白小圓先看材料，甜鹹再看湯
+    urls:
+      - https://kmweb.moa.gov.tw/subject/subject.php?id=18441
+      - https://www.hakka-portal.ntpc.gov.tw/article/12%E6%9C%88%E5%86%AC%E7%AF%80(%E6%B5%B7%E9%99%B8%E8%85%94)180317431942236565
+  # 稻米主題館糖水、茼蒿/香菇/肉絲兩組例子；無比例/熟度，沒有轉成完整鹹湯配方。
+  # 選菜為編輯安排；肉絲不是素食以材料表直接判斷。圖sweet-savory只呈現兩種組合，不表達熟度訊號。
+  - heading: 糖水和鹹湯，配料要分開準備
+    urls:
+      - https://kmweb.moa.gov.tw/subject/subject.php?id=18441
+  # 1=2025-12-21農業部文章之紅豆作期，不把當年「現在」套到十月。
+  # 2=本站red-bean-soup爐煮版本，直接核材料和步驟，非新來源重讀；不轉述固定時間。
+  # 3=農業部電鍋版內/外鍋、跳起燜放與再蒸，不搬用未明容量的一杯水。
+  # 4=選版本及分開安排的編輯建議，沒有同鍋煮湯圓配方。圖red-bean-vessels是兩種鍋具與泡豆，不是流程順序圖。
+  - heading: 紅豆湯要留備料時間，也要先選鍋
+    urls:
+      - https://fae.moa.gov.tw/theme_data.php?id=4881&sub_theme=knowledge&theme=topics
