@@ -1,0 +1,54 @@
+# 2026-10-27 逐頁讀取官方全文；依每日專題自主選題／來源查核授權。
+# 原候選「根莖、蛋與乾貨撐幾天」沒有通用依據，改為正常料理與無冷藏備用餐分流。
+# FoodSafety.gov 的 40°F 僅約為4°C（精確4.44°C）；保留原華氏門檻，不混入臺灣一般冷藏7°C規範。
+# 4h指停電且門關閉的冷藏估計；2h指指定易腐食品暴露於40°F或以上，兩者非同一起算點。
+# 冷凍處置只舉肉類；冰淇淋為例外，沒有寫全部冰晶食品皆可再冷凍。
+# 全民安全指引至少7天；食安辦2025-11-27文的3日份不採。3L採前者「飲用水」定義，不含全家洗滌用水。
+# 食譜內容核對本次main 038a423c，cabbage-rice、egg-fried-rice均draft:false；沒有新增料理步驟或期限。
+# USDA原頁研究工具403未繞過；FoodSafety.gov完整官方表可讀。未混用另兩份FDA頁面2h/4h表述。
+sources:
+  - title: 臺灣全民安全指引：準備日常居家儲備
+    url: https://prepare.mnd.gov.tw/emergency-supplies/household-supplies
+  - title: 行政院食品安全辦公室：防災也要顧食安，居家防災食物安全守則（2025-11-27）
+    url: https://www.ey.gov.tw/ofs/15881103EFD02C4/db501bab-c6d8-4985-9f9c-6afdcf37391a
+  - title: 衛生福利部：颱風訊息要留意，食品衛生應注意（2012-06-19）
+    url: https://www.mohw.gov.tw/cp-3159-24314-1.html
+  - title: FoodSafety.gov：Food Safety During Power Outage（2024-08-08覆核）
+    url: https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage
+  - title: 食藥署刊載嘉義縣衛生局：颱風過後停電停水地區 食品衛生安全不可少！（2025-07-08）
+    url: https://www.fda.gov.tw/TC/csmnewsContent.aspx?id=t623669&mid=267
+  - title: CDC：Keep Food Safe After a Disaster or Emergency（2025-11-24）
+    url: https://www.cdc.gov/food-safety/foods/keep-food-safe-after-emergency.html
+sections:
+  # 導言為菜單安排，非耐放期限；正文圖two-meal-plans分組，不表示室溫擺放時長。
+  # 兩道菜的食材與器材直接核對本站配方；來源只支持食安限制與先用安全易腐材料的安排。
+  - heading: 今天能煮的菜，另列一張清單
+    urls:
+      - https://www.ey.gov.tw/ofs/15881103EFD02C4/db501bab-c6d8-4985-9f9c-6afdcf37391a
+      - https://www.mohw.gov.tw/cp-3159-24314-1.html
+  # 7天、每人每日3L飲用水、免煮/需煮及平日口味；菜單分流是編輯建議，不新增燃料或飲水處理操作。
+  - heading: 備用餐要能在當下吃得到
+    urls:
+      - https://prepare.mnd.gov.tw/emergency-supplies/household-supplies
+      - https://www.ey.gov.tw/ofs/15881103EFD02C4/db501bab-c6d8-4985-9f9c-6afdcf37391a
+  # 第一段少開門，記錄起點是落實時數指引的編輯建議。圖closed-fridge關門/記錄工具，鐘面不當成安全界線。
+  # 第二段門關閉冷藏4h，第三段指定食物達40°F以上超2h，不靠試吃。
+  - heading: 停電時關好冰箱，記下開始時間
+    urls:
+      - https://www.mohw.gov.tw/cp-3159-24314-1.html
+      - https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage
+      - https://www.cdc.gov/food-safety/foods/keep-food-safe-after-emergency.html
+  # 分品項表：完整未切蔬果不同於切過/熟食；冷凍肉仍有冰晶或40°F以下可再凍但品質可能改變，冰淇淋例外。
+  # 泡水食品依臺灣官方棄置；罐頭鏽蝕/裂損/變形不用。沒有寫煮沸能救回失溫食物。
+  - heading: 復電後逐樣看，冷藏與冷凍分開判斷
+    urls:
+      - https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage
+      - https://www.cdc.gov/food-safety/foods/keep-food-safe-after-emergency.html
+      - https://www.mohw.gov.tw/cp-3159-24314-1.html
+      - https://www.fda.gov.tw/TC/csmnewsContent.aspx?id=t623669&mid=267
+  # 循環儲備與半年檢查有來源；近效期放前與吃一份記一份為編輯實作建議。
+  # rotate-stock只畫未開封食品取用；無標籤為美術要求，正文提醒保留實際產品標示。
+  - heading: 平日吃掉近效期的，再補回備糧
+    urls:
+      - https://www.ey.gov.tw/ofs/15881103EFD02C4/db501bab-c6d8-4985-9f9c-6afdcf37391a
+      - https://prepare.mnd.gov.tw/emergency-supplies/household-supplies
