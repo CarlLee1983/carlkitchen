@@ -1,0 +1,48 @@
+# 2026-10-28 逐頁讀取官方全文。每日專題既有自主選題、來源核查與直接發布授權適用。
+# 民俗辭典為記錄，不把其神學敘述當可驗證事實；不指定統一供品/日期/儀軌，無起源或地域普遍性推論。
+# 乾米粉、乾香菇、玉米醬為編輯菜單建議，不稱傳統必備供品。沒有聲稱作者試作或個人經驗。
+# 食安數值以食藥署2025-08-18維護Q&A為準：調製食品室溫2h；室溫>32°C為1h；熟食/易腐及原料建議<=5°C。
+# 祭拜前運送/等候亦計入未妥善保溫保冷時間，是落實放置時間上限的保守安排，無重置時鐘或復熱救回主張。
+# 彰化2026普渡稿0–7°C未用作熟食冷藏建議；本文採食藥署更具體的<=5°C。沒有引用其通用復熱為補救。
+# 彰化歷史頁無可見發布日期，僅引用人口/冰箱容量/採買量；不採其罐頭氧化與添加物等概括說法。
+# main b89075c7082c3f2e22b65e19b3ff33c3f07b68f0核對3道菜皆draft:false。
+# taiwanese-fried-rice-noodles確有乾米粉/乾香菇/肉絲/蝦米/高麗菜/紅蘿蔔/芹菜；corn-chowder為玉米醬非玉米粒；mushroom-minced-pork-rice為乾香菇/豬絞肉/白飯。
+# 料理段只導引現有配方，不新增配比、保存天數或教學步驟。分送保留標示與未泡發分配為編輯安排。
+sources:
+  - title: 國史館臺灣文獻館《臺灣民俗文物辭典》：普渡（辭條2441）
+    url: https://dict.th.gov.tw/detailPage.aspx?Ca=192&ID=2441
+  - title: 國史館臺灣文獻館《臺灣民俗文物辭典》：中元普渡物品（辭條1435）
+    url: https://dict.th.gov.tw/detailPage.aspx?Ca=297&ID=1435
+  - title: 彰化縣衛生局：中元普渡祭祀食品選購（歷史訊息；頁面未列發布日期）
+    url: https://www.chshb.gov.tw/node/190925597
+  - title: 彰化縣衛生局：中元普渡食安三部曲：注意採買、安全祭拜、妥善保存（2026-08-14）
+    url: https://www.chshb.gov.tw/node/219120001
+  - title: 食藥署：食品中毒常見問與答（2025-08-18維護；Q6、Q7、Q9）
+    url: https://www.fda.gov.tw/TC/sitecontent.aspx?sid=2572
+  - title: 衛生福利部／食藥署：中元祭，邀兄弟，NG食品是禁「祭」！（2016-08-15）
+    url: https://mohw.gov.tw/cp-16-18872-1.html
+sections:
+  # 複雜/簡化形式與另擇日期皆直接來自辭典；詢問主辦者為編輯建議。
+  - heading: 供桌有不同樣貌，先問清楚參與的場合
+    urls:
+      - https://dict.th.gov.tw/detailPage.aspx?Ca=192&ID=2441
+      - https://dict.th.gov.tw/detailPage.aspx?Ca=297&ID=1435
+  # 採買量看人口/冰箱，清單加用途是具體落實建議。圖分組不是儀式正確性或常溫耐放保證。
+  - heading: 採買清單多寫一欄：拜完怎麼用
+    urls:
+      - https://www.chshb.gov.tw/node/190925597
+      - https://www.chshb.gov.tw/node/219120001
+  # Q7完整熱天條件1h未省；Q6耐熱毒素不舉細菌名稱或消毒療程；已放過久不建議復熱救回。
+  - heading: 熟食的時間，從擺上供桌之前就開始算
+    urls:
+      - https://www.fda.gov.tw/TC/sitecontent.aspx?sid=2572
+      - https://www.chshb.gov.tw/node/219120001
+  # 包裝、標示、膨罐來自食藥署；保留標示與確認收受意願為編輯建議，不涉及捐贈資格。
+  - heading: 罐頭與乾貨先檢查，再排進櫥櫃
+    urls:
+      - https://mohw.gov.tw/cp-16-18872-1.html
+      - https://www.chshb.gov.tw/node/219120001
+  # 菜譜食材逐項核對repo；外部來源僅支持按可消耗量安排，不作米粉/罐頭替換的證據。
+  - heading: 把乾米粉、香菇與玉米醬接回家常菜
+    urls:
+      - https://www.chshb.gov.tw/node/190925597
