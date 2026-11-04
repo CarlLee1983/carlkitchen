@@ -11,22 +11,37 @@ protein: false
 timeMinutes: 25
 tags: [家常菜, 台灣小吃]
 ingredients:
-  - { name: 南瓜, amount: { value: 100, unit: g }, note: 原料標示 150公克 }
-  - { name: 韭黃, amount: { value: 100, unit: g }, note: 原料標示 50公克 }
-  - { name: 紅蘿蔔, amount: { value: 100, unit: g }, note: 原料標示 20公克 }
-  - { name: 米粉, amount: { value: 100, unit: g }, note: 原料標示 150公克 }
-  - { name: 鹽, amount: { value: 100, unit: g }, note: 原料標示 1/2小匙 }
-  - { name: 醬油, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
-  - { name: 烏醋, amount: { value: 100, unit: g }, note: 原料標示 1大匙 }
-  - { name: 白胡椒粉, amount: { value: 100, unit: g }, note: 原料標示 少許 }
-  - { name: 水, amount: { value: 100, unit: g }, note: 原料標示 100㏄ }
+  - { name: 南瓜, amount: { value: 150, unit: g }, note: 原料標示 150公克 }
+  - { name: 韭黃, amount: { value: 50, unit: g }, note: 原料標示 50公克 }
+  - { name: 紅蘿蔔, amount: { value: 20, unit: g }, note: 原料標示 20公克 }
+  - { name: 米粉, amount: { value: 150, unit: g }, note: 原料標示 150公克 }
+  - {
+      name: 鹽,
+      amount: { value: 0.5, unit: 小匙 },
+      group: 調味,
+      note: 原料標示 1/2小匙,
+    }
+  - {
+      name: 醬油,
+      amount: { value: 1, unit: 大匙 },
+      group: 調味,
+      note: 原料標示 1大匙,
+    }
+  - {
+      name: 烏醋,
+      amount: { value: 1, unit: 大匙 },
+      group: 調味,
+      note: 原料標示 1大匙,
+    }
+  - { name: 白胡椒粉, group: 調味, note: 少許 }
+  - { name: 水, amount: { value: 100, unit: ml }, note: 原料標示 100㏄ }
 steps:
-  - text: "南瓜、紅蘿蔔均洗淨，去皮切絲；韭黃洗淨切段；備用。"
+  - text: "洗淨南瓜、紅蘿蔔和韭黃。南瓜與紅蘿蔔削皮後切絲，韭黃則切段待用。"
     image:
       src: ./step-1.webp
       alt: 砧板上準備妥當並切整齊的金瓜炒米粉主要材料
-  - text: "米粉以熱水浸泡至柔軟，撈出瀝乾水份備用。"
-  - text: "熱鍋倒入適量油燒熱，放入南瓜絲與紅蘿蔔絲以中小火炒出香味，加入米粉與所有調味料拌炒至湯汁略收乾，最後加入韭黃段炒勻即可。"
+  - text: "用熱水泡米粉，待米粉變軟後取出，把水瀝乾。"
+  - text: "將適量油倒入熱鍋，油熱後以中小火拌炒南瓜絲、紅蘿蔔絲。炒香後放入米粉和全部調味料，拌炒到湯汁稍微收乾，再拌入韭黃段。"
 hero:
   src: ./hero.webp
   alt: 盤中盛裝熱氣騰騰之美味金瓜炒米粉
