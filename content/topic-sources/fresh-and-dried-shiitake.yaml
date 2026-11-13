@@ -14,7 +14,7 @@ sources:
   - title: "原汁圓胃Lin：香菇炒青江菜"
     url: https://cookpad.com/tw/食譜/9300963
   - title: "煮奔既有已發布菜譜：香菇雞湯"
-    url: https://carlkitchen.gravito.dev/recipes/shiitake-chicken-soup/
+    url: https://github.com/CarlLee1983/carlkitchen/blob/452e2645e28e00403f09c16a43dd09d23af3c655/content/recipes/shiitake-chicken-soup/recipe.yaml
 sections:
   - heading: 鮮菇與乾菇，看外觀的方式不同
     urls:
@@ -33,4 +33,4 @@ sections:
     urls:
       - https://fae.moa.gov.tw/map/food_item.php?id=156&type=AS07
       - https://cookpad.com/tw/食譜/9300963
-      - https://carlkitchen.gravito.dev/recipes/shiitake-chicken-soup/
+      - https://github.com/CarlLee1983/carlkitchen/blob/452e2645e28e00403f09c16a43dd09d23af3c655/content/recipes/shiitake-chicken-soup/recipe.yaml
