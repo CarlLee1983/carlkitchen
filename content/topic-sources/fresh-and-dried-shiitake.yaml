@@ -1,0 +1,36 @@
+sources:
+  - title: "香港食安中心：適當處理新鮮菇類"
+    url: https://www.cfs.gov.hk/tc_chi/multimedia/multimedia_pub/multimedia_pub_fsf_179_04.html
+  - title: "香港食安中心：浸泡菇類與食物安全"
+    url: https://www.cfs.gov.hk/tc_chi/multimedia/multimedia_pub/multimedia_pub_fsf_200_04.html
+  - title: "農業部：香菇料理加工"
+    url: https://fae.moa.gov.tw/map/food_item.php?id=156&type=AS07
+  - title: "農業知識入口網：機能作物選購祕訣"
+    url: https://kmweb.moa.gov.tw/subject/subject.php?id=40443
+  - title: "埔里鎮農會：乾香菇"
+    url: https://www.pulifarm.org.tw/product-detail/41/
+  - title: "農業知識入口網：香菇"
+    url: https://kmweb.moa.gov.tw/subject/subject.php?id=35701
+  - title: "原汁圓胃Lin：香菇炒青江菜"
+    url: https://cookpad.com/tw/食譜/9300963
+  - title: "煮奔既有已發布菜譜：香菇雞湯"
+    url: https://github.com/CarlLee1983/carlkitchen/blob/452e2645e28e00403f09c16a43dd09d23af3c655/content/recipes/shiitake-chicken-soup/recipe.yaml
+sections:
+  - heading: 鮮菇與乾菇，看外觀的方式不同
+    urls:
+      - https://www.cfs.gov.hk/tc_chi/multimedia/multimedia_pub/multimedia_pub_fsf_179_04.html
+      - https://kmweb.moa.gov.tw/subject/subject.php?id=40443
+  - heading: 鮮菇先冷藏，乾菇留意防潮
+    urls:
+      - https://www.cfs.gov.hk/tc_chi/multimedia/multimedia_pub/multimedia_pub_fsf_179_04.html
+      - https://www.pulifarm.org.tw/product-detail/41/
+      - https://kmweb.moa.gov.tw/subject/subject.php?id=35701
+  - heading: 泡乾菇，把時間與存放位置一起安排
+    urls:
+      - https://www.cfs.gov.hk/tc_chi/multimedia/multimedia_pub/multimedia_pub_fsf_200_04.html
+      - https://fae.moa.gov.tw/map/food_item.php?id=156&type=AS07
+  - heading: 要切塊拌炒，還是整朵入湯
+    urls:
+      - https://fae.moa.gov.tw/map/food_item.php?id=156&type=AS07
+      - https://cookpad.com/tw/食譜/9300963
+      - https://github.com/CarlLee1983/carlkitchen/blob/452e2645e28e00403f09c16a43dd09d23af3c655/content/recipes/shiitake-chicken-soup/recipe.yaml
